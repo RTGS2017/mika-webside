@@ -4,4 +4,4 @@ Allow: /
 Disallow: /README.md
 Disallow: /gemini-section-prompts.md
 
-Sitemap: https://rtgs2017.github.io/mika-webside/sitemap.xml
+Sitemap: https://mikaovo.ai/sitemap.xml

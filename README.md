@@ -2,9 +2,9 @@
 
 Static homepage for the SEO + GEO visibility product.
 
-Live site: https://rtgs2017.github.io/mika-webside/
+Live site: https://mikaovo.ai/
 
-Sitemap: https://rtgs2017.github.io/mika-webside/sitemap.xml
+Sitemap: https://mikaovo.ai/sitemap.xml
 
 ## Local preview
 
@@ -30,10 +30,7 @@ Open http://localhost:4173/
 
 ## GitHub Pages
 
-1. Put this folder at the repository root **or** keep it as `site/` and set Pages to serve `/site` (or copy these files into `/docs`).
-2. GitHub → Settings → Pages → Deploy from a branch → `main` / `/ (root)` or `/docs`.
-3. If the site will live at `https://USER.github.io/REPO/`, keep relative paths (`./styles.css`, `./assets/logo.svg`) — they already are relative.
-4. Replace the footer GitHub link with the real repository URL.
+Published from `main` at repository root. Custom domain: `mikaovo.ai`.
 
 No Node, Vite, or npm is required for this homepage.
 
@@ -46,4 +43,6 @@ No Node, Vite, or npm is required for this homepage.
 | `main.js` | Sticky nav, reveal, scan log, language tabs |
 | `assets/logo.svg` | 2×2 visibility mark |
 | `assets/favicon.svg` | Tab icon |
-| `gemini-section-prompts.md` | Gemini prompts per section |
+| `CNAME` | GitHub Pages custom domain |
+| `sitemap.xml` | Google sitemap |
+| `robots.txt` | Crawler rules |
