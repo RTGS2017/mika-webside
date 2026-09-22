@@ -139,6 +139,7 @@
     { id: "questions", key: "questions" },
     { id: "entity", key: "entity" },
     { id: "multilingual", key: "multilingual" },
+    { id: "methodology", key: "methodology" },
     { id: "faq", key: "faq" },
     { id: "cta", key: "cta" }
   ];

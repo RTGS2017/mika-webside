@@ -13,7 +13,8 @@
 | 09 | questions | 问题覆盖 | Questions |
 | 10 | entity | 实体与证据 | Evidence |
 | 11 | multilingual | 多语言 | Languages |
-| 12 | faq | 常见问题 | FAQ |
-| 13 | cta | 联系 | Contact |
+| 12 | methodology | 方法 | Method |
+| 13 | faq | 常见问题 | FAQ |
+| 14 | cta | 联系 | Contact |
 
-每节 `min-height: 100svh`，不使用 `height: 100vh; overflow: hidden`。内容更高的章节可以继续往下读。
+每节 `min-height: 100svh`，不使用 `height: 100vh; overflow: hidden`。内容更高的章节可以继续往下读。桌面章节轨在左侧，1100px 以下隐藏。

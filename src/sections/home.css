@@ -4,21 +4,21 @@
 .hv2-root {
   --hv2-ink: var(--mika-text);
   --hv2-muted: var(--mika-muted);
-  --hv2-faint: #64748b;
+  --hv2-faint: var(--mika-faint);
   --hv2-line: var(--mika-border);
-  --hv2-line-strong: #334155;
+  --hv2-line-strong: var(--mika-border-strong);
   --hv2-seo: var(--mika-blue);
   --hv2-seo-deep: var(--mika-blue);
-  --hv2-seo-soft: rgba(56, 189, 248, 0.12);
+  --hv2-seo-soft: var(--mika-seo-soft);
   --hv2-geo: var(--mika-violet);
   --hv2-geo-deep: var(--mika-violet);
-  --hv2-geo-soft: rgba(139, 92, 246, 0.12);
+  --hv2-geo-soft: var(--mika-geo-soft);
   --hv2-ok: var(--mika-green);
-  --hv2-ok-soft: rgba(52, 211, 153, 0.12);
+  --hv2-ok-soft: var(--mika-ok-soft);
   --hv2-struct: var(--mika-muted);
   --hv2-struct-soft: var(--mika-highlight);
   --hv2-warn: var(--mika-amber);
-  --hv2-warn-soft: rgba(251, 191, 36, 0.12);
+  --hv2-warn-soft: var(--mika-warn-soft);
   --hv2-white: var(--mika-text);
   --hv2-navy: var(--mika-bg-2);
   --hv2-hero-bg: var(--mika-bg);
@@ -103,17 +103,76 @@
   top: 0;
   z-index: 40;
   height: var(--hv2-nav-h);
-  background: rgba(7, 11, 20, 0.92);
+  background: var(--mika-nav-bg);
   border-bottom: 1px solid var(--mika-border);
-  backdrop-filter: none;
+  box-shadow: var(--mika-nav-shadow);
+  backdrop-filter: saturate(1.2) blur(12px);
 }
 
 .hv2-nav-inner {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   gap: 16px;
   height: var(--hv2-nav-h);
+}
+
+.hv2-nav-tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.hv2-tool {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 14px;
+  border: 1px solid var(--mika-border);
+  border-radius: 999px;
+  background: var(--mika-panel);
+  color: var(--mika-text);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.hv2-tool svg {
+  width: 15px;
+  height: 15px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.hv2-tool:hover {
+  border-color: var(--mika-blue);
+  color: var(--mika-blue);
+}
+
+.hv2-theme-btn .hv2-icon-moon,
+.hv2-theme-btn .hv2-theme-on {
+  display: none;
+}
+
+html[data-theme="dark"] .hv2-theme-btn .hv2-icon-sun,
+html[data-theme="dark"] .hv2-theme-btn .hv2-theme-off {
+  display: none;
+}
+
+html[data-theme="dark"] .hv2-theme-btn .hv2-theme-on {
+  display: inline;
+}
+
+html[data-theme="dark"] .hv2-theme-btn .hv2-icon-moon {
+  display: block;
 }
 
 .hv2-nav-inner > .hv2-btn {
@@ -384,8 +443,8 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(30, 41, 59, 0.35) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(30, 41, 59, 0.35) 1px, transparent 1px);
+    linear-gradient(var(--mika-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--mika-grid) 1px, transparent 1px);
   background-size: 40px 40px;
   opacity: 0;
   pointer-events: none;
@@ -1954,7 +2013,7 @@
 }
 
 .hv2-root .contact-sheet {
-  background: rgba(7, 11, 20, 0.72);
+  background: var(--mika-scrim);
 }
 
 /* —— Responsive —— */
@@ -2014,41 +2073,12 @@
 
 @media (max-width: 768px) {
   .hv2-nav-toggle {
-    display: inline-flex;
-  }
-
-  .hv2-nav-menu {
     display: none;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: var(--hv2-nav-h);
-    flex-direction: column;
-    align-items: stretch;
-    gap: 8px;
-    padding: 16px 20px 20px;
-    background: var(--mika-bg-2);
-    border-bottom: 1px solid var(--mika-border);
   }
 
-  .hv2-nav-menu.is-open {
-    display: flex;
-  }
-
-  .hv2-nav-links {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .hv2-nav-links a,
-  .hv2-nav-contact-btn,
-  .hv2-nav-menu .hv2-btn {
-    width: 100%;
-    justify-content: flex-start;
-  }
-
-  .hv2-lang {
-    margin: 4px 0;
+  .hv2-tool {
+    height: 34px;
+    padding: 0 12px;
   }
 
   .hv2-nav-inner {

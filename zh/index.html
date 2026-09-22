@@ -2,6 +2,13 @@
 <html lang="zh-Hans">
 <head>
 <meta charset="UTF-8">
+  <script>
+    try {
+      if (localStorage.getItem("mika-theme") === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    } catch (e) {}
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mika｜SEO 审计、搜索可见性与 AI 答案可见性</title>
   <meta name="description" content="结构化 SEO 审计与 GEO 分析：检查网站 SEO 健康度与技术 SEO，发现内容缺口、搜索意图与主题覆盖，提升网站优化、答案可见性、实体清晰度与引用准备度。">
@@ -22,7 +29,7 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Mika｜SEO 审计、搜索可见性与 AI 答案可见性">
   <meta name="twitter:description" content="结构化 SEO 审计与 GEO 分析：检查 SEO 健康度、内容缺口与搜索意图覆盖，提升技术 SEO、主题覆盖与 AI 答案可见性。">
-  <meta name="theme-color" content="#070B14">
+  <meta name="theme-color" content="#F4F6FB">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">
   {
@@ -234,8 +241,9 @@
     <a href="#questions" data-rail="questions"><span class="mika-rail-no">09</span><span class="mika-rail-name">问题覆盖</span></a>
     <a href="#entity" data-rail="entity"><span class="mika-rail-no">10</span><span class="mika-rail-name">实体与证据</span></a>
     <a href="#multilingual" data-rail="multilingual"><span class="mika-rail-no">11</span><span class="mika-rail-name">多语言</span></a>
-    <a href="#faq" data-rail="faq"><span class="mika-rail-no">12</span><span class="mika-rail-name">常见问题</span></a>
-    <a href="#cta" data-rail="cta"><span class="mika-rail-no">13</span><span class="mika-rail-name">联系</span></a>
+    <a href="#methodology" data-rail="methodology"><span class="mika-rail-no">12</span><span class="mika-rail-name">方法</span></a>
+    <a href="#faq" data-rail="faq"><span class="mika-rail-no">13</span><span class="mika-rail-name">常见问题</span></a>
+    <a href="#cta" data-rail="cta"><span class="mika-rail-no">14</span><span class="mika-rail-name">联系</span></a>
   </nav>
 
   <a class="hv2-skip" href="#main">跳到正文</a>
@@ -246,29 +254,14 @@
         <img src="../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
         <span class="hv2-brand-name">Mika <span>Visibility</span></span>
       </a>
-      <button class="hv2-nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" data-nav-toggle>
-        <span class="hv2-sr">菜单</span>
-        <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true"><path d="M0 1h16M0 6h16M0 11h16" stroke="#F8FAFC" stroke-width="1.5"/></svg>
-      </button>
-      <div class="hv2-nav-menu" id="nav-menu">
-        <nav class="hv2-nav-links" aria-label="主导航">
-          <a href="#problem">产品逻辑</a>
-          <a href="#framework">能力框架</a>
-          <a href="#blueprint">如何运作</a>
-          <a href="#seo-growth">SEO</a>
-          <a href="#geo">GEO</a>
-          <a href="/zh/knowledge/">知识中心</a>
-          <a href="#faq">常见问题</a>
-          <div class="hv2-lang" aria-label="语言">
-            <a href="/">EN</a>
-            <a href="/zh/" aria-current="page">中文</a>
-          </div>
-          <div class="hv2-nav-contact">
-            <button type="button" class="hv2-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
-            <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
-          </div>
-        </nav>
-        <a class="hv2-btn hv2-btn-primary" href="#cta">开始结构化审计</a>
+      <div class="hv2-nav-tools">
+        <a class="hv2-tool" href="/" hrefLang="en" lang="en">EN</a>
+        <button type="button" class="hv2-tool hv2-theme-btn" data-theme-toggle aria-pressed="false" aria-label="关灯" data-label-on="关灯" data-label-off="开灯">
+          <svg class="hv2-icon-moon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8.2 1.4a6.2 6.2 0 1 0 6.4 8.2A5.1 5.1 0 0 1 8.2 1.4Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          <svg class="hv2-icon-sun" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="2.6" stroke="currentColor" stroke-width="1.4"/><path d="M8 1.6v1.5M8 12.9v1.5M1.6 8h1.5M12.9 8h1.5M3.3 3.3l1.1 1.1M11.6 11.6l1.1 1.1M12.7 3.3l-1.1 1.1M4.4 11.6l-1.1 1.1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          <span class="hv2-theme-off">开灯</span>
+          <span class="hv2-theme-on">关灯</span>
+        </button>
       </div>
     </div>
   </header>

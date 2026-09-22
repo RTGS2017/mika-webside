@@ -14,6 +14,28 @@
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
+  const themeBtn = document.querySelector("[data-theme-toggle]");
+  const syncTheme = (dark) => {
+    if (dark) document.documentElement.setAttribute("data-theme", "dark");
+    else document.documentElement.removeAttribute("data-theme");
+    try {
+      localStorage.setItem("mika-theme", dark ? "dark" : "light");
+    } catch (e) {}
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute("content", dark ? "#070B14" : "#F4F6FB");
+    if (themeBtn) {
+      themeBtn.setAttribute("aria-pressed", String(dark));
+      const label = dark ? themeBtn.getAttribute("data-label-off") : themeBtn.getAttribute("data-label-on");
+      if (label) themeBtn.setAttribute("aria-label", label);
+    }
+  };
+  if (themeBtn) {
+    syncTheme(document.documentElement.getAttribute("data-theme") === "dark");
+    themeBtn.addEventListener("click", () => {
+      syncTheme(document.documentElement.getAttribute("data-theme") !== "dark");
+    });
+  }
+
   const toggle = document.querySelector("[data-nav-toggle]");
   const menu = document.getElementById("nav-menu");
   if (toggle && menu) {

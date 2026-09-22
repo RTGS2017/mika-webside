@@ -35,14 +35,20 @@
     return node;
   }
 
-  function layout(copy) {
-    var root = { id: "root", x: 600, y: 330, label: copy.root, kind: "root" };
-    var searchPos = [[430, 230], [280, 160], [190, 280], [250, 430], [390, 520]];
-    var answerPos = [[770, 230], [930, 160], [1030, 290], [910, 430], [760, 520]];
-    var search = copy.search.map(function (label, i) {
+  function layout(copy, compact) {
+    var root = { id: "root", x: 600, y: compact ? 520 : 575, label: copy.root, kind: "root" };
+    var searchLabels = compact ? [copy.search[0], copy.search[1], copy.search[4]] : copy.search;
+    var answerLabels = compact ? [copy.answer[0], copy.answer[2], copy.answer[4]] : copy.answer;
+    var searchPos = compact
+      ? [[250, 430], [140, 250], [280, 70]]
+      : [[250, 500], [145, 360], [130, 210], [220, 120], [390, 150]];
+    var answerPos = compact
+      ? [[950, 430], [1060, 250], [920, 70]]
+      : [[950, 500], [1055, 360], [1070, 210], [980, 120], [810, 150]];
+    var search = searchLabels.map(function (label, i) {
       return { id: "s" + i, x: searchPos[i][0], y: searchPos[i][1], label: label, kind: "search" };
     });
-    var answer = copy.answer.map(function (label, i) {
+    var answer = answerLabels.map(function (label, i) {
       return { id: "a" + i, x: answerPos[i][0], y: answerPos[i][1], label: label, kind: "answer" };
     });
     var edges = [];
@@ -80,14 +86,20 @@
     model.edges.forEach(function (edge) {
       var path = svgEl("path", {
         class: "vit-edge is-" + edge.kind,
-        d: "M" + edge.from.x + " " + edge.from.y + " L" + edge.to.x + " " + edge.to.y
+        d: "M" + edge.from.x + " " + edge.from.y + " L" + edge.to.x + " " + edge.to.y,
+        "data-from": edge.from.id,
+        "data-to": edge.to.id
       });
       svg.appendChild(path);
       edgeNodes.push(path);
     });
 
+    var nodeEls = [];
     model.nodes.forEach(function (node) {
-      var g = svgEl("g", { class: "vit-node is-" + node.kind, "data-node-id": node.id });
+      var g = svgEl("g", {
+        class: "vit-node is-" + node.kind + (node.kind === "root" ? " is-hot" : " is-pending"),
+        "data-node-id": node.id
+      });
       g.appendChild(svgEl("circle", { cx: node.x, cy: node.y, r: node.kind === "root" ? 7 : 4 }));
       var text = svgEl("text", {
         x: node.x,
@@ -97,19 +109,34 @@
       text.textContent = node.label;
       g.appendChild(text);
       svg.appendChild(g);
+      nodeEls.push(g);
     });
 
     var signal = svgEl("circle", { class: "vit-signal", r: "3", fill: "#22d3ee" });
     svg.appendChild(signal);
     host.appendChild(svg);
-    return { svg: svg, edges: edgeNodes, signal: signal };
+    return { svg: svg, edges: edgeNodes, nodes: nodeEls, signal: signal };
   }
 
   function showFinal(drawn) {
     drawn.edges.forEach(function (path) {
       path.style.opacity = "0.28";
     });
+    drawn.nodes.forEach(function (node) {
+      node.classList.remove("is-pending");
+    });
     drawn.signal.setAttribute("opacity", "0");
+  }
+
+  function paintHot(drawn, path) {
+    var from = path ? path.getAttribute("data-from") : "";
+    var to = path ? path.getAttribute("data-to") : "";
+    drawn.nodes.forEach(function (node) {
+      var id = node.getAttribute("data-node-id");
+      var hot = id === "root" || id === from || id === to;
+      node.classList.toggle("is-hot", hot);
+      if (hot) node.classList.remove("is-pending");
+    });
   }
 
   function play(drawn) {
@@ -144,6 +171,13 @@
         try { len = path.getTotalLength(); } catch (_) { len = 0; }
         var local = Math.min(1, Math.max(0, t * drawn.edges.length - index));
         path.style.strokeDashoffset = String(len * (1 - local));
+        if (local > 0.9) {
+          var born = drawn.nodes[index + 1];
+          if (born) {
+            born.classList.remove("is-pending");
+            born.classList.add("is-hot");
+          }
+        }
       });
       if (t < 1) {
         raf = global.requestAnimationFrame(frame);
@@ -158,6 +192,7 @@
       if (!flowStart) flowStart = now || 0;
       var elapsed = (now || 0) - flowStart;
       var edge = drawn.edges[Math.floor(elapsed / 1600) % drawn.edges.length];
+      paintHot(drawn, edge);
       var len = 0;
       try { len = edge.getTotalLength(); } catch (_) { len = 0; }
       var p = len ? ((elapsed % 1600) / 1600) : 0;
@@ -180,7 +215,8 @@
     if (!host || host.getAttribute("data-vit-ready") === "1") return;
     host.setAttribute("data-vit-ready", "1");
     host.setAttribute("aria-hidden", "true");
-    var model = layout(COPY[langOf(host)]);
+    var compact = global.matchMedia && global.matchMedia("(max-width: 760px)").matches;
+    var model = layout(COPY[langOf(host)], compact);
     var drawn = draw(host, model);
     var stop = function () {};
     var running = false;
@@ -208,6 +244,23 @@
     }, { threshold: 0.2 });
     var section = host.closest("section") || host;
     io.observe(section);
+
+    var ticking = false;
+    function contract() {
+      if (ticking) return;
+      ticking = true;
+      global.requestAnimationFrame(function () {
+        ticking = false;
+        if (reduced()) {
+          host.style.transform = "";
+          return;
+        }
+        var rect = section.getBoundingClientRect();
+        var p = Math.min(1, Math.max(0, -rect.top / (rect.height || 1)));
+        host.style.transform = "translate3d(0," + (-56 * p).toFixed(1) + "px,0) scale(" + (1 - 0.14 * p).toFixed(3) + ")";
+      });
+    }
+    global.addEventListener("scroll", contract, { passive: true });
   }
 
   function init(root) {

@@ -2,6 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+  <script>
+    try {
+      if (localStorage.getItem("mika-theme") === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    } catch (e) {}
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mika | SEO Audit, Search Visibility &amp; AI Answer Visibility</title>
   <meta name="description" content="Structured SEO audit and GEO analysis for website SEO health, content gaps, search intent, topic coverage, and AI answer visibility—with clear next actions, not a black-box score.">
@@ -22,7 +29,7 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Mika | SEO Audit, Search Visibility &amp; AI Answer Visibility">
   <meta name="twitter:description" content="Structured SEO audit and GEO analysis for website SEO health, content gaps, search intent, topic coverage, and AI answer visibility.">
-  <meta name="theme-color" content="#070B14">
+  <meta name="theme-color" content="#F4F6FB">
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">
   {
@@ -234,8 +241,9 @@
     <a href="#questions" data-rail="questions"><span class="mika-rail-no">09</span><span class="mika-rail-name">Questions</span></a>
     <a href="#entity" data-rail="entity"><span class="mika-rail-no">10</span><span class="mika-rail-name">Evidence</span></a>
     <a href="#multilingual" data-rail="multilingual"><span class="mika-rail-no">11</span><span class="mika-rail-name">Languages</span></a>
-    <a href="#faq" data-rail="faq"><span class="mika-rail-no">12</span><span class="mika-rail-name">FAQ</span></a>
-    <a href="#cta" data-rail="cta"><span class="mika-rail-no">13</span><span class="mika-rail-name">Contact</span></a>
+    <a href="#methodology" data-rail="methodology"><span class="mika-rail-no">12</span><span class="mika-rail-name">Method</span></a>
+    <a href="#faq" data-rail="faq"><span class="mika-rail-no">13</span><span class="mika-rail-name">FAQ</span></a>
+    <a href="#cta" data-rail="cta"><span class="mika-rail-no">14</span><span class="mika-rail-name">Contact</span></a>
   </nav>
 
   <a class="hv2-skip" href="#main">Skip to content</a>
@@ -246,29 +254,14 @@
         <img src="./assets/logo.svg" alt="Mika Visibility" width="22" height="22">
         <span class="hv2-brand-name">Mika <span>Visibility</span></span>
       </a>
-      <button class="hv2-nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" data-nav-toggle>
-        <span class="hv2-sr">Menu</span>
-        <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true"><path d="M0 1h16M0 6h16M0 11h16" stroke="#F8FAFC" stroke-width="1.5"/></svg>
-      </button>
-      <div class="hv2-nav-menu" id="nav-menu">
-        <nav class="hv2-nav-links" aria-label="Primary">
-          <a href="#problem">Product</a>
-          <a href="#framework">Framework</a>
-          <a href="#blueprint">How it works</a>
-          <a href="#seo-growth">SEO</a>
-          <a href="#geo">GEO</a>
-          <a href="/knowledge/">Knowledge</a>
-          <a href="#faq">FAQ</a>
-          <div class="hv2-lang" aria-label="Language">
-            <a href="/" aria-current="page">EN</a>
-            <a href="/zh/">中文</a>
-          </div>
-          <div class="hv2-nav-contact">
-            <button type="button" class="hv2-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">Contact</button>
-            <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
-          </div>
-        </nav>
-        <a class="hv2-btn hv2-btn-primary" href="#cta">Start a structured audit</a>
+      <div class="hv2-nav-tools">
+        <a class="hv2-tool" href="/zh/" hrefLang="zh-Hans" lang="zh-Hans">中文</a>
+        <button type="button" class="hv2-tool hv2-theme-btn" data-theme-toggle aria-pressed="false" aria-label="Switch to dark" data-label-on="Switch to dark" data-label-off="Switch to light">
+          <svg class="hv2-icon-moon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8.2 1.4a6.2 6.2 0 1 0 6.4 8.2A5.1 5.1 0 0 1 8.2 1.4Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          <svg class="hv2-icon-sun" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="2.6" stroke="currentColor" stroke-width="1.4"/><path d="M8 1.6v1.5M8 12.9v1.5M1.6 8h1.5M12.9 8h1.5M3.3 3.3l1.1 1.1M11.6 11.6l1.1 1.1M12.7 3.3l-1.1 1.1M4.4 11.6l-1.1 1.1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          <span class="hv2-theme-off">Light</span>
+          <span class="hv2-theme-on">Dark</span>
+        </button>
       </div>
     </div>
   </header>

@@ -53,8 +53,8 @@ body {
 
 /* Homepage V2 layout lives in src/sections/home.css (.hv2-*). */
 body:has(.hv2-root) {
-  background: #070B14;
-  color: #F8FAFC;
+  background: var(--mika-bg, #F4F6FB);
+  color: var(--mika-text, #0B1220);
 }
 
 img,

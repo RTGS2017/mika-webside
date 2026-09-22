@@ -1,7 +1,34 @@
-/* Mika Visibility Command Center — color system only.
+/* Mika Visibility color system.
+   Default is light. html[data-theme="dark"] restores the previous dark palette.
    Modules must consume these variables; do not invent local palettes. */
 
 :root {
+  --mika-bg: #F4F6FB;
+  --mika-bg-2: #FFFFFF;
+  --mika-panel: #FFFFFF;
+  --mika-panel-2: #F8FAFC;
+  --mika-highlight: #EEF3F8;
+  --mika-text: #0B1220;
+  --mika-muted: #5C6B80;
+  --mika-faint: #7B8798;
+  --mika-border: #E3E8F0;
+  --mika-border-strong: #C9D2E0;
+  --mika-blue: #1D6FE8;
+  --mika-violet: #6E56CF;
+  --mika-cyan: #0E7490;
+  --mika-green: #0F7A4D;
+  --mika-amber: #B45309;
+  --mika-nav-bg: rgba(255, 255, 255, 0.9);
+  --mika-nav-shadow: 0 1px 0 rgba(11, 18, 32, 0.04);
+  --mika-grid: rgba(15, 23, 42, 0.07);
+  --mika-scrim: rgba(244, 246, 251, 0.9);
+  --mika-seo-soft: rgba(29, 111, 232, 0.1);
+  --mika-geo-soft: rgba(110, 86, 207, 0.1);
+  --mika-ok-soft: rgba(15, 122, 77, 0.1);
+  --mika-warn-soft: rgba(180, 83, 9, 0.1);
+}
+
+html[data-theme="dark"] {
   --mika-bg: #070B14;
   --mika-bg-2: #0B1220;
   --mika-panel: #101A2C;
@@ -9,11 +36,20 @@
   --mika-highlight: #0E1728;
   --mika-text: #F8FAFC;
   --mika-muted: #94A3B8;
+  --mika-faint: #64748B;
   --mika-border: #1E293B;
-  /* Accent roles — use only for their assigned meaning */
-  --mika-blue: #38BDF8;   /* SEO / Search */
-  --mika-violet: #8B5CF6; /* GEO / AI visibility */
-  --mika-cyan: #22D3EE;   /* System in progress */
-  --mika-green: #34D399;  /* Verified / healthy */
-  --mika-amber: #FBBF24;  /* Warning / opportunity */
+  --mika-border-strong: #334155;
+  --mika-blue: #38BDF8;
+  --mika-violet: #8B5CF6;
+  --mika-cyan: #22D3EE;
+  --mika-green: #34D399;
+  --mika-amber: #FBBF24;
+  --mika-nav-bg: rgba(7, 11, 20, 0.92);
+  --mika-nav-shadow: none;
+  --mika-grid: rgba(30, 41, 59, 0.35);
+  --mika-scrim: rgba(7, 11, 20, 0.72);
+  --mika-seo-soft: rgba(56, 189, 248, 0.12);
+  --mika-geo-soft: rgba(139, 92, 246, 0.12);
+  --mika-ok-soft: rgba(52, 211, 153, 0.12);
+  --mika-warn-soft: rgba(251, 191, 36, 0.12);
 }

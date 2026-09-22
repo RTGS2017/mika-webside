@@ -56,3 +56,59 @@ html.mika-chapter-scroll .hv2-section {
     min-height: auto;
   }
 }
+
+@keyframes mika-ch-build {
+  from { transform: translateY(18px); }
+  to { transform: none; }
+}
+@keyframes mika-ch-scan {
+  from { transform: translateY(10px); opacity: 0.72; }
+  to { transform: none; opacity: 1; }
+}
+@keyframes mika-ch-expand {
+  from { transform: scale(0.985); }
+  to { transform: none; }
+}
+@keyframes mika-ch-signal {
+  from { transform: translateX(12px); }
+  to { transform: none; }
+}
+@keyframes mika-ch-focus {
+  from { opacity: 0.8; }
+  to { opacity: 1; }
+}
+@keyframes mika-ch-converge {
+  from { transform: translateY(24px) scale(0.98); }
+  to { transform: none; }
+}
+
+html.mika-chapter-scroll .hv2-section[data-chapter-state="enter"] > .hv2-wrap {
+  animation: mika-ch-build 680ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+html.mika-chapter-scroll #audit[data-chapter-state="enter"] > .hv2-wrap,
+html.mika-chapter-scroll #health-growth[data-chapter-state="enter"] > .hv2-wrap {
+  animation-name: mika-ch-scan;
+}
+html.mika-chapter-scroll #seo-growth[data-chapter-state="enter"] > .hv2-wrap,
+html.mika-chapter-scroll #geo[data-chapter-state="enter"] > .hv2-wrap {
+  animation-name: mika-ch-expand;
+}
+html.mika-chapter-scroll #questions[data-chapter-state="enter"] > .hv2-wrap,
+html.mika-chapter-scroll #entity[data-chapter-state="enter"] > .hv2-wrap {
+  animation-name: mika-ch-signal;
+}
+html.mika-chapter-scroll #faq[data-chapter-state="enter"] > .hv2-wrap {
+  animation-name: mika-ch-focus;
+}
+html.mika-chapter-scroll #blueprint[data-chapter-state="enter"] > .hv2-wrap {
+  animation-name: mika-ch-build;
+}
+html.mika-chapter-scroll #cta[data-chapter-state="enter"] > .hv2-wrap {
+  animation-name: mika-ch-converge;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.mika-chapter-scroll .hv2-section[data-chapter-state="enter"] > .hv2-wrap {
+    animation: none;
+  }
+}

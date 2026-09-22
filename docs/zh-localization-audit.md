@@ -7,7 +7,7 @@
 - 可见界面改成中文，保留 Mika、SEO、GEO、AI、GitHub、WhatsApp、URL、语言名和示例路径。
 - HUD 在 `lang=zh` 时显示「系统 / …」和「状态：就绪」。
 - 联系组件按页面语言切换「关闭 / 已复制 / 邮箱 / 微信」，号码不变。
-- 没有英文 fallback。审计脚本是 `python tools/zh_content_audit.py`，检查发布目录 `zh/index.html`，不是 `dist/zh/`。
+- 没有英文 fallback。`npm run i18n:audit` 与 `npm run zh:content-audit` 都是 `python tools/zh_content_audit.py`，检查 `zh/index.html`，不是 `dist/zh/`。页面没有键值字典，所以审计看的是可见字符串，不是 en/zh key 表。
 
 ## 仍可出现的英文
 

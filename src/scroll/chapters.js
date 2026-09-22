@@ -139,8 +139,33 @@
     global.document.documentElement.classList.add("mika-chapter-scroll");
   }
 
+  function bindStates() {
+    var list = sections();
+    if (!list.length || typeof global.IntersectionObserver === "undefined") return;
+    var seen = {};
+    var io = new global.IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var el = entry.target;
+        var id = el.id || "";
+        if (!seen[id]) {
+          seen[id] = true;
+          if (entry.intersectionRatio > 0.55) el.setAttribute("data-chapter-state", "active");
+          return;
+        }
+        if (entry.intersectionRatio > 0.55) el.setAttribute("data-chapter-state", "active");
+        else if (entry.isIntersecting) {
+          el.setAttribute("data-chapter-state", entry.boundingClientRect.top > 40 ? "enter" : "exit");
+        } else {
+          el.setAttribute("data-chapter-state", "exit");
+        }
+      });
+    }, { threshold: [0, 0.25, 0.55, 0.85] });
+    list.forEach(function (section) { io.observe(section); });
+  }
+
   function init() {
     enableSnap();
+    bindStates();
     global.addEventListener("wheel", onWheel, { passive: false });
     global.addEventListener("keydown", onKey);
   }
