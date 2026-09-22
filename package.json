@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "scripts": {
+    "i18n:audit": "python tools/zh_content_audit.py",
+    "zh:content-audit": "python tools/zh_content_audit.py"
+  }
+}

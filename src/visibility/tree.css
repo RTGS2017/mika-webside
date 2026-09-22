@@ -1,0 +1,84 @@
+/* Visibility Index Tree — decorative background, not a card stack. */
+.hv2-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+}
+
+.hv2-hero .hv2-hero-grid {
+  position: relative;
+  z-index: 10;
+  display: block;
+  width: min(760px, 100%);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.hv2-hero .hv2-hero-cta {
+  justify-content: center;
+}
+
+.vit-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.92;
+}
+
+.vit-stage svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.vit-edge {
+  fill: none;
+  stroke-linecap: round;
+  stroke-width: 1;
+  opacity: 0.22;
+}
+
+.vit-edge.is-search { stroke: #38bdf8; }
+.vit-edge.is-answer { stroke: #8b5cf6; }
+.vit-edge.is-system { stroke: #22d3ee; }
+
+.vit-node circle {
+  fill: #070b14;
+  stroke-width: 1.4;
+}
+
+.vit-node.is-search circle { stroke: #38bdf8; }
+.vit-node.is-answer circle { stroke: #8b5cf6; }
+.vit-node.is-root circle { stroke: #22d3ee; fill: #101a2c; }
+
+.vit-node text {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+.vit-node.is-search text { fill: #38bdf8; }
+.vit-node.is-answer text { fill: #c4b5fd; }
+.vit-node.is-root text { fill: #f8fafc; font-size: 12px; }
+
+.vit-signal {
+  opacity: 0;
+}
+
+@media (max-width: 760px) {
+  .vit-node text { font-size: 10px; }
+  .vit-stage { opacity: 0.55; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vit-edge,
+  .vit-node,
+  .vit-signal {
+    transition: none !important;
+    animation: none !important;
+  }
+}

@@ -2,6 +2,33 @@
   var config = window.MIKA_CONTACT;
   if (!config) return;
 
+  var zhUi = (document.documentElement.lang || "").toLowerCase().indexOf("zh") === 0;
+  var ui = zhUi
+    ? {
+        touch: "联系我们",
+        close: "关闭",
+        copied: "已复制",
+        copyPrefix: "复制 ",
+        qr: "查看二维码"
+      }
+    : {
+        touch: "Get in touch",
+        close: "Close",
+        copied: "Copied",
+        copyPrefix: "Copy ",
+        qr: "View QR Code"
+      };
+  if (zhUi) {
+    config.email.label = "邮箱";
+    config.email.action = "发送邮件";
+    config.email.actionAria = "发送邮件";
+    config.wechat.label = "微信";
+    config.wechat.action = "复制微信号";
+    config.wechat.actionAria = "复制微信号";
+    config.whatsapp.action = "用 WhatsApp 联系";
+    config.whatsapp.actionAria = "用 WhatsApp 联系";
+  }
+
   var ORDER = ["whatsapp", "email", "wechat"];
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var mobileQuery = window.matchMedia("(max-width: 760px)");
@@ -105,7 +132,7 @@
       action =
         '<button type="button" class="contact-action" data-copy="' +
         esc(copy) +
-        '" data-copy-label="Copy WeChat ID" data-copied-label="Copied ✓" data-contact-wechat aria-label="' +
+        '" data-copy-label="' + esc(config.wechat.action) + '" data-copied-label="' + esc(ui.copied) + '" data-contact-wechat aria-label="' +
         esc(item.actionAria) +
         '">' +
         esc(item.action) +
@@ -114,7 +141,7 @@
         action +=
           '<a class="contact-action" href="' +
           esc(item.wechatQrAsset) +
-          '" data-contact-qr>View QR Code</a>';
+          '" data-contact-qr>' + esc(ui.qr) + "</a>";
       }
     }
 
@@ -142,7 +169,7 @@
         primary =
           '<button type="button" class="footer-contact-label" data-copy="' +
           esc(copy) +
-          '" data-copy-label="WeChat" data-copied-label="Copied ✓" data-contact-wechat aria-label="' +
+          '" data-copy-label="' + esc(config.wechat.label) + '" data-copied-label="' + esc(ui.copied) + '" data-contact-wechat aria-label="' +
           esc(item.actionAria) +
           '">' +
           esc(item.label) +
@@ -156,7 +183,7 @@
         esc(copy) +
         '" data-copy-label="' +
         esc(item.display) +
-        '" aria-label="Copy ' +
+        '" aria-label="' + esc(ui.copyPrefix) +
         esc(item.label) +
         " " +
         esc(item.display) +
@@ -189,9 +216,9 @@
       '<div class="contact-panel-head">' +
       '<p class="contact-kicker" id="' +
       titleId +
-      '">Get in touch</p>' +
+      '">' + ui.touch + "</p>" +
       (withClose
-        ? '<button type="button" class="contact-close" data-contact-close>Close</button>'
+        ? '<button type="button" class="contact-close" data-contact-close>' + ui.close + "</button>"
         : "") +
       "</div>" +
       channels
@@ -286,7 +313,7 @@
 
   function showCopied(button) {
     var label = button.getAttribute("data-copy-label") || button.textContent;
-    var copied = button.getAttribute("data-copied-label") || "Copied ✓";
+    var copied = button.getAttribute("data-copied-label") || ui.copied;
     button.textContent = copied;
     button.classList.add("is-copied");
     var previous = copyTimers.get(button);
@@ -306,7 +333,7 @@
       return;
     }
     showCopied(button);
-    live("Copied " + value);
+    live(ui.copied + " " + value);
     if (value === config.wechat.copyValue) track("contact_wechat_copy");
   }
 

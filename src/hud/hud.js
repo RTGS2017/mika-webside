@@ -22,6 +22,48 @@
     }
   }
 
+  var ZH_SYSTEM = {
+    visibility: "可见性",
+    framework: "核心框架",
+    "audit-engine": "深度审计",
+    "health-growth": "健康与增长",
+    blueprint: "优化蓝图",
+    "seo-growth": "搜索机会",
+    geo: "答案可见性",
+    questions: "问题覆盖",
+    entity: "实体与证据",
+    multilingual: "多语言",
+    methodology: "方法",
+    faq: "常见问题",
+    cta: "行动"
+  };
+
+  var ZH_STATUS = {
+    online: "在线",
+    ready: "就绪",
+    scanning: "分析中",
+    opportunity: "已发现机会",
+    active: "进行中",
+    verified: "已验证",
+    warn: "注意"
+  };
+
+  function isZh() {
+    var lang = (global.document.documentElement.lang || "").toLowerCase();
+    return lang.indexOf("zh") === 0;
+  }
+
+  function systemLabel(el) {
+    var raw = el.getAttribute("data-system") || "system";
+    if (isZh()) return "系统 / " + (ZH_SYSTEM[raw] || raw);
+    return "SYSTEM / " + raw;
+  }
+
+  function statusLabel(status) {
+    if (isZh()) return "状态：" + (ZH_STATUS[status] || status);
+    return "STATUS: " + status;
+  }
+
   function ensureChrome(el) {
     if (!el || el.getAttribute("data-hud-ready") === "1") return;
     el.setAttribute("data-hud-ready", "1");
@@ -44,13 +86,12 @@
       var bar = global.document.createElement("div");
       bar.className = "mika-hud-bar";
       bar.setAttribute("aria-hidden", "true");
-      var system = el.getAttribute("data-system") || "SYSTEM";
       var status = el.getAttribute("data-status") || "ready";
       bar.innerHTML =
         '<span class="mika-hud-system">' +
-        system +
+        systemLabel(el) +
         '</span><span class="mika-hud-status">' +
-        status +
+        statusLabel(status) +
         "</span>";
       el.insertBefore(bar, el.firstChild);
     }
@@ -60,7 +101,7 @@
     if (!el) return;
     el.setAttribute("data-status", status);
     var label = qs(el, ".mika-hud-status");
-    if (label) label.textContent = status;
+    if (label) label.textContent = statusLabel(status);
     if (status === "active") el.classList.add("is-active");
     else el.classList.remove("is-active");
   }
@@ -87,15 +128,19 @@
   }
 
   var SECTION_MAP = [
-    { id: "hero", key: "visibility" },
+    { id: "hero", key: "hero" },
+    { id: "problem", key: "problem" },
     { id: "framework", key: "framework" },
     { id: "audit", key: "audit" },
-    { id: "health-growth", key: "growth" },
-    { id: "seo-growth", key: "growth" },
+    { id: "health-growth", key: "health-growth" },
+    { id: "blueprint", key: "blueprint" },
+    { id: "seo-growth", key: "seo-growth" },
     { id: "geo", key: "geo" },
     { id: "questions", key: "questions" },
-    { id: "entity", key: "evidence" },
-    { id: "blueprint", key: "blueprint" },
+    { id: "entity", key: "entity" },
+    { id: "multilingual", key: "multilingual" },
+    { id: "faq", key: "faq" },
+    { id: "cta", key: "cta" }
   ];
 
   function initRail(root) {
@@ -114,11 +159,11 @@
     }
 
     if (typeof IntersectionObserver === "undefined") {
-      setCurrent("visibility");
+      setCurrent("hero");
       return;
     }
 
-    var best = { key: "visibility", ratio: 0 };
+    var best = { key: "hero", ratio: 0 };
     var io = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {

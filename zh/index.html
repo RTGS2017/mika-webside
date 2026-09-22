@@ -217,18 +217,25 @@
   <link rel="stylesheet" href="../src/sections/home.css">
   <link rel="stylesheet" href="../src/motion/motion.css">
   <link rel="stylesheet" href="../src/animations/home.css">
+  <link rel="stylesheet" href="../src/visibility/tree.css">
+  <link rel="stylesheet" href="../src/scroll/chapters.css">
 </head>
 <body>
 <div class="hv2-root">
-  <nav class="mika-rail" aria-label="Command sections">
-    <a href="#hero" data-rail="visibility">01 Visibility</a>
-    <a href="#framework" data-rail="framework">02 Framework</a>
-    <a href="#audit" data-rail="audit">03 Audit</a>
-    <a href="#health-growth" data-rail="growth">04 Growth</a>
-    <a href="#geo" data-rail="geo">05 GEO</a>
-    <a href="#questions" data-rail="questions">06 Questions</a>
-    <a href="#entity" data-rail="evidence">07 Evidence</a>
-    <a href="#blueprint" data-rail="blueprint">08 Blueprint</a>
+  <nav class="mika-rail" aria-label="章节">
+    <a href="#hero" data-rail="hero"><span class="mika-rail-no">01</span><span class="mika-rail-name">可见性</span></a>
+    <a href="#problem" data-rail="problem"><span class="mika-rail-no">02</span><span class="mika-rail-name">为什么需要</span></a>
+    <a href="#framework" data-rail="framework"><span class="mika-rail-no">03</span><span class="mika-rail-name">核心框架</span></a>
+    <a href="#audit" data-rail="audit"><span class="mika-rail-no">04</span><span class="mika-rail-name">深度审计</span></a>
+    <a href="#health-growth" data-rail="health-growth"><span class="mika-rail-no">05</span><span class="mika-rail-name">健康与增长</span></a>
+    <a href="#blueprint" data-rail="blueprint"><span class="mika-rail-no">06</span><span class="mika-rail-name">优化蓝图</span></a>
+    <a href="#seo-growth" data-rail="seo-growth"><span class="mika-rail-no">07</span><span class="mika-rail-name">搜索机会</span></a>
+    <a href="#geo" data-rail="geo"><span class="mika-rail-no">08</span><span class="mika-rail-name">答案可见性</span></a>
+    <a href="#questions" data-rail="questions"><span class="mika-rail-no">09</span><span class="mika-rail-name">问题覆盖</span></a>
+    <a href="#entity" data-rail="entity"><span class="mika-rail-no">10</span><span class="mika-rail-name">实体与证据</span></a>
+    <a href="#multilingual" data-rail="multilingual"><span class="mika-rail-no">11</span><span class="mika-rail-name">多语言</span></a>
+    <a href="#faq" data-rail="faq"><span class="mika-rail-no">12</span><span class="mika-rail-name">常见问题</span></a>
+    <a href="#cta" data-rail="cta"><span class="mika-rail-no">13</span><span class="mika-rail-name">联系</span></a>
   </nav>
 
   <a class="hv2-skip" href="#main">跳到正文</a>
@@ -268,6 +275,7 @@
 
   <main id="main" class="hv2-main">
     <section class="hv2-section hv2-hero mika-hud" data-system="visibility" data-status="online" data-motion-build id="hero" data-motion="visibility-field" aria-labelledby="hero-title">
+      <div class="vit-stage" data-visibility-tree data-lang="zh"></div>
       <div class="hv2-wrap hv2-hero-grid">
         <div>
           <p class="hv2-eyebrow">搜索与 AI 可见性平台</p>
@@ -276,67 +284,12 @@
           <p class="hv2-hero-support">没有黑盒分数，也没有一套打遍天下的清单。先读懂你的网站，找出缺口，再落到下一步动作。</p>
           <div class="hv2-hero-cta">
             <a class="hv2-btn hv2-btn-primary" href="#cta">开始结构化审计</a>
-            <a class="hv2-btn hv2-btn-ghost" href="#health-growth">看 Health 与 Growth</a>
+            <a class="hv2-btn hv2-btn-ghost" href="#health-growth">看健康度与增长</a>
             <div id="contact-popover-hero" class="contact-popover contact-popover-hero" hidden></div>
           </div>
           <p class="hv2-note">本页示例数据仅供说明。Mika 不预测排名，也不保证在任何答案展示位中出现。</p>
         </div>
-        <div class="hv2-hero-visual">
-          <div class="hv2-vf-stage" aria-hidden="true">
-            <svg class="hv2-vf" viewBox="0 0 640 400" role="img" aria-label="可见性场域：搜索与问题汇聚到网站">
-              <defs>
-                <pattern id="vf-grid-zh" width="32" height="32" patternUnits="userSpaceOnUse">
-                  <path d="M32 0H0V32" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-                </pattern>
-              </defs>
-              <rect width="640" height="400" fill="url(#vf-grid-zh)"/>
-              <path class="mm-flow-path is-seo" d="M72 88 C140 88, 170 140, 220 160 S300 190, 320 200" fill="none" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
-              <path class="mm-flow-path is-seo mm-desktop-only" d="M72 120 C150 120, 190 170, 250 185 S300 198, 320 200" fill="none" stroke="#38BDF8" stroke-width="1.2" stroke-opacity="0.45" data-mobile-skip/>
-              <path class="mm-flow-path is-geo" d="M568 88 C500 88, 470 140, 420 160 S340 190, 320 200" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round"/>
-              <path class="mm-flow-path is-geo mm-desktop-only" d="M568 120 C490 120, 450 170, 390 185 S340 198, 320 200" fill="none" stroke="#8B5CF6" stroke-width="1.2" stroke-opacity="0.45" data-mobile-skip/>
-              <path class="mm-flow-path is-hub" d="M320 210 C320 250, 320 280, 320 312" fill="none" stroke="#22D3EE" stroke-width="2" stroke-linecap="round"/>
-              <g class="mm-node" font-family="IBM Plex Mono, monospace" font-size="11" fill="#38BDF8">
-                <text x="40" y="84">Query</text>
-                <text x="150" y="124">Page</text>
-                <text x="210" y="168">Structure</text>
-                <text x="240" y="198">Search Visibility</text>
-              </g>
-              <g class="mm-node" font-family="IBM Plex Mono, monospace" font-size="11" fill="#8B5CF6" text-anchor="end">
-                <text x="600" y="84">Question</text>
-                <text x="490" y="124">Entity</text>
-                <text x="430" y="168">Evidence</text>
-                <text x="400" y="198">Answer</text>
-              </g>
-              <g class="mm-node mm-hub">
-                <rect x="276" y="188" width="88" height="28" rx="8" fill="#101A2C" stroke="rgba(255,255,255,0.2)"/>
-                <text x="320" y="206" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="12" font-weight="600" fill="#F8FAFC">Website</text>
-              </g>
-              <g class="mm-node">
-                <rect x="258" y="300" width="124" height="28" rx="8" fill="#38BDF8"/>
-                <text x="320" y="318" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="12" font-weight="600" fill="#fff">Visibility</text>
-              </g>
-            </svg>
-          </div>
-          <div class="hv2-hero-dash" data-anim="hero-dashboard" aria-label="四项彼此独立的能力">
-            <article class="hv2-chip" data-id="seoHealth">
-              <p class="hv2-chip-label">SEO Health</p>
-              <p class="hv2-chip-hint">可抓取、可收录、结构可靠</p>
-            </article>
-            <article class="hv2-chip" data-id="seoGrowth">
-              <p class="hv2-chip-label">SEO Growth</p>
-              <p class="hv2-chip-hint">主题、意图与市场仍有空间</p>
-            </article>
-            <article class="hv2-chip" data-id="geoHealth">
-              <p class="hv2-chip-label">GEO Health</p>
-              <p class="hv2-chip-hint">实体清晰、答案直接、证据可查</p>
-            </article>
-            <article class="hv2-chip" data-id="geoGrowth">
-              <p class="hv2-chip-label">GEO Growth</p>
-              <p class="hv2-chip-hint">未覆盖问题与引用空间</p>
-            </article>
-          </div>
         </div>
-      </div>
     </section>
 
     <section class="hv2-section hv2-problem mika-hud" data-system="visibility" data-status="ready" data-motion-build id="problem" aria-labelledby="problem-title">
@@ -348,7 +301,7 @@
         </header>
         <div class="hv2-problem-grid">
           <article class="hv2-panel hv2-problem-col is-healthy">
-            <h3 class="hv2-h3">健康（Healthy）</h3>
+            <h3 class="hv2-h3">健康</h3>
             <p class="hv2-problem-body">页面能被抓取，标题与结构说得通，站点不会用意外 noindex 或断裂架构跟自己作对。</p>
             <ul class="hv2-list">
               <li>抓取与收录路径是明确、可解释的</li>
@@ -357,7 +310,7 @@
             </ul>
           </article>
           <article class="hv2-panel hv2-problem-col is-growing">
-            <h3 class="hv2-h3">增长（Growing）</h3>
+            <h3 class="hv2-h3">增长</h3>
             <p class="hv2-problem-body">站点覆盖了买家真实会搜的主题、商业意图与市场，并且有足够深度去回答问题，而不只是提一句。</p>
             <ul class="hv2-list">
               <li>主题与意图覆盖会持续扩展</li>
@@ -366,7 +319,7 @@
             </ul>
           </article>
         </div>
-        <p class="hv2-conclusion" data-motion-neq><span class="mm-neq-mark">Health ≠ Growth</span> Health 告诉你哪些在正常工作。Growth 指出还缺什么。</p>
+        <p class="hv2-conclusion" data-motion-neq><span class="mm-neq-mark">健康 ≠ 增长</span> 健康度告诉你哪些在正常工作。增长指出还缺什么。</p>
       </div>
     </section>
 
@@ -375,7 +328,7 @@
         <header class="hv2-section-head">
           <p class="hv2-kicker">SEO + GEO 框架</p>
           <h2 class="hv2-h2" id="framework-title">一个网站，四项彼此独立的能力。</h2>
-          <p class="hv2-lede">SEO 与 GEO 分轨；Health 与 Growth 分尺。没有把它们揉成一个 Overall Score。</p>
+          <p class="hv2-lede">SEO 与 GEO 分轨；健康度与增长分尺。没有把它们揉成一个总分。</p>
         </header>
         <div class="hv2-fw-map" role="group" aria-label="SEO 与 GEO 能力地图">
           <div class="hv2-fw-corner" aria-hidden="true"></div>
@@ -384,45 +337,45 @@
           <div class="hv2-fw-rowhead">现在</div>
           <article class="hv2-panel hv2-fw-cell is-seo">
             <p class="hv2-fw-axis">现在 · 搜索</p>
-            <h3 class="hv2-h3">SEO Health</h3>
+            <h3 class="hv2-h3">SEO 健康度</h3>
             <p class="hv2-fw-body">线上站点在技术上是否已准备好被搜索发现并理解？</p>
             <div class="hv2-tags">
-              <span class="hv2-tag is-seo">Technical（技术）</span>
-              <span class="hv2-tag is-seo">Structure（结构）</span>
-              <span class="hv2-tag is-seo">Content（内容）</span>
+              <span class="hv2-tag is-seo">技术</span>
+              <span class="hv2-tag is-seo">结构</span>
+              <span class="hv2-tag is-seo">内容</span>
             </div>
           </article>
           <article class="hv2-panel hv2-fw-cell is-geo">
             <p class="hv2-fw-axis">现在 · 答案</p>
-            <h3 class="hv2-h3">GEO Health</h3>
+            <h3 class="hv2-h3">GEO 健康度</h3>
             <p class="hv2-fw-body">人们能否从网站本身找到关于你业务的清晰、可支撑答案？</p>
             <div class="hv2-tags">
-              <span class="hv2-tag is-geo">Understanding（理解）</span>
-              <span class="hv2-tag is-geo">Evidence（证据）</span>
-              <span class="hv2-tag is-geo">Answers（答案）</span>
+              <span class="hv2-tag is-geo">理解</span>
+              <span class="hv2-tag is-geo">证据</span>
+              <span class="hv2-tag is-geo">答案</span>
             </div>
           </article>
           <div class="hv2-fw-rowhead">下一步</div>
           <article class="hv2-panel hv2-fw-cell is-seo" data-growth>
             <p class="hv2-fw-axis">下一步 · 搜索</p>
-            <h3 class="hv2-h3">SEO Growth</h3>
+            <h3 class="hv2-h3">SEO 增长</h3>
             <p class="hv2-fw-body">还有哪些覆盖、意图深度与市场尚未占据？</p>
             <div class="hv2-tags">
-              <span class="hv2-tag is-seo">Coverage（覆盖）</span>
-              <span class="hv2-tag is-seo">Intent（意图）</span>
-              <span class="hv2-tag is-seo">Depth（深度）</span>
-              <span class="hv2-tag is-seo">Markets（市场）</span>
+              <span class="hv2-tag is-seo">覆盖</span>
+              <span class="hv2-tag is-seo">意图</span>
+              <span class="hv2-tag is-seo">深度</span>
+              <span class="hv2-tag is-seo">市场</span>
             </div>
           </article>
           <article class="hv2-panel hv2-fw-cell is-geo" data-growth>
             <p class="hv2-fw-axis">下一步 · 答案</p>
-            <h3 class="hv2-h3">GEO Growth</h3>
+            <h3 class="hv2-h3">GEO 增长</h3>
             <p class="hv2-fw-body">答案覆盖、引用与扩展还有哪些提升空间？</p>
             <div class="hv2-tags">
-              <span class="hv2-tag is-geo">Query gaps（查询缺口）</span>
-              <span class="hv2-tag is-geo">Answer gaps（答案缺口）</span>
-              <span class="hv2-tag is-geo">Citation（引用）</span>
-              <span class="hv2-tag is-geo">Expansion（扩展）</span>
+              <span class="hv2-tag is-geo">查询缺口</span>
+              <span class="hv2-tag is-geo">答案缺口</span>
+              <span class="hv2-tag is-geo">引用</span>
+              <span class="hv2-tag is-geo">扩展</span>
             </div>
           </article>
         </div>
@@ -433,65 +386,65 @@
       <div class="hv2-wrap">
         <header class="hv2-section-head">
           <p class="hv2-kicker">深度审计</p>
-          <h2 class="hv2-h2" id="audit-title">Deep Audit 把网站当系统看——不是一个分数。</h2>
-          <p class="hv2-lede">扫描会走过页面、结构、主题、实体、问题与证据，然后才写 Blueprint。</p>
+          <h2 class="hv2-h2" id="audit-title">深度审计 把网站当系统看——不是一个分数。</h2>
+          <p class="hv2-lede">扫描会走过页面、结构、主题、实体、问题与证据，然后才写优化蓝图。</p>
         </header>
         <div class="hv2-audit-stats">
           <div class="hv2-stat" data-engine="pages">
-            <p class="hv2-stat-label">Crawling</p>
+            <p class="hv2-stat-label">抓取</p>
             <p class="hv2-stat-value"><span data-count="128">128</span></p>
-            <span class="hv2-stat-unit">pages</span>
+            <span class="hv2-stat-unit">页面</span>
           </div>
           <div class="hv2-stat" data-engine="links">
-            <p class="hv2-stat-label">Architecture</p>
+            <p class="hv2-stat-label">架构</p>
             <p class="hv2-stat-value"><span data-count="386">386</span></p>
-            <span class="hv2-stat-unit">internal links</span>
+            <span class="hv2-stat-unit">内链</span>
           </div>
           <div class="hv2-stat" data-engine="topics">
-            <p class="hv2-stat-label">Content</p>
+            <p class="hv2-stat-label">内容</p>
             <p class="hv2-stat-value"><span data-count="72">72</span></p>
-            <span class="hv2-stat-unit">topics</span>
+            <span class="hv2-stat-unit">主题</span>
           </div>
           <div class="hv2-stat">
-            <p class="hv2-stat-label">Search intent</p>
+            <p class="hv2-stat-label">搜索意图</p>
             <p class="hv2-stat-value"><span data-count="54">54</span></p>
-            <span class="hv2-stat-unit">commercial intents</span>
+            <span class="hv2-stat-unit">商业意图</span>
           </div>
           <div class="hv2-stat" data-engine="entities">
-            <p class="hv2-stat-label">Entities</p>
+            <p class="hv2-stat-label">实体</p>
             <p class="hv2-stat-value"><span data-count="34">34</span></p>
-            <span class="hv2-stat-unit">entities</span>
+            <span class="hv2-stat-unit">实体</span>
           </div>
           <div class="hv2-stat" data-engine="questions">
-            <p class="hv2-stat-label">Questions</p>
+            <p class="hv2-stat-label">问题</p>
             <p class="hv2-stat-value"><span data-count="216">216</span></p>
-            <span class="hv2-stat-unit">buyer questions</span>
+            <span class="hv2-stat-unit">买家问题</span>
           </div>
           <div class="hv2-stat" data-engine="evidence">
-            <p class="hv2-stat-label">Evidence</p>
+            <p class="hv2-stat-label">证据</p>
             <p class="hv2-stat-value"><span data-count="47">47</span></p>
-            <span class="hv2-stat-unit">evidence items</span>
+            <span class="hv2-stat-unit">条证据</span>
           </div>
           <div class="hv2-stat">
-            <p class="hv2-stat-label">Languages</p>
+            <p class="hv2-stat-label">语言</p>
             <p class="hv2-stat-value"><span data-count="6">6</span></p>
-            <span class="hv2-stat-unit">languages</span>
+            <span class="hv2-stat-unit">种语言</span>
           </div>
           <div class="hv2-stat">
-            <p class="hv2-stat-label">Images</p>
+            <p class="hv2-stat-label">图片</p>
             <p class="hv2-stat-value"><span data-count="189">189</span></p>
-            <span class="hv2-stat-unit">images</span>
+            <span class="hv2-stat-unit">张图片</span>
           </div>
         </div>
         <div class="hv2-audit-steps mm-audit-pipe" aria-label="审计步骤">
           <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">1</span>URL</div>
-          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">2</span>Links</div>
-          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">3</span>Topics</div>
-          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">4</span>Entities</div>
-          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">5</span>Questions</div>
-          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">6</span>Evidence</div>
-          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">7</span>Gaps</div>
-          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">8</span>Blueprint</div>
+          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">2</span>链接</div>
+          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">3</span>主题</div>
+          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">4</span>实体</div>
+          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">5</span>问题</div>
+          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">6</span>证据</div>
+          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">7</span>缺口</div>
+          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">8</span>优化蓝图</div>
         </div>
         <p class="hv2-note">仪表盘数字为示例。真实扫描会报告你站点的现场数据。</p>
       </div>
@@ -500,73 +453,73 @@
     <section class="hv2-section hv2-health-growth mika-hud" data-system="health-growth" data-status="ready" data-motion-build id="health-growth" data-anim="health-growth" aria-labelledby="health-growth-title">
       <div class="hv2-wrap">
         <header class="hv2-section-head">
-          <p class="hv2-kicker">Health vs Growth</p>
+          <p class="hv2-kicker">健康与增长</p>
           <h2 class="hv2-h2" id="health-growth-title">两个分数，两件事，永不混算。</h2>
-          <p class="hv2-lede">用 Health 稳住基础；用 Growth 看清还有哪些需求未被回答。</p>
+          <p class="hv2-lede">用健康度稳住基础；用增长看清还有哪些需求未被回答。</p>
         </header>
         <div class="hv2-hg-grid">
           <article class="hv2-panel hv2-hg-panel is-health">
-            <p class="hv2-hg-kicker">SEO HEALTH</p>
+            <p class="hv2-hg-kicker">SEO 健康度</p>
             <h3 class="hv2-h3">站点现在站在哪里</h3>
             <div class="hv2-hg-score">
               <div class="hv2-hg-ring" data-scan-ring="92" aria-hidden="true"></div>
               <div>
                 <span class="hv2-hg-score-num"><span data-count="92">92</span></span>
-                <span class="hv2-hg-score-label">SEO Health</span>
+                <span class="hv2-hg-score-label">SEO 健康度</span>
               </div>
             </div>
             <div class="hv2-bars">
               <div class="hv2-bar-row"><div>
-                <div class="hv2-bar-meta"><span>Crawlability</span><span><span data-count="98">98</span></span></div>
+                <div class="hv2-bar-meta"><span>可抓取性</span><span><span data-count="98">98</span></span></div>
                 <div class="hv2-bar-track"><span class="hv2-bar-fill" data-bar="98" style="width:98%"></span></div>
               </div></div>
               <div class="hv2-bar-row"><div>
-                <div class="hv2-bar-meta"><span>On-page</span><span><span data-count="94">94</span></span></div>
+                <div class="hv2-bar-meta"><span>页面基础</span><span><span data-count="94">94</span></span></div>
                 <div class="hv2-bar-track"><span class="hv2-bar-fill" data-bar="94" style="width:94%"></span></div>
               </div></div>
               <div class="hv2-bar-row"><div>
-                <div class="hv2-bar-meta"><span>Architecture</span><span><span data-count="91">91</span></span></div>
+                <div class="hv2-bar-meta"><span>架构</span><span><span data-count="91">91</span></span></div>
                 <div class="hv2-bar-track"><span class="hv2-bar-fill" data-bar="91" style="width:91%"></span></div>
               </div></div>
               <div class="hv2-bar-row"><div>
-                <div class="hv2-bar-meta"><span>Content</span><span><span data-count="86">86</span></span></div>
+                <div class="hv2-bar-meta"><span>内容</span><span><span data-count="86">86</span></span></div>
                 <div class="hv2-bar-track"><span class="hv2-bar-fill" data-bar="86" style="width:86%"></span></div>
               </div></div>
               <div class="hv2-bar-row"><div>
-                <div class="hv2-bar-meta"><span>Internal links</span><span><span data-count="93">93</span></span></div>
+                <div class="hv2-bar-meta"><span>内链</span><span><span data-count="93">93</span></span></div>
                 <div class="hv2-bar-track"><span class="hv2-bar-fill" data-bar="93" style="width:93%"></span></div>
               </div></div>
             </div>
           </article>
           <article class="hv2-panel hv2-hg-panel is-growth">
-            <p class="hv2-hg-kicker">SEO GROWTH</p>
+            <p class="hv2-hg-kicker">SEO 增长</p>
             <h3 class="hv2-h3">还缺什么</h3>
             <div class="hv2-hg-score">
               <div class="hv2-hg-ring" data-scan-ring="71" aria-hidden="true"></div>
               <div>
                 <span class="hv2-hg-score-num"><span data-count="71">71</span></span>
-                <span class="hv2-hg-score-label">SEO Growth</span>
+                <span class="hv2-hg-score-label">SEO 增长</span>
               </div>
             </div>
             <div class="hv2-bars">
               <div class="hv2-bar-row"><div>
-                <div class="hv2-bar-meta"><span>Topic</span><span><span data-count="62">62</span>%</span></div>
+                <div class="hv2-bar-meta"><span>主题</span><span><span data-count="62">62</span>%</span></div>
                 <div class="hv2-bar-track"><span class="hv2-bar-fill" data-bar="62" style="width:62%"></span></div>
               </div></div>
               <div class="hv2-bar-row"><div>
-                <div class="hv2-bar-meta"><span>Intent</span><span><span data-count="54">54</span>%</span></div>
+                <div class="hv2-bar-meta"><span>意图</span><span><span data-count="54">54</span>%</span></div>
                 <div class="hv2-bar-track"><span class="hv2-bar-fill" data-bar="54" style="width:54%"></span></div>
               </div></div>
               <div class="hv2-bar-row"><div>
-                <div class="hv2-bar-meta"><span>Commercial</span><span><span data-count="48">48</span>%</span></div>
+                <div class="hv2-bar-meta"><span>商业意图</span><span><span data-count="48">48</span>%</span></div>
                 <div class="hv2-bar-track"><span class="hv2-bar-fill" data-bar="48" style="width:48%"></span></div>
               </div></div>
               <div class="hv2-bar-row"><div>
-                <div class="hv2-bar-meta"><span>Market</span><span><span data-count="31">31</span>%</span></div>
+                <div class="hv2-bar-meta"><span>市场</span><span><span data-count="31">31</span>%</span></div>
                 <div class="hv2-bar-track"><span class="hv2-bar-fill" data-bar="31" style="width:31%"></span></div>
               </div></div>
               <div class="hv2-bar-row"><div>
-                <div class="hv2-bar-meta"><span>Topical depth</span><span><span data-count="57">57</span>%</span></div>
+                <div class="hv2-bar-meta"><span>主题深度</span><span><span data-count="57">57</span>%</span></div>
                 <div class="hv2-bar-track"><span class="hv2-bar-fill" data-bar="57" style="width:57%"></span></div>
               </div></div>
             </div>
@@ -579,24 +532,24 @@
     <section class="hv2-section hv2-blueprint mika-hud" data-system="blueprint" data-status="ready" data-motion-build id="blueprint" data-anim="blueprint" aria-labelledby="blueprint-title">
       <div class="hv2-wrap">
         <header class="hv2-section-head">
-          <p class="hv2-kicker">Audit → Diagnosis → Blueprint</p>
+          <p class="hv2-kicker">审计 → 诊断 → 优化蓝图</p>
           <h2 class="hv2-h2" id="blueprint-title">不要停在发现问题上。把下一步动作交出来。</h2>
-          <p class="hv2-lede">扫描产出事实；诊断把问题归组；Blueprint 把归组变成带优先级与验收的工作。</p>
+          <p class="hv2-lede">扫描产出事实；诊断把问题归组；优化蓝图把归组变成带优先级与验收的工作。</p>
         </header>
         <div class="hv2-bp-flow">
           <article class="hv2-panel hv2-bp-stage" data-phase="audit" data-pipe="done">
             <p class="hv2-bp-step">01</p>
-            <h3 class="hv2-h3">Audit（审计）</h3>
+            <h3 class="hv2-h3">审计</h3>
             <p class="hv2-bp-body">收集抓取、结构、内容、实体、问题与证据事实，并附带样例 URL。</p>
           </article>
           <article class="hv2-panel hv2-bp-stage" data-phase="diagnosis" data-pipe="current">
             <p class="hv2-bp-step">02</p>
-            <h3 class="hv2-h3">Diagnosis（诊断）</h3>
+            <h3 class="hv2-h3">诊断</h3>
             <p class="hv2-bp-body">按规则与严重级别归组，让故事可执行——而不是一个感觉分。</p>
           </article>
           <article class="hv2-panel hv2-bp-stage" data-phase="blueprint" data-pipe="future">
             <p class="hv2-bp-step">03</p>
-            <h3 class="hv2-h3">Blueprint（蓝图）</h3>
+            <h3 class="hv2-h3">优化蓝图</h3>
             <p class="hv2-bp-body">把问题组落成页面级动作：优先级、改什么、如何用复审验收。</p>
           </article>
         </div>
@@ -606,78 +559,78 @@
           <span class="mm-bp-issue">证据链接偏弱</span>
         </div>
         <p class="mm-bp-root">根因：产品页在写功能，而不是回答买家决策问题。</p>
-        <article class="hv2-panel hv2-action mm-bp-action" aria-label="示例 Blueprint 动作">
+        <article class="hv2-panel hv2-action mm-bp-action" aria-label="示例优化蓝图动作">
           <div class="hv2-action-top">
-            <p class="hv2-action-code">ACTION P023</p>
+            <p class="hv2-action-code">动作 P023</p>
             <p class="hv2-action-path">/products/example/</p>
           </div>
-          <h3 class="hv2-h3">Expand product page</h3>
+          <h3 class="hv2-h3">扩展产品页</h3>
           <ul class="hv2-action-changes">
-            <li>Add product definition</li>
-            <li>Add use case</li>
-            <li>Add specifications</li>
-            <li>Add evidence</li>
-            <li>Add FAQ</li>
+            <li>补充产品定义</li>
+            <li>补充使用场景</li>
+            <li>补充规格</li>
+            <li>补充证据</li>
+            <li>补充常见问题</li>
           </ul>
           <div class="hv2-action-meta">
-            <span>Priority <strong>P1</strong></span>
-            <span>Validation <strong>re-audit</strong></span>
+            <span>优先级 <strong>P1</strong></span>
+            <span>验收 <strong>复审</strong></span>
           </div>
         </article>
-        <p class="hv2-note">Blueprint 是指导，不会自动改站或自动发布。</p>
+        <p class="hv2-note">优化蓝图是指导，不会自动改站或自动发布。</p>
       </div>
     </section>
 
     <section class="hv2-section hv2-seo-growth mika-hud" data-system="seo-growth" data-status="opportunity" data-motion-build id="seo-growth" data-anim="coverage" aria-labelledby="seo-growth-title">
       <div class="hv2-wrap">
         <header class="hv2-section-head">
-          <p class="hv2-kicker">SEO Growth</p>
+          <p class="hv2-kicker">SEO 增长</p>
           <h2 class="hv2-h2" id="seo-growth-title">找出你的网站还没有覆盖的真实搜索需求。</h2>
           <p class="hv2-lede">增长看的是真实需求覆盖——主题、商业意图、市场与深度——不是你已经发了多少页。</p>
         </header>
         <div class="mika-opp-map" aria-hidden="true">
-          <div class="mika-opp-hub">Website</div>
+          <div class="mika-opp-hub">网站</div>
           <div class="mika-opp-nodes">
-            <span class="mika-opp-node" data-expand>Topic gap</span>
-            <span class="mika-opp-node" data-expand>Commercial gap</span>
-            <span class="mika-opp-node" data-expand>Market gap</span>
-            <span class="mika-opp-node" data-expand>Depth gap</span>
+            <span class="mika-opp-node" data-expand>主题缺口</span>
+            <span class="mika-opp-node" data-expand>商业缺口</span>
+            <span class="mika-opp-node" data-expand>市场缺口</span>
+            <span class="mika-opp-node" data-expand>深度缺口</span>
           </div>
         </div>
         <div class="hv2-panel hv2-coverage">
           <div class="hv2-cov-row">
-            <div class="hv2-cov-meta"><span>Topic</span><span><span data-count="72">72</span>%</span></div>
+            <div class="hv2-cov-meta"><span>主题</span><span><span data-count="72">72</span>%</span></div>
             <div class="hv2-cov-track"><span class="hv2-cov-fill" data-bar="72" style="width:72%"></span></div>
           </div>
           <div class="hv2-cov-row">
-            <div class="hv2-cov-meta"><span>Commercial</span><span><span data-count="51">51</span>%</span></div>
+            <div class="hv2-cov-meta"><span>商业意图</span><span><span data-count="51">51</span>%</span></div>
             <div class="hv2-cov-track"><span class="hv2-cov-fill" data-bar="51" style="width:51%"></span></div>
           </div>
           <div class="hv2-cov-row">
-            <div class="hv2-cov-meta"><span>Market</span><span><span data-count="34">34</span>%</span></div>
+            <div class="hv2-cov-meta"><span>市场</span><span><span data-count="34">34</span>%</span></div>
             <div class="hv2-cov-track"><span class="hv2-cov-fill" data-bar="34" style="width:34%"></span></div>
           </div>
           <div class="hv2-cov-row">
-            <div class="hv2-cov-meta"><span>Content depth</span><span><span data-count="58">58</span>%</span></div>
+            <div class="hv2-cov-meta"><span>内容深度</span><span><span data-count="58">58</span>%</span></div>
             <div class="hv2-cov-track"><span class="hv2-cov-fill" data-bar="58" style="width:58%"></span></div>
           </div>
         </div>
         <div class="hv2-opps">
           <article class="hv2-panel hv2-panel-pad hv2-opp">
             <p class="hv2-opp-num"><span data-count="18">18</span></p>
-            <p class="hv2-opp-label">topic opportunities</p>
+            <p class="hv2-opp-label">主题机会</p>
           </article>
           <article class="hv2-panel hv2-panel-pad hv2-opp">
             <p class="hv2-opp-num"><span data-count="11">11</span></p>
-            <p class="hv2-opp-label">commercial intents</p>
+            <p class="hv2-opp-label">商业意图</p>
           </article>
           <article class="hv2-panel hv2-panel-pad hv2-opp">
             <p class="hv2-opp-num"><span data-count="7">7</span></p>
-            <p class="hv2-opp-label">market expansions</p>
+            <p class="hv2-opp-label">市场扩展</p>
           </article>
           <article class="hv2-panel hv2-panel-pad hv2-opp">
             <p class="hv2-opp-num"><span data-count="5">5</span></p>
-            <p class="hv2-opp-label">pages worth expanding</p>
+            <p class="hv2-opp-label">值得扩展的页面</p>
           </article>
         </div>
         <p class="hv2-note">我们不以「关键词数量」作为增长指标。</p>
@@ -692,12 +645,12 @@
           <p class="hv2-lede">现代搜索常常直接展示答案、摘要和来源链接。GEO 检查你的网站是否提供清晰实体、直接答案、证据，以及一致的上下文。</p>
         </header>
         <div class="mm-geo-chain" aria-label="GEO 答案路径">
-          <span class="mm-geo-step">Question</span><span class="mm-geo-arrow" aria-hidden="true">→</span>
-          <span class="mm-geo-step">Topic</span><span class="mm-geo-arrow" aria-hidden="true">→</span>
-          <span class="mm-geo-step">Intent</span><span class="mm-geo-arrow" aria-hidden="true">→</span>
-          <span class="mm-geo-step">Entity</span><span class="mm-geo-arrow" aria-hidden="true">→</span>
-          <span class="mm-geo-step">Evidence</span><span class="mm-geo-arrow" aria-hidden="true">→</span>
-          <span class="mm-geo-step">Direct Answer</span>
+          <span class="mm-geo-step">问题</span><span class="mm-geo-arrow" aria-hidden="true">→</span>
+          <span class="mm-geo-step">主题</span><span class="mm-geo-arrow" aria-hidden="true">→</span>
+          <span class="mm-geo-step">意图</span><span class="mm-geo-arrow" aria-hidden="true">→</span>
+          <span class="mm-geo-step">实体</span><span class="mm-geo-arrow" aria-hidden="true">→</span>
+          <span class="mm-geo-step">证据</span><span class="mm-geo-arrow" aria-hidden="true">→</span>
+          <span class="mm-geo-step">直接答案</span>
         </div>
         <div class="hv2-geo-grid">
           <p class="hv2-panel hv2-geo-modern">当有人搜索时，他们可能先看到简短答案、摘要和来源链接——而不只是一串蓝链。你的网站需要足够清楚，才能支撑这种展示。</p>
@@ -723,41 +676,41 @@
         </header>
         <div class="hv2-q-layout">
           <div class="hv2-panel hv2-panel-pad">
-            <h3 class="hv2-h3 hv2-q-cov-title">Question Coverage</h3>
-            <p class="hv2-q-analyzed"><strong><span data-count="216">216</span></strong> questions analyzed</p>
+            <h3 class="hv2-h3 hv2-q-cov-title">问题覆盖度</h3>
+            <p class="hv2-q-analyzed"><strong><span data-count="216">216</span></strong> 个问题已分析</p>
             <div class="hv2-q-breakdown">
               <div class="hv2-cov-row">
-                <div class="hv2-cov-meta"><span>Answered</span><span><span data-count="74">74</span>%</span></div>
+                <div class="hv2-cov-meta"><span>已回答</span><span><span data-count="74">74</span>%</span></div>
                 <div class="hv2-cov-track"><span class="hv2-cov-fill" data-bar="74" style="width:74%;background:var(--hv2-ok)"></span></div>
               </div>
               <div class="hv2-cov-row">
-                <div class="hv2-cov-meta"><span>Partial</span><span><span data-count="22">22</span>%</span></div>
+                <div class="hv2-cov-meta"><span>部分回答</span><span><span data-count="22">22</span>%</span></div>
                 <div class="hv2-cov-track"><span class="hv2-cov-fill" data-bar="22" style="width:22%;background:var(--hv2-warn)"></span></div>
               </div>
               <div class="hv2-cov-row">
-                <div class="hv2-cov-meta"><span>Uncovered</span><span><span data-count="4">4</span>%</span></div>
+                <div class="hv2-cov-meta"><span>未覆盖</span><span><span data-count="4">4</span>%</span></div>
                 <div class="hv2-cov-track"><span class="hv2-cov-fill" data-bar="4" style="width:4%;background:var(--hv2-struct)"></span></div>
               </div>
             </div>
             <div class="hv2-commercial">
-              <strong>Commercial</strong>
+              <strong>商业意图</strong>
               <div class="hv2-commercial-stats">
-                <div><strong><span data-count="41">41</span></strong>total</div>
-                <div><strong><span data-count="26">26</span></strong>covered</div>
-                <div><strong><span data-count="9">9</span></strong>partial</div>
-                <div><strong><span data-count="6">6</span></strong>missing</div>
+                <div><strong><span data-count="41">41</span></strong>总计</div>
+                <div><strong><span data-count="26">26</span></strong>已覆盖</div>
+                <div><strong><span data-count="9">9</span></strong>部分</div>
+                <div><strong><span data-count="6">6</span></strong>缺失</div>
               </div>
             </div>
           </div>
           <article class="hv2-panel hv2-match" data-anim="question-match">
             <div class="hv2-match-tags" aria-label="匹配标签">
-              <span class="hv2-tag is-geo mm-bridge" data-tag="intent">Intent</span>
-              <span class="hv2-tag is-geo mm-bridge" data-tag="page">Page</span>
-              <span class="hv2-tag is-geo mm-bridge" data-tag="answer">Answer</span>
-              <span class="hv2-tag is-geo" data-tag="commercial">commercial</span>
-              <span class="hv2-tag is-geo" data-tag="topic">topic</span>
-              <span class="hv2-tag is-geo" data-tag="product">product</span>
-              <span class="hv2-tag is-geo" data-tag="evidence">evidence</span>
+              <span class="hv2-tag is-geo mm-bridge" data-tag="intent">意图</span>
+              <span class="hv2-tag is-geo mm-bridge" data-tag="page">页面</span>
+              <span class="hv2-tag is-geo mm-bridge" data-tag="answer">答案</span>
+              <span class="hv2-tag is-geo" data-tag="commercial">商业</span>
+              <span class="hv2-tag is-geo" data-tag="topic">主题</span>
+              <span class="hv2-tag is-geo" data-tag="product">产品</span>
+              <span class="hv2-tag is-geo" data-tag="evidence">证据</span>
             </div>
             <p class="hv2-match-q">低层浇筑该选哪款产品？</p>
             <p class="hv2-match-action">在对应产品页增加直接答案区块：适用场景、约束条件，并链到规格说明。</p>
@@ -792,41 +745,41 @@
     <section class="hv2-section hv2-entity mika-hud" data-system="entity" data-status="ready" data-motion-build id="entity" aria-labelledby="entity-title">
       <div class="hv2-wrap">
         <header class="hv2-section-head">
-          <p class="hv2-kicker">Evidence · Entity · Citation</p>
+          <p class="hv2-kicker">证据 · 实体 · 引用</p>
           <h2 class="hv2-h2" id="entity-title">信息越清楚，越容易被信任、理解与引用。</h2>
           <p class="hv2-lede">人和现代搜索摘要都需要稳定的实体、直接答案，以及指向证据的主张。</p>
         </header>
         <div class="hv2-entity-grid">
           <div class="hv2-panel hv2-graph" data-anim="entity-graph">
-            <div class="hv2-node-root" data-node>Company</div>
+            <div class="hv2-node-root" data-node>公司</div>
             <ul class="hv2-node-children">
-              <li data-node>Products</li>
-              <li data-node>Applications</li>
-              <li data-node>Technical Information</li>
-              <li data-node>Documentation</li>
-              <li data-node>Evidence</li>
+              <li data-node>产品</li>
+              <li data-node>应用</li>
+              <li data-node>技术信息</li>
+              <li data-node>文档</li>
+              <li data-node>证据</li>
             </ul>
           </div>
           <div class="hv2-entity-metrics">
             <article class="hv2-panel hv2-entity-metric">
               <p class="hv2-entity-metric-num"><span data-count="94">94</span></p>
-              <p class="hv2-entity-metric-label">Entity clarity</p>
+              <p class="hv2-entity-metric-label">实体清晰度</p>
             </article>
             <article class="hv2-panel hv2-entity-metric">
               <p class="hv2-entity-metric-num"><span data-count="87">87</span></p>
-              <p class="hv2-entity-metric-label">Answerability</p>
+              <p class="hv2-entity-metric-label">可回答性</p>
             </article>
             <article class="hv2-panel hv2-entity-metric">
               <p class="hv2-entity-metric-num"><span data-count="71">71</span></p>
-              <p class="hv2-entity-metric-label">Evidence coverage</p>
+              <p class="hv2-entity-metric-label">证据覆盖度</p>
             </article>
             <article class="hv2-panel hv2-entity-metric">
               <p class="hv2-entity-metric-num"><span data-count="92">92</span></p>
-              <p class="hv2-entity-metric-label">Consistency</p>
+              <p class="hv2-entity-metric-label">一致性</p>
             </article>
             <article class="hv2-panel hv2-entity-metric">
               <p class="hv2-entity-metric-num"><span data-count="64">64</span></p>
-              <p class="hv2-entity-metric-label">Citation readiness</p>
+              <p class="hv2-entity-metric-label">引用准备度</p>
             </article>
           </div>
         </div>
@@ -850,16 +803,16 @@
           <div class="hv2-lang-col" data-lang>Deutsch</div>
         </div>
         <div class="hv2-fields">
-          <div class="hv2-field"><span>Company name</span><span class="hv2-status is-pass">pass</span></div>
-          <div class="hv2-field"><span>Product name</span><span class="hv2-status is-pass">pass</span></div>
-          <div class="hv2-field"><span>Specifications</span><span class="hv2-status is-pass">pass</span></div>
-          <div class="hv2-field"><span>Applications</span><span class="hv2-status is-pass">pass</span></div>
-          <div class="hv2-field"><span>Claims</span><span class="hv2-status is-watch">watch</span></div>
-          <div class="hv2-field"><span>Question coverage</span><span class="hv2-status is-watch">watch</span></div>
+          <div class="hv2-field"><span>公司名称</span><span class="hv2-status is-pass">通过</span></div>
+          <div class="hv2-field"><span>产品名称</span><span class="hv2-status is-pass">通过</span></div>
+          <div class="hv2-field"><span>规格</span><span class="hv2-status is-pass">通过</span></div>
+          <div class="hv2-field"><span>应用</span><span class="hv2-status is-pass">通过</span></div>
+          <div class="hv2-field"><span>主张</span><span class="hv2-status is-watch">待补</span></div>
+          <div class="hv2-field"><span>问题覆盖</span><span class="hv2-status is-watch">待补</span></div>
         </div>
         <div class="hv2-consistency">
           <span class="hv2-consistency-num"><span data-count="94">94</span>%</span>
-          <span class="hv2-consistency-label">Consistency</span>
+          <span class="hv2-consistency-label">一致性</span>
         </div>
       </div>
     </section>
@@ -873,17 +826,17 @@
         </header>
         <ol class="hv2-method-points">
           <li>扫描线上站点的抓取、结构、内容、实体、问题与证据。</li>
-          <li>保持 SEO Health、SEO Growth、GEO Health、GEO Growth 彼此独立。</li>
+          <li>保持 SEO 健康度、SEO 增长、GEO 健康度、GEO 增长 彼此独立。</li>
           <li>报告原因、样例 URL、机会与下一步动作——而不是神秘 KPI。</li>
           <li>改完之后用复审验证进展。</li>
         </ol>
         <div class="hv2-loop" data-anim="loop" aria-label="持续可见性闭环">
           <div class="mm-method-ring-track" aria-hidden="true"></div>
-          <div class="hv2-loop-step" data-loop-step="SCAN"><span class="hv2-loop-idx">01</span><span class="hv2-loop-label">SCAN</span></div>
-          <div class="hv2-loop-step" data-loop-step="DIAGNOSE"><span class="hv2-loop-idx">02</span><span class="hv2-loop-label">DIAGNOSE</span></div>
-          <div class="hv2-loop-step" data-loop-step="BLUEPRINT"><span class="hv2-loop-idx">03</span><span class="hv2-loop-label">BLUEPRINT</span></div>
-          <div class="hv2-loop-step" data-loop-step="OPTIMIZE"><span class="hv2-loop-idx">04</span><span class="hv2-loop-label">OPTIMIZE</span></div>
-          <div class="hv2-loop-step" data-loop-step="RE-AUDIT"><span class="hv2-loop-idx">05</span><span class="hv2-loop-label">RE-AUDIT</span></div>
+          <div class="hv2-loop-step" data-loop-step="SCAN"><span class="hv2-loop-idx">01</span><span class="hv2-loop-label">扫描</span></div>
+          <div class="hv2-loop-step" data-loop-step="DIAGNOSE"><span class="hv2-loop-idx">02</span><span class="hv2-loop-label">诊断</span></div>
+          <div class="hv2-loop-step" data-loop-step="BLUEPRINT"><span class="hv2-loop-idx">03</span><span class="hv2-loop-label">优化蓝图</span></div>
+          <div class="hv2-loop-step" data-loop-step="OPTIMIZE"><span class="hv2-loop-idx">04</span><span class="hv2-loop-label">优化</span></div>
+          <div class="hv2-loop-step" data-loop-step="RE-AUDIT"><span class="hv2-loop-idx">05</span><span class="hv2-loop-label">复审</span></div>
         </div>
       </div>
     </section>
@@ -900,7 +853,7 @@
             <summary><h3>什么是网站 SEO 审计？</h3><span class="hv2-faq-chevron" aria-hidden="true">+</span></summary>
             <div class="hv2-faq-body">
               <div><p class="hv2-faq-label">直接答案</p><p>网站 SEO 审计会检查搜索引擎能否顺利抓取、收录并理解你的页面。它关注技术基础、页面结构和内容信号，而不是预测未来排名。目标是看清哪些地方在正常工作，哪些地方在挡住可见性。</p></div>
-              <div><p class="hv2-faq-label">产品如何处理</p><p>Mika 会做结构化的 SEO Health 检查：可抓取性、架构、页面基础、内链及相关技术项。发现按规则分组，并附带样例 URL，而不是一个黑盒总分。</p></div>
+              <div><p class="hv2-faq-label">产品如何处理</p><p>Mika 会做结构化的 SEO 健康度 检查：可抓取性、架构、页面基础、内链及相关技术项。发现按规则分组，并附带样例 URL，而不是一个黑盒总分。</p></div>
               <div><p class="hv2-faq-label">下一步</p><p><a href="#cta">开始结构化审计</a></p></div>
             </div>
           </details>
@@ -908,7 +861,7 @@
             <summary><h3>为什么我的网站没有自然流量？</h3><span class="hv2-faq-chevron" aria-hidden="true">+</span></summary>
             <div class="hv2-faq-body">
               <div><p class="hv2-faq-label">直接答案</p><p>流量停滞，往往是因为页面难以被发现、对搜索意图覆盖太薄，或缺少买家真正会搜的主题。技术问题会把页面藏起来；内容缺口会让页面“存在却用不上”。只修一边，通常很难带来持续增长。</p></div>
-              <div><p class="hv2-faq-label">产品如何处理</p><p>Mika 把 SEO Health（站点能否被抓取与理解）和 SEO Growth（还有哪些搜索与意图未被回答）分开呈现，让你同时看到阻塞点与覆盖缺口。</p></div>
+              <div><p class="hv2-faq-label">产品如何处理</p><p>Mika 把 SEO 健康度（站点能否被抓取与理解）和 SEO 增长（还有哪些搜索与意图未被回答）分开呈现，让你同时看到阻塞点与覆盖缺口。</p></div>
               <div><p class="hv2-faq-label">下一步</p><p><a href="#cta">沟通流量缺口</a></p></div>
             </div>
           </details>
@@ -924,7 +877,7 @@
             <summary><h3>为什么有些页面搜不到？</h3><span class="hv2-faq-chevron" aria-hidden="true">+</span></summary>
             <div class="hv2-faq-body">
               <div><p class="hv2-faq-label">直接答案</p><p>页面可能被 robots 规则挡住、意外 noindex、内链太弱、存在重复，或模板内容过薄而被降权。有时页面存在，但没有被连上，或不值得优先收录。</p></div>
-              <div><p class="hv2-faq-label">产品如何处理</p><p>Deep Audit 会检查抓取路径、收录信号、站点架构，并为每个问题组给出样例 URL，让你看清“为什么缺失”，而不只是“缺失了”。</p></div>
+              <div><p class="hv2-faq-label">产品如何处理</p><p>深度审计会检查抓取路径、收录信号、站点架构，并为每个问题组给出样例 URL，让你看清“为什么缺失”，而不只是“缺失了”。</p></div>
               <div><p class="hv2-faq-label">下一步</p><p><a href="#cta">查看抓取与收录发现</a></p></div>
             </div>
           </details>
@@ -932,7 +885,7 @@
             <summary><h3>怎样提升产品页可见性？</h3><span class="hv2-faq-chevron" aria-hidden="true">+</span></summary>
             <div class="hv2-faq-body">
               <div><p class="hv2-faq-label">直接答案</p><p>强产品页需要写清产品定义、使用场景、规格参数，以及买家联系前需要的证据。同时要有清晰标题、结构和来自相关栏目页的内链。只堆营销口号，很难撑起产品页。</p></div>
-              <div><p class="hv2-faq-label">产品如何处理</p><p>Mika 会标出过薄的产品模板、缺失定义、证据不足，以及针对具体产品 URL 的扩展机会（含 Blueprint 动作）。</p></div>
+              <div><p class="hv2-faq-label">产品如何处理</p><p>Mika 会标出过薄的产品模板、缺失定义、证据不足，以及针对具体产品 URL 的扩展机会（含优化蓝图动作）。</p></div>
               <div><p class="hv2-faq-label">下一步</p><p><a href="#cta">审计一个产品 URL</a></p></div>
             </div>
           </details>
@@ -940,7 +893,7 @@
             <summary><h3>如何发现网站上的内容缺口？</h3><span class="hv2-faq-chevron" aria-hidden="true">+</span></summary>
             <div class="hv2-faq-body">
               <div><p class="hv2-faq-label">直接答案</p><p>把站点已覆盖的内容，和买家真实会搜的主题、意图做对比。缺口会表现为缺失主题、页面过浅，或商业问题始终没有直接答案。页面数量不等于覆盖质量。</p></div>
-              <div><p class="hv2-faq-label">产品如何处理</p><p>SEO Growth 会报告主题、商业、市场与深度覆盖，并给出机会数量——缺口可衡量，而不是靠关键词清单猜测。</p></div>
+              <div><p class="hv2-faq-label">产品如何处理</p><p>SEO 增长 会报告主题、商业、市场与深度覆盖，并给出机会数量——缺口可衡量，而不是靠关键词清单猜测。</p></div>
               <div><p class="hv2-faq-label">下一步</p><p><a href="#cta">查看覆盖机会</a></p></div>
             </div>
           </details>
@@ -948,7 +901,7 @@
             <summary><h3>如何发现值得做的新主题？</h3><span class="hv2-faq-chevron" aria-hidden="true">+</span></summary>
             <div class="hv2-faq-body">
               <div><p class="hv2-faq-label">直接答案</p><p>从买家任务、应用场景和现有页面尚未回答的商业问题出发。优先选择你能用真实产品事实支撑的主题。为无法证明的主张去扩展，带来的可见性很难站得住。</p></div>
-              <div><p class="hv2-faq-label">产品如何处理</p><p>Mika 会从站点地图与内容模型中找出未覆盖主题和商业意图，再把优先缺口写成带目标页面的 Blueprint 动作。</p></div>
+              <div><p class="hv2-faq-label">产品如何处理</p><p>Mika 会从站点地图与内容模型中找出未覆盖主题和商业意图，再把优先缺口写成带目标页面的优化蓝图动作。</p></div>
               <div><p class="hv2-faq-label">下一步</p><p><a href="#cta">梳理缺失主题</a></p></div>
             </div>
           </details>
@@ -956,7 +909,7 @@
             <summary><h3>怎样拓展新市场？</h3><span class="hv2-faq-chevron" aria-hidden="true">+</span></summary>
             <div class="hv2-faq-body">
               <div><p class="hv2-faq-label">直接答案</p><p>市场拓展需要跨语言保持公司与产品信息一致，并覆盖当地意图——而不是机翻壳页面。如果实体名称、规格或答案在不同语言间漂移，信任与可发现性都会受损。</p></div>
-              <div><p class="hv2-faq-label">产品如何处理</p><p>多语言检查会审一致性、字段完整度与市场扩展机会，同时保持 Health 与 Growth 分轨计分。</p></div>
+              <div><p class="hv2-faq-label">产品如何处理</p><p>多语言检查会审一致性、字段完整度与市场扩展机会，同时保持健康度与增长分轨计分。</p></div>
               <div><p class="hv2-faq-label">下一步</p><p><a href="#cta">讨论多语言拓展</a></p></div>
             </div>
           </details>
@@ -972,8 +925,8 @@
             <summary><h3>为什么技术很健康的网站仍有增长空间？</h3><span class="hv2-faq-chevron" aria-hidden="true">+</span></summary>
             <div class="hv2-faq-body">
               <div><p class="hv2-faq-label">直接答案</p><p>健康表示站点能被抓取与理解；增长表示仍有重要搜索、市场与问题未被回答。技术干净的网站，同样可能把需求留在桌面上。</p></div>
-              <div><p class="hv2-faq-label">产品如何处理</p><p>Mika 把 SEO Health 与 SEO Growth 作为独立分数与面板呈现。高健康分绝不会自动变成高增长分。</p></div>
-              <div><p class="hv2-faq-label">下一步</p><p><a href="#cta">对比 Health 与 Growth</a></p></div>
+              <div><p class="hv2-faq-label">产品如何处理</p><p>Mika 把 SEO 健康度 与 SEO 增长 作为独立分数与面板呈现。高健康分绝不会自动变成高增长分。</p></div>
+              <div><p class="hv2-faq-label">下一步</p><p><a href="#cta">对比健康度与增长</a></p></div>
             </div>
           </details>
           <details class="hv2-faq-item mika-hud" data-system="faq" data-status="ready" id="faq-company-clarity">
@@ -996,7 +949,7 @@
             <summary><h3>为什么网站上缺少客户真正会问的重要问题？</h3><span class="hv2-faq-chevron" aria-hidden="true">+</span></summary>
             <div class="hv2-faq-body">
               <div><p class="hv2-faq-label">直接答案</p><p>很多站点写功能，却跳过客户联系销售前会问的问题。这些问题往往落在选型、安装约束、市场适配与证明材料上，需要在真实页面给出直接答案。</p></div>
-              <div><p class="hv2-faq-label">产品如何处理</p><p>Question Coverage 会分析买家问题，标记已回答 / 部分回答 / 未覆盖，并为缺失的商业问题附上建议动作。</p></div>
+              <div><p class="hv2-faq-label">产品如何处理</p><p>问题覆盖度会分析买家问题，标记已回答 / 部分回答 / 未覆盖，并为缺失的商业问题附上建议动作。</p></div>
               <div><p class="hv2-faq-label">下一步</p><p><a href="#cta">补齐未回答的买家问题</a></p></div>
             </div>
           </details>
@@ -1004,8 +957,8 @@
             <summary><h3>怎样让重要信息更容易被引用？</h3><span class="hv2-faq-chevron" aria-hidden="true">+</span></summary>
             <div class="hv2-faq-body">
               <div><p class="hv2-faq-label">直接答案</p><p>使用清晰定义、稳定 URL、一致的实体名称，以及有证据支撑的主张。信息散乱、口号化或自相矛盾时，人和搜索答案表面都更难信任与引用。</p></div>
-              <div><p class="hv2-faq-label">产品如何处理</p><p>Mika 会跟踪证据覆盖、一致性与引用准备度，再把需要扩展定义、规格、场景与 FAQ 的页面写进 Blueprint。</p></div>
-              <div><p class="hv2-faq-label">下一步</p><p><a href="#cta">生成可引用的 Blueprint</a></p></div>
+              <div><p class="hv2-faq-label">产品如何处理</p><p>Mika 会跟踪证据覆盖、一致性与引用准备度，再把需要扩展定义、规格、场景与 FAQ 的页面写进优化蓝图。</p></div>
+              <div><p class="hv2-faq-label">下一步</p><p><a href="#cta">生成可引用的优化蓝图</a></p></div>
             </div>
           </details>
         </div>
@@ -1016,13 +969,13 @@
       <div class="hv2-wrap">
         <p class="hv2-kicker">下一步</p>
         <h2 class="hv2-h2" id="cta-title">先看清网站站在哪里，再决定下一步做什么。</h2>
-        <p class="hv2-lede">做一次结构化的 SEO + GEO 审计，拿到健康发现、增长缺口，以及可执行的 Blueprint。</p>
+        <p class="hv2-lede">做一次结构化的 SEO + GEO 审计，拿到健康发现、增长缺口，以及可执行的优化蓝图。</p>
         <div class="mm-cta-chain" aria-label="下一步路径">
-          <span class="mm-cta-step">Your website</span><span class="mm-cta-arrow" aria-hidden="true">→</span>
-          <span class="mm-cta-step">Search</span><span class="mm-cta-arrow" aria-hidden="true">→</span>
-          <span class="mm-cta-step">Questions</span><span class="mm-cta-arrow" aria-hidden="true">→</span>
-          <span class="mm-cta-step">Gaps</span><span class="mm-cta-arrow" aria-hidden="true">→</span>
-          <span class="mm-cta-step">Blueprint</span>
+          <span class="mm-cta-step">你的网站</span><span class="mm-cta-arrow" aria-hidden="true">→</span>
+          <span class="mm-cta-step">搜索</span><span class="mm-cta-arrow" aria-hidden="true">→</span>
+          <span class="mm-cta-step">问题</span><span class="mm-cta-arrow" aria-hidden="true">→</span>
+          <span class="mm-cta-step">缺口</span><span class="mm-cta-arrow" aria-hidden="true">→</span>
+          <span class="mm-cta-step">优化蓝图</span>
         </div>
         <div class="hv2-cta-actions">
           <a class="hv2-btn hv2-btn-on-dark" href="#cta">开始结构化审计</a>
@@ -1051,7 +1004,7 @@
             <li><a href="/zh/knowledge/">知识中心</a></li>
             <li><a href="#framework">能力框架</a></li>
             <li><a href="#audit">深度审计</a></li>
-            <li><a href="#seo-growth">SEO Growth</a></li>
+            <li><a href="#seo-growth">SEO 增长</a></li>
             <li><a href="#geo">GEO</a></li>
             <li><a href="#faq">常见问题</a></li>
           </ul>
@@ -1091,6 +1044,8 @@
   <script src="../src/motion/primitives.js" defer></script>
   <script src="../src/hud/hud.js" defer></script>
   <script src="../src/animations/home.js" defer></script>
+  <script src="../src/visibility/tree.js" defer></script>
+  <script src="../src/scroll/chapters.js" defer></script>
   <script src="../main.js" defer></script>
 </body>
 </html>

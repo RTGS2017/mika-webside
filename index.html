@@ -217,18 +217,25 @@
   <link rel="stylesheet" href="./src/sections/home.css">
   <link rel="stylesheet" href="./src/motion/motion.css">
   <link rel="stylesheet" href="./src/animations/home.css">
+  <link rel="stylesheet" href="./src/visibility/tree.css">
+  <link rel="stylesheet" href="./src/scroll/chapters.css">
 </head>
 <body>
 <div class="hv2-root">
-  <nav class="mika-rail" aria-label="Command sections">
-    <a href="#hero" data-rail="visibility">01 Visibility</a>
-    <a href="#framework" data-rail="framework">02 Framework</a>
-    <a href="#audit" data-rail="audit">03 Audit</a>
-    <a href="#health-growth" data-rail="growth">04 Growth</a>
-    <a href="#geo" data-rail="geo">05 GEO</a>
-    <a href="#questions" data-rail="questions">06 Questions</a>
-    <a href="#entity" data-rail="evidence">07 Evidence</a>
-    <a href="#blueprint" data-rail="blueprint">08 Blueprint</a>
+  <nav class="mika-rail" aria-label="Chapters">
+    <a href="#hero" data-rail="hero"><span class="mika-rail-no">01</span><span class="mika-rail-name">Visibility</span></a>
+    <a href="#problem" data-rail="problem"><span class="mika-rail-no">02</span><span class="mika-rail-name">Why it matters</span></a>
+    <a href="#framework" data-rail="framework"><span class="mika-rail-no">03</span><span class="mika-rail-name">Framework</span></a>
+    <a href="#audit" data-rail="audit"><span class="mika-rail-no">04</span><span class="mika-rail-name">Deep audit</span></a>
+    <a href="#health-growth" data-rail="health-growth"><span class="mika-rail-no">05</span><span class="mika-rail-name">Health and growth</span></a>
+    <a href="#blueprint" data-rail="blueprint"><span class="mika-rail-no">06</span><span class="mika-rail-name">Blueprint</span></a>
+    <a href="#seo-growth" data-rail="seo-growth"><span class="mika-rail-no">07</span><span class="mika-rail-name">Search opportunity</span></a>
+    <a href="#geo" data-rail="geo"><span class="mika-rail-no">08</span><span class="mika-rail-name">Answer visibility</span></a>
+    <a href="#questions" data-rail="questions"><span class="mika-rail-no">09</span><span class="mika-rail-name">Questions</span></a>
+    <a href="#entity" data-rail="entity"><span class="mika-rail-no">10</span><span class="mika-rail-name">Evidence</span></a>
+    <a href="#multilingual" data-rail="multilingual"><span class="mika-rail-no">11</span><span class="mika-rail-name">Languages</span></a>
+    <a href="#faq" data-rail="faq"><span class="mika-rail-no">12</span><span class="mika-rail-name">FAQ</span></a>
+    <a href="#cta" data-rail="cta"><span class="mika-rail-no">13</span><span class="mika-rail-name">Contact</span></a>
   </nav>
 
   <a class="hv2-skip" href="#main">Skip to content</a>
@@ -269,6 +276,7 @@
   <main id="main" class="hv2-main">
     <!-- Hero — Visibility Field (sole dark stage) -->
     <section class="hv2-section hv2-hero mika-hud" data-system="visibility" data-status="online" data-motion-build id="hero" data-motion="visibility-field" aria-labelledby="hero-title">
+      <div class="vit-stage" data-visibility-tree data-lang="en"></div>
       <div class="hv2-wrap hv2-hero-grid">
         <div>
           <p class="hv2-eyebrow">Search &amp; AI visibility platform</p>
@@ -282,66 +290,7 @@
           </div>
           <p class="hv2-note">Illustrative sample data on this page. Mika does not predict rankings or guarantee placement in any answer surface.</p>
         </div>
-        <div class="hv2-hero-visual">
-          <div class="hv2-vf-stage" aria-hidden="true">
-            <svg class="hv2-vf" viewBox="0 0 640 400" role="img" aria-label="Visibility Field: Search and Questions converge on the website">
-              <defs>
-                <pattern id="vf-grid" width="32" height="32" patternUnits="userSpaceOnUse">
-                  <path d="M32 0H0V32" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-                </pattern>
-              </defs>
-              <rect width="640" height="400" fill="url(#vf-grid)"/>
-              <!-- SEO blue: Query → Page → Structure → Search Visibility → Website -->
-              <path class="mm-flow-path is-seo" d="M72 88 C140 88, 170 140, 220 160 S300 190, 320 200" fill="none" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
-              <path class="mm-flow-path is-seo mm-desktop-only" d="M72 120 C150 120, 190 170, 250 185 S300 198, 320 200" fill="none" stroke="#38BDF8" stroke-width="1.2" stroke-opacity="0.45" data-mobile-skip/>
-              <!-- GEO purple: Question → Entity → Evidence → Answer → Website -->
-              <path class="mm-flow-path is-geo" d="M568 88 C500 88, 470 140, 420 160 S340 190, 320 200" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round"/>
-              <path class="mm-flow-path is-geo mm-desktop-only" d="M568 120 C490 120, 450 170, 390 185 S340 198, 320 200" fill="none" stroke="#8B5CF6" stroke-width="1.2" stroke-opacity="0.45" data-mobile-skip/>
-              <!-- Website → Visibility -->
-              <path class="mm-flow-path is-hub" d="M320 210 C320 250, 320 280, 320 312" fill="none" stroke="#22D3EE" stroke-width="2" stroke-linecap="round"/>
-              <!-- Nodes -->
-              <g class="mm-node" font-family="IBM Plex Mono, monospace" font-size="11" fill="#38BDF8">
-                <text x="40" y="84">Query</text>
-                <text x="150" y="124">Page</text>
-                <text x="210" y="168">Structure</text>
-                <text x="240" y="198">Search Visibility</text>
-              </g>
-              <g class="mm-node" font-family="IBM Plex Mono, monospace" font-size="11" fill="#8B5CF6" text-anchor="end">
-                <text x="600" y="84">Question</text>
-                <text x="490" y="124">Entity</text>
-                <text x="430" y="168">Evidence</text>
-                <text x="400" y="198">Answer</text>
-              </g>
-              <g class="mm-node mm-hub">
-                <rect x="276" y="188" width="88" height="28" rx="8" fill="#101A2C" stroke="rgba(255,255,255,0.2)"/>
-                <text x="320" y="206" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="12" font-weight="600" fill="#F8FAFC">Website</text>
-              </g>
-              <g class="mm-node">
-                <rect x="258" y="300" width="124" height="28" rx="8" fill="#38BDF8"/>
-                <text x="320" y="318" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="12" font-weight="600" fill="#fff">Visibility</text>
-              </g>
-            </svg>
-          </div>
-          <div class="hv2-hero-dash" data-anim="hero-dashboard" aria-label="Four independent capabilities">
-            <article class="hv2-chip" data-id="seoHealth">
-              <p class="hv2-chip-label">SEO Health</p>
-              <p class="hv2-chip-hint">Crawlable, indexable, structurally sound</p>
-            </article>
-            <article class="hv2-chip" data-id="seoGrowth">
-              <p class="hv2-chip-label">SEO Growth</p>
-              <p class="hv2-chip-hint">Topics, intents, and markets still open</p>
-            </article>
-            <article class="hv2-chip" data-id="geoHealth">
-              <p class="hv2-chip-label">GEO Health</p>
-              <p class="hv2-chip-hint">Clear entities, answers, and evidence</p>
-            </article>
-            <article class="hv2-chip" data-id="geoGrowth">
-              <p class="hv2-chip-label">GEO Growth</p>
-              <p class="hv2-chip-hint">Uncovered questions and citation room</p>
-            </article>
-          </div>
         </div>
-      </div>
     </section>
 
     <!-- Problem -->
@@ -1129,6 +1078,8 @@
   <script src="./src/motion/primitives.js" defer></script>
   <script src="./src/hud/hud.js" defer></script>
   <script src="./src/animations/home.js" defer></script>
+  <script src="./src/visibility/tree.js" defer></script>
+  <script src="./src/scroll/chapters.js" defer></script>
   <script src="./main.js" defer></script>
 </body>
 </html>
