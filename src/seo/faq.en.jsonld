@@ -1,0 +1,123 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://mikaovo.ai/#faq",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@id": "https://mikaovo.ai/#webpage"
+  },
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a website SEO audit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A website SEO audit reviews how search engines can crawl, index, and understand your pages. It looks at technical foundations, page structure, and content signals — not at guessing a future ranking. The goal is a clear picture of what is working and what blocks visibility."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my website not getting organic traffic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Traffic stalls when pages are hard to discover, thin on intent, or missing topics buyers actually search. Technical problems can hide pages; content gaps can leave pages visible but unused. Fixing only one side rarely unlocks sustained growth."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I improve my search visibility?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Improve crawl and index health first, then expand the topics, intents, and markets your site can honestly cover. Visibility grows when important pages are findable and when they answer real commercial questions with clear evidence."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why are some pages not appearing in search?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pages may be blocked by robots rules, unexpected noindex, weak internal links, duplicates, or thin templates that search systems deprioritize. Sometimes the page exists but is not connected or not worth indexing yet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I improve product page visibility?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Strong product pages define the product, use cases, specifications, and proof buyers need before contact. They also need clean titles, clear structure, and internal links from relevant hubs. Marketing slogans alone rarely carry a product page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I find content gaps on my website?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compare what your site already covers with the topics and intents your buyers search. Gaps appear as missing themes, shallow pages, or commercial questions that never get a direct answer. Page count is not the same as coverage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I identify new topics to target?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start from buyer jobs, applications, and commercial questions your current pages do not answer. Prioritize topics you can support with real product facts. Expanding into unsupported claims creates visibility that will not hold."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I expand into new markets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Market expansion needs consistent company and product facts across languages, plus pages that cover local intent — not machine-translated shells. If entity names, specs, or answers drift by locale, trust and discoverability both suffer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I identify commercial search opportunities?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Commercial opportunities are searches where buyers compare options, choose a product, or prepare to inquire. They show up as intent clusters your site only partially answers — especially on product and application pages."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does a technically healthy website still have room to grow?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Health means the site can be crawled and understood. Growth means important searches, markets, and questions are still unanswered. A clean technical site can still leave demand on the table."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I make my company information clearer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "State who you are, what you offer, where you operate, and what proof supports your claims — in plain language on stable pages. Clear company information helps people and modern search surfaces trust and reference you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I improve the visibility of my product information?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Put definitions, specifications, applications, and evidence where they can be found and quoted. Keep names and facts consistent across languages. Hide less behind banners and more in structured, readable sections."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why are important customer questions missing from my website?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sites often describe features but skip the questions people ask before contacting sales. Those questions live in product selection, installation constraints, market fit, and proof — and they need direct answers on real pages."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I make important information easier to reference?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use clear definitions, stable URLs, consistent entity names, and claims tied to evidence. Information that is scattered, slogan-heavy, or contradictory is harder for people — and for search answer surfaces — to trust and cite."
+      }
+    }
+  ]
+}
