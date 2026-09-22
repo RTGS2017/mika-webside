@@ -3,5 +3,6 @@ Allow: /
 
 Disallow: /README.md
 Disallow: /gemini-section-prompts.md
+Disallow: /docs/
 
 Sitemap: https://mikaovo.ai/sitemap.xml

@@ -41,6 +41,8 @@ No Node, Vite, or npm is required for this homepage.
 | `index.html` | Homepage |
 | `styles.css` | Visual system |
 | `main.js` | Sticky nav, reveal, scan log, language tabs |
+| `contact-config.js` | WhatsApp, email, and WeChat contact data |
+| `contact.js` | Contact panels, copy, and keyboard behavior |
 | `assets/logo.svg` | 2×2 visibility mark |
 | `assets/favicon.svg` | Tab icon |
 | `CNAME` | GitHub Pages custom domain |
