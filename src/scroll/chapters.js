@@ -6,11 +6,13 @@
 (function (global) {
   "use strict";
 
-  var LOCK_MS = 900;
-  var THRESHOLD = 60;
+  var THRESHOLD = 24;
+  var DURATION = 980;
   var lockedUntil = 0;
   var bucket = 0;
   var bucketAt = 0;
+  var animating = false;
+  var rafId = 0;
 
   function fineDesktop() {
     if (!global.matchMedia) return false;
@@ -44,16 +46,58 @@
     return rect.top >= -12;
   }
 
+  function ease(t) {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
+  function targetY(el) {
+    var nav = global.document.querySelector(".hv2-nav");
+    var offset = nav ? nav.offsetHeight : 0;
+    var y = el.getBoundingClientRect().top + (global.pageYOffset || global.scrollY || 0) - offset;
+    return Math.max(0, y);
+  }
+
+  function finishMove() {
+    animating = false;
+    if (rafId) global.cancelAnimationFrame(rafId);
+    rafId = 0;
+    global.document.documentElement.classList.remove("is-chapter-moving");
+    lockedUntil = Date.now() + 140;
+  }
+
   function go(list, index) {
     var target = list[index];
-    if (!target) return;
-    lockedUntil = Date.now() + LOCK_MS;
-    target.scrollIntoView({ behavior: reduced() ? "auto" : "smooth", block: "start" });
+    if (!target || animating) return;
+    var start = global.pageYOffset || global.scrollY || 0;
+    var dest = targetY(target);
+    if (Math.abs(dest - start) < 2) return;
+    if (reduced()) {
+      global.scrollTo(0, dest);
+      return;
+    }
+    animating = true;
+    global.document.documentElement.classList.add("is-chapter-moving");
+    var t0 = 0;
+    function frame(now) {
+      if (!t0) t0 = now;
+      var p = Math.min(1, (now - t0) / DURATION);
+      global.scrollTo(0, start + (dest - start) * ease(p));
+      if (p < 1) rafId = global.requestAnimationFrame(frame);
+      else {
+        global.scrollTo(0, dest);
+        finishMove();
+      }
+    }
+    rafId = global.requestAnimationFrame(frame);
   }
 
   function onWheel(event) {
     if (!fineDesktop() || reduced()) return;
     if (event.ctrlKey) return;
+    if (animating) {
+      event.preventDefault();
+      return;
+    }
     var list = sections();
     if (list.length < 2) return;
     var index = currentIndex(list);

@@ -1,7 +1,7 @@
-/* Chapter rail sits on the right. Snap is desktop-only and never hides overflow. */
+/* Chapter rail stays on the left. Snap yields while a chapter ease is running. */
 .mika-rail {
-  left: auto;
-  right: 16px;
+  left: 18px;
+  right: auto;
   width: 148px;
   gap: 8px;
 }
@@ -22,13 +22,18 @@
 }
 
 html.mika-chapter-scroll {
-  scroll-snap-type: y mandatory;
-  scroll-padding-top: 76px;
+  scroll-snap-type: y proximity;
+  scroll-padding-top: 64px;
+  scroll-behavior: auto;
+}
+
+html.mika-chapter-scroll.is-chapter-moving {
+  scroll-snap-type: none;
 }
 
 html.mika-chapter-scroll .hv2-section {
   scroll-snap-align: start;
-  scroll-snap-stop: always;
+  scroll-snap-stop: normal;
   min-height: 100svh;
 }
 
