@@ -22,7 +22,7 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Mika | SEO Audit, Search Visibility &amp; AI Answer Visibility">
   <meta name="twitter:description" content="Structured SEO audit and GEO analysis for website SEO health, content gaps, search intent, topic coverage, and AI answer visibility.">
-  <meta name="theme-color" content="#101828">
+  <meta name="theme-color" content="#070B14">
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">
   {
@@ -211,6 +211,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./src/hud/theme.css">
+  <link rel="stylesheet" href="./src/hud/hud.css">
   <!-- hv2-section-css -->
   <link rel="stylesheet" href="./src/sections/home.css">
   <link rel="stylesheet" href="./src/motion/motion.css">
@@ -218,6 +220,17 @@
 </head>
 <body>
 <div class="hv2-root">
+  <nav class="mika-rail" aria-label="Command sections">
+    <a href="#hero" data-rail="visibility">01 Visibility</a>
+    <a href="#framework" data-rail="framework">02 Framework</a>
+    <a href="#audit" data-rail="audit">03 Audit</a>
+    <a href="#health-growth" data-rail="growth">04 Growth</a>
+    <a href="#geo" data-rail="geo">05 GEO</a>
+    <a href="#questions" data-rail="questions">06 Questions</a>
+    <a href="#entity" data-rail="evidence">07 Evidence</a>
+    <a href="#blueprint" data-rail="blueprint">08 Blueprint</a>
+  </nav>
+
   <a class="hv2-skip" href="#main">Skip to content</a>
 
   <header class="hv2-nav" id="nav">
@@ -228,7 +241,7 @@
       </a>
       <button class="hv2-nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" data-nav-toggle>
         <span class="hv2-sr">Menu</span>
-        <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true"><path d="M0 1h16M0 6h16M0 11h16" stroke="#0B1220" stroke-width="1.5"/></svg>
+        <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true"><path d="M0 1h16M0 6h16M0 11h16" stroke="#F8FAFC" stroke-width="1.5"/></svg>
       </button>
       <div class="hv2-nav-menu" id="nav-menu">
         <nav class="hv2-nav-links" aria-label="Primary">
@@ -255,7 +268,7 @@
 
   <main id="main" class="hv2-main">
     <!-- Hero — Visibility Field (sole dark stage) -->
-    <section class="hv2-section hv2-hero" id="hero" data-motion="visibility-field" aria-labelledby="hero-title">
+    <section class="hv2-section hv2-hero mika-hud" data-system="visibility" data-status="online" data-motion-build id="hero" data-motion="visibility-field" aria-labelledby="hero-title">
       <div class="hv2-wrap hv2-hero-grid">
         <div>
           <p class="hv2-eyebrow">Search &amp; AI visibility platform</p>
@@ -279,32 +292,32 @@
               </defs>
               <rect width="640" height="400" fill="url(#vf-grid)"/>
               <!-- SEO blue: Query → Page → Structure → Search Visibility → Website -->
-              <path class="mm-flow-path is-seo" d="M72 88 C140 88, 170 140, 220 160 S300 190, 320 200" fill="none" stroke="#2f6bff" stroke-width="2" stroke-linecap="round"/>
-              <path class="mm-flow-path is-seo mm-desktop-only" d="M72 120 C150 120, 190 170, 250 185 S300 198, 320 200" fill="none" stroke="#2f6bff" stroke-width="1.2" stroke-opacity="0.45" data-mobile-skip/>
+              <path class="mm-flow-path is-seo" d="M72 88 C140 88, 170 140, 220 160 S300 190, 320 200" fill="none" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
+              <path class="mm-flow-path is-seo mm-desktop-only" d="M72 120 C150 120, 190 170, 250 185 S300 198, 320 200" fill="none" stroke="#38BDF8" stroke-width="1.2" stroke-opacity="0.45" data-mobile-skip/>
               <!-- GEO purple: Question → Entity → Evidence → Answer → Website -->
-              <path class="mm-flow-path is-geo" d="M568 88 C500 88, 470 140, 420 160 S340 190, 320 200" fill="none" stroke="#6e56cf" stroke-width="2" stroke-linecap="round"/>
-              <path class="mm-flow-path is-geo mm-desktop-only" d="M568 120 C490 120, 450 170, 390 185 S340 198, 320 200" fill="none" stroke="#6e56cf" stroke-width="1.2" stroke-opacity="0.45" data-mobile-skip/>
+              <path class="mm-flow-path is-geo" d="M568 88 C500 88, 470 140, 420 160 S340 190, 320 200" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round"/>
+              <path class="mm-flow-path is-geo mm-desktop-only" d="M568 120 C490 120, 450 170, 390 185 S340 198, 320 200" fill="none" stroke="#8B5CF6" stroke-width="1.2" stroke-opacity="0.45" data-mobile-skip/>
               <!-- Website → Visibility -->
-              <path class="mm-flow-path is-hub" d="M320 210 C320 250, 320 280, 320 312" fill="none" stroke="#93a0b5" stroke-width="2" stroke-linecap="round"/>
+              <path class="mm-flow-path is-hub" d="M320 210 C320 250, 320 280, 320 312" fill="none" stroke="#22D3EE" stroke-width="2" stroke-linecap="round"/>
               <!-- Nodes -->
-              <g class="mm-node" font-family="IBM Plex Mono, monospace" font-size="11" fill="#b8c9ff">
+              <g class="mm-node" font-family="IBM Plex Mono, monospace" font-size="11" fill="#38BDF8">
                 <text x="40" y="84">Query</text>
                 <text x="150" y="124">Page</text>
                 <text x="210" y="168">Structure</text>
                 <text x="240" y="198">Search Visibility</text>
               </g>
-              <g class="mm-node" font-family="IBM Plex Mono, monospace" font-size="11" fill="#d6c8ff" text-anchor="end">
+              <g class="mm-node" font-family="IBM Plex Mono, monospace" font-size="11" fill="#8B5CF6" text-anchor="end">
                 <text x="600" y="84">Question</text>
                 <text x="490" y="124">Entity</text>
                 <text x="430" y="168">Evidence</text>
                 <text x="400" y="198">Answer</text>
               </g>
               <g class="mm-node mm-hub">
-                <rect x="276" y="188" width="88" height="28" rx="8" fill="#1a2336" stroke="rgba(255,255,255,0.2)"/>
-                <text x="320" y="206" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="12" font-weight="600" fill="#e8edf5">Website</text>
+                <rect x="276" y="188" width="88" height="28" rx="8" fill="#101A2C" stroke="rgba(255,255,255,0.2)"/>
+                <text x="320" y="206" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="12" font-weight="600" fill="#F8FAFC">Website</text>
               </g>
               <g class="mm-node">
-                <rect x="258" y="300" width="124" height="28" rx="8" fill="#2f6bff"/>
+                <rect x="258" y="300" width="124" height="28" rx="8" fill="#38BDF8"/>
                 <text x="320" y="318" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="12" font-weight="600" fill="#fff">Visibility</text>
               </g>
             </svg>
@@ -332,7 +345,7 @@
     </section>
 
     <!-- Problem -->
-    <section class="hv2-section hv2-problem" id="problem" aria-labelledby="problem-title">
+    <section class="hv2-section hv2-problem mika-hud" data-system="visibility" data-status="ready" data-motion-build id="problem" aria-labelledby="problem-title">
       <div class="hv2-wrap">
         <header class="hv2-section-head">
           <p class="hv2-kicker">Visibility problem</p>
@@ -364,7 +377,7 @@
     </section>
 
     <!-- Framework -->
-    <section class="hv2-section hv2-framework" id="framework" aria-labelledby="framework-title">
+    <section class="hv2-section hv2-framework mika-hud" data-system="framework" data-status="ready" data-motion-build id="framework" aria-labelledby="framework-title">
       <div class="hv2-wrap">
         <header class="hv2-section-head">
           <p class="hv2-kicker">SEO + GEO framework</p>
@@ -424,7 +437,7 @@
     </section>
 
     <!-- Audit -->
-    <section class="hv2-section hv2-audit" id="audit" data-anim="audit-crawl" aria-labelledby="audit-title">
+    <section class="hv2-section hv2-audit mika-hud" data-system="audit-engine" data-status="scanning" data-motion-build id="audit" data-anim="audit-crawl" aria-labelledby="audit-title">
       <div class="hv2-wrap">
         <header class="hv2-section-head">
           <p class="hv2-kicker">Deep audit</p>
@@ -432,17 +445,17 @@
           <p class="hv2-lede">A scan walks pages, structure, topics, entities, questions, and evidence before any blueprint is written.</p>
         </header>
         <div class="hv2-audit-stats">
-          <div class="hv2-stat">
+          <div class="hv2-stat" data-engine="pages">
             <p class="hv2-stat-label">Crawling</p>
             <p class="hv2-stat-value"><span data-count="128">128</span></p>
             <span class="hv2-stat-unit">pages</span>
           </div>
-          <div class="hv2-stat">
+          <div class="hv2-stat" data-engine="links">
             <p class="hv2-stat-label">Architecture</p>
             <p class="hv2-stat-value"><span data-count="386">386</span></p>
             <span class="hv2-stat-unit">internal links</span>
           </div>
-          <div class="hv2-stat">
+          <div class="hv2-stat" data-engine="topics">
             <p class="hv2-stat-label">Content</p>
             <p class="hv2-stat-value"><span data-count="72">72</span></p>
             <span class="hv2-stat-unit">topics</span>
@@ -452,17 +465,17 @@
             <p class="hv2-stat-value"><span data-count="54">54</span></p>
             <span class="hv2-stat-unit">commercial intents</span>
           </div>
-          <div class="hv2-stat">
+          <div class="hv2-stat" data-engine="entities">
             <p class="hv2-stat-label">Entities</p>
             <p class="hv2-stat-value"><span data-count="34">34</span></p>
             <span class="hv2-stat-unit">entities</span>
           </div>
-          <div class="hv2-stat">
+          <div class="hv2-stat" data-engine="questions">
             <p class="hv2-stat-label">Questions</p>
             <p class="hv2-stat-value"><span data-count="216">216</span></p>
             <span class="hv2-stat-unit">buyer questions</span>
           </div>
-          <div class="hv2-stat">
+          <div class="hv2-stat" data-engine="evidence">
             <p class="hv2-stat-label">Evidence</p>
             <p class="hv2-stat-value"><span data-count="47">47</span></p>
             <span class="hv2-stat-unit">evidence items</span>
@@ -493,7 +506,7 @@
     </section>
 
     <!-- Health vs Growth -->
-    <section class="hv2-section hv2-health-growth" id="health-growth" data-anim="health-growth" aria-labelledby="health-growth-title">
+    <section class="hv2-section hv2-health-growth mika-hud" data-system="health-growth" data-status="ready" data-motion-build id="health-growth" data-anim="health-growth" aria-labelledby="health-growth-title">
       <div class="hv2-wrap">
         <header class="hv2-section-head">
           <p class="hv2-kicker">Health vs Growth</p>
@@ -505,8 +518,11 @@
             <p class="hv2-hg-kicker">SEO HEALTH</p>
             <h3 class="hv2-h3">Where the site stands</h3>
             <div class="hv2-hg-score">
-              <span class="hv2-hg-score-num"><span data-count="92">92</span></span>
-              <span class="hv2-hg-score-label">SEO Health</span>
+              <div class="hv2-hg-ring" data-scan-ring="92" aria-hidden="true"></div>
+              <div>
+                <span class="hv2-hg-score-num"><span data-count="92">92</span></span>
+                <span class="hv2-hg-score-label">SEO Health</span>
+              </div>
             </div>
             <div class="hv2-bars">
               <div class="hv2-bar-row">
@@ -545,8 +561,11 @@
             <p class="hv2-hg-kicker">SEO GROWTH</p>
             <h3 class="hv2-h3">What is still missing</h3>
             <div class="hv2-hg-score">
-              <span class="hv2-hg-score-num"><span data-count="71">71</span></span>
-              <span class="hv2-hg-score-label">SEO Growth</span>
+              <div class="hv2-hg-ring" data-scan-ring="71" aria-hidden="true"></div>
+              <div>
+                <span class="hv2-hg-score-num"><span data-count="71">71</span></span>
+                <span class="hv2-hg-score-label">SEO Growth</span>
+              </div>
             </div>
             <div class="hv2-bars">
               <div class="hv2-bar-row">
@@ -587,7 +606,7 @@
     </section>
 
     <!-- Blueprint -->
-    <section class="hv2-section hv2-blueprint" id="blueprint" data-anim="blueprint" aria-labelledby="blueprint-title">
+    <section class="hv2-section hv2-blueprint mika-hud" data-system="blueprint" data-status="ready" data-motion-build id="blueprint" data-anim="blueprint" aria-labelledby="blueprint-title">
       <div class="hv2-wrap">
         <header class="hv2-section-head">
           <p class="hv2-kicker">Audit → Diagnosis → Blueprint</p>
@@ -595,17 +614,17 @@
           <p class="hv2-lede">Scan produces facts. Diagnosis groups them. Blueprint turns groups into prioritized work with a validation step.</p>
         </header>
         <div class="hv2-bp-flow">
-          <article class="hv2-panel hv2-bp-stage" data-phase="audit">
+          <article class="hv2-panel hv2-bp-stage" data-phase="audit" data-pipe="done">
             <p class="hv2-bp-step">01</p>
             <h3 class="hv2-h3">Audit</h3>
             <p class="hv2-bp-body">Collect crawl, structure, content, entity, question, and evidence facts with sample URLs.</p>
           </article>
-          <article class="hv2-panel hv2-bp-stage" data-phase="diagnosis">
+          <article class="hv2-panel hv2-bp-stage" data-phase="diagnosis" data-pipe="current">
             <p class="hv2-bp-step">02</p>
             <h3 class="hv2-h3">Diagnosis</h3>
             <p class="hv2-bp-body">Group issues by rule and severity so the story is actionable — not a vibe score.</p>
           </article>
-          <article class="hv2-panel hv2-bp-stage" data-phase="blueprint">
+          <article class="hv2-panel hv2-bp-stage" data-phase="blueprint" data-pipe="future">
             <p class="hv2-bp-step">03</p>
             <h3 class="hv2-h3">Blueprint</h3>
             <p class="hv2-bp-body">Convert groups into page-level actions with priority, changes, and a re-audit check.</p>
@@ -640,13 +659,22 @@
     </section>
 
     <!-- SEO Growth -->
-    <section class="hv2-section hv2-seo-growth" id="seo-growth" data-anim="coverage" aria-labelledby="seo-growth-title">
+    <section class="hv2-section hv2-seo-growth mika-hud" data-system="seo-growth" data-status="opportunity" data-motion-build id="seo-growth" data-anim="coverage" aria-labelledby="seo-growth-title">
       <div class="hv2-wrap">
         <header class="hv2-section-head">
           <p class="hv2-kicker">SEO Growth</p>
           <h2 class="hv2-h2" id="seo-growth-title">Find the searches your website does not answer yet.</h2>
           <p class="hv2-lede">Growth is coverage of real demand — topics, commercial intent, markets, and depth — not how many pages you already published.</p>
         </header>
+        <div class="mika-opp-map" aria-hidden="true">
+          <div class="mika-opp-hub">Website</div>
+          <div class="mika-opp-nodes">
+            <span class="mika-opp-node" data-expand>Topic gap</span>
+            <span class="mika-opp-node" data-expand>Commercial gap</span>
+            <span class="mika-opp-node" data-expand>Market gap</span>
+            <span class="mika-opp-node" data-expand>Depth gap</span>
+          </div>
+        </div>
         <div class="hv2-panel hv2-coverage">
           <div class="hv2-cov-row">
             <div class="hv2-cov-meta"><span>Topic</span><span><span data-count="72">72</span>%</span></div>
@@ -688,7 +716,7 @@
     </section>
 
     <!-- GEO -->
-    <section class="hv2-section hv2-geo" id="geo" aria-labelledby="geo-title">
+    <section class="hv2-section hv2-geo mika-hud" data-system="geo" data-status="ready" data-motion-build id="geo" aria-labelledby="geo-title">
       <div class="hv2-wrap">
         <header class="hv2-section-head">
           <p class="hv2-kicker">GEO</p>
@@ -719,7 +747,7 @@
     </section>
 
     <!-- Questions -->
-    <section class="hv2-section hv2-questions" id="questions" aria-labelledby="questions-title">
+    <section class="hv2-section hv2-questions mika-hud" data-system="questions" data-status="ready" data-motion-build id="questions" aria-labelledby="questions-title">
       <div class="hv2-wrap">
         <header class="hv2-section-head">
           <p class="hv2-kicker">Search questions</p>
@@ -795,7 +823,7 @@
     </section>
 
     <!-- Entity -->
-    <section class="hv2-section hv2-entity" id="entity" aria-labelledby="entity-title">
+    <section class="hv2-section hv2-entity mika-hud" data-system="entity" data-status="ready" data-motion-build id="entity" aria-labelledby="entity-title">
       <div class="hv2-wrap">
         <header class="hv2-section-head">
           <p class="hv2-kicker">Evidence · Entity · Citation</p>
@@ -840,7 +868,7 @@
     </section>
 
     <!-- Multilingual -->
-    <section class="hv2-section hv2-multi" id="multilingual" aria-labelledby="multilingual-title">
+    <section class="hv2-section hv2-multi mika-hud" data-system="multilingual" data-status="ready" data-motion-build id="multilingual" aria-labelledby="multilingual-title">
       <div class="hv2-wrap">
         <header class="hv2-section-head">
           <p class="hv2-kicker">Multilingual</p>
@@ -872,7 +900,7 @@
     </section>
 
     <!-- Methodology -->
-    <section class="hv2-section hv2-method" id="methodology" aria-labelledby="methodology-title">
+    <section class="hv2-section hv2-method mika-hud" data-system="methodology" data-status="ready" data-motion-build id="methodology" aria-labelledby="methodology-title">
       <div class="hv2-wrap">
         <header class="hv2-section-head">
           <p class="hv2-kicker">Methodology</p>
@@ -897,7 +925,7 @@
     </section>
 
     <!-- FAQ -->
-    <section class="hv2-section hv2-faq" id="faq" aria-labelledby="faq-title">
+    <section class="hv2-section hv2-faq mika-hud" data-system="faq" data-status="ready" data-motion-build id="faq" aria-labelledby="faq-title">
       <div class="hv2-wrap">
         <header class="hv2-section-head">
           <p class="hv2-kicker">FAQ</p>
@@ -905,7 +933,7 @@
           <p class="hv2-lede">Short answers about website SEO, search visibility, content gaps, and how Mika separates technical health from growth opportunity.</p>
         </header>
         <div class="hv2-faq-list">
-          <details class="hv2-faq-item" id="faq-seo-audit">
+          <details class="hv2-faq-item mika-hud" data-system="faq" data-status="ready" id="faq-seo-audit">
             <summary><h3>What is a website SEO audit?</h3><span class="hv2-faq-chevron" aria-hidden="true">+</span></summary>
             <div class="hv2-faq-body">
               <div><p class="hv2-faq-label">Direct answer</p><p>A website SEO audit reviews how search engines can crawl, index, and understand your pages. It looks at technical foundations, page structure, and content signals — not at guessing a future ranking. The goal is a clear picture of what is working and what blocks visibility.</p></div>
@@ -913,7 +941,7 @@
               <div><p class="hv2-faq-label">Next step</p><p><a href="#cta">Start a structured audit</a></p></div>
             </div>
           </details>
-          <details class="hv2-faq-item" id="faq-organic-traffic">
+          <details class="hv2-faq-item mika-hud" data-system="faq" data-status="ready" id="faq-organic-traffic">
             <summary><h3>Why is my website not getting organic traffic?</h3><span class="hv2-faq-chevron" aria-hidden="true">+</span></summary>
             <div class="hv2-faq-body">
               <div><p class="hv2-faq-label">Direct answer</p><p>Traffic stalls when pages are hard to discover, thin on intent, or missing topics buyers actually search. Technical problems can hide pages; content gaps can leave pages visible but unused. Fixing only one side rarely unlocks sustained growth.</p></div>
@@ -921,7 +949,7 @@
               <div><p class="hv2-faq-label">Next step</p><p><a href="#cta">Talk through your traffic gaps</a></p></div>
             </div>
           </details>
-          <details class="hv2-faq-item" id="faq-search-visibility">
+          <details class="hv2-faq-item mika-hud" data-system="faq" data-status="ready" id="faq-search-visibility">
             <summary><h3>How can I improve my search visibility?</h3><span class="hv2-faq-chevron" aria-hidden="true">+</span></summary>
             <div class="hv2-faq-body">
               <div><p class="hv2-faq-label">Direct answer</p><p>Improve crawl and index health first, then expand the topics, intents, and markets your site can honestly cover. Visibility grows when important pages are findable and when they answer real commercial questions with clear evidence.</p></div>
@@ -929,7 +957,7 @@
               <div><p class="hv2-faq-label">Next step</p><p><a href="#cta">Request a visibility scan</a></p></div>
             </div>
           </details>
-          <details class="hv2-faq-item" id="faq-pages-not-appearing">
+          <details class="hv2-faq-item mika-hud" data-system="faq" data-status="ready" id="faq-pages-not-appearing">
             <summary><h3>Why are some pages not appearing in search?</h3><span class="hv2-faq-chevron" aria-hidden="true">+</span></summary>
             <div class="hv2-faq-body">
               <div><p class="hv2-faq-label">Direct answer</p><p>Pages may be blocked by robots rules, unexpected noindex, weak internal links, duplicates, or thin templates that search systems deprioritize. Sometimes the page exists but is not connected or not worth indexing yet.</p></div>
@@ -937,7 +965,7 @@
               <div><p class="hv2-faq-label">Next step</p><p><a href="#cta">Review crawl and index findings</a></p></div>
             </div>
           </details>
-          <details class="hv2-faq-item" id="faq-product-page-visibility">
+          <details class="hv2-faq-item mika-hud" data-system="faq" data-status="ready" id="faq-product-page-visibility">
             <summary><h3>How can I improve product page visibility?</h3><span class="hv2-faq-chevron" aria-hidden="true">+</span></summary>
             <div class="hv2-faq-body">
               <div><p class="hv2-faq-label">Direct answer</p><p>Strong product pages define the product, use cases, specifications, and proof buyers need before contact. They also need clean titles, clear structure, and internal links from relevant hubs. Marketing slogans alone rarely carry a product page.</p></div>
@@ -945,7 +973,7 @@
               <div><p class="hv2-faq-label">Next step</p><p><a href="#cta">Audit a product URL</a></p></div>
             </div>
           </details>
-          <details class="hv2-faq-item" id="faq-content-gaps">
+          <details class="hv2-faq-item mika-hud" data-system="faq" data-status="ready" id="faq-content-gaps">
             <summary><h3>How do I find content gaps on my website?</h3><span class="hv2-faq-chevron" aria-hidden="true">+</span></summary>
             <div class="hv2-faq-body">
               <div><p class="hv2-faq-label">Direct answer</p><p>Compare what your site already covers with the topics and intents your buyers search. Gaps appear as missing themes, shallow pages, or commercial questions that never get a direct answer. Page count is not the same as coverage.</p></div>
@@ -953,7 +981,7 @@
               <div><p class="hv2-faq-label">Next step</p><p><a href="#cta">See coverage opportunities</a></p></div>
             </div>
           </details>
-          <details class="hv2-faq-item" id="faq-new-topics">
+          <details class="hv2-faq-item mika-hud" data-system="faq" data-status="ready" id="faq-new-topics">
             <summary><h3>How do I identify new topics to target?</h3><span class="hv2-faq-chevron" aria-hidden="true">+</span></summary>
             <div class="hv2-faq-body">
               <div><p class="hv2-faq-label">Direct answer</p><p>Start from buyer jobs, applications, and commercial questions your current pages do not answer. Prioritize topics you can support with real product facts. Expanding into unsupported claims creates visibility that will not hold.</p></div>
@@ -961,7 +989,7 @@
               <div><p class="hv2-faq-label">Next step</p><p><a href="#cta">Map missing topics</a></p></div>
             </div>
           </details>
-          <details class="hv2-faq-item" id="faq-new-markets">
+          <details class="hv2-faq-item mika-hud" data-system="faq" data-status="ready" id="faq-new-markets">
             <summary><h3>How can I expand into new markets?</h3><span class="hv2-faq-chevron" aria-hidden="true">+</span></summary>
             <div class="hv2-faq-body">
               <div><p class="hv2-faq-label">Direct answer</p><p>Market expansion needs consistent company and product facts across languages, plus pages that cover local intent — not machine-translated shells. If entity names, specs, or answers drift by locale, trust and discoverability both suffer.</p></div>
@@ -969,7 +997,7 @@
               <div><p class="hv2-faq-label">Next step</p><p><a href="#cta">Discuss multilingual expansion</a></p></div>
             </div>
           </details>
-          <details class="hv2-faq-item" id="faq-commercial-opportunities">
+          <details class="hv2-faq-item mika-hud" data-system="faq" data-status="ready" id="faq-commercial-opportunities">
             <summary><h3>How do I identify commercial search opportunities?</h3><span class="hv2-faq-chevron" aria-hidden="true">+</span></summary>
             <div class="hv2-faq-body">
               <div><p class="hv2-faq-label">Direct answer</p><p>Commercial opportunities are searches where buyers compare options, choose a product, or prepare to inquire. They show up as intent clusters your site only partially answers — especially on product and application pages.</p></div>
@@ -977,7 +1005,7 @@
               <div><p class="hv2-faq-label">Next step</p><p><a href="#cta">Review commercial intent gaps</a></p></div>
             </div>
           </details>
-          <details class="hv2-faq-item" id="faq-healthy-still-grow">
+          <details class="hv2-faq-item mika-hud" data-system="faq" data-status="ready" id="faq-healthy-still-grow">
             <summary><h3>Why does a technically healthy website still have room to grow?</h3><span class="hv2-faq-chevron" aria-hidden="true">+</span></summary>
             <div class="hv2-faq-body">
               <div><p class="hv2-faq-label">Direct answer</p><p>Health means the site can be crawled and understood. Growth means important searches, markets, and questions are still unanswered. A clean technical site can still leave demand on the table.</p></div>
@@ -985,7 +1013,7 @@
               <div><p class="hv2-faq-label">Next step</p><p><a href="#cta">Compare Health vs Growth</a></p></div>
             </div>
           </details>
-          <details class="hv2-faq-item" id="faq-company-clarity">
+          <details class="hv2-faq-item mika-hud" data-system="faq" data-status="ready" id="faq-company-clarity">
             <summary><h3>How can I make my company information clearer?</h3><span class="hv2-faq-chevron" aria-hidden="true">+</span></summary>
             <div class="hv2-faq-body">
               <div><p class="hv2-faq-label">Direct answer</p><p>State who you are, what you offer, where you operate, and what proof supports your claims — in plain language on stable pages. Clear company information helps people and modern search surfaces trust and reference you.</p></div>
@@ -993,7 +1021,7 @@
               <div><p class="hv2-faq-label">Next step</p><p><a href="#cta">Improve entity clarity</a></p></div>
             </div>
           </details>
-          <details class="hv2-faq-item" id="faq-product-info-visibility">
+          <details class="hv2-faq-item mika-hud" data-system="faq" data-status="ready" id="faq-product-info-visibility">
             <summary><h3>How can I improve the visibility of my product information?</h3><span class="hv2-faq-chevron" aria-hidden="true">+</span></summary>
             <div class="hv2-faq-body">
               <div><p class="hv2-faq-label">Direct answer</p><p>Put definitions, specifications, applications, and evidence where they can be found and quoted. Keep names and facts consistent across languages. Hide less behind banners and more in structured, readable sections.</p></div>
@@ -1001,7 +1029,7 @@
               <div><p class="hv2-faq-label">Next step</p><p><a href="#cta">Strengthen product answers</a></p></div>
             </div>
           </details>
-          <details class="hv2-faq-item" id="faq-missing-customer-questions">
+          <details class="hv2-faq-item mika-hud" data-system="faq" data-status="ready" id="faq-missing-customer-questions">
             <summary><h3>Why are important customer questions missing from my website?</h3><span class="hv2-faq-chevron" aria-hidden="true">+</span></summary>
             <div class="hv2-faq-body">
               <div><p class="hv2-faq-label">Direct answer</p><p>Sites often describe features but skip the questions people ask before contacting sales. Those questions live in product selection, installation constraints, market fit, and proof — and they need direct answers on real pages.</p></div>
@@ -1009,7 +1037,7 @@
               <div><p class="hv2-faq-label">Next step</p><p><a href="#cta">Fill unanswered buyer questions</a></p></div>
             </div>
           </details>
-          <details class="hv2-faq-item" id="faq-easier-to-reference">
+          <details class="hv2-faq-item mika-hud" data-system="faq" data-status="ready" id="faq-easier-to-reference">
             <summary><h3>How can I make important information easier to reference?</h3><span class="hv2-faq-chevron" aria-hidden="true">+</span></summary>
             <div class="hv2-faq-body">
               <div><p class="hv2-faq-label">Direct answer</p><p>Use clear definitions, stable URLs, consistent entity names, and claims tied to evidence. Information that is scattered, slogan-heavy, or contradictory is harder for people — and for search answer surfaces — to trust and cite.</p></div>
@@ -1022,7 +1050,7 @@
     </section>
 
     <!-- CTA -->
-    <section class="hv2-section hv2-cta" id="cta" aria-labelledby="cta-title">
+    <section class="hv2-section hv2-cta mika-hud" data-system="cta" data-status="ready" data-motion-build id="cta" aria-labelledby="cta-title">
       <div class="hv2-wrap">
         <p class="hv2-kicker">Next step</p>
         <h2 class="hv2-h2" id="cta-title">Know where your website stands. Know what to do next.</h2>
@@ -1098,6 +1126,8 @@
   <script src="./contact-config.js"></script>
   <script src="./contact.js"></script>
   <script src="./src/motion/core.js" defer></script>
+  <script src="./src/motion/primitives.js" defer></script>
+  <script src="./src/hud/hud.js" defer></script>
   <script src="./src/animations/home.js" defer></script>
   <script src="./main.js" defer></script>
 </body>

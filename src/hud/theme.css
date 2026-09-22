@@ -1,0 +1,19 @@
+/* Mika Visibility Command Center — color system only.
+   Modules must consume these variables; do not invent local palettes. */
+
+:root {
+  --mika-bg: #070B14;
+  --mika-bg-2: #0B1220;
+  --mika-panel: #101A2C;
+  --mika-panel-2: #121D30;
+  --mika-highlight: #0E1728;
+  --mika-text: #F8FAFC;
+  --mika-muted: #94A3B8;
+  --mika-border: #1E293B;
+  /* Accent roles — use only for their assigned meaning */
+  --mika-blue: #38BDF8;   /* SEO / Search */
+  --mika-violet: #8B5CF6; /* GEO / AI visibility */
+  --mika-cyan: #22D3EE;   /* System in progress */
+  --mika-green: #34D399;  /* Verified / healthy */
+  --mika-amber: #FBBF24;  /* Warning / opportunity */
+}

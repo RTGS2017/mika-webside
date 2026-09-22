@@ -1,70 +1,194 @@
-/**
- * Mika Motion System — shared layer styles
- * Prefix: mm-
- */
+/* Mika Motion — styles for the five primitives only */
 
-.mm-ready {
-  --mm-ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --mm-seo: #2f6bff;
-  --mm-geo: #6e56cf;
-  --mm-ok: #1f7a4d;
-  --mm-navy: #101828;
-  --mm-struct: #64748b;
+.mm-build {
+  --mm-build-o: 0;
 }
 
-/* Reduced motion: always show final readable state */
+.mm-build .mika-hud-bar,
+.mm-build .hv2-section-head,
+.mm-build .hv2-kicker {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.mm-build.mm-build-corners::before,
+.mm-build.mm-build-corners::after,
+.mm-build.mm-build-corners .mika-hud-corners::before,
+.mm-build.mm-build-corners .mika-hud-corners::after {
+  border-color: var(--mika-cyan);
+  opacity: 1;
+}
+
+.mm-build.mm-build-edges {
+  box-shadow: inset 0 0 0 1px rgba(34, 211, 238, 0.18);
+}
+
+.mm-build.mm-build-title .mika-hud-bar,
+.mm-build.mm-build-title .hv2-section-head,
+.mm-build.mm-build-title .hv2-kicker,
+.mm-build.mm-build-title .hv2-h2,
+.mm-build.mm-build-title .hv2-h3 {
+  opacity: 1;
+  transform: none;
+}
+
+.mm-build.mm-build-content > *:not(.mika-hud-bar):not(.mika-hud-scan):not(.mika-hud-corners),
+.mm-build.mm-build-content .hv2-lede,
+.mm-build.mm-build-content .hv2-panel,
+.mm-build.mm-build-done {
+  opacity: 1;
+}
+
+.mm-build:not(.mm-build-content):not(.mm-final) > .hv2-lede,
+.mm-build:not(.mm-build-content):not(.mm-final) > .hv2-fw-map,
+.mm-build:not(.mm-build-content):not(.mm-final) > .hv2-audit-stats,
+.mm-build:not(.mm-build-content):not(.mm-final) > .hv2-hg-grid,
+.mm-build:not(.mm-build-content):not(.mm-final) > .hv2-bp-flow,
+.mm-build:not(.mm-build-content):not(.mm-final) > .hv2-coverage,
+.mm-build:not(.mm-build-content):not(.mm-final) > .mika-opp-map,
+.mm-build:not(.mm-build-content):not(.mm-final) > .hv2-geo-grid,
+.mm-build:not(.mm-build-content):not(.mm-final) > .hv2-q-layout,
+.mm-build:not(.mm-build-content):not(.mm-final) > .hv2-entity-grid,
+.mm-build:not(.mm-build-content):not(.mm-final) > .hv2-lang-cols,
+.mm-build:not(.mm-build-content):not(.mm-final) > .hv2-faq-list,
+.mm-build:not(.mm-build-content):not(.mm-final) > .hv2-opps {
+  opacity: 0.15;
+  transition: opacity 0.4s ease;
+}
+
+.mm-build.mm-build-content > .hv2-lede,
+.mm-build.mm-build-content > .hv2-fw-map,
+.mm-build.mm-build-content > .hv2-audit-stats,
+.mm-build.mm-build-content > .hv2-hg-grid,
+.mm-build.mm-build-content > .hv2-bp-flow,
+.mm-build.mm-build-content > .hv2-coverage,
+.mm-build.mm-build-content > .mika-opp-map,
+.mm-build.mm-build-content > .hv2-geo-grid,
+.mm-build.mm-build-content > .hv2-q-layout,
+.mm-build.mm-build-content > .hv2-entity-grid,
+.mm-build.mm-build-content > .hv2-lang-cols,
+.mm-build.mm-build-content > .hv2-faq-list,
+.mm-build.mm-build-content > .hv2-opps,
+.mm-build.mm-final > * {
+  opacity: 1;
+}
+
+/* scan */
+.mm-scanning {
+  position: relative;
+}
+
+.mm-scanning::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(var(--mm-scan-progress, 0) * 100%);
+  height: 1px;
+  background: var(--mika-cyan);
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 4;
+}
+
+[data-scan-ring] {
+  --mm-scan: 0;
+  background: conic-gradient(
+    var(--mika-green) calc(var(--mm-scan) * 1%),
+    var(--mika-border) 0
+  );
+}
+
+/* flow */
+.mm-quiet .mm-flow-path {
+  opacity: 0.2;
+}
+
+.mm-flow-path {
+  transition: stroke-dashoffset 0.9s ease, opacity 0.4s ease;
+}
+
+.mm-flow-path.mm-drawn {
+  opacity: 1;
+}
+
+.mm-node {
+  opacity: 0.25;
+  transition: opacity 0.35s ease;
+}
+
+.mm-node.mm-on {
+  opacity: 1;
+}
+
+/* signal */
+[data-signal],
+[data-node],
+[data-question],
+.mm-signal-node {
+  opacity: 0.35;
+  filter: grayscale(0.4);
+  transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
+}
+
+.mm-signal-on,
+.mm-on[data-node],
+.mm-on[data-question],
+.mm-on[data-signal] {
+  opacity: 1;
+  filter: none;
+}
+
+.mm-captured.is-seo {
+  border-color: var(--mika-blue) !important;
+  color: var(--mika-blue);
+}
+
+.mm-captured.is-geo {
+  border-color: var(--mika-violet) !important;
+  color: var(--mika-violet);
+}
+
+/* expand */
+.mm-expand-host .mm-expand-node,
+.mm-expand-host [data-expand],
+.mm-expand-host .hv2-opp {
+  opacity: 0;
+  transform: scale(0.86);
+  transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mm-expand-host .mm-expanded,
+.mm-expand-host .mm-on {
+  opacity: 1;
+  transform: scale(1);
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .mm-ready [data-motion] *,
-  .mm-ready [data-motion]::before,
-  .mm-ready [data-motion]::after,
-  .mm-ready [data-anim] *,
-  .mm-ready [data-anim]::before,
-  .mm-ready [data-anim]::after {
-    animation: none !important;
+  .mm-build .mika-hud-bar,
+  .mm-build .hv2-section-head,
+  .mm-build .hv2-kicker,
+  .mm-build:not(.mm-build-content) > *,
+  .mm-node,
+  [data-signal],
+  [data-node],
+  [data-question],
+  .mm-expand-host .mm-expand-node,
+  .mm-expand-host [data-expand],
+  .mm-expand-host .hv2-opp {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
     transition: none !important;
   }
 
-  .mm-ready .mm-path,
-  .mm-ready .mm-flow-path {
+  .mm-scanning::after {
+    display: none;
+  }
+
+  .mm-flow-path {
     stroke-dashoffset: 0 !important;
     opacity: 1 !important;
-  }
-
-  .mm-ready .mm-node,
-  .mm-ready .mm-stage-node,
-  .mm-ready .mm-opp-node,
-  .mm-ready .mm-cta-step,
-  .mm-ready .mm-geo-step,
-  .mm-ready .mm-audit-pipe-step,
-  .mm-ready .mm-neq,
-  .mm-ready .mm-fw-axis,
-  .mm-ready .mm-fw-cell,
-  .mm-ready .mm-bp-issue,
-  .mm-ready .mm-bp-root,
-  .mm-ready .mm-bp-action,
-  .mm-ready .hv2-problem-col,
-  .mm-ready .hv2-wall-item,
-  .mm-ready .hv2-chip {
-    opacity: 1 !important;
-    transform: none !important;
-    visibility: visible !important;
-  }
-}
-
-/* FAQ interaction highlight — content stays in DOM */
-.hv2-faq-item.mm-faq-active {
-  border-color: #c5cddb;
-  box-shadow: 0 0 0 1px rgba(47, 107, 255, 0.18);
-}
-
-.hv2-faq-item.mm-faq-active summary h3 {
-  color: #1e4ed8;
-}
-
-/* Mobile: fewer decorative nodes */
-@media (max-width: 768px) {
-  .mm-mobile-hide,
-  .mm-ready.mm-mobile .mm-desktop-only {
-    display: none !important;
   }
 }
