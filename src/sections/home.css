@@ -37,7 +37,7 @@
   --hv2-radius: 0;
   --hv2-radius-sm: 0;
   --hv2-max: 1180px;
-  --hv2-nav-h: 64px;
+  --hv2-nav-h: 72px;
   --hv2-font: "Instrument Sans", "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
   --hv2-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   color: var(--mika-text);
@@ -79,9 +79,8 @@
 
 @media (min-width: 1101px) {
   .hv2-wrap {
-    width: min(var(--hv2-max), calc(100% - 160px));
-    margin-left: max(140px, calc((100% - var(--hv2-max)) / 2));
-    margin-right: auto;
+    width: min(var(--hv2-max), calc(100% - 48px));
+    margin-inline: auto;
   }
 }
 
@@ -106,21 +105,21 @@
   background: var(--mika-nav-bg);
   border-bottom: 1px solid var(--mika-border);
   box-shadow: var(--mika-nav-shadow);
-  backdrop-filter: saturate(1.2) blur(12px);
+  backdrop-filter: saturate(1.2) blur(16px);
 }
 
 .hv2-nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 24px;
   height: var(--hv2-nav-h);
 }
 
 .hv2-nav-tools {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   margin-left: auto;
   flex-shrink: 0;
 }
@@ -130,19 +129,21 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  height: 36px;
-  padding: 0 14px;
-  border: 1px solid var(--mika-border);
-  border-radius: 999px;
-  background: var(--mika-panel);
+  height: 40px;
+  min-width: 88px;
+  padding: 0 16px;
+  border: 1px solid var(--mika-border-strong);
+  border-radius: 0;
+  background: var(--mika-panel-2);
   color: var(--mika-text);
-  font: inherit;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
+  font-family: var(--hv2-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
   text-decoration: none;
   cursor: pointer;
   white-space: nowrap;
+  clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
 }
 
 .hv2-tool svg {
@@ -152,9 +153,16 @@
   flex-shrink: 0;
 }
 
-.hv2-tool:hover {
-  border-color: var(--mika-blue);
-  color: var(--mika-blue);
+.hv2-tool:hover,
+.hv2-tool:focus-visible {
+  border-color: var(--mika-cyan);
+  color: var(--mika-cyan);
+  outline: none;
+}
+
+html[data-theme="dark"] .hv2-theme-btn {
+  border-color: var(--mika-cyan);
+  color: var(--mika-cyan);
 }
 
 .hv2-theme-btn .hv2-icon-moon,
