@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Check Website Crawlability | Mika Knowledge</title>
+  <meta name="description" content="Practical steps to check robots rules, status codes, and internal crawl paths so important pages can be discovered.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mikaovo.ai/knowledge/how-to-check-website-crawlability/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/how-to-check-website-crawlability/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/how-to-check-website-crawlability/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/how-to-check-website-crawlability/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="How to Check Website Crawlability">
+  <meta property="og:description" content="Practical steps to check robots rules, status codes, and internal crawl paths so important pages can be discovered.">
+  <meta property="og:url" content="https://mikaovo.ai/knowledge/how-to-check-website-crawlability/">
+  <meta property="og:site_name" content="Mika">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#0B1220">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../src/knowledge/center.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://mikaovo.ai/knowledge/how-to-check-website-crawlability/#article",
+        "headline": "How to Check Website Crawlability",
+        "description": "Practical steps to check robots rules, status codes, and internal crawl paths so important pages can be discovered.",
+        "datePublished": "2026-09-22",
+        "dateModified": "2026-09-22",
+        "inLanguage": "en",
+        "author": {"@type": "Organization", "name": "Mika"},
+        "publisher": {"@type": "Organization", "name": "Mika", "url": "https://mikaovo.ai/"},
+        "mainEntityOfPage": "https://mikaovo.ai/knowledge/how-to-check-website-crawlability/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mikaovo.ai/"},
+          {"@type": "ListItem", "position": 2, "name": "Knowledge Center", "item": "https://mikaovo.ai/knowledge/"},
+          {"@type": "ListItem", "position": 3, "name": "How to Check Website Crawlability", "item": "https://mikaovo.ai/knowledge/how-to-check-website-crawlability/"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "If Googlebot can crawl a page, will it rank?", "acceptedAnswer": {"@type": "Answer", "text": "Crawlability only means a URL can be fetched and inspected. Ranking depends on relevance, usefulness, competition, and many other factors. Checking crawlability answers discovery readiness, not position outcomes."}},
+          {"@type": "Question", "name": "Do I need a sitemap if navigation is strong?", "acceptedAnswer": {"@type": "Answer", "text": "Strong crawlable internal links are the primary discovery path. A sitemap helps surface important URLs and spot coverage gaps, but it does not replace clean status codes or reachable HTML links."}},
+          {"@type": "Question", "name": "What is the most common crawlability failure on B2B sites?", "acceptedAnswer": {"@type": "Answer", "text": "Blocked paths in robots.txt, parameter URL mazes without a preferred version, and important assets reachable only through non-crawlable UI patterns. Start with robots, status codes, and link paths from real hubs."}}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="kc-page">
+  <header class="kc-header">
+    <nav class="kc-nav" aria-label="Primary">
+      <a class="kc-nav-brand" href="/">
+        <img src="../../assets/logo.svg" alt="Mika" width="22" height="22">
+        <span>Mika</span>
+      </a>
+      <div class="kc-nav-links">
+        <a href="/">Home</a>
+        <a href="/knowledge/">Knowledge Center</a>
+        <a href="/zh/knowledge/how-to-check-website-crawlability/">中文</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <header class="kc-hero">
+      <p class="kc-meta"><span>SEO</span> · <time datetime="2026-09-22">2026-09-22</time></p>
+      <h1>How to Check Website Crawlability</h1>
+      <p>Confirm robots rules, status codes, and crawlable internal links so important pages can be discovered.</p>
+    </header>
+    <div class="kc-layout">
+      <aside class="kc-toc" aria-label="On this page">
+        <p>On this page</p>
+        <ol>
+          <li><a href="#definition">Definition</a></li>
+          <li><a href="#why-it-matters">Why it matters</a></li>
+          <li><a href="#how-to-check">How to check</a></li>
+          <li><a href="#example">Example</a></li>
+          <li><a href="#mika-lens">Health vs growth</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ol>
+      </aside>
+      <article class="kc-body">
+        <section id="definition">
+          <h2>Definition</h2>
+          <p>Website crawlability means search crawlers can request and fetch the URLs you care about through allowed rules and discoverable links. If a page is blocked, returns the wrong status, or exists only behind non-crawlable interactions, it may never enter a fair evaluation. Crawlability is a discovery condition. It does not guarantee indexing decisions, rankings, or citations.</p>
+          <p>Checking crawlability is therefore a factual walkthrough: what robots.txt allows, what status codes important templates return, and whether HTML links form a path from known hubs to product and documentation pages.</p>
+        </section>
+        <section id="why-it-matters">
+          <h2>Why it matters</h2>
+          <p>Public crawling guidance treats crawlable links as a primary way systems discover content. People-first content still needs a fetchable URL. On B2B sites, catalogs, filters, and CMS rules often create blocked folders, soft errors, or infinite parameter paths. Marketing may publish useful pages that never appear in a crawler’s graph because no crawlable link points to them, or because robots disallow the folder that holds them.</p>
+          <p>Teams that skip crawl checks waste time polishing copy on URLs that cannot be fetched, or assume a sitemap alone fixed discovery when internal paths remain broken.</p>
+        </section>
+        <section id="how-to-check">
+          <h2>How to check</h2>
+          <ol>
+            <li>Open robots.txt for the live host. Confirm important product, category, and docs paths are not disallowed by accident.</li>
+            <li>Fetch a sample of priority URLs and note status codes: 200 for intended pages, intentional 301/410 for retired URLs, and no soft-404 HTML that pretends success.</li>
+            <li>From the homepage and main hubs, follow crawlable HTML links (not only script-driven menus) toward product and resource pages.</li>
+            <li>Compare sitemap URL lists with pages found by link crawling; investigate URLs only in one list.</li>
+            <li>Flag parameter or session URL patterns that create many near-identical crawl targets without a clear preferred path.</li>
+            <li>Record blockers with sample URLs before any content expansion work that depends on those paths.</li>
+          </ol>
+        </section>
+        <section id="example">
+          <h2>A concrete example</h2>
+          <p>An industrial site lists products under <code>/products/</code> but stores downloadable manuals under <code>/files/</code>. After a security change, robots.txt disallows <code>/files/</code>. Support emails still share those URLs, and some product pages link to manuals. A crawlability check shows product HTML is fetchable, while manuals return disallow for Googlebot. The fix is not “write more product intros.” It is to decide which manuals should be public, serve them on allowed paths with crawlable links from product pages, and keep private assets genuinely private. Until that health issue is resolved, adding more brochure pages will not restore documentation discovery.</p>
+        </section>
+        <section id="mika-lens">
+          <h2>How Mika separates health issues from growth opportunities</h2>
+          <p>Blocked robots rules, bad status codes, and missing crawl paths are health issues: foundations that prevent discovery. Missing topic pages or weak market coverage are growth opportunities. Mika treats crawl failures as blockers first, then maps unanswered demand separately so teams do not confuse “cannot be fetched” with “need more content.”</p>
+        </section>
+        <section class="kc-faq" id="faq">
+          <h2>FAQ</h2>
+          <div>
+            <h3>If Googlebot can crawl a page, will it rank?</h3>
+            <p>Crawlability only means a URL can be fetched and inspected. Ranking depends on relevance, usefulness, competition, and many other factors. Checking crawlability answers discovery readiness, not position outcomes.</p>
+          </div>
+          <div>
+            <h3>Do I need a sitemap if navigation is strong?</h3>
+            <p>Strong crawlable internal links are the primary discovery path. A sitemap helps surface important URLs and spot coverage gaps, but it does not replace clean status codes or reachable HTML links.</p>
+          </div>
+          <div>
+            <h3>What is the most common crawlability failure on B2B sites?</h3>
+            <p>Blocked paths in robots.txt, parameter URL mazes without a preferred version, and important assets reachable only through non-crawlable UI patterns. Start with robots, status codes, and link paths from real hubs.</p>
+          </div>
+        </section>
+        <section class="kc-related">
+          <h2>Related articles</h2>
+          <ul>
+            <li><a href="../what-is-a-website-seo-audit/">What Is a Website SEO Audit</a></li>
+            <li><a href="../how-to-analyze-xml-sitemaps/">How to Analyze XML Sitemaps</a></li>
+            <li><a href="../how-to-find-orphan-pages/">How to Find Orphan Pages</a></li>
+          </ul>
+        </section>
+        <section class="kc-sources">
+          <h2>Sources</h2>
+          <ul>
+            <li>Google Search Central — <a href="https://developers.google.com/search/docs/crawling-indexing">Crawling and indexing overview</a></li>
+            <li>Google Search Central — <a href="https://developers.google.com/search/docs/crawling-indexing/links-crawlable">Link best practices for Google</a> (crawlable links)</li>
+            <li>Google Search Central — <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content">Creating helpful, reliable, people-first content</a></li>
+            <li>Mika method: crawl health as foundation, coverage as growth — <a href="https://mikaovo.ai/">mikaovo.ai</a></li>
+          </ul>
+        </section>
+        <section class="kc-cta">
+          <h2>Need a structured audit?</h2>
+          <p>See how Mika maps crawl health and content gaps into next actions.</p>
+          <a href="/#cta">Talk to Mika</a>
+        </section>
+      </article>
+    </div>
+  </main>
+  <script src="../../contact.js"></script>
+</body>
+</html>

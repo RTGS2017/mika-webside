@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What a Technical SEO/GEO Crawler Inspects | Mika Visibility</title>
+  <meta name="description" content="Design facts from crawlie: Health, GEO, and Accessibility scores, explainable rules, and agent-ready outputs for audits.">
+  <link rel="canonical" href="https://mikaovo.ai/knowledge/what-a-technical-seo-geo-crawler-inspects/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/what-a-technical-seo-geo-crawler-inspects/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/what-a-technical-seo-geo-crawler-inspects/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/what-a-technical-seo-geo-crawler-inspects/">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../src/knowledge/center.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What a Technical SEO/GEO Crawler Inspects",
+    "description": "A Mika Research Note on technical and answerability signals surfaced by a combined SEO/GEO crawler design.",
+    "datePublished": "2026-09-22",
+    "dateModified": "2026-09-22",
+    "inLanguage": "en",
+    "author": { "@type": "Organization", "name": "Mika Visibility", "url": "https://mikaovo.ai/" },
+    "publisher": { "@type": "Organization", "name": "Mika Visibility", "url": "https://mikaovo.ai/", "logo": { "@type": "ImageObject", "url": "https://mikaovo.ai/assets/logo.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://mikaovo.ai/knowledge/what-a-technical-seo-geo-crawler-inspects/" }
+  }
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">Skip to content</a>
+  <header class="kc-header">
+    <nav class="kc-nav kc-wrap" aria-label="Primary">
+      <a class="kc-brand" href="/">
+        <img src="../../assets/logo.svg" alt="" width="22" height="22">
+        <span>Mika Visibility <span>Knowledge</span></span>
+      </a>
+      <div class="kc-nav-links">
+        <a href="/">Home</a>
+        <a href="/knowledge/" aria-current="page">Knowledge</a>
+      </div>
+      <div class="kc-lang" aria-label="Language">
+        <a href="/knowledge/what-a-technical-seo-geo-crawler-inspects/" aria-current="page">EN</a>
+        <a href="/zh/knowledge/what-a-technical-seo-geo-crawler-inspects/">中文</a>
+      </div>
+    </nav>
+  </header>
+
+  <header class="kc-hero">
+    <div class="kc-wrap">
+      <p class="kc-hero-kicker">Mika Research Note · Technical</p>
+      <h1>What a Technical SEO/GEO Crawler Inspects</h1>
+      <p class="kc-hero-lead">How a combined crawler separates Health, GEO, and Accessibility scores—and why explainable findings help human auditors more than a single blended grade.</p>
+      <p class="kc-meta">
+        <span>Research</span>
+        <span>Viewed 2026-09-22</span>
+        <span>Source: crawlie (MIT)</span>
+      </p>
+    </div>
+  </header>
+
+  <main id="main" class="kc-layout kc-wrap">
+    <aside class="kc-toc" aria-label="On this page">
+      <nav>
+        <a href="#lens">Three score lenses</a>
+        <a href="#seo">Technical SEO checks</a>
+        <a href="#geo">GEO / answerability checks</a>
+        <a href="#a11y">Accessibility &amp; extras</a>
+        <a href="#explain">Explainable findings</a>
+        <a href="#audit">Audit implications</a>
+      </nav>
+    </aside>
+
+    <article class="kc-body">
+      <p>Classic SEO spiders list broken links and missing titles. Newer open tools also ask whether a page looks answerable to generative systems. This note captures design facts from the public project <strong>spronta/crawlie</strong>—described as a technical SEO + GEO crawler—with MIT-licensed repository source (GitHub’s SPDX field reports <code>NOASSERTION</code> because of a custom LICENSE preamble; the LICENSE body is MIT). Mika attributes facts only; we do not republish their docs.</p>
+
+      <h2 id="lens">Three score lenses instead of one blur</h2>
+      <p>Public materials state that every crawl returns three scores reported separately: a <strong>Health</strong> score (technical SEO), a <strong>GEO</strong> score (AI-search readiness), and an <strong>Accessibility</strong> score (WCAG-oriented checks). Keeping those lenses apart is itself a design lesson. A beautiful FAQ block cannot hide a 404 template; a perfect status-code profile cannot hide unlabelled forms or empty answerable content.</p>
+      <p>For Mika audits, that separation maps cleanly onto “SEO health vs growth” and “GEO health vs growth” thinking: fix discovery and integrity first, then improve clarity and evidence, while accessibility defects remain visible rather than averaged away.</p>
+
+      <h2 id="seo">Technical SEO checks observed</h2>
+      <p>Described technical rules cover the usual crawl hygiene: broken links, 4xx/5xx, redirects and chains, titles and meta descriptions (missing, duplicate, length), H1s, canonicals, noindex / nofollow / X-Robots-Tag, robots.txt blocking, missing image alt, thin and duplicate content, orphan and deep pages. Performance and security themes appear too—slow responses, large pages, missing compression, HTTPS, mixed content, HSTS.</p>
+      <p>International and social surfaces are in the same inventory: viewport, <code>lang</code>, hreflang, Open Graph, Twitter cards, and structured-data parsing with checks against rich-result field expectations for common types. Optional headless rendering audits the post-JavaScript DOM so client-rendered apps can be compared against what a non-JS fetch would see.</p>
+
+      <h2 id="geo">GEO / answerability checks observed</h2>
+      <p>GEO-oriented signals called out publicly include structured data, semantic HTML, answer-readiness, authorship / E-E-A-T cues, dated content, question-style headings, and extractable blocks—rolled into a per-page GEO score. The point for auditors is not to chase the score number. It is to ask whether each priority URL states a clear answer, who stands behind it, when it was updated, and whether machines can extract a compact block without inventing context.</p>
+      <p>That aligns with Mika’s refusal to promise citations: readiness is about legibility and evidence posture, not a warranty that ChatGPT, Perplexity, or AI Overviews will quote you.</p>
+
+      <h2 id="a11y">Accessibility and agent surfaces</h2>
+      <p>Accessibility checks described include links/buttons without accessible names, form controls without labels, iframes missing titles, zoom-blocking viewports, positive tabindex, and skipped heading levels. Shipping those beside SEO/GEO findings prevents “launch-ready for search” from meaning “unusable for people”.</p>
+      <p>The same project exposes CLI and MCP tooling so agents can run crawls and request explanations. Architecturally, a shared core feeding CLI, desktop, and protocol surfaces suggests a useful rule: one audited engine, many delivery channels—identical results, less argument about whose export is “true”.</p>
+
+      <h2 id="explain">Explainable findings beat opaque grades</h2>
+      <p>A recurring public emphasis is that each finding links to plain-language guidance: why it matters, how to fix it, and what happens if ignored. Auditors should demand the same from any internal scorecard. If a dashboard cannot explain a rule, it is not ready to drive sprint priorities.</p>
+
+      <h2 id="audit">Implications for website audits</h2>
+      <ol>
+        <li>Report Health, answerability, and accessibility as separate columns on the same URL list.</li>
+        <li>Prioritise template-level defects (shared chrome, robots, soft failures) before page-by-page copy edits.</li>
+        <li>When JS rendering exists, sample key commercial URLs in both modes.</li>
+        <li>Attach “why / how / if ignored” notes to every severity you escalate to stakeholders.</li>
+      </ol>
+      <p>Those habits borrow the crawler’s structure without depending on any single vendor binary. Mika remains responsible for interpretation, business priority, and honest limits on what audits can claim.</p>
+    </article>
+  </main>
+
+  <div class="kc-wrap">
+    <section class="kc-sources" aria-labelledby="sources-heading">
+      <h2 id="sources-heading">Sources</h2>
+      <ol>
+        <li>
+          <strong>Repository:</strong> crawlie<br>
+          <strong>Owner:</strong> spronta (Spronta Ltd)<br>
+          <strong>License:</strong> MIT (LICENSE file; GitHub SPDX may show NOASSERTION due to a custom preamble excluding Crawlie Cloud and noting third-party components)<br>
+          <strong>Source:</strong> <a href="https://github.com/spronta/crawlie">https://github.com/spronta/crawlie</a><br>
+          <strong>Viewed:</strong> 2026-09-22<br>
+          <span>Fact attribution only. Mika did not copy this project’s documentation. Crawlie Cloud is separate and not covered by the open LICENSE.</span>
+        </li>
+      </ol>
+    </section>
+
+    <section class="kc-related" aria-labelledby="related-heading">
+      <h2 id="related-heading">Related</h2>
+      <div class="kc-grid">
+        <a class="kc-card" href="/knowledge/what-open-source-seo-crawlers-check/">
+          <p class="kc-card-meta"><span class="kc-tag kc-tag--seo">Open Source</span></p>
+          <h3 class="kc-card-title">What Open-Source SEO Crawlers Check</h3>
+          <p class="kc-card-blurb">Sitemap, hreflang, duplicates, and broken-link inventories.</p>
+        </a>
+        <a class="kc-card" href="/knowledge/how-to-audit-ai-search-visibility/">
+          <p class="kc-card-meta"><span class="kc-tag kc-tag--geo">GEO</span></p>
+          <h3 class="kc-card-title">How to Audit AI Search Visibility</h3>
+          <p class="kc-card-blurb">Answerability, entities, and evidence—not ranking guarantees.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="kc-faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">FAQ</h2>
+      <details>
+        <summary>Is crawlie’s GEO score a citation predictor?</summary>
+        <p>No score discussed here predicts citations. GEO-oriented checks describe readiness signals such as structure, extractability, and authorship cues.</p>
+      </details>
+      <details>
+        <summary>Why mention the GitHub SPDX caveat?</summary>
+        <p>Accurate attribution requires recording what the LICENSE file says and what GitHub’s metadata reports when they differ.</p>
+      </details>
+    </section>
+
+    <section class="kc-cta" aria-labelledby="cta-heading">
+      <h2 id="cta-heading">Want Health and GEO inspected separately?</h2>
+      <p>Mika runs structured audits that keep technical hygiene and answerability in different lanes—so one problem never hides another.</p>
+      <a class="kc-btn kc-btn-primary" href="/#contact">Contact Mika</a>
+    </section>
+  </div>
+
+  <footer class="kc-footer">
+    <div class="kc-wrap kc-footer-bottom">
+      <p>© Mika Visibility · Research note · Not legal advice</p>
+      <div class="kc-footer-links">
+        <a href="/">Home</a>
+        <a href="/knowledge/">Knowledge</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../../contact-config.js"></script>
+  <script src="../../contact.js"></script>
+</body>
+</html>

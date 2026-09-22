@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Analyze XML Sitemaps | Mika Knowledge Center</title>
+  <meta name="description" content="Analyze XML sitemaps for coverage, freshness signals, and mismatches with crawlable, indexable pages—without treating the file as a ranking switch.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mikaovo.ai/knowledge/how-to-analyze-xml-sitemaps/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/how-to-analyze-xml-sitemaps/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/how-to-analyze-xml-sitemaps/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/how-to-analyze-xml-sitemaps/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to Analyze XML Sitemaps">
+  <meta property="og:description" content="Read sitemap coverage, freshness, and indexation mismatches against the live site.">
+  <meta property="og:url" content="https://mikaovo.ai/knowledge/how-to-analyze-xml-sitemaps/">
+  <meta property="og:site_name" content="Mika">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../src/knowledge/center.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://mikaovo.ai/knowledge/how-to-analyze-xml-sitemaps/#article",
+        "headline": "How to Analyze XML Sitemaps",
+        "description": "Analyze XML sitemaps for coverage, freshness signals, and mismatches with crawlable, indexable pages—without treating the file as a ranking switch.",
+        "datePublished": "2026-09-22",
+        "dateModified": "2026-09-22",
+        "inLanguage": "en",
+        "author": { "@type": "Organization", "name": "Mika", "url": "https://mikaovo.ai/" },
+        "publisher": { "@type": "Organization", "name": "Mika", "url": "https://mikaovo.ai/", "logo": { "@type": "ImageObject", "url": "https://mikaovo.ai/assets/logo.svg" } },
+        "mainEntityOfPage": "https://mikaovo.ai/knowledge/how-to-analyze-xml-sitemaps/",
+        "isPartOf": { "@type": "WebSite", "name": "Mika", "url": "https://mikaovo.ai/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://mikaovo.ai/knowledge/how-to-analyze-xml-sitemaps/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mikaovo.ai/" },
+          { "@type": "ListItem", "position": 2, "name": "Knowledge Center", "item": "https://mikaovo.ai/knowledge/" },
+          { "@type": "ListItem", "position": 3, "name": "How to Analyze XML Sitemaps", "item": "https://mikaovo.ai/knowledge/how-to-analyze-xml-sitemaps/" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://mikaovo.ai/knowledge/how-to-analyze-xml-sitemaps/#faq",
+    "inLanguage": "en",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why does my site have a sitemap but pages still do not show up in search?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A sitemap is a hint, not a guarantee of indexing. Pages can still be blocked by robots rules, noindex, soft errors, thin or duplicate templates, or weak internal links. Analyze whether listed URLs return usable 200 responses, allow crawling, and match the URLs you intend to keep—then fix discovery and quality issues on the live site."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should every URL on my website appear in the XML sitemap?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Prefer canonical, indexable URLs that represent real content you want discovered. Parameter variants, filtered faceted URLs, thank-you pages, and non-canonical duplicates usually belong out of the sitemap. Coverage quality matters more than raw URL count."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does lastmod in a sitemap force search engines to recrawl a page?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. lastmod is a signal only when it reflects meaningful updates. Inflating dates for unchanged pages does not create ranking outcomes. Use lastmod when the page content actually changed, and keep sitemap entries aligned with live, crawlable URLs."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">Skip to content</a>
+  <header class="kc-header">
+    <nav class="kc-nav" aria-label="Primary">
+      <a class="kc-brand" href="/">Mika</a>
+      <div class="kc-nav-links">
+        <a href="/">Home</a>
+        <a href="/knowledge/">Knowledge Center</a>
+        <a href="/zh/knowledge/how-to-analyze-xml-sitemaps/">中文</a>
+        <a class="kc-nav-cta" href="/#cta">Start a structured audit</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <header class="kc-hero">
+      <p class="kc-kicker">SEO</p>
+      <h1>How to Analyze XML Sitemaps</h1>
+      <p class="kc-lede">Treat the sitemap as a discovery inventory—then reconcile it with what the live site actually allows crawlers to fetch.</p>
+      <p class="kc-meta"><time datetime="2026-09-22">2026-09-22</time> · SEO · ~8 min</p>
+    </header>
+
+    <div class="kc-layout">
+      <nav class="kc-toc" aria-label="On this page">
+        <p class="kc-toc-title">On this page</p>
+        <ol>
+          <li><a href="#direct-answer">Direct answer</a></li>
+          <li><a href="#why-it-matters">Why it matters</a></li>
+          <li><a href="#how-to-check">How to check</a></li>
+          <li><a href="#example">Example</a></li>
+          <li><a href="#health-vs-growth">Health vs Growth</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#related">Related</a></li>
+          <li><a href="#sources">Sources</a></li>
+        </ol>
+      </nav>
+
+      <article class="kc-body">
+        <section id="direct-answer" aria-labelledby="direct-answer-title">
+          <h2 id="direct-answer-title">Direct answer</h2>
+          <p>Analyzing an XML sitemap means checking three things together: <strong>which URLs you declare</strong>, <strong>whether those URLs are crawlable and intentional</strong>, and <strong>where the file disagrees with the live site</strong>. A sitemap helps crawlers discover pages you care about. It does not force indexing, fix broken links, or create unique content.</p>
+          <p>Start from the sitemap index or single sitemap your robots.txt references. Verify the file parses, lists absolute HTTPS URLs, avoids non-canonical variants, and excludes pages that return errors, redirects loops, or noindex. Then compare sitemap membership with internal-link discovery and with pages you believe should be indexable. Gaps and leftovers are the findings—not a score.</p>
+        </section>
+
+        <section id="why-it-matters" aria-labelledby="why-it-matters-title">
+          <h2 id="why-it-matters-title">Why it matters</h2>
+          <p>XML sitemaps are often treated as a set-and-forget checkbox. Over time, CMS exports, product feeds, and staging leftovers inflate the list with URLs that no longer represent useful pages. Search systems may still spend attention on noisy entries while important product or application URLs remain missing from both the sitemap and the link graph.</p>
+          <p>Clear sitemap hygiene supports people-first discovery: crawlers can find the same important pages humans reach through navigation. Public Google Search Central guidance frames sitemaps as optional discovery helpers—not ranking levers. Useful, unique, crawlable content still has to exist on the URL you list.</p>
+        </section>
+
+        <section id="how-to-check" aria-labelledby="how-to-check-title">
+          <h2 id="how-to-check-title">How to check</h2>
+          <ol>
+            <li><strong>Locate the declared file</strong> — Open robots.txt for <code>Sitemap:</code> lines. Fetch each sitemap or sitemap index. Confirm XML is valid and nested indexes resolve.</li>
+            <li><strong>Sample status and headers</strong> — Spot-check listed URLs for 200 responses, final canonical location, robots meta / X-Robots-Tag, and whether important content is server-rendered or blocked.</li>
+            <li><strong>Filter intent</strong> — Remove or exclude thank-you pages, login walls, pure parameter filters, and alternate hosts (www vs non-www, trailing-slash duplicates) unless they are the chosen canonical.</li>
+            <li><strong>Cross-check coverage</strong> — Compare sitemap URLs with a crawl of internal links. Note orphans that appear only in the sitemap, and important linked pages missing from the sitemap.</li>
+            <li><strong>Review lastmod honestly</strong> — Trust lastmod only when it tracks real content changes—not as a growth tactic.</li>
+            <li><strong>Record sample URLs</strong> — Keep examples of “listed but blocked,” “listed but redirected,” and “important but absent” for the blueprint.</li>
+          </ol>
+        </section>
+
+        <section id="example" aria-labelledby="example-title">
+          <h2 id="example-title">Example</h2>
+          <p>Imagine a B2B catalog with a sitemap index for products, categories, and blog posts. The product sitemap still lists discontinued SKUs that 404, plus faceted filter URLs that duplicate thin category templates. Several new application guides are linked from the homepage hub but never added to the blog sitemap after a CMS migration.</p>
+          <p>Analysis does not invent traffic numbers. It produces a short evidence list: sample 404s to remove, facet patterns to stop exporting, and guide URLs to add once they are indexed-intent pages with clear titles and internal links. The team updates the generator, republishes the sitemap, and re-audits whether listed URLs now match crawlable, canonical destinations.</p>
+        </section>
+
+        <section id="health-vs-growth" aria-labelledby="health-vs-growth-title">
+          <h2 id="health-vs-growth-title">Mika: Health vs Growth</h2>
+          <p>Sitemap mismatches usually sit under <strong>SEO Health</strong>: discovery inventory, crawl consistency, and intentional URLs. Adding missing topic or market pages is <strong>SEO Growth</strong> work—and those pages still need useful content and links, not only a new <code>&lt;loc&gt;</code> line. Mika keeps health and growth on separate panels so a clean sitemap is never mistaken for finished demand coverage.</p>
+        </section>
+
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">FAQ</h2>
+          <div class="kc-faq-item">
+            <h3>Why does my site have a sitemap but pages still do not show up in search?</h3>
+            <p>A sitemap is a hint, not a guarantee of indexing. Pages can still be blocked by robots rules, noindex, soft errors, thin or duplicate templates, or weak internal links. Analyze whether listed URLs return usable 200 responses, allow crawling, and match the URLs you intend to keep—then fix discovery and quality issues on the live site.</p>
+          </div>
+          <div class="kc-faq-item">
+            <h3>Should every URL on my website appear in the XML sitemap?</h3>
+            <p>No. Prefer canonical, indexable URLs that represent real content you want discovered. Parameter variants, filtered faceted URLs, thank-you pages, and non-canonical duplicates usually belong out of the sitemap. Coverage quality matters more than raw URL count.</p>
+          </div>
+          <div class="kc-faq-item">
+            <h3>Does lastmod in a sitemap force search engines to recrawl a page?</h3>
+            <p>No. lastmod is a signal only when it reflects meaningful updates. Inflating dates for unchanged pages does not create ranking outcomes. Use lastmod when the page content actually changed, and keep sitemap entries aligned with live, crawlable URLs.</p>
+          </div>
+        </section>
+
+        <section class="kc-related" id="related" aria-labelledby="related-title">
+          <h2 id="related-title">Related articles</h2>
+          <ul>
+            <li><a href="../how-to-find-orphan-pages/">How to Find Orphan Pages</a></li>
+            <li><a href="../how-to-check-website-crawlability/">How to Check Website Crawlability</a></li>
+            <li><a href="../how-to-find-broken-internal-links/">How to Find Broken Internal Links</a></li>
+          </ul>
+        </section>
+
+        <section class="kc-sources" id="sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">Sources</h2>
+          <ul>
+            <li>Mika method: discover live URL facts → diagnose mismatches → blueprint page-level fixes → re-audit — <a href="https://mikaovo.ai/">mikaovo.ai</a></li>
+            <li><a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview">Google Search Central — Sitemaps overview</a> (public guidance on discovery hints, not ranking guarantees)</li>
+            <li><a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content">Google Search Central — Creating helpful, reliable, people-first content</a></li>
+            <li>Public crawlability principle: important pages should be reachable through crawlable links and consistent URLs</li>
+          </ul>
+          <p class="kc-note">This article explains how to inspect sitemap quality. It does not predict rankings or guarantee placement in any search or answer surface.</p>
+        </section>
+      </article>
+    </div>
+
+    <section class="kc-cta" aria-labelledby="cta-title">
+      <h2 id="cta-title">Know where your website stands</h2>
+      <p>Run a structured SEO + GEO audit. See health findings and growth gaps as separate capabilities — then turn them into a blueprint.</p>
+      <a class="kc-btn" href="/#cta">Start a structured audit</a>
+    </section>
+  </main>
+
+  <script src="../../contact-config.js"></script>
+  <script src="../../contact.js"></script>
+</body>
+</html>

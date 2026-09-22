@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>如何检查 Hreflang | Mika Knowledge</title>
+  <meta name="description" content="校验语言与地区备用注解，让本地化页面正确互指——而不猜测排名。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mikaovo.ai/zh/knowledge/how-to-check-hreflang/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/how-to-check-hreflang/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/how-to-check-hreflang/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/how-to-check-hreflang/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:title" content="如何检查 Hreflang">
+  <meta property="og:description" content="校验语言与地区备用注解，让本地化页面正确互指——而不猜测排名。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/knowledge/how-to-check-hreflang/">
+  <meta property="og:site_name" content="Mika">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#0B1220">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://mikaovo.ai/zh/knowledge/how-to-check-hreflang/#article",
+        "headline": "如何检查 Hreflang",
+        "description": "校验语言与地区备用注解，让本地化页面正确互指——而不猜测排名。",
+        "datePublished": "2026-09-22",
+        "dateModified": "2026-09-22",
+        "inLanguage": "zh-Hans",
+        "author": {"@type": "Organization", "name": "Mika"},
+        "publisher": {"@type": "Organization", "name": "Mika", "url": "https://mikaovo.ai/"},
+        "mainEntityOfPage": "https://mikaovo.ai/zh/knowledge/how-to-check-hreflang/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://mikaovo.ai/zh/"},
+          {"@type": "ListItem", "position": 2, "name": "知识中心", "item": "https://mikaovo.ai/zh/knowledge/"},
+          {"@type": "ListItem", "position": 3, "name": "如何检查 Hreflang", "item": "https://mikaovo.ai/zh/knowledge/how-to-check-hreflang/"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Hreflang 正确就能保证对的语言排名吗？", "acceptedAnswer": {"@type": "Answer", "text": "不能。Hreflang 帮助关联语言与地区变体。排名仍取决于相关性、有用性与竞争。检查 hreflang 校验的是备用注解，不是名次结果。"}},
+          {"@type": "Question", "name": "只有一种语言也需要 hreflang 吗？", "acceptedAnswer": {"@type": "Answer", "text": "若只有一种语言且无地区变体，通常不必。当你发布应被关联的真实备用语言或地区 URL 时，再添加。"}},
+          {"@type": "Question", "name": "最常见的 hreflang 错误是什么？", "acceptedAnswer": {"@type": "Answer", "text": "缺少回指——A 列出 B，但 B 未列出 A——或指向不可索引、错误语言的 URL。真实本地化页面之间互惠、可抓取的备用链接是底线。"}}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="kc-page">
+  <header class="kc-header">
+    <nav class="kc-nav" aria-label="主导航">
+      <a class="kc-nav-brand" href="/zh/">
+        <img src="../../../assets/logo.svg" alt="Mika" width="22" height="22">
+        <span>Mika</span>
+      </a>
+      <div class="kc-nav-links">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/knowledge/how-to-check-hreflang/">English</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <header class="kc-hero">
+      <p class="kc-meta"><span>SEO</span> · <time datetime="2026-09-22">2026-09-22</time></p>
+      <h1>如何检查 Hreflang</h1>
+      <p>校验语言与地区备用注解，让本地化页面正确关联——不承诺排名。</p>
+    </header>
+    <div class="kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <ol>
+          <li><a href="#definition">定义</a></li>
+          <li><a href="#why-it-matters">为什么重要</a></li>
+          <li><a href="#how-to-check">怎么检查</a></li>
+          <li><a href="#example">例子</a></li>
+          <li><a href="#mika-lens">健康与增长</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ol>
+      </aside>
+      <article class="kc-body">
+        <section id="definition">
+          <h2>定义</h2>
+          <p>检查 hreflang，就是验证语言与地区备用注解是否正确连接各语区的等价页面。注解可出现在 HTML、HTTP 头或 sitemap 中。扎实的检查确认：代码有效、URL 可抓取、需要处有自引用，且变体之间回指互惠。</p>
+          <p>Hreflang 描述本地化版本之间的关系。它不会创造缺失的有用内容，也不能保证某次查询会显示哪种语言。</p>
+        </section>
+        <section id="why-it-matters">
+          <h2>为什么重要</h2>
+          <p>公开的国际定位文档存在，是因为站点常发布多语言近平行页。没有清晰备用关系，系统可能把变体当成无关重复，或展示错误语言。以人为本的本地化内容，仍需要可抓取、准确的关联，才能把目标语言版本理解为一组中的成员。</p>
+          <p>扩张新市场的 B2B 团队，有时会上线机翻壳页或不完整的语区目录。Hreflang 错误会放大混乱：备用标签里的坏 URL，或英文页声称存在却 404 的中文备用页。尽早检查注解，可避免市场扩张制造虚假关联信号。</p>
+        </section>
+        <section id="how-to-check">
+          <h2>怎么检查</h2>
+          <ol>
+            <li>列出计划中的语言/地区对，以及各自 URL 模式（子目录、子域或国别域名）。</li>
+            <li>抽样优先模板，从 HTML、响应头或 sitemap 提取 hreflang；同一模板族尽量用一致方式。</li>
+            <li>校验语言-地区代码，并确认每个备用 URL 返回预期成功状态。</li>
+            <li>验证互惠：若 EN 列出 ZH，则 ZH 必须为同一簇列出 EN（及自身）。</li>
+            <li>若使用 <code>x-default</code>，确认它指向预期回退（通常是主语言枢纽）。</li>
+            <li>规划翻译工作前，把「注解坏了」与「语区内容尚未建设」分开记录。</li>
+          </ol>
+        </section>
+        <section id="example">
+          <h2>一个具体例子</h2>
+          <p>某设备厂商上线 <code>/zh/products/model-x/</code>，与英文产品页并存。英文页的 hreflang 列出了中文 URL，但中文页只列自己、没有回指英文，且有一条注解仍指向预发布主机。Hreflang 检查标出缺少互惠与无效备用主机。修好注解后，语言簇才连贯。若中文买家还需要仅存在于英文 PDF 里的应用说明，那是中文市场的增长覆盖缺口——正确的 hreflang 标签发明不了这些内容。</p>
+        </section>
+        <section id="mika-lens">
+          <h2>Mika 如何区分健康问题与增长机会</h2>
+          <p>损坏、非互惠或不可抓取的 hreflang 注解属于健康问题：语言信号混乱。缺失本地化主题或不完整市场覆盖属于增长机会。Mika 把注解失败当作基础修复，把市场内容缺口当作单独的覆盖工作。</p>
+        </section>
+        <section class="kc-faq" id="faq">
+          <h2>常见问题</h2>
+          <div>
+            <h3>Hreflang 正确就能保证对的语言排名吗？</h3>
+            <p>不能。Hreflang 帮助关联语言与地区变体。排名仍取决于相关性、有用性与竞争。检查 hreflang 校验的是备用注解，不是名次结果。</p>
+          </div>
+          <div>
+            <h3>只有一种语言也需要 hreflang 吗？</h3>
+            <p>若只有一种语言且无地区变体，通常不必。当你发布应被关联的真实备用语言或地区 URL 时，再添加。</p>
+          </div>
+          <div>
+            <h3>最常见的 hreflang 错误是什么？</h3>
+            <p>缺少回指——A 列出 B，但 B 未列出 A——或指向不可索引、错误语言的 URL。真实本地化页面之间互惠、可抓取的备用链接是底线。</p>
+          </div>
+        </section>
+        <section class="kc-related">
+          <h2>相关文章</h2>
+          <ul>
+            <li><a href="../how-to-audit-canonical-urls/">如何审计规范 URL（Canonical）</a></li>
+            <li><a href="../how-to-expand-seo-into-new-markets/">如何把 SEO 扩展到新市场</a></li>
+            <li><a href="../how-to-detect-duplicate-content/">如何检测重复内容</a></li>
+          </ul>
+        </section>
+        <section class="kc-sources">
+          <h2>来源</h2>
+          <ul>
+            <li>Google Search Central — <a href="https://developers.google.com/search/docs/specialty/international/localized-versions">页面的本地化版本（hreflang）</a></li>
+            <li>Google Search Central — <a href="https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls">如何指定规范 URL</a></li>
+            <li>Google Search Central — <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content">创建有帮助、可靠、以人为本的内容</a></li>
+            <li>Mika 方法：语言信号健康 vs 市场覆盖增长 — <a href="https://mikaovo.ai/">mikaovo.ai</a></li>
+          </ul>
+        </section>
+        <section class="kc-cta">
+          <h2>需要结构化审计？</h2>
+          <p>了解 Mika 如何把抓取健康与内容缺口映射成下一步动作。</p>
+          <a href="/zh/#cta">联系 Mika</a>
+        </section>
+      </article>
+    </div>
+  </main>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

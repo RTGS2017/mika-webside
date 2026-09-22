@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>如何检查网站可抓取性 | Mika Knowledge</title>
+  <meta name="description" content="用 robots 规则、状态码与内链抓取路径做实用检查，确认重要页面能够被发现。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mikaovo.ai/zh/knowledge/how-to-check-website-crawlability/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/how-to-check-website-crawlability/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/how-to-check-website-crawlability/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/how-to-check-website-crawlability/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:title" content="如何检查网站可抓取性">
+  <meta property="og:description" content="用 robots 规则、状态码与内链抓取路径做实用检查，确认重要页面能够被发现。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/knowledge/how-to-check-website-crawlability/">
+  <meta property="og:site_name" content="Mika">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#0B1220">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://mikaovo.ai/zh/knowledge/how-to-check-website-crawlability/#article",
+        "headline": "如何检查网站可抓取性",
+        "description": "用 robots 规则、状态码与内链抓取路径做实用检查，确认重要页面能够被发现。",
+        "datePublished": "2026-09-22",
+        "dateModified": "2026-09-22",
+        "inLanguage": "zh-Hans",
+        "author": {"@type": "Organization", "name": "Mika"},
+        "publisher": {"@type": "Organization", "name": "Mika", "url": "https://mikaovo.ai/"},
+        "mainEntityOfPage": "https://mikaovo.ai/zh/knowledge/how-to-check-website-crawlability/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://mikaovo.ai/zh/"},
+          {"@type": "ListItem", "position": 2, "name": "知识中心", "item": "https://mikaovo.ai/zh/knowledge/"},
+          {"@type": "ListItem", "position": 3, "name": "如何检查网站可抓取性", "item": "https://mikaovo.ai/zh/knowledge/how-to-check-website-crawlability/"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Googlebot 能抓到页面就一定能排名吗？", "acceptedAnswer": {"@type": "Answer", "text": "可抓取性只表示 URL 能被请求与检查。排名还取决于相关性、有用性、竞争等许多因素。检查可抓取性回答的是发现就绪度，不是名次结果。"}},
+          {"@type": "Question", "name": "导航已经很强，还需要 sitemap 吗？", "acceptedAnswer": {"@type": "Answer", "text": "可抓取的内链是主要发现路径。Sitemap 有助于暴露重要 URL、对照覆盖差异，但不能替代干净的状态码与可达的 HTML 链接。"}},
+          {"@type": "Question", "name": "B2B 站点最常见的可抓取性问题是什么？", "acceptedAnswer": {"@type": "Answer", "text": "robots.txt 误拦路径、参数 URL 迷宫却无首选版本，以及重要资源只能通过不可抓取的 UI 方式到达。从 robots、状态码和真实枢纽的链接路径入手。"}}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="kc-page">
+  <header class="kc-header">
+    <nav class="kc-nav" aria-label="主导航">
+      <a class="kc-nav-brand" href="/zh/">
+        <img src="../../../assets/logo.svg" alt="Mika" width="22" height="22">
+        <span>Mika</span>
+      </a>
+      <div class="kc-nav-links">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/knowledge/how-to-check-website-crawlability/">English</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <header class="kc-hero">
+      <p class="kc-meta"><span>SEO</span> · <time datetime="2026-09-22">2026-09-22</time></p>
+      <h1>如何检查网站可抓取性</h1>
+      <p>核对 robots 规则、状态码与可抓取内链，确认重要页面能够被发现。</p>
+    </header>
+    <div class="kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <ol>
+          <li><a href="#definition">定义</a></li>
+          <li><a href="#why-it-matters">为什么重要</a></li>
+          <li><a href="#how-to-check">怎么检查</a></li>
+          <li><a href="#example">例子</a></li>
+          <li><a href="#mika-lens">健康与增长</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ol>
+      </aside>
+      <article class="kc-body">
+        <section id="definition">
+          <h2>定义</h2>
+          <p>网站可抓取性，指搜索爬虫能在允许规则下请求并获取你关心的 URL，并通过可发现链接到达它们。若页面被拦截、状态码错误，或只存在于不可抓取的交互之后，它可能无法进入公正评估。可抓取性是发现条件，不保证被索引、排名或引用。</p>
+          <p>因此，检查可抓取性是一次事实走查：robots.txt 允许什么、关键模板返回什么状态码，以及 HTML 链接是否从已知枢纽通到产品与文档页。</p>
+        </section>
+        <section id="why-it-matters">
+          <h2>为什么重要</h2>
+          <p>公开的抓取文档把可抓取链接视为发现内容的主要方式之一。以人为本的内容仍然需要可获取的 URL。B2B 站点上的目录、筛选与 CMS 规则，常制造被拦目录、软错误或近乎无限的参数路径。市场发布了有用页面，却可能从未进入爬虫图：没有可抓取链接指向它，或 robots 禁止了所在目录。</p>
+          <p>跳过抓取检查，团队会在无法获取的 URL 上打磨文案，或误以为仅靠 sitemap 就修好了发现，而内链路径其实仍然断裂。</p>
+        </section>
+        <section id="how-to-check">
+          <h2>怎么检查</h2>
+          <ol>
+            <li>打开线上站点的 robots.txt，确认产品、类目、文档路径没有被误禁。</li>
+            <li>抽样请求优先 URL，记录状态码：预期页面应为 200；下线 URL 可用有意的 301/410；避免假装成功的软 404 HTML。</li>
+            <li>从首页与主要枢纽出发，沿可抓取 HTML 链接（不只是脚本驱动菜单）走到产品与资源页。</li>
+            <li>对照 sitemap URL 列表与链接抓取发现的页面，只出现在一侧的 URL 要追查。</li>
+            <li>标记会制造大量近重复抓取目标、却无清晰首选路径的参数或会话 URL 模式。</li>
+            <li>先用样例 URL 记录阻断项，再安排依赖这些路径的内容扩展。</li>
+          </ol>
+        </section>
+        <section id="example">
+          <h2>一个具体例子</h2>
+          <p>某工业站点产品在 <code>/products/</code> 下，说明书在 <code>/files/</code>。安全策略更新后，robots.txt 禁止了 <code>/files/</code>。支持邮件仍分享这些 URL，部分产品页也链到说明书。可抓取性检查显示：产品 HTML 可抓，说明书对 Googlebot 被 disallow。正确动作不是「再写更多产品介绍」，而是决定哪些说明书应公开、放在允许抓取的路径上，并从产品页用可抓取链接指向它们；真正私有的资产继续保持私有。在这个健康问题修好之前，再加宣传页也恢复不了文档发现。</p>
+        </section>
+        <section id="mika-lens">
+          <h2>Mika 如何区分健康问题与增长机会</h2>
+          <p>被拦的 robots 规则、错误状态码、缺失抓取路径属于健康问题：基础阻止了发现。缺主题页或弱市场覆盖属于增长机会。Mika 先把抓取失败当作阻断，再单独映射未回答需求，避免把「抓不到」误当成「内容不够」。</p>
+        </section>
+        <section class="kc-faq" id="faq">
+          <h2>常见问题</h2>
+          <div>
+            <h3>Googlebot 能抓到页面就一定能排名吗？</h3>
+            <p>可抓取性只表示 URL 能被请求与检查。排名还取决于相关性、有用性、竞争等许多因素。检查可抓取性回答的是发现就绪度，不是名次结果。</p>
+          </div>
+          <div>
+            <h3>导航已经很强，还需要 sitemap 吗？</h3>
+            <p>可抓取的内链是主要发现路径。Sitemap 有助于暴露重要 URL、对照覆盖差异，但不能替代干净的状态码与可达的 HTML 链接。</p>
+          </div>
+          <div>
+            <h3>B2B 站点最常见的可抓取性问题是什么？</h3>
+            <p>robots.txt 误拦路径、参数 URL 迷宫却无首选版本，以及重要资源只能通过不可抓取的 UI 方式到达。从 robots、状态码和真实枢纽的链接路径入手。</p>
+          </div>
+        </section>
+        <section class="kc-related">
+          <h2>相关文章</h2>
+          <ul>
+            <li><a href="../what-is-a-website-seo-audit/">什么是网站 SEO 审计</a></li>
+            <li><a href="../how-to-analyze-xml-sitemaps/">如何分析 XML Sitemap</a></li>
+            <li><a href="../how-to-find-orphan-pages/">如何发现孤立页面</a></li>
+          </ul>
+        </section>
+        <section class="kc-sources">
+          <h2>来源</h2>
+          <ul>
+            <li>Google Search Central — <a href="https://developers.google.com/search/docs/crawling-indexing">抓取与索引概览</a></li>
+            <li>Google Search Central — <a href="https://developers.google.com/search/docs/crawling-indexing/links-crawlable">面向 Google 的链接最佳实践</a>（可抓取链接）</li>
+            <li>Google Search Central — <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content">创建有帮助、可靠、以人为本的内容</a></li>
+            <li>Mika 方法：抓取健康为基座，覆盖为增长 — <a href="https://mikaovo.ai/">mikaovo.ai</a></li>
+          </ul>
+        </section>
+        <section class="kc-cta">
+          <h2>需要结构化审计？</h2>
+          <p>了解 Mika 如何把抓取健康与内容缺口映射成下一步动作。</p>
+          <a href="/zh/#cta">联系 Mika</a>
+        </section>
+      </article>
+    </div>
+  </main>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

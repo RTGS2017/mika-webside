@@ -1,796 +1,803 @@
 /**
- * Mika Homepage V2 — animation engine (classic script, no build).
- * Explains product analysis flow; does not invent marketing copy.
- *
- * Public API: window.MikaHomeAnimations.init(root?)
+ * Mika Homepage motion — product signatures on MikaMotion.
+ * Public: window.MikaHomeAnimations.init(root?)
+ * Depends on: window.MikaMotion (src/motion/core.js)
  */
 (function (global) {
   "use strict";
 
-  var ATTR = "data-anim";
-  var PREFIX = "hv2a-";
-
-  var HERO_ORDER = ["seoHealth", "geoHealth", "seoGrowth", "geoGrowth"];
-  var TAG_ORDER = ["intent", "commercial", "topic", "product", "evidence"];
-  var PHASE_ORDER = ["audit", "diagnosis", "blueprint"];
-  var LOOP_ORDER = ["scan", "diagnose", "blueprint", "optimize", "re-audit"];
-
-  function prefersReducedMotion() {
-    try {
-      return global.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    } catch (_) {
-      return false;
-    }
+  function M() {
+    return global.MikaMotion;
   }
 
-  function qsa(root, sel) {
-    try {
-      return Array.prototype.slice.call(root.querySelectorAll(sel));
-    } catch (_) {
-      return [];
-    }
+  function reduced() {
+    return M() ? M().prefersReducedMotion() : false;
   }
 
-  function qs(root, sel) {
-    try {
-      return root.querySelector(sel);
-    } catch (_) {
-      return null;
-    }
+  function mobile() {
+    return M() ? M().isMobile() : false;
   }
 
-  function addClass(el, name) {
-    if (el && el.classList) el.classList.add(name);
-  }
+  /* ── 1. Hero Visibility Field ─────────────────────────────────────────── */
 
-  function removeClass(el, name) {
-    if (el && el.classList) el.classList.remove(name);
-  }
-
-  function hasClass(el, name) {
-    return !!(el && el.classList && el.classList.contains(name));
-  }
-
-  function parseTarget(el, attr) {
-    if (!el) return 0;
-    var raw = el.getAttribute(attr);
-    if (raw == null || raw === "") return 0;
-    var n = parseFloat(raw);
-    return isFinite(n) ? n : 0;
-  }
-
-  function setCountText(el, value) {
-    if (!el) return;
-    var rounded = Math.round(value);
-    el.textContent = String(rounded);
-  }
-
-  function easeOutCubic(t) {
-    return 1 - Math.pow(1 - t, 3);
-  }
-
-  /**
-   * Count from 0 → target with rAF. Stops when host leaves viewport.
-   * Ends exactly on data-count final value.
-   */
-  function animateCount(el, options) {
-    options = options || {};
-    var target = parseTarget(el, "data-count");
-    var duration = options.duration != null ? options.duration : 1600;
-    var onDone = options.onDone;
-    var getActive = options.getActive || function () {
-      return true;
-    };
-
-    if (prefersReducedMotion()) {
-      setCountText(el, target);
-      if (onDone) onDone();
-      return { cancel: function () {} };
-    }
-
-    var start = null;
-    var rafId = 0;
-    var cancelled = false;
-
-    function frame(now) {
-      if (cancelled) return;
-      if (!getActive()) {
-        rafId = global.requestAnimationFrame(frame);
-        return;
-      }
-      if (start == null) start = now;
-      var t = Math.min(1, (now - start) / duration);
-      var value = target * easeOutCubic(t);
-      setCountText(el, value);
-      if (t < 1) {
-        rafId = global.requestAnimationFrame(frame);
-      } else {
-        setCountText(el, target);
-        if (onDone) onDone();
-      }
-    }
-
-    setCountText(el, 0);
-    rafId = global.requestAnimationFrame(frame);
-
-    return {
-      cancel: function () {
-        cancelled = true;
-        if (rafId) global.cancelAnimationFrame(rafId);
-        setCountText(el, target);
-      },
-    };
-  }
-
-  function stagger(items, delayMs, apply, onDone) {
-    var i = 0;
-    var timers = [];
-    var cancelled = false;
-
-    function next() {
-      if (cancelled) return;
-      if (i >= items.length) {
-        if (onDone) onDone();
-        return;
-      }
-      apply(items[i], i);
-      i += 1;
-      if (i < items.length) {
-        // Single short delay between discrete UI beats — not fake crawl progress.
-        var id = global.setTimeout(next, delayMs);
-        timers.push(id);
-      } else if (onDone) {
-        onDone();
-      }
-    }
-
-    if (!items.length) {
-      if (onDone) onDone();
-      return {
-        cancel: function () {
-          cancelled = true;
-        },
-      };
-    }
-
-    next();
-    return {
-      cancel: function () {
-        cancelled = true;
-        timers.forEach(function (id) {
-          global.clearTimeout(id);
-        });
-      },
-    };
-  }
-
-  function observeOnce(el, callback, options) {
-    if (!el || typeof IntersectionObserver === "undefined") {
-      callback(el);
-      return { disconnect: function () {} };
-    }
-    options = options || {};
-    var threshold = options.threshold != null ? options.threshold : 0.28;
-    var rootMargin = options.rootMargin || "0px 0px -8% 0px";
-    var fired = false;
-    var io = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting || fired) return;
-          fired = true;
-          io.disconnect();
-          callback(entry.target);
-        });
-      },
-      { threshold: threshold, rootMargin: rootMargin }
-    );
-    io.observe(el);
-    return { disconnect: function () { io.disconnect(); } };
-  }
-
-  function observeVisibility(el, onChange, options) {
-    if (!el || typeof IntersectionObserver === "undefined") {
-      onChange(true);
-      return { disconnect: function () {} };
-    }
-    options = options || {};
-    var io = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          onChange(entry.isIntersecting, entry);
-        });
-      },
-      {
-        threshold: options.threshold != null ? options.threshold : 0.2,
-        rootMargin: options.rootMargin || "0px",
-      }
-    );
-    io.observe(el);
-    return { disconnect: function () { io.disconnect(); } };
-  }
-
-  function sortByOrder(els, attr, order) {
-    var map = {};
-    order.forEach(function (key, idx) {
-      map[String(key).toLowerCase()] = idx;
-    });
-    return els.slice().sort(function (a, b) {
-      var ka = String(a.getAttribute(attr) || "").toLowerCase();
-      var kb = String(b.getAttribute(attr) || "").toLowerCase();
-      var ia = map.hasOwnProperty(ka) ? map[ka] : 999;
-      var ib = map.hasOwnProperty(kb) ? map[kb] : 999;
-      if (ia !== ib) return ia - ib;
-      return 0;
-    });
-  }
-
-  /* ── 1. Hero dashboard ────────────────────────────────────────────────── */
-
-  function initHeroDashboard(root) {
-    var host = qs(root, '[data-anim="hero-dashboard"]');
+  function initVisibilityField(root) {
+    var mm = M();
+    if (!mm) return;
+    var host = mm.qs(root, '[data-motion="visibility-field"]') || mm.qs(root, "#hero");
     if (!host) return;
+    var stage = mm.qs(host, ".hv2-vf-stage") || host;
+    var paths = mm.qsa(stage, ".mm-flow-path");
+    var nodes = mm.qsa(stage, ".mm-node");
+    var chips = mm.qsa(host, ".hv2-chip");
 
-    var metrics = qsa(host, "[data-metric]");
-    if (!metrics.length) return;
-
-    // Prefer semantic ids if Visual sets data-metric="seoHealth" etc.
-    var ordered = sortByOrder(metrics, "data-metric", HERO_ORDER);
-    // If attributes are empty / generic, keep DOM order (Visual: SEO Health → GEO Health → SEO Growth → GEO Growth)
-    var useDomOrder = ordered.every(function (el) {
-      var v = el.getAttribute("data-metric");
-      return !v || v === "" || v === "true" || !isNaN(Number(v));
-    });
-    if (useDomOrder) ordered = metrics;
-
-    function showAll() {
-      ordered.forEach(function (el) {
-        addClass(el, "hv2a-on");
+    function finalState() {
+      mm.addClass(stage, "mm-final");
+      mm.addClass(stage, "mm-converged");
+      paths.forEach(function (p) {
+        p.style.strokeDashoffset = "0";
+        mm.addClass(p, "mm-drawn");
       });
-      addClass(host, "hv2a-in");
-      addClass(host, "hv2a-done");
+      nodes.forEach(function (n) {
+        mm.addClass(n, "mm-on");
+      });
+      chips.forEach(function (c) {
+        mm.addClass(c, "mm-on");
+        mm.addClass(c, "hv2a-on");
+      });
     }
 
-    if (prefersReducedMotion()) {
-      showAll();
+    if (reduced()) {
+      finalState();
       return;
     }
 
-    observeOnce(host, function () {
-      addClass(host, "hv2a-in");
-      stagger(
-        ordered,
-        220,
-        function (el) {
-          addClass(el, "hv2a-on");
-        },
-        function () {
-          addClass(host, "hv2a-done");
-        }
-      );
+    // Quiet start, then flows appear; scroll converges to center.
+    mm.addClass(stage, "mm-quiet");
+    paths.forEach(function (p) {
+      var len = 0;
+      try {
+        len = p.getTotalLength ? p.getTotalLength() : 400;
+      } catch (_) {
+        len = 400;
+      }
+      if (mobile() && p.hasAttribute("data-mobile-skip")) {
+        p.style.display = "none";
+        return;
+      }
+      p.style.strokeDasharray = String(len);
+      p.style.strokeDashoffset = String(len);
+    });
+
+    var entered = false;
+    mm.Scroll.once(stage, function () {
+      entered = true;
+      mm.removeClass(stage, "mm-quiet");
+      mm.addClass(stage, "mm-flowing");
+      // Draw paths once (not infinite spam).
+      paths.forEach(function (p, i) {
+        if (p.style.display === "none") return;
+        global.setTimeout(function () {
+          mm.addClass(p, "mm-drawn");
+          p.style.strokeDashoffset = "0";
+        }, mobile() ? 80 * i : 160 * i);
+      });
+      var showNodes = mobile() ? nodes.slice(0, Math.min(6, nodes.length)) : nodes;
+      mm.Product.stagger(showNodes, mobile() ? 90 : 140, function (n) {
+        mm.addClass(n, "mm-on");
+      });
+      mm.Product.stagger(chips, 180, function (c) {
+        mm.addClass(c, "mm-on");
+        mm.addClass(c, "hv2a-on");
+      });
+    }, { threshold: 0.2 });
+
+    mm.Scroll.progress(host, function (t) {
+      if (!entered) return;
+      if (t > 0.45) {
+        mm.addClass(stage, "mm-converged");
+      }
+    });
+
+    mm.Ambient.bind(stage, {
+      threshold: 0.08,
+      onLeave: function () {
+        /* pause ambient — paths stay drawn, no new animation */
+      },
     });
   }
 
-  /* ── 2. Audit crawl ───────────────────────────────────────────────────── */
+  /* ── 2. Problem: Healthy / Growing → Health ≠ Growth ──────────────────── */
 
-  function initAuditCrawl(root) {
-    var host = qs(root, '[data-anim="audit-crawl"]');
+  function initProblem(root) {
+    var mm = M();
+    if (!mm) return;
+    var host = mm.qs(root, "#problem");
     if (!host) return;
+    var healthy = mm.qs(host, ".is-healthy");
+    var growing = mm.qs(host, ".is-growing");
+    var neq = mm.qs(host, "[data-motion-neq]") || mm.qs(host, ".hv2-conclusion");
 
-    var steps = qsa(host, "[data-step]");
-    var counts = qsa(host, "[data-count]");
-    var controllers = [];
+    function finalState() {
+      mm.addClass(host, "mm-problem-done");
+      if (healthy) mm.addClass(healthy, "mm-converge");
+      if (growing) mm.addClass(growing, "mm-converge");
+      if (neq) mm.addClass(neq, "mm-neq-on");
+    }
+
+    if (reduced()) {
+      finalState();
+      return;
+    }
+
+    mm.Scroll.once(host, function () {
+      mm.addClass(host, "mm-problem-in");
+      if (healthy) mm.addClass(healthy, "mm-converge");
+      if (growing) mm.addClass(growing, "mm-converge");
+      global.setTimeout(function () {
+        if (neq) mm.addClass(neq, "mm-neq-on");
+        mm.addClass(host, "mm-problem-done");
+      }, 520);
+    });
+  }
+
+  /* ── 3. Framework: axes → cells; Health circle / Growth lines ──────────── */
+
+  function initFramework(root) {
+    var mm = M();
+    if (!mm) return;
+    var host = mm.qs(root, "#framework");
+    if (!host) return;
+    var map = mm.qs(host, ".hv2-fw-map");
+    var axes = mm.qsa(host, ".hv2-fw-colhead, .hv2-fw-rowhead, .mm-fw-axis");
+    var cells = mm.qsa(host, ".hv2-fw-cell");
+
+    function finalState() {
+      mm.addClass(host, "mm-fw-done");
+      axes.forEach(function (a) { mm.addClass(a, "mm-on"); });
+      cells.forEach(function (c) { mm.addClass(c, "mm-on"); });
+    }
+
+    if (reduced()) {
+      finalState();
+      return;
+    }
+
+    mm.Scroll.once(map || host, function () {
+      mm.addClass(host, "mm-fw-in");
+      mm.Product.stagger(axes, 90, function (a) {
+        mm.addClass(a, "mm-on");
+      }, function () {
+        mm.Product.stagger(cells, 160, function (c) {
+          mm.addClass(c, "mm-on");
+        }, function () {
+          mm.addClass(host, "mm-fw-done");
+        });
+      });
+    }, { threshold: 0.22 });
+  }
+
+  /* ── 4. Deep Audit pipeline ───────────────────────────────────────────── */
+
+  function initAudit(root) {
+    var mm = M();
+    if (!mm) return;
+    var host = mm.qs(root, '[data-anim="audit-crawl"]') || mm.qs(root, "#audit");
+    if (!host) return;
+    var steps = mm.qsa(host, ".mm-audit-pipe-step, .hv2-audit-step");
+    var counts = mm.qsa(host, "[data-count]");
     var visible = false;
 
     function finalize() {
       steps.forEach(function (s) {
-        removeClass(s, "hv2a-active");
-        addClass(s, "hv2a-done");
+        mm.addClass(s, "mm-on");
+        mm.addClass(s, "hv2a-done");
       });
       counts.forEach(function (c) {
-        setCountText(c, parseTarget(c, "data-count"));
+        mm.Product.setText(c, mm.Product.parseNum(c, "data-count"));
       });
-      removeClass(host, "hv2a-scanning");
-      addClass(host, "hv2a-done");
+      mm.addClass(host, "mm-audit-done");
+      mm.addClass(host, "hv2a-done");
     }
 
-    if (prefersReducedMotion()) {
+    if (reduced()) {
       finalize();
       return;
     }
 
-    observeVisibility(host, function (isVisible) {
-      visible = isVisible;
-      if (!isVisible) {
-        removeClass(host, "hv2a-scanning");
-      }
+    mm.Scroll.whileVisible(host, function (v) {
+      visible = v;
+      if (!v) mm.removeClass(host, "hv2a-scanning");
     });
 
-    observeOnce(host, function () {
-      addClass(host, "hv2a-in");
-      addClass(host, "hv2a-scanning");
-
-      // Steps complete in sequence while primary counts run on rAF.
-      if (steps.length) {
-        stagger(
-          steps,
-          380,
-          function (step, idx) {
-            steps.forEach(function (s) {
-              removeClass(s, "hv2a-active");
-            });
-            addClass(step, "hv2a-active");
-            if (idx > 0) addClass(steps[idx - 1], "hv2a-done");
-          },
-          function () {
-            steps.forEach(function (s) {
-              removeClass(s, "hv2a-active");
-              addClass(s, "hv2a-done");
-            });
-          }
-        );
-      }
+    mm.Scroll.once(host, function () {
+      mm.addClass(host, "mm-audit-in");
+      mm.addClass(host, "hv2a-scanning");
+      mm.Product.stagger(steps, mobile() ? 160 : 280, function (step, idx) {
+        steps.forEach(function (s) { mm.removeClass(s, "mm-active"); });
+        mm.addClass(step, "mm-active");
+        mm.addClass(step, "mm-on");
+        mm.addClass(step, "hv2a-active");
+        if (idx > 0) {
+          mm.addClass(steps[idx - 1], "hv2a-done");
+        }
+      }, function () {
+        steps.forEach(function (s) {
+          mm.removeClass(s, "mm-active");
+          mm.removeClass(s, "hv2a-active");
+          mm.addClass(s, "hv2a-done");
+          mm.addClass(s, "mm-on");
+        });
+      });
 
       var pending = counts.length;
       if (!pending) {
-        removeClass(host, "hv2a-scanning");
-        addClass(host, "hv2a-done");
+        mm.removeClass(host, "hv2a-scanning");
+        mm.addClass(host, "mm-audit-done");
         return;
       }
-
-      counts.forEach(function (el, idx) {
-        // Longer duration for larger crawl totals (e.g. 128 pages).
-        var target = parseTarget(el, "data-count");
-        var duration = Math.min(2200, Math.max(900, 700 + target * 6));
-        var ctrl = animateCount(el, {
+      counts.forEach(function (el) {
+        var target = mm.Product.parseNum(el, "data-count");
+        var duration = Math.min(2400, Math.max(1000, 800 + target * 5));
+        mm.Product.count(el, {
           duration: duration,
-          getActive: function () {
-            return visible;
-          },
+          getActive: function () { return visible; },
           onDone: function () {
             pending -= 1;
             if (pending <= 0) {
-              removeClass(host, "hv2a-scanning");
-              addClass(host, "hv2a-done");
+              mm.removeClass(host, "hv2a-scanning");
+              mm.addClass(host, "mm-audit-done");
+              mm.addClass(host, "hv2a-done");
             }
           },
         });
-        controllers.push(ctrl);
-        // Stagger start of secondary counters slightly (one frame delay only).
-        if (idx > 0) {
-          /* already started via rAF independently — OK */
-        }
       });
     });
   }
 
-  /* ── 3. Coverage + health-growth bars ─────────────────────────────────── */
+  /* ── 5. Health vs Growth ──────────────────────────────────────────────── */
 
-  function initBarsAndCounts(host) {
+  function initHealthGrowth(root) {
+    var mm = M();
+    if (!mm) return;
+    var host = mm.qs(root, '[data-anim="health-growth"]') || mm.qs(root, "#health-growth");
     if (!host) return;
-
-    var bars = qsa(host, "[data-bar]");
-    var counts = qsa(host, "[data-count]");
     var visible = true;
-    var started = false;
-
-    bars.forEach(function (bar) {
-      var target = parseTarget(bar, "data-bar");
-      bar.style.setProperty("--hv2a-bar-target", String(target));
-    });
 
     function showFinal() {
-      bars.forEach(function (bar) {
-        var target = parseTarget(bar, "data-bar");
-        bar.style.setProperty("--hv2a-bar-target", String(target));
-        addClass(bar, "hv2a-fill");
+      mm.Product.fillBars(host);
+      mm.qsa(host, "[data-count]").forEach(function (c) {
+        mm.Product.setText(c, mm.Product.parseNum(c, "data-count"));
       });
-      counts.forEach(function (c) {
-        setCountText(c, parseTarget(c, "data-count"));
-      });
-      addClass(host, "hv2a-in");
-      addClass(host, "hv2a-done");
+      mm.addClass(host, "mm-hg-done");
+      mm.addClass(host, "hv2a-done");
+      mm.addClass(host, "hv2a-in");
     }
 
-    if (prefersReducedMotion()) {
+    if (reduced()) {
       showFinal();
       return;
     }
 
-    observeVisibility(host, function (isVisible) {
-      visible = isVisible;
-    });
-
-    observeOnce(host, function () {
-      if (started) return;
-      started = true;
-      addClass(host, "hv2a-in");
-
-      // Force layout then fill — CSS transition handles bar growth.
+    mm.Scroll.whileVisible(host, function (v) { visible = v; });
+    mm.Scroll.once(host, function () {
+      mm.addClass(host, "mm-hg-in");
+      mm.addClass(host, "hv2a-in");
       global.requestAnimationFrame(function () {
-        bars.forEach(function (bar) {
-          addClass(bar, "hv2a-fill");
-        });
+        mm.Product.fillBars(host);
       });
-
+      var counts = mm.qsa(host, "[data-count]");
       var pending = counts.length;
-      if (!pending) {
-        addClass(host, "hv2a-done");
-        return;
-      }
-
       counts.forEach(function (el) {
-        var target = parseTarget(el, "data-count");
-        var duration = Math.min(1400, Math.max(700, 500 + target * 8));
-        animateCount(el, {
-          duration: duration,
-          getActive: function () {
-            return visible;
-          },
+        var target = mm.Product.parseNum(el, "data-count");
+        mm.Product.count(el, {
+          duration: Math.min(1400, Math.max(700, 500 + target * 8)),
+          getActive: function () { return visible; },
           onDone: function () {
             pending -= 1;
-            if (pending <= 0) addClass(host, "hv2a-done");
+            if (pending <= 0) {
+              mm.addClass(host, "mm-hg-done");
+              mm.addClass(host, "hv2a-done");
+            }
           },
         });
       });
     });
   }
 
-  function initCoverage(root) {
-    initBarsAndCounts(qs(root, '[data-anim="coverage"]'));
-  }
-
-  function initHealthGrowth(root) {
-    initBarsAndCounts(qs(root, '[data-anim="health-growth"]'));
-  }
-
-  /* ── 4. Question matching ─────────────────────────────────────────────── */
-
-  function initQuestionMatch(root) {
-    var host = qs(root, '[data-anim="question-match"]');
-    if (!host) return;
-
-    var tags = sortByOrder(qsa(host, "[data-tag]"), "data-tag", TAG_ORDER);
-    // Fallback DOM order if Visual uses bare data-tag without values matching order.
-    if (
-      tags.every(function (el) {
-        var v = (el.getAttribute("data-tag") || "").toLowerCase();
-        return TAG_ORDER.indexOf(v) === -1;
-      })
-    ) {
-      tags = qsa(host, "[data-tag]");
-    }
-
-    function showAll() {
-      addClass(host, "hv2a-in");
-      addClass(host, "hv2a-question-in");
-      tags.forEach(function (t) {
-        addClass(t, "hv2a-match");
-      });
-      addClass(host, "hv2a-done");
-    }
-
-    if (prefersReducedMotion()) {
-      showAll();
-      return;
-    }
-
-    observeOnce(host, function () {
-      addClass(host, "hv2a-in");
-      addClass(host, "hv2a-question-in");
-      // Question settles first; then tags light up in analysis order.
-      global.setTimeout(function () {
-        stagger(
-          tags,
-          280,
-          function (tag) {
-            addClass(tag, "hv2a-match");
-          },
-          function () {
-            addClass(host, "hv2a-done");
-          }
-        );
-      }, 180);
-    });
-  }
-
-  function initQuestionWall(root) {
-    var host = qs(root, '[data-anim="question-wall"]');
-    if (!host) return;
-
-    var items = qsa(host, "[data-question]");
-    if (!items.length) return;
-
-    function showAll() {
-      addClass(host, "hv2a-in");
-      items.forEach(function (el) {
-        addClass(el, "hv2a-on");
-      });
-      addClass(host, "hv2a-done");
-    }
-
-    if (prefersReducedMotion()) {
-      showAll();
-      return;
-    }
-
-    observeOnce(host, function () {
-      addClass(host, "hv2a-in");
-      stagger(
-        items,
-        70,
-        function (el) {
-          addClass(el, "hv2a-on");
-        },
-        function () {
-          addClass(host, "hv2a-done");
-        }
-      );
-    }, { threshold: 0.15 });
-  }
-
-  /* ── 5. Blueprint generation ──────────────────────────────────────────── */
+  /* ── 6. Blueprint: issues → root cause → ranked actions → stop ────────── */
 
   function initBlueprint(root) {
-    var host = qs(root, '[data-anim="blueprint"]');
+    var mm = M();
+    if (!mm) return;
+    var host = mm.qs(root, '[data-anim="blueprint"]') || mm.qs(root, "#blueprint");
     if (!host) return;
+    var issues = mm.qsa(host, ".mm-bp-issue");
+    var rootCause = mm.qs(host, ".mm-bp-root");
+    var action = mm.qs(host, ".hv2-action, .mm-bp-action");
+    var phases = mm.qsa(host, "[data-phase]");
 
-    var phases = sortByOrder(qsa(host, "[data-phase]"), "data-phase", PHASE_ORDER);
-    if (!phases.length) phases = qsa(host, "[data-phase]");
-
-    function showAll() {
+    function finalState() {
+      issues.forEach(function (i) { mm.addClass(i, "mm-on"); });
+      if (rootCause) mm.addClass(rootCause, "mm-on");
+      if (action) mm.addClass(action, "mm-on");
       phases.forEach(function (p) {
-        addClass(p, "hv2a-expand");
-        if ((p.getAttribute("data-phase") || "").toLowerCase() === "blueprint") {
-          addClass(p, "hv2a-ready-phase");
-        }
+        mm.addClass(p, "hv2a-expand");
+        mm.addClass(p, "mm-on");
       });
-      addClass(host, "hv2a-in");
-      addClass(host, "hv2a-blueprint-ready");
-      addClass(host, "hv2a-done");
+      mm.addClass(host, "mm-bp-done");
+      mm.addClass(host, "hv2a-blueprint-ready");
+      mm.addClass(host, "hv2a-done");
     }
 
-    if (prefersReducedMotion()) {
-      showAll();
+    if (reduced()) {
+      finalState();
       return;
     }
 
-    // Each phase expands when it enters the viewport (scroll storytelling).
-    var completed = 0;
-    phases.forEach(function (phase, idx) {
-      observeOnce(
-        phase,
-        function () {
-          addClass(host, "hv2a-in");
-          addClass(phase, "hv2a-expand");
-          completed += 1;
-          var name = (phase.getAttribute("data-phase") || "").toLowerCase();
-          if (name === "blueprint" || idx === phases.length - 1) {
-            addClass(phase, "hv2a-ready-phase");
-            addClass(host, "hv2a-blueprint-ready");
-          }
-          if (completed >= phases.length) {
-            addClass(host, "hv2a-done");
-          }
-        },
-        { threshold: 0.35 }
-      );
+    mm.Scroll.once(host, function () {
+      mm.addClass(host, "mm-bp-in");
+      mm.addClass(host, "hv2a-in");
+      // Phase cards
+      mm.Product.stagger(phases, 200, function (p) {
+        mm.addClass(p, "hv2a-expand");
+        mm.addClass(p, "mm-on");
+      }, function () {
+        // Issue cards merge → root → action (once, no number looping)
+        if (issues.length) {
+          mm.Product.stagger(issues, 120, function (i) {
+            mm.addClass(i, "mm-on");
+          }, function () {
+            mm.addClass(host, "mm-bp-merge");
+            if (rootCause) mm.addClass(rootCause, "mm-on");
+            global.setTimeout(function () {
+              if (action) mm.addClass(action, "mm-on");
+              mm.addClass(host, "mm-bp-done");
+              mm.addClass(host, "hv2a-blueprint-ready");
+              mm.addClass(host, "hv2a-done");
+            }, 400);
+          });
+        } else {
+          if (action) mm.addClass(action, "mm-on");
+          mm.addClass(host, "mm-bp-done");
+          mm.addClass(host, "hv2a-blueprint-ready");
+          mm.addClass(host, "hv2a-done");
+        }
+      });
     });
   }
 
-  /* ── 6. Entity graph ──────────────────────────────────────────────────── */
+  /* ── 7. SEO Growth: coverage + opportunity nodes ──────────────────────── */
 
-  function initEntityGraph(root) {
-    var host = qs(root, '[data-anim="entity-graph"]');
+  function initSeoGrowth(root) {
+    var mm = M();
+    if (!mm) return;
+    var host = mm.qs(root, '[data-anim="coverage"]') || mm.qs(root, "#seo-growth");
     if (!host) return;
+    var opps = mm.qsa(host, ".hv2-opp, .mm-opp-node");
+    var visible = true;
 
-    var nodes = qsa(host, "[data-node]");
-    var edges = qsa(host, "[data-edge], .hv2a-edge");
-
-    function showAll() {
-      addClass(host, "hv2a-in");
-      nodes.forEach(function (n) {
-        addClass(n, "hv2a-linked");
+    function showFinal() {
+      mm.Product.fillBars(host);
+      mm.qsa(host, "[data-count]").forEach(function (c) {
+        mm.Product.setText(c, mm.Product.parseNum(c, "data-count"));
       });
-      edges.forEach(function (e) {
-        addClass(e, "hv2a-linked");
-      });
-      addClass(host, "hv2a-done");
+      opps.forEach(function (o) { mm.addClass(o, "mm-on"); });
+      mm.addClass(host, "mm-seo-done");
+      mm.addClass(host, "hv2a-done");
+      mm.addClass(host, "hv2a-in");
     }
 
-    if (prefersReducedMotion()) {
-      showAll();
+    if (reduced()) {
+      showFinal();
       return;
     }
 
-    observeOnce(host, function () {
-      addClass(host, "hv2a-in");
-      addClass(host, "hv2a-connecting");
-      var sequence = [];
-      var maxLen = Math.max(nodes.length, edges.length);
-      var i;
-      for (i = 0; i < maxLen; i += 1) {
-        if (nodes[i]) sequence.push({ type: "node", el: nodes[i] });
-        if (edges[i]) sequence.push({ type: "edge", el: edges[i] });
-      }
-      if (!sequence.length) {
-        nodes.forEach(function (n) {
-          sequence.push({ type: "node", el: n });
+    mm.Scroll.whileVisible(host, function (v) { visible = v; });
+    mm.Scroll.once(host, function () {
+      mm.addClass(host, "mm-seo-in");
+      mm.addClass(host, "hv2a-in");
+      global.requestAnimationFrame(function () {
+        mm.Product.fillBars(host);
+      });
+      var counts = mm.qsa(host, ".hv2-coverage [data-count], .hv2-cov-meta [data-count]");
+      counts.forEach(function (el) {
+        mm.Product.count(el, {
+          duration: 1100,
+          getActive: function () { return visible; },
         });
-      }
-
-      stagger(
-        sequence,
-        160,
-        function (item) {
-          addClass(item.el, "hv2a-linked");
-        },
-        function () {
-          removeClass(host, "hv2a-connecting");
-          addClass(host, "hv2a-done");
+      });
+      // Opportunity nodes grow beside bars — not only number bounce
+      mm.Product.stagger(opps, 160, function (o) {
+        mm.addClass(o, "mm-on");
+        var num = mm.qs(o, "[data-count]");
+        if (num) {
+          mm.Product.count(num, {
+            duration: 900,
+            getActive: function () { return visible; },
+          });
         }
-      );
+      }, function () {
+        mm.addClass(host, "mm-seo-done");
+        mm.addClass(host, "hv2a-done");
+      });
     });
   }
 
-  /* ── 7. Language sync ─────────────────────────────────────────────────── */
+  /* ── 8. GEO chain ─────────────────────────────────────────────────────── */
 
-  function initLanguageSync(root) {
-    var host = qs(root, '[data-anim="language-sync"]');
+  function initGeo(root) {
+    var mm = M();
+    if (!mm) return;
+    var host = mm.qs(root, "#geo");
     if (!host) return;
+    var steps = mm.qsa(host, ".mm-geo-step");
 
-    var langs = qsa(host, "[data-lang]");
-    if (!langs.length) return;
-
-    function showAll() {
-      addClass(host, "hv2a-in");
-      langs.forEach(function (l) {
-        addClass(l, "hv2a-sync");
-      });
-      addClass(host, "hv2a-done");
+    function finalState() {
+      steps.forEach(function (s) { mm.addClass(s, "mm-on"); });
+      mm.addClass(host, "mm-geo-done");
     }
 
-    if (prefersReducedMotion()) {
-      showAll();
+    if (reduced()) {
+      finalState();
       return;
     }
 
-    observeOnce(host, function () {
-      addClass(host, "hv2a-in");
-      stagger(
-        langs,
-        200,
-        function (el) {
-          addClass(el, "hv2a-sync");
-        },
-        function () {
-          addClass(host, "hv2a-done");
-        }
-      );
+    mm.Scroll.once(host, function () {
+      mm.addClass(host, "mm-geo-in");
+      mm.Product.stagger(steps, mobile() ? 100 : 180, function (s) {
+        mm.addClass(s, "mm-on");
+      }, function () {
+        mm.addClass(host, "mm-geo-done");
+      });
     });
   }
 
-  /* ── 8. Continuous loop ───────────────────────────────────────────────── */
+  /* ── 9. Question wall + match ─────────────────────────────────────────── */
 
-  function initLoop(root) {
-    var host = qs(root, '[data-anim="loop"]');
-    if (!host) return;
-
-    var steps = sortByOrder(qsa(host, "[data-loop-step]"), "data-loop-step", LOOP_ORDER);
-    if (
-      !steps.length ||
-      steps.every(function (el) {
-        var v = (el.getAttribute("data-loop-step") || "").toLowerCase();
-        return LOOP_ORDER.indexOf(v) === -1;
-      })
-    ) {
-      steps = qsa(host, "[data-loop-step]");
-    }
-    if (!steps.length) return;
-
-    var index = 0;
+  function initQuestions(root) {
+    var mm = M();
+    if (!mm) return;
+    var wall = mm.qs(root, '[data-anim="question-wall"]');
+    var match = mm.qs(root, '[data-anim="question-match"]');
+    var track = null;
     var rafId = 0;
-    var lastTs = 0;
-    var STEP_MS = 1400;
+    var offset = 0;
     var running = false;
 
-    function paint(activeIndex) {
-      steps.forEach(function (el, i) {
-        if (i === activeIndex) addClass(el, "hv2a-loop-active");
-        else removeClass(el, "hv2a-loop-active");
-      });
+    if (match) {
+      var tags = mm.qsa(match, "[data-tag]");
+      if (reduced()) {
+        mm.addClass(match, "hv2a-in");
+        tags.forEach(function (t) { mm.addClass(t, "hv2a-match"); });
+        mm.addClass(match, "hv2a-done");
+      } else {
+        mm.Scroll.once(match, function () {
+          mm.addClass(match, "hv2a-in");
+          mm.addClass(match, "mm-match-in");
+          // Center question connects Intent / Page / Answer
+          var bridges = mm.qsa(match, ".mm-bridge");
+          mm.Product.stagger(bridges.length ? bridges : tags, 200, function (el) {
+            mm.addClass(el, "mm-on");
+            mm.addClass(el, "hv2a-match");
+          }, function () {
+            mm.addClass(match, "hv2a-done");
+          });
+        });
+      }
     }
 
-    function showStatic() {
-      // Reduced motion: show full cycle state — all readable, first step marked.
-      steps.forEach(function (el) {
-        addClass(el, "hv2a-loop-active");
-      });
-      addClass(host, "hv2a-in");
-      addClass(host, "hv2a-paused");
-      addClass(host, "hv2a-done");
-    }
+    if (!wall) return;
+    var items = mm.qsa(wall, "[data-question]");
+    if (!items.length) return;
 
-    if (prefersReducedMotion()) {
-      showStatic();
+    if (reduced()) {
+      mm.addClass(wall, "hv2a-in");
+      items.forEach(function (el) { mm.addClass(el, "hv2a-on"); mm.addClass(el, "mm-on"); });
+      mm.addClass(wall, "hv2a-done");
       return;
     }
 
-    function tick(now) {
+    // Horizontal drift while visible; pause off-screen
+    mm.addClass(wall, "mm-wall-track");
+    function tick() {
       if (!running) return;
-      if (!lastTs) lastTs = now;
-      if (now - lastTs >= STEP_MS) {
-        lastTs = now;
-        index = (index + 1) % steps.length;
-        paint(index);
-      }
+      offset -= mobile() ? 0.25 : 0.4;
+      var width = wall.scrollWidth / 2;
+      if (width > 0 && Math.abs(offset) > width) offset = 0;
+      wall.style.transform = "translate3d(" + offset + "px,0,0)";
       rafId = global.requestAnimationFrame(tick);
     }
 
     function start() {
-      if (running) return;
+      if (running || reduced()) return;
       running = true;
-      removeClass(host, "hv2a-paused");
-      addClass(host, "hv2a-in");
-      paint(index);
-      lastTs = 0;
+      mm.addClass(wall, "hv2a-in");
+      mm.addClass(wall, "mm-wall-moving");
       rafId = global.requestAnimationFrame(tick);
     }
 
     function stop() {
       running = false;
-      addClass(host, "hv2a-paused");
+      mm.removeClass(wall, "mm-wall-moving");
       if (rafId) {
         global.cancelAnimationFrame(rafId);
         rafId = 0;
       }
     }
 
-    observeVisibility(
-      host,
-      function (isVisible) {
-        if (isVisible) start();
+    // Duplicate items for seamless scroll only on desktop; mobile shows static grid
+    if (!mobile() && items.length > 4) {
+      var frag = global.document.createDocumentFragment();
+      items.slice(0, Math.min(8, items.length)).forEach(function (el) {
+        frag.appendChild(el.cloneNode(true));
+      });
+      wall.appendChild(frag);
+    }
+
+    items.forEach(function (el) {
+      mm.addClass(el, "mm-on");
+      mm.addClass(el, "hv2a-on");
+    });
+
+    if (mobile()) {
+      mm.Scroll.once(wall, function () {
+        mm.addClass(wall, "hv2a-in");
+        mm.addClass(wall, "hv2a-done");
+      }, { threshold: 0.12 });
+    } else {
+      mm.Scroll.whileVisible(wall, function (vis) {
+        if (vis) start();
         else stop();
-      },
-      { threshold: 0.25 }
-    );
+      }, { threshold: 0.1 });
+    }
+  }
+
+  /* ── 10. Entity graph ─────────────────────────────────────────────────── */
+
+  function initEntity(root) {
+    var mm = M();
+    if (!mm) return;
+    var host = mm.qs(root, '[data-anim="entity-graph"]') || mm.qs(root, "#entity .hv2-graph");
+    var section = mm.qs(root, "#entity");
+    if (!host) return;
+    var nodes = mm.qsa(host, "[data-node]");
+    var metrics = section ? mm.qsa(section, ".hv2-entity-metric") : [];
+    var visible = true;
+
+    function finalState() {
+      nodes.forEach(function (n) { mm.addClass(n, "hv2a-linked"); mm.addClass(n, "mm-on"); });
+      metrics.forEach(function (m) { mm.addClass(m, "mm-on"); });
+      if (section) {
+        mm.qsa(section, "[data-count]").forEach(function (c) {
+          mm.Product.setText(c, mm.Product.parseNum(c, "data-count"));
+        });
+      }
+      mm.addClass(host, "hv2a-done");
+    }
+
+    if (reduced()) {
+      finalState();
+      return;
+    }
+
+    if (section) {
+      mm.Scroll.whileVisible(section, function (v) { visible = v; });
+    }
+
+    mm.Scroll.once(host, function () {
+      mm.addClass(host, "hv2a-in");
+      mm.addClass(host, "hv2a-connecting");
+      mm.Product.stagger(nodes, 150, function (n) {
+        mm.addClass(n, "hv2a-linked");
+        mm.addClass(n, "mm-on");
+      }, function () {
+        mm.removeClass(host, "hv2a-connecting");
+        mm.Product.stagger(metrics, 120, function (m, idx) {
+          mm.addClass(m, "mm-on");
+          var num = mm.qs(m, "[data-count]");
+          if (num) {
+            mm.Product.count(num, {
+              duration: 900,
+              getActive: function () { return visible; },
+            });
+          }
+        }, function () {
+          mm.addClass(host, "hv2a-done");
+        });
+      });
+    });
+  }
+
+  /* ── 11. Multilingual: entity → language cards → Consistency ──────────── */
+
+  function initMulti(root) {
+    var mm = M();
+    if (!mm) return;
+    var section = mm.qs(root, "#multilingual");
+    if (!section) return;
+    var host = mm.qs(section, '[data-anim="language-sync"]') || section;
+    var langs = mm.qsa(section, "[data-lang]");
+    var entity = mm.qs(section, ".mm-multi-entity");
+    var consistency = mm.qs(section, ".hv2-consistency");
+    var visible = true;
+
+    function finalState() {
+      if (entity) mm.addClass(entity, "mm-on");
+      langs.forEach(function (l) { mm.addClass(l, "hv2a-sync"); mm.addClass(l, "mm-on"); });
+      if (consistency) mm.addClass(consistency, "mm-on");
+      var c = mm.qs(section, ".hv2-consistency [data-count]");
+      if (c) mm.Product.setText(c, mm.Product.parseNum(c, "data-count"));
+      mm.addClass(host, "hv2a-done");
+    }
+
+    if (reduced()) {
+      finalState();
+      return;
+    }
+
+    mm.Scroll.whileVisible(section, function (v) { visible = v; });
+    mm.Scroll.once(section, function () {
+      mm.addClass(host, "hv2a-in");
+      if (entity) mm.addClass(entity, "mm-on");
+      mm.Product.stagger(langs, 160, function (l) {
+        mm.addClass(l, "hv2a-sync");
+        mm.addClass(l, "mm-on");
+      }, function () {
+        if (consistency) {
+          mm.addClass(consistency, "mm-on");
+          var c = mm.qs(consistency, "[data-count]");
+          if (c) {
+            mm.Product.count(c, {
+              duration: 1000,
+              getActive: function () { return visible; },
+            });
+          }
+        }
+        mm.addClass(host, "hv2a-done");
+      });
+    });
+  }
+
+  /* ── 12. Methodology ring — one lap ───────────────────────────────────── */
+
+  function initMethod(root) {
+    var mm = M();
+    if (!mm) return;
+    var host = mm.qs(root, '[data-anim="loop"]') || mm.qs(root, "#methodology .hv2-loop");
+    if (!host) return;
+    var steps = mm.qsa(host, "[data-loop-step]");
+    if (!steps.length) return;
+    var ring = mm.qs(host, ".mm-method-ring") || host;
+    var index = 0;
+    var done = false;
+
+    function paint(i) {
+      steps.forEach(function (el, j) {
+        if (j === i) mm.addClass(el, "hv2a-loop-active");
+        else mm.removeClass(el, "hv2a-loop-active");
+        if (j <= i) mm.addClass(el, "mm-passed");
+      });
+      ring.style.setProperty("--mm-ring", String((i + 1) / steps.length));
+    }
+
+    function finalState() {
+      steps.forEach(function (el) {
+        mm.addClass(el, "hv2a-loop-active");
+        mm.addClass(el, "mm-passed");
+      });
+      ring.style.setProperty("--mm-ring", "1");
+      mm.addClass(host, "mm-method-done");
+      mm.addClass(host, "hv2a-done");
+    }
+
+    if (reduced()) {
+      finalState();
+      return;
+    }
+
+    mm.Scroll.once(host, function () {
+      mm.addClass(host, "hv2a-in");
+      paint(0);
+      // One lap only — no permanent cycle spam
+      function step() {
+        if (done) return;
+        index += 1;
+        if (index >= steps.length) {
+          done = true;
+          paint(steps.length - 1);
+          mm.addClass(host, "mm-method-done");
+          mm.addClass(host, "hv2a-done");
+          return;
+        }
+        paint(index);
+        global.setTimeout(step, 700);
+      }
+      global.setTimeout(step, 700);
+    }, { threshold: 0.3 });
+
+    // Pause visual pulse when off-screen (class only; lap already one-shot)
+    mm.Scroll.whileVisible(host, function (vis) {
+      if (vis) mm.removeClass(host, "hv2a-paused");
+      else mm.addClass(host, "hv2a-paused");
+    });
+  }
+
+  /* ── 13. FAQ highlight ────────────────────────────────────────────────── */
+
+  function initFaq(root) {
+    var mm = M();
+    if (!mm) return;
+    var section = mm.qs(root, "#faq");
+    if (!section) return;
+    mm.Interaction.faqHighlight(section);
+  }
+
+  /* ── 14. CTA chain ────────────────────────────────────────────────────── */
+
+  function initCta(root) {
+    var mm = M();
+    if (!mm) return;
+    var host = mm.qs(root, "#cta");
+    if (!host) return;
+    var steps = mm.qsa(host, ".mm-cta-step");
+
+    function finalState() {
+      steps.forEach(function (s) { mm.addClass(s, "mm-on"); });
+      mm.addClass(host, "mm-cta-done");
+    }
+
+    if (reduced()) {
+      finalState();
+      return;
+    }
+
+    mm.Scroll.once(host, function () {
+      mm.addClass(host, "mm-cta-in");
+      mm.Product.stagger(steps, 180, function (s) {
+        mm.addClass(s, "mm-on");
+      }, function () {
+        mm.addClass(host, "mm-cta-done");
+      });
+    }, { threshold: 0.25 });
   }
 
   /* ── Boot ─────────────────────────────────────────────────────────────── */
 
   function init(root) {
     root = root || global.document;
-    if (!root) return;
-
+    if (!root || !M()) return;
     try {
-      addClass(root.documentElement || qs(global.document, "html"), "hv2a-ready");
-    } catch (_) {
-      /* ignore */
-    }
-
-    try {
-      initHeroDashboard(root);
-      initAuditCrawl(root);
+      M().init(root);
+      initVisibilityField(root);
+      initProblem(root);
+      initFramework(root);
+      initAudit(root);
       initHealthGrowth(root);
-      initCoverage(root);
-      initQuestionMatch(root);
-      initQuestionWall(root);
       initBlueprint(root);
-      initEntityGraph(root);
-      initLanguageSync(root);
-      initLoop(root);
+      initSeoGrowth(root);
+      initGeo(root);
+      initQuestions(root);
+      initEntity(root);
+      initMulti(root);
+      initMethod(root);
+      initFaq(root);
+      initCta(root);
     } catch (_) {
-      /* Missing DOM / partial markup must never throw. */
+      /* Partial markup must never throw. */
     }
   }
 
-  var api = {
+  global.MikaHomeAnimations = {
     init: init,
-    version: "2.0.0",
+    version: "3.0.0",
   };
 
-  global.MikaHomeAnimations = api;
-
   function autoInit() {
+    // Wait a tick so MikaMotion is present if scripts are adjacent.
+    if (!M()) {
+      global.setTimeout(autoInit, 0);
+      return;
+    }
     init(global.document);
   }
 
@@ -798,7 +805,6 @@
     if (global.document.readyState === "loading") {
       global.document.addEventListener("DOMContentLoaded", autoInit, { once: true });
     } else {
-      // Script at end of body — DOM already available.
       autoInit();
     }
   }

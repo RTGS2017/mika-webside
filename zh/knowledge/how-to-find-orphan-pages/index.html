@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>如何发现孤立页面 | Mika 知识中心</title>
+  <meta name="description" content="找出缺少内链的孤立页面，对照仅出现在 sitemap 的 URL 与链接图，并决定重新连接、规范合并还是下线。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mikaovo.ai/zh/knowledge/how-to-find-orphan-pages/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/how-to-find-orphan-pages/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/how-to-find-orphan-pages/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/how-to-find-orphan-pages/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:title" content="如何发现孤立页面">
+  <meta property="og:description" content="找出缺少内链、发现路径薄弱的页面。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/knowledge/how-to-find-orphan-pages/">
+  <meta property="og:site_name" content="Mika">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://mikaovo.ai/zh/knowledge/how-to-find-orphan-pages/#article",
+        "headline": "如何发现孤立页面",
+        "description": "找出缺少内链的孤立页面，对照仅出现在 sitemap 的 URL 与链接图，并决定重新连接、规范合并还是下线。",
+        "datePublished": "2026-09-22",
+        "dateModified": "2026-09-22",
+        "inLanguage": "zh-Hans",
+        "author": { "@type": "Organization", "name": "Mika", "url": "https://mikaovo.ai/" },
+        "publisher": { "@type": "Organization", "name": "Mika", "url": "https://mikaovo.ai/", "logo": { "@type": "ImageObject", "url": "https://mikaovo.ai/assets/logo.svg" } },
+        "mainEntityOfPage": "https://mikaovo.ai/zh/knowledge/how-to-find-orphan-pages/",
+        "isPartOf": { "@type": "WebSite", "name": "Mika", "url": "https://mikaovo.ai/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://mikaovo.ai/zh/knowledge/how-to-find-orphan-pages/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://mikaovo.ai/zh/" },
+          { "@type": "ListItem", "position": 2, "name": "知识中心", "item": "https://mikaovo.ai/zh/knowledge/" },
+          { "@type": "ListItem", "position": 3, "name": "如何发现孤立页面", "item": "https://mikaovo.ai/zh/knowledge/how-to-find-orphan-pages/" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://mikaovo.ai/zh/knowledge/how-to-find-orphan-pages/#faq",
+    "inLanguage": "zh-Hans",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "孤立页会影响什么？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "孤立页削弱有意的发现路径。沿内链前进的用户与爬虫可能永远到不了该页。有用的文档或产品变体可能长期曝光不足，而仅存在于 sitemap 或广告落地的 URL 仍占用注意力。审计也会更难：内容在，结构却假装它不在。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "只出现在 XML Sitemap 里的页面算孤立页吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "从链接图角度看，常常算。Sitemap 可以列出零入链的 URL。把「仅 sitemap」视为发现风险：要么从相关枢纽加有语境的内链，要么若不打算独立存在，就移出 sitemap 并下线或合并。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "是不是每个孤立页都该补新内链？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "不是。先判定页面职责。对能回答买家或支持需求的页面保留并链接；对近重复做规范或合并；对薄弱残留做 noindex 或删除。给一切都加链只会增加杂乱，并不能改善以人为本的覆盖。"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <nav class="kc-nav" aria-label="主导航">
+      <a class="kc-brand" href="/zh/">Mika</a>
+      <div class="kc-nav-links">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/knowledge/how-to-find-orphan-pages/">EN</a>
+        <a class="kc-nav-cta" href="/zh/#cta">开始结构化审计</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <header class="kc-hero">
+      <p class="kc-kicker">SEO</p>
+      <h1>如何发现孤立页面</h1>
+      <p class="kc-lede">孤立页是线上存在、却几乎没有内链可达路径的 URL——容易漏掉，也容易半途而废。</p>
+      <p class="kc-meta"><time datetime="2026-09-22">2026-09-22</time> · SEO · 约 8 分钟</p>
+    </header>
+
+    <div class="kc-layout">
+      <nav class="kc-toc" aria-label="本页目录">
+        <p class="kc-toc-title">本页目录</p>
+        <ol>
+          <li><a href="#direct-answer">直接答案</a></li>
+          <li><a href="#why-it-matters">为何重要</a></li>
+          <li><a href="#how-to-check">怎么检查</a></li>
+          <li><a href="#example">具体例子</a></li>
+          <li><a href="#health-vs-growth">健康 vs 增长</a></li>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#related">相关文章</a></li>
+          <li><a href="#sources">来源</a></li>
+        </ol>
+      </nav>
+
+      <article class="kc-body">
+        <section id="direct-answer" aria-labelledby="direct-answer-title">
+          <h2 id="direct-answer-title">直接答案</h2>
+          <p><strong>孤立页面</strong>指站点上存在，但从你抓取到的其他页面出发<strong>没有（或几乎没有）内链</strong>的 URL。发现孤立页，需要对照多种 URL 来源：可点击链接的全站抓取、sitemap 成员、如有则用分析或日志落地页，以及 CMS / feed 导出。出现在链接图之外的页面需要决策——重新连接、合并或下线——而不是自动抬升。</p>
+          <p>孤立是发现与架构问题。它不证明页面「一定很差」，修好也不承诺排名。目标是让人与爬虫都能通过可抓取链接到达同一批有用内容。</p>
+        </section>
+
+        <section id="why-it-matters" aria-labelledby="why-it-matters-title">
+          <h2 id="why-it-matters-title">为何重要</h2>
+          <p>迁移、活动落地页、PDF 转 HTML，以及离开目录导航的 SKU，都会留下孤立页。没有入链时，这些 URL 依赖书签、广告或 sitemap 提示。公开的抓取说明强调：搜索系统主要通过跟随链接发现内容；sitemap 有帮助，但不能替代清晰结构。</p>
+          <p>在 B2B 站点上，孤立页常藏着安装说明、对比说明或区域变体——买家仍需要它们。断开连接会浪费编辑投入，也让审计失真：内容在，结构却看不见。</p>
+        </section>
+
+        <section id="how-to-check" aria-labelledby="how-to-check-title">
+          <h2 id="how-to-check-title">怎么检查</h2>
+          <ol>
+            <li><strong>建立链接图抓取</strong> — 从首页与关键枢纽出发，只收集可抓取的 HTML 链接。</li>
+            <li><strong>收集候选 URL 集</strong> — XML Sitemap、CMS 已发布导出，以及可选的日志 / 分析落地页。</li>
+            <li><strong>做集合差</strong> — 标记出现在 sitemap 或导出、却不在链接图中的 URL，作为孤立候选。</li>
+            <li><strong>核对线上状态</strong> — 确认 200 / 跳转 / 错误，记录规范目标与 noindex。已 404 的孤立是清理，不是加链任务。</li>
+            <li><strong>按职责分类</strong> — 保留（对买家有用）、合并（近重复）、删除（薄弱残留），每类保留样例 URL。</li>
+            <li><strong>蓝图加链或下线</strong> — 保留项从应归属的类目 / 产品 / 主题枢纽加语境内链；复审新抓取是否出现该 URL。</li>
+          </ol>
+        </section>
+
+        <section id="example" aria-labelledby="example-title">
+          <h2 id="example-title">具体例子</h2>
+          <p>某制造商在活动中发布详细选型指南。URL 仍在 sitemap 且可打开，但活动枢纽已下线，产品页也没有链过去。从导航抓取看不到它，只有 sitemap 列出。</p>
+          <p>诊断把它标为 SEO Health 的发现路径问题。蓝图可能从两处相关产品模板与应用枢纽加入「相关指南」链接；若已被更新手册取代，则重定向到新手册并从 sitemap 移除旧 URL。复审查入链与最终状态码。任何一步都不宣称排名变化——只恢复有意的路径。</p>
+        </section>
+
+        <section id="health-vs-growth" aria-labelledby="health-vs-growth-title">
+          <h2 id="health-vs-growth-title">Mika：健康 vs 增长</h2>
+          <p>发现并重新连接孤立页，主要是 <strong>SEO Health</strong>：架构与抓取路径。写出从未存在过的指南，才是 <strong>SEO Growth</strong>。Mika 把二者分开，避免把「给残留加链」当成「覆盖尚未回答的需求」。</p>
+        </section>
+
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <div class="kc-faq-item">
+            <h3>孤立页会影响什么？</h3>
+            <p>孤立页削弱有意的发现路径。沿内链前进的用户与爬虫可能永远到不了该页。有用的文档或产品变体可能长期曝光不足，而仅存在于 sitemap 或广告落地的 URL 仍占用注意力。审计也会更难：内容在，结构却假装它不在。</p>
+          </div>
+          <div class="kc-faq-item">
+            <h3>只出现在 XML Sitemap 里的页面算孤立页吗？</h3>
+            <p>从链接图角度看，常常算。Sitemap 可以列出零入链的 URL。把「仅 sitemap」视为发现风险：要么从相关枢纽加有语境的内链，要么若不打算独立存在，就移出 sitemap 并下线或合并。</p>
+          </div>
+          <div class="kc-faq-item">
+            <h3>是不是每个孤立页都该补新内链？</h3>
+            <p>不是。先判定页面职责。对能回答买家或支持需求的页面保留并链接；对近重复做规范或合并；对薄弱残留做 noindex 或删除。给一切都加链只会增加杂乱，并不能改善以人为本的覆盖。</p>
+          </div>
+        </section>
+
+        <section class="kc-related" id="related" aria-labelledby="related-title">
+          <h2 id="related-title">相关文章</h2>
+          <ul>
+            <li><a href="../how-to-analyze-xml-sitemaps/">如何分析 XML Sitemap</a></li>
+            <li><a href="../how-to-check-website-crawlability/">如何检查网站可抓取性</a></li>
+            <li><a href="../how-to-find-broken-internal-links/">如何查找失效内链</a></li>
+          </ul>
+        </section>
+
+        <section class="kc-sources" id="sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ul>
+            <li>Mika 方法：把发现路径作为 SEO Health 事实，再蓝图保留 / 合并 / 下线 — <a href="https://mikaovo.ai/">mikaovo.ai</a></li>
+            <li><a href="https://developers.google.com/search/docs/crawling-indexing/links-crawlable">Google Search Central — 链接可抓取性</a></li>
+            <li><a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview">Google Search Central — Sitemaps 概览</a></li>
+            <li>以人为本原则：有用且独特的页面应能通过清晰站点结构到达，而不是只靠活动书签</li>
+          </ul>
+          <p class="kc-note">本文说明发现路径检查，不预测排名，也不保证出现在任何搜索或回答界面。</p>
+        </section>
+      </article>
+    </div>
+
+    <section class="kc-cta" aria-labelledby="cta-title">
+      <h2 id="cta-title">弄清网站目前处在什么位置</h2>
+      <p>做一次结构化的 SEO + GEO 审计。把健康发现与增长缺口分开展示，再变成可执行的蓝图。</p>
+      <a class="kc-btn" href="/zh/#cta">开始结构化审计</a>
+    </section>
+  </main>
+
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

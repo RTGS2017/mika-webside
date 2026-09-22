@@ -20,18 +20,19 @@
   --hv2-struct-soft: #eef1f5;
   --hv2-warn: #b45309;
   --hv2-warn-soft: #f8efe4;
-  --hv2-hero-bg: #f8fafc;
+  --hv2-hero-bg: #101828;
   --hv2-problem-bg: #ffffff;
-  --hv2-framework-bg: #f3f6fa;
+  --hv2-framework-bg: #f4f7fb;
   --hv2-audit-bg: #101828;
+  --hv2-health-bg: #ffffff;
   --hv2-seo-growth-bg: #f5f8ff;
   --hv2-geo-bg: #faf7ff;
   --hv2-questions-bg: #ffffff;
-  --hv2-entity-bg: #eef1f5;
-  --hv2-multi-bg: #f4f7f6;
-  --hv2-method-bg: #f8fafc;
-  --hv2-faq-bg: #f8fafc;
-  --hv2-cta-bg: #111827;
+  --hv2-entity-bg: #f7f8fa;
+  --hv2-multi-bg: #f4f8f6;
+  --hv2-method-bg: #ffffff;
+  --hv2-faq-bg: #f7f8fa;
+  --hv2-cta-bg: #101828;
   --hv2-radius: 12px;
   --hv2-radius-sm: 8px;
   --hv2-max: 1180px;
@@ -352,17 +353,22 @@
   font-family: var(--hv2-mono);
 }
 
-/* —— Hero —— */
+/* —— Hero (sole dark stage — Visibility Field) —— */
 .hv2-hero {
   background: var(--hv2-hero-bg);
   padding: 72px 0 80px;
-  border-bottom: 1px solid var(--hv2-line);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: #e8edf5;
+}
+
+.hv2-hero .hv2-h1 {
+  color: var(--hv2-white);
 }
 
 .hv2-hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: 48px;
+  gap: 40px;
   align-items: start;
 }
 
@@ -376,7 +382,7 @@
   font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--hv2-seo-deep);
+  color: #93b0ff;
 }
 
 .hv2-eyebrow::before {
@@ -390,14 +396,14 @@
 .hv2-hero-def {
   margin: 0 0 14px;
   font-size: 1.08rem;
-  color: var(--hv2-muted);
+  color: #b7c0d0;
   max-width: 48ch;
 }
 
 .hv2-hero-support {
   margin: 0 0 24px;
   font-size: 0.98rem;
-  color: var(--hv2-muted);
+  color: #9aa6b8;
   max-width: 48ch;
 }
 
@@ -409,18 +415,36 @@
   margin-bottom: 16px;
 }
 
-.hv2-hero-dash {
+.hv2-hero .hv2-btn-ghost {
+  color: #e8edf5;
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.hv2-hero .hv2-btn-ghost:hover {
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+.hv2-hero .hv2-note {
+  color: #8b97ab;
+}
+
+.hv2-hero-visual {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
 
+.hv2-hero-dash {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
 .hv2-chip {
-  padding: 16px;
-  background: var(--hv2-white);
-  border: 1px solid var(--hv2-line);
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--hv2-radius);
-  min-height: 112px;
+  min-height: 96px;
 }
 
 .hv2-chip[data-id="seoHealth"],
@@ -443,18 +467,18 @@
 
 .hv2-chip[data-id="seoHealth"] .hv2-chip-label,
 .hv2-chip[data-id="seoGrowth"] .hv2-chip-label {
-  color: var(--hv2-seo-deep);
+  color: #b8c9ff;
 }
 
 .hv2-chip[data-id="geoHealth"] .hv2-chip-label,
 .hv2-chip[data-id="geoGrowth"] .hv2-chip-label {
-  color: var(--hv2-geo-deep);
+  color: #d6c8ff;
 }
 
 .hv2-chip-hint {
   margin: 0;
   font-size: 13px;
-  color: var(--hv2-muted);
+  color: #9aa6b8;
   line-height: 1.45;
 }
 
@@ -739,7 +763,7 @@
 
 /* —— Health vs Growth —— */
 .hv2-health-growth {
-  background: var(--hv2-white);
+  background: var(--hv2-health-bg);
 }
 
 .hv2-hg-grid {
@@ -1339,9 +1363,29 @@
 }
 
 .hv2-loop {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 8px;
+}
+
+.mm-method-ring-track {
+  position: absolute;
+  inset: -6px;
+  border-radius: 12px;
+  pointer-events: none;
+  z-index: 0;
+  background: conic-gradient(
+    from -90deg,
+    #2f6bff calc(var(--mm-ring, 0) * 100%),
+    transparent 0
+  );
+  opacity: 0.18;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: 2px;
 }
 
 .hv2-loop-step {
@@ -1355,6 +1399,8 @@
   border: 1px solid var(--hv2-line);
   border-radius: var(--hv2-radius-sm);
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .hv2-loop-idx {

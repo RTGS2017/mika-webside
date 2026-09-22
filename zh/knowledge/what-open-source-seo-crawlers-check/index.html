@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>开源 SEO 爬虫检查什么 | Mika Visibility</title>
+  <meta name="description" content="基于 open-seo-crawler 公开设计的观察：标题、sitemap、hreflang、重复内容与坏链，以及对网站审计的启发。">
+  <link rel="canonical" href="https://mikaovo.ai/zh/knowledge/what-open-source-seo-crawlers-check/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/what-open-source-seo-crawlers-check/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/what-open-source-seo-crawlers-check/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/what-open-source-seo-crawlers-check/">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "开源 SEO 爬虫检查什么",
+    "description": "Mika Research Note：开源 SEO 爬虫常见检查信号，基于对 open-seo-crawler 的公开观察。",
+    "datePublished": "2026-09-22",
+    "dateModified": "2026-09-22",
+    "inLanguage": "zh-Hans",
+    "author": { "@type": "Organization", "name": "Mika Visibility", "url": "https://mikaovo.ai/" },
+    "publisher": { "@type": "Organization", "name": "Mika Visibility", "url": "https://mikaovo.ai/", "logo": { "@type": "ImageObject", "url": "https://mikaovo.ai/assets/logo.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://mikaovo.ai/zh/knowledge/what-open-source-seo-crawlers-check/" }
+  }
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <nav class="kc-nav kc-wrap" aria-label="主导航">
+      <a class="kc-brand" href="/zh/">
+        <img src="../../../assets/logo.svg" alt="" width="22" height="22">
+        <span>Mika Visibility <span>知识</span></span>
+      </a>
+      <div class="kc-nav-links">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/" aria-current="page">知识中心</a>
+      </div>
+      <div class="kc-lang" aria-label="语言">
+        <a href="/knowledge/what-open-source-seo-crawlers-check/">EN</a>
+        <a href="/zh/knowledge/what-open-source-seo-crawlers-check/" aria-current="page">中文</a>
+      </div>
+    </nav>
+  </header>
+
+  <header class="kc-hero">
+    <div class="kc-wrap">
+      <p class="kc-hero-kicker">Mika Research Note · 开源</p>
+      <h1>开源 SEO 爬虫检查什么</h1>
+      <p class="kc-hero-lead">自托管开源 SEO 蜘蛛常见会检查哪些信号，以及这些清单如何让人工审计更可执行。</p>
+      <p class="kc-meta">
+        <span>研究</span>
+        <span>查看日期 2026-09-22</span>
+        <span>来源：open-seo-crawler（MIT）</span>
+      </p>
+    </div>
+  </header>
+
+  <main id="main" class="kc-layout kc-wrap">
+    <aside class="kc-toc" aria-label="本页目录">
+      <nav>
+        <a href="#why">为什么研究爬虫清单</a>
+        <a href="#per-page">单页信号</a>
+        <a href="#sitewide">全站报告</a>
+        <a href="#budget">抓取预算陷阱</a>
+        <a href="#audit">对审计的启发</a>
+        <a href="#limits">本文不是什么</a>
+      </nav>
+    </aside>
+
+    <article class="kc-body">
+      <p>团队常问：「重写内容前该先爬什么？」开源 SEO 爬虫的价值，不在于发明排名规则，而在于把很长的检查清单变成可观察的产物。本文记录对公开仓库 <strong>puneetindersingh/open-seo-crawler</strong>（MIT）的设计观察，并用 Mika 自己的话写成审计实践笔记。我们<strong>没有</strong>转载该项目的文档正文。</p>
+
+      <h2 id="why">为什么研究爬虫清单</h2>
+      <p>对审计人员来说，爬虫的价值在于它如何给问题命名与分组。Open SEO Crawler 定位为自托管蜘蛛：并发抓取、可选 JS 渲染、CMS 预设、批量导出。对 Mika 真正有用的，不是安装器，而是它选择暴露、分组并导出哪些失败模式。</p>
+      <p>这些命名检查，能把工程语言（状态码、canonical、软 404）翻译成业务风险（「页面可能无法被干净发现」）。对照这些类别写审计工作表，比一个含糊的「SEO 健康分」更好辩护。</p>
+
+      <h2 id="per-page">单页常见信号</h2>
+      <p>根据公开功能描述，每个抓到的 HTML 页面会沿这些轴评估：</p>
+      <ul>
+        <li><strong>标题与 meta description</strong> —— 缺失、过短、过长，或跨 URL 重复。</li>
+        <li><strong>H1 结构</strong> —— 缺失、多个 H1，或与 title 完全相同。</li>
+        <li><strong>Canonical</strong> —— 缺失、自指，或指向其他地址。</li>
+        <li><strong>可索引性</strong> —— meta robots 或 <code>X-Robots-Tag</code> 中的 noindex。</li>
+        <li><strong>Hreflang</strong> —— 提取与校验，包括缺少回指。</li>
+        <li><strong>结构化数据是否存在</strong> —— 检测 JSON-LD / microdata 类型（存在性，不是排名承诺）。</li>
+        <li><strong>Open Graph / Twitter Card</strong> —— 常见社交元数据缺口。</li>
+        <li><strong>薄弱或近重复正文</strong> —— 过短字数与基于 shingle 的相似页配对。</li>
+        <li><strong>重定向与链路</strong> —— 多跳路径；规范化重定向与「真实」重定向分开统计。</li>
+        <li><strong>HTTP 错误</strong>、缺 alt 图片、混合内容、安全头、viewport、过深点击距离页面等。</li>
+      </ul>
+      <p>这些都不会「保证」引用或排名，但能说明站点 HTML 是否足够自洽，让爬虫与人不必靠猜。</p>
+
+      <h2 id="sitewide">全站报告：sitemap、重复、坏链</h2>
+      <p>除了单页行，项目强调跨 URL 报告：全部标题/meta/H1/canonical、重复分组、重定向链、状态码分布、深页、缺 alt 图片、hreflang 一致性等。Sitemap 分析会把抓取集合与 <code>sitemap.xml</code> 对照：sitemap 缺失、仅在 sitemap 出现、非 200、sitemap 内重定向。</p>
+      <p>坏链与畸形 <code>href</code> 被当作一等公民。无协议或把地址纯文本贴进链接的情况，会报成畸形链接，而不是在每个共享页脚的页面下炸出幽灵 404。对有共享页眉页脚的 B2B 站，这很关键：一个坏页脚不该看起来像几百个独立故障。</p>
+
+      <h2 id="budget">抓取预算与软 404 陷阱</h2>
+      <p>另一条可见主题是：保护爬虫不要掉进无穷或低价值 URL 空间。公开材料描述了跳过非页面路径、重复路径段、常见页面构建器分页参数，以及抓取后探测服务器是否对「不可能存在」的 URL 返回 200。另有抓取预算视图按查询参数分桶，并可为分面/追踪陷阱建议 robots <code>Disallow</code>。</p>
+      <p>对审计者：在扩写主题覆盖之前，先盘点幽灵 URL 类别。站点若对任意路径 soft-404，再扩内容只会浪费抓取并污染诊断。</p>
+
+      <h2 id="audit">对网站审计的启发</h2>
+      <p>Mika 的结论是：把开源爬虫清单当作<strong>覆盖地图</strong>，而不是排行榜：</p>
+      <ol>
+        <li>把发现健康（状态码、robots、sitemap 差异、软 404）与页面清晰度（标题、H1、薄弱文案）分开。</li>
+        <li>改多语言模板前，先导出重复内容与 hreflang 报告。</li>
+        <li>模板级缺陷（页脚链接、重复资源缺 alt）修一次，再复爬。</li>
+        <li>若有 JS / 无 JS 对比，用来看非执行 JS 的爬虫实际收到什么。</li>
+      </ol>
+      <p>顺序保持人在环：工具列证据，人按业务优先级决策。</p>
+
+      <h2 id="limits">本文不是什么</h2>
+      <p>本文不安装、不分叉、不镜像 Open SEO Crawler，也不声称 Mika 复制了他们的文档。MIT 在此意味着我们可以研究并做事实归因；正文仍是 Mika 原创。清空爬虫警告也不承诺带来 AI 引用或流量增长——技术整洁是必要卫生条件，替代不了买家需要的有来源答案。</p>
+    </article>
+  </main>
+
+  <div class="kc-wrap">
+    <section class="kc-sources" aria-labelledby="sources-heading">
+      <h2 id="sources-heading">来源</h2>
+      <ol>
+        <li>
+          <strong>仓库：</strong> open-seo-crawler<br>
+          <strong>作者 / 所有者：</strong> puneetindersingh<br>
+          <strong>许可证：</strong> MIT<br>
+          <strong>源链接：</strong> <a href="https://github.com/puneetindersingh/open-seo-crawler">https://github.com/puneetindersingh/open-seo-crawler</a><br>
+          <strong>查看日期：</strong> 2026-09-22<br>
+          <span>仅事实归因。Mika 未复制该项目文档。</span>
+        </li>
+      </ol>
+    </section>
+
+    <section class="kc-related" aria-labelledby="related-heading">
+      <h2 id="related-heading">相关阅读</h2>
+      <div class="kc-grid">
+        <a class="kc-card" href="/zh/knowledge/what-a-technical-seo-geo-crawler-inspects/">
+          <p class="kc-card-meta"><span class="kc-tag kc-tag--seo">技术</span></p>
+          <h3 class="kc-card-title">技术 SEO/GEO 爬虫会检查什么</h3>
+          <p class="kc-card-blurb">Health、GEO 与无障碍分数的组合设计。</p>
+        </a>
+        <a class="kc-card" href="/zh/knowledge/how-to-check-website-crawlability/">
+          <p class="kc-card-meta"><span class="kc-tag kc-tag--seo">SEO</span></p>
+          <h3 class="kc-card-title">如何检查网站可抓取性</h3>
+          <p class="kc-card-blurb">robots、状态码与抓取路径的实用检查。</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="kc-faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">常见问题</h2>
+      <details>
+        <summary>清掉爬虫错误就能保证排名上升吗？</summary>
+        <p>不能。爬虫检查反映技术一致性；排名与 AI 引用取决于本文不承诺预测的诸多因素。</p>
+      </details>
+      <details>
+        <summary>这是对 Open SEO Crawler 的评测或背书吗？</summary>
+        <p>都不是。这是基于公开材料的检查类别研究笔记，服务于审计规划。</p>
+      </details>
+    </section>
+
+    <section class="kc-cta" aria-labelledby="cta-heading">
+      <h2 id="cta-heading">需要结构化网站审计？</h2>
+      <p>Mika Visibility 帮助 B2B 团队把抓取/索引健康与内容、可答性工作分开——不做排名保证。</p>
+      <a class="kc-btn kc-btn-primary" href="/zh/#contact">联系 Mika</a>
+    </section>
+  </div>
+
+  <footer class="kc-footer">
+    <div class="kc-wrap kc-footer-bottom">
+      <p>© Mika Visibility · 研究笔记 · 非法律意见</p>
+      <div class="kc-footer-links">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

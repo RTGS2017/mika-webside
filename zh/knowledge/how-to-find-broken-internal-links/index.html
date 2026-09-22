@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>如何查找失效内链 | Mika Knowledge</title>
+  <meta name="description" content="找出浪费抓取预算、削弱信任的失效内链——用抓取、状态码检查与优先枢纽定位。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mikaovo.ai/zh/knowledge/how-to-find-broken-internal-links/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/how-to-find-broken-internal-links/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/how-to-find-broken-internal-links/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/how-to-find-broken-internal-links/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:title" content="如何查找失效内链">
+  <meta property="og:description" content="找出浪费抓取预算、削弱信任的失效内链——用抓取、状态码检查与优先枢纽定位。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/knowledge/how-to-find-broken-internal-links/">
+  <meta property="og:site_name" content="Mika">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#0B1220">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://mikaovo.ai/zh/knowledge/how-to-find-broken-internal-links/#article",
+        "headline": "如何查找失效内链",
+        "description": "找出浪费抓取预算、削弱信任的失效内链——用抓取、状态码检查与优先枢纽定位。",
+        "datePublished": "2026-09-22",
+        "dateModified": "2026-09-22",
+        "inLanguage": "zh-Hans",
+        "author": {"@type": "Organization", "name": "Mika"},
+        "publisher": {"@type": "Organization", "name": "Mika", "url": "https://mikaovo.ai/"},
+        "mainEntityOfPage": "https://mikaovo.ai/zh/knowledge/how-to-find-broken-internal-links/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://mikaovo.ai/zh/"},
+          {"@type": "ListItem", "position": 2, "name": "知识中心", "item": "https://mikaovo.ai/zh/knowledge/"},
+          {"@type": "ListItem", "position": 3, "name": "如何查找失效内链", "item": "https://mikaovo.ai/zh/knowledge/how-to-find-broken-internal-links/"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "失效内链本身会拉低排名吗？", "acceptedAnswer": {"@type": "Answer", "text": "失效链接浪费抓取请求并挫伤用户信任，是发现与信任层面的健康问题。它们本身并不能预测健康页面的排名。先修关键路径，再继续覆盖工作。"}},
+          {"@type": "Question", "name": "是不是要把站上每一个 404 都修掉？", "acceptedAnswer": {"@type": "Answer", "text": "优先处理出现在导航、产品枢纽与高流量模板中的 404。已下线 URL 可以有意返回 404 或 410。目标是路径有意、可控，不是零计数的虚荣指标。"}},
+          {"@type": "Question", "name": "页面搬家了，内链还指向旧地址怎么办？", "acceptedAnswer": {"@type": "Answer", "text": "重要内链应更新到最终 URL，并用重定向兜住书签与外链。主枢纽长期保留软失败，健康问题就不会消失。"}}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="kc-page">
+  <header class="kc-header">
+    <nav class="kc-nav" aria-label="主导航">
+      <a class="kc-nav-brand" href="/zh/">
+        <img src="../../../assets/logo.svg" alt="Mika" width="22" height="22">
+        <span>Mika</span>
+      </a>
+      <div class="kc-nav-links">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/knowledge/how-to-find-broken-internal-links/">English</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <header class="kc-hero">
+      <p class="kc-meta"><span>SEO</span> · <time datetime="2026-09-22">2026-09-22</time></p>
+      <h1>如何查找失效内链</h1>
+      <p>定位浪费抓取预算、削弱关键路径信任的站内死链。</p>
+    </header>
+    <div class="kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <ol>
+          <li><a href="#definition">定义</a></li>
+          <li><a href="#why-it-matters">为什么重要</a></li>
+          <li><a href="#how-to-check">怎么检查</a></li>
+          <li><a href="#example">例子</a></li>
+          <li><a href="#mika-lens">健康与增长</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ol>
+      </aside>
+      <article class="kc-body">
+        <section id="definition">
+          <h2>定义</h2>
+          <p>失效内链，是本站链接指向对用户与爬虫都失败的 URL——常见为 404/410、软 404，或永远落不到预期内容的重定向链。查找失效内链，意味着抓取或抽样 HTML、请求目标 URL，并记录仍在推广死路径的来源页。</p>
+          <p>这项检查关注路径完整性。它不会发明缺失主题，也不会声称清掉归档目录里每一条散落 404 就能带来排名。</p>
+        </section>
+        <section id="why-it-matters">
+          <h2>为什么重要</h2>
+          <p>可抓取链接是发现在站内流动的方式。枢纽指向死目标时，爬虫把请求花在失败上，人在旅程中失去信任——尤其是 B2B 从类目到产品再到文档的路径。即便活页上有有用、独特的内容，本应把人与爬虫带过去的链接若已失效，发现仍会受损。</p>
+          <p>迁移与 CMS 重构后，站内 404 常聚集在改名产品、下线 SKU 与过期资源列表。尽早发现，健康工作就具体：修复或重定向有意路径，而不是猜测「发现为何卡住」。</p>
+        </section>
+        <section id="how-to-check">
+          <h2>怎么检查</h2>
+          <ol>
+            <li>从优先种子（首页、主类目）抓取站点，提取 HTML 中的站内 <code>href</code> 目标。</li>
+            <li>请求每个唯一目标，记录状态码、重定向链与软 404 模式。</li>
+            <li>把失败结果回联到来源页，明确要改哪里的链接。</li>
+            <li>优先处理导航、产品模板与高意图枢纽中的来源，再处理深层归档页。</li>
+            <li>逐条决定：恢复内容、把链接改到正确线上 URL，或保留有意的 404/410 且不再站内推广。</li>
+            <li>修复后复抓相关模板，确认死路径已消失。</li>
+          </ol>
+        </section>
+        <section id="example">
+          <h2>一个具体例子</h2>
+          <p>目录改名把 <code>/products/valve-a/</code> 迁到 <code>/products/valve-a-pro/</code>。新页已上线，但二十个类目与对比页仍链到旧路径，现已 404。失效链接扫描先列出这二十个来源。编辑把枢纽链接改到最终 URL；旧 URL 做 301 兜住外链书签。健康问题是路径完整性，不是「还要再写几篇阀门文章」。增长工作——例如尚未存在的选型指南——仍是独立机会，应在枢纽不再把人送进死胡同之后推进。</p>
+        </section>
+        <section id="mika-lens">
+          <h2>Mika 如何区分健康问题与增长机会</h2>
+          <p>失效内链属于健康问题：发现与信任路径受损。未回答的买家问题或缺失市场页属于增长机会。Mika 用带来源 URL 的死链清单做基础修复，主题缺口另列一表，避免把清理误当成内容扩张。</p>
+        </section>
+        <section class="kc-faq" id="faq">
+          <h2>常见问题</h2>
+          <div>
+            <h3>失效内链本身会拉低排名吗？</h3>
+            <p>失效链接浪费抓取请求并挫伤用户信任，是发现与信任层面的健康问题。它们本身并不能预测健康页面的排名。先修关键路径，再继续覆盖工作。</p>
+          </div>
+          <div>
+            <h3>是不是要把站上每一个 404 都修掉？</h3>
+            <p>优先处理出现在导航、产品枢纽与高流量模板中的 404。已下线 URL 可以有意返回 404 或 410。目标是路径有意、可控，不是零计数的虚荣指标。</p>
+          </div>
+          <div>
+            <h3>页面搬家了，内链还指向旧地址怎么办？</h3>
+            <p>重要内链应更新到最终 URL，并用重定向兜住书签与外链。主枢纽长期保留软失败，健康问题就不会消失。</p>
+          </div>
+        </section>
+        <section class="kc-related">
+          <h2>相关文章</h2>
+          <ul>
+            <li><a href="../how-to-check-website-crawlability/">如何检查网站可抓取性</a></li>
+            <li><a href="../how-to-find-orphan-pages/">如何发现孤立页面</a></li>
+            <li><a href="../what-is-a-website-seo-audit/">什么是网站 SEO 审计</a></li>
+          </ul>
+        </section>
+        <section class="kc-sources">
+          <h2>来源</h2>
+          <ul>
+            <li>Google Search Central — <a href="https://developers.google.com/search/docs/crawling-indexing/links-crawlable">面向 Google 的链接最佳实践</a>（可抓取链接）</li>
+            <li>Google Search Central — <a href="https://developers.google.com/search/docs/crawling-indexing">抓取与索引概览</a></li>
+            <li>Google Search Central — <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content">创建有帮助、可靠、以人为本的内容</a></li>
+            <li>Mika 方法：路径完整性属健康，覆盖属增长 — <a href="https://mikaovo.ai/">mikaovo.ai</a></li>
+          </ul>
+        </section>
+        <section class="kc-cta">
+          <h2>需要结构化审计？</h2>
+          <p>了解 Mika 如何把抓取健康与内容缺口映射成下一步动作。</p>
+          <a href="/zh/#cta">联系 Mika</a>
+        </section>
+      </article>
+    </div>
+  </main>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

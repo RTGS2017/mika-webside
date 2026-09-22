@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What Open-Source SEO Crawlers Check | Mika Visibility</title>
+  <meta name="description" content="Design facts from open-seo-crawler: titles, sitemaps, hreflang, duplicates, broken links—and what that means for website audits.">
+  <link rel="canonical" href="https://mikaovo.ai/knowledge/what-open-source-seo-crawlers-check/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/what-open-source-seo-crawlers-check/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/what-open-source-seo-crawlers-check/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/what-open-source-seo-crawlers-check/">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../src/knowledge/center.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What Open-Source SEO Crawlers Check",
+    "description": "A Mika Research Note on signals common open-source SEO crawlers inspect, based on public observation of open-seo-crawler.",
+    "datePublished": "2026-09-22",
+    "dateModified": "2026-09-22",
+    "inLanguage": "en",
+    "author": { "@type": "Organization", "name": "Mika Visibility", "url": "https://mikaovo.ai/" },
+    "publisher": { "@type": "Organization", "name": "Mika Visibility", "url": "https://mikaovo.ai/", "logo": { "@type": "ImageObject", "url": "https://mikaovo.ai/assets/logo.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://mikaovo.ai/knowledge/what-open-source-seo-crawlers-check/" }
+  }
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">Skip to content</a>
+  <header class="kc-header">
+    <nav class="kc-nav kc-wrap" aria-label="Primary">
+      <a class="kc-brand" href="/">
+        <img src="../../assets/logo.svg" alt="" width="22" height="22">
+        <span>Mika Visibility <span>Knowledge</span></span>
+      </a>
+      <div class="kc-nav-links">
+        <a href="/">Home</a>
+        <a href="/knowledge/" aria-current="page">Knowledge</a>
+      </div>
+      <div class="kc-lang" aria-label="Language">
+        <a href="/knowledge/what-open-source-seo-crawlers-check/" aria-current="page">EN</a>
+        <a href="/zh/knowledge/what-open-source-seo-crawlers-check/">中文</a>
+      </div>
+    </nav>
+  </header>
+
+  <header class="kc-hero">
+    <div class="kc-wrap">
+      <p class="kc-hero-kicker">Mika Research Note · Open Source</p>
+      <h1>What Open-Source SEO Crawlers Check</h1>
+      <p class="kc-hero-lead">A field map of signals a self-hosted open-source SEO spider tends to inspect—and how those checks sharpen a human audit worksheet.</p>
+      <p class="kc-meta">
+        <span>Research</span>
+        <span>Viewed 2026-09-22</span>
+        <span>Source: open-seo-crawler (MIT)</span>
+      </p>
+    </div>
+  </header>
+
+  <main id="main" class="kc-layout kc-wrap">
+    <aside class="kc-toc" aria-label="On this page">
+      <nav>
+        <a href="#why">Why study a crawler</a>
+        <a href="#per-page">Per-page signals</a>
+        <a href="#sitewide">Sitewide reports</a>
+        <a href="#budget">Crawl budget traps</a>
+        <a href="#audit">Audit takeaways</a>
+        <a href="#limits">What this is not</a>
+      </nav>
+    </aside>
+
+    <article class="kc-body">
+      <p>When teams ask “what should we crawl before we rewrite content?”, open-source SEO spiders are a useful reference—not because any tool invents ranking rules, but because they make a long checklist concrete. This note records design facts observed from the public repository <strong>puneetindersingh/open-seo-crawler</strong> (MIT). It is Mika’s rewrite of those observations for audit practice. We are not republishing that project’s documentation.</p>
+
+      <h2 id="why">Why study a crawler’s checklist</h2>
+      <p>A crawler’s value for auditors is the shape of its inventory. Open SEO Crawler presents itself as a self-hosted spider: concurrent fetches, optional JavaScript rendering, CMS-aware presets, and bulk exports. The interesting part for Mika is not the installer—it is which failure modes the tool chooses to name, group, and export.</p>
+      <p>Those named checks become a translation layer between engineering language (“status codes, canonicals, soft 404s”) and buyer-facing risk (“this page may never be discovered cleanly”). An audit worksheet that mirrors those categories is easier to defend than a vague “SEO health” score.</p>
+
+      <h2 id="per-page">Per-page signals the spider surfaces</h2>
+      <p>From public feature descriptions, each crawled HTML page is assessed along familiar on-page axes:</p>
+      <ul>
+        <li><strong>Titles and meta descriptions</strong> — missing, too short, too long, or duplicated across URLs.</li>
+        <li><strong>H1 structure</strong> — missing H1, multiple H1s, or H1 identical to the title.</li>
+        <li><strong>Canonical tags</strong> — missing, self-referencing, or pointing elsewhere (“canonicalised”).</li>
+        <li><strong>Indexability</strong> — <code>noindex</code> via meta robots or <code>X-Robots-Tag</code>.</li>
+        <li><strong>Hreflang</strong> — extraction plus validation, including missing return tags.</li>
+        <li><strong>Structured data presence</strong> — JSON-LD and microdata types detected (presence, not a ranking promise).</li>
+        <li><strong>Open Graph / Twitter cards</strong> — common social metadata gaps.</li>
+        <li><strong>Thin or near-duplicate bodies</strong> — short word counts and shingle-based similarity pairs.</li>
+        <li><strong>Redirects and chains</strong> — multi-hop paths with hop lists; normalisations separated from “real” redirects.</li>
+        <li><strong>HTTP errors</strong> — 4xx / 5xx with retry context.</li>
+        <li><strong>Images missing alt</strong>, mixed content, security headers, viewport presence, and deep click-distance pages.</li>
+      </ul>
+      <p>None of these items “guarantee” citations or rankings. They do tell an auditor whether the site’s HTML is internally consistent enough to be crawled and understood without guessing.</p>
+
+      <h2 id="sitewide">Sitewide reports: sitemap, duplicates, broken links</h2>
+      <p>Beyond single-page rows, the project emphasises cross-URL reports. Publicly described bulk views include all titles / metas / H1s / canonicals, duplicate groupings, redirect chains, response-code mixes, deep pages, images missing alt, and hreflang consistency. Sitemap analysis compares the crawl set against <code>sitemap.xml</code>: URLs missing from the sitemap, sitemap-only URLs, non-200 entries, and redirects inside the sitemap.</p>
+      <p>Broken-link and malformed-href handling is treated as first-class hygiene. Scheme-less or plain-text <code>href</code> values (for example, an address pasted into a link) are reported as malformed instead of exploding into phantom 404s under every page that shares a footer. That design choice matters for B2B sites with shared chrome: one bad footer link should not look like hundreds of unique failures.</p>
+
+      <h2 id="budget">Crawl budget and soft-404 traps</h2>
+      <p>Another observable theme is protecting the crawl from infinite or low-value URL spaces. The public materials describe skipping non-page paths, repeating path segments, common page-builder pagination parameters, and post-crawl probes that test whether the server returns 200 for URLs that cannot exist. A separate crawl-budget view buckets query parameters and can suggest robots <code>Disallow</code> lines for faceted or tracking traps.</p>
+      <p>For auditors, the lesson is procedural: inventory phantom URL classes before you invent new content. Expanding topic coverage on a site that soft-404s arbitrary paths will waste crawl attention and muddy diagnostics.</p>
+
+      <h2 id="audit">What this suggests for website audits</h2>
+      <p>Mika’s takeaway is to treat open crawler checklists as a <em>coverage map</em>, not a scoreboard:</p>
+      <ol>
+        <li>Separate discovery health (status codes, robots, sitemap diffs, soft 404s) from page clarity (titles, H1, thin copy).</li>
+        <li>Export duplicate and hreflang reports before rewriting multilingual templates.</li>
+        <li>Fix shared-template defects (footer links, missing alts on repeated assets) once, then re-crawl.</li>
+        <li>Use JS-vs-no-JS comparison—when available—to see what non-executing crawlers actually receive.</li>
+      </ol>
+      <p>That sequence keeps humans in control: the tool lists evidence; people decide priority against business pages that matter.</p>
+
+      <h2 id="limits">What this note is not</h2>
+      <p>This article does not install, fork, or mirror Open SEO Crawler. It does not claim Mika copied their docs. MIT here means we may study and attribute facts; our prose remains Mika’s. We also do not promise that clearing every crawler warning will produce AI citations or organic growth. Technical cleanliness is necessary hygiene—not a substitute for source-backed answers buyers need.</p>
+    </article>
+  </main>
+
+  <div class="kc-wrap">
+    <section class="kc-sources" aria-labelledby="sources-heading">
+      <h2 id="sources-heading">Sources</h2>
+      <ol>
+        <li>
+          <strong>Repository:</strong> open-seo-crawler<br>
+          <strong>Author / owner:</strong> puneetindersingh<br>
+          <strong>License:</strong> MIT<br>
+          <strong>Source:</strong> <a href="https://github.com/puneetindersingh/open-seo-crawler">https://github.com/puneetindersingh/open-seo-crawler</a><br>
+          <strong>Viewed:</strong> 2026-09-22<br>
+          <span>Fact attribution only. Mika did not copy this project’s documentation.</span>
+        </li>
+      </ol>
+    </section>
+
+    <section class="kc-related" aria-labelledby="related-heading">
+      <h2 id="related-heading">Related</h2>
+      <div class="kc-grid">
+        <a class="kc-card" href="/knowledge/what-a-technical-seo-geo-crawler-inspects/">
+          <p class="kc-card-meta"><span class="kc-tag kc-tag--seo">Technical</span></p>
+          <h3 class="kc-card-title">What a Technical SEO/GEO Crawler Inspects</h3>
+          <p class="kc-card-blurb">Health, GEO, and accessibility signals in a combined crawler design.</p>
+        </a>
+        <a class="kc-card" href="/knowledge/how-to-check-website-crawlability/">
+          <p class="kc-card-meta"><span class="kc-tag kc-tag--seo">SEO</span></p>
+          <h3 class="kc-card-title">How to Check Website Crawlability</h3>
+          <p class="kc-card-blurb">Practical checks for robots, status codes, and crawl paths.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="kc-faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">FAQ</h2>
+      <details>
+        <summary>Does clearing crawler errors guarantee better rankings?</summary>
+        <p>No. Crawler checks surface technical consistency. Rankings and AI citations depend on many factors this note does not claim to predict.</p>
+      </details>
+      <details>
+        <summary>Is this a review or endorsement of Open SEO Crawler?</summary>
+        <p>Neither. It is a research note about check categories visible from public materials, written for audit planning.</p>
+      </details>
+    </section>
+
+    <section class="kc-cta" aria-labelledby="cta-heading">
+      <h2 id="cta-heading">Need a structured site audit?</h2>
+      <p>Mika Visibility helps B2B teams separate crawl/index health from content and answerability work—without ranking guarantees.</p>
+      <a class="kc-btn kc-btn-primary" href="/#contact">Contact Mika</a>
+    </section>
+  </div>
+
+  <footer class="kc-footer">
+    <div class="kc-wrap kc-footer-bottom">
+      <p>© Mika Visibility · Research note · Not legal advice</p>
+      <div class="kc-footer-links">
+        <a href="/">Home</a>
+        <a href="/knowledge/">Knowledge</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../../contact-config.js"></script>
+  <script src="../../contact.js"></script>
+</body>
+</html>

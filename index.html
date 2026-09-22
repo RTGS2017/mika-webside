@@ -22,7 +22,7 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Mika | SEO Audit, Search Visibility &amp; AI Answer Visibility">
   <meta name="twitter:description" content="Structured SEO audit and GEO analysis for website SEO health, content gaps, search intent, topic coverage, and AI answer visibility.">
-  <meta name="theme-color" content="#0B1220">
+  <meta name="theme-color" content="#101828">
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">
   {
@@ -213,6 +213,7 @@
   <link rel="stylesheet" href="./styles.css">
   <!-- hv2-section-css -->
   <link rel="stylesheet" href="./src/sections/home.css">
+  <link rel="stylesheet" href="./src/motion/motion.css">
   <link rel="stylesheet" href="./src/animations/home.css">
 </head>
 <body>
@@ -236,6 +237,7 @@
           <a href="#blueprint">How it works</a>
           <a href="#seo-growth">SEO</a>
           <a href="#geo">GEO</a>
+          <a href="/knowledge/">Knowledge</a>
           <a href="#faq">FAQ</a>
           <div class="hv2-lang" aria-label="Language">
             <a href="/" aria-current="page">EN</a>
@@ -252,8 +254,8 @@
   </header>
 
   <main id="main" class="hv2-main">
-    <!-- Hero -->
-    <section class="hv2-section hv2-hero" id="hero" aria-labelledby="hero-title">
+    <!-- Hero — Visibility Field (sole dark stage) -->
+    <section class="hv2-section hv2-hero" id="hero" data-motion="visibility-field" aria-labelledby="hero-title">
       <div class="hv2-wrap hv2-hero-grid">
         <div>
           <p class="hv2-eyebrow">Search &amp; AI visibility platform</p>
@@ -267,23 +269,64 @@
           </div>
           <p class="hv2-note">Illustrative sample data on this page. Mika does not predict rankings or guarantee placement in any answer surface.</p>
         </div>
-        <div class="hv2-hero-dash" data-anim="hero-dashboard" aria-label="Four independent capabilities">
-          <article class="hv2-chip" data-id="seoHealth">
-            <p class="hv2-chip-label">SEO Health</p>
-            <p class="hv2-chip-hint">Crawlable, indexable, structurally sound</p>
-          </article>
-          <article class="hv2-chip" data-id="seoGrowth">
-            <p class="hv2-chip-label">SEO Growth</p>
-            <p class="hv2-chip-hint">Topics, intents, and markets still open</p>
-          </article>
-          <article class="hv2-chip" data-id="geoHealth">
-            <p class="hv2-chip-label">GEO Health</p>
-            <p class="hv2-chip-hint">Clear entities, answers, and evidence</p>
-          </article>
-          <article class="hv2-chip" data-id="geoGrowth">
-            <p class="hv2-chip-label">GEO Growth</p>
-            <p class="hv2-chip-hint">Uncovered questions and citation room</p>
-          </article>
+        <div class="hv2-hero-visual">
+          <div class="hv2-vf-stage" aria-hidden="true">
+            <svg class="hv2-vf" viewBox="0 0 640 400" role="img" aria-label="Visibility Field: Search and Questions converge on the website">
+              <defs>
+                <pattern id="vf-grid" width="32" height="32" patternUnits="userSpaceOnUse">
+                  <path d="M32 0H0V32" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+                </pattern>
+              </defs>
+              <rect width="640" height="400" fill="url(#vf-grid)"/>
+              <!-- SEO blue: Query → Page → Structure → Search Visibility → Website -->
+              <path class="mm-flow-path is-seo" d="M72 88 C140 88, 170 140, 220 160 S300 190, 320 200" fill="none" stroke="#2f6bff" stroke-width="2" stroke-linecap="round"/>
+              <path class="mm-flow-path is-seo mm-desktop-only" d="M72 120 C150 120, 190 170, 250 185 S300 198, 320 200" fill="none" stroke="#2f6bff" stroke-width="1.2" stroke-opacity="0.45" data-mobile-skip/>
+              <!-- GEO purple: Question → Entity → Evidence → Answer → Website -->
+              <path class="mm-flow-path is-geo" d="M568 88 C500 88, 470 140, 420 160 S340 190, 320 200" fill="none" stroke="#6e56cf" stroke-width="2" stroke-linecap="round"/>
+              <path class="mm-flow-path is-geo mm-desktop-only" d="M568 120 C490 120, 450 170, 390 185 S340 198, 320 200" fill="none" stroke="#6e56cf" stroke-width="1.2" stroke-opacity="0.45" data-mobile-skip/>
+              <!-- Website → Visibility -->
+              <path class="mm-flow-path is-hub" d="M320 210 C320 250, 320 280, 320 312" fill="none" stroke="#93a0b5" stroke-width="2" stroke-linecap="round"/>
+              <!-- Nodes -->
+              <g class="mm-node" font-family="IBM Plex Mono, monospace" font-size="11" fill="#b8c9ff">
+                <text x="40" y="84">Query</text>
+                <text x="150" y="124">Page</text>
+                <text x="210" y="168">Structure</text>
+                <text x="240" y="198">Search Visibility</text>
+              </g>
+              <g class="mm-node" font-family="IBM Plex Mono, monospace" font-size="11" fill="#d6c8ff" text-anchor="end">
+                <text x="600" y="84">Question</text>
+                <text x="490" y="124">Entity</text>
+                <text x="430" y="168">Evidence</text>
+                <text x="400" y="198">Answer</text>
+              </g>
+              <g class="mm-node mm-hub">
+                <rect x="276" y="188" width="88" height="28" rx="8" fill="#1a2336" stroke="rgba(255,255,255,0.2)"/>
+                <text x="320" y="206" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="12" font-weight="600" fill="#e8edf5">Website</text>
+              </g>
+              <g class="mm-node">
+                <rect x="258" y="300" width="124" height="28" rx="8" fill="#2f6bff"/>
+                <text x="320" y="318" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="12" font-weight="600" fill="#fff">Visibility</text>
+              </g>
+            </svg>
+          </div>
+          <div class="hv2-hero-dash" data-anim="hero-dashboard" aria-label="Four independent capabilities">
+            <article class="hv2-chip" data-id="seoHealth">
+              <p class="hv2-chip-label">SEO Health</p>
+              <p class="hv2-chip-hint">Crawlable, indexable, structurally sound</p>
+            </article>
+            <article class="hv2-chip" data-id="seoGrowth">
+              <p class="hv2-chip-label">SEO Growth</p>
+              <p class="hv2-chip-hint">Topics, intents, and markets still open</p>
+            </article>
+            <article class="hv2-chip" data-id="geoHealth">
+              <p class="hv2-chip-label">GEO Health</p>
+              <p class="hv2-chip-hint">Clear entities, answers, and evidence</p>
+            </article>
+            <article class="hv2-chip" data-id="geoGrowth">
+              <p class="hv2-chip-label">GEO Growth</p>
+              <p class="hv2-chip-hint">Uncovered questions and citation room</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -316,7 +359,7 @@
             </ul>
           </article>
         </div>
-        <p class="hv2-conclusion">Health tells you what is working. Growth shows what is missing.</p>
+        <p class="hv2-conclusion" data-motion-neq><span class="mm-neq-mark">Health ≠ Growth</span> Health tells you what is working. Growth shows what is missing.</p>
       </div>
     </section>
 
@@ -354,7 +397,7 @@
             </div>
           </article>
           <div class="hv2-fw-rowhead">Next</div>
-          <article class="hv2-panel hv2-fw-cell is-seo">
+          <article class="hv2-panel hv2-fw-cell is-seo" data-growth>
             <p class="hv2-fw-axis">Next · Search</p>
             <h3 class="hv2-h3">SEO Growth</h3>
             <p class="hv2-fw-body">Which coverage, intent depth, and markets are still unoccupied?</p>
@@ -365,7 +408,7 @@
               <span class="hv2-tag is-seo">Markets</span>
             </div>
           </article>
-          <article class="hv2-panel hv2-fw-cell is-geo">
+          <article class="hv2-panel hv2-fw-cell is-geo" data-growth>
             <p class="hv2-fw-axis">Next · Answers</p>
             <h3 class="hv2-h3">GEO Growth</h3>
             <p class="hv2-fw-body">Where can answer coverage, citations, and expansion still improve?</p>
@@ -435,15 +478,15 @@
             <span class="hv2-stat-unit">images</span>
           </div>
         </div>
-        <div class="hv2-audit-steps" aria-label="Audit steps">
-          <div class="hv2-audit-step"><span class="hv2-audit-step-idx">1</span>Discover pages</div>
-          <div class="hv2-audit-step"><span class="hv2-audit-step-idx">2</span>Analyze structure</div>
-          <div class="hv2-audit-step"><span class="hv2-audit-step-idx">3</span>Extract topics</div>
-          <div class="hv2-audit-step"><span class="hv2-audit-step-idx">4</span>Map entities</div>
-          <div class="hv2-audit-step"><span class="hv2-audit-step-idx">5</span>Evaluate questions</div>
-          <div class="hv2-audit-step"><span class="hv2-audit-step-idx">6</span>Check evidence</div>
-          <div class="hv2-audit-step"><span class="hv2-audit-step-idx">7</span>Find opportunities</div>
-          <div class="hv2-audit-step"><span class="hv2-audit-step-idx">8</span>Build blueprint</div>
+        <div class="hv2-audit-steps mm-audit-pipe" aria-label="Audit steps">
+          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">1</span>URL</div>
+          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">2</span>Links</div>
+          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">3</span>Topics</div>
+          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">4</span>Entities</div>
+          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">5</span>Questions</div>
+          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">6</span>Evidence</div>
+          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">7</span>Gaps</div>
+          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">8</span>Blueprint</div>
         </div>
         <p class="hv2-note">Sample dashboard values are illustrative. Your scan reports live numbers for your site.</p>
       </div>
@@ -568,7 +611,13 @@
             <p class="hv2-bp-body">Convert groups into page-level actions with priority, changes, and a re-audit check.</p>
           </article>
         </div>
-        <article class="hv2-panel hv2-action" aria-label="Sample blueprint action">
+        <div class="mm-bp-issues" aria-hidden="true">
+          <span class="mm-bp-issue">Thin product template</span>
+          <span class="mm-bp-issue">Missing use case</span>
+          <span class="mm-bp-issue">Weak evidence links</span>
+        </div>
+        <p class="mm-bp-root">Root cause: product page answers features, not buyer decisions.</p>
+        <article class="hv2-panel hv2-action mm-bp-action" aria-label="Sample blueprint action">
           <div class="hv2-action-top">
             <p class="hv2-action-code">ACTION P023</p>
             <p class="hv2-action-path">/products/example/</p>
@@ -646,6 +695,14 @@
           <h2 class="hv2-h2" id="geo-title">Can people find the right answer about your business?</h2>
           <p class="hv2-lede">Modern search often shows direct answers, summaries, and source links. GEO checks whether your website provides clear entities, direct answers, evidence, and consistent context.</p>
         </header>
+        <div class="mm-geo-chain" aria-label="GEO answer path">
+          <span class="mm-geo-step">Question</span><span class="mm-geo-arrow" aria-hidden="true">→</span>
+          <span class="mm-geo-step">Topic</span><span class="mm-geo-arrow" aria-hidden="true">→</span>
+          <span class="mm-geo-step">Intent</span><span class="mm-geo-arrow" aria-hidden="true">→</span>
+          <span class="mm-geo-step">Entity</span><span class="mm-geo-arrow" aria-hidden="true">→</span>
+          <span class="mm-geo-step">Evidence</span><span class="mm-geo-arrow" aria-hidden="true">→</span>
+          <span class="mm-geo-step">Direct Answer</span>
+        </div>
         <div class="hv2-geo-grid">
           <p class="hv2-panel hv2-geo-modern">When someone searches, they may see a short answer, a summary, and links to sources — not only a list of blue links. Your site needs to be clear enough to support that.</p>
           <div class="hv2-panel hv2-geo-checks">
@@ -699,7 +756,9 @@
           </div>
           <article class="hv2-panel hv2-match" data-anim="question-match">
             <div class="hv2-match-tags" aria-label="Match tags">
-              <span class="hv2-tag is-geo" data-tag="intent">intent</span>
+              <span class="hv2-tag is-geo mm-bridge" data-tag="intent">Intent</span>
+              <span class="hv2-tag is-geo mm-bridge" data-tag="page">Page</span>
+              <span class="hv2-tag is-geo mm-bridge" data-tag="answer">Answer</span>
               <span class="hv2-tag is-geo" data-tag="commercial">commercial</span>
               <span class="hv2-tag is-geo" data-tag="topic">topic</span>
               <span class="hv2-tag is-geo" data-tag="product">product</span>
@@ -710,6 +769,7 @@
           </article>
         </div>
         <h3 class="hv2-h3 hv2-wall-title">Questions your buyers already ask</h3>
+        <div class="hv2-wall-viewport">
         <div class="hv2-wall" data-anim="question-wall">
           <p class="hv2-wall-item" data-question>Why isn't my website getting traffic?</p>
           <p class="hv2-wall-item" data-question>How do I improve product page visibility?</p>
@@ -729,6 +789,7 @@
           <p class="hv2-wall-item" data-question>What proof is missing for the claims on my product pages?</p>
           <p class="hv2-wall-item" data-question>How can I align company and product names across languages?</p>
           <p class="hv2-wall-item" data-question>Which buyer questions should appear on the product page itself?</p>
+        </div>
         </div>
       </div>
     </section>
@@ -786,6 +847,7 @@
           <h2 class="hv2-h2" id="multilingual-title">One business. Consistent across every market.</h2>
           <p class="hv2-lede">Every language should keep the same company and product facts — while covering market-specific intent with real depth.</p>
         </header>
+        <div class="mm-multi-entity" aria-hidden="true">Product entity</div>
         <div class="hv2-lang-cols" data-anim="language-sync">
           <div class="hv2-lang-col" data-lang>EN</div>
           <div class="hv2-lang-col" data-lang>中文</div>
@@ -824,6 +886,7 @@
           <li>Validate progress with a re-audit after changes ship.</li>
         </ol>
         <div class="hv2-loop" data-anim="loop" aria-label="Continuous visibility loop">
+          <div class="mm-method-ring-track" aria-hidden="true"></div>
           <div class="hv2-loop-step" data-loop-step="SCAN"><span class="hv2-loop-idx">01</span><span class="hv2-loop-label">SCAN</span></div>
           <div class="hv2-loop-step" data-loop-step="DIAGNOSE"><span class="hv2-loop-idx">02</span><span class="hv2-loop-label">DIAGNOSE</span></div>
           <div class="hv2-loop-step" data-loop-step="BLUEPRINT"><span class="hv2-loop-idx">03</span><span class="hv2-loop-label">BLUEPRINT</span></div>
@@ -964,6 +1027,13 @@
         <p class="hv2-kicker">Next step</p>
         <h2 class="hv2-h2" id="cta-title">Know where your website stands. Know what to do next.</h2>
         <p class="hv2-lede">Run a structured SEO + GEO audit. Get health findings, growth gaps, and a blueprint you can act on.</p>
+        <div class="mm-cta-chain" aria-label="Path to next action">
+          <span class="mm-cta-step">Your website</span><span class="mm-cta-arrow" aria-hidden="true">→</span>
+          <span class="mm-cta-step">Search</span><span class="mm-cta-arrow" aria-hidden="true">→</span>
+          <span class="mm-cta-step">Questions</span><span class="mm-cta-arrow" aria-hidden="true">→</span>
+          <span class="mm-cta-step">Gaps</span><span class="mm-cta-arrow" aria-hidden="true">→</span>
+          <span class="mm-cta-step">Blueprint</span>
+        </div>
         <div class="hv2-cta-actions">
           <a class="hv2-btn hv2-btn-on-dark" href="#cta">Start a structured audit</a>
           <a class="hv2-btn hv2-btn-ghost-on-dark" href="https://wa.me/8613814015518" rel="noopener">Ask a question on WhatsApp</a>
@@ -988,6 +1058,7 @@
         <div>
           <h3>Product</h3>
           <ul class="hv2-footer-links">
+            <li><a href="/knowledge/">Knowledge</a></li>
             <li><a href="#framework">Framework</a></li>
             <li><a href="#audit">Deep Audit</a></li>
             <li><a href="#seo-growth">SEO Growth</a></li>
@@ -1026,6 +1097,7 @@
 
   <script src="./contact-config.js"></script>
   <script src="./contact.js"></script>
+  <script src="./src/motion/core.js" defer></script>
   <script src="./src/animations/home.js" defer></script>
   <script src="./main.js" defer></script>
 </body>

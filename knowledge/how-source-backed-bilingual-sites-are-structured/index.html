@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How Source-Backed Bilingual Sites Are Structured | Mika Visibility</title>
+  <meta name="description" content="Architecture notes from a static bilingual GEO learning site: language paths, validation, llms.txt, and honest claims.">
+  <link rel="canonical" href="https://mikaovo.ai/knowledge/how-source-backed-bilingual-sites-are-structured/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/how-source-backed-bilingual-sites-are-structured/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/how-source-backed-bilingual-sites-are-structured/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/how-source-backed-bilingual-sites-are-structured/">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../src/knowledge/center.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How Source-Backed Bilingual Sites Are Structured",
+    "description": "A Mika Research Note on parallel language architecture for source-backed educational sites.",
+    "datePublished": "2026-09-22",
+    "dateModified": "2026-09-22",
+    "inLanguage": "en",
+    "author": { "@type": "Organization", "name": "Mika Visibility", "url": "https://mikaovo.ai/" },
+    "publisher": { "@type": "Organization", "name": "Mika Visibility", "url": "https://mikaovo.ai/", "logo": { "@type": "ImageObject", "url": "https://mikaovo.ai/assets/logo.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://mikaovo.ai/knowledge/how-source-backed-bilingual-sites-are-structured/" }
+  }
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">Skip to content</a>
+  <header class="kc-header">
+    <nav class="kc-nav kc-wrap" aria-label="Primary">
+      <a class="kc-brand" href="/">
+        <img src="../../assets/logo.svg" alt="" width="22" height="22">
+        <span>Mika Visibility <span>Knowledge</span></span>
+      </a>
+      <div class="kc-nav-links">
+        <a href="/">Home</a>
+        <a href="/knowledge/" aria-current="page">Knowledge</a>
+      </div>
+      <div class="kc-lang" aria-label="Language">
+        <a href="/knowledge/how-source-backed-bilingual-sites-are-structured/" aria-current="page">EN</a>
+        <a href="/zh/knowledge/how-source-backed-bilingual-sites-are-structured/">中文</a>
+      </div>
+    </nav>
+  </header>
+
+  <header class="kc-hero">
+    <div class="kc-wrap">
+      <p class="kc-hero-kicker">Mika Research Note · Research</p>
+      <h1>How Source-Backed Bilingual Sites Are Structured</h1>
+      <p class="kc-hero-lead">Architecture notes for parallel language paths that share facts, validation, and honest limits—without thin translation spam.</p>
+      <p class="kc-meta">
+        <span>Research</span>
+        <span>Viewed 2026-09-22</span>
+        <span>Source: GEO Basics guide (MIT)</span>
+      </p>
+    </div>
+  </header>
+
+  <main id="main" class="kc-layout kc-wrap">
+    <aside class="kc-toc" aria-label="On this page">
+      <nav>
+        <a href="#static">Static, crawlable HTML</a>
+        <a href="#langs">Language directory design</a>
+        <a href="#meta">Metadata &amp; discovery files</a>
+        <a href="#validate">Validation as editorial CI</a>
+        <a href="#honest">Honesty as a feature</a>
+        <a href="#mika">Mika parallels</a>
+      </nav>
+    </aside>
+
+    <article class="kc-body">
+      <p>Bilingual sites fail in two common ways: they ship thin mirrors that only change the language code, or they drift until English and the second language tell different product stories. This Research Note looks at public design facts from <strong>paladini/generative-engine-optimization-basic-guide</strong> (MIT)—a static bilingual beginner GEO learning site—and rewrites those observations for teams building source-backed EN/ZH (or other) pairs. Fact attribution only; we are not copying their guide text.</p>
+
+      <h2 id="static">Static, crawlable HTML as the product</h2>
+      <p>The repository publishes as a GitHub Pages static site: important teaching content lives in HTML, not behind a client-only render wall. Contribution guidance emphasises beginner clarity, primary sources, crawlable content, and compact citable blocks. Diagrams keep Mermaid sources plus committed SVG so Pages can ship without a build step.</p>
+      <p>Auditors should notice the priority order: meaning and sources first, then discoverability metadata, then polish. That order resists the temptation to bolt on structured data for claims the page never states.</p>
+
+      <h2 id="langs">Language directory design</h2>
+      <p>Public tree layout uses an English root guide and a Brazilian Portuguese path under <code>lang/pt-br/</code>, with contribution rules that translations preserve meaning (not word-for-word structure), keep technical terms consistent, and stay aligned on links, sources, diagrams, and examples. Sitemap and hreflang must be updated when languages are added.</p>
+      <p>The transferable pattern for Mika-like sites: one concept → one URL per language → explicit alternates → shared fact checklist. Do not invent extra URLs to “cover” keywords in each language. Parallel pages should answer the same question with locally natural prose and the same evidence spine.</p>
+
+      <h2 id="meta">Metadata and discovery files</h2>
+      <p>Observable artefacts include <code>sitemap.xml</code>, <code>robots.txt</code>, and <code>llms.txt</code>. The llms.txt framing is careful: treat it as an optional site guide for AI tools, not as a crawler permission file; use robots and platform crawler docs for access control; use the sitemap for canonical URL discovery; verify platform claims in primary sources before advising.</p>
+      <p>That separation is useful on any bilingual property. Language switchers and hreflang tell search systems which URL is which locale. Robots still govern fetch permission. An llms.txt-style map—if you publish one—should point to real canonical pages, not invent a third content plane.</p>
+
+      <h2 id="validate">Validation as editorial CI</h2>
+      <p>A public validation script checks required files, page metadata, canonical and hreflang links, JSON-LD, anchors, diagram references, sitemap configuration, and JavaScript syntax. Treating those checks as merge gates keeps bilingual drift from becoming a silent production bug.</p>
+      <p>Mika’s equivalent discipline is smaller but similar: Research Notes must carry visible sources, matching EN/ZH pairs, and honest non-promise language before they ship.</p>
+
+      <h2 id="honest">Honesty as a product feature</h2>
+      <p>The project’s public positioning states it explains GEO without promising rankings, traffic, AI citations, or guaranteed visibility. Contribution examples contrast clear, sourced sentences with hype about “dominating AI search”. For source-backed bilingual sites, that honesty must be translated, not softened in one language and inflated in another.</p>
+
+      <h2 id="mika">Parallels for Mika’s EN/ZH knowledge lanes</h2>
+      <ol>
+        <li>Keep English at <code>/knowledge/{slug}/</code> and Chinese at <code>/zh/knowledge/{slug}/</code> with reciprocal hreflang and English as <code>x-default</code> when that is your policy.</li>
+        <li>Share the same fact spine and source panel; localise voice, not evidence.</li>
+        <li>Prefer static HTML for the article body so audits and agents see the same text people read.</li>
+        <li>Refuse bulk translation factories that manufacture near-duplicates to manipulate rankings.</li>
+      </ol>
+      <p>Studying an MIT-licensed learning site does not mean Mika cloned it. It means we recognise durable architecture: aligned languages, validated metadata, primary sources, and claims that stay humble under uncertainty.</p>
+    </article>
+  </main>
+
+  <div class="kc-wrap">
+    <section class="kc-sources" aria-labelledby="sources-heading">
+      <h2 id="sources-heading">Sources</h2>
+      <ol>
+        <li>
+          <strong>Repository:</strong> generative-engine-optimization-basic-guide<br>
+          <strong>Author / owner:</strong> Fernando Paladini (paladini)<br>
+          <strong>License:</strong> MIT<br>
+          <strong>Source:</strong> <a href="https://github.com/paladini/generative-engine-optimization-basic-guide">https://github.com/paladini/generative-engine-optimization-basic-guide</a><br>
+          <strong>Homepage:</strong> <a href="https://paladini.github.io/generative-engine-optimization-basic-guide/">https://paladini.github.io/generative-engine-optimization-basic-guide/</a><br>
+          <strong>Viewed:</strong> 2026-09-22<br>
+          <span>Fact attribution only. Mika did not copy this project’s documentation or guide text.</span>
+        </li>
+      </ol>
+    </section>
+
+    <section class="kc-related" aria-labelledby="related-heading">
+      <h2 id="related-heading">Related</h2>
+      <div class="kc-grid">
+        <a class="kc-card" href="/knowledge/how-geo-handbooks-structure-source-backed-pages/">
+          <p class="kc-card-meta"><span class="kc-tag kc-tag--geo">Research</span></p>
+          <h3 class="kc-card-title">How GEO Handbooks Structure Source-Backed Pages</h3>
+          <p class="kc-card-blurb">Graded claims, chapters, and machine-readable maps.</p>
+        </a>
+        <a class="kc-card" href="/knowledge/multilingual-search-visibility/">
+          <p class="kc-card-meta"><span class="kc-tag kc-tag--seo">Search Visibility</span></p>
+          <h3 class="kc-card-title">Multilingual Search Visibility</h3>
+          <p class="kc-card-blurb">Align EN/ZH coverage without thin mirrors.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="kc-faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">FAQ</h2>
+      <details>
+        <summary>Should every bilingual site use pt-BR paths?</summary>
+        <p>No. The lesson is parallel, validated language paths with shared facts—not a specific folder name. Mika uses <code>/zh/</code> for Simplified Chinese.</p>
+      </details>
+      <details>
+        <summary>Does MIT allow copying their HTML into our site?</summary>
+        <p>MIT is permissive for software use with notice, but Mika’s policy is fact attribution and original prose—not republishing their guide as our Knowledge articles.</p>
+      </details>
+    </section>
+
+    <section class="kc-cta" aria-labelledby="cta-heading">
+      <h2 id="cta-heading">Planning an EN/ZH knowledge system?</h2>
+      <p>Mika designs bilingual information architecture with shared evidence and crawlable HTML—without manufacturing low-value translation spam.</p>
+      <a class="kc-btn kc-btn-primary" href="/#contact">Contact Mika</a>
+    </section>
+  </div>
+
+  <footer class="kc-footer">
+    <div class="kc-wrap kc-footer-bottom">
+      <p>© Mika Visibility · Research note · Not legal advice</p>
+      <div class="kc-footer-links">
+        <a href="/">Home</a>
+        <a href="/knowledge/">Knowledge</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../../contact-config.js"></script>
+  <script src="../../contact.js"></script>
+</body>
+</html>

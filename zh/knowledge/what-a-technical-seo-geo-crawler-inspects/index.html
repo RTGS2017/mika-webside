@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>技术 SEO/GEO 爬虫会检查什么 | Mika Visibility</title>
+  <meta name="description" content="基于 crawlie 的设计观察：Health、GEO、无障碍分数、可解释规则，以及对审计的启发。">
+  <link rel="canonical" href="https://mikaovo.ai/zh/knowledge/what-a-technical-seo-geo-crawler-inspects/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/what-a-technical-seo-geo-crawler-inspects/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/what-a-technical-seo-geo-crawler-inspects/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/what-a-technical-seo-geo-crawler-inspects/">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "技术 SEO/GEO 爬虫会检查什么",
+    "description": "Mika Research Note：组合型 SEO/GEO 爬虫暴露的技术与可答性信号。",
+    "datePublished": "2026-09-22",
+    "dateModified": "2026-09-22",
+    "inLanguage": "zh-Hans",
+    "author": { "@type": "Organization", "name": "Mika Visibility", "url": "https://mikaovo.ai/" },
+    "publisher": { "@type": "Organization", "name": "Mika Visibility", "url": "https://mikaovo.ai/", "logo": { "@type": "ImageObject", "url": "https://mikaovo.ai/assets/logo.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://mikaovo.ai/zh/knowledge/what-a-technical-seo-geo-crawler-inspects/" }
+  }
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <nav class="kc-nav kc-wrap" aria-label="主导航">
+      <a class="kc-brand" href="/zh/">
+        <img src="../../../assets/logo.svg" alt="" width="22" height="22">
+        <span>Mika Visibility <span>知识</span></span>
+      </a>
+      <div class="kc-nav-links">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/" aria-current="page">知识中心</a>
+      </div>
+      <div class="kc-lang" aria-label="语言">
+        <a href="/knowledge/what-a-technical-seo-geo-crawler-inspects/">EN</a>
+        <a href="/zh/knowledge/what-a-technical-seo-geo-crawler-inspects/" aria-current="page">中文</a>
+      </div>
+    </nav>
+  </header>
+
+  <header class="kc-hero">
+    <div class="kc-wrap">
+      <p class="kc-hero-kicker">Mika Research Note · 技术</p>
+      <h1>技术 SEO/GEO 爬虫会检查什么</h1>
+      <p class="kc-hero-lead">组合型爬虫如何分开报告 Health、GEO 与无障碍分数，以及可解释发现为何比单一混分更利于人工审计。</p>
+      <p class="kc-meta">
+        <span>研究</span>
+        <span>查看日期 2026-09-22</span>
+        <span>来源：crawlie（MIT）</span>
+      </p>
+    </div>
+  </header>
+
+  <main id="main" class="kc-layout kc-wrap">
+    <aside class="kc-toc" aria-label="本页目录">
+      <nav>
+        <a href="#lens">三种分数镜头</a>
+        <a href="#seo">技术 SEO 检查</a>
+        <a href="#geo">GEO / 可答性检查</a>
+        <a href="#a11y">无障碍与代理表面</a>
+        <a href="#explain">可解释发现</a>
+        <a href="#audit">对审计的含义</a>
+      </nav>
+    </aside>
+
+    <article class="kc-body">
+      <p>传统 SEO 蜘蛛列坏链与缺标题；较新的开源工具还会问：页面对生成式系统是否「看起来可答」。本文记录公开项目 <strong>spronta/crawlie</strong>（技术 SEO + GEO 爬虫）的设计事实。仓库源码按 LICENSE 为 MIT（GitHub SPDX 因自定义前言显示 <code>NOASSERTION</code>）。Mika 只做事实归因，不转载其文档。</p>
+
+      <h2 id="lens">三种分数镜头，而不是一团模糊</h2>
+      <p>公开材料写明每次抓取分别返回三个分数：<strong>Health</strong>（技术 SEO）、<strong>GEO</strong>（面向 AI 搜索的就绪度）、<strong>Accessibility</strong>（偏 WCAG 的检查）。把镜头分开本身就是设计课。漂亮的 FAQ 块遮不住 404 模板；完美的状态码画像也遮不住无标签表单或空心可答内容。</p>
+      <p>对 Mika 审计，这正好对应「SEO 健康 vs 增长」「GEO 健康 vs 增长」：先修发现与完整性，再提升清晰与证据，同时无障碍缺陷保持可见，而不是被平均掉。</p>
+
+      <h2 id="seo">观察到的技术 SEO 检查</h2>
+      <p>描述中的技术规则覆盖常见抓取卫生：坏链、4xx/5xx、重定向与链路、标题与 meta（缺失/重复/长度）、H1、canonical、noindex/nofollow/X-Robots-Tag、robots.txt 拦截、图片缺 alt、薄弱与重复内容、孤立页与深页。也有性能与安全主题——慢响应、过大页面、缺压缩、HTTPS、混合内容、HSTS。</p>
+      <p>国际化与社交表面同样在清单里：viewport、<code>lang</code>、hreflang、Open Graph、Twitter cards，以及对常见类型的结构化数据解析与富结果字段期望检查。可选无头渲染会审计 JS 之后的 DOM，便于对比客户端渲染应用与无 JS 抓取所见。</p>
+
+      <h2 id="geo">观察到的 GEO / 可答性检查</h2>
+      <p>公开点名的 GEO 向信号包括结构化数据、语义 HTML、答案就绪度、作者/E-E-A-T 线索、注明日期的内容、问题式标题、可抽取块——汇总为每页 GEO 分。对审计者，重点不是追分，而是问：优先 URL 是否给出清楚答案、谁背书、何时更新、机器能否在不臆造上下文的情况下抽出紧凑块。</p>
+      <p>这与 Mika 拒绝承诺引用一致：就绪度关乎可读性与证据姿态，不是 ChatGPT、Perplexity 或 AI Overviews 会引用你的保单。</p>
+
+      <h2 id="a11y">无障碍与代理表面</h2>
+      <p>描述中的无障碍检查包括：链接/按钮无可访问名称、表单控件无标签、iframe 缺标题、禁止缩放的 viewport、正 tabindex、跳级标题等。把它们与 SEO/GEO 并列，避免「对搜索已就绪」变成「对人不可用」。</p>
+      <p>同一项目还暴露 CLI 与 MCP，便于代理跑抓取并请求解释。架构上，共享核心喂给 CLI、桌面与协议表面，提示一条有用规则：一个受审计引擎、多种交付通道——结果一致，少争论谁的导出才「真」。</p>
+
+      <h2 id="explain">可解释发现胜过不透明分数</h2>
+      <p>公开材料反复强调：每条发现链到白话指引——为何重要、如何修、忽视会怎样。审计应对任何内部记分卡提出同样要求。仪表盘若解释不了规则，就不配当 sprint 优先级驱动器。</p>
+
+      <h2 id="audit">对网站审计的含义</h2>
+      <ol>
+        <li>在同一 URL 列表上分列 Health、可答性、无障碍。</li>
+        <li>先修模板级缺陷（共享页眉页脚、robots、软失败），再逐页改文案。</li>
+        <li>若有 JS 渲染，对关键商业 URL 做两种模式抽样。</li>
+        <li>升级给干系人的每条严重度，附上「为什么 / 怎么修 / 忽视会怎样」。</li>
+      </ol>
+      <p>这些习惯借用爬虫的结构，却不依赖任一厂商二进制。解释、业务优先级与审计能声称什么的诚实边界，仍由 Mika 负责。</p>
+    </article>
+  </main>
+
+  <div class="kc-wrap">
+    <section class="kc-sources" aria-labelledby="sources-heading">
+      <h2 id="sources-heading">来源</h2>
+      <ol>
+        <li>
+          <strong>仓库：</strong> crawlie<br>
+          <strong>所有者：</strong> spronta（Spronta Ltd）<br>
+          <strong>许可证：</strong> MIT（以 LICENSE 文件为准；GitHub SPDX 可能因自定义前言显示 NOASSERTION，并排除 Crawlie Cloud、注明第三方组件）<br>
+          <strong>源链接：</strong> <a href="https://github.com/spronta/crawlie">https://github.com/spronta/crawlie</a><br>
+          <strong>查看日期：</strong> 2026-09-22<br>
+          <span>仅事实归因。Mika 未复制该项目文档。Crawlie Cloud 不在本开源 LICENSE 范围内。</span>
+        </li>
+      </ol>
+    </section>
+
+    <section class="kc-related" aria-labelledby="related-heading">
+      <h2 id="related-heading">相关阅读</h2>
+      <div class="kc-grid">
+        <a class="kc-card" href="/zh/knowledge/what-open-source-seo-crawlers-check/">
+          <p class="kc-card-meta"><span class="kc-tag kc-tag--seo">开源</span></p>
+          <h3 class="kc-card-title">开源 SEO 爬虫检查什么</h3>
+          <p class="kc-card-blurb">Sitemap、hreflang、重复内容与坏链清单。</p>
+        </a>
+        <a class="kc-card" href="/zh/knowledge/how-to-audit-ai-search-visibility/">
+          <p class="kc-card-meta"><span class="kc-tag kc-tag--geo">GEO</span></p>
+          <h3 class="kc-card-title">如何审计 AI 搜索可见度</h3>
+          <p class="kc-card-blurb">可答性、实体与证据——不是排名保证。</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="kc-faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">常见问题</h2>
+      <details>
+        <summary>crawlie 的 GEO 分能预测引用吗？</summary>
+        <p>不能。这里讨论的分数描述结构、可抽取性、作者线索等就绪信号，不预测引用。</p>
+      </details>
+      <details>
+        <summary>为什么要提 GitHub SPDX 差异？</summary>
+        <p>准确归因需要同时记录 LICENSE 文件内容与 GitHub 元数据在不一致时各自写了什么。</p>
+      </details>
+    </section>
+
+    <section class="kc-cta" aria-labelledby="cta-heading">
+      <h2 id="cta-heading">希望 Health 与 GEO 分开检查？</h2>
+      <p>Mika 做结构化审计，把技术卫生与可答性放在不同车道——让一类问题藏不住另一类。</p>
+      <a class="kc-btn kc-btn-primary" href="/zh/#contact">联系 Mika</a>
+    </section>
+  </div>
+
+  <footer class="kc-footer">
+    <div class="kc-wrap kc-footer-bottom">
+      <p>© Mika Visibility · 研究笔记 · 非法律意见</p>
+      <div class="kc-footer-links">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

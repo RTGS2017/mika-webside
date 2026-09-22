@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Find Orphan Pages | Mika Knowledge Center</title>
+  <meta name="description" content="Find orphan pages that lack internal links, compare sitemap-only URLs with the link graph, and decide whether to reconnect, canonicalize, or retire them.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mikaovo.ai/knowledge/how-to-find-orphan-pages/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/how-to-find-orphan-pages/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/how-to-find-orphan-pages/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/how-to-find-orphan-pages/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to Find Orphan Pages">
+  <meta property="og:description" content="Locate pages with no internal links and weak discovery paths.">
+  <meta property="og:url" content="https://mikaovo.ai/knowledge/how-to-find-orphan-pages/">
+  <meta property="og:site_name" content="Mika">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../src/knowledge/center.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://mikaovo.ai/knowledge/how-to-find-orphan-pages/#article",
+        "headline": "How to Find Orphan Pages",
+        "description": "Find orphan pages that lack internal links, compare sitemap-only URLs with the link graph, and decide whether to reconnect, canonicalize, or retire them.",
+        "datePublished": "2026-09-22",
+        "dateModified": "2026-09-22",
+        "inLanguage": "en",
+        "author": { "@type": "Organization", "name": "Mika", "url": "https://mikaovo.ai/" },
+        "publisher": { "@type": "Organization", "name": "Mika", "url": "https://mikaovo.ai/", "logo": { "@type": "ImageObject", "url": "https://mikaovo.ai/assets/logo.svg" } },
+        "mainEntityOfPage": "https://mikaovo.ai/knowledge/how-to-find-orphan-pages/",
+        "isPartOf": { "@type": "WebSite", "name": "Mika", "url": "https://mikaovo.ai/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://mikaovo.ai/knowledge/how-to-find-orphan-pages/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mikaovo.ai/" },
+          { "@type": "ListItem", "position": 2, "name": "Knowledge Center", "item": "https://mikaovo.ai/knowledge/" },
+          { "@type": "ListItem", "position": 3, "name": "How to Find Orphan Pages", "item": "https://mikaovo.ai/knowledge/how-to-find-orphan-pages/" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://mikaovo.ai/knowledge/how-to-find-orphan-pages/#faq",
+    "inLanguage": "en",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What can orphan pages affect on a website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Orphans weaken intentional discovery. Users and crawlers that follow internal links may never reach the page. That can leave useful documentation or product variants under-discovered while sitemap-only or campaign URLs still consume attention. Orphans also make audits harder because important content sits outside the navigable structure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is a page an orphan if it only appears in the XML sitemap?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Often yes for link-graph purposes. A sitemap can list a URL with zero inlinks from the rest of the site. Treat sitemap-only URLs as discovery risks: either add contextual internal links from relevant hubs, or remove them from the sitemap and retire or consolidate the page if it is not meant to stand alone."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should every orphan page get new internal links?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. First decide the page’s job. Keep and link pages that answer a clear buyer or support need. Canonicalize or merge near-duplicates. Noindex or remove thin leftovers. Linking everything increases clutter without improving people-first coverage."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">Skip to content</a>
+  <header class="kc-header">
+    <nav class="kc-nav" aria-label="Primary">
+      <a class="kc-brand" href="/">Mika</a>
+      <div class="kc-nav-links">
+        <a href="/">Home</a>
+        <a href="/knowledge/">Knowledge Center</a>
+        <a href="/zh/knowledge/how-to-find-orphan-pages/">中文</a>
+        <a class="kc-nav-cta" href="/#cta">Start a structured audit</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <header class="kc-hero">
+      <p class="kc-kicker">SEO</p>
+      <h1>How to Find Orphan Pages</h1>
+      <p class="kc-lede">Orphans are live URLs with no meaningful path through your internal links—easy to miss, easy to leave unfinished.</p>
+      <p class="kc-meta"><time datetime="2026-09-22">2026-09-22</time> · SEO · ~8 min</p>
+    </header>
+
+    <div class="kc-layout">
+      <nav class="kc-toc" aria-label="On this page">
+        <p class="kc-toc-title">On this page</p>
+        <ol>
+          <li><a href="#direct-answer">Direct answer</a></li>
+          <li><a href="#why-it-matters">Why it matters</a></li>
+          <li><a href="#how-to-check">How to check</a></li>
+          <li><a href="#example">Example</a></li>
+          <li><a href="#health-vs-growth">Health vs Growth</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#related">Related</a></li>
+          <li><a href="#sources">Sources</a></li>
+        </ol>
+      </nav>
+
+      <article class="kc-body">
+        <section id="direct-answer" aria-labelledby="direct-answer-title">
+          <h2 id="direct-answer-title">Direct answer</h2>
+          <p>An <strong>orphan page</strong> is a URL that exists on the site but has <strong>no (or effectively no) internal links</strong> from other pages you crawl. Finding orphans means comparing URL sources: a full crawl of clickable links, sitemap membership, analytics or server logs if you have them, and CMS or feed exports. Pages that appear outside the link graph need a decision—reconnect, consolidate, or retire—not automatic promotion.</p>
+          <p>Orphans are a discovery and architecture issue. They are not proof that a page is “bad,” and fixing them does not promise rankings. The goal is intentional paths so people and crawlers can reach the same useful content through crawlable links.</p>
+        </section>
+
+        <section id="why-it-matters" aria-labelledby="why-it-matters-title">
+          <h2 id="why-it-matters-title">Why it matters</h2>
+          <p>Sites accumulate orphans after migrations, campaign landing pages, PDF-to-HTML conversions, and product SKUs that leave the catalog navigation. Without inlinks, those URLs depend on bookmarks, ads, or sitemap hints. Public crawl guidance emphasizes that search systems discover content primarily by following links; sitemaps help but do not replace a coherent structure.</p>
+          <p>For B2B sites, orphans often hide installation guides, comparison notes, or regional variants that buyers still need. Leaving them disconnected wastes editorial work and confuses audits: the content exists, yet the site structure pretends it does not.</p>
+        </section>
+
+        <section id="how-to-check" aria-labelledby="how-to-check-title">
+          <h2 id="how-to-check-title">How to check</h2>
+          <ol>
+            <li><strong>Build a link-graph crawl</strong> — Start from the homepage and key hubs. Collect only crawlable HTML links (skip pure script-only navigation if crawlers cannot see it).</li>
+            <li><strong>Collect candidate URL sets</strong> — XML sitemaps, CMS export of published URLs, and optional log or analytics landing pages.</li>
+            <li><strong>Diff the sets</strong> — Flag URLs present in sitemaps or exports but missing from the link-graph crawl. Those are orphan candidates.</li>
+            <li><strong>Validate live status</strong> — Confirm 200 vs redirect vs error. Note canonical targets and noindex. An orphan that 404s is cleanup, not a linking task.</li>
+            <li><strong>Classify by job</strong> — Keep (buyer-useful), merge (near-duplicate of a stronger URL), or remove (thin leftover). Record sample URLs for each class.</li>
+            <li><strong>Blueprint links or retirement</strong> — For keepers, add contextual links from the category, product, or topic hub that should own the page. Re-audit that the URL appears in a fresh link crawl.</li>
+          </ol>
+        </section>
+
+        <section id="example" aria-labelledby="example-title">
+          <h2 id="example-title">Example</h2>
+          <p>A manufacturer publishes a detailed torque-selection guide during a campaign. The URL stays in the sitemap and still loads, but the campaign hub was unpublished and no product page links to the guide. A crawl from navigation never sees it; only the sitemap lists it.</p>
+          <p>Diagnosis labels it an SEO Health discovery finding. The blueprint might add a “Related guides” link from two relevant product templates and from the applications hub—or, if a newer handbook superseded it, redirect to that handbook and drop the old URL from the sitemap. Re-audit checks inlink presence and final status codes. No step claims a search ranking change; it restores an intentional path.</p>
+        </section>
+
+        <section id="health-vs-growth" aria-labelledby="health-vs-growth-title">
+          <h2 id="health-vs-growth-title">Mika: Health vs Growth</h2>
+          <p>Finding and reconnecting orphans is primarily <strong>SEO Health</strong>: architecture and crawl paths. Writing the missing guide that never existed is <strong>SEO Growth</strong>. Mika separates these so teams do not treat “add links to leftovers” as the same job as “cover unanswered demand.”</p>
+        </section>
+
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">FAQ</h2>
+          <div class="kc-faq-item">
+            <h3>What can orphan pages affect on a website?</h3>
+            <p>Orphans weaken intentional discovery. Users and crawlers that follow internal links may never reach the page. That can leave useful documentation or product variants under-discovered while sitemap-only or campaign URLs still consume attention. Orphans also make audits harder because important content sits outside the navigable structure.</p>
+          </div>
+          <div class="kc-faq-item">
+            <h3>Is a page an orphan if it only appears in the XML sitemap?</h3>
+            <p>Often yes for link-graph purposes. A sitemap can list a URL with zero inlinks from the rest of the site. Treat sitemap-only URLs as discovery risks: either add contextual internal links from relevant hubs, or remove them from the sitemap and retire or consolidate the page if it is not meant to stand alone.</p>
+          </div>
+          <div class="kc-faq-item">
+            <h3>Should every orphan page get new internal links?</h3>
+            <p>No. First decide the page’s job. Keep and link pages that answer a clear buyer or support need. Canonicalize or merge near-duplicates. Noindex or remove thin leftovers. Linking everything increases clutter without improving people-first coverage.</p>
+          </div>
+        </section>
+
+        <section class="kc-related" id="related" aria-labelledby="related-title">
+          <h2 id="related-title">Related articles</h2>
+          <ul>
+            <li><a href="../how-to-analyze-xml-sitemaps/">How to Analyze XML Sitemaps</a></li>
+            <li><a href="../how-to-check-website-crawlability/">How to Check Website Crawlability</a></li>
+            <li><a href="../how-to-find-broken-internal-links/">How to Find Broken Internal Links</a></li>
+          </ul>
+        </section>
+
+        <section class="kc-sources" id="sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">Sources</h2>
+          <ul>
+            <li>Mika method: map discovery paths as SEO Health facts, then blueprint keep / merge / retire actions — <a href="https://mikaovo.ai/">mikaovo.ai</a></li>
+            <li><a href="https://developers.google.com/search/docs/crawling-indexing/links-crawlable">Google Search Central — Link crawlability</a> (public guidance on crawlable links)</li>
+            <li><a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview">Google Search Central — Sitemaps overview</a></li>
+            <li>People-first principle: unique, useful pages should be reachable through clear site structure, not only campaign bookmarks</li>
+          </ul>
+          <p class="kc-note">This article explains discovery-path checks. It does not predict rankings or guarantee placement in any search or answer surface.</p>
+        </section>
+      </article>
+    </div>
+
+    <section class="kc-cta" aria-labelledby="cta-title">
+      <h2 id="cta-title">Know where your website stands</h2>
+      <p>Run a structured SEO + GEO audit. See health findings and growth gaps as separate capabilities — then turn them into a blueprint.</p>
+      <a class="kc-btn" href="/#cta">Start a structured audit</a>
+    </section>
+  </main>
+
+  <script src="../../contact-config.js"></script>
+  <script src="../../contact.js"></script>
+</body>
+</html>

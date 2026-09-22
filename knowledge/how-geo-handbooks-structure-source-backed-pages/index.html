@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How GEO Handbooks Structure Source-Backed Pages | Mika Visibility</title>
+  <meta name="description" content="How a CC BY-SA GEO handbook organizes graded claims, chapters, and machine-readable guides—and what Mika adapts carefully.">
+  <link rel="canonical" href="https://mikaovo.ai/knowledge/how-geo-handbooks-structure-source-backed-pages/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/how-geo-handbooks-structure-source-backed-pages/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/how-geo-handbooks-structure-source-backed-pages/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/how-geo-handbooks-structure-source-backed-pages/">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../src/knowledge/center.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How GEO Handbooks Structure Source-Backed Pages",
+    "description": "A Mika Research Note on source-backed GEO handbook structure, with CC BY-SA attribution for inspired passages.",
+    "datePublished": "2026-09-22",
+    "dateModified": "2026-09-22",
+    "inLanguage": "en",
+    "author": { "@type": "Organization", "name": "Mika Visibility", "url": "https://mikaovo.ai/" },
+    "publisher": { "@type": "Organization", "name": "Mika Visibility", "url": "https://mikaovo.ai/", "logo": { "@type": "ImageObject", "url": "https://mikaovo.ai/assets/logo.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://mikaovo.ai/knowledge/how-geo-handbooks-structure-source-backed-pages/" },
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/"
+  }
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">Skip to content</a>
+  <header class="kc-header">
+    <nav class="kc-nav kc-wrap" aria-label="Primary">
+      <a class="kc-brand" href="/">
+        <img src="../../assets/logo.svg" alt="" width="22" height="22">
+        <span>Mika Visibility <span>Knowledge</span></span>
+      </a>
+      <div class="kc-nav-links">
+        <a href="/">Home</a>
+        <a href="/knowledge/" aria-current="page">Knowledge</a>
+      </div>
+      <div class="kc-lang" aria-label="Language">
+        <a href="/knowledge/how-geo-handbooks-structure-source-backed-pages/" aria-current="page">EN</a>
+        <a href="/zh/knowledge/how-geo-handbooks-structure-source-backed-pages/">中文</a>
+      </div>
+    </nav>
+  </header>
+
+  <header class="kc-hero">
+    <div class="kc-wrap">
+      <p class="kc-hero-kicker">Mika Research Note · Research</p>
+      <h1>How GEO Handbooks Structure Source-Backed Pages</h1>
+      <p class="kc-hero-lead">Patterns for definitions, graded claims, chaptered docs, and machine-readable entry points—drawn carefully from a CC BY-SA open handbook.</p>
+      <p class="kc-meta">
+        <span>Research</span>
+        <span>Viewed 2026-09-22</span>
+        <span>Source: GEO Handbook (CC BY-SA 4.0)</span>
+      </p>
+    </div>
+  </header>
+
+  <main id="main" class="kc-layout kc-wrap">
+    <aside class="kc-toc" aria-label="On this page">
+      <nav>
+        <a href="#observe">What we observed</a>
+        <a href="#claims">Graded claims</a>
+        <a href="#chapters">Chapter architecture</a>
+        <a href="#machine">Machine-readable guides</a>
+        <a href="#mika">What Mika adapts</a>
+        <a href="#license">License note</a>
+      </nav>
+    </aside>
+
+    <article class="kc-body">
+      <p>Source-backed writing is easy to praise and hard to operationalise. This Research Note looks at how one public GEO handbook organises that discipline into files, chapters, and verification hooks. The repository is <strong>ferinazumaDEV/generative-engine-optimization-handbook</strong>, licensed <strong>CC BY-SA 4.0</strong>. Passages below that are inspired by that work are shared under the same license; the rest of mikaovo.ai is not relicensed.</p>
+
+      <h2 id="observe">What we observed from the public tree</h2>
+      <p>The handbook presents GEO as a reference topic for answer engines: how to structure and publish so systems can understand and cite content. Publicly visible structure includes numbered Markdown chapters under <code>docs/</code>, a graded claims table, contribution rules that insist on “cite or flag”, citation metadata (<code>CITATION.cff</code>), JSON-LD about the work, an <code>llms.txt</code> map, changeloged releases, and CI that checks claims and links.</p>
+      <p>That combination matters more than any single tip. It treats trust as a publishing system: claims have maturity language, links are tested, versions are archived, and machines get a table of contents that points to human chapters—not a dump of marketing copy.</p>
+
+      <h2 id="claims">Graded claims instead of ambient certainty</h2>
+      <p>Inspired by the handbook’s approach: every substantive claim should either carry a source or be marked as needing verification. Primary sources are preferred; secondary industry sources are labelled as such. A separate claims document holds the vocabulary and the graded table the rest of the work rests on.</p>
+      <p>For B2B product sites, the transferable idea is not “add more footnotes for SEO”. It is to stop mixing verified specs, hopeful forecasts, and hearsay in the same paragraph without labels. Auditors can then ask: which sentences are evidence, which are opinion, and which are still unchecked?</p>
+
+      <h2 id="chapters">Chapter architecture that answers one job at a time</h2>
+      <p>The public chapter list moves from foundations and engines into content, technical surfaces, authority, measurement, research cases, ethics, and a glossary. Inspired by that sequencing: start with definitions and mechanism, then writing patterns, then crawl/render/structured-data concerns, then trust signals, then measurement—before ethics and vocabulary cleanup.</p>
+      <p>Each chapter can still be long; the design win is navigational honesty. Readers (and agents following <code>llms.txt</code>) can enter at the right altitude instead of scrolling a single undifferentiated essay. Mika’s Knowledge Center uses a similar “one question per article” bias for the same reason.</p>
+
+      <h2 id="machine">Machine-readable guides beside human prose</h2>
+      <p>The handbook ships <code>llms.txt</code> as a curated map of identity, start-here links, core chapters, and meta files. It also exposes structured about-metadata and citation files so “Cite this repository” style workflows have something durable to point at. CI link checking and a claims maturity gate turn documentation quality into something closer to software quality.</p>
+      <p>Inspired takeaway for audit sites: if you publish research notes, give crawlers and agents a small, honest index of what exists—canonical URLs, language alternates, and what each page is for—without pretending that a text file replaces robots rules or guarantees inclusion in any answer product.</p>
+
+      <h2 id="mika">What Mika adapts (and what we refuse)</h2>
+      <p>We adapt the <em>discipline</em>: visible sources, dated review, no citation guarantees, and separation of verified vs. needs-check language. We refuse the anti-patterns this handbook also pushes against in spirit—hype, unsourced platform claims, and treating GEO as a secret ranking lever.</p>
+      <p>We do not scrape the handbook into dozens of thin mirrors. One Mika note about structure is enough to teach the pattern; readers who need the full reference should go to the original repository under its license terms.</p>
+
+      <h2 id="license">License note for this article</h2>
+      <p>This page credits <strong>Fernando Aporta Franco (ferinazumaDEV)</strong> and the <em>Generative Engine Optimization Handbook</em>. Commercial use and adaptation of that work are allowed under CC BY-SA 4.0 with attribution; derivatives must remain CC BY-SA 4.0. <strong>Passages in this article that are inspired by that handbook are shared under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</strong> Other Mika site materials are not converted to CC BY-SA by this note.</p>
+    </article>
+  </main>
+
+  <div class="kc-wrap">
+    <section class="kc-sources" aria-labelledby="sources-heading">
+      <h2 id="sources-heading">Sources</h2>
+      <ol>
+        <li>
+          <strong>Repository:</strong> generative-engine-optimization-handbook<br>
+          <strong>Author:</strong> Fernando Aporta Franco (ferinazumaDEV)<br>
+          <strong>License:</strong> CC BY-SA 4.0 — <a href="https://creativecommons.org/licenses/by-sa/4.0/">https://creativecommons.org/licenses/by-sa/4.0/</a><br>
+          <strong>Source:</strong> <a href="https://github.com/ferinazumaDEV/generative-engine-optimization-handbook">https://github.com/ferinazumaDEV/generative-engine-optimization-handbook</a><br>
+          <strong>Viewed:</strong> 2026-09-22<br>
+          <span>Inspired passages on this page are shared under CC BY-SA 4.0. The Mika site as a whole is not relicensed.</span>
+        </li>
+      </ol>
+    </section>
+
+    <section class="kc-related" aria-labelledby="related-heading">
+      <h2 id="related-heading">Related</h2>
+      <div class="kc-grid">
+        <a class="kc-card" href="/knowledge/how-source-backed-bilingual-sites-are-structured/">
+          <p class="kc-card-meta"><span class="kc-tag kc-tag--geo">Research</span></p>
+          <h3 class="kc-card-title">How Source-Backed Bilingual Sites Are Structured</h3>
+          <p class="kc-card-blurb">Parallel language paths with shared facts and validation.</p>
+        </a>
+        <a class="kc-card" href="/knowledge/how-to-improve-citation-readiness/">
+          <p class="kc-card-meta"><span class="kc-tag kc-tag--geo">GEO</span></p>
+          <h3 class="kc-card-title">How to Improve Citation Readiness</h3>
+          <p class="kc-card-blurb">Make pages easier to quote—without promising citations.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="kc-faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">FAQ</h2>
+      <details>
+        <summary>Is the whole Mika site now CC BY-SA?</summary>
+        <p>No. Only the handbook-inspired passages on this Research Note are shared under CC BY-SA 4.0. Other Mika pages keep their own terms.</p>
+      </details>
+      <details>
+        <summary>Does source-backing guarantee AI citations?</summary>
+        <p>No. Source-backing improves honesty and reviewability. It does not guarantee selection by any answer engine.</p>
+      </details>
+    </section>
+
+    <section class="kc-cta" aria-labelledby="cta-heading">
+      <h2 id="cta-heading">Building source-backed product pages?</h2>
+      <p>Mika helps teams label evidence, clarify entities, and structure answers buyers can verify—without citation guarantees.</p>
+      <a class="kc-btn kc-btn-primary" href="/#contact">Contact Mika</a>
+    </section>
+  </div>
+
+  <footer class="kc-footer">
+    <div class="kc-wrap kc-footer-bottom">
+      <p>© Mika Visibility · Inspired passages under CC BY-SA 4.0 where noted</p>
+      <div class="kc-footer-links">
+        <a href="/">Home</a>
+        <a href="/knowledge/">Knowledge</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../../contact-config.js"></script>
+  <script src="../../contact.js"></script>
+</body>
+</html>

@@ -22,7 +22,7 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Mika｜SEO 审计、搜索可见性与 AI 答案可见性">
   <meta name="twitter:description" content="结构化 SEO 审计与 GEO 分析：检查 SEO 健康度、内容缺口与搜索意图覆盖，提升技术 SEO、主题覆盖与 AI 答案可见性。">
-  <meta name="theme-color" content="#0B1220">
+  <meta name="theme-color" content="#101828">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">
   {
@@ -213,6 +213,7 @@
   <link rel="stylesheet" href="../styles.css">
   <!-- hv2-section-css -->
   <link rel="stylesheet" href="../src/sections/home.css">
+  <link rel="stylesheet" href="../src/motion/motion.css">
   <link rel="stylesheet" href="../src/animations/home.css">
 </head>
 <body>
@@ -236,6 +237,7 @@
           <a href="#blueprint">如何运作</a>
           <a href="#seo-growth">SEO</a>
           <a href="#geo">GEO</a>
+          <a href="/zh/knowledge/">知识中心</a>
           <a href="#faq">常见问题</a>
           <div class="hv2-lang" aria-label="语言">
             <a href="/">EN</a>
@@ -252,7 +254,7 @@
   </header>
 
   <main id="main" class="hv2-main">
-    <section class="hv2-section hv2-hero" id="hero" aria-labelledby="hero-title">
+    <section class="hv2-section hv2-hero" id="hero" data-motion="visibility-field" aria-labelledby="hero-title">
       <div class="hv2-wrap hv2-hero-grid">
         <div>
           <p class="hv2-eyebrow">搜索与 AI 可见性平台</p>
@@ -266,23 +268,60 @@
           </div>
           <p class="hv2-note">本页示例数据仅供说明。Mika 不预测排名，也不保证在任何答案展示位中出现。</p>
         </div>
-        <div class="hv2-hero-dash" data-anim="hero-dashboard" aria-label="四项彼此独立的能力">
-          <article class="hv2-chip" data-id="seoHealth">
-            <p class="hv2-chip-label">SEO Health</p>
-            <p class="hv2-chip-hint">可抓取、可收录、结构可靠</p>
-          </article>
-          <article class="hv2-chip" data-id="seoGrowth">
-            <p class="hv2-chip-label">SEO Growth</p>
-            <p class="hv2-chip-hint">主题、意图与市场仍有空间</p>
-          </article>
-          <article class="hv2-chip" data-id="geoHealth">
-            <p class="hv2-chip-label">GEO Health</p>
-            <p class="hv2-chip-hint">实体清晰、答案直接、证据可查</p>
-          </article>
-          <article class="hv2-chip" data-id="geoGrowth">
-            <p class="hv2-chip-label">GEO Growth</p>
-            <p class="hv2-chip-hint">未覆盖问题与引用空间</p>
-          </article>
+        <div class="hv2-hero-visual">
+          <div class="hv2-vf-stage" aria-hidden="true">
+            <svg class="hv2-vf" viewBox="0 0 640 400" role="img" aria-label="可见性场域：搜索与问题汇聚到网站">
+              <defs>
+                <pattern id="vf-grid-zh" width="32" height="32" patternUnits="userSpaceOnUse">
+                  <path d="M32 0H0V32" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+                </pattern>
+              </defs>
+              <rect width="640" height="400" fill="url(#vf-grid-zh)"/>
+              <path class="mm-flow-path is-seo" d="M72 88 C140 88, 170 140, 220 160 S300 190, 320 200" fill="none" stroke="#2f6bff" stroke-width="2" stroke-linecap="round"/>
+              <path class="mm-flow-path is-seo mm-desktop-only" d="M72 120 C150 120, 190 170, 250 185 S300 198, 320 200" fill="none" stroke="#2f6bff" stroke-width="1.2" stroke-opacity="0.45" data-mobile-skip/>
+              <path class="mm-flow-path is-geo" d="M568 88 C500 88, 470 140, 420 160 S340 190, 320 200" fill="none" stroke="#6e56cf" stroke-width="2" stroke-linecap="round"/>
+              <path class="mm-flow-path is-geo mm-desktop-only" d="M568 120 C490 120, 450 170, 390 185 S340 198, 320 200" fill="none" stroke="#6e56cf" stroke-width="1.2" stroke-opacity="0.45" data-mobile-skip/>
+              <path class="mm-flow-path is-hub" d="M320 210 C320 250, 320 280, 320 312" fill="none" stroke="#93a0b5" stroke-width="2" stroke-linecap="round"/>
+              <g class="mm-node" font-family="IBM Plex Mono, monospace" font-size="11" fill="#b8c9ff">
+                <text x="40" y="84">Query</text>
+                <text x="150" y="124">Page</text>
+                <text x="210" y="168">Structure</text>
+                <text x="240" y="198">Search Visibility</text>
+              </g>
+              <g class="mm-node" font-family="IBM Plex Mono, monospace" font-size="11" fill="#d6c8ff" text-anchor="end">
+                <text x="600" y="84">Question</text>
+                <text x="490" y="124">Entity</text>
+                <text x="430" y="168">Evidence</text>
+                <text x="400" y="198">Answer</text>
+              </g>
+              <g class="mm-node mm-hub">
+                <rect x="276" y="188" width="88" height="28" rx="8" fill="#1a2336" stroke="rgba(255,255,255,0.2)"/>
+                <text x="320" y="206" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="12" font-weight="600" fill="#e8edf5">Website</text>
+              </g>
+              <g class="mm-node">
+                <rect x="258" y="300" width="124" height="28" rx="8" fill="#2f6bff"/>
+                <text x="320" y="318" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="12" font-weight="600" fill="#fff">Visibility</text>
+              </g>
+            </svg>
+          </div>
+          <div class="hv2-hero-dash" data-anim="hero-dashboard" aria-label="四项彼此独立的能力">
+            <article class="hv2-chip" data-id="seoHealth">
+              <p class="hv2-chip-label">SEO Health</p>
+              <p class="hv2-chip-hint">可抓取、可收录、结构可靠</p>
+            </article>
+            <article class="hv2-chip" data-id="seoGrowth">
+              <p class="hv2-chip-label">SEO Growth</p>
+              <p class="hv2-chip-hint">主题、意图与市场仍有空间</p>
+            </article>
+            <article class="hv2-chip" data-id="geoHealth">
+              <p class="hv2-chip-label">GEO Health</p>
+              <p class="hv2-chip-hint">实体清晰、答案直接、证据可查</p>
+            </article>
+            <article class="hv2-chip" data-id="geoGrowth">
+              <p class="hv2-chip-label">GEO Growth</p>
+              <p class="hv2-chip-hint">未覆盖问题与引用空间</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -314,7 +353,7 @@
             </ul>
           </article>
         </div>
-        <p class="hv2-conclusion">Health 告诉你哪些在正常工作。Growth 指出还缺什么。</p>
+        <p class="hv2-conclusion" data-motion-neq><span class="mm-neq-mark">Health ≠ Growth</span> Health 告诉你哪些在正常工作。Growth 指出还缺什么。</p>
       </div>
     </section>
 
@@ -351,7 +390,7 @@
             </div>
           </article>
           <div class="hv2-fw-rowhead">下一步</div>
-          <article class="hv2-panel hv2-fw-cell is-seo">
+          <article class="hv2-panel hv2-fw-cell is-seo" data-growth>
             <p class="hv2-fw-axis">下一步 · 搜索</p>
             <h3 class="hv2-h3">SEO Growth</h3>
             <p class="hv2-fw-body">还有哪些覆盖、意图深度与市场尚未占据？</p>
@@ -362,7 +401,7 @@
               <span class="hv2-tag is-seo">Markets（市场）</span>
             </div>
           </article>
-          <article class="hv2-panel hv2-fw-cell is-geo">
+          <article class="hv2-panel hv2-fw-cell is-geo" data-growth>
             <p class="hv2-fw-axis">下一步 · 答案</p>
             <h3 class="hv2-h3">GEO Growth</h3>
             <p class="hv2-fw-body">答案覆盖、引用与扩展还有哪些提升空间？</p>
@@ -431,15 +470,15 @@
             <span class="hv2-stat-unit">images</span>
           </div>
         </div>
-        <div class="hv2-audit-steps" aria-label="审计步骤">
-          <div class="hv2-audit-step"><span class="hv2-audit-step-idx">1</span>Discover pages</div>
-          <div class="hv2-audit-step"><span class="hv2-audit-step-idx">2</span>Analyze structure</div>
-          <div class="hv2-audit-step"><span class="hv2-audit-step-idx">3</span>Extract topics</div>
-          <div class="hv2-audit-step"><span class="hv2-audit-step-idx">4</span>Map entities</div>
-          <div class="hv2-audit-step"><span class="hv2-audit-step-idx">5</span>Evaluate questions</div>
-          <div class="hv2-audit-step"><span class="hv2-audit-step-idx">6</span>Check evidence</div>
-          <div class="hv2-audit-step"><span class="hv2-audit-step-idx">7</span>Find opportunities</div>
-          <div class="hv2-audit-step"><span class="hv2-audit-step-idx">8</span>Build blueprint</div>
+        <div class="hv2-audit-steps mm-audit-pipe" aria-label="审计步骤">
+          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">1</span>URL</div>
+          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">2</span>Links</div>
+          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">3</span>Topics</div>
+          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">4</span>Entities</div>
+          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">5</span>Questions</div>
+          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">6</span>Evidence</div>
+          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">7</span>Gaps</div>
+          <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">8</span>Blueprint</div>
         </div>
         <p class="hv2-note">仪表盘数字为示例。真实扫描会报告你站点的现场数据。</p>
       </div>
@@ -542,7 +581,13 @@
             <p class="hv2-bp-body">把问题组落成页面级动作：优先级、改什么、如何用复审验收。</p>
           </article>
         </div>
-        <article class="hv2-panel hv2-action" aria-label="示例 Blueprint 动作">
+        <div class="mm-bp-issues" aria-hidden="true">
+          <span class="mm-bp-issue">产品模板过薄</span>
+          <span class="mm-bp-issue">缺少使用场景</span>
+          <span class="mm-bp-issue">证据链接偏弱</span>
+        </div>
+        <p class="mm-bp-root">根因：产品页在写功能，而不是回答买家决策问题。</p>
+        <article class="hv2-panel hv2-action mm-bp-action" aria-label="示例 Blueprint 动作">
           <div class="hv2-action-top">
             <p class="hv2-action-code">ACTION P023</p>
             <p class="hv2-action-path">/products/example/</p>
@@ -618,6 +663,14 @@
           <h2 class="hv2-h2" id="geo-title">人们能否找到关于你业务的正确答案？</h2>
           <p class="hv2-lede">现代搜索常常直接展示答案、摘要和来源链接。GEO 检查你的网站是否提供清晰实体、直接答案、证据，以及一致的上下文。</p>
         </header>
+        <div class="mm-geo-chain" aria-label="GEO 答案路径">
+          <span class="mm-geo-step">Question</span><span class="mm-geo-arrow" aria-hidden="true">→</span>
+          <span class="mm-geo-step">Topic</span><span class="mm-geo-arrow" aria-hidden="true">→</span>
+          <span class="mm-geo-step">Intent</span><span class="mm-geo-arrow" aria-hidden="true">→</span>
+          <span class="mm-geo-step">Entity</span><span class="mm-geo-arrow" aria-hidden="true">→</span>
+          <span class="mm-geo-step">Evidence</span><span class="mm-geo-arrow" aria-hidden="true">→</span>
+          <span class="mm-geo-step">Direct Answer</span>
+        </div>
         <div class="hv2-geo-grid">
           <p class="hv2-panel hv2-geo-modern">当有人搜索时，他们可能先看到简短答案、摘要和来源链接——而不只是一串蓝链。你的网站需要足够清楚，才能支撑这种展示。</p>
           <div class="hv2-panel hv2-geo-checks">
@@ -670,7 +723,9 @@
           </div>
           <article class="hv2-panel hv2-match" data-anim="question-match">
             <div class="hv2-match-tags" aria-label="匹配标签">
-              <span class="hv2-tag is-geo" data-tag="intent">intent</span>
+              <span class="hv2-tag is-geo mm-bridge" data-tag="intent">Intent</span>
+              <span class="hv2-tag is-geo mm-bridge" data-tag="page">Page</span>
+              <span class="hv2-tag is-geo mm-bridge" data-tag="answer">Answer</span>
               <span class="hv2-tag is-geo" data-tag="commercial">commercial</span>
               <span class="hv2-tag is-geo" data-tag="topic">topic</span>
               <span class="hv2-tag is-geo" data-tag="product">product</span>
@@ -681,6 +736,7 @@
           </article>
         </div>
         <h3 class="hv2-h3 hv2-wall-title">买家已经在问的问题</h3>
+        <div class="hv2-wall-viewport">
         <div class="hv2-wall" data-anim="question-wall">
           <p class="hv2-wall-item" data-question>为什么我的网站没有流量？</p>
           <p class="hv2-wall-item" data-question>怎样提升产品页可见性？</p>
@@ -700,6 +756,7 @@
           <p class="hv2-wall-item" data-question>产品页上的主张还缺哪些证明？</p>
           <p class="hv2-wall-item" data-question>怎样让公司名与产品名在多语言间对齐？</p>
           <p class="hv2-wall-item" data-question>哪些买家问题应该直接出现在产品页上？</p>
+        </div>
         </div>
       </div>
     </section>
@@ -755,6 +812,7 @@
           <h2 class="hv2-h2" id="multilingual-title">同一门生意，在每个市场保持一致。</h2>
           <p class="hv2-lede">每种语言都应守住同一套公司与产品事实，同时用真实深度覆盖当地意图。</p>
         </header>
+        <div class="mm-multi-entity" aria-hidden="true">产品实体</div>
         <div class="hv2-lang-cols" data-anim="language-sync">
           <div class="hv2-lang-col" data-lang>EN</div>
           <div class="hv2-lang-col" data-lang>中文</div>
@@ -792,6 +850,7 @@
           <li>改完之后用复审验证进展。</li>
         </ol>
         <div class="hv2-loop" data-anim="loop" aria-label="持续可见性闭环">
+          <div class="mm-method-ring-track" aria-hidden="true"></div>
           <div class="hv2-loop-step" data-loop-step="SCAN"><span class="hv2-loop-idx">01</span><span class="hv2-loop-label">SCAN</span></div>
           <div class="hv2-loop-step" data-loop-step="DIAGNOSE"><span class="hv2-loop-idx">02</span><span class="hv2-loop-label">DIAGNOSE</span></div>
           <div class="hv2-loop-step" data-loop-step="BLUEPRINT"><span class="hv2-loop-idx">03</span><span class="hv2-loop-label">BLUEPRINT</span></div>
@@ -930,6 +989,13 @@
         <p class="hv2-kicker">下一步</p>
         <h2 class="hv2-h2" id="cta-title">先看清网站站在哪里，再决定下一步做什么。</h2>
         <p class="hv2-lede">做一次结构化的 SEO + GEO 审计，拿到健康发现、增长缺口，以及可执行的 Blueprint。</p>
+        <div class="mm-cta-chain" aria-label="下一步路径">
+          <span class="mm-cta-step">Your website</span><span class="mm-cta-arrow" aria-hidden="true">→</span>
+          <span class="mm-cta-step">Search</span><span class="mm-cta-arrow" aria-hidden="true">→</span>
+          <span class="mm-cta-step">Questions</span><span class="mm-cta-arrow" aria-hidden="true">→</span>
+          <span class="mm-cta-step">Gaps</span><span class="mm-cta-arrow" aria-hidden="true">→</span>
+          <span class="mm-cta-step">Blueprint</span>
+        </div>
         <div class="hv2-cta-actions">
           <a class="hv2-btn hv2-btn-on-dark" href="#cta">开始结构化审计</a>
           <a class="hv2-btn hv2-btn-ghost-on-dark" href="https://wa.me/8613814015518" rel="noopener">用 WhatsApp 提问</a>
@@ -954,6 +1020,7 @@
         <div>
           <h3>产品</h3>
           <ul class="hv2-footer-links">
+            <li><a href="/zh/knowledge/">知识中心</a></li>
             <li><a href="#framework">能力框架</a></li>
             <li><a href="#audit">深度审计</a></li>
             <li><a href="#seo-growth">SEO Growth</a></li>
@@ -992,6 +1059,7 @@
 
   <script src="../contact-config.js"></script>
   <script src="../contact.js"></script>
+  <script src="../src/motion/core.js" defer></script>
   <script src="../src/animations/home.js" defer></script>
   <script src="../main.js" defer></script>
 </body>

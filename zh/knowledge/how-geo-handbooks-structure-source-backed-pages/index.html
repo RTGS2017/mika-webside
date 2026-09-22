@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GEO 手册如何组织有来源的页面 | Mika Visibility</title>
+  <meta name="description" content="CC BY-SA GEO 手册如何组织分级主张、章节与机器可读入口；Mika 如何谨慎借鉴。">
+  <link rel="canonical" href="https://mikaovo.ai/zh/knowledge/how-geo-handbooks-structure-source-backed-pages/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/how-geo-handbooks-structure-source-backed-pages/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/how-geo-handbooks-structure-source-backed-pages/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/how-geo-handbooks-structure-source-backed-pages/">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "GEO 手册如何组织有来源的页面",
+    "description": "Mika Research Note：有来源 GEO 手册的结构设计，并对受启发表述做 CC BY-SA 署名。",
+    "datePublished": "2026-09-22",
+    "dateModified": "2026-09-22",
+    "inLanguage": "zh-Hans",
+    "author": { "@type": "Organization", "name": "Mika Visibility", "url": "https://mikaovo.ai/" },
+    "publisher": { "@type": "Organization", "name": "Mika Visibility", "url": "https://mikaovo.ai/", "logo": { "@type": "ImageObject", "url": "https://mikaovo.ai/assets/logo.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://mikaovo.ai/zh/knowledge/how-geo-handbooks-structure-source-backed-pages/" },
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/"
+  }
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <nav class="kc-nav kc-wrap" aria-label="主导航">
+      <a class="kc-brand" href="/zh/">
+        <img src="../../../assets/logo.svg" alt="" width="22" height="22">
+        <span>Mika Visibility <span>知识</span></span>
+      </a>
+      <div class="kc-nav-links">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/" aria-current="page">知识中心</a>
+      </div>
+      <div class="kc-lang" aria-label="语言">
+        <a href="/knowledge/how-geo-handbooks-structure-source-backed-pages/">EN</a>
+        <a href="/zh/knowledge/how-geo-handbooks-structure-source-backed-pages/" aria-current="page">中文</a>
+      </div>
+    </nav>
+  </header>
+
+  <header class="kc-hero">
+    <div class="kc-wrap">
+      <p class="kc-hero-kicker">Mika Research Note · 研究</p>
+      <h1>GEO 手册如何组织有来源的页面</h1>
+      <p class="kc-hero-lead">定义、分级主张、分章文档与机器可读入口——谨慎借鉴一份 CC BY-SA 开源手册的组织方式。</p>
+      <p class="kc-meta">
+        <span>研究</span>
+        <span>查看日期 2026-09-22</span>
+        <span>来源：GEO Handbook（CC BY-SA 4.0）</span>
+      </p>
+    </div>
+  </header>
+
+  <main id="main" class="kc-layout kc-wrap">
+    <aside class="kc-toc" aria-label="本页目录">
+      <nav>
+        <a href="#observe">公开树里看到什么</a>
+        <a href="#claims">分级主张</a>
+        <a href="#chapters">章节架构</a>
+        <a href="#machine">机器可读指引</a>
+        <a href="#mika">Mika 借鉴什么</a>
+        <a href="#license">许可证说明</a>
+      </nav>
+    </aside>
+
+    <article class="kc-body">
+      <p>「有来源写作」容易喊口号，难在落地成流程。本 Research Note 观察一份公开 GEO 手册如何把这种纪律落成文件、章节与校验钩子。仓库为 <strong>ferinazumaDEV/generative-engine-optimization-handbook</strong>，许可证为 <strong>CC BY-SA 4.0</strong>。下文中受该作品启发的表述以相同许可证分享；mikaovo.ai 整站并不因此改成 CC BY-SA。</p>
+
+      <h2 id="observe">公开树里看到什么</h2>
+      <p>手册把 GEO 当作面向回答引擎的参考主题：如何组织与发布，以便系统理解并引用内容。公开可见结构包括 <code>docs/</code> 下编号 Markdown 章节、分级主张表、「有出处或标注待核验」的贡献规则、<code>CITATION.cff</code>、关于作品的 JSON-LD、<code>llms.txt</code> 地图、带变更日志的版本，以及检查主张与链接的 CI。</p>
+      <p>比单条技巧更重要的是组合：把信任做成发布系统——主张有成熟度语言、链接被测试、版本可归档，机器拿到指向人类章节的目录，而不是营销文案堆。</p>
+
+      <h2 id="claims">用分级主张替代含糊的确定性</h2>
+      <p>受手册启发：每条实质性主张应附来源，或明确标为待核验；优先一手来源，二手行业来源需标注。单独的主张文档承载词汇与分级表，供其余章节依赖。</p>
+      <p>对 B2B 产品站，可迁移的不是「为了 SEO 多加脚注」，而是停止把已核实规格、乐观预测与道听途说写在同一段却不加标签。审计时可问：哪些句子是证据，哪些是观点，哪些仍未核对？</p>
+
+      <h2 id="chapters">一次只回答一件事的章节架构</h2>
+      <p>公开章节从基础与引擎，进入内容、技术表面、权威、测量、研究案例、伦理与词汇表。受此顺序启发：先定义与机制，再写作模式，再抓取/渲染/结构化数据，再信任信号，再测量——然后才是伦理与术语清理。</p>
+      <p>单章仍可很长；设计收益在于导航诚实。读者（以及跟随 <code>llms.txt</code> 的代理）能从正确高度进入，而不是滚动一篇不分节的长文。Mika 知识中心「一篇文章一个问题」的偏好出于同一理由。</p>
+
+      <h2 id="machine">人类正文旁的机器可读指引</h2>
+      <p>手册提供 <code>llms.txt</code> 作为身份、入门链接、核心章节与元文件的策展地图，并暴露结构化 about 元数据与引用文件，让「Cite this repository」一类流程有耐久锚点。CI 链接检查与主张成熟度门槛，把文档质量拉近软件质量。</p>
+      <p>对审计站的启发：若发布研究笔记，给爬虫与代理一份小而诚实的索引——规范 URL、语言备用、每页用途——同时不要假装文本文件能替代 robots，或保证进入任何回答产品。</p>
+
+      <h2 id="mika">Mika 借鉴什么（以及拒绝什么）</h2>
+      <p>我们借鉴的是<strong>纪律</strong>：可见来源、标注日期的复核、不做引用保证、区分已核实与待核验语言。我们拒绝手册精神上同样反对的反模式——炒作、无来源的平台断言、把 GEO 当成秘密排名杠杆。</p>
+      <p>我们不会把手册抓成大量薄弱镜像。一篇讲结构的 Mika 笔记足以传授模式；需要完整参考的读者应前往原仓库并遵守其许可证。</p>
+
+      <h2 id="license">本文许可证说明</h2>
+      <p>本页署名 <strong>Fernando Aporta Franco（ferinazumaDEV）</strong> 及 <em>Generative Engine Optimization Handbook</em>。该作品在 CC BY-SA 4.0 下允许商业使用与改编，但必须署名；衍生作品须继续采用 CC BY-SA 4.0。<strong>本文中受该手册启发的表述以 <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> 分享。</strong>Mika 站点其他材料不因本笔记改成 CC BY-SA。</p>
+    </article>
+  </main>
+
+  <div class="kc-wrap">
+    <section class="kc-sources" aria-labelledby="sources-heading">
+      <h2 id="sources-heading">来源</h2>
+      <ol>
+        <li>
+          <strong>仓库：</strong> generative-engine-optimization-handbook<br>
+          <strong>作者：</strong> Fernando Aporta Franco（ferinazumaDEV）<br>
+          <strong>许可证：</strong> CC BY-SA 4.0 — <a href="https://creativecommons.org/licenses/by-sa/4.0/">https://creativecommons.org/licenses/by-sa/4.0/</a><br>
+          <strong>源链接：</strong> <a href="https://github.com/ferinazumaDEV/generative-engine-optimization-handbook">https://github.com/ferinazumaDEV/generative-engine-optimization-handbook</a><br>
+          <strong>查看日期：</strong> 2026-09-22<br>
+          <span>本页受启发表述以 CC BY-SA 4.0 分享。Mika 整站未改许可证。</span>
+        </li>
+      </ol>
+    </section>
+
+    <section class="kc-related" aria-labelledby="related-heading">
+      <h2 id="related-heading">相关阅读</h2>
+      <div class="kc-grid">
+        <a class="kc-card" href="/zh/knowledge/how-source-backed-bilingual-sites-are-structured/">
+          <p class="kc-card-meta"><span class="kc-tag kc-tag--geo">研究</span></p>
+          <h3 class="kc-card-title">有来源的双语站点如何组织</h3>
+          <p class="kc-card-blurb">共享事实的并行语言路径与校验。</p>
+        </a>
+        <a class="kc-card" href="/zh/knowledge/how-to-improve-citation-readiness/">
+          <p class="kc-card-meta"><span class="kc-tag kc-tag--geo">GEO</span></p>
+          <h3 class="kc-card-title">如何提升被引用就绪度</h3>
+          <p class="kc-card-blurb">让页面更易被引用——但不承诺保证引用。</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="kc-faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">常见问题</h2>
+      <details>
+        <summary>整站 Mika 现在都是 CC BY-SA 吗？</summary>
+        <p>不是。仅本 Research Note 中受手册启发的表述以 CC BY-SA 4.0 分享；其他 Mika 页面保持各自条款。</p>
+      </details>
+      <details>
+        <summary>有来源就能保证被 AI 引用吗？</summary>
+        <p>不能。有来源提升诚实度与可复核性，不保证任何回答引擎选中你。</p>
+      </details>
+    </section>
+
+    <section class="kc-cta" aria-labelledby="cta-heading">
+      <h2 id="cta-heading">在建设有来源的产品页？</h2>
+      <p>Mika 帮助团队标注证据、澄清实体、组织买家可核验的答案——不做引用保证。</p>
+      <a class="kc-btn kc-btn-primary" href="/zh/#contact">联系 Mika</a>
+    </section>
+  </div>
+
+  <footer class="kc-footer">
+    <div class="kc-wrap kc-footer-bottom">
+      <p>© Mika Visibility · 注明处的受启发表述以 CC BY-SA 4.0 分享</p>
+      <div class="kc-footer-links">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

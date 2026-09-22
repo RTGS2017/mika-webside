@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>如何审计 AI 搜索可见性 | Mika 知识中心</title>
+  <meta name="description" content="通过检查抓取访问、实体清晰度、直接答案、证据与问题覆盖来审计 AI 搜索可见性——不要把抽样答案当成排名承诺。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/knowledge/how-to-audit-ai-search-visibility/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/how-to-audit-ai-search-visibility/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/how-to-audit-ai-search-visibility/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/how-to-audit-ai-search-visibility/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="如何审计 AI 搜索可见性 | Mika 知识中心">
+  <meta property="og:description" content="通过检查抓取访问、实体清晰度、直接答案、证据与问题覆盖来审计 AI 搜索可见性——不要把抽样答案当成排名承诺。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/knowledge/how-to-audit-ai-search-visibility/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="如何审计 AI 搜索可见性 | Mika 知识中心">
+  <meta name="twitter:description" content="通过检查抓取访问、实体清晰度、直接答案、证据与问题覆盖来审计 AI 搜索可见性——不要把抽样答案当成排名承诺。">
+  <meta name="theme-color" content="#0B1220">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://mikaovo.ai/zh/knowledge/how-to-audit-ai-search-visibility/#article",
+      "headline": "如何审计 AI 搜索可见性",
+      "description": "通过检查抓取访问、实体清晰度、直接答案、证据与问题覆盖来审计 AI 搜索可见性——不要把抽样答案当成排名承诺。",
+      "datePublished": "2026-09-22",
+      "dateModified": "2026-09-22",
+      "inLanguage": "zh-Hans",
+      "author": {
+        "@type": "Organization",
+        "name": "Mika",
+        "url": "https://mikaovo.ai/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Mika",
+        "url": "https://mikaovo.ai/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://mikaovo.ai/assets/logo.svg"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://mikaovo.ai/zh/knowledge/how-to-audit-ai-search-visibility/"
+      },
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Mika",
+        "url": "https://mikaovo.ai/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://mikaovo.ai/zh/knowledge/how-to-audit-ai-search-visibility/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://mikaovo.ai/zh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "知识中心",
+          "item": "https://mikaovo.ai/zh/knowledge/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "如何审计 AI 搜索可见性",
+          "item": "https://mikaovo.ai/zh/knowledge/how-to-audit-ai-search-visibility/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://mikaovo.ai/zh/knowledge/how-to-audit-ai-search-visibility/#faq",
+  "inLanguage": "zh-Hans",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "如何审计网站能否出现在 AI 答案里？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "先确认爬虫能到达关键 HTML，再检查你关心的问题上是否有实体、直接答案与证据。把线上答案抽样当作临时快照，而不是合同。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "AI 可见性报告应包含什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "访问发现、实体冲突、按 URL 的问题覆盖、无支撑主张、语言不一致，以及有优先级的蓝图。避免把 SEO 与 GEO 混成一个总分。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么传统搜索有排名，却是竞品被引用？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "经典排名与答案面需要的呈现不同。更薄但更清楚的页面可能更易被引用，即使你的整站在相关查询上仍有排名。"
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/knowledge/how-to-audit-ai-search-visibility/">EN</a>
+          <a href="/zh/knowledge/how-to-audit-ai-search-visibility/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>GEO</span> · <time datetime="2026-09-22">2026年9月22日</time></p>
+        <h1>如何审计 AI 搜索可见性</h1>
+        <p class="kc-hero-lead">通过检查抓取访问、实体清晰度、直接答案、证据与问题覆盖来审计 AI 搜索可见性——不要把抽样答案当成排名承诺。</p>
+      </div>
+    </header>
+
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#explanation">审计步骤</a></li>
+            <li><a href="#example">发现示例</a></li>
+            <li><a href="#seo-relationship">四条分轨</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+
+<section id="definition">
+  <h2>定义</h2>
+  <p>AI 搜索可见性审计，检查站点能否被发现，以及关键页面是否足够清晰以支撑答案与引用。它是对“可访问 + 可回答”的诊断，不是对某个助手或概览里位置的预测。</p>
+</section>
+<section id="short-answer">
+  <h2>短答</h2>
+  <p>检查 robots 与抓取访问，盘点重要实体，测试买家问题是否有带证据的页内直接答案，并按 URL 记录缺口。把答案产品今天展示的内容只当作快照。快照会变；耐久修复在你自己的页面上。</p>
+</section>
+<section id="explanation">
+  <h2>审计步骤</h2>
+  <ol>
+    <li><strong>访问</strong>——确认重要路径对通用爬虫开放；若政策允许，也对 OAI-SearchBot 等发现类爬虫开放。可访问是必要非充分条件。</li>
+    <li><strong>实体图</strong>——列出应在品类答案中出现的公司与产品实体。</li>
+    <li><strong>问题覆盖</strong>——对每个优先产品，把问题标为已答、半答或缺失。</li>
+    <li><strong>证据巡检</strong>——标出没有邻近支撑的主张。</li>
+    <li><strong>语言对等</strong>——比较已发布语言版本的事实。</li>
+    <li><strong>快照（可选）</strong>——按日期记录若干答案面在品牌与品类问题上的展示，并标注为示意。</li>
+  </ol>
+  <p>把发现写成蓝图：抓取修复、内容编辑、新答案页或补证据。不要把单次聊天记录变成假装稳定排名的 KPI。</p>
+  <p>记录每次快照的日期与测试问题原文。答案面会变。上个月的发现是优先级提示，不是永久分数。审计留下的耐久产物是页面编辑清单，而不是某次助手会话的截图。</p>
+</section>
+<section id="example">
+  <h2>发现示例</h2>
+  <p>发现 A：产品规格 PDF 被脚本挡住——规格存在但难引用。发现 B：竞品出现在“食品级垫片兼容性”相关问题中，因为你页从未用文字写弹性体选项。发现 C：中英文工厂地点不一致——实体冲突。每条发现对应具体编辑，而不是承诺引用次数。</p>
+  <p>有用的报告以负责人和顺序收尾：本迭代解封 PDF，下一步重写垫片答案，然后在上线新战役站点前对齐语言事实。</p>
+</section>
+<section id="seo-relationship">
+  <h2>四条分轨</h2>
+  <p>技术访问与索引问题用 SEO Health；意图与缺口用 SEO Growth；实体、答案、证据与一致性用 GEO Health；未覆盖的答案机会用 GEO Growth。</p>
+  <p>把一切揉成一个分数的 AI 可见性审计，会掩盖你该解封 PDF、重写定义，还是补一篇对比页。Mika 故意保持分轨。</p>
+</section>
+
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>如何审计网站能否出现在 AI 答案里？</summary>
+            <p>先确认爬虫能到达关键 HTML，再检查你关心的问题上是否有实体、直接答案与证据。把线上答案抽样当作临时快照，而不是合同。</p>
+          </details>
+          <details>
+            <summary>AI 可见性报告应包含什么？</summary>
+            <p>访问发现、实体冲突、按 URL 的问题覆盖、无支撑主张、语言不一致，以及有优先级的蓝图。避免把 SEO 与 GEO 混成一个总分。</p>
+          </details>
+          <details>
+            <summary>为什么传统搜索有排名，却是竞品被引用？</summary>
+            <p>经典排名与答案面需要的呈现不同。更薄但更清楚的页面可能更易被引用，即使你的整站在相关查询上仍有排名。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关文章</h2>
+          <ul>
+          <li><a href="../what-is-geo/">什么是 GEO？</a></li>
+          <li><a href="../how-to-improve-citation-readiness/">如何提升引用准备度</a></li>
+          <li><a href="../how-to-answer-buyer-questions-directly/">如何直接回答买家问题</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+          <li>
+            <a href="https://platform.openai.com/docs/bots" rel="noopener">OpenAI — bot 文档</a>
+            — 发布者如何理解或允许发现类爬虫。
+          </li>
+          <li>
+            <a href="https://developers.google.com/search/docs/appearance/generative-ai" rel="noopener">Google — Search 中的生成式 AI 功能</a>
+            — 生成式功能与既有 SEO 基础关系的公开说明。
+          </li>
+          <li>
+            <a href="https://mikaovo.ai/zh/#audit" rel="noopener">Mika Visibility — 审计框架</a>
+            — 结构化审计导向诊断与蓝图，而非黑箱分数。
+          </li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口与可执行蓝图。</p>
+          <p><a href="/zh/#cta">前往 Mika</a></p>
+          <p>更清晰的实体、答案、证据与上下文让页面更容易被理解和引用。任何答案产品中的结果均不保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

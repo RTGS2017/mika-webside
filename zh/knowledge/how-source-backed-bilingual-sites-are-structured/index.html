@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>有来源的双语站点如何组织 | Mika Visibility</title>
+  <meta name="description" content="静态双语 GEO 学习站的架构观察：语言路径、校验、llms.txt 与诚实主张。">
+  <link rel="canonical" href="https://mikaovo.ai/zh/knowledge/how-source-backed-bilingual-sites-are-structured/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/how-source-backed-bilingual-sites-are-structured/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/how-source-backed-bilingual-sites-are-structured/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/how-source-backed-bilingual-sites-are-structured/">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "有来源的双语站点如何组织",
+    "description": "Mika Research Note：有来源教育站的并行语言架构要点。",
+    "datePublished": "2026-09-22",
+    "dateModified": "2026-09-22",
+    "inLanguage": "zh-Hans",
+    "author": { "@type": "Organization", "name": "Mika Visibility", "url": "https://mikaovo.ai/" },
+    "publisher": { "@type": "Organization", "name": "Mika Visibility", "url": "https://mikaovo.ai/", "logo": { "@type": "ImageObject", "url": "https://mikaovo.ai/assets/logo.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://mikaovo.ai/zh/knowledge/how-source-backed-bilingual-sites-are-structured/" }
+  }
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <nav class="kc-nav kc-wrap" aria-label="主导航">
+      <a class="kc-brand" href="/zh/">
+        <img src="../../../assets/logo.svg" alt="" width="22" height="22">
+        <span>Mika Visibility <span>知识</span></span>
+      </a>
+      <div class="kc-nav-links">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/" aria-current="page">知识中心</a>
+      </div>
+      <div class="kc-lang" aria-label="语言">
+        <a href="/knowledge/how-source-backed-bilingual-sites-are-structured/">EN</a>
+        <a href="/zh/knowledge/how-source-backed-bilingual-sites-are-structured/" aria-current="page">中文</a>
+      </div>
+    </nav>
+  </header>
+
+  <header class="kc-hero">
+    <div class="kc-wrap">
+      <p class="kc-hero-kicker">Mika Research Note · 研究</p>
+      <h1>有来源的双语站点如何组织</h1>
+      <p class="kc-hero-lead">并行语言路径如何共享事实、校验与诚实边界——而不是制造薄弱翻译垃圾页。</p>
+      <p class="kc-meta">
+        <span>研究</span>
+        <span>查看日期 2026-09-22</span>
+        <span>来源：GEO Basics 指南（MIT）</span>
+      </p>
+    </div>
+  </header>
+
+  <main id="main" class="kc-layout kc-wrap">
+    <aside class="kc-toc" aria-label="本页目录">
+      <nav>
+        <a href="#static">以可抓取静态 HTML 为产品</a>
+        <a href="#langs">语言目录设计</a>
+        <a href="#meta">元数据与发现文件</a>
+        <a href="#validate">把校验当编辑 CI</a>
+        <a href="#honest">诚实也是功能</a>
+        <a href="#mika">与 Mika 中英车道的对照</a>
+      </nav>
+    </aside>
+
+    <article class="kc-body">
+      <p>双语站常见两种失败：只改语言代码的薄弱镜像，或两语渐渐讲出不同产品故事。本 Research Note 观察 <strong>paladini/generative-engine-optimization-basic-guide</strong>（MIT）——静态双语入门 GEO 学习站——的公开设计事实，并用自己的话写给要建有来源 EN/ZH（或其他）配对的团队。仅事实归因；我们不复制其指南正文。</p>
+
+      <h2 id="static">以可抓取静态 HTML 为产品</h2>
+      <p>该仓库以 GitHub Pages 静态站发布：重要教学内容在 HTML 中，而不是锁在仅客户端渲染墙后。贡献指引强调初学者可读、一手来源、可抓取内容、紧凑可引用块。图示保留 Mermaid 源与已提交 SVG，以便 Pages 无需构建步骤即可发布。</p>
+      <p>审计者应看到优先级：意义与来源优先，然后是可发现性元数据，再是打磨。这能抵抗「页面没说的主张却硬加结构化数据」的诱惑。</p>
+
+      <h2 id="langs">语言目录设计</h2>
+      <p>公开树布局使用英文根指南与 <code>lang/pt-br/</code> 下的巴西葡萄牙语路径；贡献规则要求译文保留含义（非逐字结构）、术语一致，并在链接、来源、图示与例子上对齐。新增语言时须更新 sitemap 与 hreflang。</p>
+      <p>对 Mika 类站点可迁移的模式：一个概念 → 每种语言一个 URL → 显式备用链接 → 共享事实清单。不要为「覆盖关键词」在每种语言里发明多余 URL。并行页应用本地自然文案回答同一问题，证据骨架保持一致。</p>
+
+      <h2 id="meta">元数据与发现文件</h2>
+      <p>可观察产物包括 <code>sitemap.xml</code>、<code>robots.txt</code> 与 <code>llms.txt</code>。llms.txt 的表述很谨慎：把它当作给 AI 工具的可选站点指南，而不是爬虫权限文件；访问控制仍看 robots 与平台爬虫文档；用 sitemap 做规范 URL 发现；在给 SEO/GEO 建议前，用一手来源核对平台主张。</p>
+      <p>这种分离对任何双语资产都有用。语言切换与 hreflang 告诉搜索系统哪个 URL 对应哪个地区语言；robots 仍管抓取许可；若发布 llms.txt 式地图，应指向真实规范页，而不是发明第三套内容平面。</p>
+
+      <h2 id="validate">把校验当编辑 CI</h2>
+      <p>公开校验脚本检查必需文件、页面元数据、canonical 与 hreflang、JSON-LD、锚点、图示引用、sitemap 配置与 JavaScript 语法。把这些检查当合并门槛，双语漂移才不会变成静默生产事故。</p>
+      <p>Mika 的等价纪律更小但类似：Research Note 上线前须有可见来源、匹配的中英配对，以及诚实的非承诺措辞。</p>
+
+      <h2 id="honest">诚实也是功能</h2>
+      <p>项目公开定位写明：解释 GEO，但不承诺排名、流量、AI 引用或保证可见度。贡献示例对比清楚、有出处的句子与「统治 AI 搜索」式炒作。对有来源双语站，这种诚实必须被翻译过去——不能一语克制、另一语吹大。</p>
+
+      <h2 id="mika">与 Mika 中英知识车道的对照</h2>
+      <ol>
+        <li>英文放在 <code>/knowledge/{slug}/</code>，中文放在 <code>/zh/knowledge/{slug}/</code>，互指 hreflang；若政策如此，以英文为 <code>x-default</code>。</li>
+        <li>共享同一事实骨架与来源面板；本地化语气，不本地化证据。</li>
+        <li>文章正文优先静态 HTML，让审计与代理看到的文本与人读到的一致。</li>
+        <li>拒绝为操纵排名而批量制造近重复翻译页的工厂。</li>
+      </ol>
+      <p>研究 MIT 学习站不等于 Mika 克隆了它。我们认同的是耐久架构：语言对齐、元数据可校验、一手来源，以及在不确定下保持谦逊的主张。</p>
+    </article>
+  </main>
+
+  <div class="kc-wrap">
+    <section class="kc-sources" aria-labelledby="sources-heading">
+      <h2 id="sources-heading">来源</h2>
+      <ol>
+        <li>
+          <strong>仓库：</strong> generative-engine-optimization-basic-guide<br>
+          <strong>作者 / 所有者：</strong> Fernando Paladini（paladini）<br>
+          <strong>许可证：</strong> MIT<br>
+          <strong>源链接：</strong> <a href="https://github.com/paladini/generative-engine-optimization-basic-guide">https://github.com/paladini/generative-engine-optimization-basic-guide</a><br>
+          <strong>主页：</strong> <a href="https://paladini.github.io/generative-engine-optimization-basic-guide/">https://paladini.github.io/generative-engine-optimization-basic-guide/</a><br>
+          <strong>查看日期：</strong> 2026-09-22<br>
+          <span>仅事实归因。Mika 未复制该项目文档或指南正文。</span>
+        </li>
+      </ol>
+    </section>
+
+    <section class="kc-related" aria-labelledby="related-heading">
+      <h2 id="related-heading">相关阅读</h2>
+      <div class="kc-grid">
+        <a class="kc-card" href="/zh/knowledge/how-geo-handbooks-structure-source-backed-pages/">
+          <p class="kc-card-meta"><span class="kc-tag kc-tag--geo">研究</span></p>
+          <h3 class="kc-card-title">GEO 手册如何组织有来源的页面</h3>
+          <p class="kc-card-blurb">分级主张、章节与机器可读地图。</p>
+        </a>
+        <a class="kc-card" href="/zh/knowledge/multilingual-search-visibility/">
+          <p class="kc-card-meta"><span class="kc-tag kc-tag--seo">搜索可见度</span></p>
+          <h3 class="kc-card-title">多语言搜索可见度</h3>
+          <p class="kc-card-blurb">对齐中英覆盖，避免薄弱镜像。</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="kc-faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">常见问题</h2>
+      <details>
+        <summary>每个双语站都要用 pt-BR 路径吗？</summary>
+        <p>不用。要点是并行、可校验、共享事实的语言路径，不是特定文件夹名。Mika 用 <code>/zh/</code> 承载简体中文。</p>
+      </details>
+      <details>
+        <summary>MIT 是否允许把他们的 HTML 拷进我们站点？</summary>
+        <p>MIT 对软件使用较宽松且需保留声明，但 Mika 政策是事实归因与原创改写——不把其指南当作我们的知识文章转载。</p>
+      </details>
+    </section>
+
+    <section class="kc-cta" aria-labelledby="cta-heading">
+      <h2 id="cta-heading">在规划中英知识体系？</h2>
+      <p>Mika 设计共享证据、可抓取 HTML 的双语信息架构——不制造低价值翻译垃圾页。</p>
+      <a class="kc-btn kc-btn-primary" href="/zh/#contact">联系 Mika</a>
+    </section>
+  </div>
+
+  <footer class="kc-footer">
+    <div class="kc-wrap kc-footer-bottom">
+      <p>© Mika Visibility · 研究笔记 · 非法律意见</p>
+      <div class="kc-footer-links">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

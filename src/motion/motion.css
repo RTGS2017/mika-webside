@@ -1,0 +1,70 @@
+/**
+ * Mika Motion System — shared layer styles
+ * Prefix: mm-
+ */
+
+.mm-ready {
+  --mm-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --mm-seo: #2f6bff;
+  --mm-geo: #6e56cf;
+  --mm-ok: #1f7a4d;
+  --mm-navy: #101828;
+  --mm-struct: #64748b;
+}
+
+/* Reduced motion: always show final readable state */
+@media (prefers-reduced-motion: reduce) {
+  .mm-ready [data-motion] *,
+  .mm-ready [data-motion]::before,
+  .mm-ready [data-motion]::after,
+  .mm-ready [data-anim] *,
+  .mm-ready [data-anim]::before,
+  .mm-ready [data-anim]::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .mm-ready .mm-path,
+  .mm-ready .mm-flow-path {
+    stroke-dashoffset: 0 !important;
+    opacity: 1 !important;
+  }
+
+  .mm-ready .mm-node,
+  .mm-ready .mm-stage-node,
+  .mm-ready .mm-opp-node,
+  .mm-ready .mm-cta-step,
+  .mm-ready .mm-geo-step,
+  .mm-ready .mm-audit-pipe-step,
+  .mm-ready .mm-neq,
+  .mm-ready .mm-fw-axis,
+  .mm-ready .mm-fw-cell,
+  .mm-ready .mm-bp-issue,
+  .mm-ready .mm-bp-root,
+  .mm-ready .mm-bp-action,
+  .mm-ready .hv2-problem-col,
+  .mm-ready .hv2-wall-item,
+  .mm-ready .hv2-chip {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+}
+
+/* FAQ interaction highlight — content stays in DOM */
+.hv2-faq-item.mm-faq-active {
+  border-color: #c5cddb;
+  box-shadow: 0 0 0 1px rgba(47, 107, 255, 0.18);
+}
+
+.hv2-faq-item.mm-faq-active summary h3 {
+  color: #1e4ed8;
+}
+
+/* Mobile: fewer decorative nodes */
+@media (max-width: 768px) {
+  .mm-mobile-hide,
+  .mm-ready.mm-mobile .mm-desktop-only {
+    display: none !important;
+  }
+}

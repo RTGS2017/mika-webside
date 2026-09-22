@@ -1,364 +1,625 @@
 /**
- * Mika Homepage V2 — animation layer
- * Class prefix: hv2a-
- * Visual lane owns layout; this file only adds motion states / keyframes.
+ * Mika Homepage — motion signatures (hv2a- / mm-)
+ * Layout stays in src/sections/home.css
  */
 
-/* ── Shared readiness / reduced-motion baseline ─────────────────────────── */
-
-[data-anim] {
+[data-anim],
+[data-motion] {
   --hv2a-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --hv2a-duration: 0.55s;
+  --mm-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.hv2a-ready [data-metric],
-.hv2a-ready [data-step],
-.hv2a-ready [data-phase],
-.hv2a-ready [data-tag],
-.hv2a-ready [data-question],
-.hv2a-ready [data-node],
-.hv2a-ready [data-lang],
-.hv2a-ready [data-loop-step],
-.hv2a-ready [data-bar] {
-  will-change: auto;
+/* ── Hero Visibility Field ──────────────────────────────────────────────── */
+
+.hv2-vf-stage {
+  position: relative;
+  min-height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(16, 24, 40, 0.2), rgba(16, 24, 40, 0)),
+    #101828;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* ── 1. Hero dashboard build ────────────────────────────────────────────── */
-
-[data-anim="hero-dashboard"] [data-metric] {
+.hv2-vf-stage.mm-quiet .mm-flow-path {
   opacity: 0;
-  transform: translateY(14px) scale(0.97);
-  transition:
-    opacity var(--hv2a-duration) var(--hv2a-ease),
-    transform var(--hv2a-duration) var(--hv2a-ease);
 }
 
-[data-anim="hero-dashboard"].hv2a-in [data-metric].hv2a-on {
-  opacity: 1;
-  transform: translateY(0) scale(1);
+.hv2-vf-stage.mm-flowing .mm-flow-path {
+  opacity: 0.9;
+  transition: stroke-dashoffset 1.6s var(--mm-ease), opacity 0.6s ease;
 }
 
-[data-anim="hero-dashboard"].hv2a-done [data-metric] {
-  opacity: 1;
-  transform: none;
+.hv2-vf-stage .mm-flow-path.mm-drawn {
+  stroke-dashoffset: 0 !important;
 }
 
-/* Build order cue: SEO Health → GEO Health → SEO Growth → GEO Growth */
-[data-anim="hero-dashboard"] [data-metric].hv2a-on::after {
-  content: "";
+.hv2-vf-stage.mm-converged .mm-flow-path.is-seo {
+  filter: drop-shadow(0 0 0 transparent);
+  opacity: 0.75;
+}
+
+.hv2-vf-stage.mm-converged .mm-hub {
+  transform: scale(1.04);
+}
+
+.hv2-vf {
   display: block;
-  height: 2px;
-  margin-top: 0.5rem;
-  background: currentColor;
-  opacity: 0.35;
-  transform: scaleX(0);
-  transform-origin: left center;
-  animation: hv2a-metric-underline 0.45s var(--hv2a-ease) forwards;
+  width: 100%;
+  height: auto;
+  max-height: 420px;
 }
 
-@keyframes hv2a-metric-underline {
-  to {
-    transform: scaleX(1);
-  }
+.hv2-vf-stage .mm-node {
+  opacity: 0;
+  transition: opacity 0.45s var(--mm-ease), transform 0.45s var(--mm-ease);
+  transform: translateY(4px);
 }
 
-/* ── 2. Audit crawl ─────────────────────────────────────────────────────── */
-
-[data-anim="audit-crawl"] [data-step] {
-  opacity: 0.35;
-  transform: translateX(-6px);
-  transition:
-    opacity 0.4s var(--hv2a-ease),
-    transform 0.4s var(--hv2a-ease),
-    color 0.3s ease;
-}
-
-[data-anim="audit-crawl"] [data-step].hv2a-active {
+.hv2-vf-stage .mm-node.mm-on {
   opacity: 1;
   transform: none;
 }
 
-[data-anim="audit-crawl"] [data-step].hv2a-done {
-  opacity: 0.85;
+.hv2-vf-stage.mm-final .mm-node,
+.hv2-vf-stage.mm-final .mm-flow-path {
+  opacity: 1;
+}
+
+.hv2-hero .hv2-chip {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.45s var(--mm-ease), transform 0.45s var(--mm-ease);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #e8edf5;
+}
+
+.hv2-hero .hv2-chip.mm-on,
+.hv2-hero .hv2-chip.hv2a-on {
+  opacity: 1;
   transform: none;
 }
 
-[data-anim="audit-crawl"] [data-count] {
+.hv2-hero .hv2-chip-hint {
+  color: #9aa6b8;
+}
+
+/* ── Problem converge ───────────────────────────────────────────────────── */
+
+#problem .hv2-problem-col {
+  transition: transform 0.7s var(--mm-ease), box-shadow 0.5s ease;
+}
+
+#problem.mm-problem-in .is-healthy.mm-converge {
+  transform: translateX(8px);
+}
+
+#problem.mm-problem-in .is-growing.mm-converge {
+  transform: translateX(-8px);
+}
+
+#problem .hv2-conclusion,
+#problem [data-motion-neq] {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.5s var(--mm-ease), transform 0.5s var(--mm-ease);
+}
+
+#problem .hv2-conclusion.mm-neq-on,
+#problem [data-motion-neq].mm-neq-on {
+  opacity: 1;
+  transform: none;
+}
+
+#problem .mm-neq-mark {
+  display: inline-block;
+  margin: 0 0.35em;
+  font-family: var(--hv2-mono, "IBM Plex Mono", monospace);
+  font-weight: 600;
+  color: #b45309;
+}
+
+/* ── Framework axes → cells ─────────────────────────────────────────────── */
+
+#framework .hv2-fw-colhead,
+#framework .hv2-fw-rowhead {
+  opacity: 0;
+  transition: opacity 0.4s var(--mm-ease);
+}
+
+#framework .hv2-fw-colhead.mm-on,
+#framework .hv2-fw-rowhead.mm-on {
+  opacity: 1;
+}
+
+#framework .hv2-fw-cell {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s var(--mm-ease), transform 0.5s var(--mm-ease);
+}
+
+#framework .hv2-fw-cell.mm-on {
+  opacity: 1;
+  transform: none;
+}
+
+/* Health = circle metric cue; Growth = expansion lines */
+#framework .hv2-fw-cell.is-seo .hv2-h3::before,
+#framework .hv2-fw-cell.is-geo .hv2-h3::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  vertical-align: middle;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  opacity: 0.55;
+}
+
+#framework .hv2-fw-cell.is-seo:nth-of-type(n) .hv2-h3 {
+  color: #1e4ed8;
+}
+
+#framework .hv2-fw-cell.is-geo .hv2-h3 {
+  color: #4c3aa8;
+}
+
+#framework .hv2-fw-cell.is-seo:last-of-type .hv2-h3::before,
+#framework article.hv2-fw-cell.is-seo:nth-child(even) .hv2-h3::before {
+  /* growth cells get line cue via adjacent rule below */
+}
+
+#framework .hv2-fw-cell.is-seo .hv2-fw-axis:is([class*="Next"], *),
+#framework .hv2-fw-map > article.hv2-fw-cell.is-seo:nth-of-type(3) .hv2-h3::before,
+#framework .hv2-fw-map > article.hv2-fw-cell.is-geo:nth-of-type(4) .hv2-h3::before {
+  border-radius: 0;
+  width: 12px;
+  height: 2px;
+  border: none;
+  background: currentColor;
+}
+
+/* Target Growth cells specifically by content axis labels */
+#framework .hv2-fw-cell .hv2-fw-axis {
+  position: relative;
+}
+
+#framework .hv2-fw-cell.is-seo[data-growth] .hv2-h3::before,
+#framework .hv2-fw-cell.is-geo[data-growth] .hv2-h3::before {
+  border-radius: 0;
+  width: 14px;
+  height: 2px;
+  border: 0;
+  background: currentColor;
+}
+
+/* ── Audit pipeline ─────────────────────────────────────────────────────── */
+
+.mm-audit-pipe,
+.hv2-audit-pipe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.mm-audit-pipe-step,
+.hv2-audit-step {
+  opacity: 0.4;
+  transform: translateX(-4px);
+  transition: opacity 0.4s var(--mm-ease), transform 0.4s var(--mm-ease), border-color 0.3s ease;
+}
+
+.mm-audit-pipe-step.mm-on,
+.mm-audit-pipe-step.mm-active,
+.hv2-audit-step.hv2a-active,
+.hv2-audit-step.mm-on {
+  opacity: 1;
+  transform: none;
+}
+
+.mm-audit-pipe-step.mm-active,
+.hv2-audit-step.hv2a-active {
+  border-color: rgba(47, 107, 255, 0.55);
+}
+
+[data-anim="audit-crawl"] [data-count],
+#audit [data-count] {
   font-variant-numeric: tabular-nums;
 }
 
-[data-anim="audit-crawl"].hv2a-scanning [data-count] {
-  animation: hv2a-count-pulse 0.9s ease-in-out infinite;
-}
-
-@keyframes hv2a-count-pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.72;
-  }
-}
-
-/* ── 3. Coverage / health-growth bars ───────────────────────────────────── */
+/* ── Bars ───────────────────────────────────────────────────────────────── */
 
 [data-anim="coverage"] [data-bar],
 [data-anim="health-growth"] [data-bar] {
   --hv2a-bar-target: 0;
+  --mm-bar: 0;
   display: block;
-  width: 0%;
+  width: 0% !important;
   max-width: 100%;
   transition: width 1.1s var(--hv2a-ease);
 }
 
 [data-anim="coverage"].hv2a-in [data-bar].hv2a-fill,
-[data-anim="health-growth"].hv2a-in [data-bar].hv2a-fill {
-  width: calc(var(--hv2a-bar-target) * 1%);
+[data-anim="coverage"].hv2a-in [data-bar].mm-fill,
+[data-anim="health-growth"].hv2a-in [data-bar].hv2a-fill,
+[data-anim="health-growth"].hv2a-in [data-bar].mm-fill,
+.mm-seo-in [data-bar].mm-fill,
+.mm-hg-in [data-bar].mm-fill {
+  width: calc(var(--hv2a-bar-target, var(--mm-bar, 0)) * 1%) !important;
 }
 
-[data-anim="coverage"] [data-count],
-[data-anim="health-growth"] [data-count] {
-  font-variant-numeric: tabular-nums;
+#seo-growth .hv2-opp {
+  opacity: 0;
+  transform: translateY(10px) scale(0.97);
+  transition: opacity 0.45s var(--mm-ease), transform 0.45s var(--mm-ease);
 }
 
-/* ── 4. Question matching ───────────────────────────────────────────────── */
-
-[data-anim="question-match"] [data-tag] {
-  opacity: 0.4;
-  filter: grayscale(0.4);
-  transform: scale(0.96);
-  transition:
-    opacity 0.35s var(--hv2a-ease),
-    filter 0.35s ease,
-    transform 0.35s var(--hv2a-ease),
-    box-shadow 0.35s ease;
-}
-
-[data-anim="question-match"] [data-tag].hv2a-match {
+#seo-growth .hv2-opp.mm-on {
   opacity: 1;
-  filter: none;
-  transform: scale(1);
+  transform: none;
+}
+
+/* ── Blueprint ──────────────────────────────────────────────────────────── */
+
+#blueprint [data-phase] {
+  opacity: 0.3;
+  transform: translateY(10px);
+  transition: opacity 0.5s var(--mm-ease), transform 0.5s var(--mm-ease);
+}
+
+#blueprint [data-phase].mm-on,
+#blueprint [data-phase].hv2a-expand {
+  opacity: 1;
+  transform: none;
+}
+
+#blueprint .mm-bp-issue {
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.4s var(--mm-ease), transform 0.4s var(--mm-ease);
+}
+
+#blueprint .mm-bp-issue.mm-on {
+  opacity: 1;
+  transform: none;
+}
+
+#blueprint .mm-bp-root,
+#blueprint .hv2-action {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.5s var(--mm-ease), transform 0.5s var(--mm-ease);
+}
+
+#blueprint .mm-bp-root.mm-on,
+#blueprint .hv2-action.mm-on {
+  opacity: 1;
+  transform: none;
+}
+
+#blueprint.mm-bp-merge .mm-bp-issue {
+  opacity: 0.45;
+}
+
+.mm-bp-issues {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.mm-bp-issue {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--hv2-line, #e6e9ef);
+  background: #fff;
+  font-size: 13px;
+  font-family: var(--hv2-mono, "IBM Plex Mono", monospace);
+}
+
+.mm-bp-root {
+  margin: 0 0 16px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px dashed #d5dae3;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ── GEO chain ──────────────────────────────────────────────────────────── */
+
+.mm-geo-chain {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.mm-geo-step {
+  opacity: 0;
+  transform: translateX(-6px);
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #e2dcf7;
+  background: #fff;
+  font-size: 12px;
+  font-family: var(--hv2-mono, "IBM Plex Mono", monospace);
+  color: #4c3aa8;
+  transition: opacity 0.4s var(--mm-ease), transform 0.4s var(--mm-ease);
+}
+
+.mm-geo-step.mm-on {
+  opacity: 1;
+  transform: none;
+}
+
+.mm-geo-arrow {
+  color: #a89bd4;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* ── Question wall horizontal ───────────────────────────────────────────── */
+
+.hv2-wall-viewport {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+[data-anim="question-wall"].mm-wall-track {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  width: max-content;
+  will-change: transform;
+}
+
+[data-anim="question-wall"].mm-wall-track .hv2-wall-item {
+  flex: 0 0 auto;
+  width: min(280px, 70vw);
+  min-height: 64px;
+  opacity: 1;
+}
+
+.hv2-match .mm-bridge {
+  opacity: 0.35;
+  transition: opacity 0.35s ease, box-shadow 0.35s ease;
+}
+
+.hv2-match .mm-bridge.mm-on,
+.hv2-match [data-tag].hv2a-match {
+  opacity: 1;
   box-shadow: 0 0 0 2px currentColor;
 }
 
-[data-anim="question-match"] > *:first-child {
-  transition: transform 0.45s var(--hv2a-ease), opacity 0.45s var(--hv2a-ease);
-}
-
-[data-anim="question-match"]:not(.hv2a-in) > *:first-child {
-  opacity: 0.55;
-  transform: translateY(8px);
-}
-
-[data-anim="question-match"].hv2a-in > *:first-child {
-  opacity: 1;
-  transform: none;
-}
-
-/* ── Question wall (supporting) ─────────────────────────────────────────── */
-
-[data-anim="question-wall"] [data-question] {
-  opacity: 0;
-  transform: translateY(10px);
-  transition:
-    opacity 0.4s var(--hv2a-ease),
-    transform 0.4s var(--hv2a-ease);
-}
-
-[data-anim="question-wall"].hv2a-in [data-question].hv2a-on {
-  opacity: 1;
-  transform: none;
-}
-
-[data-anim="question-wall"].hv2a-done [data-question] {
-  opacity: 1;
-  transform: none;
-}
-
-/* ── 5. Blueprint generation ────────────────────────────────────────────── */
-
-[data-anim="blueprint"] [data-phase] {
-  opacity: 0.25;
-  transform: translateY(12px);
-  max-height: 3.2rem;
-  overflow: hidden;
-  transition:
-    opacity 0.5s var(--hv2a-ease),
-    transform 0.5s var(--hv2a-ease),
-    max-height 0.55s var(--hv2a-ease);
-}
-
-[data-anim="blueprint"] [data-phase].hv2a-expand {
-  opacity: 1;
-  transform: none;
-  max-height: 40rem;
-}
-
-[data-anim="blueprint"] [data-phase="blueprint"].hv2a-ready-phase {
-  opacity: 1;
-  transform: none;
-  max-height: 40rem;
-}
-
-[data-anim="blueprint"].hv2a-blueprint-ready [data-phase="blueprint"] {
-  opacity: 1;
-}
-
-[data-anim="blueprint"].hv2a-blueprint-ready [data-phase="blueprint"]::after {
-  content: "";
-  display: block;
-  height: 2px;
-  margin-top: 0.65rem;
-  background: currentColor;
-  opacity: 0.4;
-  animation: hv2a-blueprint-ready-line 0.6s var(--hv2a-ease) forwards;
-}
-
-@keyframes hv2a-blueprint-ready-line {
-  from {
-    transform: scaleX(0);
-    transform-origin: left center;
-  }
-  to {
-    transform: scaleX(1);
-    transform-origin: left center;
-  }
-}
-
-/* ── 6. Entity graph ────────────────────────────────────────────────────── */
+/* ── Entity / multi ─────────────────────────────────────────────────────── */
 
 [data-anim="entity-graph"] [data-node] {
   opacity: 0;
-  transform: scale(0.88);
-  transition:
-    opacity 0.4s var(--hv2a-ease),
-    transform 0.4s var(--hv2a-ease);
+  transform: scale(0.92);
+  transition: opacity 0.4s var(--mm-ease), transform 0.4s var(--mm-ease);
 }
 
-[data-anim="entity-graph"] [data-node].hv2a-linked {
-  opacity: 1;
-  transform: scale(1);
-}
-
-[data-anim="entity-graph"] [data-edge],
-[data-anim="entity-graph"] .hv2a-edge {
-  stroke-dasharray: 120;
-  stroke-dashoffset: 120;
-  transition: stroke-dashoffset 0.55s var(--hv2a-ease);
-  opacity: 0.35;
-}
-
-[data-anim="entity-graph"] [data-edge].hv2a-linked,
-[data-anim="entity-graph"] .hv2a-edge.hv2a-linked {
-  stroke-dashoffset: 0;
-  opacity: 0.85;
-}
-
-[data-anim="entity-graph"].hv2a-done [data-node] {
+[data-anim="entity-graph"] [data-node].hv2a-linked,
+[data-anim="entity-graph"] [data-node].mm-on {
   opacity: 1;
   transform: none;
 }
 
-/* ── 7. Language sync ───────────────────────────────────────────────────── */
+#entity .hv2-entity-metric {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s var(--mm-ease), transform 0.4s var(--mm-ease);
+}
+
+#entity .hv2-entity-metric.mm-on {
+  opacity: 1;
+  transform: none;
+}
+
+.mm-multi-entity {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 14px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  background: #111827;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.4s var(--mm-ease), transform 0.4s var(--mm-ease);
+}
+
+.mm-multi-entity.mm-on {
+  opacity: 1;
+  transform: none;
+}
 
 [data-anim="language-sync"] [data-lang] {
   opacity: 0;
-  transform: translateY(12px);
-  max-height: 2.5rem;
-  overflow: hidden;
-  transition:
-    opacity 0.45s var(--hv2a-ease),
-    transform 0.45s var(--hv2a-ease),
-    max-height 0.5s var(--hv2a-ease);
+  transform: translateY(10px);
+  transition: opacity 0.4s var(--mm-ease), transform 0.4s var(--mm-ease);
 }
 
-[data-anim="language-sync"] [data-lang].hv2a-sync {
+[data-anim="language-sync"] [data-lang].hv2a-sync,
+[data-anim="language-sync"] [data-lang].mm-on {
   opacity: 1;
   transform: none;
-  max-height: 24rem;
 }
 
-[data-anim="language-sync"].hv2a-done [data-lang] {
+#multilingual .hv2-consistency {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.45s var(--mm-ease), transform 0.45s var(--mm-ease);
+}
+
+#multilingual .hv2-consistency.mm-on {
   opacity: 1;
   transform: none;
-  max-height: none;
-  overflow: visible;
 }
 
-/* ── 8. Continuous loop ─────────────────────────────────────────────────── */
+/* ── Methodology ring ───────────────────────────────────────────────────── */
+
+.hv2-loop {
+  position: relative;
+}
+
+.mm-method-ring-track {
+  position: absolute;
+  inset: -6px;
+  border-radius: 12px;
+  pointer-events: none;
+  background: conic-gradient(
+    from -90deg,
+    #2f6bff calc(var(--mm-ring, 0) * 100%),
+    transparent 0
+  );
+  opacity: 0.18;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  padding: 2px;
+}
 
 [data-anim="loop"] [data-loop-step] {
-  opacity: 0.35;
-  transform: scale(0.98);
-  transition:
-    opacity 0.35s ease,
-    transform 0.35s var(--hv2a-ease),
-    color 0.3s ease;
+  opacity: 0.4;
+  transition: opacity 0.35s ease, transform 0.35s var(--mm-ease), border-color 0.3s ease;
+}
+
+[data-anim="loop"] [data-loop-step].hv2a-loop-active,
+[data-anim="loop"] [data-loop-step].mm-passed {
+  opacity: 1;
 }
 
 [data-anim="loop"] [data-loop-step].hv2a-loop-active {
-  opacity: 1;
+  border-color: #2f6bff;
   transform: scale(1.02);
 }
 
-[data-anim="loop"].hv2a-paused [data-loop-step] {
-  transition: none;
+/* ── CTA chain ──────────────────────────────────────────────────────────── */
+
+.mm-cta-chain {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
 }
 
-@keyframes hv2a-loop-pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.78;
-  }
+.mm-cta-step {
+  opacity: 0;
+  transform: translateY(6px);
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 12px;
+  font-family: var(--hv2-mono, "IBM Plex Mono", monospace);
+  color: #d5dceb;
+  transition: opacity 0.4s var(--mm-ease), transform 0.4s var(--mm-ease);
 }
 
-[data-anim="loop"]:not(.hv2a-paused) [data-loop-step].hv2a-loop-active {
-  animation: hv2a-loop-pulse 1.4s ease-in-out infinite;
+.mm-cta-step.mm-on {
+  opacity: 1;
+  transform: none;
 }
 
-/* ── prefers-reduced-motion: show final state, keep information ─────────── */
+.mm-cta-arrow {
+  color: #93a0b5;
+  font-size: 12px;
+}
+
+/* ── prefers-reduced-motion ─────────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
   [data-anim] *,
+  [data-motion] *,
   [data-anim]::before,
-  [data-anim]::after {
+  [data-anim]::after,
+  [data-motion]::before,
+  [data-motion]::after {
     animation: none !important;
     transition: none !important;
   }
 
-  [data-anim="hero-dashboard"] [data-metric],
-  [data-anim="question-wall"] [data-question],
+  .hv2-vf-stage .mm-node,
+  .hv2-vf-stage .mm-flow-path,
+  .hv2-hero .hv2-chip,
+  #problem .hv2-problem-col,
+  #problem .hv2-conclusion,
+  #framework .hv2-fw-cell,
+  #framework .hv2-fw-colhead,
+  #framework .hv2-fw-rowhead,
+  .mm-audit-pipe-step,
+  .hv2-audit-step,
+  #seo-growth .hv2-opp,
+  #blueprint [data-phase],
+  #blueprint .mm-bp-issue,
+  #blueprint .mm-bp-root,
+  #blueprint .hv2-action,
+  .mm-geo-step,
   [data-anim="entity-graph"] [data-node],
+  #entity .hv2-entity-metric,
+  .mm-multi-entity,
   [data-anim="language-sync"] [data-lang],
-  [data-anim="blueprint"] [data-phase],
-  [data-anim="question-match"] [data-tag],
-  [data-anim="audit-crawl"] [data-step],
+  #multilingual .hv2-consistency,
   [data-anim="loop"] [data-loop-step],
-  [data-anim="question-match"] > *:first-child {
+  .mm-cta-step,
+  [data-anim="question-wall"] .hv2-wall-item {
     opacity: 1 !important;
     transform: none !important;
-    filter: none !important;
-    max-height: none !important;
-    overflow: visible !important;
   }
 
   [data-anim="coverage"] [data-bar],
   [data-anim="health-growth"] [data-bar] {
-    width: calc(var(--hv2a-bar-target, 0) * 1%) !important;
-    transition: none !important;
+    width: calc(var(--hv2a-bar-target, var(--mm-bar, 0)) * 1%) !important;
   }
 
-  [data-anim="hero-dashboard"] [data-metric]::after,
-  [data-anim="blueprint"] [data-phase="blueprint"]::after {
-    animation: none !important;
+  [data-anim="question-wall"].mm-wall-track {
     transform: none !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: auto !important;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .hv2-wall-viewport {
+    mask-image: none;
+    -webkit-mask-image: none;
+    overflow: visible;
   }
 
-  [data-anim="loop"] [data-loop-step].hv2a-loop-active {
-    animation: none !important;
+  [data-anim="question-wall"].mm-wall-track {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: auto;
+    transform: none !important;
+    flex-wrap: wrap;
+  }
+
+  [data-anim="question-wall"].mm-wall-track .hv2-wall-item {
+    width: auto;
+  }
+
+  .mm-geo-arrow:nth-of-type(n + 6),
+  .mm-desktop-only {
+    display: none;
+  }
+
+  .mm-method-ring-track {
+    display: none;
   }
 }
