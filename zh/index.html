@@ -229,6 +229,23 @@
 </head>
 <body>
 <div class="hv2-root">
+  <nav class="mika-rail" aria-label="章节">
+    <a href="#hero" data-rail="hero"><span class="mika-rail-no">01</span><span class="mika-rail-name">可见性</span></a>
+    <a href="#problem" data-rail="problem"><span class="mika-rail-no">02</span><span class="mika-rail-name">为什么需要</span></a>
+    <a href="#framework" data-rail="framework"><span class="mika-rail-no">03</span><span class="mika-rail-name">核心框架</span></a>
+    <a href="#audit" data-rail="audit"><span class="mika-rail-no">04</span><span class="mika-rail-name">深度审计</span></a>
+    <a href="#health-growth" data-rail="health-growth"><span class="mika-rail-no">05</span><span class="mika-rail-name">健康与增长</span></a>
+    <a href="#blueprint" data-rail="blueprint"><span class="mika-rail-no">06</span><span class="mika-rail-name">优化蓝图</span></a>
+    <a href="#seo-growth" data-rail="seo-growth"><span class="mika-rail-no">07</span><span class="mika-rail-name">搜索机会</span></a>
+    <a href="#geo" data-rail="geo"><span class="mika-rail-no">08</span><span class="mika-rail-name">答案可见性</span></a>
+    <a href="#questions" data-rail="questions"><span class="mika-rail-no">09</span><span class="mika-rail-name">问题覆盖</span></a>
+    <a href="#entity" data-rail="entity"><span class="mika-rail-no">10</span><span class="mika-rail-name">实体与证据</span></a>
+    <a href="#multilingual" data-rail="multilingual"><span class="mika-rail-no">11</span><span class="mika-rail-name">多语言</span></a>
+    <a href="#methodology" data-rail="methodology"><span class="mika-rail-no">12</span><span class="mika-rail-name">方法</span></a>
+    <a href="#faq" data-rail="faq"><span class="mika-rail-no">13</span><span class="mika-rail-name">常见问题</span></a>
+    <a href="#cta" data-rail="cta"><span class="mika-rail-no">14</span><span class="mika-rail-name">联系</span></a>
+  </nav>
+
   <a class="hv2-skip" href="#main">跳到正文</a>
 
   <header class="hv2-nav" id="nav">
@@ -237,6 +254,10 @@
         <img src="../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
         <span class="hv2-brand-name">Mika <span>Visibility</span></span>
       </a>
+      <div class="hv2-nav-end">
+      <nav class="hv2-page-nav" aria-label="页面">
+        <a href="/zh/knowledge/">知识中心</a>
+      </nav>
       <div class="hv2-nav-tools">
         <a class="hv2-tool" href="/" hrefLang="en" lang="en">EN</a>
         <button type="button" class="hv2-tool hv2-theme-btn" data-theme-toggle aria-pressed="false" aria-label="关灯" data-label-on="关灯" data-label-off="开灯">
@@ -245,6 +266,7 @@
           <span class="hv2-theme-off">开灯</span>
           <span class="hv2-theme-on">关灯</span>
         </button>
+      </div>
       </div>
     </div>
   </header>
@@ -358,7 +380,7 @@
       </div>
     </section>
 
-    <section class="hv2-section hv2-audit mika-hud" data-system="audit-engine" data-status="scanning" data-motion-build id="audit" data-anim="audit-crawl" aria-labelledby="audit-title">
+    <section class="hv2-section hv2-audit mika-hud is-reveal" data-system="audit-engine" data-status="scanning" data-motion-build id="audit" data-anim="audit-crawl" aria-labelledby="audit-title">
       <div class="hv2-wrap">
         <header class="hv2-section-head">
           <p class="hv2-kicker">深度审计</p>
@@ -412,7 +434,7 @@
             <span class="hv2-stat-unit">张图片</span>
           </div>
         </div>
-        <div class="hv2-audit-steps mm-audit-pipe" aria-label="审计步骤">
+        <div class="hv2-audit-steps mm-audit-pipe" data-cut-fold aria-label="审计步骤">
           <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">1</span>URL</div>
           <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">2</span>链接</div>
           <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">3</span>主题</div>
@@ -557,7 +579,7 @@
       </div>
     </section>
 
-    <section class="hv2-section hv2-seo-growth mika-hud" data-system="seo-growth" data-status="opportunity" data-motion-build id="seo-growth" data-anim="coverage" aria-labelledby="seo-growth-title">
+    <section class="hv2-section hv2-seo-growth mika-hud is-reveal" data-system="seo-growth" data-status="opportunity" data-motion-build id="seo-growth" data-anim="coverage" aria-labelledby="seo-growth-title">
       <div class="hv2-wrap">
         <header class="hv2-section-head">
           <p class="hv2-kicker">SEO 增长</p>
@@ -591,7 +613,7 @@
             <div class="hv2-cov-track"><span class="hv2-cov-fill" data-bar="58" style="width:58%"></span></div>
           </div>
         </div>
-        <div class="hv2-opps">
+        <div class="hv2-opps" data-cut-fold>
           <article class="hv2-panel hv2-panel-pad hv2-opp">
             <p class="hv2-opp-num"><span data-count="18">18</span></p>
             <p class="hv2-opp-label">主题机会</p>
@@ -643,7 +665,7 @@
       </div>
     </section>
 
-    <section class="hv2-section hv2-questions mika-hud" data-system="questions" data-status="ready" data-motion-build id="questions" aria-labelledby="questions-title">
+    <section class="hv2-section hv2-questions mika-hud is-reveal" data-system="questions" data-status="ready" data-motion-build id="questions" aria-labelledby="questions-title">
       <div class="hv2-wrap">
         <header class="hv2-section-head">
           <p class="hv2-kicker">搜索问题</p>
@@ -817,7 +839,7 @@
       </div>
     </section>
 
-    <section class="hv2-section hv2-faq mika-hud" data-system="faq" data-status="ready" data-motion-build id="faq" aria-labelledby="faq-title">
+    <section class="hv2-section hv2-faq mika-hud is-reveal" data-system="faq" data-status="ready" data-motion-build id="faq" aria-labelledby="faq-title">
       <div class="hv2-wrap">
         <header class="hv2-section-head">
           <p class="hv2-kicker">常见问题</p>

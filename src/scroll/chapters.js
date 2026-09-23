@@ -1,18 +1,15 @@
 /**
- * Desktop wheel moves one homepage chapter at a time.
- * Touch, keyboard focus in fields, and reduced motion keep native scrolling.
+ * Homepage is cut into viewport pages and scrolls natively.
+ * Long sections stay clipped until one more wheel plays a reveal.
  * window.MikaChapters.init()
  */
 (function (global) {
   "use strict";
 
-  var THRESHOLD = 24;
-  var DURATION = 980;
+  var LOCK_MS = 720;
+  var ALIGN = 64;
+  var MIN_SHIFT = 48;
   var lockedUntil = 0;
-  var bucket = 0;
-  var bucketAt = 0;
-  var animating = false;
-  var rafId = 0;
 
   function fineDesktop() {
     if (!global.matchMedia) return false;
@@ -23,151 +20,139 @@
     return global.matchMedia && global.matchMedia("(prefers-reduced-motion: reduce)").matches;
   }
 
+  function sliceMode() {
+    return fineDesktop() && !reduced();
+  }
+
   function sections() {
     return Array.prototype.slice.call(global.document.querySelectorAll("main .hv2-section"));
   }
 
-  function currentIndex(list) {
-    var best = 0;
+  function foldTop(wrap, fold) {
+    var top = 0;
+    var el = fold;
+    while (el && el !== wrap) {
+      top += el.offsetTop;
+      el = el.offsetParent;
+    }
+    return top;
+  }
+
+  function measure(section) {
+    var wrap = section.querySelector(":scope > .hv2-wrap");
+    if (!wrap) return 0;
+    var cs = global.getComputedStyle(section);
+    var padTop = parseFloat(cs.paddingTop) || 0;
+    var padBottom = parseFloat(cs.paddingBottom) || 0;
+    var available = section.clientHeight - padTop - padBottom;
+    var overflow = Math.max(0, Math.ceil(wrap.scrollHeight - available));
+    var clip = 0;
+    var fold = section.querySelector("[data-cut-fold]");
+    if (fold && wrap.scrollHeight >= available - 8) {
+      var top = foldTop(wrap, fold);
+      if (top < available - 24) {
+        clip = Math.max(0, Math.ceil(Math.min(wrap.scrollHeight, available) - top));
+        section.style.setProperty("--fold-line", padTop + top + "px");
+      } else {
+        section.style.removeProperty("--fold-line");
+      }
+    } else {
+      section.style.removeProperty("--fold-line");
+    }
+    section.style.setProperty("--cut-clip", clip + "px");
+    section.style.setProperty("--cut-shift", overflow + "px");
+    section.classList.toggle("has-fold", clip >= 24);
+    return Math.max(clip, overflow);
+  }
+
+  function measureAll() {
+    sections().forEach(function (section) {
+      if (section.classList.contains("is-reveal")) measure(section);
+    });
+  }
+
+  function alignedSection() {
+    var list = sections();
+    var best = null;
     var bestDist = Infinity;
-    list.forEach(function (section, index) {
+    list.forEach(function (section) {
       var dist = Math.abs(section.getBoundingClientRect().top);
       if (dist < bestDist) {
         bestDist = dist;
-        best = index;
+        best = section;
       }
     });
+    if (!best || bestDist > ALIGN) return null;
     return best;
   }
 
-  function atEdge(section, direction) {
-    var rect = section.getBoundingClientRect();
-    if (direction > 0) return rect.bottom <= global.innerHeight + 12;
-    return rect.top >= -12;
-  }
-
-  function ease(t) {
-    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-  }
-
-  function targetY(el) {
-    var nav = global.document.querySelector(".hv2-nav");
-    var offset = nav ? nav.offsetHeight : 0;
-    var y = el.getBoundingClientRect().top + (global.pageYOffset || global.scrollY || 0) - offset;
-    return Math.max(0, y);
-  }
-
-  function finishMove() {
-    animating = false;
-    if (rafId) global.cancelAnimationFrame(rafId);
-    rafId = 0;
-    global.document.documentElement.classList.remove("is-chapter-moving");
-    lockedUntil = Date.now() + 140;
-  }
-
-  function go(list, index) {
-    var target = list[index];
-    if (!target || animating) return;
-    var start = global.pageYOffset || global.scrollY || 0;
-    var dest = targetY(target);
-    if (Math.abs(dest - start) < 2) return;
-    if (reduced()) {
-      global.scrollTo(0, dest);
-      return;
+  function syncMode() {
+    var on = sliceMode();
+    global.document.documentElement.classList.toggle("mika-slice", on);
+    if (!on) {
+      sections().forEach(function (section) {
+        section.classList.remove("is-open");
+      });
+    } else {
+      measureAll();
     }
-    animating = true;
-    global.document.documentElement.classList.add("is-chapter-moving");
-    var t0 = 0;
-    function frame(now) {
-      if (!t0) t0 = now;
-      var p = Math.min(1, (now - t0) / DURATION);
-      global.scrollTo(0, start + (dest - start) * ease(p));
-      if (p < 1) rafId = global.requestAnimationFrame(frame);
-      else {
-        global.scrollTo(0, dest);
-        finishMove();
-      }
-    }
-    rafId = global.requestAnimationFrame(frame);
   }
 
   function onWheel(event) {
-    if (!fineDesktop() || reduced()) return;
-    if (event.ctrlKey) return;
-    if (animating) {
+    if (!sliceMode() || event.ctrlKey) return;
+    if (Date.now() < lockedUntil) {
       event.preventDefault();
       return;
     }
-    var list = sections();
-    if (list.length < 2) return;
-    var index = currentIndex(list);
-    var section = list[index];
-    var direction = event.deltaY > 0 ? 1 : -1;
-    if (!atEdge(section, direction)) return;
-
-    event.preventDefault();
-    var now = Date.now();
-    if (now < lockedUntil) return;
-    if (now - bucketAt > 240) bucket = 0;
-    bucketAt = now;
-    bucket += event.deltaY;
-    if (Math.abs(bucket) < THRESHOLD) return;
-    bucket = 0;
-    var next = index + (direction > 0 ? 1 : -1);
-    if (next < 0 || next >= list.length) return;
-    go(list, next);
+    var section = alignedSection();
+    if (!section || !section.classList.contains("is-reveal")) return;
+    var shift = measure(section);
+    if (shift < MIN_SHIFT) return;
+    var open = section.classList.contains("is-open");
+    var dir = event.deltaY > 0 ? 1 : event.deltaY < 0 ? -1 : 0;
+    if (!dir) return;
+    if (dir > 0 && !open) {
+      event.preventDefault();
+      section.classList.add("is-open");
+      lockedUntil = Date.now() + LOCK_MS;
+      return;
+    }
+    if (dir < 0 && open) {
+      event.preventDefault();
+      section.classList.remove("is-open");
+      lockedUntil = Date.now() + LOCK_MS;
+    }
   }
 
   function onKey(event) {
-    if (!fineDesktop() || reduced()) return;
+    if (!sliceMode()) return;
     var tag = (event.target && event.target.tagName) || "";
     if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || (event.target && event.target.isContentEditable)) return;
     var map = { ArrowDown: 1, PageDown: 1, ArrowUp: -1, PageUp: -1 };
     if (!map[event.key]) return;
-    var list = sections();
-    if (!list.length) return;
-    var index = currentIndex(list);
-    if (!atEdge(list[index], map[event.key])) return;
-    event.preventDefault();
-    var next = index + map[event.key];
-    if (next < 0 || next >= list.length) return;
-    go(list, next);
-  }
-
-  function enableSnap() {
-    if (!fineDesktop() || reduced()) return;
-    global.document.documentElement.classList.add("mika-chapter-scroll");
-  }
-
-  function bindStates() {
-    var list = sections();
-    if (!list.length || typeof global.IntersectionObserver === "undefined") return;
-    var seen = {};
-    var io = new global.IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        var el = entry.target;
-        var id = el.id || "";
-        if (!seen[id]) {
-          seen[id] = true;
-          if (entry.intersectionRatio > 0.55) el.setAttribute("data-chapter-state", "active");
-          return;
-        }
-        if (entry.intersectionRatio > 0.55) el.setAttribute("data-chapter-state", "active");
-        else if (entry.isIntersecting) {
-          el.setAttribute("data-chapter-state", entry.boundingClientRect.top > 40 ? "enter" : "exit");
-        } else {
-          el.setAttribute("data-chapter-state", "exit");
-        }
-      });
-    }, { threshold: [0, 0.25, 0.55, 0.85] });
-    list.forEach(function (section) { io.observe(section); });
+    var section = alignedSection();
+    if (!section || !section.classList.contains("is-reveal")) return;
+    if (measure(section) < MIN_SHIFT) return;
+    var open = section.classList.contains("is-open");
+    if (map[event.key] > 0 && !open) {
+      event.preventDefault();
+      section.classList.add("is-open");
+    } else if (map[event.key] < 0 && open) {
+      event.preventDefault();
+      section.classList.remove("is-open");
+    }
   }
 
   function init() {
-    enableSnap();
-    bindStates();
+    syncMode();
     global.addEventListener("wheel", onWheel, { passive: false });
     global.addEventListener("keydown", onKey);
+    global.addEventListener("resize", function () {
+      syncMode();
+    });
+    if (global.document.fonts && global.document.fonts.ready) {
+      global.document.fonts.ready.then(measureAll);
+    }
   }
 
   if (global.document.readyState === "loading") {
@@ -176,5 +161,5 @@
     init();
   }
 
-  global.MikaChapters = { init: init };
+  global.MikaChapters = { init: init, measure: measureAll };
 })(window);

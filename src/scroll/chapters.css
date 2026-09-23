@@ -1,4 +1,4 @@
-/* Chapter rail stays on the left. Snap yields while a chapter ease is running. */
+/* Left chapter rail */
 .mika-rail {
   left: 18px;
   right: auto;
@@ -21,94 +21,59 @@
   color: inherit;
 }
 
-html.mika-chapter-scroll {
+/* Viewport cuts. Native scroll moves between pages.
+   Long .is-reveal sections play one transform to show the clipped rest. */
+
+html.mika-slice {
   scroll-snap-type: y proximity;
-  scroll-padding-top: 64px;
   scroll-behavior: auto;
 }
 
-html.mika-chapter-scroll.is-chapter-moving {
-  scroll-snap-type: none;
-}
-
-html.mika-chapter-scroll .hv2-section {
+html.mika-slice .hv2-main > .hv2-section {
+  height: 100svh;
+  max-height: 100svh;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: calc(var(--hv2-nav-h) + 28px) 0 32px;
   scroll-snap-align: start;
   scroll-snap-stop: normal;
-  min-height: 100svh;
+  position: relative;
 }
 
-@media (max-width: 1100px) {
-  html.mika-chapter-scroll {
-    scroll-snap-type: y proximity;
-  }
-  html.mika-chapter-scroll .hv2-section {
-    scroll-snap-stop: normal;
-    min-height: auto;
-  }
+html.mika-slice .hv2-section.is-reveal > .hv2-wrap {
+  transition: transform 0.72s cubic-bezier(0.22, 0.8, 0.2, 1), clip-path 0.72s cubic-bezier(0.22, 0.8, 0.2, 1);
+  clip-path: inset(0 0 var(--cut-clip, 0px) 0);
+  will-change: transform, clip-path;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html.mika-chapter-scroll {
-    scroll-snap-type: none;
-  }
-  html.mika-chapter-scroll .hv2-section {
-    scroll-snap-align: none;
-    min-height: auto;
-  }
+html.mika-slice .hv2-section.is-reveal.is-open > .hv2-wrap {
+  clip-path: inset(0 0 0 0);
+  transform: translateY(calc(var(--cut-shift, 0px) * -1));
 }
 
-@keyframes mika-ch-build {
-  from { transform: translateY(18px); }
-  to { transform: none; }
-}
-@keyframes mika-ch-scan {
-  from { transform: translateY(10px); opacity: 0.72; }
-  to { transform: none; opacity: 1; }
-}
-@keyframes mika-ch-expand {
-  from { transform: scale(0.985); }
-  to { transform: none; }
-}
-@keyframes mika-ch-signal {
-  from { transform: translateX(12px); }
-  to { transform: none; }
-}
-@keyframes mika-ch-focus {
-  from { opacity: 0.8; }
-  to { opacity: 1; }
-}
-@keyframes mika-ch-converge {
-  from { transform: translateY(24px) scale(0.98); }
-  to { transform: none; }
+html.mika-slice .hv2-section.is-reveal:not(.is-open)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 88px;
+  background: linear-gradient(to bottom, transparent, var(--mika-bg));
+  pointer-events: none;
+  z-index: 2;
 }
 
-html.mika-chapter-scroll .hv2-section[data-chapter-state="enter"] > .hv2-wrap {
-  animation: mika-ch-build 680ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+html.mika-slice .hv2-section.is-reveal.has-fold:not(.is-open)::after {
+  top: var(--fold-line);
+  bottom: auto;
 }
-html.mika-chapter-scroll #audit[data-chapter-state="enter"] > .hv2-wrap,
-html.mika-chapter-scroll #health-growth[data-chapter-state="enter"] > .hv2-wrap {
-  animation-name: mika-ch-scan;
-}
-html.mika-chapter-scroll #seo-growth[data-chapter-state="enter"] > .hv2-wrap,
-html.mika-chapter-scroll #geo[data-chapter-state="enter"] > .hv2-wrap {
-  animation-name: mika-ch-expand;
-}
-html.mika-chapter-scroll #questions[data-chapter-state="enter"] > .hv2-wrap,
-html.mika-chapter-scroll #entity[data-chapter-state="enter"] > .hv2-wrap {
-  animation-name: mika-ch-signal;
-}
-html.mika-chapter-scroll #faq[data-chapter-state="enter"] > .hv2-wrap {
-  animation-name: mika-ch-focus;
-}
-html.mika-chapter-scroll #blueprint[data-chapter-state="enter"] > .hv2-wrap {
-  animation-name: mika-ch-build;
-}
-html.mika-chapter-scroll #cta[data-chapter-state="enter"] > .hv2-wrap {
-  animation-name: mika-ch-converge;
+
+html.mika-slice .hv2-section.is-reveal:nth-of-type(even):not(.is-open)::after {
+  background: linear-gradient(to bottom, transparent, var(--mika-bg-2));
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html.mika-chapter-scroll .hv2-section[data-chapter-state="enter"] > .hv2-wrap {
-    animation: none;
+  html.mika-slice .hv2-section.is-reveal > .hv2-wrap {
+    transition: none;
   }
 }

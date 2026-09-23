@@ -229,6 +229,23 @@
 </head>
 <body>
 <div class="hv2-root">
+  <nav class="mika-rail" aria-label="Chapters">
+    <a href="#hero" data-rail="hero"><span class="mika-rail-no">01</span><span class="mika-rail-name">Visibility</span></a>
+    <a href="#problem" data-rail="problem"><span class="mika-rail-no">02</span><span class="mika-rail-name">Why it matters</span></a>
+    <a href="#framework" data-rail="framework"><span class="mika-rail-no">03</span><span class="mika-rail-name">Framework</span></a>
+    <a href="#audit" data-rail="audit"><span class="mika-rail-no">04</span><span class="mika-rail-name">Deep audit</span></a>
+    <a href="#health-growth" data-rail="health-growth"><span class="mika-rail-no">05</span><span class="mika-rail-name">Health and growth</span></a>
+    <a href="#blueprint" data-rail="blueprint"><span class="mika-rail-no">06</span><span class="mika-rail-name">Blueprint</span></a>
+    <a href="#seo-growth" data-rail="seo-growth"><span class="mika-rail-no">07</span><span class="mika-rail-name">Search opportunity</span></a>
+    <a href="#geo" data-rail="geo"><span class="mika-rail-no">08</span><span class="mika-rail-name">Answer visibility</span></a>
+    <a href="#questions" data-rail="questions"><span class="mika-rail-no">09</span><span class="mika-rail-name">Questions</span></a>
+    <a href="#entity" data-rail="entity"><span class="mika-rail-no">10</span><span class="mika-rail-name">Evidence</span></a>
+    <a href="#multilingual" data-rail="multilingual"><span class="mika-rail-no">11</span><span class="mika-rail-name">Languages</span></a>
+    <a href="#methodology" data-rail="methodology"><span class="mika-rail-no">12</span><span class="mika-rail-name">Method</span></a>
+    <a href="#faq" data-rail="faq"><span class="mika-rail-no">13</span><span class="mika-rail-name">FAQ</span></a>
+    <a href="#cta" data-rail="cta"><span class="mika-rail-no">14</span><span class="mika-rail-name">Contact</span></a>
+  </nav>
+
   <a class="hv2-skip" href="#main">Skip to content</a>
 
   <header class="hv2-nav" id="nav">
@@ -237,6 +254,10 @@
         <img src="./assets/logo.svg" alt="Mika Visibility" width="22" height="22">
         <span class="hv2-brand-name">Mika <span>Visibility</span></span>
       </a>
+      <div class="hv2-nav-end">
+      <nav class="hv2-page-nav" aria-label="Pages">
+        <a href="/knowledge/">Knowledge</a>
+      </nav>
       <div class="hv2-nav-tools">
         <a class="hv2-tool" href="/zh/" hrefLang="zh-Hans" lang="zh-Hans">中文</a>
         <button type="button" class="hv2-tool hv2-theme-btn" data-theme-toggle aria-pressed="false" aria-label="Switch to dark" data-label-on="Switch to dark" data-label-off="Switch to light">
@@ -245,6 +266,7 @@
           <span class="hv2-theme-off">Light</span>
           <span class="hv2-theme-on">Dark</span>
         </button>
+      </div>
       </div>
     </div>
   </header>
@@ -362,7 +384,7 @@
     </section>
 
     <!-- Audit -->
-    <section class="hv2-section hv2-audit mika-hud" data-system="audit-engine" data-status="scanning" data-motion-build id="audit" data-anim="audit-crawl" aria-labelledby="audit-title">
+    <section class="hv2-section hv2-audit mika-hud is-reveal" data-system="audit-engine" data-status="scanning" data-motion-build id="audit" data-anim="audit-crawl" aria-labelledby="audit-title">
       <div class="hv2-wrap">
         <header class="hv2-section-head">
           <p class="hv2-kicker">Deep audit</p>
@@ -416,7 +438,7 @@
             <span class="hv2-stat-unit">images</span>
           </div>
         </div>
-        <div class="hv2-audit-steps mm-audit-pipe" aria-label="Audit steps">
+        <div class="hv2-audit-steps mm-audit-pipe" data-cut-fold aria-label="Audit steps">
           <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">1</span>URL</div>
           <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">2</span>Links</div>
           <div class="hv2-audit-step mm-audit-pipe-step"><span class="hv2-audit-step-idx">3</span>Topics</div>
@@ -584,7 +606,7 @@
     </section>
 
     <!-- SEO Growth -->
-    <section class="hv2-section hv2-seo-growth mika-hud" data-system="seo-growth" data-status="opportunity" data-motion-build id="seo-growth" data-anim="coverage" aria-labelledby="seo-growth-title">
+    <section class="hv2-section hv2-seo-growth mika-hud is-reveal" data-system="seo-growth" data-status="opportunity" data-motion-build id="seo-growth" data-anim="coverage" aria-labelledby="seo-growth-title">
       <div class="hv2-wrap">
         <header class="hv2-section-head">
           <p class="hv2-kicker">SEO Growth</p>
@@ -618,7 +640,7 @@
             <div class="hv2-cov-track"><span class="hv2-cov-fill" data-bar="58" style="width:58%"></span></div>
           </div>
         </div>
-        <div class="hv2-opps">
+        <div class="hv2-opps" data-cut-fold>
           <article class="hv2-panel hv2-panel-pad hv2-opp">
             <p class="hv2-opp-num"><span data-count="18">18</span></p>
             <p class="hv2-opp-label">topic opportunities</p>
@@ -672,7 +694,7 @@
     </section>
 
     <!-- Questions -->
-    <section class="hv2-section hv2-questions mika-hud" data-system="questions" data-status="ready" data-motion-build id="questions" aria-labelledby="questions-title">
+    <section class="hv2-section hv2-questions mika-hud is-reveal" data-system="questions" data-status="ready" data-motion-build id="questions" aria-labelledby="questions-title">
       <div class="hv2-wrap">
         <header class="hv2-section-head">
           <p class="hv2-kicker">Search questions</p>
@@ -850,7 +872,7 @@
     </section>
 
     <!-- FAQ -->
-    <section class="hv2-section hv2-faq mika-hud" data-system="faq" data-status="ready" data-motion-build id="faq" aria-labelledby="faq-title">
+    <section class="hv2-section hv2-faq mika-hud is-reveal" data-system="faq" data-status="ready" data-motion-build id="faq" aria-labelledby="faq-title">
       <div class="hv2-wrap">
         <header class="hv2-section-head">
           <p class="hv2-kicker">FAQ</p>
