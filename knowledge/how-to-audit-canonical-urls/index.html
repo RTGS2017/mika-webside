@@ -35,7 +35,7 @@
         "headline": "How to Audit Canonical URLs",
         "description": "Verify canonical tags and preferred URL signals so duplicates do not fight over which page should represent the content.",
         "datePublished": "2026-09-22",
-        "dateModified": "2026-09-22",
+        "dateModified": "2026-09-23",
         "inLanguage": "en",
         "author": {"@type": "Organization", "name": "Mika"},
         "publisher": {"@type": "Organization", "name": "Mika", "url": "https://mikaovo.ai/"},
@@ -54,7 +54,7 @@
         "mainEntity": [
           {"@type": "Question", "name": "Does a self-referencing canonical guarantee indexing?", "acceptedAnswer": {"@type": "Answer", "text": "No. A self-referencing canonical states the preferred URL for that document. Indexing still depends on crawl access, usefulness, and other signals. The audit checks consistency of preferred-URL signals, not index guarantees."}},
           {"@type": "Question", "name": "What if two near-duplicate pages each claim to be canonical?", "acceptedAnswer": {"@type": "Answer", "text": "That conflict is a health issue. Choose one preferred URL, point the other at it (or consolidate content), and align internal links and sitemap entries to the chosen version."}},
-          {"@type": "Question", "name": "Should parameter URLs always canonicalize to the clean URL?", "acceptedAnswer": {"@type": "Answer", "text": "Often yes when parameters only change sorting or tracking and not unique content. If a parameter creates genuinely different content that should be indexed, treat it as its own page with clear unique value—not as a silent duplicate."}}
+          {"@type": "Question", "name": "Should parameter URLs always canonicalize to the clean URL?", "acceptedAnswer": {"@type": "Answer", "text": "Often yes when parameters only change sorting or tracking and not unique content. If a parameter creates genuinely different content that should be indexed, treat it as its own page with clear unique value鈥攏ot as a silent duplicate."}}
         ]
       }
     ]
@@ -71,13 +71,13 @@
       <div class="kc-nav-links">
         <a href="/">Home</a>
         <a href="/knowledge/">Knowledge Center</a>
-        <a href="/zh/knowledge/how-to-audit-canonical-urls/">中文</a>
+        <a href="/zh/knowledge/how-to-audit-canonical-urls/">涓枃</a>
       </div>
     </nav>
   </header>
   <main>
     <header class="kc-hero">
-      <p class="kc-meta"><span>SEO</span> · <time datetime="2026-09-22">2026-09-22</time></p>
+      <p class="kc-meta"><span>SEO</span> 路 <time datetime="2026-09-23">2026-09-23</time></p>
       <h1>How to Audit Canonical URLs</h1>
       <p>Verify that canonical tags and related signals point to the URL you intend to represent each page.</p>
     </header>
@@ -88,6 +88,7 @@
           <li><a href="#definition">Definition</a></li>
           <li><a href="#why-it-matters">Why it matters</a></li>
           <li><a href="#how-to-check">How to check</a></li>
+          <li><a href="#checklist-depth">Blueprint evidence</a></li>
           <li><a href="#example">Example</a></li>
           <li><a href="#mika-lens">Health vs growth</a></li>
           <li><a href="#faq">FAQ</a></li>
@@ -96,19 +97,19 @@
       <article class="kc-body">
         <section id="definition">
           <h2>Definition</h2>
-          <p>Auditing canonical URLs means checking whether each important page declares a preferred address—and whether duplicates, parameters, or HTTP/HTTPS variants agree with that choice. The canonical link element is a hint that helps consolidate signals when multiple URLs show similar content. An audit confirms the declared preferred URL exists, returns a usable status, and matches how the site links and sitemaps present the page.</p>
+          <p>Auditing canonical URLs means checking whether each important page declares a preferred address鈥攁nd whether duplicates, parameters, or HTTP/HTTPS variants agree with that choice. The canonical link element is a hint that helps consolidate signals when multiple URLs show similar content. An audit confirms the declared preferred URL exists, returns a usable status, and matches how the site links and sitemaps present the page.</p>
           <p>A canonical audit is about preferred-URL clarity. It does not promise rankings, and it does not replace writing useful unique content for topics you have not covered yet.</p>
         </section>
         <section id="why-it-matters">
           <h2>Why it matters</h2>
           <p>Public guidance on consolidating duplicate URLs exists because sites routinely create multiple addresses for the same idea: trailing slashes, tracking parameters, print views, and CMS clones. When preferred signals conflict, crawlers may split attention across near-duplicates. People-first content still needs a clear primary URL so evaluation focuses on one document.</p>
-          <p>On B2B catalogs, filters and “share this configuration” links often multiply URLs. Without a deliberate canonical strategy, product templates can look fragmented even when the underlying copy is strong.</p>
+          <p>On B2B catalogs, filters and 鈥渟hare this configuration鈥?links often multiply URLs. Without a deliberate canonical strategy, product templates can look fragmented even when the underlying copy is strong.</p>
         </section>
         <section id="how-to-check">
           <h2>How to check</h2>
           <ol>
             <li>Collect canonical link targets from priority templates (product, category, article) via crawl or HTML sample.</li>
-            <li>Confirm each canonical target is absolute, fetchable, and returns an expected success status—not a 404 loop.</li>
+            <li>Confirm each canonical target is absolute, fetchable, and returns an expected success status鈥攏ot a 404 loop.</li>
             <li>Flag pages whose canonical points to a different host, language, or unrelated template than intended.</li>
             <li>Group near-duplicate clusters (parameters, slash variants) and verify they agree on one preferred URL.</li>
             <li>Align internal links and sitemap entries with the preferred URLs you chose.</li>
@@ -117,9 +118,21 @@
         </section>
         <section id="example">
           <h2>A concrete example</h2>
-          <p>A category page is available as <code>/category/pumps/</code> and <code>/category/pumps/?sort=price</code>. Both return 200 with nearly identical content. The clean URL’s canonical is self-referencing, but the sorted URL’s tag also points to itself. An audit marks this as conflicting preferred-URL signals. The fix: keep unique filter experiences only when content is meaningfully different; otherwise set the sorted URL’s canonical to the clean category URL and stop promoting parameter variants in internal hubs. Separately, if buyers need a “pump selection by duty cycle” guide that does not exist, that remains a growth gap—not a canonical tag problem.</p>
+          <p>A category page is available as <code>/category/pumps/</code> and <code>/category/pumps/?sort=price</code>. Both return 200 with nearly identical content. The clean URL鈥檚 canonical is self-referencing, but the sorted URL鈥檚 tag also points to itself. An audit marks this as conflicting preferred-URL signals. The fix: keep unique filter experiences only when content is meaningfully different; otherwise set the sorted URL鈥檚 canonical to the clean category URL and stop promoting parameter variants in internal hubs. Separately, if buyers need a 鈥減ump selection by duty cycle鈥?guide that does not exist, that remains a growth gap鈥攏ot a canonical tag problem.</p>
         </section>
-        <section id="mika-lens">
+        
+        <section id="checklist-depth">
+          <h2>What to capture for the blueprint</h2>
+          <p>Canonical clarity is SEO Health: preferred-URL signals that agree across tags, internal links, and sitemaps. Missing topics remain SEO Growth. When you audit, keep an evidence list the blueprint can act on:</p>
+          <ul>
+            <li>Sample clusters where two near-duplicates each claim to be canonical.</li>
+            <li>Parameter or trailing-slash variants that return 200 with near-identical content.</li>
+            <li>Canonicals pointing at wrong hosts, soft-404s, or unintended language versions.</li>
+            <li>Sitemap and hub links that promote non-preferred URLs.</li>
+          </ul>
+          <p>Deep Audit walks structure before blueprint writing. Diagnosis groups preferred-URL conflicts separately from content gaps so cleanup is not confused with 鈥渘eed more pages.鈥?Blueprint guidance does not auto-edit the site, and fixing canonicals does not predict rankings.</p>
+        </section>
+<section id="mika-lens">
           <h2>How Mika separates health issues from growth opportunities</h2>
           <p>Conflicting or broken canonical signals are health issues: preferred-URL clarity is damaged. Missing intents or thin topic coverage are growth opportunities. Mika records canonical conflicts with sample clusters as foundation repair, and keeps unanswered demand on a separate panel.</p>
         </section>
@@ -135,7 +148,7 @@
           </div>
           <div>
             <h3>Should parameter URLs always canonicalize to the clean URL?</h3>
-            <p>Often yes when parameters only change sorting or tracking and not unique content. If a parameter creates genuinely different content that should be indexed, treat it as its own page with clear unique value—not as a silent duplicate.</p>
+            <p>Often yes when parameters only change sorting or tracking and not unique content. If a parameter creates genuinely different content that should be indexed, treat it as its own page with clear unique value鈥攏ot as a silent duplicate.</p>
           </div>
         </section>
         <section class="kc-related">
@@ -149,10 +162,10 @@
         <section class="kc-sources">
           <h2>Sources</h2>
           <ul>
-            <li>Google Search Central — <a href="https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls">How to specify a canonical URL</a></li>
-            <li>Google Search Central — <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content">Creating helpful, reliable, people-first content</a></li>
-            <li>Google Search Central — <a href="https://developers.google.com/search/docs/crawling-indexing">Crawling and indexing overview</a></li>
-            <li>Mika method: preferred-URL clarity as health, topic coverage as growth — <a href="https://mikaovo.ai/">mikaovo.ai</a></li>
+            <li>Google Search Central 鈥?<a href="https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls">How to specify a canonical URL</a></li>
+            <li>Google Search Central 鈥?<a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content">Creating helpful, reliable, people-first content</a></li>
+            <li>Google Search Central 鈥?<a href="https://developers.google.com/search/docs/crawling-indexing">Crawling and indexing overview</a></li>
+            <li>Mika method: preferred-URL clarity as health, topic coverage as growth 鈥?<a href="https://mikaovo.ai/">mikaovo.ai</a></li>
           </ul>
         </section>
         <section class="kc-cta">

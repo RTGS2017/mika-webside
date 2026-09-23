@@ -35,7 +35,7 @@
         "headline": "How to Check Website Crawlability",
         "description": "Practical steps to check robots rules, status codes, and internal crawl paths so important pages can be discovered.",
         "datePublished": "2026-09-22",
-        "dateModified": "2026-09-22",
+        "dateModified": "2026-09-23",
         "inLanguage": "en",
         "author": {"@type": "Organization", "name": "Mika"},
         "publisher": {"@type": "Organization", "name": "Mika", "url": "https://mikaovo.ai/"},
@@ -71,13 +71,13 @@
       <div class="kc-nav-links">
         <a href="/">Home</a>
         <a href="/knowledge/">Knowledge Center</a>
-        <a href="/zh/knowledge/how-to-check-website-crawlability/">中文</a>
+        <a href="/zh/knowledge/how-to-check-website-crawlability/">涓枃</a>
       </div>
     </nav>
   </header>
   <main>
     <header class="kc-hero">
-      <p class="kc-meta"><span>SEO</span> · <time datetime="2026-09-22">2026-09-22</time></p>
+      <p class="kc-meta"><span>SEO</span> 路 <time datetime="2026-09-23">2026-09-23</time></p>
       <h1>How to Check Website Crawlability</h1>
       <p>Confirm robots rules, status codes, and crawlable internal links so important pages can be discovered.</p>
     </header>
@@ -88,6 +88,7 @@
           <li><a href="#definition">Definition</a></li>
           <li><a href="#why-it-matters">Why it matters</a></li>
           <li><a href="#how-to-check">How to check</a></li>
+          <li><a href="#checklist-depth">Four-capability frame</a></li>
           <li><a href="#example">Example</a></li>
           <li><a href="#mika-lens">Health vs growth</a></li>
           <li><a href="#faq">FAQ</a></li>
@@ -101,7 +102,7 @@
         </section>
         <section id="why-it-matters">
           <h2>Why it matters</h2>
-          <p>Public crawling guidance treats crawlable links as a primary way systems discover content. People-first content still needs a fetchable URL. On B2B sites, catalogs, filters, and CMS rules often create blocked folders, soft errors, or infinite parameter paths. Marketing may publish useful pages that never appear in a crawler’s graph because no crawlable link points to them, or because robots disallow the folder that holds them.</p>
+          <p>Public crawling guidance treats crawlable links as a primary way systems discover content. People-first content still needs a fetchable URL. On B2B sites, catalogs, filters, and CMS rules often create blocked folders, soft errors, or infinite parameter paths. Marketing may publish useful pages that never appear in a crawler鈥檚 graph because no crawlable link points to them, or because robots disallow the folder that holds them.</p>
           <p>Teams that skip crawl checks waste time polishing copy on URLs that cannot be fetched, or assume a sitemap alone fixed discovery when internal paths remain broken.</p>
         </section>
         <section id="how-to-check">
@@ -117,11 +118,23 @@
         </section>
         <section id="example">
           <h2>A concrete example</h2>
-          <p>An industrial site lists products under <code>/products/</code> but stores downloadable manuals under <code>/files/</code>. After a security change, robots.txt disallows <code>/files/</code>. Support emails still share those URLs, and some product pages link to manuals. A crawlability check shows product HTML is fetchable, while manuals return disallow for Googlebot. The fix is not “write more product intros.” It is to decide which manuals should be public, serve them on allowed paths with crawlable links from product pages, and keep private assets genuinely private. Until that health issue is resolved, adding more brochure pages will not restore documentation discovery.</p>
+          <p>An industrial site lists products under <code>/products/</code> but stores downloadable manuals under <code>/files/</code>. After a security change, robots.txt disallows <code>/files/</code>. Support emails still share those URLs, and some product pages link to manuals. A crawlability check shows product HTML is fetchable, while manuals return disallow for Googlebot. The fix is not 鈥渨rite more product intros.鈥?It is to decide which manuals should be public, serve them on allowed paths with crawlable links from product pages, and keep private assets genuinely private. Until that health issue is resolved, adding more brochure pages will not restore documentation discovery.</p>
         </section>
-        <section id="mika-lens">
+        
+        <section id="checklist-depth">
+          <h2>Crawlability inside the four-capability frame</h2>
+          <p>Crawlability sits under <strong>SEO Health</strong>: can the live site be fetched and understood? It does not answer which topics, intents, or markets remain uncovered 鈥?that is <strong>SEO Growth</strong>. GEO Health and GEO Growth still need clear entities and answers on pages that crawlers can actually reach.</p>
+          <ul>
+            <li>Check robots rules, status codes, redirect chains, and whether important templates are blocked or soft-failing.</li>
+            <li>Sample commercial URLs with and without JavaScript rendering when the app depends on client render.</li>
+            <li>Record sample URLs for 鈥渂locked,鈥?鈥渞edirect loop,鈥?and 鈥渞eachable but thin鈥?鈥?thinness is often a growth finding once access is fixed.</li>
+            <li>Feed blockers into diagnosis and blueprint as foundation repair, with a re-audit after publish. Blueprint does not auto-edit the site.</li>
+          </ul>
+          <p>Deep Audit sees the site as a system 鈥?not a single score. A clean robots file never invents finished demand coverage, and Mika does not predict rankings from crawl hygiene alone.</p>
+        </section>
+<section id="mika-lens">
           <h2>How Mika separates health issues from growth opportunities</h2>
-          <p>Blocked robots rules, bad status codes, and missing crawl paths are health issues: foundations that prevent discovery. Missing topic pages or weak market coverage are growth opportunities. Mika treats crawl failures as blockers first, then maps unanswered demand separately so teams do not confuse “cannot be fetched” with “need more content.”</p>
+          <p>Blocked robots rules, bad status codes, and missing crawl paths are health issues: foundations that prevent discovery. Missing topic pages or weak market coverage are growth opportunities. Mika treats crawl failures as blockers first, then maps unanswered demand separately so teams do not confuse 鈥渃annot be fetched鈥?with 鈥渘eed more content.鈥?/p>
         </section>
         <section class="kc-faq" id="faq">
           <h2>FAQ</h2>
@@ -149,10 +162,10 @@
         <section class="kc-sources">
           <h2>Sources</h2>
           <ul>
-            <li>Google Search Central — <a href="https://developers.google.com/search/docs/crawling-indexing">Crawling and indexing overview</a></li>
-            <li>Google Search Central — <a href="https://developers.google.com/search/docs/crawling-indexing/links-crawlable">Link best practices for Google</a> (crawlable links)</li>
-            <li>Google Search Central — <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content">Creating helpful, reliable, people-first content</a></li>
-            <li>Mika method: crawl health as foundation, coverage as growth — <a href="https://mikaovo.ai/">mikaovo.ai</a></li>
+            <li>Google Search Central 鈥?<a href="https://developers.google.com/search/docs/crawling-indexing">Crawling and indexing overview</a></li>
+            <li>Google Search Central 鈥?<a href="https://developers.google.com/search/docs/crawling-indexing/links-crawlable">Link best practices for Google</a> (crawlable links)</li>
+            <li>Google Search Central 鈥?<a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content">Creating helpful, reliable, people-first content</a></li>
+            <li>Mika method: crawl health as foundation, coverage as growth 鈥?<a href="https://mikaovo.ai/">mikaovo.ai</a></li>
           </ul>
         </section>
         <section class="kc-cta">

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>How to Check Hreflang | Mika Knowledge</title>
-  <meta name="description" content="Validate language and region alternate annotations so localized pages point to each other correctly—without guessing rankings.">
+  <meta name="description" content="Validate language and region alternate annotations so localized pages point to each other correctly鈥攚ithout guessing rankings.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://mikaovo.ai/knowledge/how-to-check-hreflang/">
   <link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/how-to-check-hreflang/">
@@ -13,7 +13,7 @@
   <meta property="og:type" content="article">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="How to Check Hreflang">
-  <meta property="og:description" content="Validate language and region alternate annotations so localized pages point to each other correctly—without guessing rankings.">
+  <meta property="og:description" content="Validate language and region alternate annotations so localized pages point to each other correctly鈥攚ithout guessing rankings.">
   <meta property="og:url" content="https://mikaovo.ai/knowledge/how-to-check-hreflang/">
   <meta property="og:site_name" content="Mika">
   <meta name="twitter:card" content="summary">
@@ -33,9 +33,9 @@
         "@type": "Article",
         "@id": "https://mikaovo.ai/knowledge/how-to-check-hreflang/#article",
         "headline": "How to Check Hreflang",
-        "description": "Validate language and region alternate annotations so localized pages point to each other correctly—without guessing rankings.",
+        "description": "Validate language and region alternate annotations so localized pages point to each other correctly鈥攚ithout guessing rankings.",
         "datePublished": "2026-09-22",
-        "dateModified": "2026-09-22",
+        "dateModified": "2026-09-23",
         "inLanguage": "en",
         "author": {"@type": "Organization", "name": "Mika"},
         "publisher": {"@type": "Organization", "name": "Mika", "url": "https://mikaovo.ai/"},
@@ -54,7 +54,7 @@
         "mainEntity": [
           {"@type": "Question", "name": "Does correct hreflang guarantee the right language will rank?", "acceptedAnswer": {"@type": "Answer", "text": "No. Hreflang helps associate language and region variants. Ranking still depends on relevance, usefulness, and competition. Checking hreflang validates alternate annotations, not position outcomes."}},
           {"@type": "Question", "name": "Do we need hreflang if we only have one language?", "acceptedAnswer": {"@type": "Answer", "text": "If you have a single language and no regional variants, hreflang is usually unnecessary. Add it when you publish real alternate language or region URLs that should be associated."}},
-          {"@type": "Question", "name": "What is the most common hreflang mistake?", "acceptedAnswer": {"@type": "Answer", "text": "Missing return links—page A lists B, but B does not list A—or pointing to non-indexable or wrong-language URLs. Reciprocal, fetchable alternates for real localized pages are the baseline."}}
+          {"@type": "Question", "name": "What is the most common hreflang mistake?", "acceptedAnswer": {"@type": "Answer", "text": "Missing return links鈥攑age A lists B, but B does not list A鈥攐r pointing to non-indexable or wrong-language URLs. Reciprocal, fetchable alternates for real localized pages are the baseline."}}
         ]
       }
     ]
@@ -71,15 +71,15 @@
       <div class="kc-nav-links">
         <a href="/">Home</a>
         <a href="/knowledge/">Knowledge Center</a>
-        <a href="/zh/knowledge/how-to-check-hreflang/">中文</a>
+        <a href="/zh/knowledge/how-to-check-hreflang/">涓枃</a>
       </div>
     </nav>
   </header>
   <main>
     <header class="kc-hero">
-      <p class="kc-meta"><span>SEO</span> · <time datetime="2026-09-22">2026-09-22</time></p>
+      <p class="kc-meta"><span>SEO</span> 路 <time datetime="2026-09-23">2026-09-23</time></p>
       <h1>How to Check Hreflang</h1>
-      <p>Validate language and region alternate annotations so localized pages associate correctly—without ranking promises.</p>
+      <p>Validate language and region alternate annotations so localized pages associate correctly鈥攚ithout ranking promises.</p>
     </header>
     <div class="kc-layout">
       <aside class="kc-toc" aria-label="On this page">
@@ -88,6 +88,7 @@
           <li><a href="#definition">Definition</a></li>
           <li><a href="#why-it-matters">Why it matters</a></li>
           <li><a href="#how-to-check">How to check</a></li>
+          <li><a href="#checklist-depth">Signals to record</a></li>
           <li><a href="#example">Example</a></li>
           <li><a href="#mika-lens">Health vs growth</a></li>
           <li><a href="#faq">FAQ</a></li>
@@ -108,18 +109,31 @@
           <h2>How to check</h2>
           <ol>
             <li>List intended language/region pairs and the URL pattern for each (subdirectory, subdomain, or country domain).</li>
-            <li>Sample priority templates and extract hreflang annotations from HTML, headers, or sitemaps—use one consistent method per template family.</li>
+            <li>Sample priority templates and extract hreflang annotations from HTML, headers, or sitemaps鈥攗se one consistent method per template family.</li>
             <li>Validate language-region codes and confirm each alternate URL returns an expected success status.</li>
             <li>Verify reciprocity: if EN lists ZH, ZH must list EN (and self) for the same cluster.</li>
             <li>Confirm <code>x-default</code> points to the intended fallback when you use it, usually the primary language hub.</li>
-            <li>Separate “annotation broken” findings from “locale content not built yet” findings before planning translation work.</li>
+            <li>Separate 鈥渁nnotation broken鈥?findings from 鈥渓ocale content not built yet鈥?findings before planning translation work.</li>
           </ol>
         </section>
         <section id="example">
           <h2>A concrete example</h2>
-          <p>An equipment manufacturer launches <code>/zh/products/model-x/</code> alongside the English product page. The English page’s hreflang lists the Chinese URL, but the Chinese page only lists itself—no return link to English—and one annotation still points to a staging host. A hreflang check flags missing reciprocity and an invalid alternate host. Fixing annotations restores a coherent language cluster. Separately, if Chinese buyers need application notes that exist only in English PDFs, that is a growth coverage gap for the Chinese market—not something a correct hreflang tag can invent.</p>
+          <p>An equipment manufacturer launches <code>/zh/products/model-x/</code> alongside the English product page. The English page鈥檚 hreflang lists the Chinese URL, but the Chinese page only lists itself鈥攏o return link to English鈥攁nd one annotation still points to a staging host. A hreflang check flags missing reciprocity and an invalid alternate host. Fixing annotations restores a coherent language cluster. Separately, if Chinese buyers need application notes that exist only in English PDFs, that is a growth coverage gap for the Chinese market鈥攏ot something a correct hreflang tag can invent.</p>
         </section>
-        <section id="mika-lens">
+        
+        <section id="checklist-depth">
+          <h2>Signals to record (not a ranking score)</h2>
+          <p>Treat hreflang as an SEO Health signal about language association 鈥?never as proof of market coverage. When you sample templates, record:</p>
+          <ul>
+            <li>Presence: HTML link tags, HTTP headers, or sitemap annotations (pick one consistent method per template family).</li>
+            <li>Reciprocity: A lists B and B lists A (plus self) for the same cluster.</li>
+            <li>Fetchability: each alternate returns an expected success status on the intended host.</li>
+            <li><code>x-default</code>: points at the intended fallback when you use it (often the primary language hub).</li>
+            <li>Separation: 鈥渁nnotation broken鈥?vs 鈥渓ocale content not built yet鈥?鈥?the second is SEO Growth / GEO Growth work.</li>
+          </ul>
+          <p>Homepage multilingual framing still applies: one business, consistent entities, real depth for local intent. Correct hreflang cannot invent missing FAQ blocks or specs in the second language. Mika keeps language-signal health and market coverage on separate panels, with no blended overall score and no ranking guarantees.</p>
+        </section>
+<section id="mika-lens">
           <h2>How Mika separates health issues from growth opportunities</h2>
           <p>Broken, non-reciprocal, or non-fetchable hreflang annotations are health issues: language signals are confused. Missing localized topics or incomplete market coverage are growth opportunities. Mika treats annotation failures as foundation repair, and market content gaps as separate coverage work.</p>
         </section>
@@ -135,7 +149,7 @@
           </div>
           <div>
             <h3>What is the most common hreflang mistake?</h3>
-            <p>Missing return links—page A lists B, but B does not list A—or pointing to non-indexable or wrong-language URLs. Reciprocal, fetchable alternates for real localized pages are the baseline.</p>
+            <p>Missing return links鈥攑age A lists B, but B does not list A鈥攐r pointing to non-indexable or wrong-language URLs. Reciprocal, fetchable alternates for real localized pages are the baseline.</p>
           </div>
         </section>
         <section class="kc-related">
@@ -149,10 +163,10 @@
         <section class="kc-sources">
           <h2>Sources</h2>
           <ul>
-            <li>Google Search Central — <a href="https://developers.google.com/search/docs/specialty/international/localized-versions">Localized versions of your pages (hreflang)</a></li>
-            <li>Google Search Central — <a href="https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls">How to specify a canonical URL</a></li>
-            <li>Google Search Central — <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content">Creating helpful, reliable, people-first content</a></li>
-            <li>Mika method: language-signal health vs market coverage growth — <a href="https://mikaovo.ai/">mikaovo.ai</a></li>
+            <li>Google Search Central 鈥?<a href="https://developers.google.com/search/docs/specialty/international/localized-versions">Localized versions of your pages (hreflang)</a></li>
+            <li>Google Search Central 鈥?<a href="https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls">How to specify a canonical URL</a></li>
+            <li>Google Search Central 鈥?<a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content">Creating helpful, reliable, people-first content</a></li>
+            <li>Mika method: language-signal health vs market coverage growth 鈥?<a href="https://mikaovo.ai/">mikaovo.ai</a></li>
           </ul>
         </section>
         <section class="kc-cta">
