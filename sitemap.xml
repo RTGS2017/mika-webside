@@ -650,4 +650,131 @@
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/how-source-backed-bilingual-sites-are-structured/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/how-source-backed-bilingual-sites-are-structured/" />
   </url>
+  <url>
+    <loc>https://mikaovo.ai/knowledge/seo/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/seo/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/seo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/seo/" />
+  </url>
+  <url>
+    <loc>https://mikaovo.ai/zh/knowledge/seo/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/seo/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/seo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/seo/" />
+  </url>
+  <url>
+    <loc>https://mikaovo.ai/knowledge/geo/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/geo/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/geo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/geo/" />
+  </url>
+  <url>
+    <loc>https://mikaovo.ai/zh/knowledge/geo/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/geo/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/geo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/geo/" />
+  </url>
+  <url>
+    <loc>https://mikaovo.ai/knowledge/search-visibility/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/search-visibility/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/search-visibility/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/search-visibility/" />
+  </url>
+  <url>
+    <loc>https://mikaovo.ai/zh/knowledge/search-visibility/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/search-visibility/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/search-visibility/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/search-visibility/" />
+  </url>
+  <url>
+    <loc>https://mikaovo.ai/knowledge/content/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/content/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/content/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/content/" />
+  </url>
+  <url>
+    <loc>https://mikaovo.ai/zh/knowledge/content/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/content/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/content/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/content/" />
+  </url>
+  <url>
+    <loc>https://mikaovo.ai/knowledge/technical/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/technical/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/technical/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/technical/" />
+  </url>
+  <url>
+    <loc>https://mikaovo.ai/zh/knowledge/technical/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/technical/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/technical/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/technical/" />
+  </url>
+  <url>
+    <loc>https://mikaovo.ai/knowledge/research/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/research/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/research/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/research/" />
+  </url>
+  <url>
+    <loc>https://mikaovo.ai/zh/knowledge/research/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/research/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/research/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/research/" />
+  </url>
+  <url>
+    <loc>https://mikaovo.ai/knowledge/open-source/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/open-source/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/open-source/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/open-source/" />
+  </url>
+  <url>
+    <loc>https://mikaovo.ai/zh/knowledge/open-source/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mikaovo.ai/knowledge/open-source/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/knowledge/open-source/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/knowledge/open-source/" />
+  </url>
 </urlset>
+
