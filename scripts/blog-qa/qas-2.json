@@ -1,0 +1,927 @@
+[
+  {
+    "slug": "what-is-a-commercial-search-opportunity",
+    "en": {
+      "title": "What is a commercial search opportunity?",
+      "description": "A commercial search opportunity is a query a product page can honestly support with specifications, use cases, and proof.",
+      "h1": "What is a commercial search opportunity?",
+      "blurb": "It is a query the product page can already support with specs, use cases, and proof a buyer can check.",
+      "lead": "Commercial search opportunities start from queries a product page can honestly support, not from claims the page never states.",
+      "definition": "A commercial search opportunity is a query a product page can honestly support with specifications, use cases, and proof. The query qualifies only when those materials are already on the page and can carry the answer without an extra unsupported claim.",
+      "shortAnswer": "Commercial search opportunities are queries a product page can honestly support with specs, use cases, and proof. Treat the query as an opportunity only when the page already states those supporting facts.",
+      "checks": [
+        "Specs support the query",
+        "Use cases match the query",
+        "Proof a buyer can check",
+        "No unsupported sales claim"
+      ],
+      "doesNotClaim": "Naming a commercial search opportunity does not guarantee a search ranking or an AI answer citation. Mika does not guarantee search rankings or AI answer citations, and the label only describes what the page can honestly support.",
+      "example": "The homepage teaching example, which is not a customer case, asks which product is suitable for low-rise concrete placement and pairs that use case with constraints and a link to specifications. That query can be a commercial search opportunity only because the page already supplies the use case, the constraints, and the proof."
+    },
+    "zh": {
+      "title": "什么是产品页面可以诚实支持的商业搜索机会？",
+      "description": "商业搜索机会是产品页能够用规格、使用场景和证据诚实支持的一类查询。",
+      "h1": "什么是产品页面可以诚实支持的商业搜索机会？",
+      "blurb": "它指产品页已经能用规格、使用场景和可核对证据支持的查询。",
+      "lead": "商业搜索机会从产品页能够诚实支持的查询出发，而不是从页面上没有写出的主张出发。",
+      "definition": "商业搜索机会是产品页能够用规格、使用场景和证据诚实支持的查询。只有这些材料已经写在页面上、并且足以支撑该查询时，它才算机会。",
+      "shortAnswer": "商业搜索机会是产品页能用规格、使用场景和证据诚实支持的查询。只有页面已经写明这些事实时，才把该查询当作机会。",
+      "checks": [
+        "规格能够支持该查询",
+        "使用场景与查询相符",
+        "买家可以核对的证据",
+        "没有无依据的销售主张"
+      ],
+      "doesNotClaim": "标出商业搜索机会并不保证搜索排名，也不保证出现在 AI 答案引用中。Mika 不保证搜索排名或 AI 答案引用，这个名称只说明产品页能够诚实支持该查询。",
+      "example": "首页教学示例（不是客户案例）提出哪款产品适合低层混凝土浇筑，并给出使用场景、限制条件以及规格链接。该查询能成为商业搜索机会，是因为页面已经提供了使用场景、限制和证据。"
+    }
+  },
+  {
+    "slug": "what-should-a-product-page-state",
+    "en": {
+      "title": "What should a product page state?",
+      "description": "A product page should state specifications, use cases, and the proof a buyer needs before contact.",
+      "h1": "What should a product page state?",
+      "blurb": "State specifications, use cases, and the proof a buyer needs before making contact.",
+      "lead": "Before a buyer writes in, the product page should already show specifications, use cases, and the proof those claims rest on.",
+      "definition": "A product page should state specifications, use cases, and the proof a buyer needs before contact. Those three items give the buyer grounded detail to judge the product before a conversation starts.",
+      "shortAnswer": "State specifications, use cases, and the proof a buyer needs before contact. A product page that leaves one of those out does not yet give the buyer the facts required to evaluate the product.",
+      "checks": [
+        "Specifications are stated",
+        "Use cases are stated",
+        "Proof before any contact",
+        "Buyer can check the facts"
+      ],
+      "doesNotClaim": "Stating specifications, use cases, and proof does not guarantee a ranking or a citation. Mika does not guarantee search rankings or AI answer citations simply because a product page includes those three items.",
+      "example": "A product page can list the working limits, the low-rise concrete placement use case, and a specification link the buyer can open before contact. That set is the specifications, use cases, and proof the page is expected to state."
+    },
+    "zh": {
+      "title": "产品页面在买家联系之前应当写明哪些内容？",
+      "description": "产品页应当写明规格、使用场景，以及买家在联系之前需要的证据。",
+      "h1": "产品页面在买家联系之前应当写明哪些内容？",
+      "blurb": "在买家联系之前，写明规格、使用场景和所需证据。",
+      "lead": "买家写信之前，产品页就应当已经展示规格、使用场景，以及这些内容所依据的证据。",
+      "definition": "产品页应当写明规格、使用场景，以及买家在联系之前需要的证据。这三项让买家在开始对话之前就有可核对的产品事实。",
+      "shortAnswer": "写明规格、使用场景，以及买家在联系之前需要的证据。缺了其中任何一项，买家就还没有评估产品所需的事实。",
+      "checks": [
+        "规格已经在页面写明",
+        "使用场景已经写明",
+        "联系之前就要提供证据",
+        "买家能够核对事实"
+      ],
+      "doesNotClaim": "写上规格、使用场景和证据并不保证搜索排名或被引用。Mika 不保证搜索排名或 AI 答案引用，即便产品页包含这三项也是如此。",
+      "example": "产品页可以列出工作范围、低层混凝土浇筑这一使用场景，以及买家在联系前可以打开的规格链接。这就是页面应当陈述的规格、使用场景和证据。"
+    }
+  },
+  {
+    "slug": "what-should-company-information-include",
+    "en": {
+      "title": "What should company information include?",
+      "description": "Company information should say who you are, what you sell, and where you operate, without hype.",
+      "h1": "What should company information include?",
+      "blurb": "Say who you are, what you sell, and where you operate, and leave the hype out.",
+      "lead": "Company information should identify the business in plain language: who you are, what you sell, and where you operate.",
+      "definition": "Company information should say who you are, what you sell, and where you operate, without hype. Those three statements tell a reader which business the page describes, using facts rather than slogans.",
+      "shortAnswer": "Say who you are, what you sell, and where you operate, without hype. Company information is an identification block, so unsupported praise does not substitute for those three facts.",
+      "checks": [
+        "Who the company is",
+        "What the company sells",
+        "Where the company operates",
+        "Written without any hype"
+      ],
+      "doesNotClaim": "Clear company information does not guarantee that a search result or an AI answer will cite the page. Mika does not guarantee search rankings or AI answer citations because an about block names the business.",
+      "example": "A company block can say who operates the business, which products it sells, and the places where it operates. It stays on those facts and does not add hype in place of the missing identification."
+    },
+    "zh": {
+      "title": "公司信息应当说明你是谁、卖什么以及在哪里经营吗？",
+      "description": "公司信息应当说明你是谁、卖什么、在哪里经营，并且不要夸大。",
+      "h1": "公司信息应当说明你是谁、卖什么以及在哪里经营吗？",
+      "blurb": "说明你是谁、卖什么、在哪里经营，把夸大的说法留在外面。",
+      "lead": "公司信息应当用平实的话标明企业：你是谁、卖什么，以及在哪里经营。",
+      "definition": "公司信息应当说明你是谁、卖什么、在哪里经营，并且不要夸大。这三句话用事实告诉读者页面描述的是哪一家企业，而不是用口号代替身份。",
+      "shortAnswer": "说明你是谁、卖什么、在哪里经营，并且不要夸大。公司信息是身份说明，没有依据的赞扬不能代替这三项事实。",
+      "checks": [
+        "写明这家公司是谁",
+        "写明这家公司卖什么",
+        "写明公司在哪里经营",
+        "行文不加入夸大用语"
+      ],
+      "doesNotClaim": "把公司信息写清楚并不保证搜索结果或 AI 答案会引用该页。Mika 不保证搜索排名或 AI 答案引用，即使关于区块写明了企业身份也一样。",
+      "example": "公司信息可以写明谁在经营、销售哪些产品，以及在哪些地方经营。它停留在这些事实上，不用夸大来填补没有写明的身份。"
+    }
+  },
+  {
+    "slug": "what-makes-a-page-easier-to-reference",
+    "en": {
+      "title": "What makes a page easier to reference?",
+      "description": "A page is easier to reference when it has a definition, a short answer, and evidence a reader can point to.",
+      "h1": "What makes a page easier to reference?",
+      "blurb": "A definition, a short answer, and evidence make separate passages a reader can point to.",
+      "lead": "Pages become easier to reference when the definition, the short answer, and the evidence each have a place on the page.",
+      "definition": "A page is easier to reference when it has a definition, a short answer, and evidence. Each piece gives a reader a discrete passage to point to instead of one undifferentiated block of text.",
+      "shortAnswer": "Include a definition, a short answer, and evidence. Those three parts make the page easier to reference because the meaning, the answer, and the support sit in identifiable places.",
+      "checks": [
+        "A definition is present",
+        "A short answer is present",
+        "Evidence is on the page",
+        "Passages can be pointed to"
+      ],
+      "doesNotClaim": "Making a page easier to reference does not guarantee that anyone will cite it. Mika does not guarantee search rankings or AI answer citations when a page adds a definition, a short answer, and evidence.",
+      "example": "A source-backed page can open with a definition, follow with a short answer, and then show evidence such as specifications. A reader can point to each block separately, which is what makes the page easier to reference."
+    },
+    "zh": {
+      "title": "页面具备哪些部分时才会更容易被读者引用？",
+      "description": "当页面有定义、短答和证据时，读者更容易指出并引用其中的段落。",
+      "h1": "页面具备哪些部分时才会更容易被读者引用？",
+      "blurb": "定义、短答和证据各自成段，读者就可以分别指向它们。",
+      "lead": "当定义、短答和证据在页面上各有位置时，页面会更容易被引用。",
+      "definition": "页面在同时具备定义、短答和证据时更容易被引用。每一部分都给读者一个可以单独指向的段落，而不是一整块分不清的文字。",
+      "shortAnswer": "页面上要有定义、短答和证据。这三部分让含义、答案和支持各自可辨，因此页面更容易被引用。",
+      "checks": [
+        "页面上写有明确定义",
+        "页面上写有简短回答",
+        "页面上写有支持证据",
+        "段落可以被单独指向"
+      ],
+      "doesNotClaim": "让页面更容易被引用并不保证一定会被引用。Mika 不保证搜索排名或 AI 答案引用，即使页面加上了定义、短答和证据也一样。",
+      "example": "有来源的页面可以先给定义，再给短答，然后展示规格等证据。读者可以分别指向每一块，这就是页面更容易被引用的原因。"
+    }
+  },
+  {
+    "slug": "what-is-a-direct-answer-block",
+    "en": {
+      "title": "What is a direct answer block?",
+      "description": "A direct answer block states the answer near the relevant product facts, including use case, constraints, and specifications.",
+      "h1": "What is a direct answer block?",
+      "blurb": "It states the answer beside the product facts the answer depends on, not in a detached slogan.",
+      "lead": "A direct answer block puts the answer next to the relevant product facts so the use case, constraints, and specifications stay attached.",
+      "definition": "A direct answer block states the answer near the relevant product facts. The answer stays with the use case, the constraints, and the supporting detail instead of floating away from the product information it depends on.",
+      "shortAnswer": "A direct answer block states the answer near the relevant product facts. The homepage teaching example, which is not a customer case, pairs the question with a use case, constraints, and a link to specifications.",
+      "checks": [
+        "Answer sits near the facts",
+        "Use case is included",
+        "Constraints are stated",
+        "Link to specifications"
+      ],
+      "doesNotClaim": "A direct answer block does not guarantee inclusion in an AI answer or a search ranking. Mika does not guarantee search rankings or AI answer citations because a page states an answer beside product facts.",
+      "example": "The homepage teaching example, not a customer case, is the question “Which product is suitable for low-rise concrete placement?” The block answers it with the use case, the constraints, and a link to specifications placed near those product facts."
+    },
+    "zh": {
+      "title": "什么是放在相关产品事实旁边的直接回答区块？",
+      "description": "直接回答区块把答案写在相关产品事实旁边，并带上使用场景、限制和规格。",
+      "h1": "什么是放在相关产品事实旁边的直接回答区块？",
+      "blurb": "它把答案放在答案所依赖的产品事实旁边，而不是写成脱离事实的口号。",
+      "lead": "直接回答区块把答案放在相关产品事实旁边，使使用场景、限制条件和规格保持在一起。",
+      "definition": "直接回答区块把答案陈述在相关产品事实附近。答案与使用场景、限制条件和支撑细节放在一起，而不是脱离它所依赖的产品信息。",
+      "shortAnswer": "直接回答区块把答案写在相关产品事实旁边。首页教学示例不是客户案例，它把问题与使用场景、限制条件以及规格链接放在一起。",
+      "checks": [
+        "答案靠近产品事实",
+        "区块里包含使用场景",
+        "区块里写明限制条件",
+        "区块里链向规格说明"
+      ],
+      "doesNotClaim": "直接回答区块并不保证被收入 AI 答案或获得搜索排名。Mika 不保证搜索排名或 AI 答案引用，即使页面把答案写在产品事实旁边也一样。",
+      "example": "首页教学示例不是客户案例，问题是“哪款产品适合低层混凝土浇筑？”该区块用使用场景、限制条件以及靠近这些产品事实的规格链接来回答。"
+    }
+  },
+  {
+    "slug": "what-does-an-ai-search-visibility-audit-check",
+    "en": {
+      "title": "What does an AI search visibility audit check?",
+      "description": "An AI search visibility audit checks answerability, entities, and evidence, and it does not promise placement.",
+      "h1": "What does an AI search visibility audit check?",
+      "blurb": "The audit checks answerability, entities, and evidence, without a promise of placement.",
+      "lead": "An AI search visibility audit reviews whether pages can be answered from named entities and supporting evidence.",
+      "definition": "An AI search visibility audit checks answerability, entities, and evidence. It reviews whether a page can be answered from the entities it names and the proof it shows, and it does not promise placement.",
+      "shortAnswer": "The audit checks answerability, entities, and evidence. It does not promise placement in search results or in AI answers, so the output is a review of those three areas.",
+      "checks": [
+        "Answerability is checked",
+        "Entities are checked",
+        "Evidence is checked",
+        "Placement is not promised"
+      ],
+      "doesNotClaim": "An AI search visibility audit does not guarantee placement in search or in AI answers. Mika does not guarantee search rankings or AI answer citations, and the audit does not promise placement.",
+      "example": "An audit can note that a product page names the equipment, answers a buyer question directly, and links specifications as evidence. That review covers answerability, entities, and evidence without promising where the page will appear."
+    },
+    "zh": {
+      "title": "一次 AI 搜索可见度审计具体会检查哪些方面？",
+      "description": "AI 搜索可见度审计检查可答性、实体和证据，并且不承诺获得展示位置。",
+      "h1": "一次 AI 搜索可见度审计具体会检查哪些方面？",
+      "blurb": "审计检查可答性、实体和证据，不承诺页面会被放在某个位置。",
+      "lead": "AI 搜索可见度审计查看页面能否凭已命名的实体和支持性证据来回答问题。",
+      "definition": "AI 搜索可见度审计检查可答性、实体和证据。它查看页面能否依据所命名的实体和所展示的证据来回答，并且不承诺获得展示位置。",
+      "shortAnswer": "审计检查可答性、实体和证据。它不承诺在搜索结果或 AI 答案中获得位置，因此产出是对这三个方面的检查。",
+      "checks": [
+        "审计会检查页面可答性",
+        "检查实体是否清楚",
+        "检查证据是否存在",
+        "审计并不承诺展示位置"
+      ],
+      "doesNotClaim": "AI 搜索可见度审计并不保证在搜索或 AI 答案中获得位置。Mika 不保证搜索排名或 AI 答案引用，而且该审计不承诺展示位置。",
+      "example": "审计可以记下产品页命名了设备、直接回答了买家问题，并把规格链接作为证据。这项检查覆盖可答性、实体和证据，但不承诺页面会出现在哪里。"
+    }
+  },
+  {
+    "slug": "what-do-open-source-seo-crawlers-check",
+    "en": {
+      "title": "What do open-source SEO crawlers check?",
+      "description": "Public notes on an MIT-licensed open-source SEO crawler list titles, sitemaps, hreflang, duplicates, links, noindex, status codes, canonicals, and soft 404s.",
+      "h1": "What do open-source SEO crawlers check?",
+      "blurb": "The site note maps titles, sitemaps, hreflang, duplicates, links, index directives, status codes, canonicals, and soft 404s.",
+      "lead": "Open-source SEO crawler notes on the site come from public observation and read as a coverage map, not as a scoreboard.",
+      "definition": "Open-source SEO crawler notes on the site, based on public observation of puneetindersingh/open-seo-crawler under the MIT license, mention titles, sitemaps, hreflang, duplicates, broken links, noindex via meta robots or X-Robots-Tag, status codes, canonicals, and soft 404s. That list is a coverage map, not a scoreboard, and it does not mean the project documentation was copied.",
+      "shortAnswer": "The notes mention titles, sitemaps, hreflang, duplicates, broken links, noindex via meta robots or X-Robots-Tag, status codes, canonicals, and soft 404s. They are a coverage map from public observation of that MIT-licensed crawler, not a scoreboard and not a copy of its documentation.",
+      "checks": [
+        "Titles and sitemaps",
+        "Hreflang and canonicals",
+        "Broken links and duplicates",
+        "Noindex and soft 404s"
+      ],
+      "doesNotClaim": "A crawler coverage map does not guarantee healthier rankings or that every issue will be found. Mika does not guarantee search rankings or AI answer citations, and these notes do not claim the open-source documentation was copied.",
+      "example": "A note can record that one URL has a title, appears in a sitemap, and sends hreflang, while another is marked noindex through meta robots or X-Robots-Tag. The same coverage map can include duplicates, broken links, status codes, canonicals, and soft 404s without turning the crawl into a scoreboard."
+    },
+    "zh": {
+      "title": "开源 SEO 爬虫的公开观察会检查哪些项目？",
+      "description": "站点上的开源 SEO 爬虫笔记来自对 MIT 许可项目的公开观察，涵盖标题、站点地图、hreflang、重复、断链、noindex、状态码、canonical 和软 404。",
+      "h1": "开源 SEO 爬虫的公开观察会检查哪些项目？",
+      "blurb": "这些笔记映射标题、站点地图、hreflang、重复、链接、索引指令、状态码、canonical 和软 404。",
+      "lead": "站点上的开源 SEO 爬虫笔记来自公开观察，它是一张覆盖图，不是记分牌。",
+      "definition": "站点上的开源 SEO 爬虫笔记基于对 puneetindersingh/open-seo-crawler（MIT）的公开观察，提到标题、站点地图、hreflang、重复内容、断链、通过 meta robots 或 X-Robots-Tag 的 noindex、状态码、canonical 以及软 404。这是一张覆盖图，不是记分牌，也不表示复制了该项目的文档。",
+      "shortAnswer": "笔记提到标题、站点地图、hreflang、重复、断链、通过 meta robots 或 X-Robots-Tag 的 noindex、状态码、canonical 和软 404。它们来自对该 MIT 许可爬虫的公开观察，是覆盖图，不是记分牌，也不是其文档的副本。",
+      "checks": [
+        "会检查标题与站点地图",
+        "hreflang 与 canonical",
+        "会检查断链与重复内容",
+        "noindex 与软 404"
+      ],
+      "doesNotClaim": "爬虫覆盖图并不保证搜索结果更健康，也不保证每个问题都会被发现。Mika 不保证搜索排名或 AI 答案引用，这些笔记也没有声称复制了开源文档。",
+      "example": "笔记可以记录一个 URL 有标题、出现在站点地图中并发送 hreflang，而另一个 URL 通过 meta robots 或 X-Robots-Tag 被标为 noindex。同一张覆盖图还可以包括重复、断链、状态码、canonical 和软 404，而不会把抓取变成记分牌。"
+    }
+  },
+  {
+    "slug": "what-does-a-combined-seo-geo-crawler-inspect",
+    "en": {
+      "title": "What does a combined SEO and GEO crawler inspect?",
+      "description": "A combined technical SEO and GEO crawler reports health, answerability, and accessibility separately, and prioritizes template-level defects.",
+      "h1": "What does a combined SEO and GEO crawler inspect?",
+      "blurb": "Inspect health, answerability, and accessibility in separate columns, and put template-level defects first.",
+      "lead": "A combined technical SEO and GEO crawler note keeps health, answerability, and accessibility apart, then explains each finding.",
+      "definition": "A combined technical SEO and GEO crawler note says to report health, answerability, and accessibility as separate columns. It also says to prioritize template-level defects, compare JavaScript and no-JavaScript rendering when rendering exists, and attach why, how, or if ignored to each finding.",
+      "shortAnswer": "Inspect health, answerability, and accessibility as separate columns, and prioritize defects that repeat at the template level. When rendering exists, compare the JavaScript and no-JavaScript views, and record why a finding matters, how to address it, or if it was ignored.",
+      "checks": [
+        "Separate reporting columns",
+        "Template-level defects first",
+        "JavaScript and no-JavaScript",
+        "Why, how, or if ignored"
+      ],
+      "doesNotClaim": "A combined SEO and GEO crawl does not guarantee better placement or that ignored items are resolved. Mika does not guarantee search rankings or AI answer citations, and separate columns are a reporting method rather than a promise.",
+      "example": "A missing canonical that repeats on every product URL can be prioritized as a template-level defect, with health, answerability, and accessibility kept in separate columns. If the site renders with JavaScript, the note compares that view with the no-JavaScript response and states why the defect matters, how to treat it, or if it was ignored."
+    },
+    "zh": {
+      "title": "合并的技术 SEO 与 GEO 爬虫会检查什么？",
+      "description": "合并的技术 SEO 与 GEO 爬虫把健康、可答性和可访问性分列报告，并优先处理模板级缺陷。",
+      "h1": "合并的技术 SEO 与 GEO 爬虫会检查什么？",
+      "blurb": "把健康、可答性和可访问性分列检查，并优先处理模板级缺陷。",
+      "lead": "合并的技术 SEO 与 GEO 爬虫笔记把健康、可答性和可访问性分开，再说明每条发现。",
+      "definition": "合并的技术 SEO 与 GEO 爬虫笔记要求把健康、可答性和可访问性作为分开的列来报告。它还要求优先处理模板级缺陷，在存在渲染时比较 JavaScript 与无 JavaScript，并为每条发现附上原因、处理方式，或是否被忽略。",
+      "shortAnswer": "把健康、可答性和可访问性分列检查，并优先处理在模板层重复出现的缺陷。若存在渲染，就比较 JavaScript 与无 JavaScript 的结果，并记录发现为何重要、如何处理，或是否被忽略。",
+      "checks": [
+        "分列报告各项结果",
+        "优先处理模板层面缺陷",
+        "比较有脚本与无脚本",
+        "附上原因、做法或忽略"
+      ],
+      "doesNotClaim": "合并的 SEO 与 GEO 抓取并不保证更好的展示位置，也不表示被忽略的项目已经解决。Mika 不保证搜索排名或 AI 答案引用，分列只是报告方式，不是承诺。",
+      "example": "每个产品 URL 都缺少 canonical 时，可以把它作为模板级缺陷优先处理，并把健康、可答性和可访问性分列。如果站点用 JavaScript 渲染，笔记会比较该视图与无 JavaScript 的响应，并说明缺陷为何重要、如何处理，或是否被忽略。"
+    }
+  },
+  {
+    "slug": "how-should-a-source-backed-page-be-ordered",
+    "en": {
+      "title": "How should a source-backed page be ordered?",
+      "description": "Source-backed pages are ordered as definition, short answer, example, and sources.",
+      "h1": "How should a source-backed page be ordered?",
+      "blurb": "Put the definition first, then the short answer, the example, and the sources.",
+      "lead": "A source-backed page follows one order: definition, short answer, example, and sources.",
+      "definition": "Source-backed pages are ordered as definition, short answer, example, and sources. The sequence puts the meaning first, then the direct answer, then a concrete example, and then the sources that support the page.",
+      "shortAnswer": "Order the page as definition, short answer, example, and sources. Readers meet the meaning, the answer, a concrete example, and the supporting sources in that sequence.",
+      "checks": [
+        "Definition comes first",
+        "Short answer comes next",
+        "Example follows the answer",
+        "Sources come last"
+      ],
+      "doesNotClaim": "This section order does not guarantee that a page will be cited or ranked. Mika does not guarantee search rankings or AI answer citations because the page follows definition, short answer, example, and sources.",
+      "example": "A page can define an indexation mismatch, answer what it is in a short paragraph, give a sitemap-and-canonical example, and then list sources. That sequence is the source-backed order: definition, short answer, example, and sources."
+    },
+    "zh": {
+      "title": "有来源支持的页面内容应当依照什么顺序来组织？",
+      "description": "有来源支持的页面按定义、短答、示例和来源这一顺序组织。",
+      "h1": "有来源支持的页面内容应当依照什么顺序来组织？",
+      "blurb": "先写定义，再写短答，然后是示例，最后是来源。",
+      "lead": "有来源支持的页面遵循一个顺序：定义、短答、示例，然后是来源。",
+      "definition": "有来源支持的页面按定义、短答、示例和来源的顺序组织。这个顺序先给含义，再给直接答案，然后给具体示例，最后给支持该页的来源。",
+      "shortAnswer": "页面顺序是定义、短答、示例和来源。读者按这个次序遇到含义、答案、具体示例和支持来源。",
+      "checks": [
+        "把定义放在页面最前",
+        "短答紧跟在定义之后",
+        "示例跟在答案后面",
+        "把来源放在页面最后"
+      ],
+      "doesNotClaim": "这样的章节顺序并不保证页面会被引用或获得排名。Mika 不保证搜索排名或 AI 答案引用，即使页面按定义、短答、示例和来源排列也一样。",
+      "example": "页面可以先定义索引不一致，再用短段落回答它是什么，然后给出站点地图与 canonical 的示例，最后列出来源。这个次序就是有来源页面的顺序：定义、短答、示例和来源。"
+    }
+  },
+  {
+    "slug": "how-should-bilingual-pages-share-facts",
+    "en": {
+      "title": "How should bilingual pages share facts?",
+      "description": "Bilingual pages share company and product facts, with English at the root, Chinese under /zh/, and hreflang en, zh-Hans, and x-default to English.",
+      "h1": "How should bilingual pages share facts?",
+      "blurb": "Share the same company and product facts in English at the root and Chinese under /zh/.",
+      "lead": "English lives at the root and Chinese lives under /zh/, and both versions should carry the same company and product facts.",
+      "definition": "Bilingual pages share company and product facts, with English at the root and Chinese under /zh/. They use hreflang values en, zh-Hans, and x-default pointing to English, and the shared facts should match rather than becoming thin mirrors.",
+      "shortAnswer": "Share the same company and product facts across English at the root and Chinese under /zh/. Mark the pair with hreflang en, zh-Hans, and x-default to English, and compare company name, product name, specifications, applications, claims, and question coverage.",
+      "checks": [
+        "English lives at the root",
+        "Chinese lives under /zh/",
+        "Hreflang en and zh-Hans",
+        "x-default points to English"
+      ],
+      "doesNotClaim": "Sharing facts across languages does not guarantee rankings in either language. Mika does not guarantee search rankings or AI answer citations, and a thin mirror is not market expansion.",
+      "example": "An English product page and its /zh/ counterpart should state the same company name, product name, specifications, applications, claims, and question coverage. Hreflang uses en, zh-Hans, and x-default to the English page so the two versions share facts instead of acting as thin mirrors."
+    },
+    "zh": {
+      "title": "双语页面应当如何共享同一套公司与产品事实？",
+      "description": "双语页面共享公司与产品事实：英文在根路径，中文在 /zh/，hreflang 使用 en、zh-Hans，且 x-default 指向英文。",
+      "h1": "双语页面应当如何共享同一套公司与产品事实？",
+      "blurb": "英文放在根路径，中文放在 /zh/，两边使用同一套公司与产品事实。",
+      "lead": "英文位于根路径，中文位于 /zh/，两个版本都应当承载相同的公司与产品事实。",
+      "definition": "双语页面共享公司与产品事实，英文在根路径，中文在 /zh/。它们使用 hreflang 的 en、zh-Hans，以及指向英文的 x-default，共享事实应当一致，而不是变成单薄的镜像。",
+      "shortAnswer": "根路径的英文和 /zh/ 下的中文应共享同一套公司与产品事实。用 hreflang 的 en、zh-Hans 和指向英文的 x-default 标记这一对页面，并比较公司名称、产品名称、规格、应用、主张和问题覆盖。",
+      "checks": [
+        "英文页面位于网站根路径",
+        "中文位于 /zh/",
+        "hreflang 含 en 与 zh-Hans",
+        "x-default 指向英文"
+      ],
+      "doesNotClaim": "跨语言共享事实并不保证任一语言获得排名。Mika 不保证搜索排名或 AI 答案引用，而且单薄镜像并不是市场扩展。",
+      "example": "英文产品页及其 /zh/ 对应页应当陈述相同的公司名称、产品名称、规格、应用、主张和问题覆盖。hreflang 使用 en、zh-Hans，且 x-default 指向英文页，使两个版本共享事实，而不是充当单薄镜像。"
+    }
+  },
+  {
+    "slug": "what-is-an-audit-diagnosis-blueprint",
+    "en": {
+      "title": "What is an audit diagnosis blueprint?",
+      "description": "An audit diagnosis blueprint is the path from findings to a prioritized next action: Audit, Diagnosis, Blueprint.",
+      "h1": "What is an audit diagnosis blueprint?",
+      "blurb": "It is the path from findings to one prioritized next action: Audit, Diagnosis, then Blueprint.",
+      "lead": "Audit, Diagnosis, and Blueprint name the path from what was found to the next action that should come first.",
+      "definition": "An audit diagnosis blueprint is the path from findings to a prioritized next action. The path has three stages, Audit, Diagnosis, and Blueprint, so a finding is interpreted before a next action is chosen.",
+      "shortAnswer": "It is the path from findings to a prioritized next action, moving through Audit, Diagnosis, and Blueprint. The blueprint names what to do next after the diagnosis, rather than treating every URL as equal work.",
+      "checks": [
+        "Audit gathers the findings",
+        "Diagnosis interprets them",
+        "Blueprint names the next step",
+        "The next action is prioritized"
+      ],
+      "doesNotClaim": "Following Audit, Diagnosis, and Blueprint does not guarantee search growth or citations. Mika does not guarantee search rankings or AI answer citations because a blueprint prioritizes a next action.",
+      "example": "An audit can find a sitemap URL whose canonical points elsewhere, the diagnosis can call that an indexation mismatch, and the blueprint can prioritize fixing that pattern. The path is Audit, then Diagnosis, then a prioritized next action."
+    },
+    "zh": {
+      "title": "什么是从发现走到优先下一步的审计诊断蓝图？",
+      "description": "审计诊断蓝图是从发现走到一项优先下一步的路径：审计、诊断、蓝图。",
+      "h1": "什么是从发现走到优先下一步的审计诊断蓝图？",
+      "blurb": "它是从发现走到一项优先下一步的路径：先审计，再诊断，然后是蓝图。",
+      "lead": "审计、诊断和蓝图标明从已发现的问题走到应当先做的下一步。",
+      "definition": "审计诊断蓝图是从发现走到一项优先下一步的路径。这条路径有三个阶段：审计、诊断和蓝图，因此在选择下一步之前要先解释发现。",
+      "shortAnswer": "它是从发现走到优先下一步的路径，依次经过审计、诊断和蓝图。蓝图在诊断之后点明下一步做什么，而不是把每个 URL 都当成同等的工作。",
+      "checks": [
+        "审计阶段收集各项发现",
+        "诊断解释这些发现",
+        "蓝图写明优先的下一步",
+        "下一步经过优先级排序"
+      ],
+      "doesNotClaim": "走完审计、诊断和蓝图并不保证搜索增长或被引用。Mika 不保证搜索排名或 AI 答案引用，蓝图只是把下一步排好优先顺序。",
+      "example": "审计可以发现站点地图中的 URL 其 canonical 指向别处，诊断可以把这称为索引不一致，蓝图可以优先修复这一模式。路径是先审计，再诊断，然后是一项优先的下一步。"
+    }
+  },
+  {
+    "slug": "does-more-urls-mean-seo-growth",
+    "en": {
+      "title": "Do more URLs mean SEO growth?",
+      "description": "More URLs do not equal SEO growth, and a longer list of addresses is not itself a growth result.",
+      "h1": "Do more URLs mean SEO growth?",
+      "blurb": "No. More URLs do not equal SEO growth, and thin copies are not market expansion.",
+      "lead": "A higher URL count is a count of addresses. More URLs do not equal SEO growth.",
+      "definition": "More URLs do not equal SEO growth. Adding addresses only lengthens the list of URLs, and thin mirrors of the same facts are not market expansion.",
+      "shortAnswer": "No. More URLs do not equal SEO growth, so publishing additional addresses does not by itself show that the site became easier to find or to reference.",
+      "checks": [
+        "URL count is not growth",
+        "Extra addresses are a count",
+        "Thin mirrors do not expand",
+        "Growth is not a URL tally"
+      ],
+      "doesNotClaim": "Adding URLs does not guarantee SEO growth, rankings, or citations. Mika does not guarantee search rankings or AI answer citations, and a higher URL count is not treated as growth.",
+      "example": "Shipping many extra URLs that repeat the same product facts does not equal SEO growth. Those added addresses remain a count, and thin mirrors are not market expansion."
+    },
+    "zh": {
+      "title": "页面 URL 变多是否就等于 SEO 有了增长？",
+      "description": "更多 URL 并不等于 SEO 增长，地址列表变长本身并不是增长结果。",
+      "h1": "页面 URL 变多是否就等于 SEO 有了增长？",
+      "blurb": "不是。更多 URL 不等于 SEO 增长，单薄复制也不是市场扩展。",
+      "lead": "更高的 URL 数量只是地址的计数。更多 URL 并不等于 SEO 增长。",
+      "definition": "更多 URL 并不等于 SEO 增长。增加地址只是把 URL 列表变长，同一套事实的单薄镜像也不是市场扩展。",
+      "shortAnswer": "不是。更多 URL 并不等于 SEO 增长，因此多发布一些地址本身并不能说明网站变得更容易被找到或被引用。",
+      "checks": [
+        "URL 数量不是增长",
+        "新增地址只是计数",
+        "单薄镜像不是扩展",
+        "增长不是 URL 清点"
+      ],
+      "doesNotClaim": "增加 URL 并不保证 SEO 增长、排名或被引用。Mika 不保证搜索排名或 AI 答案引用，更高的 URL 数量也不会被当成增长。",
+      "example": "上线许多重复同一产品事实的额外 URL，并不等于 SEO 增长。这些新增地址仍然只是计数，单薄镜像也不是市场扩展。"
+    }
+  },
+  {
+    "slug": "what-is-an-indexation-mismatch",
+    "en": {
+      "title": "What is an indexation mismatch?",
+      "description": "An indexation mismatch is when a sitemap lists a URL that canonical, robots, or status code does not present as the indexable page.",
+      "h1": "What is an indexation mismatch?",
+      "blurb": "The sitemap lists a URL, but canonical, robots, or status does not present it as the indexable page.",
+      "lead": "An indexation mismatch appears when the sitemap and the indexability signals disagree about which URL is the page to index.",
+      "definition": "An indexation mismatch is when a sitemap lists a URL that canonical, robots, or status code does not present as the indexable page. The sitemap and the signals that govern indexability disagree about that URL.",
+      "shortAnswer": "A sitemap lists a URL, but the canonical, robots rules, or status code does not present that URL as the indexable page. That disagreement is an indexation mismatch.",
+      "checks": [
+        "Sitemap lists the URL",
+        "Canonical may disagree",
+        "Robots rules may disagree",
+        "Status code may disagree"
+      ],
+      "doesNotClaim": "Finding an indexation mismatch does not guarantee that aligning the signals will change rankings. Mika does not guarantee search rankings or AI answer citations when sitemap, canonical, robots, and status signals are brought into line.",
+      "example": "A sitemap can include a URL while the canonical points to another URL, robots marks the URL noindex, or the status code does not present it as a successful indexable page. Any of those conflicts is an indexation mismatch."
+    },
+    "zh": {
+      "title": "什么是站点地图与可索引页面之间的索引不一致？",
+      "description": "索引不一致是指站点地图列出了某个 URL，但 canonical、robots 或状态码并未把它呈现为可索引页面。",
+      "h1": "什么是站点地图与可索引页面之间的索引不一致？",
+      "blurb": "站点地图列出了 URL，但 canonical、robots 或状态码没有把它呈现为可索引页面。",
+      "lead": "当站点地图和可索引信号对应当索引哪个 URL 意见不一致时，就出现索引不一致。",
+      "definition": "索引不一致是指站点地图列出了一个 URL，但 canonical、robots 或状态码并未把该 URL 呈现为可索引页面。站点地图与管理可索引性的信号对该 URL 的判断不一致。",
+      "shortAnswer": "站点地图列出了某个 URL，但 canonical、robots 规则或状态码没有把该 URL 呈现为可索引页面。这种不一致就是索引不一致。",
+      "checks": [
+        "站点地图列出该 URL",
+        "canonical 可能不一致",
+        "robots 规则可能不一致",
+        "状态码可能不一致"
+      ],
+      "doesNotClaim": "发现索引不一致并不保证把信号对齐后排名就会改变。Mika 不保证搜索排名或 AI 答案引用，即使站点地图、canonical、robots 和状态信号被对齐也一样。",
+      "example": "站点地图可以包含一个 URL，而其 canonical 指向另一个 URL，或 robots 将其标为 noindex，或状态码没有把它呈现为成功的可索引页面。这些冲突都是索引不一致。"
+    }
+  },
+  {
+    "slug": "what-is-a-crawl-path",
+    "en": {
+      "title": "What is a crawl path?",
+      "description": "A crawl path is the internal route a crawler can follow from one page to another.",
+      "h1": "What is a crawl path?",
+      "blurb": "A crawl path is the internal route a crawler can follow between pages on the site.",
+      "lead": "Crawlers discover later pages by following an internal route, and that route is the crawl path.",
+      "definition": "A crawl path is the internal route a crawler can follow. It is the chain of internal links and reachable URLs that lets a crawler move from one page to another page.",
+      "shortAnswer": "A crawl path is the internal route a crawler can follow from page to page. If no internal route reaches a URL, that page is not on a crawl path from the rest of the site.",
+      "checks": [
+        "An internal route exists",
+        "A crawler can follow it",
+        "Links connect the pages",
+        "Unreachable pages sit off it"
+      ],
+      "doesNotClaim": "A crawl path does not guarantee that a crawler will index every URL on the route. Mika does not guarantee search rankings or AI answer citations because an internal route exists.",
+      "example": "A crawler can move from one page to a product page and then to specifications when each step is an internal link. That chain is a crawl path, and a page with no internal links is an orphan outside those routes."
+    },
+    "zh": {
+      "title": "什么是爬虫可以沿着内部链接跟随的抓取路径？",
+      "description": "抓取路径是爬虫能够跟随的内部路线，用来从一页走到另一页。",
+      "h1": "什么是爬虫可以沿着内部链接跟随的抓取路径？",
+      "blurb": "抓取路径是爬虫在网站页面之间能够跟随的内部路线。",
+      "lead": "爬虫通过跟随内部路线发现后续页面，这条路线就是抓取路径。",
+      "definition": "抓取路径是爬虫能够跟随的内部路线。它是内部链接和可到达 URL 组成的链条，使爬虫能从一页走到另一页。",
+      "shortAnswer": "抓取路径是爬虫能够逐页跟随的内部路线。如果没有内部路线到达某个 URL，该页就不在网站其余部分的抓取路径上。",
+      "checks": [
+        "存在一条内部路线",
+        "爬虫可以跟随这条路线",
+        "链接把页面连起来",
+        "到不了的页面在路径外"
+      ],
+      "doesNotClaim": "有抓取路径并不保证爬虫会索引路线上的每个 URL。Mika 不保证搜索排名或 AI 答案引用，即使存在内部路线也一样。",
+      "example": "当每一步都是内部链接时，爬虫可以从一页走到产品页，再走到规格页。这条链就是抓取路径；没有任何内部链接的页面是这些路线之外的孤立页。"
+    }
+  },
+  {
+    "slug": "which-status-codes-matter-for-crawling",
+    "en": {
+      "title": "Which status codes matter for crawling?",
+      "description": "Status codes matter because a non-success response can stop the crawl, and soft 404s are named in the open-source crawler note.",
+      "h1": "Which status codes matter for crawling?",
+      "blurb": "Non-success responses can stop the crawl, and soft 404s are part of the same status review.",
+      "lead": "Status codes matter on a crawl because a non-success response can stop the crawler from continuing.",
+      "definition": "Status codes matter because a non-success response can stop the crawl. Soft 404s are named in the open-source SEO crawler note, so a URL that looks present while failing as a soft 404 belongs in that same status review.",
+      "shortAnswer": "Non-success responses matter because they can stop the crawl, and soft 404s are named in the open-source crawler note. Review status codes as signals about whether a crawler can continue, not as a ranking scoreboard.",
+      "checks": [
+        "Non-success can stop a crawl",
+        "Soft 404s are in the note",
+        "Status can block the path",
+        "Codes are crawl signals"
+      ],
+      "doesNotClaim": "Correct status codes do not guarantee full crawl coverage or rankings. Mika does not guarantee search rankings or AI answer citations when non-success responses and soft 404s are fixed.",
+      "example": "A URL that returns a non-success response can stop the crawl at that address, so the status code matters to the path. A soft 404, which the open-source crawler note names, also matters because the URL may look available while not serving a real page."
+    },
+    "zh": {
+      "title": "在抓取过程中，哪些状态码会影响到爬虫能否继续？",
+      "description": "状态码之所以重要，是因为非成功响应可能中断抓取，而且开源爬虫笔记点名了软 404。",
+      "h1": "在抓取过程中，哪些状态码会影响到爬虫能否继续？",
+      "blurb": "非成功响应可能中断抓取，软 404 也属于同一次状态检查。",
+      "lead": "状态码对抓取很重要，因为非成功响应可能让爬虫无法继续。",
+      "definition": "状态码之所以重要，是因为非成功响应可能中断抓取。开源 SEO 爬虫笔记点名了软 404，因此看起来存在、实则属于软 404 的 URL 也在同一次状态检查里。",
+      "shortAnswer": "非成功响应很重要，因为它们可能中断抓取，而且开源爬虫笔记点名了软 404。状态码是关于爬虫能否继续的信号，不是排名记分牌。",
+      "checks": [
+        "非成功响应可能中断抓取",
+        "笔记中点名了软 404",
+        "状态码可能挡住路径",
+        "状态码是抓取信号"
+      ],
+      "doesNotClaim": "状态码正确并不保证抓取覆盖完整或带来排名。Mika 不保证搜索排名或 AI 答案引用，即使非成功响应和软 404 已被处理也一样。",
+      "example": "返回非成功响应的 URL 可能让抓取停在该地址，因此状态码对路径很重要。开源爬虫笔记点名的软 404 也同样重要，因为 URL 看起来可用，实际却没有提供真实页面。"
+    }
+  },
+  {
+    "slug": "what-are-informational-commercial-and-transactional-intents",
+    "en": {
+      "title": "What are informational, commercial, and transactional intents?",
+      "description": "The intents used on the site are informational, commercial, and transactional, kept as three separate labels.",
+      "h1": "What are informational, commercial, and transactional intents?",
+      "blurb": "The site uses three intent labels: informational, commercial, and transactional.",
+      "lead": "Informational, commercial, and transactional are the three intents used when questions on the site are classified.",
+      "definition": "The intents used on the site are informational, commercial, and transactional. Commercial intent is a query a product page can honestly support with specifications, use cases, and proof, and informational and transactional are the other two intent labels kept separate from that commercial case.",
+      "shortAnswer": "Informational, commercial, and transactional are the intents used on the site. A commercial query is one a product page can honestly support with specs, use cases, and proof, while the other two intents stay as separate labels.",
+      "checks": [
+        "Informational intent is used",
+        "Commercial intent is used",
+        "Transactional intent is used",
+        "Commercial needs page proof"
+      ],
+      "doesNotClaim": "Labeling an intent does not guarantee that the page will rank or be cited for that query. Mika does not guarantee search rankings or AI answer citations for informational, commercial, or transactional questions.",
+      "example": "Question coverage can record a buyer question beside one of these three intent labels. A commercial question is one the product page can honestly support with specifications, use cases, and proof, while informational and transactional questions keep the other two labels the site uses."
+    },
+    "zh": {
+      "title": "信息型、商业型与交易型这三种意图分别指什么？",
+      "description": "站点使用的意图是信息型、商业型和交易型，三者作为分开的标签。",
+      "h1": "信息型、商业型与交易型这三种意图分别指什么？",
+      "blurb": "站点使用三种意图标签：信息型、商业型和交易型。",
+      "lead": "在为站点上的问题分类时，使用的三种意图是信息型、商业型和交易型。",
+      "definition": "站点使用的意图是信息型、商业型和交易型。商业型意图是产品页能够用规格、使用场景和证据诚实支持的查询，信息型和交易型则是与该商业情形分开保留的另外两种意图标签。",
+      "shortAnswer": "信息型、商业型和交易型是站点使用的意图。商业型查询是产品页能用规格、使用场景和证据诚实支持的查询，另外两种意图保持为独立标签。",
+      "checks": [
+        "站点会使用信息型意图",
+        "站点会使用商业型意图",
+        "站点会使用交易型意图",
+        "商业型需要页面证据"
+      ],
+      "doesNotClaim": "给查询贴上意图标签并不保证页面会因此获得排名或被引用。Mika 不保证搜索排名或 AI 答案引用，无论问题被标为信息型、商业型还是交易型。",
+      "example": "问题覆盖可以把买家问题记在这三种意图标签之一旁边。商业型问题是产品页能用规格、使用场景和证据诚实支持的问题，信息型和交易型问题则使用站点上的另外两种标签。"
+    }
+  },
+  {
+    "slug": "what-should-you-fix-before-a-new-market",
+    "en": {
+      "title": "What should you fix before a new market?",
+      "description": "Before a new market, align facts and avoid copy-spam mirrors, because thin mirrors are not market expansion.",
+      "h1": "What should you fix before a new market?",
+      "blurb": "Align the shared facts first, and avoid copy-spam mirrors before adding a market.",
+      "lead": "Before a new market, align company and product facts and avoid copy-spam mirrors that only repeat the same page.",
+      "definition": "Before a new market, align facts and avoid copy-spam mirrors. Pages for that market should share accurate company and product facts with the existing pages instead of repeating thin copies that add no distinct coverage.",
+      "shortAnswer": "Align facts across the pages that will represent the new market, and avoid copy-spam mirrors. Thin mirrors are not market expansion, so the facts should match before extra market URLs are treated as coverage.",
+      "checks": [
+        "Align the facts first",
+        "Avoid copy-spam mirrors",
+        "Thin mirrors are not expansion",
+        "Product facts match first"
+      ],
+      "doesNotClaim": "Preparing a new market this way does not guarantee rankings or demand in that market. Mika does not guarantee search rankings or AI answer citations because facts are aligned and copy-spam mirrors are avoided.",
+      "example": "Before adding a market, compare company name, product name, specifications, applications, claims, and question coverage so the new pages match the source facts. A translated copy that adds no distinct answer is a thin mirror, which is not market expansion."
+    },
+    "zh": {
+      "title": "准备进入一个新市场之前应当先修正什么事实？",
+      "description": "进入新市场之前先对齐事实并避免复制堆砌的镜像，因为单薄镜像不是市场扩展。",
+      "h1": "准备进入一个新市场之前应当先修正什么事实？",
+      "blurb": "先对齐共享事实，并在增加市场页面之前避免复制堆砌的镜像。",
+      "lead": "进入新市场之前，先对齐公司与产品事实，并避免只是重复同一页面的复制堆砌镜像。",
+      "definition": "进入新市场之前，先对齐事实并避免复制堆砌的镜像。该市场的页面应当与现有页面共享准确的公司与产品事实，而不是重复没有新增覆盖的单薄副本。",
+      "shortAnswer": "让将要代表新市场的页面对齐事实，并避免复制堆砌的镜像。单薄镜像不是市场扩展，因此在把额外的市场 URL 当作覆盖之前，事实应当先一致。",
+      "checks": [
+        "进入市场之前先对齐事实",
+        "避免复制堆砌镜像",
+        "单薄镜像不是扩展",
+        "产品事实要先完成对齐"
+      ],
+      "doesNotClaim": "用这种方式准备新市场并不保证该市场的排名或需求。Mika 不保证搜索排名或 AI 答案引用，即使事实已对齐并且避免了复制堆砌镜像也一样。",
+      "example": "增加市场页面之前，比较公司名称、产品名称、规格、应用、主张和问题覆盖，使新页面与来源事实一致。没有新增直接答案的翻译副本是单薄镜像，而单薄镜像不是市场扩展。"
+    }
+  },
+  {
+    "slug": "what-is-question-coverage",
+    "en": {
+      "title": "What is question coverage?",
+      "description": "Question coverage maps buyer questions to pages and marks them answered, partial, or uncovered.",
+      "h1": "What is question coverage?",
+      "blurb": "It maps buyer questions to pages and marks each one answered, partial, or uncovered.",
+      "lead": "Question coverage shows which buyer questions a page answers, which it only mentions, and which no page covers.",
+      "definition": "Question coverage maps buyer questions to pages and marks them answered, partial, or uncovered. The map shows which questions already have a direct answer, which are only mentioned, and which no page addresses.",
+      "shortAnswer": "Question coverage maps buyer questions to pages and marks each one answered, partial, or uncovered. It is a coverage map of questions, not a scoreboard of rankings.",
+      "checks": [
+        "Buyer questions are mapped",
+        "Answered questions are marked",
+        "Partial questions are marked",
+        "Uncovered questions are marked"
+      ],
+      "doesNotClaim": "Question coverage does not guarantee that answered questions will be cited or ranked. Mika does not guarantee search rankings or AI answer citations because a question is marked answered, partial, or uncovered.",
+      "example": "A buyer question about low-rise concrete placement can be marked answered when the product page states the use case, the constraints, and the specifications. The same map can mark another question partial or uncovered when no page answers it directly."
+    },
+    "zh": {
+      "title": "什么是把买家问题映射到具体页面的问题覆盖？",
+      "description": "问题覆盖把买家问题映射到页面，并标为已回答、部分覆盖或未覆盖。",
+      "h1": "什么是把买家问题映射到具体页面的问题覆盖？",
+      "blurb": "它把买家问题映射到页面，并把每条标为已回答、部分覆盖或未覆盖。",
+      "lead": "问题覆盖显示哪些买家问题已有页面回答、哪些只是被提到，以及哪些没有任何页面覆盖。",
+      "definition": "问题覆盖把买家问题映射到页面，并标为已回答、部分覆盖或未覆盖。这张图显示哪些问题已有直接答案、哪些只是被提到，以及哪些没有页面处理。",
+      "shortAnswer": "问题覆盖把买家问题映射到页面，并把每条标为已回答、部分覆盖或未覆盖。它是问题的覆盖图，不是排名记分牌。",
+      "checks": [
+        "买家问题已映射到页面",
+        "已回答的问题已标记",
+        "部分覆盖的问题已标记",
+        "未覆盖的问题已标记"
+      ],
+      "doesNotClaim": "问题覆盖并不保证已回答的问题会被引用或获得排名。Mika 不保证搜索排名或 AI 答案引用，即使某个问题被标为已回答、部分覆盖或未覆盖也一样。",
+      "example": "当产品页写明使用场景、限制条件和规格时，关于低层混凝土浇筑的买家问题可以标为已回答。同一张图也可以在没有页面直接回答时，把另一个问题标为部分覆盖或未覆盖。"
+    }
+  },
+  {
+    "slug": "what-is-partial-question-coverage",
+    "en": {
+      "title": "What is partial question coverage?",
+      "description": "Partial question coverage means the page mentions the topic but does not answer the question directly.",
+      "h1": "What is partial question coverage?",
+      "blurb": "Partial means the page mentions the topic but does not answer that question directly.",
+      "lead": "A partial mark means the topic appears on the page, yet the page still does not give a direct answer.",
+      "definition": "Partial question coverage means the page mentions the topic but does not answer it directly. The topic is present, yet a reader still cannot take a direct answer from that page.",
+      "shortAnswer": "Partial means the page mentions the topic but does not answer it directly. The question is neither fully answered nor completely uncovered, because the mention stops short of a direct answer.",
+      "checks": [
+        "The topic is mentioned",
+        "No direct answer is given",
+        "It is not fully answered",
+        "It is not fully uncovered"
+      ],
+      "doesNotClaim": "A partial mark does not guarantee that expanding the mention will earn a citation. Mika does not guarantee search rankings or AI answer citations if a partial page later receives a direct answer.",
+      "example": "A product page that names low-rise work but never states suitability, constraints, or a specification link has partial coverage of that question. The topic appears on the page, but the page does not answer it directly."
+    },
+    "zh": {
+      "title": "什么是只提到主题却没有直接回答的部分覆盖？",
+      "description": "部分问题覆盖是指页面提到了主题，但没有直接回答该问题。",
+      "h1": "什么是只提到主题却没有直接回答的部分覆盖？",
+      "blurb": "部分覆盖是指页面提到了主题，但没有直接回答该问题。",
+      "lead": "标为部分覆盖，表示主题出现在页面上，但页面仍然没有给出直接答案。",
+      "definition": "部分问题覆盖是指页面提到了主题，但没有直接回答它。主题出现了，读者仍然无法从该页得到一个直接答案。",
+      "shortAnswer": "部分覆盖是指页面提到了主题，但没有直接回答它。这个问题既不是完全已回答，也不是完全未覆盖，因为提及停在直接答案之前。",
+      "checks": [
+        "相关主题只是被提到",
+        "没有给出直接答案",
+        "该问题并非完全已回答",
+        "也并非完全未覆盖"
+      ],
+      "doesNotClaim": "标为部分覆盖并不保证把提及扩写之后就会获得引用。Mika 不保证搜索排名或 AI 答案引用，即使部分覆盖的页面后来补上了直接答案也一样。",
+      "example": "产品页提到了低层作业，却从未说明适用性、限制条件或规格链接，那么该问题只是部分覆盖。主题出现在页面上，但页面没有直接回答它。"
+    }
+  },
+  {
+    "slug": "what-are-the-four-geo-building-blocks",
+    "en": {
+      "title": "What are the four GEO building blocks?",
+      "description": "The four GEO building blocks are entities, direct answers, evidence, and consistent context.",
+      "h1": "What are the four GEO building blocks?",
+      "blurb": "The four blocks are entities, direct answers, evidence, and consistent context.",
+      "lead": "GEO on the site is built from four blocks: entities, direct answers, evidence, and consistent context.",
+      "definition": "The four GEO building blocks are entities, direct answers, evidence, and consistent context. Together they describe what a page names, what it answers, what supports the answer, and whether that context stays consistent.",
+      "shortAnswer": "The four building blocks are entities, direct answers, evidence, and consistent context. GEO work uses these four blocks, and using them is not a promise of inclusion in an AI answer.",
+      "checks": [
+        "Entities are named",
+        "Direct answers are present",
+        "Evidence supports the answer",
+        "Context stays consistent"
+      ],
+      "doesNotClaim": "Using the four GEO building blocks does not guarantee inclusion, recommendation, or citation. Mika does not guarantee search rankings or AI answer citations, and GEO does not guarantee those outcomes.",
+      "example": "A product page can name the equipment as an entity, answer a suitability question directly, link specifications as evidence, and keep the same facts in English and Chinese. Those pieces are entities, direct answers, evidence, and consistent context."
+    },
+    "zh": {
+      "title": "站点所用 GEO 的四个构建块分别是什么？",
+      "description": "GEO 的四个构建块是实体、直接答案、证据和一致的上下文。",
+      "h1": "站点所用 GEO 的四个构建块分别是什么？",
+      "blurb": "这四个构建块是实体、直接答案、证据和一致的上下文。",
+      "lead": "站点上的 GEO 由四个构建块组成：实体、直接答案、证据和一致的上下文。",
+      "definition": "GEO 的四个构建块是实体、直接答案、证据和一致的上下文。它们一起说明页面命名了什么、回答了什么、用什么支持答案，以及上下文是否保持一致。",
+      "shortAnswer": "四个构建块是实体、直接答案、证据和一致的上下文。GEO 工作使用这四块，使用它们并不是对进入 AI 答案的承诺。",
+      "checks": [
+        "实体已经在页面上命名",
+        "页面上存在直接答案",
+        "已有证据在支持该答案",
+        "上下文在各页保持一致"
+      ],
+      "doesNotClaim": "使用 GEO 的四个构建块并不保证被收录、被推荐或被引用。Mika 不保证搜索排名或 AI 答案引用，GEO 也不保证这些结果。",
+      "example": "产品页可以把设备命名为实体，直接回答适用性问题，把规格链接作为证据，并在英文和中文中保持相同事实。这些就是实体、直接答案、证据和一致的上下文。"
+    }
+  },
+  {
+    "slug": "what-does-re-audit-mean",
+    "en": {
+      "title": "What does re-audit mean?",
+      "description": "Re-audit means running the scan again after changes ship, to see whether the finding changed, not to predict rankings.",
+      "h1": "What does re-audit mean?",
+      "blurb": "Run the scan again after changes ship, and see whether the finding changed.",
+      "lead": "A re-audit repeats the scan after the changes ship so you can see whether the finding changed.",
+      "definition": "Re-audit means running the scan again after changes ship, to see whether the finding changed. The comparison checks the finding itself and is not a way to predict rankings.",
+      "shortAnswer": "Run the scan again after the changes ship and compare whether the finding changed. A re-audit reviews that change in the finding and does not predict rankings.",
+      "checks": [
+        "The scan runs again",
+        "The changes have shipped",
+        "The finding is compared",
+        "Rankings are not predicted"
+      ],
+      "doesNotClaim": "A re-audit does not guarantee better rankings or that every finding will clear. Mika does not guarantee search rankings or AI answer citations, and the re-audit does not predict rankings.",
+      "example": "After a template canonical is corrected, a re-audit runs the scan again to see whether the indexation mismatch finding changed. The result reports the finding, and it does not predict a ranking."
+    },
+    "zh": {
+      "title": "什么是变更上线之后再跑一次扫描的重新审计？",
+      "description": "重新审计是指变更上线后再跑一次扫描，看发现是否变化，而不是用来预测排名。",
+      "h1": "什么是变更上线之后再跑一次扫描的重新审计？",
+      "blurb": "在变更上线之后再跑一次扫描，看原来的发现是否发生了变化。",
+      "lead": "重新审计在变更上线后重复扫描，以便查看发现是否已经变化。",
+      "definition": "重新审计是指在变更上线之后再跑一次扫描，看发现是否变化。这次比较检查的是发现本身，不是预测排名的方法。",
+      "shortAnswer": "在变更上线后再跑一次扫描，并比较发现是否变化。重新审计查看的是发现的变化，并不预测排名。",
+      "checks": [
+        "整次扫描会再跑一遍",
+        "相关变更已经完成上线",
+        "把同一发现做前后比较",
+        "这次扫描不去预测名次"
+      ],
+      "doesNotClaim": "重新审计并不保证搜索名次更好，也不保证每条发现都会消失。Mika 不保证搜索排名或 AI 答案引用，而且重新审计不预测排名。",
+      "example": "模板的 canonical 修正之后，重新审计会再跑一次扫描，看索引不一致这条发现是否变化。结果报告的是发现，而不是预测排名。"
+    }
+  },
+  {
+    "slug": "what-does-mika-report-instead-of-a-mystery-kpi",
+    "en": {
+      "title": "What does Mika report instead of a mystery KPI?",
+      "description": "Instead of a mystery KPI, Mika reports reasons, sample URLs, opportunities, and next actions, and keeps four scores separate.",
+      "h1": "What does Mika report instead of a mystery KPI?",
+      "blurb": "Mika reports reasons, sample URLs, opportunities, and next actions, with four scores kept separate.",
+      "lead": "Instead of one unexplained KPI, the report gives reasons, sample URLs, opportunities, and the next action.",
+      "definition": "Instead of a mystery KPI, Mika reports reasons, sample URLs, opportunities, and next actions, and keeps four scores separate. The report explains what was found and what to do next, without collapsing those scores into one hidden number.",
+      "shortAnswer": "Mika reports reasons, sample URLs, opportunities, and next actions, and keeps four scores separate. That replaces a single mystery KPI with an explanation and a next action.",
+      "checks": [
+        "Reasons are reported",
+        "Sample URLs are included",
+        "Opportunities are listed",
+        "Four scores stay separate"
+      ],
+      "doesNotClaim": "This reporting style does not guarantee a ranking outcome or a single performance number. Mika does not guarantee search rankings or AI answer citations, and separate scores are not a mystery KPI.",
+      "example": "A report can list the reason a sitemap URL is not the indexable page, include that URL as a sample, name the commercial opportunity the page can support, and state the next action. The four scores stay separate instead of being folded into one unexplained KPI."
+    },
+    "zh": {
+      "title": "Mika 用什么报告来代替一个神秘的 KPI？",
+      "description": "Mika 不使用神秘 KPI，而是报告原因、样例 URL、机会和下一步，并把四项分数分开。",
+      "h1": "Mika 用什么报告来代替一个神秘的 KPI？",
+      "blurb": "Mika 报告原因、样例 URL、机会和下一步，并把四项分数分开保留。",
+      "lead": "报告不给一个无法解释的 KPI，而是给出原因、样例 URL、机会和下一步。",
+      "definition": "Mika 不用神秘 KPI，而是报告原因、样例 URL、机会和下一步，并把四项分数分开。报告说明发现了什么以及下一步做什么，而不把这些分数折成一个隐藏数字。",
+      "shortAnswer": "Mika 报告原因、样例 URL、机会和下一步，并把四项分数分开。这用解释和下一步代替了单一的神秘 KPI。",
+      "checks": [
+        "报告里面写明具体原因",
+        "包含样例 URL",
+        "列出可支持的机会",
+        "四项分数保持分开"
+      ],
+      "doesNotClaim": "这种报告方式并不保证搜索名次，也不保证一个单一绩效数字。Mika 不保证搜索排名或 AI 答案引用，分开的分数也不是神秘 KPI。",
+      "example": "报告可以列出某个站点地图 URL 为何不是可索引页面、把该 URL 作为样例、写出页面能够支持的商业机会，并说明下一步。四项分数保持分开，而不是折进一个无法解释的 KPI。"
+    }
+  },
+  {
+    "slug": "what-is-not-promised-about-ai-overviews",
+    "en": {
+      "title": "What is not promised about AI Overviews?",
+      "description": "AI Overviews are not promised, and GEO does not guarantee inclusion, recommendation, or citation.",
+      "h1": "What is not promised about AI Overviews?",
+      "blurb": "AI Overviews are not promised, and GEO does not promise inclusion, recommendation, or citation.",
+      "lead": "Nothing in the page structure is a commitment that an AI Overview will include, recommend, or cite the site.",
+      "definition": "AI Overviews are not promised. GEO does not guarantee inclusion, recommendation, or citation, so work on entities, answers, and evidence is not a commitment that an overview will feature the page.",
+      "shortAnswer": "AI Overviews are not promised, and GEO does not guarantee inclusion, recommendation, or citation. An audit or a direct answer is not a commitment that an overview will include the site.",
+      "checks": [
+        "AI Overviews are not promised",
+        "Inclusion is not promised",
+        "Recommendation is not promised",
+        "Citation is not promised"
+      ],
+      "doesNotClaim": "GEO does not guarantee inclusion, recommendation, or citation in AI Overviews. Mika does not guarantee search rankings or AI answer citations, and AI Overviews are not promised.",
+      "example": "A page can hold a direct answer, named entities, and evidence and still not be included, recommended, or cited in an AI Overview. That outcome sits outside what is promised, because AI Overviews are not promised."
+    },
+    "zh": {
+      "title": "关于 AI Overviews，哪些结果并未被承诺？",
+      "description": "AI Overviews 并未被承诺，GEO 也不保证被收录、被推荐或被引用。",
+      "h1": "关于 AI Overviews，哪些结果并未被承诺？",
+      "blurb": "AI Overviews 并未被承诺，GEO 也不承诺收录、推荐或引用。",
+      "lead": "页面结构中的任何安排都不是 AI Overview 会收录、推荐或引用本站的承诺。",
+      "definition": "AI Overviews 并未被承诺。GEO 不保证被收录、被推荐或被引用，因此在实体、答案和证据上所做的工作并不是概述一定会展示该页的承诺。",
+      "shortAnswer": "AI Overviews 并未被承诺，GEO 也不保证被收录、被推荐或被引用。审计或直接答案都不是概述一定会收录本站的承诺。",
+      "checks": [
+        "不承诺 AI Overviews",
+        "概述并不承诺会被收录",
+        "概述并不承诺会被推荐",
+        "概述并不承诺会被引用"
+      ],
+      "doesNotClaim": "GEO 不保证在 AI Overviews 中被收录、被推荐或被引用。Mika 不保证搜索排名或 AI 答案引用，而且 AI Overviews 并未被承诺。",
+      "example": "页面可以有直接答案、已命名的实体和证据，仍然不会在 AI Overview 中被收录、被推荐或被引用。这一结果在承诺之外，因为 AI Overviews 并未被承诺。"
+    }
+  },
+  {
+    "slug": "how-do-internal-links-support-discovery",
+    "en": {
+      "title": "How do internal links support discovery?",
+      "description": "Internal links are how pages are discovered, and pages with no internal links are orphans.",
+      "h1": "How do internal links support discovery?",
+      "blurb": "Internal links are the routes by which pages are discovered, and pages with none are orphans.",
+      "lead": "Pages are discovered through internal links, so a page that receives none is an orphan.",
+      "definition": "Internal links are how pages are discovered, because they form the routes a crawler and a reader can follow. Pages with none are orphans, so discovery of a page depends on at least one internal link pointing to it.",
+      "shortAnswer": "Internal links are how pages are discovered. A page with no internal links is an orphan, which means other pages do not provide a route to it.",
+      "checks": [
+        "Internal links form the route",
+        "Crawlers can follow the links",
+        "Linked pages can be found",
+        "No inbound links means orphan"
+      ],
+      "doesNotClaim": "Internal links do not guarantee indexing or rankings for the destination page. Mika does not guarantee search rankings or AI answer citations because a page receives internal links and is no longer an orphan.",
+      "example": "A category page that links to a product page creates a discovery route for that product page. If no page links to it, the product page is an orphan and is not discovered through internal links."
+    },
+    "zh": {
+      "title": "网站里的内部链接如何帮助爬虫和读者发现页面？",
+      "description": "页面靠内部链接被发现，没有任何内部链接的页面是孤立页面。",
+      "h1": "网站里的内部链接如何帮助爬虫和读者发现页面？",
+      "blurb": "内部链接是页面被发现的路线，一条都没有的页面就是孤立页面。",
+      "lead": "页面通过内部链接被发现，因此没有任何内部链接指向的页面是孤立页面。",
+      "definition": "内部链接是页面被发现的方式，因为它们构成爬虫和读者可以跟随的路线。没有任何内部链接的页面是孤立页面，所以页面被发现至少需要一条指向它的内部链接。",
+      "shortAnswer": "内部链接是页面被发现的方式。没有任何内部链接的页面是孤立页面，也就是其他页面没有提供通向它的路线。",
+      "checks": [
+        "内部链接构成路线",
+        "爬虫可以跟随这些链接",
+        "有链接的页面能被找到",
+        "没有入链就是孤立页"
+      ],
+      "doesNotClaim": "内部链接并不保证目标页面会被索引或获得排名。Mika 不保证搜索排名或 AI 答案引用，即使页面收到了内部链接、不再是孤立页面也一样。",
+      "example": "分类页链接到产品页，就为该产品页建立了一条发现路线。如果没有任何页面链接到它，该产品页就是孤立页面，无法通过内部链接被发现。"
+    }
+  },
+  {
+    "slug": "what-fields-should-match-across-languages",
+    "en": {
+      "title": "What fields should match across languages?",
+      "description": "Six fields should match across languages: company name, product name, specifications, applications, claims, and question coverage.",
+      "h1": "What fields should match across languages?",
+      "blurb": "Match company name, product name, specifications, applications, claims, and question coverage.",
+      "lead": "English and Chinese pages should agree on the same six fields before they are treated as one set of facts.",
+      "definition": "The fields that should match across languages are company name, product name, specifications, applications, claims, and question coverage. English at the root and Chinese under /zh/ should share these six facts rather than diverging into thin mirrors.",
+      "shortAnswer": "Match company name, product name, specifications, applications, claims, and question coverage between languages. Those six fields are the language fields that should agree on bilingual pages.",
+      "checks": [
+        "Company name matches",
+        "Product name matches",
+        "Specifications match",
+        "Claims and coverage match"
+      ],
+      "doesNotClaim": "Matching these fields does not guarantee equal rankings in each language. Mika does not guarantee search rankings or AI answer citations when company, product, specification, application, claim, and question-coverage fields agree.",
+      "example": "The English page and the /zh/ page should show the same company name, product name, specifications, applications, claims, and question coverage. Hreflang still marks en, zh-Hans, and x-default to English while those six fields stay aligned."
+    },
+    "zh": {
+      "title": "英文页面与中文页面之间应当对齐哪六个字段？",
+      "description": "跨语言应当一致的六个字段是公司名称、产品名称、规格、应用、主张和问题覆盖。",
+      "h1": "英文页面与中文页面之间应当对齐哪六个字段？",
+      "blurb": "对齐公司名称、产品名称、规格、应用、主张和问题覆盖。",
+      "lead": "英文页和中文页在被视为同一套事实之前，应当在同样的六个字段上保持一致。",
+      "definition": "跨语言应当一致的字段是公司名称、产品名称、规格、应用、主张和问题覆盖。根路径的英文和 /zh/ 下的中文应当共享这六项事实，而不是分化成单薄镜像。",
+      "shortAnswer": "在不同语言之间对齐公司名称、产品名称、规格、应用、主张和问题覆盖。这六个字段就是双语页面上应当一致的语言字段。",
+      "checks": [
+        "公司名称在两种语言一致",
+        "产品名称在两种语言一致",
+        "规格说明在两种语言一致",
+        "主张与问题覆盖一致"
+      ],
+      "doesNotClaim": "这些字段一致并不保证每种语言获得相同排名。Mika 不保证搜索排名或 AI 答案引用，即使公司、产品、规格、应用、主张和问题覆盖都对齐也一样。",
+      "example": "英文页和 /zh/ 页应当展示相同的公司名称、产品名称、规格、应用、主张和问题覆盖。hreflang 仍然标记 en、zh-Hans，且 x-default 指向英文，同时这六个字段保持对齐。"
+    }
+  }
+]

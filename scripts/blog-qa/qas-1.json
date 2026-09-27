@@ -1,0 +1,927 @@
+[
+  {
+    "slug": "does-mika-guarantee-search-rankings",
+    "en": {
+      "title": "Does Mika guarantee search rankings?",
+      "description": "Mika audits describe crawl, index, and coverage. They do not promise a position in search results.",
+      "h1": "Does Mika guarantee search rankings?",
+      "blurb": "An audit can describe how a site is crawled and indexed, and it still does not sell a position.",
+      "lead": "Mika reviews crawl, index, and coverage, then stops short of promising where any page will appear.",
+      "definition": "Mika does not sell rankings. An SEO audit reviews crawl, index, and understanding, and it reports those findings without promising a future position.",
+      "shortAnswer": "No. Mika audits describe crawl, index, and coverage, with findings grouped by rule and sample URLs. They do not promise positions in search results.",
+      "checks": [
+        "Describe crawl and index signals",
+        "Describe coverage without a position",
+        "Group findings by audit rule",
+        "Attach sample URLs to findings"
+      ],
+      "doesNotClaim": "A Mika audit does not guarantee a search position, a traffic level, or movement on any results page. Describing crawl, index, and coverage does not guarantee that any URL will appear in a chosen place.",
+      "example": "Suppose a product URL is reachable and its canonical names that same URL as the intended indexable version. The audit can report those crawl and index facts, and it still cannot promise the position that URL will hold."
+    },
+    "zh": {
+      "title": "Mika 会不会对搜索结果中的具体名次做出承诺？",
+      "description": "Mika 的审计描述抓取、索引和覆盖，不会承诺某个页面出现在搜索结果的哪个位置。",
+      "h1": "Mika 会不会对搜索结果中的具体名次做出承诺？",
+      "blurb": "审计可以说明网站如何被抓取和索引，但名次并不是可以出售的结果。",
+      "lead": "Mika 审查抓取、索引和覆盖，然后停在这些发现上，不去承诺页面会出现在哪里。",
+      "definition": "Mika 不出售搜索名次。搜索审计审查抓取、索引与理解情况，再按规则报告发现，这些发现描述的是当前网站，而不是未来结果页上的位置。",
+      "shortAnswer": "不会。Mika 的审计描述抓取、索引和覆盖，并按规则附上示例网址。审计不会承诺页面在搜索结果中的位置。",
+      "checks": [
+        "描述抓取和索引信号",
+        "描述覆盖但不写名次",
+        "按审计规则分组发现",
+        "为发现附上示例网址"
+      ],
+      "doesNotClaim": "一份 Mika 审计不保证任何搜索名次、流量水平或结果页上的移动。它只描述当下的抓取、索引与覆盖，不保证某个网址会出现在选定的位置。",
+      "example": "假设一个产品网址可以到达，且规范链接把同一网址标成预期的可索引版本。审计可以报告这些抓取和索引事实，但仍然不能承诺该网址会占据哪个位置。"
+    }
+  },
+  {
+    "slug": "does-mika-guarantee-ai-citations",
+    "en": {
+      "title": "Does Mika guarantee AI citations?",
+      "description": "Citation readiness is not inclusion, recommendation, or citation in ChatGPT, Gemini, or AI Overviews.",
+      "h1": "Does Mika guarantee AI citations?",
+      "blurb": "A page can be ready for a careful reader to attribute a statement, and that is still not an AI citation.",
+      "lead": "Mika does not sell AI citations. Readiness to be attributed is a separate question from being included in an AI product.",
+      "definition": "Citation readiness means a careful reader could attribute a statement with less ambiguity. Mika does not sell guaranteed AI citations, and readiness is not inclusion in ChatGPT, Gemini, or AI Overviews.",
+      "shortAnswer": "No. Citation readiness is not inclusion, recommendation, or citation in ChatGPT, Gemini, or AI Overviews. GEO does not promise that any AI product will quote the page.",
+      "checks": [
+        "Separate readiness from inclusion",
+        "Name ChatGPT, Gemini, Overviews",
+        "Require an attributable statement",
+        "Refuse any citation promise"
+      ],
+      "doesNotClaim": "Citation readiness does not guarantee inclusion, recommendation, or citation in ChatGPT, Gemini, AI Overviews, or any other AI product. Mika does not guarantee that a careful, attributable page will be quoted.",
+      "example": "Suppose a page places a spec beside a product claim so a careful reader can attribute the statement. That citation readiness still does not mean ChatGPT, Gemini, or AI Overviews will include, recommend, or cite the page."
+    },
+    "zh": {
+      "title": "Mika 会不会承诺页面被 ChatGPT、Gemini 或 AI 概览引用？",
+      "description": "引用准备度并不是进入 ChatGPT、Gemini 或 AI 概览，也不是被这些产品推荐或引用。",
+      "h1": "Mika 会不会承诺页面被 ChatGPT、Gemini 或 AI 概览引用？",
+      "blurb": "页面可以让谨慎的读者把一句话归因回来，这仍然不是人工智能产品里的引用。",
+      "lead": "Mika 不出售人工智能引用。陈述能否被归因，和页面会不会被某个 AI 产品收录，是两件不同的事。",
+      "definition": "引用准备度是指谨慎的读者可以更少歧义地把陈述归因到页面。Mika 不出售人工智能引用，准备度也不是进入 ChatGPT、Gemini 或 AI 概览。",
+      "shortAnswer": "不会。引用准备度并不是在 ChatGPT、Gemini 或 AI 概览中被收录、推荐或引用。GEO 不会承诺任何人工智能产品会引用该页。",
+      "checks": [
+        "把准备度与收录分开",
+        "点名 ChatGPT 与 Gemini",
+        "要求陈述可以被归因",
+        "拒绝任何引用承诺"
+      ],
+      "doesNotClaim": "引用准备度不保证页面会被 ChatGPT、Gemini、AI 概览或任何其他人工智能产品收录、推荐或引用。Mika 不保证一条可归因的陈述一定被引用。",
+      "example": "假设页面把一条规格放在产品主张旁边，谨慎的读者可以把这句话归因到该页。这种引用准备度仍然不表示 ChatGPT、Gemini 或 AI 概览会收录、推荐或引用该页。"
+    }
+  },
+  {
+    "slug": "what-is-seo-health",
+    "en": {
+      "title": "Is the live site technically ready to be found and understood?",
+      "description": "SEO Health asks whether the live site is technically ready to be found and understood.",
+      "h1": "Is the live site technically ready to be found and understood?",
+      "blurb": "SEO Health looks at technical setup, structure, and content as one track, separate from growth.",
+      "lead": "SEO Health asks if the live site can be found and understood, using technical, structure, and content signals.",
+      "definition": "SEO Health asks whether the live site is technically ready to be found and understood. It covers technical setup, structure, and content, and it stays on its own scale beside SEO Growth.",
+      "shortAnswer": "SEO Health is the track for a live site that is technically ready to be found and understood. It reviews technical, structure, and content signals, and it is not blended into an overall score.",
+      "checks": [
+        "Check technical readiness",
+        "Check structure and content",
+        "Ask if the live site is understood",
+        "Keep this track off the growth scale"
+      ],
+      "doesNotClaim": "A strong SEO Health reading does not guarantee a search position or a growth result. Technical, structure, and content readiness does not guarantee that any page will be chosen in search.",
+      "example": "Suppose headings, internal structure, and a crawlable URL make a product page possible to find and understand. SEO Health can describe that readiness, while SEO Growth separately asks which buyer intents are still open."
+    },
+    "zh": {
+      "title": "线上网站在技术、结构和内容上是否已经准备好被发现并被理解？",
+      "description": "SEO Health 问的是线上网站在技术上是否已经准备好被发现和理解。",
+      "h1": "线上网站在技术、结构和内容上是否已经准备好被发现并被理解？",
+      "blurb": "SEO Health 查看技术、结构和内容，并且单独成一条轨道，不与增长混在一起。",
+      "lead": "SEO Health 问的是线上网站能否被发现和理解，依据是技术、结构和内容信号。",
+      "definition": "SEO Health 问的是线上网站在技术上是否已经准备好被发现和理解。它覆盖技术、结构和内容，并与 SEO Growth 分属不同刻度。",
+      "shortAnswer": "SEO Health 是一条独立轨道，用来看线上网站是否已经具备被发现和被理解的技术条件。它审查技术、结构和内容，不会被混进一个总分。",
+      "checks": [
+        "检查技术上是否可被发现",
+        "检查结构与内容是否可理解",
+        "确认对象是线上网站",
+        "不要并进 SEO Growth 刻度"
+      ],
+      "doesNotClaim": "SEO Health 读数好看，并不保证搜索名次或增长结果。技术、结构和内容上的就绪不保证任何页面会在搜索中被选中。",
+      "example": "假设标题、内部结构和一个可抓取的网址，让产品页有可能被找到并被理解。SEO Health 可以描述这种就绪，而 SEO Growth 会另外追问哪些买家意图仍然空着。"
+    }
+  },
+  {
+    "slug": "what-is-seo-growth",
+    "en": {
+      "title": "Which coverage, intent depth, and markets are still unoccupied?",
+      "description": "SEO Growth asks which coverage, intent depth, and markets are still open on the site.",
+      "h1": "Which coverage, intent depth, and markets are still unoccupied?",
+      "blurb": "SEO Growth names coverage, intent depth, and markets that the site has not occupied yet.",
+      "lead": "SEO Growth is the track for what is still open: coverage, intent depth, and markets.",
+      "definition": "SEO Growth asks which coverage, intent depth, and markets are still unoccupied. It is a separate track from SEO Health, so an open market is not folded into a technical readiness score.",
+      "shortAnswer": "SEO Growth looks for coverage, intent depth, and markets that are still open. Those gaps stay on their own scale and are not blended with SEO Health.",
+      "checks": [
+        "List coverage that is still missing",
+        "Judge intent depth on real pages",
+        "Name markets that are still open",
+        "Keep growth separate from health"
+      ],
+      "doesNotClaim": "Seeing an open market on the SEO Growth track does not guarantee that new pages will occupy it. Mika does not guarantee that deeper intent coverage will produce a position or a citation.",
+      "example": "Suppose the site explains one product line in depth and never answers a neighboring market's buyer questions. SEO Growth records that coverage and that market as still unoccupied, without blending the note into SEO Health."
+    },
+    "zh": {
+      "title": "哪些覆盖范围、意图深度和市场空位目前仍然没有被占据？",
+      "description": "SEO Growth 问的是网站还有哪些覆盖、意图深度和市场仍然空着。",
+      "h1": "哪些覆盖范围、意图深度和市场空位目前仍然没有被占据？",
+      "blurb": "SEO Growth 点出网站尚未占据的覆盖、意图深度和市场。",
+      "lead": "SEO Growth 这条轨道专门看仍然空着的部分：覆盖、意图深度和市场。",
+      "definition": "SEO Growth 问的是哪些覆盖、意图深度和市场仍然没有被占据。它与 SEO Health 分开，因此一个空着的市场不会被折进技术就绪分数。",
+      "shortAnswer": "SEO Growth 寻找仍然开放的覆盖、意图深度和市场。这些缺口留在自己的刻度上，不与 SEO Health 混合。",
+      "checks": [
+        "列出仍然缺失的覆盖",
+        "根据真实页面判断意图深度",
+        "标出仍然空着的市场",
+        "增长轨道不与健康度合并"
+      ],
+      "doesNotClaim": "在 SEO Growth 上看到一个空着的市场，不保证新页面就会占据它。Mika 不保证更深的意图覆盖会带来名次或引用。",
+      "example": "假设网站把一条产品线讲得很深，却从未回答相邻市场的买家问题。SEO Growth 会把这份覆盖和这个市场记成仍然空着，并且不会把这条记录混进 SEO Health。"
+    }
+  },
+  {
+    "slug": "what-is-geo-health",
+    "en": {
+      "title": "Can people find a clear, supportable answer from the site itself?",
+      "description": "GEO Health asks whether the site itself offers a clear, supportable answer people can find.",
+      "h1": "Can people find a clear, supportable answer from the site itself?",
+      "blurb": "GEO Health checks understanding, evidence, and answers that a person can find on the site.",
+      "lead": "GEO Health asks if the site itself can show a clear answer that evidence on the page can support.",
+      "definition": "GEO Health asks whether people can find a clear, supportable answer from the site itself. GEO means Generative Engine Optimization, and this track looks at understanding, evidence, and answers.",
+      "shortAnswer": "GEO Health is about a clear, supportable answer found on the site, using understanding, evidence, and answers. GEO means Generative Engine Optimization, and it is not geographic SEO.",
+      "checks": [
+        "Read the answer on the site itself",
+        "Look for evidence beside claims",
+        "Treat GEO as generative, not geographic",
+        "Keep GEO Health on its own scale"
+      ],
+      "doesNotClaim": "A clear, supportable answer on the site does not guarantee that an AI product will repeat it. GEO Health does not guarantee inclusion, recommendation, or citation in any AI product.",
+      "example": "Suppose a visitor can read on the site who the company is, what the product does, and a spec placed next to the claim. GEO Health treats that as a clear supportable answer, and it does not treat GEO as geographic SEO."
+    },
+    "zh": {
+      "title": "人们能否只依靠网站本身找到一条清晰且可支持的答案？",
+      "description": "GEO Health 问的是人们能否从网站本身找到一条清晰、并且有支持的答案。",
+      "h1": "人们能否只依靠网站本身找到一条清晰且可支持的答案？",
+      "blurb": "GEO Health 检查人们能否在网站上找到理解、证据和答案。",
+      "lead": "GEO Health 问的是网站本身能否给出一条清晰的答案，并且页面上的证据能够支持它。",
+      "definition": "GEO Health 问的是人们能否从网站本身找到一条清晰且可支持的答案。这里的 GEO 指 Generative Engine Optimization，也就是生成式引擎优化，这条轨道查看理解、证据和答案。",
+      "shortAnswer": "GEO Health 看的是能否在网站上找到清晰且可支持的答案，依据是理解、证据和回答。GEO 指生成式引擎优化，不是地理意义上的 SEO。",
+      "checks": [
+        "答案必须来自网站本身",
+        "查看主张旁边是否有证据",
+        "GEO 是生成式优化不是地理 SEO",
+        "GEO Health 单独成轨"
+      ],
+      "doesNotClaim": "网站上有一条清晰且可支持的答案，并不保证人工智能产品会复述它。GEO Health 不保证任何人工智能产品会收录、推荐或引用该页。",
+      "example": "假设访问者能在网站上读到公司是谁、产品做什么，以及放在主张旁边的规格。GEO Health 把这视为一条清晰且可支持的答案，并且不会把 GEO 当成地理 SEO。"
+    }
+  },
+  {
+    "slug": "what-is-geo-growth",
+    "en": {
+      "title": "Where can answer coverage and citation readiness still improve, without promising citations?",
+      "description": "GEO Growth finds query gaps, answer gaps, citation readiness, and expansion, without promising citations.",
+      "h1": "Where can answer coverage and citation readiness still improve, without promising citations?",
+      "blurb": "GEO Growth maps query gaps, answer gaps, citation readiness, and places the site can still expand.",
+      "lead": "GEO Growth shows where answers and citation readiness can still improve, and it does not promise citations.",
+      "definition": "GEO Growth asks where query gaps, answer gaps, citation readiness, and expansion still have room. Those openings describe answer coverage that can improve, and they are not a promise of being cited.",
+      "shortAnswer": "GEO Growth looks for query gaps, answer gaps, citation readiness, and expansion. It shows where answer coverage can still improve, and it does not promise citations in any AI product.",
+      "checks": [
+        "Find query gaps the site misses",
+        "Find answer gaps on current pages",
+        "Judge citation readiness only",
+        "Do not promise any AI citation"
+      ],
+      "doesNotClaim": "Closing a query gap or improving citation readiness does not guarantee that any AI product will cite the page. GEO Growth does not guarantee inclusion, recommendation, or citation.",
+      "example": "Suppose buyers ask a question the site never answers, and a nearby page states a claim with no spec beside it. GEO Growth marks the answer gap and the citation-readiness gap, and it does not promise that either page will be cited."
+    },
+    "zh": {
+      "title": "在不承诺引用的前提下，答案覆盖和引用准备还可以在哪里改进？",
+      "description": "GEO Growth 寻找查询缺口、答案缺口、引用准备度和扩展空间，并且不承诺引用。",
+      "h1": "在不承诺引用的前提下，答案覆盖和引用准备还可以在哪里改进？",
+      "blurb": "GEO Growth 标出查询缺口、答案缺口、引用准备度，以及网站仍可扩展的地方。",
+      "lead": "GEO Growth 说明答案和引用准备还可以在哪里改进，同时不去承诺会被引用。",
+      "definition": "GEO Growth 问的是查询缺口、答案缺口、引用准备度和扩展空间还剩在哪里。这些开口描述的是仍可改进的答案覆盖，不是被引用的承诺。",
+      "shortAnswer": "GEO Growth 寻找查询缺口、答案缺口、引用准备度和扩展空间。它说明答案覆盖还可以在哪里改进，并且不承诺任何人工智能产品会引用页面。",
+      "checks": [
+        "找出网站没覆盖的查询",
+        "找出现有页面的答案缺口",
+        "只评估引用准备度",
+        "不要承诺任何人工智能引用"
+      ],
+      "doesNotClaim": "补上查询缺口或提高引用准备度，不保证任何人工智能产品会引用该页。GEO Growth 不保证收录、推荐或引用。",
+      "example": "假设买家提出一个网站从未回答的问题，旁边一页又把主张写出来，却没有把规格放在旁边。GEO Growth 会标出答案缺口和引用准备度缺口，并且不承诺这两页会被引用。"
+    }
+  },
+  {
+    "slug": "is-there-an-overall-blended-score",
+    "en": {
+      "title": "Is there an overall blended score?",
+      "description": "Mika keeps SEO Health, SEO Growth, GEO Health, and GEO Growth on four separate scales.",
+      "h1": "Is there an overall blended score?",
+      "blurb": "Health and growth stay apart, and SEO and GEO stay apart, with no blended overall score.",
+      "lead": "There is no overall blended score. The four tracks stay on separate scales.",
+      "definition": "Mika uses four separate tracks and does not blend them into one overall score. SEO Health, SEO Growth, GEO Health, and GEO Growth each keep their own scale.",
+      "shortAnswer": "No. Health and growth stay separate, and SEO and GEO stay separate. SEO Health, SEO Growth, GEO Health, and GEO Growth are not averaged into one overall score.",
+      "checks": [
+        "Keep SEO Health on its own scale",
+        "Keep SEO Growth on its own scale",
+        "Keep GEO Health on its own scale",
+        "Keep GEO Growth on its own scale"
+      ],
+      "doesNotClaim": "Keeping four separate tracks does not guarantee a commercial outcome by itself. Mika does not guarantee that the absence of a blended score changes positions or citations.",
+      "example": "Suppose SEO Health shows a crawlable template, SEO Growth shows an uncovered market, GEO Health shows a supportable answer, and GEO Growth shows a query gap. Those four readings stay on separate scales, and Mika does not average them into one overall score."
+    },
+    "zh": {
+      "title": "Mika 会不会把健康度、增长、SEO 和 GEO 合成一个总分？",
+      "description": "Mika 把 SEO Health、SEO Growth、GEO Health 和 GEO Growth 放在四条各自的刻度上。",
+      "h1": "Mika 会不会把健康度、增长、SEO 和 GEO 合成一个总分？",
+      "blurb": "健康度与增长分开，SEO 与 GEO 也分开，没有一个混合后的总分。",
+      "lead": "没有混合总分。四条轨道各自停留在自己的刻度上。",
+      "definition": "Mika 使用四条分开的轨道，不会把它们合成一个总分。SEO Health、SEO Growth、GEO Health 和 GEO Growth 各自保留自己的刻度。",
+      "shortAnswer": "不会。健康度与增长分开，SEO 与 GEO 也分开。SEO Health、SEO Growth、GEO Health 和 GEO Growth 不会被平均成一个总分。",
+      "checks": [
+        "SEO Health 使用自己的刻度",
+        "SEO Growth 使用自己的刻度",
+        "GEO Health 使用自己的刻度",
+        "GEO Growth 使用自己的刻度"
+      ],
+      "doesNotClaim": "把四条轨道分开，本身不保证商业结果变得更好。Mika 不保证没有混合总分就会改变名次或引用。",
+      "example": "假设 SEO Health 显示模板可抓取，SEO Growth 显示一个未覆盖的市场，GEO Health 显示一条可支持的答案，GEO Growth 显示一个查询缺口。这四项读数留在各自的刻度上，Mika 不会把它们平均成一个总分。"
+    }
+  },
+  {
+    "slug": "does-geo-replace-seo",
+    "en": {
+      "title": "Does GEO replace SEO?",
+      "description": "GEO builds on pages that can be reached. It does not replace crawl and index work.",
+      "h1": "Does GEO replace SEO?",
+      "blurb": "GEO is Generative Engine Optimization layered on reachable pages, not a replacement for SEO.",
+      "lead": "GEO does not replace SEO. Answer work still depends on pages that crawl and index work can reach.",
+      "definition": "GEO means Generative Engine Optimization, and it builds on pages that are already reachable. It does not replace the crawl and index work that SEO still has to do, and it is not geographic SEO.",
+      "shortAnswer": "No. GEO builds on reachable pages and does not replace crawl and index work. Generative Engine Optimization still needs the SEO work that makes a page possible to reach and understand.",
+      "checks": [
+        "Confirm the page can be crawled",
+        "Confirm index work still matters",
+        "Treat GEO as built on reachable pages",
+        "Do not drop SEO for GEO"
+      ],
+      "doesNotClaim": "Adding GEO on top of SEO does not guarantee inclusion in an AI answer. GEO does not guarantee that crawl and index work can be skipped or that a citation will follow.",
+      "example": "Suppose robots rules block a product URL, so a crawler cannot reach it. GEO cannot replace that SEO problem, because a generative-engine answer still depends on a page that can be reached, and GEO does not take over index work."
+    },
+    "zh": {
+      "title": "GEO 会不会取代 SEO 仍需完成的抓取和索引工作？",
+      "description": "GEO 建立在能够到达的页面之上，不会取代抓取和索引工作。",
+      "h1": "GEO 会不会取代 SEO 仍需完成的抓取和索引工作？",
+      "blurb": "GEO 是加在可到达页面上的生成式引擎优化，不是 SEO 的替代品。",
+      "lead": "GEO 不会取代 SEO。答案工作仍然依赖抓取和索引能够到达的页面。",
+      "definition": "GEO 指 Generative Engine Optimization，即生成式引擎优化，它建立在已经能够到达的页面之上。它不取代 SEO 仍要完成的抓取和索引工作，也不是地理 SEO。",
+      "shortAnswer": "不会。GEO 建立在可到达的页面上，不取代抓取和索引。生成式引擎优化仍然需要 SEO 把页面变得可以到达、可以理解。",
+      "checks": [
+        "先确认页面能够被抓取",
+        "索引工作仍然不能省去",
+        "GEO 建立在可到达的页面上",
+        "不要用 GEO 取消 SEO"
+      ],
+      "doesNotClaim": "在 SEO 之上做 GEO，不保证因此被写进人工智能回答。GEO 不保证抓取和索引工作可以被跳过，也不保证随后出现引用。",
+      "example": "假设机器人规则挡住了一个产品网址，爬虫无法到达。GEO 不能取代这个 SEO 问题，因为生成式引擎的答案仍然依赖一个能够到达的页面，而且 GEO 不接管索引工作。"
+    }
+  },
+  {
+    "slug": "what-is-an-orphan-page",
+    "en": {
+      "title": "What is an orphan page?",
+      "description": "An orphan page has no internal links, so its discovery path inside the site is weak.",
+      "h1": "What is an orphan page?",
+      "blurb": "An orphan page is a URL that no other page on the site links to internally.",
+      "lead": "An orphan page has no internal links pointing to it, which leaves a weak discovery path.",
+      "definition": "An orphan page is a page with no internal links and a weak discovery path. Other pages do not hand a crawler or a reader an internal link that leads to it.",
+      "shortAnswer": "An orphan page has no internal links, so discovery inside the site is weak. The URL may exist, but nothing on the site points to it through an internal link.",
+      "checks": [
+        "Count internal links to the URL",
+        "Treat zero internal links as orphaned",
+        "Judge the discovery path as weak",
+        "Do not infer a ranking from it"
+      ],
+      "doesNotClaim": "Finding an orphan page does not guarantee that adding one internal link will change search positions. Mika does not guarantee a discovery outcome or a position from repairing that path.",
+      "example": "Suppose a specifications document exists as its own URL, and no other page links to it. That document is an orphan page with a weak discovery path, even if the URL itself returns a working status code."
+    },
+    "zh": {
+      "title": "什么是没有内部链接、发现路径因此很弱的孤立页面？",
+      "description": "孤立页面没有任何内部链接，因此它在站内的发现路径很弱。",
+      "h1": "什么是没有内部链接、发现路径因此很弱的孤立页面？",
+      "blurb": "孤立页面是站内没有任何其他页面用内部链接指向的网址。",
+      "lead": "孤立页面没有指向它的内部链接，发现路径因此很弱。",
+      "definition": "孤立页面是没有任何内部链接、发现路径很弱的页面。站内其他页面不会把爬虫或读者通过内部链接交到这个页面上。",
+      "shortAnswer": "孤立页面没有内部链接，所以站内发现很弱。网址可以存在，但网站上没有任何页面通过内部链接指向它。",
+      "checks": [
+        "统计指向该网址的内部链接",
+        "没有任何内链即视为孤立",
+        "把发现路径判断为偏弱",
+        "不要据此推断搜索名次"
+      ],
+      "doesNotClaim": "发现孤立页面，不保证补上一条内部链接就会改变搜索名次。Mika 不保证修好这条路径就一定带来发现结果或名次。",
+      "example": "假设一份规格文档有自己的网址，但没有任何其他页面链接到它。这份文档就是发现路径很弱的孤立页面，即使该网址本身返回的是可用状态码。"
+    }
+  },
+  {
+    "slug": "what-is-a-canonical-url",
+    "en": {
+      "title": "What is a canonical URL?",
+      "description": "A canonical URL is the address a canonical tag names as the intended indexable version.",
+      "h1": "What is a canonical URL?",
+      "blurb": "The canonical tag should name the URL you intend to be the indexable version of the page.",
+      "lead": "A canonical URL is the address the canonical tag names as the intended indexable version.",
+      "definition": "A canonical URL is the URL a canonical tag names as the intended indexable version. The tag should point to that intended indexable URL rather than to a copy you do not want indexed.",
+      "shortAnswer": "A canonical URL is the address named by the canonical tag as the intended indexable version. If several URLs show the same page, the tag should select the one meant to be indexed.",
+      "checks": [
+        "Read the canonical tag target",
+        "Confirm it is the indexable URL",
+        "Reject a copy as the target",
+        "Do not treat the tag as a ranking"
+      ],
+      "doesNotClaim": "A correct canonical does not guarantee indexation or a search position. Mika does not guarantee that pointing the tag at the intended URL will place that page in results.",
+      "example": "Suppose two URLs show the same product page and only one of them is the version meant to be indexed. The canonical tag should name that intended indexable URL, and the other URL should not be the canonical target."
+    },
+    "zh": {
+      "title": "什么是规范标签点名的、作为预期可索引版本的网址？",
+      "description": "规范网址是规范标签指定为预期可索引版本的那个地址。",
+      "h1": "什么是规范标签点名的、作为预期可索引版本的网址？",
+      "blurb": "规范标签应指向你打算作为该页可索引版本的那个网址。",
+      "lead": "规范网址就是规范标签点名的、作为预期可索引版本的地址。",
+      "definition": "规范网址是规范标签指定为预期可索引版本的网址。标签应指向这个预期的可索引网址，而不是指向你不希望被索引的副本。",
+      "shortAnswer": "规范网址是规范标签点名为预期可索引版本的地址。如果多个网址呈现同一页面，标签应选出那个打算被索引的网址。",
+      "checks": [
+        "读取规范标签指向的目标",
+        "确认它是预期可索引网址",
+        "不要把副本写成规范目标",
+        "不要把该标签当成名次"
+      ],
+      "doesNotClaim": "正确的规范链接不保证一定被索引，也不保证获得搜索名次。Mika 不保证把标签指向预期网址，该页就会出现在结果中。",
+      "example": "假设两个网址呈现同一产品页，其中只有一个是打算被索引的版本。规范标签应点名那个预期的可索引网址，另一个网址不应成为规范目标。"
+    }
+  },
+  {
+    "slug": "what-is-hreflang-for",
+    "en": {
+      "title": "What is hreflang for?",
+      "description": "Hreflang names language alternates such as en, zh-Hans, and x-default. It is not a ranking boost.",
+      "h1": "What is hreflang for?",
+      "blurb": "Hreflang records language alternates. On this site that means en, zh-Hans, and x-default to English.",
+      "lead": "Hreflang is for naming language alternates, not for boosting a ranking.",
+      "definition": "Hreflang names language alternates so the relationship between versions is explicit. On this site those records are en, zh-Hans, and x-default to English, and they do not guess rankings.",
+      "shortAnswer": "Hreflang is for naming language alternates such as en and zh-Hans. It is not a ranking boost, and on this site x-default points to English.",
+      "checks": [
+        "List en and zh-Hans alternates",
+        "Point x-default to English",
+        "Record language, not a rank boost",
+        "Do not guess positions from tags"
+      ],
+      "doesNotClaim": "Hreflang does not guarantee any movement between language versions in search results. Mika does not guarantee that listing en, zh-Hans, and x-default will change positions.",
+      "example": "Suppose the English page is at the site root and the Chinese page is under /zh/. Hreflang can name en, zh-Hans, and x-default to English so the alternates are explicit, and that record does not guess which language will rank."
+    },
+    "zh": {
+      "title": "hreflang 是用来标明 en、zh-Hans 这类语言替代，而不是用来提升名次的吗？",
+      "description": "hreflang 用来标明 en、zh-Hans 和 x-default 这类语言替代，不是名次加成。",
+      "h1": "hreflang 是用来标明 en、zh-Hans 这类语言替代，而不是用来提升名次的吗？",
+      "blurb": "hreflang 记录语言替代。本站是 en、zh-Hans，以及指向英文的 x-default。",
+      "lead": "hreflang 用来标明语言替代版本，不是用来提升名次。",
+      "definition": "hreflang 用来标明语言替代，使各版本之间的关系写清楚。本站这些记录是 en、zh-Hans，以及指向英文的 x-default，它们并不猜测排名。",
+      "shortAnswer": "hreflang 用来标明 en 和 zh-Hans 这类语言替代。它不是名次加成，本站的 x-default 指向英文。",
+      "checks": [
+        "列出 en 与 zh-Hans 替代版本",
+        "把 x-default 指向英文",
+        "记录语言而不是名次加成",
+        "不要根据标签猜测位置"
+      ],
+      "doesNotClaim": "hreflang 不保证语言版本在搜索结果中的位置会移动。Mika 不保证列出 en、zh-Hans 和指向英文的 x-default 就会改变位置。",
+      "example": "假设英文页面在网站根目录，中文页面在 /zh/ 下。hreflang 可以标明 en、zh-Hans 和指向英文的 x-default，使替代关系明确，这份记录并不猜测哪种语言会获得名次。"
+    }
+  },
+  {
+    "slug": "why-avoid-an-en-url-prefix",
+    "en": {
+      "title": "Why avoid an /en/ URL prefix?",
+      "description": "This site keeps English at the root and Chinese under /zh/. An /en/ prefix is not the pattern.",
+      "h1": "Why avoid an /en/ URL prefix?",
+      "blurb": "English lives at the site root and Chinese lives under /zh/, so an /en/ folder is not used.",
+      "lead": "Avoid an /en/ prefix because this site keeps English at the root and Chinese under /zh/.",
+      "definition": "This site places English at the root and Chinese under /zh/, and there is no /en/ prefix. An /en/ URL would break that pattern and would not match the language alternates the site actually uses.",
+      "shortAnswer": "Avoid an /en/ prefix because English is at the site root and Chinese is under /zh/. There is no /en/ prefix in this pattern, so adding one would point away from the live structure.",
+      "checks": [
+        "Keep English at the site root",
+        "Keep Chinese under /zh/",
+        "Do not add an /en/ prefix",
+        "Match alternates to that pattern"
+      ],
+      "doesNotClaim": "Matching the root and /zh/ pattern does not guarantee multilingual positions. Mika does not guarantee that avoiding an /en/ prefix will improve where a page appears.",
+      "example": "Suppose someone proposes moving English from the site root into an /en/ folder while Chinese stays under /zh/. That /en/ prefix is not this site's pattern, because English stays at the root and the site has no /en/ prefix."
+    },
+    "zh": {
+      "title": "为什么本站让英文留在根目录、中文留在 /zh/，而不使用 /en/ 前缀？",
+      "description": "本站英文在根目录，中文在 /zh/ 下。/en/ 前缀不是这个网站的模式。",
+      "h1": "为什么本站让英文留在根目录、中文留在 /zh/，而不使用 /en/ 前缀？",
+      "blurb": "英文在网站根目录，中文在 /zh/ 下，因此不使用 /en/ 文件夹。",
+      "lead": "要避免 /en/ 前缀，是因为本站把英文放在根目录，把中文放在 /zh/ 下。",
+      "definition": "本站把英文放在根目录，把中文放在 /zh/ 下，并且没有 /en/ 前缀。一个 /en/ 网址会打破这个模式，也无法对上网站实际使用的语言替代。",
+      "shortAnswer": "要避免 /en/ 前缀，是因为英文在网站根目录，中文在 /zh/ 下。这个模式里没有 /en/ 前缀，加上去就会偏离现有结构。",
+      "checks": [
+        "英文页面留在网站根目录",
+        "中文页面放在 /zh/ 下面",
+        "不要新增 /en/ 前缀",
+        "语言替代要符合这一模式"
+      ],
+      "doesNotClaim": "遵守根目录加 /zh/ 的模式，不保证多语言环境下的名次。Mika 不保证避免 /en/ 前缀就会改善页面出现的位置。",
+      "example": "假设有人提议把英文从网站根目录挪进 /en/ 文件夹，同时中文仍留在 /zh/ 下。这个 /en/ 前缀不是本站的模式，因为英文留在根目录，网站也没有 /en/ 前缀。"
+    }
+  },
+  {
+    "slug": "what-is-an-xml-sitemap-for",
+    "en": {
+      "title": "What is an XML sitemap for?",
+      "description": "An XML sitemap lists URLs for coverage and freshness. That list can still disagree with indexation.",
+      "h1": "What is an XML sitemap for?",
+      "blurb": "An XML sitemap declares which URLs you want listed for coverage and freshness.",
+      "lead": "An XML sitemap is for declaring URL coverage and freshness, and it can still disagree with the index.",
+      "definition": "An XML sitemap lists URLs so coverage and freshness can be declared in one place. The list can still disagree with what is indexable, so a listed URL is not automatically an indexed URL.",
+      "shortAnswer": "An XML sitemap declares URL coverage and freshness. It can still disagree with indexation, because a URL in the file may not be the indexable version.",
+      "checks": [
+        "Read the sitemap URL list",
+        "Note coverage and freshness",
+        "Compare the list with indexable URLs",
+        "Expect possible disagreement"
+      ],
+      "doesNotClaim": "Listing a URL in an XML sitemap does not guarantee that the URL is indexable or positioned in search. Mika does not guarantee that coverage and freshness entries match the index.",
+      "example": "Suppose an XML sitemap lists a product URL and a freshness signal, while that URL is blocked or is not the canonical version. The sitemap has declared coverage and freshness, and it can still disagree with what is indexable."
+    },
+    "zh": {
+      "title": "XML 网站地图为什么用来声明覆盖和新鲜度，却仍可能与索引不一致？",
+      "description": "XML 网站地图列出网址以说明覆盖和新鲜度。这份清单仍可能与索引不一致。",
+      "h1": "XML 网站地图为什么用来声明覆盖和新鲜度，却仍可能与索引不一致？",
+      "blurb": "XML 网站地图用来声明你希望列出的网址，以便说明覆盖和新鲜度。",
+      "lead": "XML 网站地图用来声明网址覆盖和新鲜度，并且仍然可能与索引不一致。",
+      "definition": "XML 网站地图把网址列出来，以便在一处声明覆盖和新鲜度。这份清单仍可能与可索引的内容不一致，因此被列出的网址并不自动就是已索引的网址。",
+      "shortAnswer": "XML 网站地图用来声明网址覆盖和新鲜度。它仍然可能与索引不一致，因为文件里的网址未必是可索引版本。",
+      "checks": [
+        "阅读网站地图中的网址清单",
+        "同时看覆盖和新鲜度",
+        "拿清单与可索引网址对比",
+        "允许两者出现不一致"
+      ],
+      "doesNotClaim": "把网址列进 XML 网站地图，不保证该网址可被索引，也不保证它在搜索中获得位置。Mika 不保证覆盖和新鲜度记录会与索引一致。",
+      "example": "假设 XML 网站地图列出一个产品网址和一条新鲜度信号，但该网址被挡住，或者它并不是规范版本。网站地图已经声明了覆盖和新鲜度，它仍然可能与可索引的内容不一致。"
+    }
+  },
+  {
+    "slug": "what-is-a-content-gap",
+    "en": {
+      "title": "What is a content gap?",
+      "description": "A content gap is a buyer question the site does not actually answer.",
+      "h1": "What is a content gap?",
+      "blurb": "A content gap is a buyer question left unanswered, partial, or simply uncovered on the site.",
+      "lead": "A content gap is a buyer question the site does not actually answer.",
+      "definition": "A content gap is a buyer question the site does not actually answer. Question coverage can mark that question as answered, partial, or uncovered, and uncovered is the gap.",
+      "shortAnswer": "A content gap is a buyer question the site does not answer. Coverage for that question is uncovered, or only partial, rather than answered on a real page.",
+      "checks": [
+        "Start from a real buyer question",
+        "See whether the site answers it",
+        "Mark answered, partial, or uncovered",
+        "Do not invent an answer on the page"
+      ],
+      "doesNotClaim": "Naming a content gap does not guarantee that filling it will earn a position or a citation. Mika does not guarantee that an answered, partial, or uncovered label predicts where a page will appear.",
+      "example": "Suppose a buyer asks a product question and no page on the site states an answer. That unanswered question is a content gap, and question coverage would mark it uncovered rather than answered or partial."
+    },
+    "zh": {
+      "title": "什么是买家会问、但网站实际上并没有回答的内容缺口？",
+      "description": "内容缺口是买家提出、但网站实际上没有回答的问题。",
+      "h1": "什么是买家会问、但网站实际上并没有回答的内容缺口？",
+      "blurb": "内容缺口是网站上仍未回答、只回答了一部分，或完全未覆盖的买家问题。",
+      "lead": "内容缺口就是网站实际上没有回答的那个买家问题。",
+      "definition": "内容缺口是买家会问、但网站实际上并没有回答的问题。问题覆盖可以把该问题标成已回答、部分回答或未覆盖，未覆盖就是这个缺口。",
+      "shortAnswer": "内容缺口是网站没有回答的买家问题。这个问题的覆盖是未覆盖，或只是部分回答，而不是在真实页面上已经回答。",
+      "checks": [
+        "从真实的买家问题出发",
+        "检查网站是否真的回答了",
+        "标记已回答、部分或未覆盖",
+        "不要在页面上编造答案"
+      ],
+      "doesNotClaim": "指出内容缺口，不保证补上之后就会获得名次或引用。Mika 不保证已回答、部分回答或未覆盖这些状态能预测页面会出现在哪里。",
+      "example": "假设买家提出一个产品问题，网站上没有任何页面写出答案。这个未回答的问题就是内容缺口，问题覆盖会把它标成未覆盖，而不是已回答或部分回答。"
+    }
+  },
+  {
+    "slug": "what-is-search-intent",
+    "en": {
+      "title": "What is search intent?",
+      "description": "Search intent is the informational, commercial, or transactional purpose of a query.",
+      "h1": "What is search intent?",
+      "blurb": "Search intent labels a query as informational, commercial, or transactional.",
+      "lead": "Search intent is the purpose of a query: informational, commercial, or transactional.",
+      "definition": "Search intent is the informational, commercial, or transactional purpose of a query. The label describes what the searcher is trying to do on the site, not a future position.",
+      "shortAnswer": "Search intent is the purpose behind a query, and on this site that purpose is informational, commercial, or transactional. It classifies the query. It does not assign a rank.",
+      "checks": [
+        "Label informational purpose",
+        "Label commercial purpose",
+        "Label transactional purpose",
+        "Do not turn intent into a position"
+      ],
+      "doesNotClaim": "Labeling intent as informational, commercial, or transactional does not guarantee the matching page will rank. Mika does not guarantee a result from intent mapping alone.",
+      "example": "Suppose one query asks how a process works, another asks which option fits a job, and a third asks how to request the product. Those are informational, commercial, and transactional intents, and the labels describe purpose rather than a promised position."
+    },
+    "zh": {
+      "title": "搜索意图是指一条查询属于信息型、商业型还是交易型目的？",
+      "description": "搜索意图是一条查询的信息型、商业型或交易型目的。",
+      "h1": "搜索意图是指一条查询属于信息型、商业型还是交易型目的？",
+      "blurb": "搜索意图把一条查询标成信息型、商业型或交易型。",
+      "lead": "搜索意图是查询的目的：信息型、商业型或交易型。",
+      "definition": "搜索意图是一条查询的信息型、商业型或交易型目的。这个标签描述搜索者在网站上想做什么，而不是未来的名次。",
+      "shortAnswer": "搜索意图是查询背后的目的，在本站分为信息型、商业型或交易型。它给查询分类。它不分配名次。",
+      "checks": [
+        "标出信息型查询目的",
+        "标出商业型查询目的",
+        "标出交易型查询目的",
+        "不要把意图写成名次"
+      ],
+      "doesNotClaim": "把意图标成信息型、商业型或交易型，不保证对应页面会获得名次。Mika 不保证仅凭意图映射就产生结果。",
+      "example": "假设一条查询在问某个过程如何运作，另一条在问哪个选项适合这项工作，第三条在问如何提出产品需求。它们分别是信息型、商业型和交易型意图，标签描述的是目的，而不是一个被承诺的位置。"
+    }
+  },
+  {
+    "slug": "what-is-topic-coverage",
+    "en": {
+      "title": "What is topic coverage?",
+      "description": "Topic coverage is enough depth on a subject without manufacturing near-duplicate pages.",
+      "h1": "What is topic coverage?",
+      "blurb": "Topic coverage means real depth on a subject, not a stack of near-duplicate URLs.",
+      "lead": "Topic coverage is depth on a subject without manufacturing near-duplicate pages.",
+      "definition": "Topic coverage is enough depth on a subject without near-duplicate pages. Extra URLs that repeat one thin template are not additional coverage of that subject.",
+      "shortAnswer": "Topic coverage means the site goes deep enough on a subject without manufacturing near-duplicate URLs. Page count alone does not create that depth.",
+      "checks": [
+        "Require real depth on the subject",
+        "Reject near-duplicate URLs as coverage",
+        "Count distinct pages, not clones",
+        "Keep coverage separate from page count"
+      ],
+      "doesNotClaim": "Deeper topic coverage does not guarantee positions or AI citations. Mika does not guarantee that avoiding near-duplicate URLs will produce a place in search results.",
+      "example": "Suppose one page explains a product line with real depth, and more URLs repeat that same thin template with only the title changed. The first page can count as topic coverage, and the copies are near-duplicates rather than additional coverage."
+    },
+    "zh": {
+      "title": "什么是对一个主题有足够深度、又不制造近似重复页面的覆盖？",
+      "description": "主题覆盖是对一个主题有足够深度，同时不去制造近似重复的页面。",
+      "h1": "什么是对一个主题有足够深度、又不制造近似重复页面的覆盖？",
+      "blurb": "主题覆盖指的是一个主题上的真实深度，而不是一叠近似重复的网址。",
+      "lead": "主题覆盖是对一个主题有深度，同时不制造近似重复的页面。",
+      "definition": "主题覆盖是对一个主题有足够深度，并且没有近似重复的页面。重复同一个薄模板的额外网址，并不构成该主题的额外覆盖。",
+      "shortAnswer": "主题覆盖是指网站对一个主题有足够深度，同时不去制造近似重复的网址。单靠页面数量并不能制造这种深度。",
+      "checks": [
+        "主题上要有真正的深度",
+        "近似重复网址不算覆盖",
+        "计算独立页面而不是克隆",
+        "覆盖不等于页面数量"
+      ],
+      "doesNotClaim": "更深的主题覆盖不保证搜索位置，也不保证人工智能引用。Mika 不保证避开近似重复网址就会在搜索结果中获得一个位置。",
+      "example": "假设一个页面以真实深度说明一条产品线，更多网址却只改了标题，重复同一个薄模板。第一页可以算作主题覆盖，那些副本是近似重复，而不是额外覆盖。"
+    }
+  },
+  {
+    "slug": "what-is-citation-readiness",
+    "en": {
+      "title": "What is citation readiness?",
+      "description": "Citation readiness is how quotable and attributable a page is. It is not a citation guarantee.",
+      "h1": "What is citation readiness?",
+      "blurb": "Citation readiness asks whether a careful reader could attribute a statement with less ambiguity.",
+      "lead": "Citation readiness is how quotable and attributable a page is, and it is not a promise of being cited.",
+      "definition": "Citation readiness means a careful reader could attribute a statement with less ambiguity. It describes how quotable the page is, and it is not a promise that any AI product will cite it.",
+      "shortAnswer": "Citation readiness is how quotable and attributable a page is, so a statement can be tied to the page with less ambiguity. It is not a citation guarantee, and it is not inclusion in an AI product.",
+      "checks": [
+        "Ask if a careful reader can attribute it",
+        "Reduce ambiguity around the statement",
+        "Keep readiness separate from inclusion",
+        "Do not promise a citation"
+      ],
+      "doesNotClaim": "Citation readiness does not guarantee that any system will cite the page. Mika does not guarantee inclusion, recommendation, or citation in ChatGPT, Gemini, or AI Overviews.",
+      "example": "Suppose a page states a product claim and the spec sits in the next sentence, so a careful reader can attribute the statement with less ambiguity. That arrangement is citation readiness, and it is not a promise of being cited."
+    },
+    "zh": {
+      "title": "什么是让谨慎读者更容易归因、却并不承诺会被引用的准备度？",
+      "description": "引用准备度是页面有多容易被引用和归因。它不是引用承诺。",
+      "h1": "什么是让谨慎读者更容易归因、却并不承诺会被引用的准备度？",
+      "blurb": "引用准备度问的是，谨慎的读者能否更少歧义地把一句陈述归因到页面。",
+      "lead": "引用准备度是页面有多容易被引用和归因，它不是被引用的承诺。",
+      "definition": "引用准备度是指谨慎的读者可以更少歧义地把陈述归因到页面。它描述页面有多容易被引用，并不是任何人工智能产品会引用它的承诺。",
+      "shortAnswer": "引用准备度是页面有多容易被引用和归因，使一句话可以更少歧义地连回该页。它不是引用承诺，也不是进入某个人工智能产品。",
+      "checks": [
+        "谨慎读者能否把陈述归因",
+        "减少这句话周围的歧义",
+        "准备度不等于已经被收录",
+        "不要承诺一定会被引用"
+      ],
+      "doesNotClaim": "引用准备度不保证任何系统会引用该页。Mika 不保证 ChatGPT、Gemini 或 AI 概览会收录、推荐或引用它。",
+      "example": "假设页面写出一条产品主张，下一句就是规格，谨慎的读者可以更少歧义地把这句话归因到该页。这种安排就是引用准备度，它不是被引用的承诺。"
+    }
+  },
+  {
+    "slug": "what-is-a-website-entity",
+    "en": {
+      "title": "What is a website entity?",
+      "description": "A website entity is a stable name and fact set for the company, products, places, or documents.",
+      "h1": "What is a website entity?",
+      "blurb": "A website entity keeps one stable name and fact set for a company, product, place, or document.",
+      "lead": "A website entity is a stable name and fact set, not a slogan that changes from page to page.",
+      "definition": "A website entity is a stable name and fact set for the company, products, places, or documents. The same facts should stay recognizable when that name appears, including on a product application or a document.",
+      "shortAnswer": "A website entity is the stable names and facts for a company, product, application, place, or document. Readers should not have to reconcile a different fact set on every URL.",
+      "checks": [
+        "Use one stable company name",
+        "Keep product and document facts stable",
+        "Include places tied to those facts",
+        "Do not swap in a changing slogan"
+      ],
+      "doesNotClaim": "A stable entity name and fact set does not guarantee that AI products will recognize or cite the company. Mika does not guarantee a position or a citation from entity clarity alone.",
+      "example": "Suppose the company name, the product name, and a document title stay the same on the English root page and the Chinese page under /zh/. That stable name and fact set is the website entity, rather than a slogan that changes from page to page."
+    },
+    "zh": {
+      "title": "什么是公司、产品、应用、地点或文档所共用的稳定名称和事实？",
+      "description": "网站实体是公司、产品、地点或文档的一套稳定名称和事实。",
+      "h1": "什么是公司、产品、应用、地点或文档所共用的稳定名称和事实？",
+      "blurb": "网站实体为公司、产品、地点或文档保持同一套稳定的名称和事实。",
+      "lead": "网站实体是一套稳定的名称和事实，不是每页都在变化的口号。",
+      "definition": "网站实体是公司、产品、地点或文档的一套稳定名称和事实。这个名称出现时，同一套事实都应能被认出来，产品应用或文档也一样。",
+      "shortAnswer": "网站实体是公司、产品、应用、地点或文档的稳定名称和事实。读者不应该在每个网址上重新对上一套不同的事实。",
+      "checks": [
+        "公司名称保持稳定",
+        "产品和文档事实保持稳定",
+        "把与事实相连的地点纳入",
+        "不要改用一句会变的口号"
+      ],
+      "doesNotClaim": "稳定的实体名称和事实集合，不保证人工智能产品会识别或引用该公司。Mika 不保证仅凭实体清晰就带来名次或引用。",
+      "example": "假设公司名称、产品名称和文档标题在英文根目录页面和 /zh/ 下的中文页面上保持一致。这套稳定的名称和事实就是网站实体，而不是每页都在变化的口号。"
+    }
+  },
+  {
+    "slug": "what-counts-as-evidence-for-a-claim",
+    "en": {
+      "title": "What counts as evidence for a claim?",
+      "description": "Evidence is a spec, a process, or other verifiable context placed next to the claim.",
+      "h1": "What counts as evidence for a claim?",
+      "blurb": "Evidence sits next to the claim as a spec, a process, or other context a reader can verify.",
+      "lead": "Evidence for a claim is a spec, a process, or verifiable context placed beside that claim.",
+      "definition": "Evidence is specs, process, or other verifiable context placed next to a claim. A slogan with no spec, process, or verifiable context does not count as evidence for that claim.",
+      "shortAnswer": "What counts is a spec, a process, or other verifiable context sitting next to the claim. Slogans do not count, because a reader cannot verify them from the page.",
+      "checks": [
+        "Place a spec next to the claim",
+        "Or place a process next to the claim",
+        "Accept other verifiable context",
+        "Reject a slogan with no support"
+      ],
+      "doesNotClaim": "Placing specs or process next to a claim does not guarantee that the claim will be cited or positioned in search. Mika does not guarantee that verifiable context produces a recommendation.",
+      "example": "Suppose a page claims a product suits a stated process and the process steps sit in the following paragraph. Those steps are evidence beside the claim, whereas a slogan with no spec or process is not evidence."
+    },
+    "zh": {
+      "title": "一条主张旁边的规格、过程或其他可核验上下文，为什么才算证据？",
+      "description": "证据是放在主张旁边的规格、过程或其他可以核验的上下文。",
+      "h1": "一条主张旁边的规格、过程或其他可核验上下文，为什么才算证据？",
+      "blurb": "证据以规格、过程或其他读者可以核验的上下文，放在主张旁边。",
+      "lead": "一条主张的证据，是放在该主张旁边的规格、过程或可核验上下文。",
+      "definition": "证据是放在主张旁边的规格、过程或其他可核验上下文。没有规格、过程或可核验上下文的口号，不算这条主张的证据。",
+      "shortAnswer": "算数的是放在主张旁边的规格、过程或其他可核验上下文。口号不算，因为读者无法从页面上核验它。",
+      "checks": [
+        "把规格放在主张旁边",
+        "或把过程放在主张旁边",
+        "接受其他可核验的上下文",
+        "拒绝没有支撑的口号"
+      ],
+      "doesNotClaim": "把规格或过程放在主张旁边，不保证该主张会被引用或在搜索中获得位置。Mika 不保证可核验上下文会带来推荐。",
+      "example": "假设页面主张某产品适合一个写明的过程，下一段就放着该过程的步骤。这些步骤是主张旁边的证据，而没有规格或过程的口号不是证据。"
+    }
+  },
+  {
+    "slug": "what-is-answerability",
+    "en": {
+      "title": "What is answerability?",
+      "description": "Answerability means a page can answer a buyer question without the reader inventing the meaning.",
+      "h1": "What is answerability?",
+      "blurb": "An answerable page states who you are, what you sell, and what is claimed, without guesswork.",
+      "lead": "Answerability means the reader can take the answer from the page instead of inventing it.",
+      "definition": "Answerability means a page can state who you are, what you sell, and what is claimed without guesswork. A buyer question is answerable when the reader does not have to invent the meaning.",
+      "shortAnswer": "Answerability is whether a page can answer a buyer question without the reader inventing the meaning. The page should say who you are, what you sell, and what is claimed.",
+      "checks": [
+        "State who the company is",
+        "State what the company sells",
+        "State the claim without guesswork",
+        "Stop the reader inventing meaning"
+      ],
+      "doesNotClaim": "A page that states who you are and what you sell does not guarantee a search position or an AI citation. Mika does not guarantee a commercial result from answerability alone.",
+      "example": "Suppose a buyer lands on a page and can read who the company is, what it sells, and which claim is being made without inventing the meaning. That page has answerability for that question, because the answer is stated rather than guessed."
+    },
+    "zh": {
+      "title": "可答性是指页面能否让读者不用自己发明含义就看懂买家问题的答案？",
+      "description": "可答性是指页面能够回答买家问题，而不需要读者自己发明含义。",
+      "h1": "可答性是指页面能否让读者不用自己发明含义就看懂买家问题的答案？",
+      "blurb": "可答的页面会写明你是谁、卖什么、主张是什么，而不需要读者猜测。",
+      "lead": "可答性是指读者能从页面上取得答案，而不是自己把含义发明出来。",
+      "definition": "可答性是指页面能够说明你是谁、卖什么、主张是什么，而不必让读者猜测。当读者不必自己发明含义时，这个买家问题就是可答的。",
+      "shortAnswer": "可答性是页面能否在读者不自行发明含义的情况下回答买家问题。页面应写明你是谁、卖什么，以及主张是什么。",
+      "checks": [
+        "页面写明公司是谁",
+        "页面写明公司卖什么",
+        "写明主张且无需猜测",
+        "避免读者自己发明含义"
+      ],
+      "doesNotClaim": "页面写明你是谁、卖什么，并不保证搜索名次或人工智能引用。Mika 不保证仅凭可答性就带来商业结果。",
+      "example": "假设买家进入一个页面，不必自己发明含义，就能读到公司是谁、卖什么、主张是什么。这个页面对该问题具有可答性，因为答案是写明的，而不是猜出来的。"
+    }
+  },
+  {
+    "slug": "what-is-a-thin-mirror-page",
+    "en": {
+      "title": "What is a thin mirror page?",
+      "description": "A thin mirror page repeats another language without real market coverage or market-specific depth.",
+      "h1": "What is a thin mirror page?",
+      "blurb": "A thin mirror page is a translated shell that copies another language and skips market depth.",
+      "lead": "A thin mirror page repeats another language without the depth that market actually needs.",
+      "definition": "A thin mirror page is a translated shell that repeats another language without real market coverage. It looks like a second language version, and it does not add market-specific depth.",
+      "shortAnswer": "A thin mirror page repeats another language without market-specific depth. Translation alone does not create real market coverage for that language version.",
+      "checks": [
+        "Compare the translation with the source",
+        "Look for missing market-specific depth",
+        "Treat a shell as a thin mirror",
+        "Do not count it as real coverage"
+      ],
+      "doesNotClaim": "Removing a thin mirror page does not guarantee better positions in that market. Mika does not guarantee that market-specific depth will produce a position or a citation.",
+      "example": "Suppose the Chinese URL under /zh/ translates the English root page line by line and adds no market-specific facts. That Chinese URL is a thin mirror page, because it repeats the other language without real market coverage."
+    },
+    "zh": {
+      "title": "什么是只重复另一种语言、却没有该市场真实覆盖的薄镜像页？",
+      "description": "薄镜像页重复另一种语言，却没有真正的市场覆盖或该市场特有的深度。",
+      "h1": "什么是只重复另一种语言、却没有该市场真实覆盖的薄镜像页？",
+      "blurb": "薄镜像页是一层翻译外壳，它复制另一种语言，却跳过了市场深度。",
+      "lead": "薄镜像页重复另一种语言，却没有该市场真正需要的深度。",
+      "definition": "薄镜像页是一层翻译外壳，它重复另一种语言，却没有真正的市场覆盖。它看起来像第二个语言版本，但没有补上该市场特有的深度。",
+      "shortAnswer": "薄镜像页重复另一种语言，却没有该市场特有的深度。仅仅翻译，并不能为这个语言版本制造真正的市场覆盖。",
+      "checks": [
+        "把译文和源语言页面对比",
+        "查看是否缺少市场特有深度",
+        "只有外壳时视为薄镜像",
+        "不要把它算成真正覆盖"
+      ],
+      "doesNotClaim": "去掉薄镜像页，不保证该市场中的位置会变好。Mika 不保证补上市场特有的深度就会产生位置或引用。",
+      "example": "假设 /zh/ 下的中文网址逐句翻译英文根目录页面，却没有加入该市场特有的事实。这个中文网址就是薄镜像页，因为它重复另一种语言，却没有真正的市场覆盖。"
+    }
+  },
+  {
+    "slug": "what-does-a-website-seo-audit-review",
+    "en": {
+      "title": "What does a website SEO audit review?",
+      "description": "A website SEO audit reviews crawl, index, structure, and content signals. It does not guess a future rank.",
+      "h1": "What does a website SEO audit review?",
+      "blurb": "An SEO audit reviews crawl, index, and understanding, with findings grouped by rule and sample URLs.",
+      "lead": "A website SEO audit reviews crawl, index, structure, and content. It does not guess a future rank.",
+      "definition": "An SEO audit reviews crawl, index, and understanding, including structure and content signals. Findings stay grouped by rule with sample URLs, and the audit does not guess a future ranking or hide the work in a black-box score.",
+      "shortAnswer": "A website SEO audit reviews crawl, index, structure, and content signals. Findings stay grouped by rule with sample URLs, and the review does not guess a future rank.",
+      "checks": [
+        "Review crawl and index signals",
+        "Review structure and content signals",
+        "Group findings by rule with URLs",
+        "Do not guess a future ranking"
+      ],
+      "doesNotClaim": "An SEO audit does not guarantee a future position, because it reviews crawl, index, and understanding rather than guessing a rank. Mika does not guarantee that grouped findings and sample URLs will move a page.",
+      "example": "Suppose the audit lists a blocked robots rule, a canonical that is not the intended URL, and a thin product description, each under its own rule with sample URLs. That is what a website SEO audit reviews, and the grouped findings are not a guess about a future rank and not a black-box score."
+    },
+    "zh": {
+      "title": "一次网站 SEO 审计会审查抓取、索引、结构和内容，而不会猜测未来名次吗？",
+      "description": "网站 SEO 审计审查抓取、索引、结构和内容信号，不会猜测未来名次。",
+      "h1": "一次网站 SEO 审计会审查抓取、索引、结构和内容，而不会猜测未来名次吗？",
+      "blurb": "SEO 审计审查抓取、索引和理解，发现按规则分组并附上示例网址。",
+      "lead": "网站 SEO 审计审查抓取、索引、结构和内容。它不会猜测未来名次。",
+      "definition": "SEO 审计审查抓取、索引和理解，包括结构和内容信号。发现按规则分组并附上示例网址，审计不会猜测未来排名，也不会把工作藏进一个黑盒分数。",
+      "shortAnswer": "网站 SEO 审计审查抓取、索引、结构和内容信号。发现按规则分组并附上示例网址，这次审查不会猜测未来名次。",
+      "checks": [
+        "审查抓取和索引信号",
+        "审查结构和内容信号",
+        "按规则分组并附示例网址",
+        "不要猜测未来的搜索名次"
+      ],
+      "doesNotClaim": "SEO 审计不保证未来位置，因为它审查的是抓取、索引和理解，而不是猜测名次。Mika 不保证按规则分组并附上示例网址就会让页面移动。",
+      "example": "假设审计列出一条被挡住的机器人规则、一个不是预期网址的规范链接，以及一段单薄的产品说明，每一项都按自己的规则附上示例网址。这就是网站 SEO 审计要审查的内容，分组后的发现不是对未来名次的猜测，也不是黑盒分数。"
+    }
+  },
+  {
+    "slug": "what-does-crawlability-mean",
+    "en": {
+      "title": "What does crawlability mean?",
+      "description": "Crawlability means robots rules, status codes, and crawl paths let a crawler reach the page.",
+      "h1": "What does crawlability mean?",
+      "blurb": "A page is crawlable when robots rules, status codes, and crawl paths let a crawler reach it.",
+      "lead": "Crawlability means a crawler can reach the page through robots rules, status codes, and crawl paths.",
+      "definition": "Crawlability means robots rules, status codes, and crawl paths let a crawler reach the page. If one of those signals blocks the path, the page is not crawlable on that check.",
+      "shortAnswer": "Crawlability asks whether robots rules, status codes, and crawl paths allow a crawler to reach the page. Reachability here is about the path, not about a future position.",
+      "checks": [
+        "Read the robots rules for the URL",
+        "Read the status code on that URL",
+        "Trace whether crawl paths reach it",
+        "Do not skip any of the three"
+      ],
+      "doesNotClaim": "A crawlable URL does not guarantee indexation or a search position. Mika does not guarantee that valid robots rules, status codes, and crawl paths will place the page in results.",
+      "example": "Suppose robots rules allow the URL, the status code does not block the page, and internal crawl paths lead to it. Those three signals are what crawlability means, and a block in any one of them means the crawler may not reach the page."
+    },
+    "zh": {
+      "title": "可抓取性是不是指机器人规则、状态码和抓取路径能否让爬虫到达页面？",
+      "description": "可抓取性是指机器人规则、状态码和抓取路径能否让爬虫到达该页。",
+      "h1": "可抓取性是不是指机器人规则、状态码和抓取路径能否让爬虫到达页面？",
+      "blurb": "当机器人规则、状态码和抓取路径能让爬虫到达页面时，这个页面才可抓取。",
+      "lead": "可抓取性是指爬虫能借助机器人规则、状态码和抓取路径到达页面。",
+      "definition": "可抓取性是指机器人规则、状态码和抓取路径允许爬虫到达该页。如果其中某个信号挡住了路径，这项检查里的页面就不可抓取。",
+      "shortAnswer": "可抓取性问的是机器人规则、状态码和抓取路径是否允许爬虫到达页面。这里的可达性说的是路径，不是未来的位置。",
+      "checks": [
+        "查看该网址的机器人规则",
+        "查看该网址返回的状态码",
+        "追踪抓取路径能否到达",
+        "这三项信号都要检查"
+      ],
+      "doesNotClaim": "一个可抓取的网址不保证会被索引，也不保证获得搜索名次。Mika 不保证合格的机器人规则、状态码和抓取路径就会把页面放进结果。",
+      "example": "假设机器人规则允许该网址，状态码没有挡住页面，内部抓取路径也能通向它。这三项信号就是可抓取性的含义，其中任何一项被挡住，都意味着爬虫可能到不了该页。"
+    }
+  },
+  {
+    "slug": "how-do-broken-internal-links-affect-discovery",
+    "en": {
+      "title": "How do broken internal links affect discovery?",
+      "description": "Broken internal links waste discovery and trust. They do not by themselves prove a ranking.",
+      "h1": "How do broken internal links affect discovery?",
+      "blurb": "Broken internal links send crawlers and readers down paths that waste discovery and trust.",
+      "lead": "Broken internal links waste crawl paths and trust. They do not by themselves prove a ranking.",
+      "definition": "Broken internal links waste discovery and trust because the path they offer does not lead to a working page. That waste is a crawl and trust problem, and it does not by itself prove a ranking.",
+      "shortAnswer": "Broken internal links waste crawl paths and trust. A reader or crawler follows a link that fails, and that failure alone does not prove what a ranking will be.",
+      "checks": [
+        "Find internal links that fail",
+        "Count wasted crawl paths",
+        "Note the loss of reader trust",
+        "Do not treat the break as a ranking proof"
+      ],
+      "doesNotClaim": "Broken internal links waste discovery and trust, and fixing them does not guarantee a position change. Mika does not guarantee that repairing those links proves or creates a ranking.",
+      "example": "Suppose a navigation link points to a product URL that returns an error status, so crawlers and readers follow a path that fails. That broken internal link wastes discovery and trust, and the failure alone does not prove what the ranking will be."
+    },
+    "zh": {
+      "title": "损坏的内部链接会怎样浪费发现路径和信任，而又不能单独证明名次？",
+      "description": "损坏的内部链接会浪费发现和信任。它们本身并不能证明排名。",
+      "h1": "损坏的内部链接会怎样浪费发现路径和信任，而又不能单独证明名次？",
+      "blurb": "损坏的内部链接会把爬虫和读者带上浪费发现与信任的路径。",
+      "lead": "损坏的内部链接会浪费抓取路径和信任。它们本身并不能证明排名。",
+      "definition": "损坏的内部链接会浪费发现和信任，因为它们提供的路径到不了可用页面。这种浪费是抓取和信任问题，它本身并不能证明排名。",
+      "shortAnswer": "损坏的内部链接会浪费抓取路径和信任。读者或爬虫点开的链接失败了，而这次失败本身并不能证明排名会怎样。",
+      "checks": [
+        "找出打不开的内部链接",
+        "计算被浪费的抓取路径",
+        "注意读者信任因此受损",
+        "不要把断裂本身当成名次证据"
+      ],
+      "doesNotClaim": "损坏的内部链接会浪费发现和信任，修好它们不保证名次会变化。Mika 不保证修复这些链接就能证明或制造一个排名结果。",
+      "example": "假设导航里的链接指向一个返回错误状态的产品网址，爬虫和读者跟着走的是一条失败的路径。这条损坏的内部链接浪费了发现和信任，而这次失败本身并不能证明排名会怎样。"
+    }
+  },
+  {
+    "slug": "what-is-near-duplicate-content",
+    "en": {
+      "title": "What is near-duplicate content?",
+      "description": "Near-duplicate content repeats the same thin template, so the pages are not distinct coverage.",
+      "h1": "What is near-duplicate content?",
+      "blurb": "Near-duplicate pages reuse one thin template and therefore do not count as separate topic coverage.",
+      "lead": "Near-duplicate content is the same thin template repeated so the pages are not distinct coverage.",
+      "definition": "Near-duplicate content means pages repeat the same thin template, so they are not distinct coverage. Topic coverage needs depth on a subject, and these copies do not supply a separate subject.",
+      "shortAnswer": "Near-duplicate content is a set of pages that repeat the same thin template. They are not distinct topic coverage, even when each URL looks like an extra page.",
+      "checks": [
+        "Compare pages that share one template",
+        "See if only a label changes",
+        "Refuse to call clones distinct coverage",
+        "Ask for depth instead of copies"
+      ],
+      "doesNotClaim": "Collapsing near-duplicate templates does not guarantee a position gain. Mika does not guarantee that distinct coverage will be rewarded with a place in results or a citation.",
+      "example": "Suppose several URLs reuse one thin template and change only a label in the heading. Those pages are near-duplicate content, so they do not count as distinct topic coverage."
+    },
+    "zh": {
+      "title": "什么是重复同一个薄模板、因而算不上独立主题覆盖的近似重复内容？",
+      "description": "近似重复内容重复同一个薄模板，因此这些页面不是彼此独立的覆盖。",
+      "h1": "什么是重复同一个薄模板、因而算不上独立主题覆盖的近似重复内容？",
+      "blurb": "近似重复页面复用同一个薄模板，因此不能算作分开的主题覆盖。",
+      "lead": "近似重复内容是同一个薄模板被重复使用，使这些页面不算独立覆盖。",
+      "definition": "近似重复内容是指多个页面重复同一个薄模板，因此它们不是彼此独立的覆盖。主题覆盖需要一个主题上的深度，这些副本并不提供另一个独立主题。",
+      "shortAnswer": "近似重复内容是一组重复同一个薄模板的页面。即使每个网址看起来像多出来的一页，它们也不是独立的主题覆盖。",
+      "checks": [
+        "比较共用同一模板的页面",
+        "看是不是只换了一个标签",
+        "克隆页不能叫独立覆盖",
+        "要深度，而不是再复制一层"
+      ],
+      "doesNotClaim": "合并近似重复的模板，不保证名次会上升。Mika 不保证形成独立覆盖后就会在结果中得到位置或引用。",
+      "example": "假设几个网址复用同一个薄模板，只把标题里的标签换掉。这些页面就是近似重复内容，因此不能算作彼此独立的主题覆盖。"
+    }
+  }
+]

@@ -2116,6 +2116,36 @@ html[data-theme="dark"] .hv2-theme-btn .hv2-icon-moon {
   }
 }
 
+@media (max-width: 900px) {
+  .hv2-nav {
+    height: auto;
+  }
+
+  .hv2-nav-inner {
+    height: auto;
+    min-height: var(--hv2-nav-h);
+    flex-wrap: wrap;
+    row-gap: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .hv2-nav-end {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .hv2-page-nav {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .hv2-page-nav a {
+    height: 34px;
+    padding: 0 10px;
+  }
+}
+
 @media (max-width: 768px) {
   .hv2-nav-toggle {
     display: none;

@@ -1,0 +1,372 @@
+[
+  {
+    "slug": "direct-answers-on-product-pages",
+    "en": {
+      "title": "Direct Answers on Product Pages",
+      "description": "A product-page direct answer states the use case, the constraints, and a path to the specifications.",
+      "h1": "Direct Answers on Product Pages",
+      "blurb": "State the use case, the constraints, and a specification link.",
+      "lead": "A product page helps a buyer when the first answer names the use case, the limits, and where the specifications live.",
+      "definition": "A direct answer on a product page is a short passage that names the use case, states the constraints, and points to the specifications. It belongs on the product itself so the reader does not have to assemble the decision from scattered headings.",
+      "shortAnswer": "Put the use case, the constraints, and a link to specifications in one visible answer on the product page. The path runs from question to topic, intent, entity, evidence, and then the direct answer, using only facts the page can support.",
+      "checks": [
+        "Use case is stated in the answer",
+        "Constraints are named beside it",
+        "Specifications are linked from it",
+        "Claims stay inside published evidence"
+      ],
+      "doesNotClaim": "A direct answer does not guarantee inclusion, recommendation, or citation in ChatGPT, Gemini, or AI Overviews. Mika Visibility explains how to make the answer understandable and supportable, and it does not sell placement on an answer surface.",
+      "example": "The homepage already teaches this with the question, Which product is suitable for low-rise concrete placement? That illustration puts the use case, the constraints, and a link to specifications in a direct answer, and it is a teaching example already on the site, not a customer story."
+    },
+    "zh": {
+      "title": "产品页面上的直接回答如何写明用途、限制和规格",
+      "description": "产品页上的直接回答需要同时写明用途、限制条件，以及规格说明所在的位置。",
+      "h1": "产品页面上的直接回答如何写明用途、限制和规格",
+      "blurb": "在回答里写明用途、限制，并链向规格说明。",
+      "lead": "产品页若要帮买家做判断，开篇回答就应写清用途、限制，以及规格说明放在哪里。",
+      "definition": "产品页上的直接回答，是一段写明用途、限制条件，并指向规格说明的短文。它应该出现在产品本身的页面上，这样读者不必从散落的标题里自己拼出结论。",
+      "shortAnswer": "把用途、限制条件和规格说明链接放进产品页上同一处可见回答。这条路径是从问题到主题、意图、实体、证据，再到直接回答，而且只用页面能够支持的事实。",
+      "checks": [
+        "回答中写明了具体用途",
+        "限制条件紧挨着用途出现",
+        "回答里链向了规格说明",
+        "主张停留在已发布证据内"
+      ],
+      "doesNotClaim": "写上直接回答，并不保证会被 ChatGPT、Gemini 或 AI Overviews 收录、推荐或引用。Mika Visibility 解释的是如何把回答写得可理解、可支持，不保证它出现在任何回答界面上。",
+      "example": "网站首页已经用一个教学问题说明这一点：哪种产品适合低层混凝土浇筑？该示例把用途、限制条件和规格说明链接放进直接回答，它是站上已有的教学例子，不是客户案例。"
+    }
+  },
+  {
+    "slug": "consistent-facts-across-languages",
+    "en": {
+      "title": "Consistent Facts Across Languages",
+      "description": "Company and product facts should match in every language, while market-specific questions still need their own pages.",
+      "h1": "Consistent Facts Across Languages",
+      "blurb": "Match the six core fields, and write real pages for local questions.",
+      "lead": "Shared company and product facts stay aligned across languages, and a market-specific question still needs a page written for that market.",
+      "definition": "Consistent facts means six fields say the same thing in every language: company name, product name, specifications, applications, claims, and question coverage. English is published at the site root, Chinese is published under /zh/, and the site does not use an /en/ prefix.",
+      "shortAnswer": "Align those six fields, then give market-specific questions their own pages instead of thin translated mirrors. Hreflang names en, zh-Hans, and x-default to English, and thin mirrors plus copy spam are the failure mode this check is meant to catch.",
+      "checks": [
+        "Company name matches in each language",
+        "Product name and specifications match",
+        "Applications and claims stay aligned",
+        "Question coverage is not a thin mirror"
+      ],
+      "doesNotClaim": "Matching facts across languages does not guarantee inclusion, recommendation, or citation in any answer engine. The audit checks whether the six fields agree, and it does not guarantee a search outcome for a translated page.",
+      "example": "The site illustration names EN, 中文, Español, العربية, Русский, and Deutsch as language labels. If the Chinese page under /zh/ changes a specification that the English root page does not state, the fields no longer match, and a copied mirror would be the thin-page failure mode."
+    },
+    "zh": {
+      "title": "各语言页面都应保持一致的公司名称与产品事实",
+      "description": "公司与产品事实在每种语言里都应一致，而针对特定市场的问题仍然需要单独的真实页面。",
+      "h1": "各语言页面都应保持一致的公司名称与产品事实",
+      "blurb": "六类核心字段保持一致，本地问题仍要单独成页。",
+      "lead": "跨语言要先对齐公司和产品事实，针对某个市场的问题仍应写成那个市场自己的页面。",
+      "definition": "跨语言事实一致，指六个字段在每种语言里说的是同一件事：公司名称、产品名称、规格、应用、主张，以及问题覆盖。英文放在网站根路径，中文放在 /zh/ 下，站点不使用 /en/ 前缀。",
+      "shortAnswer": "先对齐这六个字段，再为特定市场的问题写真实页面，而不是做薄薄的翻译镜像。hreflang 标明 en、zh-Hans，并且 x-default 指向英文；单薄镜像和复制堆砌才是这里要抓住的失败模式。",
+      "checks": [
+        "各语言的公司名称一致",
+        "产品名称与规格彼此相符",
+        "应用场景与主张保持对齐",
+        "问题覆盖不是单薄镜像"
+      ],
+      "doesNotClaim": "各语言事实彼此一致，并不保证会被任何回答引擎收录、推荐或引用。审计只检查这六个字段是否相符，不保证翻译页面带来某种搜索结果。",
+      "example": "站点示意里的语言标签包括 EN、中文、Español、العربية、Русский 和 Deutsch。如果 /zh/ 下的中文页改写了英文根页面没有写出的规格，这些字段就不再一致，照抄而成的镜像就是单薄页面的失败模式。"
+    }
+  },
+  {
+    "slug": "internal-links-and-orphan-discovery",
+    "en": {
+      "title": "Internal Links and Orphan Discovery",
+      "description": "Orphan pages have no internal links, and broken internal links waste crawl paths as well as trust.",
+      "h1": "Internal Links and Orphan Discovery",
+      "blurb": "Orphan pages lack internal links, and broken links waste crawl paths.",
+      "lead": "Discovery depends on crawl paths that reach the page and on internal links that actually resolve.",
+      "definition": "An orphan page is a URL that no other page on the site links to, so neither a crawler nor a reader has an internal path to it. A broken internal link wastes that crawl path and also weakens trust, because the destination does not resolve.",
+      "shortAnswer": "Check robots rules, status codes, and crawl paths, then repair broken internal links and connect orphan pages with real internal links. Finding a URL in a crawl is a discovery check, and discovery is not a promise of placement.",
+      "checks": [
+        "Orphan pages have no internal links",
+        "Broken internal links are listed",
+        "Crawl paths reach the intended URL",
+        "Status codes show the link target"
+      ],
+      "doesNotClaim": "Mapping internal links does not guarantee that every crawler will discover a page or that an answer engine will cite it. Mika Visibility reports crawl paths and broken links, and it does not guarantee placement in search results.",
+      "example": "A documentation URL that never appears in navigation, body copy, or related links is an orphan even when it returns a successful status code. A product page that links to a specification path which returns an error wastes both the crawl path and the reader's trust."
+    },
+    "zh": {
+      "title": "没有内链的孤立页面如何浪费抓取路径与信任",
+      "description": "孤立页面没有任何内部链接，而失效的内部链接会浪费抓取路径，也会损耗信任。",
+      "h1": "没有内链的孤立页面如何浪费抓取路径与信任",
+      "blurb": "孤立页面缺少内链，失效链接会浪费抓取路径。",
+      "lead": "页面能否被发现，取决于抓取路径是否到达它，以及内部链接是否真的能打开。",
+      "definition": "孤立页面是站内没有任何其他页面指向它的网址，因此抓取工具和读者都没有内部路径可以到达。失效的内部链接会浪费这条抓取路径，也会削弱信任，因为目标地址打不开。",
+      "shortAnswer": "先检查 robots、状态码和抓取路径，再修复失效内链，并用真实内链把孤立页面连进来。在抓取结果里看见一个网址，只是发现性检查，发现本身并不是对展示位置的承诺。",
+      "checks": [
+        "孤立页面没有任何内部链接",
+        "失效的内部链接已被列出",
+        "抓取路径能够到达目标网址",
+        "状态码能说明链接目标情况"
+      ],
+      "doesNotClaim": "把内链画出来，并不保证每个抓取工具都会发现该页，也不保证回答引擎会引用它。Mika Visibility 报告的是抓取路径和失效链接，不保证页面在搜索结果中的位置。",
+      "example": "一篇文档网址如果从未出现在导航、正文或相关链接里，即使它返回成功状态码，仍然是孤立页面。产品页若链向一个返回错误的规格路径，就会同时浪费抓取路径和读者的信任。"
+    }
+  },
+  {
+    "slug": "canonical-hreflang-and-sitemap-signals",
+    "en": {
+      "title": "Canonical, Hreflang, and Sitemap Signals",
+      "description": "Canonical tags, hreflang alternates, and XML sitemaps can name different URLs for the same page.",
+      "h1": "Canonical, Hreflang, and Sitemap Signals",
+      "blurb": "Canonical, hreflang, and sitemap URLs can disagree with each other.",
+      "lead": "Read the canonical, the hreflang alternates, and the XML sitemap together, because each signal can name a different URL.",
+      "definition": "A canonical element points at the intended indexable URL, hreflang names language alternates, and an XML sitemap lists URLs the site offers for crawling. The sitemap can disagree with indexable URLs on coverage, freshness, or indexation, so the audit records that disagreement as a signal.",
+      "shortAnswer": "Compare the canonical URL, the hreflang alternates for en, zh-Hans, and x-default to English, and the URLs present in the sitemap. Hreflang names those alternates without guessing outcomes, and these checks are audit signals rather than levers that force a result.",
+      "checks": [
+        "Canonical matches the indexable URL",
+        "Hreflang lists en and zh-Hans",
+        "X-default points to the English URL",
+        "Sitemap coverage can disagree"
+      ],
+      "doesNotClaim": "Aligning canonical, hreflang, and sitemap signals does not guarantee indexation or citation. A deep audit groups these findings by rule with sample URLs, and it does not guarantee a single combined outcome.",
+      "example": "English at the site root and Chinese under /zh/ can be named with hreflang en, zh-Hans, and x-default to English, with no /en/ prefix. If the sitemap still lists a retired URL while the canonical points at the current page, the signals disagree and the audit records that mismatch."
+    },
+    "zh": {
+      "title": "规范链接、hreflang 与站点地图信号",
+      "description": "规范链接、hreflang 备用地址和 XML 站点地图，可能为同一页面标出不同的网址。",
+      "h1": "规范链接、hreflang 与站点地图信号",
+      "blurb": "规范链接、hreflang 和站点地图里的网址可能不一致。",
+      "lead": "规范链接、hreflang 备用地址和 XML 站点地图要放在一起读，因为每一项都可能指向不同网址。",
+      "definition": "规范链接指向打算被索引的网址，hreflang 标出语言备用页，XML 站点地图列出站点提供给抓取的网址。站点地图可能在覆盖、新鲜度或索引状态上与可索引网址不一致，审计把这种不一致记为信号。",
+      "shortAnswer": "对照规范网址、hreflang 中的 en 与 zh-Hans、指向英文的 x-default，以及站点地图里的网址。hreflang 只是命名这些备用页，并不猜测结果；这些检查是审计信号，不是用来强行制造结果的杠杆。",
+      "checks": [
+        "规范链接指向可索引网址",
+        "hreflang 列出 en 与 zh-Hans",
+        "x-default 指向英文页面",
+        "站点地图覆盖可能并不一致"
+      ],
+      "doesNotClaim": "把规范链接、hreflang 和站点地图对齐，并不保证页面会被索引或被引用。深度审计按规则归组这些发现并附上样例网址，不保证由此合成单一结果。",
+      "example": "根路径上的英文和 /zh/ 下的中文，可以用 hreflang 的 en、zh-Hans 以及指向英文的 x-default 来命名，站点不使用 /en/ 前缀。如果站点地图仍列出已退役网址，而规范链接指向当前页面，这些信号就不一致，审计会记下这一错位。"
+    }
+  },
+  {
+    "slug": "near-duplicates-versus-real-coverage",
+    "en": {
+      "title": "Near Duplicates Versus Real Coverage",
+      "description": "Near-duplicate templates repeat a page pattern, and they do not count as coverage of a new topic.",
+      "h1": "Near Duplicates Versus Real Coverage",
+      "blurb": "Repeated templates are not coverage of a new topic.",
+      "lead": "Real coverage answers a distinct question, while near-duplicate URLs mostly repeat the same page.",
+      "definition": "A near-duplicate is a template that changes little more than a label while the topic, intent, and evidence stay the same. That pattern is not topic coverage, and adding more of those URLs is not SEO growth.",
+      "shortAnswer": "SEO Growth looks for coverage, intent depth, and markets that are still unoccupied, which is separate from a health reading. Question coverage is marked answered, partial, or uncovered, and a pile of similar URLs does not fill an uncovered question.",
+      "checks": [
+        "Near-duplicate templates are grouped",
+        "Distinct topics are listed apart",
+        "Uncovered questions stay visible",
+        "Page count is not treated as growth"
+      ],
+      "doesNotClaim": "Removing near-duplicates does not guarantee that an unanswered query will be covered or cited. Mika Visibility keeps health separate from growth, and it does not guarantee that fewer URLs will change visibility.",
+      "example": "Two product URLs that swap a place name but keep the same specifications and the same answer are near-duplicates, not two topics. A page that answers a different application, with its own constraints and evidence, is the kind of coverage SEO Growth is looking for."
+    },
+    "zh": {
+      "title": "近似重复的网页模板为什么不算真正的主题覆盖",
+      "description": "近似重复的模板只是在重复同一种页面，它们并不等于覆盖了一个新主题。",
+      "h1": "近似重复的网页模板为什么不算真正的主题覆盖",
+      "blurb": "近似重复的网页模板并不等于真正的主题覆盖。",
+      "lead": "真正的覆盖是回答一个不同的问题，近似重复的网址大多只是同一页的翻版。",
+      "definition": "近似重复是一种模板：标签略有变化，但主题、意图和证据基本相同。这种页面不是主题覆盖，继续增加这类网址也不是 SEO 增长。",
+      "shortAnswer": "SEO 增长看的是覆盖、意图深度，以及尚未占据的市场，这与健康度读数是分开的。问题覆盖分为已回答、部分回答和未覆盖，一堆相似网址填不上一个未覆盖的问题。",
+      "checks": [
+        "近似重复的模板被归在一起",
+        "不同主题被分开列出",
+        "未覆盖的问题仍然可见",
+        "页面数量不被当成增长"
+      ],
+      "doesNotClaim": "删掉近似重复页，并不保证未回答的查询就会被覆盖或被引用。Mika Visibility 把健康度与增长分开看，不保证网址变少就会改变可见性。",
+      "example": "两个产品网址如果只是换了一个地名，规格和回答却相同，那就是近似重复，不是两个主题。一个页面若回答了另一种应用，并带上自己的限制和证据，才是 SEO 增长所寻找的覆盖。"
+    }
+  },
+  {
+    "slug": "commercial-intent-your-pages-can-support",
+    "en": {
+      "title": "Commercial Intent Your Pages Can Support",
+      "description": "A commercial opportunity is a query the product page can honestly support with specifications, use cases, and proof.",
+      "h1": "Commercial Intent Your Pages Can Support",
+      "blurb": "Count only queries the product page can honestly support.",
+      "lead": "Informational, commercial, and transactional intents are different, and only honest support belongs in the opportunity list.",
+      "definition": "Informational intent asks to understand a topic, commercial intent compares or selects a product, and transactional intent is ready to act. A commercial opportunity here is a query the product page can honestly support with specifications, use cases, and proof already on the site.",
+      "shortAnswer": "Mark commercial question coverage as covered, partial, or missing, and describe only the opportunities the page can support. Do not invent demand figures, and do not treat an informational explainer as if it were a transactional offer.",
+      "checks": [
+        "Intent is informational, commercial, or transactional",
+        "Specifications on the page support it",
+        "Use cases on the page match the query",
+        "Unsupported queries stay marked missing"
+      ],
+      "doesNotClaim": "Labeling a query as commercial does not guarantee demand, traffic, or citation. Mika Visibility will not invent commercial facts, and it does not guarantee that a supported query will be recommended.",
+      "example": "If a product page already publishes specifications and a use case for a placement method, a commercial query about that method can be described as supportable. A query about a market the site never documents stays missing, because there is no honest proof to attach."
+    },
+    "zh": {
+      "title": "产品页面能够诚实支持的查询才可以视为商业机会",
+      "description": "商业机会指产品页能够用规格、使用场景和证据诚实支持的查询，而不是凭空估计的需求。",
+      "h1": "产品页面能够诚实支持的查询才可以视为商业机会",
+      "blurb": "只把产品页面能够诚实支持的查询记入机会。",
+      "lead": "信息型、商业型和交易型意图并不相同，机会清单里只应留下页面能够诚实支持的查询。",
+      "definition": "信息型意图是想理解一个主题，商业型意图是在比较或选择产品，交易型意图则是准备采取行动。这里的商业机会，是产品页已经能用规格、使用场景和证据诚实支持的查询。",
+      "shortAnswer": "商业问题的覆盖分为已覆盖、部分覆盖和缺失，并且只描述页面能够支持的机会。不要编造需求数字，也不要把一篇信息说明写成交易邀约。",
+      "checks": [
+        "意图分为信息、商业或交易",
+        "页面上的规格能够支持该查询",
+        "页面上的使用场景与查询相符",
+        "无法支持的查询仍标为缺失"
+      ],
+      "doesNotClaim": "把一条查询标成商业意图，并不保证存在需求、访问或引用。Mika Visibility 不会编造商业事实，也不保证一条可支持的查询就会被推荐。",
+      "example": "如果产品页已经发布了某种浇筑方法的规格和使用场景，围绕该方法的商业查询就可以写成可支持。站点从未记录的市场查询仍应标为缺失，因为没有可以附上的诚实证据。"
+    }
+  },
+  {
+    "slug": "what-open-source-crawlers-surface",
+    "en": {
+      "title": "What Open Source Crawlers Surface",
+      "description": "The site note on an open-source crawler lists technical checks that form a coverage map rather than a scoreboard.",
+      "h1": "What Open Source Crawlers Surface",
+      "blurb": "Those checklists name a coverage map, not a scoreboard.",
+      "lead": "The site note points at a public crawler checklist and treats the output as coverage, not as a blended score.",
+      "definition": "The site note on puneetindersingh/open-seo-crawler, an MIT-licensed project, says the checklist names titles, sitemaps, hreflang, duplicates, broken links, noindex, status codes, canonicals, and soft 404s. Mika Visibility does not claim to have copied that repository's documentation.",
+      "shortAnswer": "Read the checklist as a coverage map of what a crawl can surface, not as a scoreboard and not as a blended overall score. Those technical rows stay separate from GEO answer quality, which still needs entities, evidence, and direct answers.",
+      "checks": [
+        "Titles and sitemaps are on the list",
+        "Hreflang and canonicals are named",
+        "Broken links and status codes appear",
+        "Soft 404s and noindex are included"
+      ],
+      "doesNotClaim": "Running an open-source crawl checklist does not guarantee that every issue is found or that any page will be cited. The note describes what those checks name, and it does not guarantee a visibility outcome.",
+      "example": "A crawl can show a missing title, a sitemap URL that is noindex, a broken link, and a soft 404 on different rows of one coverage map. That map is not a claim that Mika copied the open-seo-crawler documentation, and it is not a single health number."
+    },
+    "zh": {
+      "title": "站点笔记中的开源抓取清单会标出哪些覆盖项",
+      "description": "站点笔记里提到的开源抓取清单，列出的是技术检查项，它们组成覆盖地图，而不是记分板。",
+      "h1": "站点笔记中的开源抓取清单会标出哪些覆盖项",
+      "blurb": "这些开源清单标出的是一张覆盖地图，不是记分板。",
+      "lead": "站点笔记指向一份公开的抓取清单，并把输出看成覆盖情况，而不是合成的分数。",
+      "definition": "站点关于 puneetindersingh/open-seo-crawler（MIT 许可）的笔记说明，清单点名的是标题、站点地图、hreflang、重复页、失效链接、noindex、状态码、规范链接和软 404。Mika Visibility 并不声称抄录了该仓库的文档。",
+      "shortAnswer": "这份清单应读成抓取能够标出的覆盖地图，而不是记分板，也不是合成的总分。这些技术行与 GEO 回答质量分开，回答质量仍然要看实体、证据和直接回答。",
+      "checks": [
+        "清单中包含标题和站点地图",
+        "清单点名了 hreflang 与规范链接",
+        "失效链接和状态码出现在清单中",
+        "软 404 与 noindex 也被包括"
+      ],
+      "doesNotClaim": "跑一遍开源抓取清单，并不保证每个问题都会被发现，也不保证任何页面会被引用。笔记只说明这些检查点名了什么，不保证某种可见性结果。",
+      "example": "一次抓取可以在同一张覆盖地图的不同行上标出缺失标题、被 noindex 的站点地图网址、失效链接和软 404。这张地图不是 Mika 抄录了 open-seo-crawler 文档的声明，也不是一个单一的健康数字。"
+    }
+  },
+  {
+    "slug": "source-backed-page-pattern",
+    "en": {
+      "title": "Source-Backed Page Pattern",
+      "description": "A source-backed page is ordered as definition, short answer, example, and sources, with the same facts in English and Chinese.",
+      "h1": "Source-Backed Page Pattern",
+      "blurb": "Order the page as definition, answer, example, and sources.",
+      "lead": "English and Chinese pages should share the same facts in the same source-backed order.",
+      "definition": "The source-backed order places a definition first, then a short answer, then an explanation or example, and then the sources. English and Chinese share those facts so a reader in either language sees the same claims with the same support.",
+      "shortAnswer": "Follow that order and keep the facts aligned between the root English page and the Chinese page under /zh/. Clear structure helps a page be understandable and referenceable, and structure alone is not a promise of being quoted.",
+      "checks": [
+        "Definition comes before the answer",
+        "A short answer follows the definition",
+        "An example or explanation is present",
+        "Sources carry the same shared facts"
+      ],
+      "doesNotClaim": "Using this page order does not guarantee quotation, recommendation, or inclusion in ChatGPT, Gemini, or AI Overviews. GEO means Generative Engine Optimization, and a tidy structure does not guarantee citation.",
+      "example": "A page can define a product constraint, answer who it is for, show how a direct answer names the use case and the limits, and then point to the specification source. The Chinese page under /zh/ should carry those same facts rather than introducing a different claim."
+    },
+    "zh": {
+      "title": "有来源支撑的页面应如何排列定义、回答与来源",
+      "description": "有来源支撑的页面按定义、简短回答、示例和来源排列，并且英文与中文使用同一组事实。",
+      "h1": "有来源支撑的页面应如何排列定义、回答与来源",
+      "blurb": "页面顺序是定义、回答、示例，然后是来源。",
+      "lead": "英文页面和中文页面应当用同一种有来源的顺序，写出同一组事实。",
+      "definition": "有来源的顺序是先写定义，再写简短回答，然后是解释或示例，最后放来源。英文和中文共享这些事实，这样两种语言的读者看到的是同一组主张和同一组支持材料。",
+      "shortAnswer": "按这个顺序写，并让根路径英文页与 /zh/ 下的中文页事实对齐。清楚的结构有助于页面可理解、可被参照，但结构本身并不是会被引用的承诺。",
+      "checks": [
+        "定义出现在回答之前",
+        "简短回答紧跟在定义之后",
+        "页面中有示例或解释",
+        "来源承载同一组共享事实"
+      ],
+      "doesNotClaim": "采用这种页面顺序，并不保证内容会出现在 ChatGPT、Gemini 或 AI Overviews 里。GEO 指的是生成式引擎优化，页面结构只帮助读者核对事实，不保证因此获得引用。",
+      "example": "一个页面可以先定义产品限制，再回答它适合谁，然后展示直接回答如何写明用途和限制，最后指向规格来源。/zh/ 下的中文页应承载同一组事实，而不是另写一套不同的主张。"
+    }
+  },
+  {
+    "slug": "company-information-buyers-can-verify",
+    "en": {
+      "title": "Company Information Buyers Can Verify",
+      "description": "Verifiable company information says who you are, what you sell, and where you operate, with evidence next to the claims.",
+      "h1": "Company Information Buyers Can Verify",
+      "blurb": "State who you are, what you sell, and where you operate.",
+      "lead": "Buyers should be able to check company claims against specifications, process notes, and other verifiable context on the site.",
+      "definition": "Company facts that buyers can verify answer who you are, what you sell, and where you operate, without hype. Evidence means specifications, process, and verifiable context placed next to the claim, not a slogan standing alone.",
+      "shortAnswer": "Keep those facts inside the entity graph that runs from the company to products, applications, technical information, documentation, and evidence. Do not invent certifications or commercial claims the site cannot show.",
+      "checks": [
+        "Who you are is stated plainly",
+        "What you sell matches the products",
+        "Where you operate is stated as fact",
+        "Evidence sits next to each claim"
+      ],
+      "doesNotClaim": "Publishing verifiable company facts does not guarantee trust in search results or citation by an answer engine. Mika Visibility does not invent certifications, and it does not guarantee that a complete profile will be recommended.",
+      "example": "A company block can name the products sold and the places served, then link each claim to documentation or a specification. A credential the site has not published is not evidence, so the page should leave it out rather than imply a certification that was never stated."
+    },
+    "zh": {
+      "title": "买家可以逐条核对的公司身份、产品与经营地点",
+      "description": "可核对的公司信息说明你是谁、卖什么、在哪里经营，并把证据放在每条主张旁边。",
+      "h1": "买家可以逐条核对的公司身份、产品与经营地点",
+      "blurb": "页面要写明你是谁、出售什么，以及在何处经营。",
+      "lead": "买家应当能用站上的规格、过程说明和其他可核对语境，来检查公司主张。",
+      "definition": "买家能够核对的公司事实，回答的是你是谁、卖什么、在哪里经营，并且不靠夸张。证据指的是放在主张旁边的规格、过程说明和可核对语境，而不是单独站着的一句口号。",
+      "shortAnswer": "这些事实应放进实体关系里：从公司到产品、应用、技术信息、文档和证据。不要编造站点无法出示的认证，也不要编造无法出示的商业主张。",
+      "checks": [
+        "你是谁被平实写明",
+        "所售内容与产品一致",
+        "经营地点按事实写出",
+        "每条主张旁边都有证据"
+      ],
+      "doesNotClaim": "发布可核对的公司事实，并不保证搜索结果里的信任，也不保证回答引擎会引用。Mika Visibility 不编造认证，也不保证一份完整简介就会被推荐。",
+      "example": "公司信息可以写明所售产品和所服务的地点，再把每条主张链到文档或规格。站点没有发布过的资质不是证据，页面应当留空，而不是暗示一个从未写明的认证。"
+    }
+  },
+  {
+    "slug": "why-a-healthy-site-can-still-be-hard-to-find",
+    "en": {
+      "title": "Why a Healthy Site Can Still Be Hard to Find",
+      "description": "A site can be technically healthy and still be hard to discover when questions, coverage, or answer surfaces stay thin.",
+      "h1": "Why a Healthy Site Can Still Be Hard to Find",
+      "blurb": "Health can look fine while questions and answer surfaces stay thin.",
+      "lead": "Crawlable pages can still miss unanswered searches, buried questions, or thin answer surfaces.",
+      "definition": "SEO Health asks whether the site is technically ready to be found and understood, while SEO Growth asks about coverage, intent depth, and markets still unoccupied. A high health score is not a growth score, and GEO Health is likewise separate from GEO Growth.",
+      "shortAnswer": "Four capabilities stay independent, with no blended overall score: SEO Health, GEO Health, SEO Growth, and GEO Growth. Crawlable pages can still miss unanswered searches, buried questions, or thin answer surfaces, so health and growth are reported apart.",
+      "checks": [
+        "SEO Health stays separate from growth",
+        "GEO Health is not a growth reading",
+        "Unanswered searches are listed as gaps",
+        "Thin answer surfaces are called out"
+      ],
+      "doesNotClaim": "A healthy crawl does not guarantee that buyers will find the site or that answer engines will cite it. Mika Visibility does not sell fabricated commercial facts, and a health reading does not guarantee discovery.",
+      "example": "Pages can return sound status codes, sit on clean crawl paths, and still leave a buyer question uncovered or answered only in a buried paragraph. GEO Growth would mark the query gap, the answer gap, and citation readiness separately from the health reading."
+    },
+    "zh": {
+      "title": "一个技术健康的网站为什么仍然可能难以被找到",
+      "description": "网站在技术上可以是健康的，但若问题、覆盖或回答表面仍然单薄，它依然可能难以被发现。",
+      "h1": "一个技术健康的网站为什么仍然可能难以被找到",
+      "blurb": "健康度看起来正常时，问题和回答表面仍可能很薄。",
+      "lead": "可抓取的页面仍可能漏掉未回答的搜索、埋得太深的问题，或单薄的回答表面。",
+      "definition": "SEO 健康看的是站点在技术上是否准备好被找到、被理解，SEO 增长看的是覆盖、意图深度和尚未占据的市场。较高的健康读数不是增长读数，GEO 健康同样与 GEO 增长分开。",
+      "shortAnswer": "四项能力彼此独立，没有合成的总分：SEO 健康、GEO 健康、SEO 增长和 GEO 增长。可抓取的页面仍可能漏掉未回答的搜索、埋藏的问题或单薄的回答表面，因此健康与增长分开报告。",
+      "checks": [
+        "SEO 健康与增长保持分开",
+        "GEO 健康不是增长读数",
+        "未回答的搜索被列为缺口",
+        "单薄的回答表面被单独指出"
+      ],
+      "doesNotClaim": "抓取结果健康，并不保证买家会找到网站，也不保证回答引擎会引用它。Mika Visibility 不出售编造的商业事实，健康读数也不保证被发现。",
+      "example": "页面可以返回正常状态码，也位于干净的抓取路径上，却仍让买家的问题未被覆盖，或只在埋得很深的段落里回答。GEO 增长会把查询缺口、回答缺口和被引用准备度与健康读数分开标记。"
+    }
+  }
+]

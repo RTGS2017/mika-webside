@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What do open-source SEO crawlers check? | Mika Q&amp;A</title>
+  <meta name="description" content="Public notes on an MIT-licensed open-source SEO crawler list titles, sitemaps, hreflang, duplicates, links, noindex, status codes, canonicals, and soft 404s.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/qa/what-do-open-source-seo-crawlers-check/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/qa/what-do-open-source-seo-crawlers-check/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/qa/what-do-open-source-seo-crawlers-check/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/qa/what-do-open-source-seo-crawlers-check/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="What do open-source SEO crawlers check? | Mika Q&amp;A">
+  <meta property="og:description" content="Public notes on an MIT-licensed open-source SEO crawler list titles, sitemaps, hreflang, duplicates, links, noindex, status codes, canonicals, and soft 404s.">
+  <meta property="og:url" content="https://mikaovo.ai/qa/what-do-open-source-seo-crawlers-check/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="What do open-source SEO crawlers check? | Mika Q&amp;A">
+  <meta name="twitter:description" content="Public notes on an MIT-licensed open-source SEO crawler list titles, sitemaps, hreflang, duplicates, links, noindex, status codes, canonicals, and soft 404s.">
+  <meta name="theme-color" content="#070B14">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"FAQPage","@id":"https://mikaovo.ai/qa/what-do-open-source-seo-crawlers-check/#faq","headline":"What do open-source SEO crawlers check?","name":"What do open-source SEO crawlers check?","description":"Public notes on an MIT-licensed open-source SEO crawler list titles, sitemaps, hreflang, duplicates, links, noindex, status codes, canonicals, and soft 404s.","datePublished":"2026-09-27","dateModified":"2026-09-27","inLanguage":"en","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/qa/what-do-open-source-seo-crawlers-check/"},"mainEntity":[{"@type":"Question","name":"What do open-source SEO crawlers check?","acceptedAnswer":{"@type":"Answer","text":"The notes mention titles, sitemaps, hreflang, duplicates, broken links, noindex via meta robots or X-Robots-Tag, status codes, canonicals, and soft 404s. They are a coverage map from public observation of that MIT-licensed crawler, not a scoreboard and not a copy of its documentation."}},{"@type":"Question","name":"What does this page not claim?","acceptedAnswer":{"@type":"Answer","text":"A crawler coverage map does not guarantee healthier rankings or that every issue will be found. Mika does not guarantee search rankings or AI answer citations, and these notes do not claim the open-source documentation was copied."}}],"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/qa/what-do-open-source-seo-crawlers-check/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mikaovo.ai/"},{"@type":"ListItem","position":2,"name":"Q&A","item":"https://mikaovo.ai/qa/"},{"@type":"ListItem","position":3,"name":"What do open-source SEO crawlers check?","item":"https://mikaovo.ai/qa/what-do-open-source-seo-crawlers-check/"}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">Skip to content</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/" aria-label="Mika Visibility">
+        <img src="../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/knowledge/">Knowledge</a>
+        <a href="/blog/">Blog</a>
+        <a href="/qa/">Q&amp;A</a>
+        <div class="kc-lang" aria-label="Language">
+          <a href="/qa/what-do-open-source-seo-crawlers-check/" aria-current="page">EN</a>
+          <a href="/zh/qa/what-do-open-source-seo-crawlers-check/">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">Contact</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>Open Source</span> · <time datetime="2026-09-27">September 27, 2026</time></p>
+        <h1>What do open-source SEO crawlers check?</h1>
+        <p class="kc-hero-lead">Open-source SEO crawler notes on the site come from public observation and read as a coverage map, not as a scoreboard.</p>
+        <p class="kc-hero-note">Educational material only. Mika does not guarantee search rankings or AI answer citations.</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="On this page">
+        <p>On this page</p>
+        <nav>
+          <ol>
+            <li><a href="#definition">Definition</a></li>
+            <li><a href="#short-answer">Short answer</a></li>
+            <li><a href="#what-to-check">What to check</a></li>
+            <li><a href="#does-not-claim">What this does not claim</a></li>
+            <li><a href="#example">A practical example</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="definition">
+          <h2>Definition</h2>
+          <p>Open-source SEO crawler notes on the site, based on public observation of puneetindersingh/open-seo-crawler under the MIT license, mention titles, sitemaps, hreflang, duplicates, broken links, noindex via meta robots or X-Robots-Tag, status codes, canonicals, and soft 404s. That list is a coverage map, not a scoreboard, and it does not mean the project documentation was copied.</p>
+        </section>
+        <section id="short-answer">
+          <h2>Short answer</h2>
+          <p>The notes mention titles, sitemaps, hreflang, duplicates, broken links, noindex via meta robots or X-Robots-Tag, status codes, canonicals, and soft 404s. They are a coverage map from public observation of that MIT-licensed crawler, not a scoreboard and not a copy of its documentation.</p>
+        </section>
+        <section id="what-to-check">
+          <h2>What to check</h2>
+          <ul>
+            <li>Titles and sitemaps</li>
+            <li>Hreflang and canonicals</li>
+            <li>Broken links and duplicates</li>
+            <li>Noindex and soft 404s</li>
+          </ul>
+        </section>
+        <section id="does-not-claim">
+          <h2>What this does not claim</h2>
+          <p>A crawler coverage map does not guarantee healthier rankings or that every issue will be found. Mika does not guarantee search rankings or AI answer citations, and these notes do not claim the open-source documentation was copied.</p>
+        </section>
+        <section id="example">
+          <h2>A practical example</h2>
+          <p>A note can record that one URL has a title, appears in a sitemap, and sends hreflang, while another is marked noindex through meta robots or X-Robots-Tag. The same coverage map can include duplicates, broken links, status codes, canonicals, and soft 404s without turning the crawl into a scoreboard.</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">FAQ</h2>
+          <details>
+            <summary>What is the short answer?</summary>
+            <p>The notes mention titles, sitemaps, hreflang, duplicates, broken links, noindex via meta robots or X-Robots-Tag, status codes, canonicals, and soft 404s. They are a coverage map from public observation of that MIT-licensed crawler, not a scoreboard and not a copy of its documentation.</p>
+          </details>
+          <details>
+            <summary>What does this page not claim?</summary>
+            <p>A crawler coverage map does not guarantee healthier rankings or that every issue will be found. Mika does not guarantee search rankings or AI answer citations, and these notes do not claim the open-source documentation was copied.</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">Related guides</h2>
+          <ul>
+            <li><a href="/knowledge/what-open-source-seo-crawlers-check/">What Open-Source SEO Crawlers Check</a></li>
+            <li><a href="/knowledge/what-a-technical-seo-geo-crawler-inspects/">What a Technical SEO/GEO Crawler Inspects</a></li>
+            <li><a href="/qa/what-does-a-combined-seo-geo-crawler-inspect/">What does a combined SEO and GEO crawler inspect?</a></li>
+            <li><a href="/qa/how-should-a-source-backed-page-be-ordered/">How should a source-backed page be ordered?</a></li>
+            <li><a href="#methodology">Mika homepage — Open Source</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">Sources</h2>
+          <ol>
+            <li><a href="/knowledge/what-open-source-seo-crawlers-check/">What Open-Source SEO Crawlers Check</a> — Knowledge Center guide this note restates.</li>
+            <li><a href="/#methodology">Mika Visibility homepage</a> — Product framing for this topic. Sample interface counts on the homepage are illustrative, not a case study.</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">Next step</h2>
+          <p>Run a structured SEO + GEO audit to see health findings, growth gaps, and a blueprint you can act on.</p>
+          <p><a href="/#cta">Start on Mika</a></p>
+          <p>Clearer entities, answers, evidence, and context make pages easier to understand and reference. Results in any answer product are not guaranteed.</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/">Mika Visibility</a> · <a href="/knowledge/">Knowledge</a> · <a href="/blog/">Blog</a> · <a href="/qa/">Q&amp;A</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">Contact</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../contact-config.js"></script>
+  <script src="../../contact.js"></script>
+</body>
+</html>

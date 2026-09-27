@@ -1,0 +1,372 @@
+[
+  {
+    "slug": "four-independent-visibility-tracks",
+    "en": {
+      "title": "Four Independent Visibility Tracks Without a Blended Score",
+      "description": "Mika Visibility reads SEO Health, GEO Health, SEO Growth, and GEO Growth as four separate capabilities so a blended overall score cannot hide which problem needs work.",
+      "h1": "Four Independent Visibility Tracks Without a Blended Score",
+      "blurb": "Four tracks keep search and generative health and growth independent of one another.",
+      "lead": "Health and growth answer different questions, and mixing them into one grade makes the next action harder to see.",
+      "definition": "SEO Health asks whether the live site is technically ready to be found and understood, covering technical setup, structure, and content. GEO Health asks whether people can find a clear supportable answer from the site itself, which is a question about understanding, evidence, and answers. SEO Growth asks which coverage, intent depth, and markets are still unoccupied, while GEO Growth asks where answer coverage, citation readiness, and expansion can still improve. Because a high health score never becomes an automatic growth score, Mika Visibility keeps the four readings independent and does not publish a blended Overall Score.",
+      "shortAnswer": "The model is a two-by-two of SEO or GEO crossed with Health or Growth, and each cell answers a different question. A site can be healthy and still hard to discover, so a health result is never converted into a growth result.",
+      "checks": [
+        "Record SEO Health on its own",
+        "Record GEO Health on its own",
+        "Keep growth apart from health",
+        "Do not blend an overall score"
+      ],
+      "doesNotClaim": "Keeping the four tracks independent does not guarantee a search position or a place on an answer surface. Mika Visibility explains structured SEO and GEO audits, and it does not sell rankings or fabricated commercial facts.",
+      "example": "A crawl can show clean status codes while a second market still has no page that honestly supports commercial intent. SEO Health and SEO Growth then remain side by side, and those two readings are not averaged into one grade."
+    },
+    "zh": {
+      "title": "四条独立的可见度轨道：搜索与生成式答案都不混合总分",
+      "description": "Mika Visibility 把 SEO 健康、GEO 健康、SEO 增长和 GEO 增长分成四项独立能力，以免一个混合总分掩盖真正需要处理的问题。",
+      "h1": "四条独立的可见度轨道：搜索与生成式答案都不混合总分",
+      "blurb": "四条轨道分别看搜索与生成式答案的健康和增长。",
+      "lead": "健康和增长回答的问题不同，合成一个等级会让下一步更难判断。",
+      "definition": "SEO 健康问的是线上站点在技术、结构和内容上是否已经准备好被发现和理解。GEO 健康问的是人们能否从站点本身找到清晰且能被证据支撑的答案，关注的是理解、证据和答案。SEO 增长看覆盖、意图深度和仍未被占据的市场，GEO 增长看答案覆盖、引用准备度以及仍可扩展的地方。健康分数再高也不会自动变成增长分数，所以四项读数保持独立，不会发布一个混合的总体分数。",
+      "shortAnswer": "这是 SEO 或 GEO 与健康或增长交叉之后的四个问题，每一格回答的事情都不一样。站点可以很健康，却仍然难以被发现，因此健康结果不会被换算成增长结果。",
+      "checks": [
+        "单独记录 SEO 健康",
+        "单独记录 GEO 健康",
+        "增长读数不并入健康",
+        "不发布混合的总体分数"
+      ],
+      "doesNotClaim": "把四条轨道分开记录，并不保证搜索位置或答案界面上的露出。这些说明只解释结构化的 SEO 与 GEO 审计，也不把编造的商业事实当成可以出售的内容。",
+      "example": "抓取结果可以显示状态码很干净，但另一个市场仍然没有能够诚实支撑商业意图的页面。这时 SEO 健康和 SEO 增长并排放着，两项读数不会被平均成一个等级。"
+    }
+  },
+  {
+    "slug": "what-seo-health-asks-of-a-live-site",
+    "en": {
+      "title": "What SEO Health Asks of a Live Site",
+      "description": "SEO Health asks whether the live site is technically ready to be found and understood through its technical setup, structure, and content.",
+      "h1": "What SEO Health Asks of a Live Site",
+      "blurb": "SEO Health checks whether the live site can be crawled, indexed, and understood.",
+      "lead": "This reading stays on the technical readiness of the live site and does not grade how much market coverage remains.",
+      "definition": "SEO Health asks whether the live site is technically ready to be found and understood across technical setup, structure, and content. The review includes robots rules, status codes, crawl paths, noindex signals from meta robots or X-Robots-Tag, canonicals, hreflang, soft 404s, and XML sitemaps with their coverage, freshness, and indexation mismatches. An SEO audit reviews how pages can be crawled, indexed, and understood, and it does not guess a future ranking.",
+      "shortAnswer": "Discovery health should stay separate from page clarity, so a crawl checklist is not treated as a judgment of the answer. Broken internal links waste crawl paths and trust, orphan pages have no internal links, and the canonical should point to the intended indexable URL.",
+      "checks": [
+        "Review robots rules and status codes",
+        "Repair broken links and orphan pages",
+        "Point canonicals at indexable URLs",
+        "Compare sitemaps with indexation"
+      ],
+      "doesNotClaim": "A clean SEO Health reading does not guarantee rankings or citations, and clearing warnings does not guarantee rankings or citations either. Hreflang checks language alternates without guessing rankings, and the audit does not sell a future position.",
+      "example": "On this site English is served at the root and Chinese is served under /zh/, with hreflang values en, zh-Hans, and x-default to English, and there is no /en/ prefix. Public notes from the MIT repository open-seo-crawler list titles, sitemaps, hreflang, duplicates, broken links, noindex, status codes, canonicals, and soft 404s as a coverage map rather than a scoreboard, and this essay does not claim that Mika copied that project's docs."
+    },
+    "zh": {
+      "title": "SEO 健康在问线上站点是否准备好被发现和理解",
+      "description": "SEO 健康只问线上站点在技术、结构和内容上是否已经准备好被发现和被理解。",
+      "h1": "SEO 健康在问线上站点是否准备好被发现和理解",
+      "blurb": "SEO 健康检查线上站点能否被抓取、索引和理解。",
+      "lead": "这项读数只看线上站点的技术准备程度，不拿它来衡量还剩多少市场覆盖。",
+      "definition": "SEO 健康问的是线上站点在技术、结构和内容上是否准备好被发现和理解。审查范围包括 robots 规则、状态码、抓取路径、来自 meta robots 或 X-Robots-Tag 的 noindex、规范链接、hreflang、软 404，以及 XML 站点地图的覆盖、新鲜度和索引不一致。SEO 审计看的是页面如何被抓取、索引和理解，而不会去猜测未来排名。",
+      "shortAnswer": "发现层面的健康要和页面是否讲得清楚分开，抓取清单不是对答案质量的判断。损坏的内部链接会浪费抓取路径和信任，孤儿页面没有任何内部链接，规范链接则应指向打算被索引的 URL。",
+      "checks": [
+        "检查 robots 与状态码",
+        "修复断链和孤儿页面",
+        "规范链接指向可索引 URL",
+        "核对站点地图与索引情况"
+      ],
+      "doesNotClaim": "干净的 SEO 健康读数，并不保证后续的搜索表现或引用方面的结果，清空警告同样不保证这些结果。hreflang 只核对语言版本是否互相指向，不会据此猜测未来排名。",
+      "example": "这个站点的英文在根路径，中文在 /zh/ 下，hreflang 使用 en、zh-Hans，并且 x-default 指向英文，没有 /en/ 前缀。MIT 公开仓库 open-seo-crawler 的说明把标题、站点地图、hreflang、重复页、断链、noindex、状态码、规范链接和软 404 当作覆盖地图而不是记分牌，本文也不声称 Mika 抄写了该项目的文档。"
+    }
+  },
+  {
+    "slug": "what-seo-growth-still-leaves-open",
+    "en": {
+      "title": "What SEO Growth Still Leaves Open",
+      "description": "SEO Growth looks for coverage, intent depth, and markets that are still unoccupied even when the live site is already understandable.",
+      "h1": "What SEO Growth Still Leaves Open",
+      "blurb": "SEO Growth lists honest coverage gaps that a health score cannot close.",
+      "lead": "A healthy site can still be hard to discover when intent depth or a market is still missing.",
+      "definition": "SEO Growth asks which coverage, intent depth, and markets are still unoccupied, and that question stays separate from whether the live site is technically healthy. Informational, commercial, and transactional intents are mapped on their own, and a commercial opportunity is only a query a product page can honestly support. Near-duplicate pages and thin templates are not coverage, and publishing more URLs is not SEO growth.",
+      "shortAnswer": "Health can look complete while discovery is still weak, and that gap is what SEO Growth is meant to show. The same company and product facts should appear in every language, while market-specific intent still needs real depth rather than a thin mirror.",
+      "checks": [
+        "Map informational intent that is open",
+        "Keep commercial queries honest",
+        "Map transactional intent that is open",
+        "Do not count thin URLs as growth"
+      ],
+      "doesNotClaim": "An open market on a growth list does not guarantee that new pages will be ranked or that any AI product will cite them. The notes describe opportunities and next actions, and they do not sell rankings or invented demand.",
+      "example": "Fields that should stay aligned across languages include the company name, the product name, specifications, applications, claims, and question coverage. A homepage illustration may name EN, 中文, Español, العربية, Русский, and Deutsch, yet those labels are teaching UI and not evidence that every market is already served in depth."
+    },
+    "zh": {
+      "title": "SEO 增长仍要追问哪些覆盖、意图和市场还空着",
+      "description": "SEO 增长寻找覆盖、意图深度和仍未被占据的市场，而不是把健康分数当成增长本身。",
+      "h1": "SEO 增长仍要追问哪些覆盖、意图和市场还空着",
+      "blurb": "SEO 增长列出健康分数无法代替的真实覆盖缺口。",
+      "lead": "站点可以很健康，却因为意图深度或某个市场仍然空着而难以被发现。",
+      "definition": "SEO 增长问的是哪些覆盖、意图深度和市场仍未被占据，这个问题与站点是否技术健康是两件事。信息型、商业型和交易型意图要分开记录，商业机会只包括产品页能够诚实支撑的查询。近似重复页和单薄模板不算覆盖，多发布一些 URL 也不是 SEO 增长。",
+      "shortAnswer": "健康看起来可以很完整，发现却仍然困难，这个缺口才是 SEO 增长要指出的事情。每种语言都应保留相同的公司和产品事实，但特定市场的意图需要真实深度，而不是薄薄的镜像页面。",
+      "checks": [
+        "标出信息型意图缺口",
+        "只保留能诚实支撑的商业查询",
+        "标出交易型意图缺口",
+        "不把单薄 URL 当成增长"
+      ],
+      "doesNotClaim": "增长清单上的空白市场，并不保证新页面会获得可见度，也不保证任何人工智能产品会引用这些页面。这些笔记描述的是机会和下一步，而不是可以出售的位置承诺。",
+      "example": "跨语言应对齐的内容包括公司名称、产品名称、规格、应用、主张和问题覆盖。首页示意可以列出 EN、中文、Español、العربية、Русский 和 Deutsch，但这些名称只是教学界面，不能证明每个市场都已有足够深度。"
+    }
+  },
+  {
+    "slug": "what-geo-health-means-for-answers",
+    "en": {
+      "title": "What GEO Health Means for Answers",
+      "description": "GEO Health asks whether a person can find a clear, supportable answer about the business from the site itself.",
+      "h1": "What GEO Health Means for Answers",
+      "blurb": "GEO Health tests understanding, evidence, and answers already on the site.",
+      "lead": "Generative Engine Optimization here is about whether answers are clear, not about geographic targeting.",
+      "definition": "GEO means Generative Engine Optimization, not geographic SEO, and GEO Health asks whether someone can find a clear supportable answer about the business from the site itself. The checks look for clear company and product entities, direct answers, evidence tied to claims, and consistent context across pages and languages. A practical path runs from the question to the topic, the intent, the entity, the evidence, and then a direct answer.",
+      "shortAnswer": "Someone should be able to find the answer on the site, see what evidence supports it, and recognize the same context on related pages. GEO Health stops at that clarity and leaves query gaps and expansion to the growth reading.",
+      "checks": [
+        "Name the company and the products",
+        "Answer the question on the page",
+        "Tie each claim to evidence",
+        "Keep context aligned across pages"
+      ],
+      "doesNotClaim": "A clear GEO Health reading does not guarantee inclusion, recommendation, or citation in any AI product, including ChatGPT, Gemini, or AI Overviews. The page can be understandable and still not be selected.",
+      "example": "Put verifiable context beside the claim, such as a specification, a process note, or a constraint a reader can check. The direct answer should name the use case and point to that evidence so the support can be read from the site itself."
+    },
+    "zh": {
+      "title": "GEO 健康如何判断站点上的答案是否站得住",
+      "description": "GEO 健康问的是读者能否从站点本身找到关于这家业务的清晰且可支撑的答案。",
+      "h1": "GEO 健康如何判断站点上的答案是否站得住",
+      "blurb": "GEO 健康检查站点上的理解、证据和答案。",
+      "lead": "这里的 GEO 指生成式引擎优化，关心的是答案是否清楚，而不是地理定位。",
+      "definition": "GEO 指的是生成式引擎优化，不是地理意义上的 SEO，GEO 健康问的是人们能否从站点本身找到清晰且可支撑的答案。检查项包括清楚的公司和产品实体、直接答案、与主张绑在一起的证据，以及页面和语言之间一致的语境。可用的路径是从问题到主题、意图、实体、证据，然后再到直接答案。",
+      "shortAnswer": "读者应能在站点上找到答案，看到支撑它的证据，并在相关页面认出同一语境。GEO 健康停在这种清晰度，查询缺口和扩展空间留给增长读数。",
+      "checks": [
+        "写清公司与产品实体",
+        "直接回答读者的问题",
+        "让证据贴住每条主张",
+        "页面与语言的语境保持一致"
+      ],
+      "doesNotClaim": "清楚的 GEO 健康读数，并不保证内容会被任何人工智能产品收录、推荐或引用，包括 ChatGPT、Gemini 和 AI Overviews。页面可以写得很明白，模型仍然可以不选它。",
+      "example": "主张旁边要放上可核对的语境，例如规格、过程说明，或读者能够检查的限制条件。直接答案应写明使用场景并指向这些证据，这样支撑关系就能从站点本身读出来。"
+    }
+  },
+  {
+    "slug": "where-geo-growth-still-has-room",
+    "en": {
+      "title": "Where GEO Growth Still Has Room",
+      "description": "GEO Growth looks for query gaps, answer gaps, citation readiness, and expansion that a health reading alone does not reveal.",
+      "h1": "Where GEO Growth Still Has Room",
+      "blurb": "GEO Growth finds answer coverage and expansion that are still open.",
+      "lead": "Readiness describes how complete the answer system is, and it is not a promise that any model will cite the page.",
+      "definition": "GEO Growth asks where answer coverage, citation readiness, and expansion can still improve after a clear answer already exists somewhere on the site. The list is made of query gaps and answer gaps, plus places where citation readiness is incomplete and where honest expansion is still possible. Readiness in this column is an unfinished-coverage note, not a promise that an answer surface will include the page.",
+      "shortAnswer": "A site can already answer one question clearly and still leave a neighboring question partial or uncovered. Expansion means adding support for that gap, and citation readiness only describes whether the new answer is ready to be referenced.",
+      "checks": [
+        "List the query gaps still open",
+        "List the answer gaps still open",
+        "Judge citation readiness only",
+        "Plan expansion with evidence"
+      ],
+      "doesNotClaim": "Stronger citation readiness does not guarantee inclusion, recommendation, or citation in ChatGPT, Gemini, AI Overviews, or any other AI product. A query gap is a planning note, not a forecast of visibility.",
+      "example": "A product page may already answer one application clearly while a related technical question still has no direct answer on the site. GEO Health can stay intact for the answered page while GEO Growth records the open gap and the evidence still needed to close it."
+    },
+    "zh": {
+      "title": "GEO 增长还留有哪些查询、答案和扩展空间",
+      "description": "GEO 增长寻找查询缺口、答案缺口、引用准备度和仍可扩展的地方，这些都不是健康读数能单独显示的。",
+      "h1": "GEO 增长还留有哪些查询、答案和扩展空间",
+      "blurb": "GEO 增长找出仍可补上的答案覆盖和扩展空间。",
+      "lead": "准备度描述答案体系还缺什么，它不是任何模型一定会引用该页的承诺。",
+      "definition": "GEO 增长问的是答案覆盖、引用准备度和扩展还能在哪里改进，即便站点上某处已经有了清楚答案。清单由查询缺口和答案缺口组成，也包括引用准备度仍不完整、以及仍能诚实扩展的地方。这一列里的准备度只是未完成覆盖的记录，不是答案界面将会收录该页的承诺。",
+      "shortAnswer": "站点可以已经清楚回答了一个问题，相邻问题却仍然是部分覆盖或尚未覆盖。扩展意味着为这个缺口补上支撑，引用准备度只说明新答案是否达到可以被参照的程度。",
+      "checks": [
+        "列出仍开放的查询缺口",
+        "列出仍开放的答案缺口",
+        "只评估引用准备度",
+        "带着证据去规划扩展"
+      ],
+      "doesNotClaim": "引用准备度更高，并不保证 ChatGPT、Gemini、AI Overviews 或其他人工智能产品会收录、推荐或引用该页。查询缺口是计划笔记，不是可见度的预告。",
+      "example": "产品页可能已经清楚回答了一个应用问题，相关的技术问题却仍然没有直接答案。已回答的页面可以保持 GEO 健康，GEO 增长则记下这个缺口以及补上它仍然需要的证据。"
+    }
+  },
+  {
+    "slug": "from-scan-to-re-audit",
+    "en": {
+      "title": "From the First Scan Through the Next Re-audit",
+      "description": "The visibility loop runs from scan through diagnose, blueprint, and optimize to re-audit so the next check reviews what actually shipped.",
+      "h1": "From the First Scan Through the Next Re-audit",
+      "blurb": "Re-audit compares the live site with the actions the blueprint requested.",
+      "lead": "Scan, diagnose, blueprint, optimize, and re-audit keep each pass tied to reasons and to the next actions.",
+      "definition": "The loop is SCAN, then DIAGNOSE, then BLUEPRINT, then OPTIMIZE, then RE-AUDIT. Scanning collects the live site, diagnosis explains what failed, the blueprint chooses next actions, and optimize is the change that actually ships. Re-audit checks what shipped, so the loop closes on observed pages rather than on a mystery KPI.",
+      "shortAnswer": "A useful report gives reasons, sample URLs, opportunities, and next actions. Re-audit opens the pages that were supposed to change and records what is live, which is how the next scan starts from evidence.",
+      "checks": [
+        "Start from a scan of the site",
+        "Diagnose before changing pages",
+        "Put next actions in a blueprint",
+        "Re-audit the pages that shipped"
+      ],
+      "doesNotClaim": "Finishing a scan or a re-audit does not guarantee rankings, citations, or a place in an answer product. The loop reports what was observed and what to do next, and it does not sell a hidden number that predicts the future.",
+      "example": "A blueprint might call for canonical repairs on a set of sample URLs and a clearer answer on one product page. The re-audit then requests those same URLs, checks whether the repairs are live, and writes down what is still open."
+    },
+    "zh": {
+      "title": "从扫描到复审的循环：诊断、蓝图与优化之后再核对",
+      "description": "可见度循环依次是扫描、诊断、蓝图、优化和复审，下一次检查针对的是真正上线的改动。",
+      "h1": "从扫描到复审的循环：诊断、蓝图与优化之后再核对",
+      "blurb": "复审用来核对线上页面是否完成了蓝图中的动作。",
+      "lead": "扫描、诊断、蓝图、优化和复审把每一轮都连回原因和下一步动作。",
+      "definition": "工作循环是 SCAN，然后 DIAGNOSE，然后 BLUEPRINT，然后 OPTIMIZE，然后 RE-AUDIT。扫描收集当前站点，诊断解释失败原因，蓝图选定下一步，优化则是真正发布的改动。复审检查已经上线的内容是否符合这些动作，因此循环闭合在可观察的页面上，而不是一个神秘指标。",
+      "shortAnswer": "有用的报告会给出原因、示例 URL、机会和下一步动作。复审打开那些本应改动的页面，记下现在线上的情况，下一轮扫描就从这些证据开始。",
+      "checks": [
+        "先对整站做一次扫描",
+        "诊断完成后再优化",
+        "把下一步动作写进蓝图",
+        "复审已经上线的页面"
+      ],
+      "doesNotClaim": "做完一次扫描或复审，并不保证搜索位置、引用结果或答案产品中的露出。这个循环报告观察到的情况以及接下来要做的事，而不是出售一个用来预测未来的隐藏数字。",
+      "example": "蓝图可能要求修复一组示例 URL 上的规范链接，并让某个产品页的答案更清楚。复审随后打开同样的 URL，检查修复是否已经上线，并写下仍然开放的部分。"
+    }
+  },
+  {
+    "slug": "audit-then-diagnosis-then-blueprint",
+    "en": {
+      "title": "Audit First, Then Diagnosis, Then a Blueprint",
+      "description": "A deep audit walks the site as a system, and only then moves from diagnosis into a blueprint.",
+      "h1": "Audit First, Then Diagnosis, Then a Blueprint",
+      "blurb": "Pages, structure, topics, entities, questions, and evidence come before the blueprint.",
+      "lead": "The path is audit, then diagnosis, then blueprint, and the site is never reduced to one score.",
+      "definition": "The path runs from Audit to Diagnosis to Blueprint, and a deep audit treats the site as a system rather than a single score. It walks pages, structure, topics, entities, questions, and evidence before anyone writes the blueprint. Findings are grouped by rule with sample URLs, so diagnosis can explain the pattern and the blueprint can name the next actions.",
+      "shortAnswer": "Diagnosis sits between the audit and the blueprint because a pile of URLs is not yet a plan. When rendering exists, review health, answerability, and accessibility as separate columns, prioritize template-level defects, sample JavaScript against no JavaScript, and attach why the issue matters, how to address it, and what happens if it is ignored.",
+      "checks": [
+        "Walk pages before the blueprint",
+        "Group findings under one rule",
+        "Keep sample URLs with each rule",
+        "Write the blueprint after diagnosis"
+      ],
+      "doesNotClaim": "A finished blueprint does not guarantee that the optimize step will produce rankings or citations. Stating why a finding matters, how to address it, and what happens if it is ignored still does not guarantee a commercial outcome.",
+      "example": "If many product templates omit a direct answer, the audit groups those URLs under one rule instead of treating each URL as a separate mystery. Diagnosis explains the shared defect, and the blueprint targets the template, with the sample URLs kept attached so a later check can confirm the work."
+    },
+    "zh": {
+      "title": "深度审计先看整站系统，再诊断，然后才写蓝图",
+      "description": "深度审计把站点当成一个系统来走查，然后才从诊断进入蓝图，而不是先给一个总分。",
+      "h1": "深度审计先看整站系统，再诊断，然后才写蓝图",
+      "blurb": "页面、结构、主题、实体、问题和证据都排在蓝图之前。",
+      "lead": "路径是先审计，再诊断，然后蓝图，站点不会被收成一个分数。",
+      "definition": "路径是先审计，再诊断，然后蓝图，深度审计把站点看成一个系统，而不是一个分数。它会先走过页面、结构、主题、实体、问题和证据，然后才写蓝图。发现按规则归组，并附上示例 URL，这样诊断能解释模式，蓝图能写出下一步。",
+      "shortAnswer": "诊断放在审计和蓝图之间，因为一堆 URL 还不是计划。如果页面存在渲染，就把健康、可回答性和可访问性分成不同列，优先处理模板级缺陷，对照 JavaScript 与无 JavaScript 的结果，并写上原因、处理方式，以及忽略时会怎样。",
+      "checks": [
+        "写蓝图之前先走查页面",
+        "按同一规则归组发现",
+        "发现旁边保留示例 URL",
+        "诊断之后再写蓝图"
+      ],
+      "doesNotClaim": "蓝图写完，并不保证随后的优化会带来搜索位置或引用。即便写明原因、处理方式以及忽略时会怎样，仍然不保证商业上的结果。",
+      "example": "如果许多产品模板都缺少直接答案，审计会把这些 URL 归到同一条规则下，而不是把每个 URL 当成单独的谜题。诊断解释这个共同缺陷，蓝图则针对模板来写，并保留示例 URL，方便以后核对。"
+    }
+  },
+  {
+    "slug": "question-coverage-answered-partial-uncovered",
+    "en": {
+      "title": "Question Coverage States: Answered, Partial, and Uncovered",
+      "description": "Question coverage is marked answered, partial, or uncovered, while commercial intent is marked covered, partial, or missing.",
+      "h1": "Question Coverage States: Answered, Partial, and Uncovered",
+      "blurb": "Questions and commercial intents use separate coverage states.",
+      "lead": "Coverage states describe what the site actually answers, and they are not demonstration percentages.",
+      "definition": "Question coverage uses three states: answered, partial, and uncovered. Commercial intents are recorded separately as covered, partial, or missing, because a general question can be answered while a buying query is still missing. The labels describe the current site, and they are not sample scores or demonstration percentages.",
+      "shortAnswer": "Answered means the site states a direct supportable answer, partial means only some of the needed pieces are present, and uncovered means the question is not handled. Commercial coverage asks whether a product page can honestly support the query, which is a different list from general question coverage.",
+      "checks": [
+        "Mark each question answered",
+        "Mark each question partial",
+        "Mark each question uncovered",
+        "Record commercial coverage apart"
+      ],
+      "doesNotClaim": "Marking a question as answered does not guarantee that search or any AI product will surface that answer. The states are facts about what the page contains, and they do not promise a future position or a citation.",
+      "example": "The homepage already teaches with the question Which product is suitable for low-rise concrete placement, and that line is an illustration rather than a customer result. A useful response gives a direct answer with the use case, the constraints, and a link to specifications, and the state becomes answered only when that material is actually on the site."
+    },
+    "zh": {
+      "title": "问题覆盖的三种状态：已回答、部分覆盖、未覆盖",
+      "description": "问题覆盖分为已回答、部分覆盖和未覆盖，商业意图则另记为已覆盖、部分覆盖或缺失。",
+      "h1": "问题覆盖的三种状态：已回答、部分覆盖、未覆盖",
+      "blurb": "普通问题与商业购买意图使用不同的覆盖状态。",
+      "lead": "覆盖状态描述站点实际回答了什么，它们不是演示用的百分比。",
+      "definition": "问题覆盖使用三种状态：已回答、部分覆盖和未覆盖。商业意图另行记录为已覆盖、部分覆盖或缺失，因为一个普通问题可以已经回答，购买查询却仍然缺失。这些标签描述的是当前站点，不是示例分数，也不是演示百分比。",
+      "shortAnswer": "已回答表示站点给出了直接且可支撑的答案，部分覆盖表示所需内容只出现了一部分，未覆盖表示问题还没有被处理。商业覆盖问的是产品页能否诚实支撑该查询，这和普通问题覆盖不是同一份清单。",
+      "checks": [
+        "将问题标记为已回答",
+        "将问题标记为部分覆盖",
+        "将问题标记为未覆盖",
+        "商业意图缺口分开记录"
+      ],
+      "doesNotClaim": "把问题标成已回答，并不保证搜索或任何人工智能产品会展示这个答案。这些状态是页面内容的事实，不是对未来位置或引用的承诺。",
+      "example": "首页已经用一个教学问题来说明：哪款产品适合低层混凝土浇筑，这句话是示例，不是客户结果。有用的回应要给出直接答案，写明使用场景和限制条件，并链到规格说明，只有这些内容真正出现在站点上，状态才能标成已回答。"
+    }
+  },
+  {
+    "slug": "entity-graph-company-to-evidence",
+    "en": {
+      "title": "An Entity Graph from the Company to the Evidence",
+      "description": "The entity graph links the company to products, applications, technical information, documentation, and evidence.",
+      "h1": "An Entity Graph from the Company to the Evidence",
+      "blurb": "Five links and five named dimensions describe the graph without scores.",
+      "lead": "Entity clarity starts with who the company is and ends where a reader can check the claim.",
+      "definition": "The entity graph links the company to products, then to applications, technical information, documentation, and evidence. A reader should be able to move from who the company is to what it sells, where those products apply, which technical details support them, which documents record them, and which evidence sits next to the claim. Five dimensions are named only, with no sample scores: entity clarity, answerability, evidence coverage, consistency, and citation readiness.",
+      "shortAnswer": "Company pages should say who you are, what you sell, and where you operate, without hype. Product pages should carry the specifications, use cases, and proof a buyer needs before contact, with verifiable context placed next to each claim.",
+      "checks": [
+        "Link each product to the company",
+        "Link applications and documents",
+        "Place evidence beside claims",
+        "Name the five dimensions only"
+      ],
+      "doesNotClaim": "A complete entity graph does not guarantee that a model will recommend the company or cite its documents. Naming citation readiness among the dimensions does not guarantee a citation, and those dimensions are not published here as sample scores.",
+      "example": "A specification can connect a product to an application, then to a document, then to the evidence for a stated constraint. Consistency means those facts agree across pages and languages, which is a dimension to inspect rather than a number to display."
+    },
+    "zh": {
+      "title": "从公司连到证据的实体图，以及五个不带分数的维度",
+      "description": "实体图把公司连到产品、应用、技术信息、文档和证据，并用五个维度的名称来描述，而不附带分数。",
+      "h1": "从公司连到证据的实体图，以及五个不带分数的维度",
+      "blurb": "五条链接加上五个维度名称，用来描述这张图。",
+      "lead": "实体清晰度从公司是谁开始，一直到主张旁边能否核对证据。",
+      "definition": "实体图从公司连到产品，再连到应用、技术信息、文档和证据。读者应能从公司是谁走到它卖什么、产品用在哪里、哪些技术细节支撑它们、哪些文档记录它们，以及哪些证据放在主张旁边。五个维度只写名称，不附示例分数：实体清晰度、可回答性、证据覆盖、一致性、引用准备度。",
+      "shortAnswer": "公司页应说明你是谁、卖什么、在哪里开展业务，并且不夸大。产品页应放上规格、使用场景，以及买家在联系之前需要的证明，每条主张旁边都要有可核对的语境。",
+      "checks": [
+        "把产品链接回公司",
+        "把应用和文档连上",
+        "把证据放在主张旁",
+        "五个维度只写名称"
+      ],
+      "doesNotClaim": "实体图完整，并不保证模型会推荐这家公司，也不保证文档会被拿去引用。把引用准备度列成一个维度，仍然不保证出现引用，而且这里不会给这些维度配上示例分数。",
+      "example": "一份规格可以把产品连到应用，再连到文档，然后连到某个已写明限制条件的证据。一致性是指这些事实在页面和语言之间彼此相符，它是要检查的维度，不是要展示的数字。"
+    }
+  },
+  {
+    "slug": "citation-readiness-without-a-guarantee",
+    "en": {
+      "title": "Citation Readiness Without Promising a Citation",
+      "description": "Citation readiness asks whether site information is understandable, supportable, and referenceable without promising that any AI product will cite it.",
+      "h1": "Citation Readiness Without Promising a Citation",
+      "blurb": "Being ready to reference is different from being cited by a product.",
+      "lead": "A page can be supportable and referenceable and still never be included or recommended.",
+      "definition": "Citation readiness describes whether information is understandable, supportable, and referenceable. Understandable means a direct answer can be found, supportable means evidence is tied to the claim, and referenceable means the context is consistent enough that someone could point to the page. The measurement stops at that quality, and it does not turn readiness into inclusion.",
+      "shortAnswer": "Source-backed pages carry a definition, a short answer, an example, and sources, and bilingual pages are expected to share the same facts. Those habits make a page easier to check, and they remain editorial practice rather than a method for being chosen by a model.",
+      "checks": [
+        "Make each answer understandable",
+        "Make each claim supportable",
+        "Make the context referenceable",
+        "Keep sources with the page"
+      ],
+      "doesNotClaim": "Citation readiness does not guarantee inclusion, recommendation, or citation in any AI product, including ChatGPT, Gemini, and AI Overviews. Clearing warnings does not guarantee rankings or citations, and Mika Visibility does not sell answer-surface placement.",
+      "example": "A constraint on a product should sit next to specifications, process notes, or other verifiable context, with the same facts repeated in each language. A reader can then understand the answer and see what supports it, which still does not guarantee that an answer engine will quote the page."
+    },
+    "zh": {
+      "title": "引用准备度只说明能否被参照，并不承诺会被引用",
+      "description": "引用准备度只判断信息是否明白、是否能被证据支撑、是否值得被参照，它不表示任何人工智能产品一定会引用该页。",
+      "h1": "引用准备度只说明能否被参照，并不承诺会被引用",
+      "blurb": "内容达到可参照，仍不等于任何产品已经引用。",
+      "lead": "页面可以既有支撑又值得被参照，却仍然没有被收录或推荐。",
+      "definition": "引用准备度描述的是信息是否明白、是否有支撑、是否值得被参照。明白是指能找到直接答案，有支撑是指证据和主张绑在一起，值得被参照是指语境足够一致，别人可以指出这一页。这项衡量停在质量本身，不会把准备度说成已经被收录。",
+      "shortAnswer": "有来源的页面会带上定义、简短回答、示例和来源，双语页面则应共享同一组事实。这些做法让页面更容易被核对，它们仍然是编辑实践，不是让模型选中页面的方法。",
+      "checks": [
+        "让答案可以被理解",
+        "让主张可以被支撑",
+        "让语境可以被参照",
+        "页面旁边保留来源"
+      ],
+      "doesNotClaim": "引用准备度不保证任何人工智能产品会收录、推荐或引用该页，包括 ChatGPT、Gemini 和 AI Overviews。清除警告同样不保证这些结果，这里也不出售答案界面上的位置。",
+      "example": "产品上的限制条件应放在规格、过程说明或其他可核对语境旁边，并且每种语言重复同一组事实。读者于是能看懂答案，也能看到支撑是什么，这仍然不保证答案引擎会引述该页。"
+    }
+  }
+]
