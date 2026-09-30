@@ -1,0 +1,17 @@
+name = "mika-contact"
+main = "workers/contact.js"
+compatibility_date = "2026-09-30"
+
+[vars]
+SMTP_HOST = "smtp.qq.com"
+SMTP_PORT = "465"
+SMTP_SECURE = "true"
+
+# Set secrets outside git:
+# npx wrangler secret put SMTP_USER
+# npx wrangler secret put SMTP_PASS
+# npx wrangler secret put CONTACT_RECEIVER
+
+[[routes]]
+pattern = "api.mikaovo.ai/api/*"
+zone_name = "mikaovo.ai"

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640" role="img">
+  <title>Optimization blueprint demo</title>
+  <rect width="960" height="640" rx="28" fill="#F5F7FB"/>
+  <rect x="24" y="24" width="912" height="592" rx="20" fill="#fff" stroke="#E6EAF2"/>
+  <text x="828" y="52" fill="#64748B" font-family="Segoe UI, sans-serif" font-size="12" letter-spacing="1.2">DEMO DATA</text>
+  
+    <text x="56" y="84" fill="#0B1220" font-family="Segoe UI, sans-serif" font-size="24" font-weight="720">优化蓝图</text>
+    <rect x="56" y="120" width="520" height="450" rx="16" fill="#F5F7FB"/>
+    <text x="80" y="160" fill="#64748B" font-family="Segoe UI, sans-serif" font-size="13">问题</text>
+    <text x="80" y="190" fill="#0B1220" font-family="Segoe UI, sans-serif" font-size="20" font-weight="720">产品页内容过薄</text>
+    <text x="80" y="224" fill="#64748B" font-family="Segoe UI, sans-serif" font-size="14">缺少产品定义、使用场景、规格和证据</text>
+    
+      <circle cx="98" cy="280" r="14" fill="#2F6FED"/>
+      <text x="92" y="285" fill="#fff" font-family="Segoe UI, sans-serif" font-size="12">1</text>
+      <text x="128" y="286" fill="#0B1220" font-family="Segoe UI, sans-serif" font-size="16">补充产品定义</text>
+    
+      <circle cx="98" cy="328" r="14" fill="#2F6FED"/>
+      <text x="92" y="333" fill="#fff" font-family="Segoe UI, sans-serif" font-size="12">2</text>
+      <text x="128" y="334" fill="#0B1220" font-family="Segoe UI, sans-serif" font-size="16">增加使用场景</text>
+    
+      <circle cx="98" cy="376" r="14" fill="#2F6FED"/>
+      <text x="92" y="381" fill="#fff" font-family="Segoe UI, sans-serif" font-size="12">3</text>
+      <text x="128" y="382" fill="#0B1220" font-family="Segoe UI, sans-serif" font-size="16">补充规格</text>
+    
+      <circle cx="98" cy="424" r="14" fill="#2F6FED"/>
+      <text x="92" y="429" fill="#fff" font-family="Segoe UI, sans-serif" font-size="12">4</text>
+      <text x="128" y="430" fill="#0B1220" font-family="Segoe UI, sans-serif" font-size="16">添加证据</text>
+    
+      <circle cx="98" cy="472" r="14" fill="#2F6FED"/>
+      <text x="92" y="477" fill="#fff" font-family="Segoe UI, sans-serif" font-size="12">5</text>
+      <text x="128" y="478" fill="#0B1220" font-family="Segoe UI, sans-serif" font-size="16">增加常见问题</text>
+    
+    <rect x="600" y="120" width="280" height="450" rx="16" fill="#fff" stroke="#E6EAF2"/>
+    <text x="624" y="164" fill="#64748B" font-family="Segoe UI, sans-serif" font-size="13">优先级</text>
+    <text x="624" y="204" fill="#7C3AED" font-family="Segoe UI, sans-serif" font-size="32" font-weight="720">P1</text>
+    <text x="624" y="250" fill="#64748B" font-family="Segoe UI, sans-serif" font-size="13">目标 URL</text>
+    <text x="624" y="278" fill="#0B1220" font-family="Segoe UI, sans-serif" font-size="16">/products/example/</text>
+    <text x="624" y="330" fill="#64748B" font-family="Segoe UI, sans-serif" font-size="13">验收</text>
+    <text x="624" y="360" fill="#0B1220" font-family="Segoe UI, sans-serif" font-size="16">重新扫描</text>
+    <text x="624" y="430" fill="#64748B" font-family="Segoe UI, sans-serif" font-size="12">示例页面，不是客户站点</text>
+  
+</svg>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640" role="img">
+  <title>Website visibility scanner demo</title>
+  <rect width="960" height="640" rx="28" fill="#F5F7FB"/>
+  <rect x="24" y="24" width="912" height="592" rx="20" fill="#fff" stroke="#E6EAF2"/>
+  <text x="828" y="52" fill="#64748B" font-family="Segoe UI, sans-serif" font-size="12" letter-spacing="1.2">DEMO DATA</text>
+  
+    <text x="56" y="78" fill="#64748B" font-family="Segoe UI, sans-serif" font-size="13" letter-spacing="1.4">SCANNER</text>
+    <text x="56" y="114" fill="#0B1220" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">网站可见性扫描器</text>
+    <rect x="56" y="140" width="520" height="52" rx="12" fill="#F5F7FB" stroke="#E6EAF2"/>
+    <text x="76" y="172" fill="#64748B" font-family="Segoe UI, sans-serif" font-size="16">https://example.com</text>
+    <rect x="600" y="140" width="140" height="52" rx="12" fill="#2F6FED"/>
+    <text x="632" y="172" fill="#fff" font-family="Segoe UI, sans-serif" font-size="16" font-weight="650">开始扫描</text>
+    <circle cx="66" cy="226" r="9" fill="#15956A"/>
+      <path d="M61 226 l3 3 l6 -7" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <text x="84" y="230" fill="#0B1220" font-family="Segoe UI, sans-serif" font-size="15">页面结构</text><circle cx="66" cy="268" r="9" fill="#15956A"/>
+      <path d="M61 268 l3 3 l6 -7" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <text x="84" y="272" fill="#0B1220" font-family="Segoe UI, sans-serif" font-size="15">搜索基础</text><circle cx="66" cy="310" r="9" fill="#15956A"/>
+      <path d="M61 310 l3 3 l6 -7" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <text x="84" y="314" fill="#0B1220" font-family="Segoe UI, sans-serif" font-size="15">内容覆盖</text><circle cx="66" cy="352" r="9" fill="#15956A"/>
+      <path d="M61 352 l3 3 l6 -7" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <text x="84" y="356" fill="#0B1220" font-family="Segoe UI, sans-serif" font-size="15">商业意图</text><circle cx="370" cy="226" r="9" fill="#15956A"/>
+      <path d="M365 226 l3 3 l6 -7" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <text x="388" y="230" fill="#0B1220" font-family="Segoe UI, sans-serif" font-size="15">AI 答案</text><circle cx="370" cy="268" r="9" fill="#15956A"/>
+      <path d="M365 268 l3 3 l6 -7" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <text x="388" y="272" fill="#0B1220" font-family="Segoe UI, sans-serif" font-size="15">实体信息</text><circle cx="370" cy="310" r="9" fill="#15956A"/>
+      <path d="M365 310 l3 3 l6 -7" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <text x="388" y="314" fill="#0B1220" font-family="Segoe UI, sans-serif" font-size="15">证据</text><circle cx="370" cy="352" r="9" fill="#15956A"/>
+      <path d="M365 352 l3 3 l6 -7" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <text x="388" y="356" fill="#0B1220" font-family="Segoe UI, sans-serif" font-size="15">多语言</text>
+    <rect x="56" y="420" width="684" height="150" rx="16" fill="#F5F7FB"/>
+    <text x="80" y="456" fill="#0B1220" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700">网站可见性报告</text>
+    <text x="80" y="480" fill="#64748B" font-family="Segoe UI, sans-serif" font-size="12">示例数据，仅用于演示</text>
+    
+      <text x="80" y="530" fill="#64748B" font-family="Segoe UI, sans-serif" font-size="13">SEO 健康度</text>
+      <text x="80" y="558" fill="#2F6FED" font-family="Segoe UI, sans-serif" font-size="28" font-weight="720">92</text>
+    
+      <text x="245" y="530" fill="#64748B" font-family="Segoe UI, sans-serif" font-size="13">SEO 增长</text>
+      <text x="245" y="558" fill="#22D3EE" font-family="Segoe UI, sans-serif" font-size="28" font-weight="720">71</text>
+    
+      <text x="410" y="530" fill="#64748B" font-family="Segoe UI, sans-serif" font-size="13">GEO 健康度</text>
+      <text x="410" y="558" fill="#7C3AED" font-family="Segoe UI, sans-serif" font-size="28" font-weight="720">84</text>
+    
+      <text x="575" y="530" fill="#64748B" font-family="Segoe UI, sans-serif" font-size="13">GEO 增长</text>
+      <text x="575" y="558" fill="#A78BFA" font-family="Segoe UI, sans-serif" font-size="28" font-weight="720">63</text>
+    
+  
+</svg>

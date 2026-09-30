@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640" role="img">
+  <title>Question coverage demo</title>
+  <rect width="960" height="640" rx="28" fill="#F5F7FB"/>
+  <rect x="24" y="24" width="912" height="592" rx="20" fill="#fff" stroke="#E6EAF2"/>
+  <text x="828" y="52" fill="#64748B" font-family="Segoe UI, sans-serif" font-size="12" letter-spacing="1.2">DEMO DATA</text>
+  
+    <text x="56" y="86" fill="#0B1220" font-family="Segoe UI, sans-serif" font-size="24" font-weight="720">问题覆盖</text>
+    <circle cx="210" cy="300" r="92" fill="none" stroke="#E6EAF2" stroke-width="22"/>
+    <circle cx="210" cy="300" r="92" fill="none" stroke="#2F6FED" stroke-width="22" stroke-dasharray="250 328" stroke-linecap="round" transform="rotate(-90 210 300)"/>
+    <circle cx="210" cy="300" r="92" fill="none" stroke="#7C3AED" stroke-width="22" stroke-dasharray="120 458" stroke-dashoffset="-250" transform="rotate(-90 210 300)"/>
+    <text x="168" y="294" fill="#0B1220" font-family="Segoe UI, sans-serif" font-size="28" font-weight="720">42</text>
+    <text x="156" y="320" fill="#64748B" font-family="Segoe UI, sans-serif" font-size="13">示例问题</text>
+    
+      <rect x="390" y="180" width="480" height="72" rx="14" fill="#fff" stroke="#E6EAF2"/>
+      <circle cx="422" cy="216" r="8" fill="#2F6FED"/>
+      <text x="444" y="222" fill="#0B1220" font-family="Segoe UI, sans-serif" font-size="16" font-weight="650">已回答</text>
+      <text x="800" y="222" fill="#0B1220" font-family="Segoe UI, sans-serif" font-size="18" font-weight="720">18</text>
+    
+      <rect x="390" y="268" width="480" height="72" rx="14" fill="#fff" stroke="#E6EAF2"/>
+      <circle cx="422" cy="304" r="8" fill="#7C3AED"/>
+      <text x="444" y="310" fill="#0B1220" font-family="Segoe UI, sans-serif" font-size="16" font-weight="650">部分回答</text>
+      <text x="800" y="310" fill="#0B1220" font-family="Segoe UI, sans-serif" font-size="18" font-weight="720">15</text>
+    
+      <rect x="390" y="356" width="480" height="72" rx="14" fill="#fff" stroke="#E6EAF2"/>
+      <circle cx="422" cy="392" r="8" fill="#D97706"/>
+      <text x="444" y="398" fill="#0B1220" font-family="Segoe UI, sans-serif" font-size="16" font-weight="650">未覆盖</text>
+      <text x="800" y="398" fill="#0B1220" font-family="Segoe UI, sans-serif" font-size="18" font-weight="720">9</text>
+    
+    <text x="56" y="520" fill="#64748B" font-family="Segoe UI, sans-serif" font-size="14">示例问题包括：为什么没有自然流量、竞品为何出现在答案里、产品页还缺什么</text>
+  
+</svg>
