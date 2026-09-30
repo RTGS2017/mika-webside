@@ -188,16 +188,6 @@ function page(t) {
         </div>
       </div>
     </section>
-    <section class="sa-section" id="scan">
-      <div class="sa-wrap sa-hero-grid">
-        <div class="sa-form-card">
-          <h2 class="sa-h2">${t.scanTitle}</h2>
-          <p class="sa-lead">${t.scanLead}</p>
-          ${form(t, "scan-form")}
-        </div>
-        <img class="sa-shot" src="${asset}assets/visuals/01-hero-scanner.svg" alt="${t.scannerAlt}" width="960" height="640">
-      </div>
-    </section>
     <section class="sa-section" id="problem">
       <div class="sa-wrap">
         <div class="sa-section-head">
