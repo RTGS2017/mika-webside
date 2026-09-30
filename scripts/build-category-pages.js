@@ -87,7 +87,7 @@ function page(cat, lang) {
   <meta property="og:title" content="${esc(title)}">
   <meta property="og:description" content="${esc(lead)}">
   <meta property="og:url" content="${url}">
-  <meta name="theme-color" content="#070B14">
+  <meta name="theme-color" content="#F5F7FB">
   <link rel="icon" href="${asset}assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -299,7 +299,7 @@ def build_page(lang):
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{esc(title)}">
   <meta name="twitter:description" content="{esc(desc)}">
-  <meta name="theme-color" content="#101828">
+  <meta name="theme-color" content="#F5F7FB">
   <link rel="icon" href="{asset}/assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -197,6 +197,39 @@ button, input, select { font: inherit; }
 .sa-feature ul { margin: 16px 0 0; padding-left: 18px; color: var(--sa-muted); }
 .sa-shot { border-radius: 20px; border: 1px solid var(--sa-line); box-shadow: var(--sa-shadow); background: #fff; }
 
+.sa-tight { padding: 48px 0; }
+.sa-sub { margin: 28px 0 16px; font-size: 20px; }
+.sa-result {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: center;
+  padding: 22px 0;
+  border-top: 1px solid var(--sa-line);
+}
+.sa-result.is-flip { direction: rtl; }
+.sa-result.is-flip > * { direction: ltr; }
+.sa-result h3 { margin: 0; font-size: clamp(22px, 2.4vw, 28px); letter-spacing: -0.02em; line-height: 1.25; }
+.sa-result p { margin: 8px 0 0; color: var(--sa-muted); font-size: 16px; }
+.sa-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 0; padding: 0; list-style: none; }
+.sa-chips li {
+  background: #fff;
+  border: 1px solid var(--sa-line);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 13px;
+  color: var(--sa-muted);
+}
+.sa-result .sa-shot,
+.sa-tight .sa-blueprint .sa-shot,
+.sa-shot-slim {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  object-position: center;
+}
+.sa-shot-slim { margin-top: 20px; height: 180px; }
+
 .sa-flow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 22px; }
 .sa-flow span { background: #fff; border: 1px solid var(--sa-line); border-radius: 999px; padding: 8px 12px; }
 .sa-faq details { background: #fff; border: 1px solid var(--sa-line); border-radius: 14px; padding: 14px 16px; margin-bottom: 10px; }
@@ -230,7 +263,7 @@ button, input, select { font: inherit; }
     padding: 12px 20px 16px;
   }
   .sa-menu { display: inline-flex; align-items: center; justify-content: center; }
-  .sa-hero-grid, .sa-feature, .sa-feature.is-flip, .sa-blueprint, .sa-final, .sa-cards, .sa-audience, .sa-kb, .sa-steps, .sa-footer-grid {
+  .sa-hero-grid, .sa-feature, .sa-feature.is-flip, .sa-result, .sa-result.is-flip, .sa-blueprint, .sa-final, .sa-cards, .sa-audience, .sa-kb, .sa-steps, .sa-footer-grid {
     grid-template-columns: 1fr;
     direction: ltr;
   }
@@ -246,6 +279,8 @@ button, input, select { font: inherit; }
   .sa-url { flex-direction: column; }
   .sa-wrap { width: min(var(--sa-max), calc(100% - 32px)); }
   .sa-section { padding: 64px 0; }
+  .sa-tight { padding: 40px 0; }
+  .sa-result .sa-shot, .sa-shot-slim { height: 180px; }
 }
 @media (max-width: 390px) {
   .sa-h1 { font-size: 32px; }

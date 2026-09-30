@@ -88,7 +88,18 @@ function page(t) {
   const scores = t.scores.map((item) => `<article><span>${item[0]}</span><strong data-count="${item[1]}">0</strong></article>`).join("");
   const pains = t.pains.map((item) => `<article class="sa-card"><svg class="sa-mini" viewBox="0 0 72 48" aria-hidden="true"><rect x="1" y="1" width="70" height="46" rx="8" fill="#F5F7FB" stroke="#E6EAF2"/><rect x="10" y="12" width="28" height="6" rx="3" fill="#2F6FED"/><rect x="10" y="24" width="40" height="4" rx="2" fill="#7C3AED" opacity=".7"/></svg><p class="sa-no">${item.no}</p><h3>${item.title}</h3><p>${item.body}</p></article>`).join("");
   const steps = t.steps.map((item) => `<li><p class="sa-no">${item.no}</p><strong>${item.title}</strong><p>${item.body}</p></li>`).join("");
-  const features = t.features.map((item) => `<section class="sa-section sa-feature${item.flip ? " is-flip" : ""}" id="${item.id}">${item.id === "ai-visibility" ? "<div id=\"geo-growth\"></div>" : ""}<div class="sa-wrap sa-feature"><div><p class="sa-kicker">${item.kicker}</p><h2 class="sa-h2">${item.title}</h2><p class="sa-lead">${item.lead}</p><ul>${item.points.map((p) => `<li>${p}</li>`).join("")}</ul></div><img class="sa-shot" src="${asset}assets/visuals/${item.img}" alt="${item.alt}" width="960" height="640" loading="lazy"></div></section>`).join("");
+  const features = `<section class="sa-section sa-tight" id="results">
+      <div class="sa-wrap">
+        <div class="sa-section-head">
+          <p class="sa-kicker">${t.resultsKicker}</p>
+          <h2 class="sa-h2">${t.resultsTitle}</h2>
+          <p class="sa-lead">${t.resultsLead}</p>
+        </div>
+        ${t.features.map((item) => `<article class="sa-result${item.flip ? " is-flip" : ""}" id="${item.id}"><div><p class="sa-kicker">${item.kicker}</p><h3>${item.title}</h3><p>${item.lead}</p><ul class="sa-chips">${item.points.map((p) => `<li>${p}</li>`).join("")}</ul></div><img class="sa-shot" src="${asset}assets/visuals/${item.img}" alt="${item.alt}" width="960" height="640" loading="lazy"></article>`).join("")}
+        <h3 class="sa-sub">${t.moreTitle}</h3>
+        <div class="sa-cards">${t.more.map((item) => `<article class="sa-card" id="${item.id}"><p class="sa-no">${item.kicker}</p><h3>${item.title}</h3><p>${item.body}</p></article>`).join("")}</div>
+      </div>
+    </section>`;
   const faqs = t.faqs.map((item) => `<details><summary>${item.q}</summary><p>${item.a}</p></details>`).join("");
   const audiences = t.audiences.map((item) => `<article><h3>${item.title}</h3><p>${item.body}</p></article>`).join("");
   const kb = t.kb.map((item) => `<a href="${item.href}"><p class="sa-no">${item.kicker}</p><h3>${item.title}</h3><p>${item.body}</p></a>`).join("");
@@ -215,7 +226,7 @@ function page(t) {
       </div>
     </section>
     ${features}
-    <section class="sa-section" id="blueprint">
+    <section class="sa-section sa-tight" id="blueprint">
       <div class="sa-wrap sa-blueprint">
         <div>
           <h2 class="sa-h2">${t.blueTitle}</h2>
@@ -229,7 +240,7 @@ function page(t) {
         <img class="sa-shot" src="${asset}assets/visuals/08-optimization-blueprint.svg" alt="${t.blueAlt}" width="960" height="640" loading="lazy">
       </div>
     </section>
-    <section class="sa-section" id="knowledge">
+    <section class="sa-section sa-tight" id="knowledge">
       <div class="sa-wrap">
         <div class="sa-section-head">
           <p class="sa-kicker">${t.kbKicker}</p>
@@ -237,23 +248,23 @@ function page(t) {
           <p class="sa-lead">${t.kbLead}</p>
         </div>
         <div class="sa-kb">${kb}</div>
-        <img class="sa-shot" style="margin-top:20px" src="${asset}assets/visuals/09-knowledge-base.svg" alt="${t.kbAlt}" width="960" height="640" loading="lazy">
+        <img class="sa-shot sa-shot-slim" src="${asset}assets/visuals/09-knowledge-base.svg" alt="${t.kbAlt}" width="960" height="640" loading="lazy">
       </div>
     </section>
-    <section class="sa-section" id="why">
+    <section class="sa-section sa-tight" id="why">
       <div class="sa-wrap">
         <h2 class="sa-h2">${t.whyTitle}</h2>
         <p class="sa-lead">${t.whyLead}</p>
         <div class="sa-flow">${t.flow.map((item) => `<span>${item}</span>`).join("")}</div>
       </div>
     </section>
-    <section class="sa-section" id="audience">
+    <section class="sa-section sa-tight" id="audience">
       <div class="sa-wrap">
         <div class="sa-section-head"><h2 class="sa-h2">${t.whoTitle}</h2></div>
         <div class="sa-audience">${audiences}</div>
       </div>
     </section>
-    <section class="sa-section sa-faq" id="faq">
+    <section class="sa-section sa-faq sa-tight" id="faq">
       <div class="sa-wrap">
         <div class="sa-section-head"><h2 class="sa-h2">${t.faqTitle}</h2></div>
         ${faqs}
@@ -389,13 +400,20 @@ const zh = {
     { no: "04", title: "执行", body: "由你的团队按蓝图修改网站。" },
     { no: "05", title: "复审", body: "重新扫描，观察哪些地方已经改善。" }
   ],
+  resultsKicker: "接上前面的四个问题",
+  resultsTitle: "扫描之后，看到的就是这四件事。",
+  resultsLead: "不是另起一份技术清单。每一块都回到上面已经提出的问题：现在能不能被找到，AI 能不能理解你，下一步还缺什么。",
   features: [
-    { id: "seo-audit", kicker: "01", title: "SEO 审计", lead: "快速找出网站真正影响搜索可见性的基础问题。", points: ["抓取与收录", "页面结构", "标题与描述", "Canonical、Robots、Sitemap", "内链、孤立页面、图片、语言、重复内容"], img: "02-seo-audit-dashboard.svg", alt: "SEO 审计示例面板，显示严重、重要和建议的分组", flip: false },
-    { id: "seo-growth", kicker: "02", title: "搜索增长机会", lead: "不只是看关键词，而是找到客户真正会搜索、而你的网站还没有回答的问题。", points: ["主题机会", "商业意图", "市场", "内容深度", "页面机会"], img: "03-seo-growth-dashboard.svg", alt: "搜索增长机会示例面板", flip: true },
-    { id: "ai-visibility", kicker: "03", title: "AI 可见性", lead: "看看 ChatGPT、Gemini 等 AI 服务如何理解你的企业、产品和内容。", points: ["公司实体", "产品实体", "问题覆盖", "答案质量", "证据与引用准备度"], img: "04-ai-visibility-dashboard.svg", alt: "AI 可见性示例界面，标注为示例查询", flip: false },
-    { id: "questions", kicker: "04", title: "客户在问什么，你的网站有没有回答？", lead: "问题会被标成已回答、部分回答或未覆盖。", points: ["为什么我的网站没有自然流量？", "为什么竞品出现在 AI 答案里？", "我的产品页还缺什么？", "客户搜索什么，却找不到我的网站？"], img: "05-question-coverage.svg", alt: "问题覆盖示例图，含已回答、部分回答和未覆盖", flip: true },
-    { id: "entity", kicker: "05", title: "让客户和 AI 都能正确理解“你是谁”。", lead: "公司、产品、服务、场景、规格和证据需要能对上。", points: ["公司与产品", "应用场景与规格", "技术信息与文档", "主张对应到证据"], img: "06-entity-evidence.svg", alt: "实体与证据示例关系图", flip: false },
-    { id: "multilingual", kicker: "06", title: "一个企业，多种语言，也要保持同一个事实。", lead: "对照各语言页面上的公司名、产品名、规格、应用和主张。", points: ["中文", "English", "日本語", "Español", "العربية", "Deutsch"], img: "07-multilingual.svg", alt: "多语言一致性检查示例", flip: true }
+    { id: "seo-audit", kicker: "SEO 健康度 · 现在", title: "搜索现在能不能找到你。", lead: "接着「网站存在，但客户找不到」。先看抓取、页面和内链有没有挡住发现。", points: ["抓取与收录", "重要页面是否连得上", "这一页在说什么"], img: "02-seo-audit-dashboard.svg", alt: "SEO 健康示例面板，按严重、重要和建议分组", flip: false },
+    { id: "seo-growth", kicker: "SEO 增长 · 下一步", title: "客户在搜的，网站还没回答。", lead: "接着「还有哪些真实搜索需求没有覆盖」。看主题、购买意图，以及还没写到的页面。", points: ["客户会搜的主题", "页面能支撑的意图", "还缺的页面"], img: "03-seo-growth-dashboard.svg", alt: "搜索增长机会示例面板", flip: true },
+    { id: "ai-visibility", kicker: "GEO 健康度 · 现在", title: "AI 现在能不能说清你是谁。", lead: "接着「客户问 ChatGPT，答案里却没有你」。看公司、产品和证据是否清楚、一致。", points: ["公司与产品", "直接回答", "主张对应到证据"], img: "04-ai-visibility-dashboard.svg", alt: "AI 可见性示例界面，标注为示例查询", flip: false },
+    { id: "geo-growth", kicker: "GEO 增长 · 下一步", title: "还有哪些问题，AI 也答不上。", lead: "问题会标成已回答、部分回答或未覆盖。这是下一步要补的答案，不是另一个分数。", points: ["已回答", "部分回答", "未覆盖"], img: "05-question-coverage.svg", alt: "问题覆盖示例，含已回答、部分回答和未覆盖", flip: true }
+  ],
+  moreTitle: "这三件事，让上面的判断落在具体页面上。",
+  more: [
+    { id: "questions", kicker: "问题", title: "客户问的，对到哪一页。", body: "每个问题要么已经有页面回答，要么标成还没覆盖。" },
+    { id: "entity", kicker: "实体与证据", title: "你是谁、卖什么，要对得上。", body: "公司、产品、规格、场景和证据需要是同一套事实。" },
+    { id: "multilingual", kicker: "多语言", title: "多种语言，仍是同一套事实。", body: "对照各语言页面上的名称、规格、应用和主张。" }
   ],
   blueTitle: "不要只告诉我“哪里错了”。",
   blueLead: "告诉你下一步应该怎么改：问题、原因、动作、页面和验收方式。",
@@ -498,13 +516,20 @@ const en = {
     { no: "04", title: "Do the work", body: "Your team edits the site from the blueprint." },
     { no: "05", title: "Scan again", body: "A later pass shows what improved." }
   ],
+  resultsKicker: "The same four questions",
+  resultsTitle: "After the scan, you see these four things.",
+  resultsLead: "This is not a second checklist. Each block returns to a question already on the page: can people find you now, can AI understand you, and what is still missing.",
   features: [
-    { id: "seo-audit", kicker: "01", title: "SEO audit", lead: "Find the foundation issues that actually affect search visibility.", points: ["Crawl and indexation", "Page structure", "Titles and descriptions", "Canonical, robots, sitemap", "Internal links, orphan pages, images, language, duplication"], img: "02-seo-audit-dashboard.svg", alt: "Sample SEO audit panel grouped into severe, important, and suggested", flip: false },
-    { id: "seo-growth", kicker: "02", title: "Search growth", lead: "Find questions customers search, and your site does not answer yet.", points: ["Topic opportunities", "Commercial intent", "Markets", "Content depth", "Page opportunities"], img: "03-seo-growth-dashboard.svg", alt: "Sample search growth opportunity panel", flip: true },
-    { id: "ai-visibility", kicker: "03", title: "AI visibility", lead: "See how clearly AI services such as ChatGPT and Gemini can understand the company, products, and content.", points: ["Company entity", "Product entity", "Question coverage", "Answer quality", "Evidence and citation readiness"], img: "04-ai-visibility-dashboard.svg", alt: "Sample AI visibility screen marked as an example query", flip: false },
-    { id: "questions", kicker: "04", title: "Are customer questions answered on the site?", lead: "Each question is marked answered, partial, or uncovered.", points: ["Why does this site get little organic traffic?", "Why does a competitor show up in AI answers?", "What is missing on the product page?", "What do customers search when they cannot find the site?"], img: "05-question-coverage.svg", alt: "Sample question coverage chart with answered, partial, and uncovered", flip: true },
-    { id: "entity", kicker: "05", title: "Help people and AI understand who you are.", lead: "Company, product, service, use, spec, and evidence need to agree.", points: ["Company and products", "Uses and specifications", "Technical notes and documents", "Claims tied to evidence"], img: "06-entity-evidence.svg", alt: "Sample map from claims to evidence", flip: false },
-    { id: "multilingual", kicker: "06", title: "One company, several languages, the same facts.", lead: "Compare company name, product name, specs, uses, and claims across languages.", points: ["中文", "English", "日本語", "Español", "العربية", "Deutsch"], img: "07-multilingual.svg", alt: "Sample multilingual consistency check", flip: true }
+    { id: "seo-audit", kicker: "SEO health · now", title: "Can search find you today?", lead: "This follows “the site exists, and customers still cannot find it.” Crawl, pages, and links are checked for what blocks discovery.", points: ["Crawl and indexation", "Important pages are linked", "The page states what it is"], img: "02-seo-audit-dashboard.svg", alt: "Sample SEO health panel grouped into severe, important, and suggested", flip: false },
+    { id: "seo-growth", kicker: "SEO growth · next", title: "Customers search for answers the site does not have.", lead: "This follows “which real search demand is still uncovered.” Topics, buying intent, and missing pages.", points: ["Topics customers search", "Intent a page can support", "Pages still missing"], img: "03-seo-growth-dashboard.svg", alt: "Sample search growth panel", flip: true },
+    { id: "ai-visibility", kicker: "GEO health · now", title: "Can AI say who you are today?", lead: "This follows “someone asks ChatGPT, and the answer does not mention you.” Company, product, and evidence need to be clear and consistent.", points: ["Company and products", "A direct answer", "Claims tied to evidence"], img: "04-ai-visibility-dashboard.svg", alt: "Sample AI visibility screen marked as an example query", flip: false },
+    { id: "geo-growth", kicker: "GEO growth · next", title: "Which questions can AI still not answer?", lead: "Each question is marked answered, partial, or uncovered. That is the next answer to add, not another score.", points: ["Answered", "Partial", "Uncovered"], img: "05-question-coverage.svg", alt: "Sample question coverage with answered, partial, and uncovered", flip: true }
+  ],
+  moreTitle: "Three checks that put those judgments on a real page.",
+  more: [
+    { id: "questions", kicker: "Questions", title: "Match each question to a page.", body: "A question is either answered on a page, or marked still uncovered." },
+    { id: "entity", kicker: "Entity and evidence", title: "Who you are and what you sell have to agree.", body: "Company, product, specs, uses, and evidence stay one set of facts." },
+    { id: "multilingual", kicker: "Languages", title: "Several languages, the same facts.", body: "Names, specs, uses, and claims are compared across language versions." }
   ],
   blueTitle: "Do not only tell me what is wrong.",
   blueLead: "Say what to change next: the problem, the reason, the action, the page, and how to check it.",

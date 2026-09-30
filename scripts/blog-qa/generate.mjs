@@ -338,7 +338,7 @@ function headCommon({ lang, title, description, canonical, enHref, zhHref, prefi
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="${esc(title)}">
   <meta name="twitter:description" content="${esc(description)}">
-  <meta name="theme-color" content="#070B14">
+  <meta name="theme-color" content="#F5F7FB">
   <link rel="icon" href="${prefix}assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
