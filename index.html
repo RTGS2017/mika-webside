@@ -45,7 +45,7 @@
       </nav>
       <div class="sa-tools">
         <a class="sa-lang" href="/zh/" hreflang="zh-Hans">中文</a>
-        <a class="sa-btn sa-btn-primary" href="#scan">Scan my site free</a>
+        <a class="sa-btn sa-btn-primary" href="#hero" data-hero-open>Scan my site free</a>
         <button class="sa-menu" type="button" data-menu aria-expanded="false" aria-label="Open menu">☰</button>
       </div>
     </div>
@@ -58,16 +58,38 @@
           <h1 class="sa-h1">Help customers find you in search and AI.</h1>
           <p class="sa-lead">Google, ChatGPT, Gemini, and similar doors are changing how customers discover a company. Mika checks what is wrong on the site, which search demand is still uncovered, and whether AI can understand your company, products, and content.</p>
           <div class="sa-actions">
-            <a class="sa-btn sa-btn-primary" href="#scan">Scan my site free</a>
+            <button class="sa-btn sa-btn-primary" type="button" data-hero-open>Scan my site free</button>
             <a class="sa-btn sa-btn-ghost" href="#framework">See what Mika looks for</a>
           </div>
         </div>
-        <div class="sa-panel" data-scan-panel>
-          <label class="sa-field">Website address<input value="https://example.com" readonly></label>
-          <ul class="sa-checks"><li data-check>Page structure</li><li data-check>Search basics</li><li data-check>Content coverage</li><li data-check>Commercial intent</li><li data-check>AI answers</li><li data-check>Entity information</li><li data-check>Evidence</li><li data-check>Languages</li></ul>
-          <div data-report hidden>
-            <p class="sa-demo">Sample data, for demonstration only</p>
-            <div class="sa-report"><article><span>SEO health</span><strong data-count="92">0</strong></article><article><span>SEO growth</span><strong data-count="71">0</strong></article><article><span>GEO health</span><strong data-count="84">0</strong></article><article><span>GEO growth</span><strong data-count="63">0</strong></article></div>
+        <div class="sa-stage" data-hero-stage>
+          <div class="sa-stage-face is-visual sa-panel" data-hero-visual data-scan-panel>
+            <label class="sa-field">Website address<input value="https://example.com" readonly></label>
+            <ul class="sa-checks"><li data-check>Page structure</li><li data-check>Search basics</li><li data-check>Content coverage</li><li data-check>Commercial intent</li><li data-check>AI answers</li><li data-check>Entity information</li><li data-check>Evidence</li><li data-check>Languages</li></ul>
+            <div data-report hidden>
+              <p class="sa-demo">Sample data, for demonstration only</p>
+              <div class="sa-report"><article><span>SEO health</span><strong data-count="92">0</strong></article><article><span>SEO growth</span><strong data-count="71">0</strong></article><article><span>GEO health</span><strong data-count="84">0</strong></article><article><span>GEO growth</span><strong data-count="63">0</strong></article></div>
+            </div>
+            <button class="sa-btn sa-btn-primary sa-stage-cta" type="button" data-hero-open>Try it with my site</button>
+          </div>
+          <div class="sa-stage-face is-form-face sa-panel" data-hero-form inert aria-hidden="true">
+            <div class="sa-form-head">
+              <h2>Send the site. This is the scope we review.</h2>
+              <button class="sa-text-btn" type="button" data-hero-close>Back to the sample</button>
+            </div>
+            <p class="sa-lead">No phone number required. We reply by email.</p>
+            <form class="sa-form" id="scan-form-hero" data-scan-form data-sending="Sending…" data-fail="Could not send. Try again." novalidate>
+    <input class="sa-hp" type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <input type="hidden" name="locale" value="en">
+    <label class="sa-field">Company<input name="company" required maxlength="120" autocomplete="organization"></label>
+    <label class="sa-field">Name<input name="name" required maxlength="80" autocomplete="name"></label>
+    <label class="sa-field">Email<input name="email" type="email" required maxlength="160" autocomplete="email"></label>
+    <label class="sa-field">Website URL<input name="website" type="url" required placeholder="https://example.com" maxlength="300"></label>
+    <label class="sa-field">Main need<select name="need" required><option value="">Choose one</option><option value="seo">SEO technical issues</option><option value="growth">Search growth</option><option value="ai">AI / GEO visibility</option><option value="content">Content</option><option value="multilingual">Multilingual site</option><option value="unsure">Not sure yet</option></select></label>
+    <button class="sa-btn sa-btn-primary" type="submit">Scan my site free</button>
+    <p class="sa-note">We email the scan notes and later updates. <a href="/privacy/">Privacy</a></p>
+    <p class="sa-status" data-status role="status"></p>
+  </form>
           </div>
         </div>
       </div>

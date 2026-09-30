@@ -150,7 +150,7 @@ function page(t) {
       </nav>
       <div class="sa-tools">
         <a class="sa-lang" href="${t.otherHref}" hreflang="${t.otherLang}">${t.otherLabel}</a>
-        <a class="sa-btn sa-btn-primary" href="#scan">${t.cta}</a>
+        <a class="sa-btn sa-btn-primary" href="#hero" data-hero-open>${t.cta}</a>
         <button class="sa-menu" type="button" data-menu aria-expanded="false" aria-label="${t.menu}">☰</button>
       </div>
     </div>
@@ -163,16 +163,27 @@ function page(t) {
           <h1 class="sa-h1">${t.h1}</h1>
           <p class="sa-lead">${t.heroLead}</p>
           <div class="sa-actions">
-            <a class="sa-btn sa-btn-primary" href="#scan">${t.cta}</a>
+            <button class="sa-btn sa-btn-primary" type="button" data-hero-open>${t.cta}</button>
             <a class="sa-btn sa-btn-ghost" href="#framework">${t.secondary}</a>
           </div>
         </div>
-        <div class="sa-panel" data-scan-panel>
-          <label class="sa-field">${t.demoUrl}<input value="https://example.com" readonly></label>
-          <ul class="sa-checks">${checks}</ul>
-          <div data-report hidden>
-            <p class="sa-demo">${t.demoNote}</p>
-            <div class="sa-report">${scores}</div>
+        <div class="sa-stage" data-hero-stage>
+          <div class="sa-stage-face is-visual sa-panel" data-hero-visual data-scan-panel>
+            <label class="sa-field">${t.demoUrl}<input value="https://example.com" readonly></label>
+            <ul class="sa-checks">${checks}</ul>
+            <div data-report hidden>
+              <p class="sa-demo">${t.demoNote}</p>
+              <div class="sa-report">${scores}</div>
+            </div>
+            <button class="sa-btn sa-btn-primary sa-stage-cta" type="button" data-hero-open>${t.openForm}</button>
+          </div>
+          <div class="sa-stage-face is-form-face sa-panel" data-hero-form inert aria-hidden="true">
+            <div class="sa-form-head">
+              <h2>${t.scanTitle}</h2>
+              <button class="sa-text-btn" type="button" data-hero-close>${t.backSample}</button>
+            </div>
+            <p class="sa-lead">${t.scanLead}</p>
+            ${form(t, "scan-form-hero")}
           </div>
         </div>
       </div>
@@ -352,6 +363,8 @@ const zh = {
   brandSub: "搜索与 AI 可见性平台",
   nav: { product: "产品能力", audit: "SEO 审计", ai: "AI 可见性", blueprint: "优化蓝图", knowledge: "知识库", blog: "博客", qa: "问答" },
   cta: "免费扫描我的网站",
+  openForm: "用我的网站试一次",
+  backSample: "返回示例",
   secondary: "看看 Mika 能发现什么",
   h1: "让客户在搜索和 AI 里找到你。",
   heroLead: "Google 搜索、ChatGPT、Gemini 等入口正在改变客户发现企业的方式。Mika 帮你检查网站哪里出了问题、还有哪些搜索机会没有覆盖，以及 AI 是否能够正确理解你的企业、产品和内容。",
@@ -468,6 +481,8 @@ const en = {
   brandSub: "Search & AI Visibility Platform",
   nav: { product: "Product", audit: "SEO audit", ai: "AI visibility", blueprint: "Blueprint", knowledge: "Knowledge", blog: "Blog", qa: "Q&A" },
   cta: "Scan my site free",
+  openForm: "Try it with my site",
+  backSample: "Back to the sample",
   secondary: "See what Mika looks for",
   h1: "Help customers find you in search and AI.",
   heroLead: "Google, ChatGPT, Gemini, and similar doors are changing how customers discover a company. Mika checks what is wrong on the site, which search demand is still uncovered, and whether AI can understand your company, products, and content.",

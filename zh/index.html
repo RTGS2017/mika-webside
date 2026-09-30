@@ -45,7 +45,7 @@
       </nav>
       <div class="sa-tools">
         <a class="sa-lang" href="/" hreflang="en">EN</a>
-        <a class="sa-btn sa-btn-primary" href="#scan">免费扫描我的网站</a>
+        <a class="sa-btn sa-btn-primary" href="#hero" data-hero-open>免费扫描我的网站</a>
         <button class="sa-menu" type="button" data-menu aria-expanded="false" aria-label="打开菜单">☰</button>
       </div>
     </div>
@@ -58,16 +58,38 @@
           <h1 class="sa-h1">让客户在搜索和 AI 里找到你。</h1>
           <p class="sa-lead">Google 搜索、ChatGPT、Gemini 等入口正在改变客户发现企业的方式。Mika 帮你检查网站哪里出了问题、还有哪些搜索机会没有覆盖，以及 AI 是否能够正确理解你的企业、产品和内容。</p>
           <div class="sa-actions">
-            <a class="sa-btn sa-btn-primary" href="#scan">免费扫描我的网站</a>
+            <button class="sa-btn sa-btn-primary" type="button" data-hero-open>免费扫描我的网站</button>
             <a class="sa-btn sa-btn-ghost" href="#framework">看看 Mika 能发现什么</a>
           </div>
         </div>
-        <div class="sa-panel" data-scan-panel>
-          <label class="sa-field">输入你的网站地址<input value="https://example.com" readonly></label>
-          <ul class="sa-checks"><li data-check>页面结构</li><li data-check>搜索基础</li><li data-check>内容覆盖</li><li data-check>商业意图</li><li data-check>AI 答案</li><li data-check>实体信息</li><li data-check>证据</li><li data-check>多语言</li></ul>
-          <div data-report hidden>
-            <p class="sa-demo">示例数据，仅用于演示</p>
-            <div class="sa-report"><article><span>SEO 健康度</span><strong data-count="92">0</strong></article><article><span>SEO 增长</span><strong data-count="71">0</strong></article><article><span>GEO 健康度</span><strong data-count="84">0</strong></article><article><span>GEO 增长</span><strong data-count="63">0</strong></article></div>
+        <div class="sa-stage" data-hero-stage>
+          <div class="sa-stage-face is-visual sa-panel" data-hero-visual data-scan-panel>
+            <label class="sa-field">输入你的网站地址<input value="https://example.com" readonly></label>
+            <ul class="sa-checks"><li data-check>页面结构</li><li data-check>搜索基础</li><li data-check>内容覆盖</li><li data-check>商业意图</li><li data-check>AI 答案</li><li data-check>实体信息</li><li data-check>证据</li><li data-check>多语言</li></ul>
+            <div data-report hidden>
+              <p class="sa-demo">示例数据，仅用于演示</p>
+              <div class="sa-report"><article><span>SEO 健康度</span><strong data-count="92">0</strong></article><article><span>SEO 增长</span><strong data-count="71">0</strong></article><article><span>GEO 健康度</span><strong data-count="84">0</strong></article><article><span>GEO 增长</span><strong data-count="63">0</strong></article></div>
+            </div>
+            <button class="sa-btn sa-btn-primary sa-stage-cta" type="button" data-hero-open>用我的网站试一次</button>
+          </div>
+          <div class="sa-stage-face is-form-face sa-panel" data-hero-form inert aria-hidden="true">
+            <div class="sa-form-head">
+              <h2>先留下网站，我们按这个范围查看。</h2>
+              <button class="sa-text-btn" type="button" data-hero-close>返回示例</button>
+            </div>
+            <p class="sa-lead">不需要电话。提交后我们通过邮件联系你。</p>
+            <form class="sa-form" id="scan-form-hero" data-scan-form data-sending="正在发送…" data-fail="发送失败，请稍后再试。" novalidate>
+    <input class="sa-hp" type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <input type="hidden" name="locale" value="zh">
+    <label class="sa-field">公司名称<input name="company" required maxlength="120" autocomplete="organization"></label>
+    <label class="sa-field">姓名<input name="name" required maxlength="80" autocomplete="name"></label>
+    <label class="sa-field">邮箱<input name="email" type="email" required maxlength="160" autocomplete="email"></label>
+    <label class="sa-field">网站 URL<input name="website" type="url" required placeholder="https://example.com" maxlength="300"></label>
+    <label class="sa-field">主要需求<select name="need" required><option value="">请选择</option><option value="seo">SEO 技术问题</option><option value="growth">搜索流量增长</option><option value="ai">AI / GEO 可见性</option><option value="content">内容优化</option><option value="multilingual">多语言网站</option><option value="unsure">还不确定</option></select></label>
+    <button class="sa-btn sa-btn-primary" type="submit">免费扫描我的网站</button>
+    <p class="sa-note">我们会通过邮件发送扫描结果及后续通知。 <a href="/zh/privacy/">隐私政策</a></p>
+    <p class="sa-status" data-status role="status"></p>
+  </form>
           </div>
         </div>
       </div>

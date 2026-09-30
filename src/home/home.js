@@ -15,6 +15,61 @@
   }
 
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var stage = document.querySelector("[data-hero-stage]");
+  var visual = stage && stage.querySelector("[data-hero-visual]");
+  var formFace = stage && stage.querySelector("[data-hero-form]");
+
+  function showHeroForm(open) {
+    if (!stage || !visual || !formFace) return;
+    var next = open ? formFace : visual;
+    if (!reduce) {
+      stage.style.height = stage.getBoundingClientRect().height + "px";
+    }
+    stage.classList.toggle("is-form", open);
+    visual.toggleAttribute("inert", open);
+    visual.setAttribute("aria-hidden", open ? "true" : "false");
+    formFace.toggleAttribute("inert", !open);
+    formFace.setAttribute("aria-hidden", open ? "false" : "true");
+    if (!reduce) {
+      window.requestAnimationFrame(function () {
+        stage.style.height = next.scrollHeight + "px";
+      });
+      stage.addEventListener("transitionend", function done(event) {
+        if (event.propertyName !== "height") return;
+        stage.style.height = "";
+        stage.removeEventListener("transitionend", done);
+      });
+    }
+    if (open) {
+      var field = formFace.querySelector("input[name=company]");
+      if (field) field.focus({ preventScroll: true });
+      window.requestAnimationFrame(function () {
+        var header = document.querySelector(".sa-header");
+        var headerH = header ? header.getBoundingClientRect().height : 0;
+        var top = stage.getBoundingClientRect().top;
+        if (top < headerH + 8) {
+          window.scrollBy({ top: top - headerH - 12, behavior: reduce ? "auto" : "smooth" });
+        }
+      });
+    }
+  }
+
+  document.querySelectorAll("[data-hero-open]").forEach(function (control) {
+    control.addEventListener("click", function (event) {
+      event.preventDefault();
+      var hero = document.getElementById("hero");
+      if (hero) hero.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" });
+      showHeroForm(true);
+    });
+  });
+  document.querySelectorAll("[data-hero-close]").forEach(function (control) {
+    control.addEventListener("click", function () {
+      showHeroForm(false);
+      var opener = document.querySelector(".sa-actions [data-hero-open]");
+      if (opener) opener.focus();
+    });
+  });
+
   var panel = document.querySelector("[data-scan-panel]");
   if (panel) {
     var items = panel.querySelectorAll("[data-check]");
