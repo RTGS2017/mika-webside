@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Use 410 when the subject of the URL has ended | Mika Blog</title>
+  <meta name="description" content="An HTTP 410 says the document is gone on purpose. It is different from a 404 you have not checked and from a 301 to an unrelated page.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/blog/seo-tech-http-410-for-pages-that-ended/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-http-410-for-pages-that-ended/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-http-410-for-pages-that-ended/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-http-410-for-pages-that-ended/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="Use 410 when the subject of the URL has ended | Mika Blog">
+  <meta property="og:description" content="An HTTP 410 says the document is gone on purpose. It is different from a 404 you have not checked and from a 301 to an unrelated page.">
+  <meta property="og:url" content="https://mikaovo.ai/blog/seo-tech-http-410-for-pages-that-ended/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-http-410-for-pages-that-ended/100inchhooker.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Use 410 when the subject of the URL has ended | Mika Blog">
+  <meta name="twitter:description" content="An HTTP 410 says the document is gone on purpose. It is different from a 404 you have not checked and from a 301 to an unrelated page.">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/blog/seo-tech-http-410-for-pages-that-ended/#article","headline":"Use 410 when the subject of the URL has ended","name":"Use 410 when the subject of the URL has ended","description":"An HTTP 410 says the document is gone on purpose. It is different from a 404 you have not checked and from a 301 to an unrelated page.","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"en","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-http-410-for-pages-that-ended/100inchhooker.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/blog/seo-tech-http-410-for-pages-that-ended/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/blog/seo-tech-http-410-for-pages-that-ended/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mikaovo.ai/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://mikaovo.ai/blog/"},{"@type":"ListItem","position":3,"name":"Use 410 when the subject of the URL has ended","item":"https://mikaovo.ai/blog/seo-tech-http-410-for-pages-that-ended/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/blog/seo-tech-http-410-for-pages-that-ended/#faq","mainEntity":[{"@type":"Question","name":"When should a URL return 410?","acceptedAnswer":{"@type":"Answer","text":"A 410 response means this URL was a document and that document has been removed on purpose. Use it when nothing should replace the subject. Do not use it for a page that still exists at a new address."}},{"@type":"Question","name":"How is 410 different from sending the URL to the homepage?","acceptedAnswer":{"@type":"Answer","text":"A 404 can mean a typo, a temporary outage, or a real gap. A 410 is the stronger statement that the URL is finished. Sending a dead product URL to the homepage keeps a crawl path and drops the subject. If a successor document exists, 301 to that document instead. Internal links should stop pointing at the gone URL. The sitemap should drop it."}},{"@type":"Question","name":"Does a 410 improve rankings?","acceptedAnswer":{"@type":"Answer","text":"Returning 410 does not guarantee rankings for the pages you keep, and it is not an AI-citation tactic."}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">Skip to content</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/" aria-label="Mika Visibility">
+        <img src="../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/knowledge/">Knowledge</a>
+        <a href="/blog/">Blog</a>
+        <a href="/qa/">Q&A</a>
+        <div class="kc-lang" aria-label="Language">
+          <a href="/blog/seo-tech-http-410-for-pages-that-ended/" aria-current="page">EN</a>
+          <a href="/zh/blog/seo-tech-http-410-for-pages-that-ended/">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">Contact</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>Technical</span> · <time datetime="2026-10-04">October 4, 2026</time></p>
+        <h1>Use 410 when the subject of the URL has ended</h1>
+        <p class="kc-hero-lead">A 410 response means this URL was a document and that document has been removed on purpose. Use it when nothing should replace the subject. Do not use it for a page that still exists at a new address.</p>
+        <p class="kc-hero-note">Educational material only. Mika does not guarantee search rankings or AI answer citations.</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="On this page">
+        <p>On this page</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">Short answer</a></li>
+            <li><a href="#definition">Definition</a></li>
+            <li><a href="#how">What belongs on the page</a></li>
+            <li><a href="#checks">What to check</a></li>
+            <li><a href="#example">A practical example</a></li>
+            <li><a href="#limits">What this does not claim</a></li>
+            <li><a href="#mika">Where Mika Visibility files this</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>Short answer</h2>
+          <p>A 410 response means this URL was a document and that document has been removed on purpose. Use it when nothing should replace the subject. Do not use it for a page that still exists at a new address.</p>
+          <figure>
+            <img src="../../assets/articles/seo-tech/seo-tech-http-410-for-pages-that-ended/100inchhooker.webp" alt="100inchHooker. Content image from the source page, illustrating HTTP 410 for a page whose subject has ended." width="554" height="904" style="max-width:100%;height:auto">
+            <figcaption>Image from the source page: https://en.wikipedia.org/wiki/Telescope</figcaption>
+          </figure>
+        </section>
+        <section id="definition">
+          <h2>Definition</h2>
+          <p>A 404 can mean a typo, a temporary outage, or a real gap. A 410 is the stronger statement that the URL is finished. Sending a dead product URL to the homepage keeps a crawl path and drops the subject. If a successor document exists, 301 to that document instead. Internal links should stop pointing at the gone URL. The sitemap should drop it.</p>
+        </section>
+        <section id="how">
+          <h2>What belongs on the page</h2>
+          <p>List URLs whose subject you retired. For each, pick successor or gone. Fetch the status after the change. A 200 page that only says “not found” is a soft problem of a different kind. A 410 should not return a long indexable article about an unrelated topic.</p>
+        </section>
+        <section id="checks">
+          <h2>What to check</h2>
+          <ul>
+            <li>Use 410 only when no successor document exists.</li>
+            <li>Remove internal links to that URL.</li>
+            <li>Remove it from the sitemap.</li>
+            <li>Do not answer 410 with a homepage redirect.</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>A practical example</h2>
+          <p>A discontinued fitting URL 301s to the site homepage, which never names the fitting. The repair returns 410, removes the internal links and the sitemap entry, and leaves any real successor on its own URL. No demand number is claimed.</p>
+          <figure>
+            <img src="../../assets/articles/seo-tech/seo-tech-http-410-for-pages-that-ended/alma-greater-than-the-sum-of-its-parts-cropped.webp" alt="ALMA Greater than the Sum of its Parts (cropped). Content image from the source page, illustrating HTTP 410 for a page whose subject has ended." width="1600" height="1046" loading="lazy" style="max-width:100%;height:auto">
+            <figcaption>Image from the source page: https://en.wikipedia.org/wiki/Telescope</figcaption>
+          </figure>
+        </section>
+        <section id="limits">
+          <h2>What this does not claim</h2>
+          <p>Returning 410 does not guarantee rankings for the pages you keep, and it is not an AI-citation tactic.</p>
+        </section>
+        <section id="mika">
+          <h2>Where Mika Visibility files this</h2>
+          <p>410 is how a crawl path ends when the subject ends. Mika Visibility files this on the SEO Health track, with crawlability, status codes, and page basics. SEO Growth remains a separate question about coverage that is still unwritten. GEO remains a separate question about whether a careful reader can find a supportable answer. There is no blended overall score.</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">FAQ</h2>
+          <details>
+            <summary>When should a URL return 410?</summary>
+            <p>A 410 response means this URL was a document and that document has been removed on purpose. Use it when nothing should replace the subject. Do not use it for a page that still exists at a new address.</p>
+          </details>
+          <details>
+            <summary>How is 410 different from sending the URL to the homepage?</summary>
+            <p>A 404 can mean a typo, a temporary outage, or a real gap. A 410 is the stronger statement that the URL is finished. Sending a dead product URL to the homepage keeps a crawl path and drops the subject. If a successor document exists, 301 to that document instead. Internal links should stop pointing at the gone URL. The sitemap should drop it.</p>
+          </details>
+          <details>
+            <summary>Does a 410 improve rankings?</summary>
+            <p>Returning 410 does not guarantee rankings for the pages you keep, and it is not an AI-citation tactic.</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">Related guides</h2>
+          <ul>
+            <li><a href="/knowledge/what-is-a-website-seo-audit/">What Is a Website SEO Audit</a></li>
+            <li><a href="/knowledge/how-to-check-website-crawlability/">How to Check Website Crawlability</a></li>
+            <li><a href="/qa/which-status-codes-matter-for-crawling/">Which status codes matter for crawling?</a></li>
+            <li><a href="/blog/what-seo-health-asks-of-a-live-site/">What SEO Health Asks of a Live Site</a></li>
+            <li><a href="/knowledge/seo-health-vs-seo-growth/">SEO Health vs SEO Growth</a></li>
+            <li><a href="/blog/seo-tech-noindex-removes-a-url-from-the-index/">Noindex is an instruction about that URL, not a hint</a></li>
+            <li><a href="/blog/seo-tech-canonical-link-names-the-preferred-url/">The canonical link should name the URL you want indexed</a></li>
+            <li><a href="/#framework">Mika homepage — four tracks</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">Sources</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/Telescope">Telescope</a> — Background reference. The prose on this page is original and does not reproduce that article’s paragraphs. The figure comes from that page and is credited in the caption.</li>
+            <li><a href="/#framework">Mika Visibility homepage</a> — Product framing for the four tracks. Sample interface counts on the homepage are illustrative, not a case study.</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">Next step</h2>
+          <p>Run a structured SEO + GEO audit to see health findings, growth gaps, and a blueprint you can act on.</p>
+          <p><a href="/#cta">Start on Mika</a></p>
+          <p>Clearer entities, answers, evidence, and context make pages easier to understand and reference. Results in any answer product are not guaranteed.</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/">Mika Visibility</a> · <a href="/knowledge/">Knowledge</a> · <a href="/blog/">Blog</a> · <a href="/qa/">Q&A</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">Contact</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../contact-config.js"></script>
+  <script src="../../contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TLS should let the fetch complete, not replace the page | Mika Blog</title>
+  <meta name="description" content="A broken certificate can stop the fetch. A valid certificate does not supply the specification or a ranking.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/blog/seo-tech-tls-keeps-the-fetch-intact/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-tls-keeps-the-fetch-intact/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-tls-keeps-the-fetch-intact/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-tls-keeps-the-fetch-intact/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="TLS should let the fetch complete, not replace the page | Mika Blog">
+  <meta property="og:description" content="A broken certificate can stop the fetch. A valid certificate does not supply the specification or a ranking.">
+  <meta property="og:url" content="https://mikaovo.ai/blog/seo-tech-tls-keeps-the-fetch-intact/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-tls-keeps-the-fetch-intact/full-tls-1-2-handshake.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TLS should let the fetch complete, not replace the page | Mika Blog">
+  <meta name="twitter:description" content="A broken certificate can stop the fetch. A valid certificate does not supply the specification or a ranking.">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/blog/seo-tech-tls-keeps-the-fetch-intact/#article","headline":"TLS should let the fetch complete, not replace the page","name":"TLS should let the fetch complete, not replace the page","description":"A broken certificate can stop the fetch. A valid certificate does not supply the specification or a ranking.","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"en","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-tls-keeps-the-fetch-intact/full-tls-1-2-handshake.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/blog/seo-tech-tls-keeps-the-fetch-intact/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/blog/seo-tech-tls-keeps-the-fetch-intact/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mikaovo.ai/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://mikaovo.ai/blog/"},{"@type":"ListItem","position":3,"name":"TLS should let the fetch complete, not replace the page","item":"https://mikaovo.ai/blog/seo-tech-tls-keeps-the-fetch-intact/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/blog/seo-tech-tls-keeps-the-fetch-intact/#faq","mainEntity":[{"@type":"Question","name":"What does a broken certificate do to a fetch?","acceptedAnswer":{"@type":"Answer","text":"TLS protects the connection used to fetch the document. If the certificate does not match the hostname or has expired, clients may never read the HTML. A valid certificate still does not write the specification."}},{"@type":"Question","name":"What does a valid certificate not provide?","acceptedAnswer":{"@type":"Answer","text":"Reachability includes name resolution, connection, and a response body. Certificate errors sit in the middle of that chain. SEO Health can report that the live URL could not be fetched. It should not be confused with SEO Growth, which asks what coverage is missing after the page is readable. Do not treat the padlock as evidence of a product claim."}},{"@type":"Question","name":"Does TLS guarantee rankings?","acceptedAnswer":{"@type":"Answer","text":"A valid certificate does not guarantee rankings or AI citations. Mika does not sell trust badges."}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">Skip to content</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/" aria-label="Mika Visibility">
+        <img src="../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/knowledge/">Knowledge</a>
+        <a href="/blog/">Blog</a>
+        <a href="/qa/">Q&A</a>
+        <div class="kc-lang" aria-label="Language">
+          <a href="/blog/seo-tech-tls-keeps-the-fetch-intact/" aria-current="page">EN</a>
+          <a href="/zh/blog/seo-tech-tls-keeps-the-fetch-intact/">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">Contact</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>Technical</span> · <time datetime="2026-10-04">October 4, 2026</time></p>
+        <h1>TLS should let the fetch complete, not replace the page</h1>
+        <p class="kc-hero-lead">TLS protects the connection used to fetch the document. If the certificate does not match the hostname or has expired, clients may never read the HTML. A valid certificate still does not write the specification.</p>
+        <p class="kc-hero-note">Educational material only. Mika does not guarantee search rankings or AI answer citations.</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="On this page">
+        <p>On this page</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">Short answer</a></li>
+            <li><a href="#definition">Definition</a></li>
+            <li><a href="#how">What belongs on the page</a></li>
+            <li><a href="#checks">What to check</a></li>
+            <li><a href="#example">A practical example</a></li>
+            <li><a href="#limits">What this does not claim</a></li>
+            <li><a href="#mika">Where Mika Visibility files this</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>Short answer</h2>
+          <p>TLS protects the connection used to fetch the document. If the certificate does not match the hostname or has expired, clients may never read the HTML. A valid certificate still does not write the specification.</p>
+          <figure>
+            <img src="../../assets/articles/seo-tech/seo-tech-tls-keeps-the-fetch-intact/full-tls-1-2-handshake.webp" alt="Full TLS 1.2 Handshake. Content image from the source page, illustrating TLS as the condition for an intact fetch." width="1600" height="1499" style="max-width:100%;height:auto">
+            <figcaption>Image from the source page: https://en.wikipedia.org/wiki/Transport_Layer_Security</figcaption>
+          </figure>
+        </section>
+        <section id="definition">
+          <h2>Definition</h2>
+          <p>Reachability includes name resolution, connection, and a response body. Certificate errors sit in the middle of that chain. SEO Health can report that the live URL could not be fetched. It should not be confused with SEO Growth, which asks what coverage is missing after the page is readable. Do not treat the padlock as evidence of a product claim.</p>
+        </section>
+        <section id="how">
+          <h2>What belongs on the page</h2>
+          <p>Open the canonical HTTPS URL and confirm the certificate names that host and is current. Fetch the body and confirm the subject is in the HTML. Renew or reissue before the fetch starts failing. Redirect HTTP to the same canonical host rather than to an unrelated certificate name.</p>
+        </section>
+        <section id="checks">
+          <h2>What to check</h2>
+          <ul>
+            <li>The certificate matches the canonical hostname.</li>
+            <li>The certificate is current.</li>
+            <li>HTTP redirects to that HTTPS URL.</li>
+            <li>The body, not the padlock, carries the specification.</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>A practical example</h2>
+          <p>The certificate covers www, but the canonical host is the apex name, so fetches of the printed URL fail the name check. The repair serves a certificate for the canonical host and 301s the other name to it. The specification is then re-read from HTML. No trust award is claimed.</p>
+          <figure>
+            <img src="../../assets/articles/seo-tech/seo-tech-tls-keeps-the-fetch-intact/let-s-encrypt-certificate-example-on-firefox-133-screenshot.webp" alt="Let&#x27;s Encrypt certificate example on Firefox 133 screenshot. Content image from the source page, illustrating TLS as the condition for an intact fetch." width="672" height="731" loading="lazy" style="max-width:100%;height:auto">
+            <figcaption>Image from the source page: https://en.wikipedia.org/wiki/Transport_Layer_Security</figcaption>
+          </figure>
+        </section>
+        <section id="limits">
+          <h2>What this does not claim</h2>
+          <p>A valid certificate does not guarantee rankings or AI citations. Mika does not sell trust badges.</p>
+        </section>
+        <section id="mika">
+          <h2>Where Mika Visibility files this</h2>
+          <p>TLS is a condition of the fetch. The page basics are still the words in the response. Mika Visibility files this on the SEO Health track, with crawlability, status codes, and page basics. SEO Growth remains a separate question about coverage that is still unwritten. GEO remains a separate question about whether a careful reader can find a supportable answer. There is no blended overall score.</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">FAQ</h2>
+          <details>
+            <summary>What does a broken certificate do to a fetch?</summary>
+            <p>TLS protects the connection used to fetch the document. If the certificate does not match the hostname or has expired, clients may never read the HTML. A valid certificate still does not write the specification.</p>
+          </details>
+          <details>
+            <summary>What does a valid certificate not provide?</summary>
+            <p>Reachability includes name resolution, connection, and a response body. Certificate errors sit in the middle of that chain. SEO Health can report that the live URL could not be fetched. It should not be confused with SEO Growth, which asks what coverage is missing after the page is readable. Do not treat the padlock as evidence of a product claim.</p>
+          </details>
+          <details>
+            <summary>Does TLS guarantee rankings?</summary>
+            <p>A valid certificate does not guarantee rankings or AI citations. Mika does not sell trust badges.</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">Related guides</h2>
+          <ul>
+            <li><a href="/knowledge/what-is-a-website-seo-audit/">What Is a Website SEO Audit</a></li>
+            <li><a href="/knowledge/how-to-check-website-crawlability/">How to Check Website Crawlability</a></li>
+            <li><a href="/qa/which-status-codes-matter-for-crawling/">Which status codes matter for crawling?</a></li>
+            <li><a href="/blog/what-seo-health-asks-of-a-live-site/">What SEO Health Asks of a Live Site</a></li>
+            <li><a href="/knowledge/seo-health-vs-seo-growth/">SEO Health vs SEO Growth</a></li>
+            <li><a href="/blog/seo-tech-pdf-is-its-own-document/">A PDF is its own document and needs its own URL</a></li>
+            <li><a href="/blog/seo-tech-http-301-as-the-new-address/">A 301 should name the address that replaced this one</a></li>
+            <li><a href="/#framework">Mika homepage — four tracks</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">Sources</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/Transport_Layer_Security">Transport Layer Security</a> — Background reference. The prose on this page is original and does not reproduce that article’s paragraphs. The figure comes from that page and is credited in the caption.</li>
+            <li><a href="/#framework">Mika Visibility homepage</a> — Product framing for the four tracks. Sample interface counts on the homepage are illustrative, not a case study.</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">Next step</h2>
+          <p>Run a structured SEO + GEO audit to see health findings, growth gaps, and a blueprint you can act on.</p>
+          <p><a href="/#cta">Start on Mika</a></p>
+          <p>Clearer entities, answers, evidence, and context make pages easier to understand and reference. Results in any answer product are not guaranteed.</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/">Mika Visibility</a> · <a href="/knowledge/">Knowledge</a> · <a href="/blog/">Blog</a> · <a href="/qa/">Q&A</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">Contact</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../contact-config.js"></script>
+  <script src="../../contact.js"></script>
+</body>
+</html>

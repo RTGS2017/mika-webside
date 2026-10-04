@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>语言回退不应发布薄镜像 | Mika 博客</title>
+  <meta name="description" content="产品内部回退到另一种语言，不同于发布一个薄镜像 URL。只索引真正作答的页面。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/i18n-locale-fallback-and-thin-mirrors/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/i18n-locale-fallback-and-thin-mirrors/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/i18n-locale-fallback-and-thin-mirrors/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/i18n-locale-fallback-and-thin-mirrors/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="语言回退不应发布薄镜像 | Mika 博客">
+  <meta property="og:description" content="产品内部回退到另一种语言，不同于发布一个薄镜像 URL。只索引真正作答的页面。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/i18n-locale-fallback-and-thin-mirrors/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/multilingual/i18n-locale-fallback-and-thin-mirrors/bilingualism-boosts-grades-at-treorchy-comprehensive.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="语言回退不应发布薄镜像 | Mika 博客">
+  <meta name="twitter:description" content="产品内部回退到另一种语言，不同于发布一个薄镜像 URL。只索引真正作答的页面。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/i18n-locale-fallback-and-thin-mirrors/#article","headline":"语言回退不应发布薄镜像","name":"语言回退不应发布薄镜像","description":"产品内部回退到另一种语言，不同于发布一个薄镜像 URL。只索引真正作答的页面。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/multilingual/i18n-locale-fallback-and-thin-mirrors/bilingualism-boosts-grades-at-treorchy-comprehensive.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/i18n-locale-fallback-and-thin-mirrors/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/i18n-locale-fallback-and-thin-mirrors/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"语言回退不应发布薄镜像","item":"https://mikaovo.ai/zh/blog/i18n-locale-fallback-and-thin-mirrors/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/i18n-locale-fallback-and-thin-mirrors/#faq","mainEntity":[{"@type":"Question","name":"语言回退和市场页面有什么区别？","acceptedAnswer":{"@type":"Answer","text":"当界面里缺少译文时，语言回退可以显示源语言字符串。它不应变成一个公开 URL：复制另一种语言、换一个标签，然后假装市场已经覆盖。"}},{"@type":"Question","name":"语言 URL 何时不该进入 hreflang？","acceptedAnswer":{"@type":"Answer","text":"薄镜像是没有该市场的问题、或没有完整事实的重复页。这是重复内容问题，不是 SEO 增长。如果你还没有真正的中文页，就不要发布空的 /zh/ 壳并让 hreflang 指向它。在对照页具备相同事实和真正深度之前，让英文文档保持为唯一的规范页。x-default 留在英文。"}},{"@type":"Question","name":"去掉薄镜像能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"拒绝薄镜像，不保证排名或 AI 引用。Mika 不把未发布的语言算成覆盖。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="Language">
+          <a href="/blog/i18n-locale-fallback-and-thin-mirrors/">EN</a>
+          <a href="/zh/blog/i18n-locale-fallback-and-thin-mirrors/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>搜索可见度</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>语言回退不应发布薄镜像</h1>
+        <p class="kc-hero-lead">当界面里缺少译文时，语言回退可以显示源语言字符串。它不应变成一个公开 URL：复制另一种语言、换一个标签，然后假装市场已经覆盖。</p>
+        <p class="kc-hero-note">仅供教育。Mika 不保证搜索排名或 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#fields">哪些字段必须说同一件事</a></li>
+            <li><a href="#topic">页面上的问题</a></li>
+            <li><a href="#signals">随页面一起走的信号</a></li>
+            <li><a href="#what-to-check">要检查什么</a></li>
+            <li><a href="#does-not-claim">它不声称什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="definition">
+          <h2>定义</h2>
+          <p>薄镜像是没有该市场的问题、或没有完整事实的重复页。这是重复内容问题，不是 SEO 增长。如果你还没有真正的中文页，就不要发布空的 /zh/ 壳并让 hreflang 指向它。在对照页具备相同事实和真正深度之前，让英文文档保持为唯一的规范页。x-default 留在英文。</p>
+        </section>
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>当界面里缺少译文时，语言回退可以显示源语言字符串。它不应变成一个公开 URL：复制另一种语言、换一个标签，然后假装市场已经覆盖。</p>
+          <figure class="i18n-fig">
+  <img src="../../../assets/articles/multilingual/i18n-locale-fallback-and-thin-mirrors/bilingualism-boosts-grades-at-treorchy-comprehensive.webp" alt="来源页面正文中的配图（Bilingualism boosts grades at Treorchy Comprehensive），用来说明语言回退与薄镜像页面。" width="1280" height="720" style="max-width:100%;height:auto">
+  <figcaption>图来自来源页面 <a href="https://en.wikipedia.org/wiki/Multilingualism">https://en.wikipedia.org/wiki/Multilingualism</a>。此处只作说明，正文是 Mika 自己的解释。</figcaption>
+</figure>
+        </section>
+        <section id="fields">
+          <h2>哪些字段必须说同一件事</h2>
+          <p>按 URL 决定。语言版本要么用相同的公司、产品、规格和应用事实回答买家，要么就还不能成为对照页。小部件里的回退文字可以不被索引。可索引的是那份文档。</p>
+        </section>
+        <section id="topic">
+          <h2>页面上的问题</h2>
+          <p>只在一段话里插入城市名或语言名的近重复，是副本。健康上的处理是保留真实页面并停止副本。如果你选择做增长，意味着写上未覆盖的问题，而不是制造 URL。</p>
+        </section>
+        <section id="signals">
+          <h2>随页面一起走的信号</h2>
+          <p>内部链接不应把中文读者只送到英文页去看规格，同时又宣传一个没有规格的中文规范 URL。选择一条诚实的路径，然后复审。</p>
+          <p>回退是界面行为。市场页面是带事实的文档。 Mika Visibility 要求每种已发布的语言保留同一套公司名、产品名、规格和应用，同时允许该市场的问题有真正的深度。英语在站点根目录，中文在 /zh/，不要增加 /en/ 前缀。hreflang 使用 en、zh-Hans，以及指向英文 URL 的 x-default。健康分数不会自动变成增长分数。</p>
+        </section>
+        <section id="what-to-check">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>不要给只回退到英文正文的空壳加 hreflang。</li>
+            <li>在对照页具备相同事实之前，只保留一个规范 URL。</li>
+            <li>把城市加语言的副本当成重复内容。</li>
+            <li>去掉空壳之后复审线上 URL。</li>
+          </ul>
+        </section>
+        <section id="does-not-claim">
+          <h2>它不声称什么</h2>
+          <p>拒绝薄镜像，不保证排名或 AI 引用。Mika 不把未发布的语言算成覆盖。</p>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>这是教学示例，不是本地化分数。菜单提供中文，但每个“中文”URL 都是英文段落加一个翻译标题，hreflang 却把它当成 zh-Hans。修复是在这些页面写上相同限值和真正的回答之前，把它们从索引和 hreflang 里拿掉。不声称任何覆盖百分比。</p>
+          <figure class="i18n-fig">
+  <img src="../../../assets/articles/multilingual/i18n-locale-fallback-and-thin-mirrors/brussels-signs.webp" alt="来源页面正文中的配图（Brussels signs），用来说明语言回退与薄镜像页面。" width="552" height="368" loading="lazy" style="max-width:100%;height:auto">
+  <figcaption>图来自来源页面 <a href="https://en.wikipedia.org/wiki/Multilingualism">https://en.wikipedia.org/wiki/Multilingualism</a>。此处只作说明，正文是 Mika 自己的解释。</figcaption>
+</figure>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>语言回退和市场页面有什么区别？</summary>
+            <p>当界面里缺少译文时，语言回退可以显示源语言字符串。它不应变成一个公开 URL：复制另一种语言、换一个标签，然后假装市场已经覆盖。</p>
+          </details>
+          <details>
+            <summary>语言 URL 何时不该进入 hreflang？</summary>
+            <p>薄镜像是没有该市场的问题、或没有完整事实的重复页。这是重复内容问题，不是 SEO 增长。如果你还没有真正的中文页，就不要发布空的 /zh/ 壳并让 hreflang 指向它。在对照页具备相同事实和真正深度之前，让英文文档保持为唯一的规范页。x-default 留在英文。</p>
+          </details>
+          <details>
+            <summary>去掉薄镜像能保证排名吗？</summary>
+            <p>拒绝薄镜像，不保证排名或 AI 引用。Mika 不把未发布的语言算成覆盖。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/how-to-check-hreflang/">如何检查 Hreflang</a></li>
+            <li><a href="/zh/knowledge/multilingual-search-visibility/">多语言搜索可见度</a></li>
+            <li><a href="/zh/qa/how-should-bilingual-pages-share-facts/">双语页面应当如何共享同一套公司与产品事实？</a></li>
+            <li><a href="/zh/blog/consistent-facts-across-languages/">各语言页面都应保持一致的公司名称与产品事实</a></li>
+            <li><a href="/zh/qa/why-avoid-an-en-url-prefix/">为什么本站让英文留在根目录、中文留在 /zh/，而不使用 /en/ 前缀？</a></li>
+            <li><a href="/zh/blog/i18n-automotive-localization/">汽车本地化：每种语言保留同一个零件号</a></li>
+            <li><a href="/zh/blog/i18n-chatgpt-localization/">生成的本地化草稿不是规格本身</a></li>
+            <li><a href="/zh/#framework">Mika 首页 — 四条轨道</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/Multilingualism">Multilingualism</a> — 背景参考。本页正文是原创说明，不复述该页的段落。配图来自该页，并在图注中标明。</li>
+            <li><a href="/zh/#framework">Mika Visibility 首页</a> — 四条轨道的产品说明。首页示例数字只是界面示意，不是结果。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO 与 GEO 审计，看健康发现、增长缺口，以及可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清楚的实体、回答、证据和上下文，让页面更容易被理解和转述。任何回答产品中的结果都不保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

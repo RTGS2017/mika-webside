@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Worker 不能是页面的唯一副本 | Mika 博客</title>
+  <meta name="description" content="Service Worker 可以缓存资源。规范 URL 仍然必须向不依赖该缓存的一次获取返回 HTML 文档。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-service-worker-must-not-hide-html/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-service-worker-must-not-hide-html/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-service-worker-must-not-hide-html/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-service-worker-must-not-hide-html/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="Service Worker 不能是页面的唯一副本 | Mika 博客">
+  <meta property="og:description" content="Service Worker 可以缓存资源。规范 URL 仍然必须向不依赖该缓存的一次获取返回 HTML 文档。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-service-worker-must-not-hide-html/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-service-worker-must-not-hide-html/ball-bearing-with-semi-transparent-cover.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Service Worker 不能是页面的唯一副本 | Mika 博客">
+  <meta name="twitter:description" content="Service Worker 可以缓存资源。规范 URL 仍然必须向不依赖该缓存的一次获取返回 HTML 文档。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-service-worker-must-not-hide-html/#article","headline":"Service Worker 不能是页面的唯一副本","name":"Service Worker 不能是页面的唯一副本","description":"Service Worker 可以缓存资源。规范 URL 仍然必须向不依赖该缓存的一次获取返回 HTML 文档。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-service-worker-must-not-hide-html/ball-bearing-with-semi-transparent-cover.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-service-worker-must-not-hide-html/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-service-worker-must-not-hide-html/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"Service Worker 不能是页面的唯一副本","item":"https://mikaovo.ai/zh/blog/seo-tech-service-worker-must-not-hide-html/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-service-worker-must-not-hide-html/#faq","mainEntity":[{"@type":"Question","name":"即使存在 Service Worker，规范 URL 也必须返回什么？","acceptedAnswer":{"@type":"Answer","text":"Service Worker 位于浏览器和网络之间，可以用缓存作答。规范 URL 仍必须向不执行该 worker 的一次获取返回 HTML 规格。缓存不是记录文档。"}},{"@type":"Question","name":"为什么空的应用壳还不是产品文档？","acceptedAnswer":{"@type":"Answer","text":"应用壳有时发送一份空 HTML，再用脚本或 worker 填满。如果一次基本获取只收到壳，这个 URL 就还不是关于产品的文档。SEO 健康问的是响应里有什么。已经打开过页面的用户仍可以保留离线支持。操作范围不应只存在于那里。"}},{"@type":"Question","name":"Service Worker 能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"正确的 Service Worker 设置不保证排名或 AI 引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="Language">
+          <a href="/blog/seo-tech-service-worker-must-not-hide-html/">EN</a>
+          <a href="/zh/blog/seo-tech-service-worker-must-not-hide-html/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>Service Worker 不能是页面的唯一副本</h1>
+        <p class="kc-hero-lead">Service Worker 位于浏览器和网络之间，可以用缓存作答。规范 URL 仍必须向不执行该 worker 的一次获取返回 HTML 规格。缓存不是记录文档。</p>
+        <p class="kc-hero-note">仅供教育。Mika 不保证搜索排名或 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">页面上怎么出现</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>Service Worker 位于浏览器和网络之间，可以用缓存作答。规范 URL 仍必须向不执行该 worker 的一次获取返回 HTML 规格。缓存不是记录文档。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-service-worker-must-not-hide-html/ball-bearing-with-semi-transparent-cover.webp" alt="来源页面正文中的配图（Ball Bearing with Semi Transparent Cover），用来说明Service Worker 不得藏起 HTML 文档。" width="1081" height="867" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://en.wikipedia.org/wiki/Ball_bearing</figcaption>
+          </figure>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>应用壳有时发送一份空 HTML，再用脚本或 worker 填满。如果一次基本获取只收到壳，这个 URL 就还不是关于产品的文档。SEO 健康问的是响应里有什么。已经打开过页面的用户仍可以保留离线支持。操作范围不应只存在于那里。</p>
+        </section>
+        <section id="how">
+          <h2>页面上怎么出现</h2>
+          <p>用不安装该 worker 的客户端获取规范 URL。读 HTML。如果范围缺失，就把它写进服务器或静态 HTML。检查 worker 不会在你改正文档之后仍缓存过期的 noindex 或旧价格。然后重新获取。</p>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>在没有 Service Worker 的情况下获取并读 HTML。</li>
+            <li>把规格放进该响应。</li>
+            <li>不要缓存过期的 robots 指令。</li>
+            <li>壳改完之后复审。</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>目录路由返回一个空的应用壳。worker 稍后为回访用户绘出阀门范围。第一次获取永远看不到范围。修复是把范围放进 HTML 响应，并让 worker 缓存该响应。不暗示任何应用商店排名。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-service-worker-must-not-hide-html/bearing-spacer-proper-length-inline-skate-wheel-assembly-with-labels.webp" alt="来源页面正文中的配图（Bearing Spacer Proper Length   inline skate wheel assembly   with labels），用来说明Service Worker 不得藏起 HTML 文档。" width="1600" height="910" loading="lazy" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://en.wikipedia.org/wiki/Ball_bearing</figcaption>
+          </figure>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>正确的 Service Worker 设置不保证排名或 AI 引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>文档是该 URL 的网络响应，不是回访用户碰巧持有的缓存。 Mika Visibility 把这项检查放在 SEO 健康轨道上，和可抓取性、状态码、页面基础放在一起。SEO 增长仍是另一个问题：哪些覆盖还没有写出来。GEO 仍是另一个问题：认真的读者能否在页面上找到可支撑的回答。没有混合总分。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>即使存在 Service Worker，规范 URL 也必须返回什么？</summary>
+            <p>Service Worker 位于浏览器和网络之间，可以用缓存作答。规范 URL 仍必须向不执行该 worker 的一次获取返回 HTML 规格。缓存不是记录文档。</p>
+          </details>
+          <details>
+            <summary>为什么空的应用壳还不是产品文档？</summary>
+            <p>应用壳有时发送一份空 HTML，再用脚本或 worker 填满。如果一次基本获取只收到壳，这个 URL 就还不是关于产品的文档。SEO 健康问的是响应里有什么。已经打开过页面的用户仍可以保留离线支持。操作范围不应只存在于那里。</p>
+          </details>
+          <details>
+            <summary>Service Worker 能保证排名吗？</summary>
+            <p>正确的 Service Worker 设置不保证排名或 AI 引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/what-is-a-website-seo-audit/">什么是网站 SEO 审计</a></li>
+            <li><a href="/zh/knowledge/how-to-check-website-crawlability/">如何检查网站可抓取性</a></li>
+            <li><a href="/zh/qa/which-status-codes-matter-for-crawling/">在抓取过程中，哪些状态码会影响到爬虫能否继续？</a></li>
+            <li><a href="/zh/blog/what-seo-health-asks-of-a-live-site/">SEO 健康在问线上站点是否准备好被发现和理解</a></li>
+            <li><a href="/zh/knowledge/seo-health-vs-seo-growth/">SEO 健康 vs SEO 增长</a></li>
+            <li><a href="/zh/blog/seo-tech-dns-names-the-host-a-crawler-asks/">DNS 必须解析你发布的主机名</a></li>
+            <li><a href="/zh/blog/seo-tech-tls-keeps-the-fetch-intact/">TLS 应让获取完成，而不是代替页面</a></li>
+            <li><a href="/zh/#framework">Mika 首页 — 四条轨道</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/Ball_bearing">Ball bearing</a> — 背景参考。本页正文是原创说明，不复述该页的段落。配图来自该页，并在图注中标明。</li>
+            <li><a href="/zh/#framework">Mika Visibility 首页</a> — 四条轨道的产品说明。首页示例数字只是界面示意，不是结果。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO 与 GEO 审计，看健康发现、增长缺口，以及可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清楚的实体、回答、证据和上下文，让页面更容易被理解和转述。任何回答产品中的结果都不保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

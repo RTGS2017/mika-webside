@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>当 URL 的主题已经结束时使用 410 | Mika 博客</title>
+  <meta name="description" content="HTTP 410 表示文档是有意消失的。它不同于你还没检查的 404，也不同于 301 到一个无关页面。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-http-410-for-pages-that-ended/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-http-410-for-pages-that-ended/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-http-410-for-pages-that-ended/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-http-410-for-pages-that-ended/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="当 URL 的主题已经结束时使用 410 | Mika 博客">
+  <meta property="og:description" content="HTTP 410 表示文档是有意消失的。它不同于你还没检查的 404，也不同于 301 到一个无关页面。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-http-410-for-pages-that-ended/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-http-410-for-pages-that-ended/100inchhooker.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="当 URL 的主题已经结束时使用 410 | Mika 博客">
+  <meta name="twitter:description" content="HTTP 410 表示文档是有意消失的。它不同于你还没检查的 404，也不同于 301 到一个无关页面。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-http-410-for-pages-that-ended/#article","headline":"当 URL 的主题已经结束时使用 410","name":"当 URL 的主题已经结束时使用 410","description":"HTTP 410 表示文档是有意消失的。它不同于你还没检查的 404，也不同于 301 到一个无关页面。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-http-410-for-pages-that-ended/100inchhooker.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-http-410-for-pages-that-ended/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-http-410-for-pages-that-ended/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"当 URL 的主题已经结束时使用 410","item":"https://mikaovo.ai/zh/blog/seo-tech-http-410-for-pages-that-ended/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-http-410-for-pages-that-ended/#faq","mainEntity":[{"@type":"Question","name":"URL 何时应当返回 410？","acceptedAnswer":{"@type":"Answer","text":"410 响应表示这个 URL 曾经是一份文档，并且这份文档被有意移除。当没有东西应当取代该主题时使用它。不要对仍然存在于新地址的页面使用它。"}},{"@type":"Question","name":"410 和把 URL 送到首页有什么不同？","acceptedAnswer":{"@type":"Answer","text":"404 可能是拼写错误、短暂故障或真正的缺口。410 是更强的陈述：这个 URL 已经结束。把失效的产品 URL 送到首页，会留下抓取路径并丢掉主题。如果存在后继文档，就改为 301 到该文档。内部链接应停止指向已消失的 URL。站点地图应去掉它。"}},{"@type":"Question","name":"410 会提升排名吗？","acceptedAnswer":{"@type":"Answer","text":"返回 410 不保证你保留的页面获得排名，它也不是 AI 引用策略。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="Language">
+          <a href="/blog/seo-tech-http-410-for-pages-that-ended/">EN</a>
+          <a href="/zh/blog/seo-tech-http-410-for-pages-that-ended/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>当 URL 的主题已经结束时使用 410</h1>
+        <p class="kc-hero-lead">410 响应表示这个 URL 曾经是一份文档，并且这份文档被有意移除。当没有东西应当取代该主题时使用它。不要对仍然存在于新地址的页面使用它。</p>
+        <p class="kc-hero-note">仅供教育。Mika 不保证搜索排名或 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">页面上怎么出现</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>410 响应表示这个 URL 曾经是一份文档，并且这份文档被有意移除。当没有东西应当取代该主题时使用它。不要对仍然存在于新地址的页面使用它。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-http-410-for-pages-that-ended/100inchhooker.webp" alt="来源页面正文中的配图（100inchHooker），用来说明主题已经结束的页面使用 HTTP 410。" width="554" height="904" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://en.wikipedia.org/wiki/Telescope</figcaption>
+          </figure>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>404 可能是拼写错误、短暂故障或真正的缺口。410 是更强的陈述：这个 URL 已经结束。把失效的产品 URL 送到首页，会留下抓取路径并丢掉主题。如果存在后继文档，就改为 301 到该文档。内部链接应停止指向已消失的 URL。站点地图应去掉它。</p>
+        </section>
+        <section id="how">
+          <h2>页面上怎么出现</h2>
+          <p>列出你已退役其主题的 URL。对每一个选择后继或消失。改完后获取状态码。一个只写着“未找到”的 200 页面是另一类软问题。410 不应返回一篇关于无关主题的可索引长文。</p>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>只有在没有后继文档时才使用 410。</li>
+            <li>去掉指向该 URL 的内部链接。</li>
+            <li>把它从站点地图中移除。</li>
+            <li>不要用跳到首页来回答 410。</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>一个停产接头的 URL 301 到从未提及该接头的首页。修复是返回 410，去掉内部链接和站点地图条目，并让真正的后继产品留在它自己的 URL 上。不声称任何需求数字。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-http-410-for-pages-that-ended/alma-greater-than-the-sum-of-its-parts-cropped.webp" alt="来源页面正文中的配图（ALMA Greater than the Sum of its Parts (cropped)），用来说明主题已经结束的页面使用 HTTP 410。" width="1600" height="1046" loading="lazy" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://en.wikipedia.org/wiki/Telescope</figcaption>
+          </figure>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>返回 410 不保证你保留的页面获得排名，它也不是 AI 引用策略。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>当主题结束时，410 是抓取路径结束的方式。 Mika Visibility 把这项检查放在 SEO 健康轨道上，和可抓取性、状态码、页面基础放在一起。SEO 增长仍是另一个问题：哪些覆盖还没有写出来。GEO 仍是另一个问题：认真的读者能否在页面上找到可支撑的回答。没有混合总分。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>URL 何时应当返回 410？</summary>
+            <p>410 响应表示这个 URL 曾经是一份文档，并且这份文档被有意移除。当没有东西应当取代该主题时使用它。不要对仍然存在于新地址的页面使用它。</p>
+          </details>
+          <details>
+            <summary>410 和把 URL 送到首页有什么不同？</summary>
+            <p>404 可能是拼写错误、短暂故障或真正的缺口。410 是更强的陈述：这个 URL 已经结束。把失效的产品 URL 送到首页，会留下抓取路径并丢掉主题。如果存在后继文档，就改为 301 到该文档。内部链接应停止指向已消失的 URL。站点地图应去掉它。</p>
+          </details>
+          <details>
+            <summary>410 会提升排名吗？</summary>
+            <p>返回 410 不保证你保留的页面获得排名，它也不是 AI 引用策略。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/what-is-a-website-seo-audit/">什么是网站 SEO 审计</a></li>
+            <li><a href="/zh/knowledge/how-to-check-website-crawlability/">如何检查网站可抓取性</a></li>
+            <li><a href="/zh/qa/which-status-codes-matter-for-crawling/">在抓取过程中，哪些状态码会影响到爬虫能否继续？</a></li>
+            <li><a href="/zh/blog/what-seo-health-asks-of-a-live-site/">SEO 健康在问线上站点是否准备好被发现和理解</a></li>
+            <li><a href="/zh/knowledge/seo-health-vs-seo-growth/">SEO 健康 vs SEO 增长</a></li>
+            <li><a href="/zh/blog/seo-tech-noindex-removes-a-url-from-the-index/">noindex 是关于该 URL 的指令，不是提示</a></li>
+            <li><a href="/zh/blog/seo-tech-canonical-link-names-the-preferred-url/">规范链接应标出你想索引的 URL</a></li>
+            <li><a href="/zh/#framework">Mika 首页 — 四条轨道</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/Telescope">Telescope</a> — 背景参考。本页正文是原创说明，不复述该页的段落。配图来自该页，并在图注中标明。</li>
+            <li><a href="/zh/#framework">Mika Visibility 首页</a> — 四条轨道的产品说明。首页示例数字只是界面示意，不是结果。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO 与 GEO 审计，看健康发现、增长缺口，以及可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清楚的实体、回答、证据和上下文，让页面更容易被理解和转述。任何回答产品中的结果都不保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

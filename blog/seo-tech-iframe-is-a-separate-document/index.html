@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>An iframe is a separate fetch, not the parent page | Mika Blog</title>
+  <meta name="description" content="Content inside an iframe is another document. If the specification exists only there, the parent URL may not state it.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/blog/seo-tech-iframe-is-a-separate-document/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-iframe-is-a-separate-document/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-iframe-is-a-separate-document/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-iframe-is-a-separate-document/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="An iframe is a separate fetch, not the parent page | Mika Blog">
+  <meta property="og:description" content="Content inside an iframe is another document. If the specification exists only there, the parent URL may not state it.">
+  <meta property="og:url" content="https://mikaovo.ai/blog/seo-tech-iframe-is-a-separate-document/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-iframe-is-a-separate-document/html-element-content-categories.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="An iframe is a separate fetch, not the parent page | Mika Blog">
+  <meta name="twitter:description" content="Content inside an iframe is another document. If the specification exists only there, the parent URL may not state it.">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/blog/seo-tech-iframe-is-a-separate-document/#article","headline":"An iframe is a separate fetch, not the parent page","name":"An iframe is a separate fetch, not the parent page","description":"Content inside an iframe is another document. If the specification exists only there, the parent URL may not state it.","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"en","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-iframe-is-a-separate-document/html-element-content-categories.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/blog/seo-tech-iframe-is-a-separate-document/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/blog/seo-tech-iframe-is-a-separate-document/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mikaovo.ai/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://mikaovo.ai/blog/"},{"@type":"ListItem","position":3,"name":"An iframe is a separate fetch, not the parent page","item":"https://mikaovo.ai/blog/seo-tech-iframe-is-a-separate-document/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/blog/seo-tech-iframe-is-a-separate-document/#faq","mainEntity":[{"@type":"Question","name":"Does a fetch of the parent include the iframe text?","acceptedAnswer":{"@type":"Answer","text":"An iframe embeds another document inside a page. A fetch of the parent URL does not automatically include the iframe’s text as the parent’s body. If you want the parent indexed as the specification, write the specification in the parent HTML."}},{"@type":"Question","name":"Where should the specification live if the parent is the page?","acceptedAnswer":{"@type":"Answer","text":"Embeds are useful for a tool, a map, or a player. They are a poor place to hide the only copy of an operating range. The iframe has its own URL, its own status code, and often its own robots rules. If that URL is blocked, empty, or third-party boilerplate, the parent can look complete in a screenshot and empty in a fetch. SEO Health starts from what the parent response contains."}},{"@type":"Question","name":"Does avoiding iframes guarantee rankings?","acceptedAnswer":{"@type":"Answer","text":"Moving text out of an iframe does not guarantee rankings or AI citations."}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">Skip to content</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/" aria-label="Mika Visibility">
+        <img src="../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/knowledge/">Knowledge</a>
+        <a href="/blog/">Blog</a>
+        <a href="/qa/">Q&A</a>
+        <div class="kc-lang" aria-label="Language">
+          <a href="/blog/seo-tech-iframe-is-a-separate-document/" aria-current="page">EN</a>
+          <a href="/zh/blog/seo-tech-iframe-is-a-separate-document/">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">Contact</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>Technical</span> · <time datetime="2026-10-04">October 4, 2026</time></p>
+        <h1>An iframe is a separate fetch, not the parent page</h1>
+        <p class="kc-hero-lead">An iframe embeds another document inside a page. A fetch of the parent URL does not automatically include the iframe’s text as the parent’s body. If you want the parent indexed as the specification, write the specification in the parent HTML.</p>
+        <p class="kc-hero-note">Educational material only. Mika does not guarantee search rankings or AI answer citations.</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="On this page">
+        <p>On this page</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">Short answer</a></li>
+            <li><a href="#definition">Definition</a></li>
+            <li><a href="#how">What belongs on the page</a></li>
+            <li><a href="#checks">What to check</a></li>
+            <li><a href="#example">A practical example</a></li>
+            <li><a href="#limits">What this does not claim</a></li>
+            <li><a href="#mika">Where Mika Visibility files this</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>Short answer</h2>
+          <p>An iframe embeds another document inside a page. A fetch of the parent URL does not automatically include the iframe’s text as the parent’s body. If you want the parent indexed as the specification, write the specification in the parent HTML.</p>
+          <figure>
+            <img src="../../assets/articles/seo-tech/seo-tech-iframe-is-a-separate-document/html-element-content-categories.webp" alt="HTML element content categories. Content image from the source page, illustrating an iframe as a separate document from the parent page." width="1600" height="1132" style="max-width:100%;height:auto">
+            <figcaption>Image from the source page: https://en.wikipedia.org/wiki/HTML_element</figcaption>
+          </figure>
+        </section>
+        <section id="definition">
+          <h2>Definition</h2>
+          <p>Embeds are useful for a tool, a map, or a player. They are a poor place to hide the only copy of an operating range. The iframe has its own URL, its own status code, and often its own robots rules. If that URL is blocked, empty, or third-party boilerplate, the parent can look complete in a screenshot and empty in a fetch. SEO Health starts from what the parent response contains.</p>
+        </section>
+        <section id="how">
+          <h2>What belongs on the page</h2>
+          <p>Fetch the parent and search the HTML for the specification sentence. If it appears only as an iframe src, fetch that src too. Decide which URL owns the fact. Link it with ordinary anchors when you want a crawl path. Do not expect the frame to inherit the parent’s canonical.</p>
+        </section>
+        <section id="checks">
+          <h2>What to check</h2>
+          <ul>
+            <li>Search the parent HTML for the specification.</li>
+            <li>Fetch the iframe URL separately.</li>
+            <li>Do not rely on a noindexed frame for the only fact.</li>
+            <li>Give the owner URL a normal internal link.</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>A practical example</h2>
+          <p>A product URL’s HTML is a headline plus an iframe whose source holds the dimensions. The iframe URL is noindexed. The repair writes the dimensions into the product HTML and treats the frame as optional. Re-audit the parent fetch. No embed vendor is endorsed.</p>
+          
+        </section>
+        <section id="limits">
+          <h2>What this does not claim</h2>
+          <p>Moving text out of an iframe does not guarantee rankings or AI citations.</p>
+        </section>
+        <section id="mika">
+          <h2>Where Mika Visibility files this</h2>
+          <p>The indexable document is the response for the URL you claim is the page. Mika Visibility files this on the SEO Health track, with crawlability, status codes, and page basics. SEO Growth remains a separate question about coverage that is still unwritten. GEO remains a separate question about whether a careful reader can find a supportable answer. There is no blended overall score.</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">FAQ</h2>
+          <details>
+            <summary>Does a fetch of the parent include the iframe text?</summary>
+            <p>An iframe embeds another document inside a page. A fetch of the parent URL does not automatically include the iframe’s text as the parent’s body. If you want the parent indexed as the specification, write the specification in the parent HTML.</p>
+          </details>
+          <details>
+            <summary>Where should the specification live if the parent is the page?</summary>
+            <p>Embeds are useful for a tool, a map, or a player. They are a poor place to hide the only copy of an operating range. The iframe has its own URL, its own status code, and often its own robots rules. If that URL is blocked, empty, or third-party boilerplate, the parent can look complete in a screenshot and empty in a fetch. SEO Health starts from what the parent response contains.</p>
+          </details>
+          <details>
+            <summary>Does avoiding iframes guarantee rankings?</summary>
+            <p>Moving text out of an iframe does not guarantee rankings or AI citations.</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">Related guides</h2>
+          <ul>
+            <li><a href="/knowledge/what-is-a-website-seo-audit/">What Is a Website SEO Audit</a></li>
+            <li><a href="/knowledge/how-to-check-website-crawlability/">How to Check Website Crawlability</a></li>
+            <li><a href="/qa/which-status-codes-matter-for-crawling/">Which status codes matter for crawling?</a></li>
+            <li><a href="/blog/what-seo-health-asks-of-a-live-site/">What SEO Health Asks of a Live Site</a></li>
+            <li><a href="/knowledge/seo-health-vs-seo-growth/">SEO Health vs SEO Growth</a></li>
+            <li><a href="/blog/seo-tech-service-worker-must-not-hide-html/">A service worker must not be the only copy of the page</a></li>
+            <li><a href="/blog/seo-tech-dns-names-the-host-a-crawler-asks/">DNS has to resolve the hostname you publish</a></li>
+            <li><a href="/#framework">Mika homepage — four tracks</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">Sources</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/HTML_element">HTML element</a> — Background reference. The prose on this page is original and does not reproduce that article’s paragraphs. The figure comes from that page and is credited in the caption.</li>
+            <li><a href="/#framework">Mika Visibility homepage</a> — Product framing for the four tracks. Sample interface counts on the homepage are illustrative, not a case study.</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">Next step</h2>
+          <p>Run a structured SEO + GEO audit to see health findings, growth gaps, and a blueprint you can act on.</p>
+          <p><a href="/#cta">Start on Mika</a></p>
+          <p>Clearer entities, answers, evidence, and context make pages easier to understand and reference. Results in any answer product are not guaranteed.</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/">Mika Visibility</a> · <a href="/knowledge/">Knowledge</a> · <a href="/blog/">Blog</a> · <a href="/qa/">Q&A</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">Contact</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../contact-config.js"></script>
+  <script src="../../contact.js"></script>
+</body>
+</html>

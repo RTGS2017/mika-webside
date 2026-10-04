@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noindex is an instruction about that URL, not a hint | Mika Blog</title>
+  <meta name="description" content="A noindex directive asks that this URL not be kept in an index. It does not block the fetch, and it does not rank the pages you leave indexable.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/blog/seo-tech-noindex-removes-a-url-from-the-index/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-noindex-removes-a-url-from-the-index/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-noindex-removes-a-url-from-the-index/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-noindex-removes-a-url-from-the-index/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="Noindex is an instruction about that URL, not a hint | Mika Blog">
+  <meta property="og:description" content="A noindex directive asks that this URL not be kept in an index. It does not block the fetch, and it does not rank the pages you leave indexable.">
+  <meta property="og:url" content="https://mikaovo.ai/blog/seo-tech-noindex-removes-a-url-from-the-index/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-noindex-removes-a-url-from-the-index/centrifugal-2.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Noindex is an instruction about that URL, not a hint | Mika Blog">
+  <meta name="twitter:description" content="A noindex directive asks that this URL not be kept in an index. It does not block the fetch, and it does not rank the pages you leave indexable.">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/blog/seo-tech-noindex-removes-a-url-from-the-index/#article","headline":"Noindex is an instruction about that URL, not a hint","name":"Noindex is an instruction about that URL, not a hint","description":"A noindex directive asks that this URL not be kept in an index. It does not block the fetch, and it does not rank the pages you leave indexable.","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"en","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-noindex-removes-a-url-from-the-index/centrifugal-2.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/blog/seo-tech-noindex-removes-a-url-from-the-index/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/blog/seo-tech-noindex-removes-a-url-from-the-index/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mikaovo.ai/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://mikaovo.ai/blog/"},{"@type":"ListItem","position":3,"name":"Noindex is an instruction about that URL, not a hint","item":"https://mikaovo.ai/blog/seo-tech-noindex-removes-a-url-from-the-index/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/blog/seo-tech-noindex-removes-a-url-from-the-index/#faq","mainEntity":[{"@type":"Question","name":"What does noindex ask a crawler to do?","acceptedAnswer":{"@type":"Answer","text":"Noindex tells a cooperating crawler not to keep this URL in its index. The URL can still be fetched. Do not also block that fetch in robots.txt if you need the directive to be seen. Do not noindex a URL you still want found."}},{"@type":"Question","name":"Why can robots.txt interfere with noindex?","acceptedAnswer":{"@type":"Answer","text":"Noindex can live in a meta robots tag or in an HTTP header. It applies to the URL that returned it. A template that accidentally noindexes every product page is a template defect, not a copy edit. Canonical and noindex together need a conscious choice: a duplicate you do not want indexed can be noindexed, or it can canonicalize to the owner. Doing both at random leaves an unclear document."}},{"@type":"Question","name":"Does clearing noindex guarantee rankings?","acceptedAnswer":{"@type":"Answer","text":"Removing a mistaken noindex does not guarantee rankings or AI citations. Mika reports the directive. It does not promise reinstatement."}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">Skip to content</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/" aria-label="Mika Visibility">
+        <img src="../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/knowledge/">Knowledge</a>
+        <a href="/blog/">Blog</a>
+        <a href="/qa/">Q&A</a>
+        <div class="kc-lang" aria-label="Language">
+          <a href="/blog/seo-tech-noindex-removes-a-url-from-the-index/" aria-current="page">EN</a>
+          <a href="/zh/blog/seo-tech-noindex-removes-a-url-from-the-index/">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">Contact</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>Technical</span> · <time datetime="2026-10-04">October 4, 2026</time></p>
+        <h1>Noindex is an instruction about that URL, not a hint</h1>
+        <p class="kc-hero-lead">Noindex tells a cooperating crawler not to keep this URL in its index. The URL can still be fetched. Do not also block that fetch in robots.txt if you need the directive to be seen. Do not noindex a URL you still want found.</p>
+        <p class="kc-hero-note">Educational material only. Mika does not guarantee search rankings or AI answer citations.</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="On this page">
+        <p>On this page</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">Short answer</a></li>
+            <li><a href="#definition">Definition</a></li>
+            <li><a href="#how">What belongs on the page</a></li>
+            <li><a href="#checks">What to check</a></li>
+            <li><a href="#example">A practical example</a></li>
+            <li><a href="#limits">What this does not claim</a></li>
+            <li><a href="#mika">Where Mika Visibility files this</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>Short answer</h2>
+          <p>Noindex tells a cooperating crawler not to keep this URL in its index. The URL can still be fetched. Do not also block that fetch in robots.txt if you need the directive to be seen. Do not noindex a URL you still want found.</p>
+          <figure>
+            <img src="../../assets/articles/seo-tech/seo-tech-noindex-removes-a-url-from-the-index/centrifugal-2.webp" alt="Centrifugal 2. Content image from the source page, illustrating noindex as an indexing instruction on a URL." width="354" height="376" style="max-width:100%;height:auto">
+            <figcaption>Image from the source page: https://en.wikipedia.org/wiki/Pump</figcaption>
+          </figure>
+        </section>
+        <section id="definition">
+          <h2>Definition</h2>
+          <p>Noindex can live in a meta robots tag or in an HTTP header. It applies to the URL that returned it. A template that accidentally noindexes every product page is a template defect, not a copy edit. Canonical and noindex together need a conscious choice: a duplicate you do not want indexed can be noindexed, or it can canonicalize to the owner. Doing both at random leaves an unclear document.</p>
+        </section>
+        <section id="how">
+          <h2>What belongs on the page</h2>
+          <p>Fetch the URL and read the robots directive in HTML and in headers. Confirm robots.txt does not disallow the URL you need fetched. Check a sample of the template, not one hero. Faceted or internal search URLs are common places for a deliberate noindex. Money pages are not.</p>
+        </section>
+        <section id="checks">
+          <h2>What to check</h2>
+          <ul>
+            <li>Read noindex from the live response, not from a design file.</li>
+            <li>Do not disallow the same URL in robots.txt if noindex must be seen.</li>
+            <li>Fix the template when the directive is widespread.</li>
+            <li>Do not noindex the URL that owns the specification.</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>A practical example</h2>
+          <p>A staging flag left noindex on the live valve family template. Every family URL asks not to be indexed. The repair removes the directive from the template, confirms the canonicals, and re-audits a sample of URLs. No recovery ranking is promised.</p>
+          <figure>
+            <img src="../../assets/articles/seo-tech/seo-tech-noindex-removes-a-url-from-the-index/close-up-of-a-regenerative-turbine-pump-impeller-inside-of-a-t51-series.webp" alt="Close up of a Regenerative Turbine Pump Impeller inside of a T51 Series pump from MTH Pumps. Content image from the source page, illustrating noindex as an indexing instruction on a URL." width="1600" height="1200" loading="lazy" style="max-width:100%;height:auto">
+            <figcaption>Image from the source page: https://en.wikipedia.org/wiki/Pump</figcaption>
+          </figure>
+        </section>
+        <section id="limits">
+          <h2>What this does not claim</h2>
+          <p>Removing a mistaken noindex does not guarantee rankings or AI citations. Mika reports the directive. It does not promise reinstatement.</p>
+        </section>
+        <section id="mika">
+          <h2>Where Mika Visibility files this</h2>
+          <p>Noindex is an indexation instruction on a fetched URL. Mika Visibility files this on the SEO Health track, with crawlability, status codes, and page basics. SEO Growth remains a separate question about coverage that is still unwritten. GEO remains a separate question about whether a careful reader can find a supportable answer. There is no blended overall score.</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">FAQ</h2>
+          <details>
+            <summary>What does noindex ask a crawler to do?</summary>
+            <p>Noindex tells a cooperating crawler not to keep this URL in its index. The URL can still be fetched. Do not also block that fetch in robots.txt if you need the directive to be seen. Do not noindex a URL you still want found.</p>
+          </details>
+          <details>
+            <summary>Why can robots.txt interfere with noindex?</summary>
+            <p>Noindex can live in a meta robots tag or in an HTTP header. It applies to the URL that returned it. A template that accidentally noindexes every product page is a template defect, not a copy edit. Canonical and noindex together need a conscious choice: a duplicate you do not want indexed can be noindexed, or it can canonicalize to the owner. Doing both at random leaves an unclear document.</p>
+          </details>
+          <details>
+            <summary>Does clearing noindex guarantee rankings?</summary>
+            <p>Removing a mistaken noindex does not guarantee rankings or AI citations. Mika reports the directive. It does not promise reinstatement.</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">Related guides</h2>
+          <ul>
+            <li><a href="/knowledge/what-is-a-website-seo-audit/">What Is a Website SEO Audit</a></li>
+            <li><a href="/knowledge/how-to-check-website-crawlability/">How to Check Website Crawlability</a></li>
+            <li><a href="/qa/which-status-codes-matter-for-crawling/">Which status codes matter for crawling?</a></li>
+            <li><a href="/blog/what-seo-health-asks-of-a-live-site/">What SEO Health Asks of a Live Site</a></li>
+            <li><a href="/knowledge/seo-health-vs-seo-growth/">SEO Health vs SEO Growth</a></li>
+            <li><a href="/blog/seo-tech-canonical-link-names-the-preferred-url/">The canonical link should name the URL you want indexed</a></li>
+            <li><a href="/blog/seo-tech-mixed-content-blocks-assets/">Mixed content can block the assets the page needs</a></li>
+            <li><a href="/#framework">Mika homepage — four tracks</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">Sources</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/Pump">Pump</a> — Background reference. The prose on this page is original and does not reproduce that article’s paragraphs. The figure comes from that page and is credited in the caption.</li>
+            <li><a href="/#framework">Mika Visibility homepage</a> — Product framing for the four tracks. Sample interface counts on the homepage are illustrative, not a case study.</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">Next step</h2>
+          <p>Run a structured SEO + GEO audit to see health findings, growth gaps, and a blueprint you can act on.</p>
+          <p><a href="/#cta">Start on Mika</a></p>
+          <p>Clearer entities, answers, evidence, and context make pages easier to understand and reference. Results in any answer product are not guaranteed.</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/">Mika Visibility</a> · <a href="/knowledge/">Knowledge</a> · <a href="/blog/">Blog</a> · <a href="/qa/">Q&A</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">Contact</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../contact-config.js"></script>
+  <script src="../../contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>混合内容会挡住页面需要的资源 | Mika 博客</title>
+  <meta name="description" content="HTTPS 页面如果仍请求 HTTP 图片或脚本，证据可能显示不出来。HTML 里的文字不应依赖一个被阻止的文件。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-mixed-content-blocks-assets/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-mixed-content-blocks-assets/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-mixed-content-blocks-assets/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-mixed-content-blocks-assets/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="混合内容会挡住页面需要的资源 | Mika 博客">
+  <meta property="og:description" content="HTTPS 页面如果仍请求 HTTP 图片或脚本，证据可能显示不出来。HTML 里的文字不应依赖一个被阻止的文件。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-mixed-content-blocks-assets/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-mixed-content-blocks-assets/https-on-firefox-133-screenshot.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="混合内容会挡住页面需要的资源 | Mika 博客">
+  <meta name="twitter:description" content="HTTPS 页面如果仍请求 HTTP 图片或脚本，证据可能显示不出来。HTML 里的文字不应依赖一个被阻止的文件。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-mixed-content-blocks-assets/#article","headline":"混合内容会挡住页面需要的资源","name":"混合内容会挡住页面需要的资源","description":"HTTPS 页面如果仍请求 HTTP 图片或脚本，证据可能显示不出来。HTML 里的文字不应依赖一个被阻止的文件。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-mixed-content-blocks-assets/https-on-firefox-133-screenshot.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-mixed-content-blocks-assets/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-mixed-content-blocks-assets/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"混合内容会挡住页面需要的资源","item":"https://mikaovo.ai/zh/blog/seo-tech-mixed-content-blocks-assets/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-mixed-content-blocks-assets/#faq","mainEntity":[{"@type":"Question","name":"HTTPS 页面上的混合内容是什么？","acceptedAnswer":{"@type":"Answer","text":"混合内容是 HTTPS 页面去请求 HTTP 资源。浏览器可能会阻止该资源。如果规格只存在于一张被阻止的图片里，页面就不再陈述这个事实。把资源改为 HTTPS，并把文字留在 HTML 里。"}},{"@type":"Question","name":"为什么被阻止的图片不能是唯一的规格？","acceptedAnswer":{"@type":"Answer","text":"文档能否被获取，和它的图片能否被获取，是相关但不同的检查。HTML 返回 200，仍可能引用不安全的图片、脚本或样式表。主动混合内容可以让脚本停掉。被动混合内容可以让配图消失。两件事都不会补上一句缺失的话。SEO 健康关心的是预期文字和证据文件能否被获取。它不把锁图标当成排名。"}},{"@type":"Question","name":"修好混合内容能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"修好混合内容不保证排名或 AI 引用。Mika 不把 HTTPS 当成位置承诺。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="Language">
+          <a href="/blog/seo-tech-mixed-content-blocks-assets/">EN</a>
+          <a href="/zh/blog/seo-tech-mixed-content-blocks-assets/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>混合内容会挡住页面需要的资源</h1>
+        <p class="kc-hero-lead">混合内容是 HTTPS 页面去请求 HTTP 资源。浏览器可能会阻止该资源。如果规格只存在于一张被阻止的图片里，页面就不再陈述这个事实。把资源改为 HTTPS，并把文字留在 HTML 里。</p>
+        <p class="kc-hero-note">仅供教育。Mika 不保证搜索排名或 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">页面上怎么出现</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>混合内容是 HTTPS 页面去请求 HTTP 资源。浏览器可能会阻止该资源。如果规格只存在于一张被阻止的图片里，页面就不再陈述这个事实。把资源改为 HTTPS，并把文字留在 HTML 里。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-mixed-content-blocks-assets/https-on-firefox-133-screenshot.webp" alt="来源页面正文中的配图（HTTPS on Firefox 133 screenshot），用来说明在 HTTPS 页面上被阻止的混合内容。" width="433" height="199" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://en.wikipedia.org/wiki/HTTPS</figcaption>
+          </figure>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>文档能否被获取，和它的图片能否被获取，是相关但不同的检查。HTML 返回 200，仍可能引用不安全的图片、脚本或样式表。主动混合内容可以让脚本停掉。被动混合内容可以让配图消失。两件事都不会补上一句缺失的话。SEO 健康关心的是预期文字和证据文件能否被获取。它不把锁图标当成排名。</p>
+        </section>
+        <section id="how">
+          <h2>页面上怎么出现</h2>
+          <p>用 HTTPS 打开规范 URL，列出仍然使用 http:// 的请求。更新模板，让生成的图片和脚本 URL 继承 HTTPS。不要把规格只留在图里。图注可以注明来源。说法属于正文。</p>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>找出 HTTPS 页面引用的 HTTP 资源 URL。</li>
+            <li>在模板里修好它们。</li>
+            <li>在 HTML 正文里重复规格。</li>
+            <li>重新获取页面和资源。</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>数据表缩略图仍以 HTTP 请求，于是在线上 HTTPS 页面上配图消失，而 HTML 从未写明压力范围。修复是用 HTTPS 提供图片，并在旁边的正文里写上范围。不把任何安全徽章声称成商业结果。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-mixed-content-blocks-assets/internet2.webp" alt="来源页面正文中的配图（Internet2），用来说明在 HTTPS 页面上被阻止的混合内容。" width="1600" height="1288" loading="lazy" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://en.wikipedia.org/wiki/HTTPS</figcaption>
+          </figure>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>修好混合内容不保证排名或 AI 引用。Mika 不把 HTTPS 当成位置承诺。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>被阻止的资源是该文件的获取失败，不是要追逐的排名信号。 Mika Visibility 把这项检查放在 SEO 健康轨道上，和可抓取性、状态码、页面基础放在一起。SEO 增长仍是另一个问题：哪些覆盖还没有写出来。GEO 仍是另一个问题：认真的读者能否在页面上找到可支撑的回答。没有混合总分。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>HTTPS 页面上的混合内容是什么？</summary>
+            <p>混合内容是 HTTPS 页面去请求 HTTP 资源。浏览器可能会阻止该资源。如果规格只存在于一张被阻止的图片里，页面就不再陈述这个事实。把资源改为 HTTPS，并把文字留在 HTML 里。</p>
+          </details>
+          <details>
+            <summary>为什么被阻止的图片不能是唯一的规格？</summary>
+            <p>文档能否被获取，和它的图片能否被获取，是相关但不同的检查。HTML 返回 200，仍可能引用不安全的图片、脚本或样式表。主动混合内容可以让脚本停掉。被动混合内容可以让配图消失。两件事都不会补上一句缺失的话。SEO 健康关心的是预期文字和证据文件能否被获取。它不把锁图标当成排名。</p>
+          </details>
+          <details>
+            <summary>修好混合内容能保证排名吗？</summary>
+            <p>修好混合内容不保证排名或 AI 引用。Mika 不把 HTTPS 当成位置承诺。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/what-is-a-website-seo-audit/">什么是网站 SEO 审计</a></li>
+            <li><a href="/zh/knowledge/how-to-check-website-crawlability/">如何检查网站可抓取性</a></li>
+            <li><a href="/zh/qa/which-status-codes-matter-for-crawling/">在抓取过程中，哪些状态码会影响到爬虫能否继续？</a></li>
+            <li><a href="/zh/blog/what-seo-health-asks-of-a-live-site/">SEO 健康在问线上站点是否准备好被发现和理解</a></li>
+            <li><a href="/zh/knowledge/seo-health-vs-seo-growth/">SEO 健康 vs SEO 增长</a></li>
+            <li><a href="/zh/blog/seo-tech-html-lang-names-the-document/">lang 属性应当标明文档的语言</a></li>
+            <li><a href="/zh/blog/seo-tech-gzip-does-not-change-the-words/">压缩可以缩小传输，不能缩小规格</a></li>
+            <li><a href="/zh/#framework">Mika 首页 — 四条轨道</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/HTTPS">HTTPS</a> — 背景参考。本页正文是原创说明，不复述该页的段落。配图来自该页，并在图注中标明。</li>
+            <li><a href="/zh/#framework">Mika Visibility 首页</a> — 四条轨道的产品说明。首页示例数字只是界面示意，不是结果。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO 与 GEO 审计，看健康发现、增长缺口，以及可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清楚的实体、回答、证据和上下文，让页面更容易被理解和转述。任何回答产品中的结果都不保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>302 不会让原来的 URL 退役 | Mika 博客</title>
+  <meta name="description" content="HTTP 302 是临时重定向。用它来让一个你不想作为规范页的地址退役，是用错了。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-http-302-does-not-retire-the-url/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-http-302-does-not-retire-the-url/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-http-302-does-not-retire-the-url/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-http-302-does-not-retire-the-url/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="302 不会让原来的 URL 退役 | Mika 博客">
+  <meta property="og:description" content="HTTP 302 是临时重定向。用它来让一个你不想作为规范页的地址退役，是用错了。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-http-302-does-not-retire-the-url/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-http-302-does-not-retire-the-url/1942-nash-ambassador-x-ray.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="302 不会让原来的 URL 退役 | Mika 博客">
+  <meta name="twitter:description" content="HTTP 302 是临时重定向。用它来让一个你不想作为规范页的地址退役，是用错了。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-http-302-does-not-retire-the-url/#article","headline":"302 不会让原来的 URL 退役","name":"302 不会让原来的 URL 退役","description":"HTTP 302 是临时重定向。用它来让一个你不想作为规范页的地址退役，是用错了。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-http-302-does-not-retire-the-url/1942-nash-ambassador-x-ray.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-http-302-does-not-retire-the-url/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-http-302-does-not-retire-the-url/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"302 不会让原来的 URL 退役","item":"https://mikaovo.ai/zh/blog/seo-tech-http-302-does-not-retire-the-url/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-http-302-does-not-retire-the-url/#faq","mainEntity":[{"@type":"Question","name":"302 不会做什么？","acceptedAnswer":{"@type":"Answer","text":"302 告诉客户端暂时到别处去看。它并不是说原来的 URL 已被取代。不要用它来退役页面、把重复页收成规范页，或藏起你仍想在旧地址索引的文档。"}},{"@type":"Question","name":"长期存在的 302 何时成为问题？","acceptedAnswer":{"@type":"Answer","text":"活动、登录跳转或测试之后，临时重定向很容易被留在原地。抓取程序如果一直看到 302，关于哪个 URL 才是文档的信号就更弱。如果移动是永久的，就用 301 指向唯一的规范地址并更新链接。如果主题已经结束、原 URL 应当消失，410 是另一种陈述。302 到首页通常是把主题软丢掉。"}},{"@type":"Question","name":"修好 302 能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"选对临时或永久状态码，不保证排名或 AI 引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="Language">
+          <a href="/blog/seo-tech-http-302-does-not-retire-the-url/">EN</a>
+          <a href="/zh/blog/seo-tech-http-302-does-not-retire-the-url/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>302 不会让原来的 URL 退役</h1>
+        <p class="kc-hero-lead">302 告诉客户端暂时到别处去看。它并不是说原来的 URL 已被取代。不要用它来退役页面、把重复页收成规范页，或藏起你仍想在旧地址索引的文档。</p>
+        <p class="kc-hero-note">仅供教育。Mika 不保证搜索排名或 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">页面上怎么出现</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>302 告诉客户端暂时到别处去看。它并不是说原来的 URL 已被取代。不要用它来退役页面、把重复页收成规范页，或藏起你仍想在旧地址索引的文档。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-http-302-does-not-retire-the-url/1942-nash-ambassador-x-ray.webp" alt="来源页面正文中的配图（1942 Nash Ambassador X ray），用来说明临时的 302 不会让原 URL 退役。" width="1400" height="900" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://en.wikipedia.org/wiki/Technical_drawing</figcaption>
+          </figure>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>活动、登录跳转或测试之后，临时重定向很容易被留在原地。抓取程序如果一直看到 302，关于哪个 URL 才是文档的信号就更弱。如果移动是永久的，就用 301 指向唯一的规范地址并更新链接。如果主题已经结束、原 URL 应当消失，410 是另一种陈述。302 到首页通常是把主题软丢掉。</p>
+        </section>
+        <section id="how">
+          <h2>页面上怎么出现</h2>
+          <p>清点那些已经“临时”了很久的重定向。对每一个决定：原 URL 仍是规范地址，目标现在是规范地址，或者主题已经不在。然后让状态码符合这个决定，并重新获取两端。</p>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>不要把永久移动留在 302 上。</li>
+            <li>不要把主题 URL 302 到首页。</li>
+            <li>让 301、302 或 410 符合真实决定。</li>
+            <li>改完之后重新获取原 URL。</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>一个可打印规格 URL 在改版期间 302 到营销首页，并且一直留着。买家和抓取程序都失去了规格。修复是在一个规范 URL 上恢复规格文档，并去掉临时跳转。不附带流量预测。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-http-302-does-not-retire-the-url/ansi-size-illustration.webp" alt="来源页面正文中的配图（ANSI size illustration），用来说明临时的 302 不会让原 URL 退役。" width="1600" height="1988" loading="lazy" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://en.wikipedia.org/wiki/Technical_drawing</figcaption>
+          </figure>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>选对临时或永久状态码，不保证排名或 AI 引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>状态码是关于 URL 的陈述，不是活动上的装饰。 Mika Visibility 把这项检查放在 SEO 健康轨道上，和可抓取性、状态码、页面基础放在一起。SEO 增长仍是另一个问题：哪些覆盖还没有写出来。GEO 仍是另一个问题：认真的读者能否在页面上找到可支撑的回答。没有混合总分。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>302 不会做什么？</summary>
+            <p>302 告诉客户端暂时到别处去看。它并不是说原来的 URL 已被取代。不要用它来退役页面、把重复页收成规范页，或藏起你仍想在旧地址索引的文档。</p>
+          </details>
+          <details>
+            <summary>长期存在的 302 何时成为问题？</summary>
+            <p>活动、登录跳转或测试之后，临时重定向很容易被留在原地。抓取程序如果一直看到 302，关于哪个 URL 才是文档的信号就更弱。如果移动是永久的，就用 301 指向唯一的规范地址并更新链接。如果主题已经结束、原 URL 应当消失，410 是另一种陈述。302 到首页通常是把主题软丢掉。</p>
+          </details>
+          <details>
+            <summary>修好 302 能保证排名吗？</summary>
+            <p>选对临时或永久状态码，不保证排名或 AI 引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/what-is-a-website-seo-audit/">什么是网站 SEO 审计</a></li>
+            <li><a href="/zh/knowledge/how-to-check-website-crawlability/">如何检查网站可抓取性</a></li>
+            <li><a href="/zh/qa/which-status-codes-matter-for-crawling/">在抓取过程中，哪些状态码会影响到爬虫能否继续？</a></li>
+            <li><a href="/zh/blog/what-seo-health-asks-of-a-live-site/">SEO 健康在问线上站点是否准备好被发现和理解</a></li>
+            <li><a href="/zh/knowledge/seo-health-vs-seo-growth/">SEO 健康 vs SEO 增长</a></li>
+            <li><a href="/zh/blog/seo-tech-http-410-for-pages-that-ended/">当 URL 的主题已经结束时使用 410</a></li>
+            <li><a href="/zh/blog/seo-tech-noindex-removes-a-url-from-the-index/">noindex 是关于该 URL 的指令，不是提示</a></li>
+            <li><a href="/zh/#framework">Mika 首页 — 四条轨道</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/Technical_drawing">Technical drawing</a> — 背景参考。本页正文是原创说明，不复述该页的段落。配图来自该页，并在图注中标明。</li>
+            <li><a href="/zh/#framework">Mika Visibility 首页</a> — 四条轨道的产品说明。首页示例数字只是界面示意，不是结果。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO 与 GEO 审计，看健康发现、增长缺口，以及可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清楚的实体、回答、证据和上下文，让页面更容易被理解和转述。任何回答产品中的结果都不保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

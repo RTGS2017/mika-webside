@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DNS has to resolve the hostname you publish | Mika Blog</title>
+  <meta name="description" content="A crawler can fetch a page only after the hostname resolves. DNS is part of reachability, not a content score.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/blog/seo-tech-dns-names-the-host-a-crawler-asks/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-dns-names-the-host-a-crawler-asks/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-dns-names-the-host-a-crawler-asks/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-dns-names-the-host-a-crawler-asks/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="DNS has to resolve the hostname you publish | Mika Blog">
+  <meta property="og:description" content="A crawler can fetch a page only after the hostname resolves. DNS is part of reachability, not a content score.">
+  <meta property="og:url" content="https://mikaovo.ai/blog/seo-tech-dns-names-the-host-a-crawler-asks/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-dns-names-the-host-a-crawler-asks/dns-architecture.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DNS has to resolve the hostname you publish | Mika Blog">
+  <meta name="twitter:description" content="A crawler can fetch a page only after the hostname resolves. DNS is part of reachability, not a content score.">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/blog/seo-tech-dns-names-the-host-a-crawler-asks/#article","headline":"DNS has to resolve the hostname you publish","name":"DNS has to resolve the hostname you publish","description":"A crawler can fetch a page only after the hostname resolves. DNS is part of reachability, not a content score.","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"en","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-dns-names-the-host-a-crawler-asks/dns-architecture.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/blog/seo-tech-dns-names-the-host-a-crawler-asks/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/blog/seo-tech-dns-names-the-host-a-crawler-asks/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mikaovo.ai/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://mikaovo.ai/blog/"},{"@type":"ListItem","position":3,"name":"DNS has to resolve the hostname you publish","item":"https://mikaovo.ai/blog/seo-tech-dns-names-the-host-a-crawler-asks/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/blog/seo-tech-dns-names-the-host-a-crawler-asks/#faq","mainEntity":[{"@type":"Question","name":"What has to happen before a crawler can fetch your URL?","acceptedAnswer":{"@type":"Answer","text":"DNS resolves the hostname in your URLs to an address a client can connect to. If the canonical host does not resolve, there is no fetch and no document. Fix the name before you debate titles."}},{"@type":"Question","name":"What should two hostnames that serve the same site do?","acceptedAnswer":{"@type":"Answer","text":"Hostnames are part of the URL. www and apex hosts that both answer should agree on which one is canonical, usually with a redirect to the single host you publish. A hostname that resolves only inside a private network is not a public document. Internationalized names have to work as the URL you actually advertise. SEO Health includes whether the live URL can be fetched. It does not score the registrar."}},{"@type":"Question","name":"Does working DNS guarantee rankings?","acceptedAnswer":{"@type":"Answer","text":"Working DNS does not guarantee rankings or AI citations. Mika does not sell uptime or placement."}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">Skip to content</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/" aria-label="Mika Visibility">
+        <img src="../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/knowledge/">Knowledge</a>
+        <a href="/blog/">Blog</a>
+        <a href="/qa/">Q&A</a>
+        <div class="kc-lang" aria-label="Language">
+          <a href="/blog/seo-tech-dns-names-the-host-a-crawler-asks/" aria-current="page">EN</a>
+          <a href="/zh/blog/seo-tech-dns-names-the-host-a-crawler-asks/">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">Contact</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>Technical</span> · <time datetime="2026-10-04">October 4, 2026</time></p>
+        <h1>DNS has to resolve the hostname you publish</h1>
+        <p class="kc-hero-lead">DNS resolves the hostname in your URLs to an address a client can connect to. If the canonical host does not resolve, there is no fetch and no document. Fix the name before you debate titles.</p>
+        <p class="kc-hero-note">Educational material only. Mika does not guarantee search rankings or AI answer citations.</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="On this page">
+        <p>On this page</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">Short answer</a></li>
+            <li><a href="#definition">Definition</a></li>
+            <li><a href="#how">What belongs on the page</a></li>
+            <li><a href="#checks">What to check</a></li>
+            <li><a href="#example">A practical example</a></li>
+            <li><a href="#limits">What this does not claim</a></li>
+            <li><a href="#mika">Where Mika Visibility files this</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>Short answer</h2>
+          <p>DNS resolves the hostname in your URLs to an address a client can connect to. If the canonical host does not resolve, there is no fetch and no document. Fix the name before you debate titles.</p>
+          <figure>
+            <img src="../../assets/articles/seo-tech/seo-tech-dns-names-the-host-a-crawler-asks/dns-architecture.webp" alt="DNS Architecture. Content image from the source page, illustrating DNS as the hostname a crawler must resolve." width="1600" height="585" style="max-width:100%;height:auto">
+            <figcaption>Image from the source page: https://en.wikipedia.org/wiki/Domain_Name_System</figcaption>
+          </figure>
+        </section>
+        <section id="definition">
+          <h2>Definition</h2>
+          <p>Hostnames are part of the URL. www and apex hosts that both answer should agree on which one is canonical, usually with a redirect to the single host you publish. A hostname that resolves only inside a private network is not a public document. Internationalized names have to work as the URL you actually advertise. SEO Health includes whether the live URL can be fetched. It does not score the registrar.</p>
+        </section>
+        <section id="how">
+          <h2>What belongs on the page</h2>
+          <p>Resolve the host on the canonical URL and fetch it. If two hosts return the same HTML without a canonical agreement, pick one and redirect the other. Check that a change of name server did not drop the record for the host you print in hreflang and in the sitemap.</p>
+        </section>
+        <section id="checks">
+          <h2>What to check</h2>
+          <ul>
+            <li>Resolve the canonical hostname from a public resolver.</li>
+            <li>Fetch that host and read the document.</li>
+            <li>Canonicalize www and apex to one host.</li>
+            <li>Keep sitemap and hreflang on the host that resolves.</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>A practical example</h2>
+          <p>After a DNS cutover, the host in the sitemap no longer resolves, while a temporary host serves the pages. The repair restores the published hostname, 301s any temporary host to it, and re-fetches the canonicals. No uptime percentage is invented.</p>
+          <figure>
+            <img src="../../assets/articles/seo-tech/seo-tech-dns-names-the-host-a-crawler-asks/domain-name-space.webp" alt="Domain name space. Content image from the source page, illustrating DNS as the hostname a crawler must resolve." width="1600" height="1274" loading="lazy" style="max-width:100%;height:auto">
+            <figcaption>Image from the source page: https://en.wikipedia.org/wiki/Domain_Name_System</figcaption>
+          </figure>
+        </section>
+        <section id="limits">
+          <h2>What this does not claim</h2>
+          <p>Working DNS does not guarantee rankings or AI citations. Mika does not sell uptime or placement.</p>
+        </section>
+        <section id="mika">
+          <h2>Where Mika Visibility files this</h2>
+          <p>If the name does not resolve, later on-page checks do not start. Mika Visibility files this on the SEO Health track, with crawlability, status codes, and page basics. SEO Growth remains a separate question about coverage that is still unwritten. GEO remains a separate question about whether a careful reader can find a supportable answer. There is no blended overall score.</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">FAQ</h2>
+          <details>
+            <summary>What has to happen before a crawler can fetch your URL?</summary>
+            <p>DNS resolves the hostname in your URLs to an address a client can connect to. If the canonical host does not resolve, there is no fetch and no document. Fix the name before you debate titles.</p>
+          </details>
+          <details>
+            <summary>What should two hostnames that serve the same site do?</summary>
+            <p>Hostnames are part of the URL. www and apex hosts that both answer should agree on which one is canonical, usually with a redirect to the single host you publish. A hostname that resolves only inside a private network is not a public document. Internationalized names have to work as the URL you actually advertise. SEO Health includes whether the live URL can be fetched. It does not score the registrar.</p>
+          </details>
+          <details>
+            <summary>Does working DNS guarantee rankings?</summary>
+            <p>Working DNS does not guarantee rankings or AI citations. Mika does not sell uptime or placement.</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">Related guides</h2>
+          <ul>
+            <li><a href="/knowledge/what-is-a-website-seo-audit/">What Is a Website SEO Audit</a></li>
+            <li><a href="/knowledge/how-to-check-website-crawlability/">How to Check Website Crawlability</a></li>
+            <li><a href="/qa/which-status-codes-matter-for-crawling/">Which status codes matter for crawling?</a></li>
+            <li><a href="/blog/what-seo-health-asks-of-a-live-site/">What SEO Health Asks of a Live Site</a></li>
+            <li><a href="/knowledge/seo-health-vs-seo-growth/">SEO Health vs SEO Growth</a></li>
+            <li><a href="/blog/seo-tech-tls-keeps-the-fetch-intact/">TLS should let the fetch complete, not replace the page</a></li>
+            <li><a href="/blog/seo-tech-pdf-is-its-own-document/">A PDF is its own document and needs its own URL</a></li>
+            <li><a href="/#framework">Mika homepage — four tracks</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">Sources</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/Domain_Name_System">Domain Name System</a> — Background reference. The prose on this page is original and does not reproduce that article’s paragraphs. The figure comes from that page and is credited in the caption.</li>
+            <li><a href="/#framework">Mika Visibility homepage</a> — Product framing for the four tracks. Sample interface counts on the homepage are illustrative, not a case study.</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">Next step</h2>
+          <p>Run a structured SEO + GEO audit to see health findings, growth gaps, and a blueprint you can act on.</p>
+          <p><a href="/#cta">Start on Mika</a></p>
+          <p>Clearer entities, answers, evidence, and context make pages easier to understand and reference. Results in any answer product are not guaranteed.</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/">Mika Visibility</a> · <a href="/knowledge/">Knowledge</a> · <a href="/blog/">Blog</a> · <a href="/qa/">Q&A</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">Contact</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../contact-config.js"></script>
+  <script src="../../contact.js"></script>
+</body>
+</html>

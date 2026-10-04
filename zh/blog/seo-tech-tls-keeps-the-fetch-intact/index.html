@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TLS 应让获取完成，而不是代替页面 | Mika 博客</title>
+  <meta name="description" content="损坏的证书可以让获取停住。有效的证书不会提供规格，也不会提供排名。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-tls-keeps-the-fetch-intact/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-tls-keeps-the-fetch-intact/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-tls-keeps-the-fetch-intact/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-tls-keeps-the-fetch-intact/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="TLS 应让获取完成，而不是代替页面 | Mika 博客">
+  <meta property="og:description" content="损坏的证书可以让获取停住。有效的证书不会提供规格，也不会提供排名。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-tls-keeps-the-fetch-intact/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-tls-keeps-the-fetch-intact/full-tls-1-2-handshake.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TLS 应让获取完成，而不是代替页面 | Mika 博客">
+  <meta name="twitter:description" content="损坏的证书可以让获取停住。有效的证书不会提供规格，也不会提供排名。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-tls-keeps-the-fetch-intact/#article","headline":"TLS 应让获取完成，而不是代替页面","name":"TLS 应让获取完成，而不是代替页面","description":"损坏的证书可以让获取停住。有效的证书不会提供规格，也不会提供排名。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-tls-keeps-the-fetch-intact/full-tls-1-2-handshake.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-tls-keeps-the-fetch-intact/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-tls-keeps-the-fetch-intact/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"TLS 应让获取完成，而不是代替页面","item":"https://mikaovo.ai/zh/blog/seo-tech-tls-keeps-the-fetch-intact/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-tls-keeps-the-fetch-intact/#faq","mainEntity":[{"@type":"Question","name":"损坏的证书会对获取做什么？","acceptedAnswer":{"@type":"Answer","text":"TLS 保护用来获取文档的连接。如果证书与主机名不符或已经过期，客户端可能永远读不到 HTML。有效的证书仍然不会写出规格。"}},{"@type":"Question","name":"有效证书不会提供什么？","acceptedAnswer":{"@type":"Answer","text":"可达性包括名字解析、连接和响应正文。证书错误位于这条链的中段。SEO 健康可以报告线上 URL 无法被获取。不应把它和 SEO 增长混淆。增长问的是页面可读之后还缺什么覆盖。不要把挂锁当成产品说法的证据。"}},{"@type":"Question","name":"TLS 能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"有效证书不保证排名或 AI 引用。Mika 不出售信任徽章。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="Language">
+          <a href="/blog/seo-tech-tls-keeps-the-fetch-intact/">EN</a>
+          <a href="/zh/blog/seo-tech-tls-keeps-the-fetch-intact/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>TLS 应让获取完成，而不是代替页面</h1>
+        <p class="kc-hero-lead">TLS 保护用来获取文档的连接。如果证书与主机名不符或已经过期，客户端可能永远读不到 HTML。有效的证书仍然不会写出规格。</p>
+        <p class="kc-hero-note">仅供教育。Mika 不保证搜索排名或 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">页面上怎么出现</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>TLS 保护用来获取文档的连接。如果证书与主机名不符或已经过期，客户端可能永远读不到 HTML。有效的证书仍然不会写出规格。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-tls-keeps-the-fetch-intact/full-tls-1-2-handshake.webp" alt="来源页面正文中的配图（Full TLS 1.2 Handshake），用来说明TLS 是一次完整获取的条件。" width="1600" height="1499" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://en.wikipedia.org/wiki/Transport_Layer_Security</figcaption>
+          </figure>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>可达性包括名字解析、连接和响应正文。证书错误位于这条链的中段。SEO 健康可以报告线上 URL 无法被获取。不应把它和 SEO 增长混淆。增长问的是页面可读之后还缺什么覆盖。不要把挂锁当成产品说法的证据。</p>
+        </section>
+        <section id="how">
+          <h2>页面上怎么出现</h2>
+          <p>打开规范 HTTPS URL，确认证书写的是该主机并且仍然有效。获取正文，确认主题在 HTML 里。在获取开始失败之前续期或重新签发。把 HTTP 重定向到同一个规范主机，而不是重定向到一个无关的证书名称。</p>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>证书与规范主机名匹配。</li>
+            <li>证书仍在有效期内。</li>
+            <li>HTTP 重定向到该 HTTPS URL。</li>
+            <li>规格在正文里，不在挂锁上。</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>证书覆盖 www，但规范主机是根域名，于是获取印刷出来的 URL 时名称检查失败。修复是为规范主机提供证书，并把另一个名字 301 到它。然后从 HTML 重新读规格。不声称任何信任奖项。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-tls-keeps-the-fetch-intact/let-s-encrypt-certificate-example-on-firefox-133-screenshot.webp" alt="来源页面正文中的配图（Let&#x27;s Encrypt certificate example on Firefox 133 screenshot），用来说明TLS 是一次完整获取的条件。" width="672" height="731" loading="lazy" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://en.wikipedia.org/wiki/Transport_Layer_Security</figcaption>
+          </figure>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>有效证书不保证排名或 AI 引用。Mika 不出售信任徽章。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>TLS 是获取的一个条件。页面基础仍然是响应里的文字。 Mika Visibility 把这项检查放在 SEO 健康轨道上，和可抓取性、状态码、页面基础放在一起。SEO 增长仍是另一个问题：哪些覆盖还没有写出来。GEO 仍是另一个问题：认真的读者能否在页面上找到可支撑的回答。没有混合总分。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>损坏的证书会对获取做什么？</summary>
+            <p>TLS 保护用来获取文档的连接。如果证书与主机名不符或已经过期，客户端可能永远读不到 HTML。有效的证书仍然不会写出规格。</p>
+          </details>
+          <details>
+            <summary>有效证书不会提供什么？</summary>
+            <p>可达性包括名字解析、连接和响应正文。证书错误位于这条链的中段。SEO 健康可以报告线上 URL 无法被获取。不应把它和 SEO 增长混淆。增长问的是页面可读之后还缺什么覆盖。不要把挂锁当成产品说法的证据。</p>
+          </details>
+          <details>
+            <summary>TLS 能保证排名吗？</summary>
+            <p>有效证书不保证排名或 AI 引用。Mika 不出售信任徽章。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/what-is-a-website-seo-audit/">什么是网站 SEO 审计</a></li>
+            <li><a href="/zh/knowledge/how-to-check-website-crawlability/">如何检查网站可抓取性</a></li>
+            <li><a href="/zh/qa/which-status-codes-matter-for-crawling/">在抓取过程中，哪些状态码会影响到爬虫能否继续？</a></li>
+            <li><a href="/zh/blog/what-seo-health-asks-of-a-live-site/">SEO 健康在问线上站点是否准备好被发现和理解</a></li>
+            <li><a href="/zh/knowledge/seo-health-vs-seo-growth/">SEO 健康 vs SEO 增长</a></li>
+            <li><a href="/zh/blog/seo-tech-pdf-is-its-own-document/">PDF 是自己的文档，需要自己的 URL</a></li>
+            <li><a href="/zh/blog/seo-tech-http-301-as-the-new-address/">301 应标出替代这个地址的新地址</a></li>
+            <li><a href="/zh/#framework">Mika 首页 — 四条轨道</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/Transport_Layer_Security">Transport Layer Security</a> — 背景参考。本页正文是原创说明，不复述该页的段落。配图来自该页，并在图注中标明。</li>
+            <li><a href="/zh/#framework">Mika Visibility 首页</a> — 四条轨道的产品说明。首页示例数字只是界面示意，不是结果。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO 与 GEO 审计，看健康发现、增长缺口，以及可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清楚的实体、回答、证据和上下文，让页面更容易被理解和转述。任何回答产品中的结果都不保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>
