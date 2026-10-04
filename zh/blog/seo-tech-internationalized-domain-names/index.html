@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>国际化名称仍然是同一个主机 | Mika 博客</title>
+  <meta name="description" content="域名可以显示非拉丁字母，同时还有 ASCII 形式。这些写法是同一个主机，规范 URL 应该选定一种。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-internationalized-domain-names/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-internationalized-domain-names/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-internationalized-domain-names/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-internationalized-domain-names/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="国际化名称仍然是同一个主机 | Mika 博客">
+  <meta property="og:description" content="域名可以显示非拉丁字母，同时还有 ASCII 形式。这些写法是同一个主机，规范 URL 应该选定一种。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-internationalized-domain-names/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-internationalized-domain-names/idn-utopia-greek.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="国际化名称仍然是同一个主机 | Mika 博客">
+  <meta name="twitter:description" content="域名可以显示非拉丁字母，同时还有 ASCII 形式。这些写法是同一个主机，规范 URL 应该选定一种。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-internationalized-domain-names/#article","headline":"国际化名称仍然是同一个主机","name":"国际化名称仍然是同一个主机","description":"域名可以显示非拉丁字母，同时还有 ASCII 形式。这些写法是同一个主机，规范 URL 应该选定一种。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-internationalized-domain-names/idn-utopia-greek.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-internationalized-domain-names/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-internationalized-domain-names/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"国际化名称仍然是同一个主机","item":"https://mikaovo.ai/zh/blog/seo-tech-internationalized-domain-names/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-internationalized-domain-names/#faq","mainEntity":[{"@type":"Question","name":"什么是国际化域名？","acceptedAnswer":{"@type":"Answer","text":"国际化域名是同一个主机，既可以显示为 Unicode，也可以写成 ASCII 形式。"}},{"@type":"Question","name":"链接应该使用哪种写法？","acceptedAnswer":{"@type":"Answer","text":"选定一种主机写法，并在规范 URL、sitemap 和内链中使用它。"}},{"@type":"Question","name":"一种主机写法能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"一种主机写法不保证排名或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-internationalized-domain-names/">EN</a>
+          <a href="/zh/blog/seo-tech-internationalized-domain-names/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>国际化名称仍然是同一个主机</h1>
+        <p class="kc-hero-lead">国际化域名是同一个主机，既可以显示为 Unicode，也可以写成 ASCII 形式。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">这如何影响可索引的 URL</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>国际化域名是同一个主机，既可以显示为 Unicode，也可以写成 ASCII 形式。</p>
+          <p>截图圈出了一个使用希腊字母的地址，同一页上还用拉丁字母列出了其他主机。圆圈就是教训：可见的主机和编码后的主机是两种写法。SEO 健康希望链接、sitemap 和 canonical 元素里只有一种规范写法。它不把那张旧页面上的主机列表当作要复制的站点集合，也不把圆圈读成排名。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>ASCII 形式通常是 DNS 实际解析的 punycode 写法。浏览器可能显示 Unicode 形式。如果内链混用两者，一份文档就有两种 URL 字符串。把一种一跳重定向到另一种，并且 sitemap 里只放选定的形式。看起来像可信名称、实际用了不同字符的主机是另一个安全问题。这里的健康检查是你所拥有的主机是否一致，不是对浏览器如何画出字母的承诺。</p>
+        </section>
+        <section id="how">
+          <h2>这如何影响可索引的 URL</h2>
+          <p>选定一种主机写法，并在规范 URL、sitemap 和内链中使用它。</p>
+          <p>把另一种写法重定向到选定的那种。不要把两者都列进去，好像它们是两个站点。Hreflang 是文档之间的语言信号。它不是用来合并 Unicode 主机和它的 punycode 孪生写法的工具。两种写法各获取一次，确认一种返回文档，另一种会重定向。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-internationalized-domain-names/idn-utopia-greek.webp" alt="较旧的浏览器窗口，圈出的地址栏显示希腊字母主机，下方页面列出其他主机名。" width="1280" height="1010" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://en.wikipedia.org/wiki/Internationalized_domain_name</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>sitemap 和 canonical 中只有一种主机形式</li>
+            <li>另一种形式一跳重定向</li>
+            <li>内链使用选定的形式</li>
+            <li>没有用 hreflang 代替重定向</li>
+            <li>两种写法各获取一次</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>营销站点在一些链接里印出公司名的汉字，在 sitemap 里却使用 punycode 主机。爬虫看见两个主机。修复是选定 punycode 主机作为规范，重定向另一种，并重新生成内链。图中圈出的希腊字母地址是别人的旧例子。它不是本站的主机，也不是一项结果。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>一种主机写法不保证排名或引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把首选 URL 当作 SEO 健康信号。规范链接、重复页和 sitemap 不一致会连同样例 URL 一起记录。它们不预测排名。SEO 增长问的是这条首选 URL 是否真的覆盖了某个意图。这些问题保持在不同的尺度上。</p>
+          <p>圈出的地址是同一个主机的两种写法的例子。它不是要逐行模仿的站点。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>什么是国际化域名？</summary>
+            <p>国际化域名是同一个主机，既可以显示为 Unicode，也可以写成 ASCII 形式。</p>
+          </details>
+          <details>
+            <summary>链接应该使用哪种写法？</summary>
+            <p>选定一种主机写法，并在规范 URL、sitemap 和内链中使用它。</p>
+          </details>
+          <details>
+            <summary>一种主机写法能保证排名吗？</summary>
+            <p>一种主机写法不保证排名或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/how-to-audit-canonical-urls/">如何审计规范 URL（Canonical）</a></li>
+            <li><a href="/zh/knowledge/how-to-analyze-xml-sitemaps/">如何分析 XML Sitemap</a></li>
+            <li><a href="/zh/qa/what-is-an-indexation-mismatch/">什么是索引不一致？</a></li>
+            <li><a href="/zh/qa/what-is-a-canonical-url/">什么是规范 URL？</a></li>
+            <li><a href="/zh/blog/canonical-hreflang-and-sitemap-signals/">规范链接、Hreflang 与 Sitemap 信号</a></li>
+            <li><a href="/zh/blog/seo-tech-what-a-web-crawler-fetches/">爬虫获取 URL，并保存返回的内容</a></li>
+            <li><a href="/zh/blog/seo-tech-title-text-in-a-result-row/">标题是结果行里的链接文字</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/Internationalized_domain_name">https://en.wikipedia.org/wiki/Internationalized_domain_name</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

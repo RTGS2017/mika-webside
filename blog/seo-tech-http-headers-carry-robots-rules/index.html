@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robots Rules Can Travel in the HTTP Header | Mika Blog</title>
+  <meta name="description" content="An HTTP header can carry a robots directive for a response, including files that have no HTML head. The header is not a photograph of a person.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/blog/seo-tech-http-headers-carry-robots-rules/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-http-headers-carry-robots-rules/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-http-headers-carry-robots-rules/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-http-headers-carry-robots-rules/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="Robots Rules Can Travel in the HTTP Header | Mika Blog">
+  <meta property="og:description" content="An HTTP header can carry a robots directive for a response, including files that have no HTML head. The header is not a photograph of a person.">
+  <meta property="og:url" content="https://mikaovo.ai/blog/seo-tech-http-headers-carry-robots-rules/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-http-headers-carry-robots-rules/tim-berners-lee-cp-2.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Robots Rules Can Travel in the HTTP Header | Mika Blog">
+  <meta name="twitter:description" content="An HTTP header can carry a robots directive for a response, including files that have no HTML head. The header is not a photograph of a person.">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/blog/seo-tech-http-headers-carry-robots-rules/#article","headline":"Robots Rules Can Travel in the HTTP Header","name":"Robots Rules Can Travel in the HTTP Header","description":"An HTTP header can carry a robots directive for a response, including files that have no HTML head. The header is not a photograph of a person.","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"en","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-http-headers-carry-robots-rules/tim-berners-lee-cp-2.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/blog/seo-tech-http-headers-carry-robots-rules/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/blog/seo-tech-http-headers-carry-robots-rules/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mikaovo.ai/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://mikaovo.ai/blog/"},{"@type":"ListItem","position":3,"name":"Robots Rules Can Travel in the HTTP Header","item":"https://mikaovo.ai/blog/seo-tech-http-headers-carry-robots-rules/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/blog/seo-tech-http-headers-carry-robots-rules/#faq","mainEntity":[{"@type":"Question","name":"Where can a robots rule travel besides HTML?","acceptedAnswer":{"@type":"Answer","text":"An HTTP header can carry a robots directive for the response, which matters for files that are not HTML."}},{"@type":"Question","name":"When does the header matter most?","acceptedAnswer":{"@type":"Answer","text":"Send robots directives in a response header when the URL is not HTML, and do not contradict the HTML meta."}},{"@type":"Question","name":"Does a robots header guarantee rankings?","acceptedAnswer":{"@type":"Answer","text":"A robots header does not guarantee rankings or citations."}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">Skip to content</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/" aria-label="Mika Visibility">
+        <img src="../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/knowledge/">Knowledge</a>
+        <a href="/blog/">Blog</a>
+        <a href="/qa/">Q&A</a>
+        <div class="kc-lang" aria-label="Language">
+          <a href="/blog/seo-tech-http-headers-carry-robots-rules/" aria-current="page">EN</a>
+          <a href="/zh/blog/seo-tech-http-headers-carry-robots-rules/">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">Contact</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>Technical</span> · <time datetime="2026-10-04">October 4, 2026</time></p>
+        <h1>Robots Rules Can Travel in the HTTP Header</h1>
+        <p class="kc-hero-lead">An HTTP header can carry a robots directive for the response, which matters for files that are not HTML.</p>
+        <p class="kc-hero-note">Educational material only. Mika does not guarantee search rankings or AI answer citations.</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="On this page">
+        <p>On this page</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">Short answer</a></li>
+            <li><a href="#definition">Definition</a></li>
+            <li><a href="#how">How a crawl meets this rule</a></li>
+            <li><a href="#checks">What to check</a></li>
+            <li><a href="#example">A practical example</a></li>
+            <li><a href="#limits">What this does not claim</a></li>
+            <li><a href="#mika">Where Mika Visibility files this</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>Short answer</h2>
+          <p>An HTTP header can carry a robots directive for the response, which matters for files that are not HTML.</p>
+          <p>The photograph shows Tim Berners-Lee speaking, with another person and a laptop nearby. It is a picture of a person associated with the early web, on a page about HTTP headers. It is not a diagram of a header, not a portrait this site uses as an endorsement, and not evidence about any crawler. The rule in this article is the header field itself.</p>
+        </section>
+        <section id="definition">
+          <h2>Definition</h2>
+          <p>HTML can use a meta robots element. A PDF or another non-HTML response cannot. An X-Robots-Tag header on that response can say noindex or nofollow for the URL. A header that contradicts the meta element is two rules. Prefer one, and record which one you intend. A header is easy to miss because it does not appear in the body a person reads. A fetch that prints response headers is the check. The photograph does not contain that header.</p>
+        </section>
+        <section id="how">
+          <h2>How a crawl meets this rule</h2>
+          <p>Send robots directives in a response header when the URL is not HTML, and do not contradict the HTML meta.</p>
+          <p>Fetch the URL and read the status and the headers before you read the body. A noindex header on a public specification is a health finding if the page was meant to be indexed. A noindex header on a private file can be intentional. Say which. Do not add the person’s name from the photograph to the header, and do not treat the photo as a credential.</p>
+          <figure>
+            <img src="../../assets/articles/seo-tech/seo-tech-http-headers-carry-robots-rules/tim-berners-lee-cp-2.webp" alt="A photograph of Tim Berners-Lee speaking into a microphone, with another person and a laptop beside him." width="1280" height="850" style="max-width:100%;height:auto">
+            <figcaption>Image from the source page: https://en.wikipedia.org/wiki/HTTP_header</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>What to check</h2>
+          <ul>
+            <li>Non-HTML URLs checked for X-Robots-Tag</li>
+            <li>HTML meta and headers not in conflict</li>
+            <li>Public documents not given an accidental noindex</li>
+            <li>Private files that should stay out are marked on purpose</li>
+            <li>One PDF fetched with headers visible</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>A practical example</h2>
+          <p>Product PDFs return 200 with no X-Robots-Tag, and the team thought a meta tag in an HTML wrapper applied to the file. It does not. The repair sets the header on the PDF response to the policy they actually want and re-fetches one file. The portrait stays on the source page. It is not part of the header.</p>
+        </section>
+        <section id="limits">
+          <h2>What this does not claim</h2>
+          <p>A robots header does not guarantee rankings or citations.</p>
+        </section>
+        <section id="mika">
+          <h2>Where Mika Visibility files this</h2>
+          <p>Mika Visibility groups crawlability with SEO Health: robots rules, status codes, and paths a crawler can follow. Broken paths and blocked templates are health findings. Missing topics are not. GEO still depends on pages a crawler can actually reach, but reachability does not write the answer for the buyer.</p>
+          <p>The photograph is a person on the source page. The check is the response header on your own URL.</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">FAQ</h2>
+          <details>
+            <summary>Where can a robots rule travel besides HTML?</summary>
+            <p>An HTTP header can carry a robots directive for the response, which matters for files that are not HTML.</p>
+          </details>
+          <details>
+            <summary>When does the header matter most?</summary>
+            <p>Send robots directives in a response header when the URL is not HTML, and do not contradict the HTML meta.</p>
+          </details>
+          <details>
+            <summary>Does a robots header guarantee rankings?</summary>
+            <p>A robots header does not guarantee rankings or citations.</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">Related guides</h2>
+          <ul>
+            <li><a href="/knowledge/how-to-check-website-crawlability/">How to Check Website Crawlability</a></li>
+            <li><a href="/knowledge/how-to-find-broken-internal-links/">How to Find Broken Internal Links</a></li>
+            <li><a href="/qa/what-does-crawlability-mean/">What does crawlability mean?</a></li>
+            <li><a href="/qa/which-status-codes-matter-for-crawling/">Which status codes matter for crawling?</a></li>
+            <li><a href="/blog/what-seo-health-asks-of-a-live-site/">What SEO Health Asks of a Live Site</a></li>
+            <li><a href="/blog/seo-tech-cors-is-not-a-robots-rule/">CORS Governs Scripts Reading Another Origin, Not a Crawl</a></li>
+            <li><a href="/blog/seo-tech-content-security-policy-and-assets/">A Content Security Policy Can Block Your Own Page’s Assets</a></li>
+            <li><a href="/#audit">Mika homepage — Technical</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">Sources</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/HTTP_header">https://en.wikipedia.org/wiki/HTTP_header</a> — Source page used for the diagram and for the technical definitions restated here in Mika’s own words.</li>
+            <li><a href="/#audit">Mika Visibility homepage</a> — Product framing for SEO Health. Sample interface counts on the homepage are illustrative, not a case study.</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">Next step</h2>
+          <p>Run a structured SEO + GEO audit to see health findings, growth gaps, and a blueprint you can act on.</p>
+          <p><a href="/#cta">Start on Mika</a></p>
+          <p>Clearer entities, answers, evidence, and context make pages easier to understand and reference. Results in any answer product are not guaranteed.</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/">Mika Visibility</a> · <a href="/knowledge/">Knowledge</a> · <a href="/blog/">Blog</a> · <a href="/qa/">Q&A</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">Contact</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../contact-config.js"></script>
+  <script src="../../contact.js"></script>
+</body>
+</html>

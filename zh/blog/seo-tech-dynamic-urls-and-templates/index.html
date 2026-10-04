@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>动态 URL 如果响应稳定，就仍然是一份文档 | Mika 博客</title>
+  <meta name="description" content="服务器生成的页面可以是可索引的文档。健康问题是 URL 标识的是一份稳定响应，还是一次会话或一个壳。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-dynamic-urls-and-templates/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-dynamic-urls-and-templates/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-dynamic-urls-and-templates/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-dynamic-urls-and-templates/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="动态 URL 如果响应稳定，就仍然是一份文档 | Mika 博客">
+  <meta property="og:description" content="服务器生成的页面可以是可索引的文档。健康问题是 URL 标识的是一份稳定响应，还是一次会话或一个壳。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-dynamic-urls-and-templates/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-dynamic-urls-and-templates/there-are-four-steps-in-the-client-server-ecosystem-the-brow.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="动态 URL 如果响应稳定，就仍然是一份文档 | Mika 博客">
+  <meta name="twitter:description" content="服务器生成的页面可以是可索引的文档。健康问题是 URL 标识的是一份稳定响应，还是一次会话或一个壳。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-dynamic-urls-and-templates/#article","headline":"动态 URL 如果响应稳定，就仍然是一份文档","name":"动态 URL 如果响应稳定，就仍然是一份文档","description":"服务器生成的页面可以是可索引的文档。健康问题是 URL 标识的是一份稳定响应，还是一次会话或一个壳。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-dynamic-urls-and-templates/there-are-four-steps-in-the-client-server-ecosystem-the-brow.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-dynamic-urls-and-templates/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-dynamic-urls-and-templates/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"动态 URL 如果响应稳定，就仍然是一份文档","item":"https://mikaovo.ai/zh/blog/seo-tech-dynamic-urls-and-templates/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-dynamic-urls-and-templates/#faq","mainEntity":[{"@type":"Question","name":"动态 URL 什么时候是一份文档？","acceptedAnswer":{"@type":"Answer","text":"当一个地址持续返回爬虫可以获取的同一份文档时，动态 URL 就是可索引的。"}},{"@type":"Question","name":"干净的获取必须包含什么？","acceptedAnswer":{"@type":"Answer","text":"用干净的客户端获取模板中的一条 URL，并要求得到一份稳定的 HTML 文档。"}},{"@type":"Question","name":"动态模板能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"动态模板不保证排名或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-dynamic-urls-and-templates/">EN</a>
+          <a href="/zh/blog/seo-tech-dynamic-urls-and-templates/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>动态 URL 如果响应稳定，就仍然是一份文档</h1>
+        <p class="kc-hero-lead">当一个地址持续返回爬虫可以获取的同一份文档时，动态 URL 就是可索引的。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">结构如何承载发现</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>当一个地址持续返回爬虫可以获取的同一份文档时，动态 URL 就是可索引的。</p>
+          <p>图显示服务器在生成响应。这很普通，也没问题。有问题的是生成依赖会话 cookie、省略产品文字，或每次访问都改变文档身份。SEO 健康看的是被获取的 HTML，而不是有没有数据库参与。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>模板是修复的单位。产品模板上的缺陷会出现在每个产品 URL 上。抽样一条 URL 就足以看见它，修好模板就修好这一类。逐页改文案则不会。审计在发现的是模板时应该写“模板”。</p>
+        </section>
+        <section id="how">
+          <h2>结构如何承载发现</h2>
+          <p>用干净的客户端获取模板中的一条 URL，并要求得到一份稳定的 HTML 文档。</p>
+          <p>选择真实记录的参数如果就是身份，可以留在 URL 里。选择用户的参数则不行。随 cookie 变化却没有 Vary 头的响应，或不该变化却变化的响应，会扰乱缓存和爬虫。先说明 URL 应该意味什么，再检查第二次获取是否一致。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-dynamic-urls-and-templates/there-are-four-steps-in-the-client-server-ecosystem-the-brow.webp" alt="客户端-服务器示意图：浏览器请求、服务器生成响应、响应返回。" width="1280" height="770" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://en.wikipedia.org/wiki/Dynamic_web_page</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>不带 cookie 的获取包含主要文字</li>
+            <li>链接和 sitemap 中没有会话参数</li>
+            <li>对规范 URL 的两次获取一致</li>
+            <li>重复出现时把发现称为模板</li>
+            <li>一条样例记录 URL</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>不带 cookie 获取 /item?id=440 时返回阀门数据表，包括名称和 PDF 链接。/item?id=440&amp;sid=随机值返回登录墙。健康规则是 id URL 才是文档，sid URL 永不被链接或放进 sitemap。模板是动态的，但仍然是一份文档。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>动态模板不保证排名或引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把架构读成 SEO 健康：重要模板是否位于爬虫能从枢纽跟着走的路径上。深度和孤立页是结构。没被回答的买家问题是 SEO 增长。整齐的树不能保证页面容易被引用，那是 GEO 的质量，不是引用承诺。</p>
+          <p>图显示服务器生成一份响应，因此“动态”不会被当成可索引的反面。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>动态 URL 什么时候是一份文档？</summary>
+            <p>当一个地址持续返回爬虫可以获取的同一份文档时，动态 URL 就是可索引的。</p>
+          </details>
+          <details>
+            <summary>干净的获取必须包含什么？</summary>
+            <p>用干净的客户端获取模板中的一条 URL，并要求得到一份稳定的 HTML 文档。</p>
+          </details>
+          <details>
+            <summary>动态模板能保证排名吗？</summary>
+            <p>动态模板不保证排名或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/how-to-find-orphan-pages/">如何发现孤立页面</a></li>
+            <li><a href="/zh/knowledge/what-is-a-website-seo-audit/">什么是网站 SEO 审计</a></li>
+            <li><a href="/zh/qa/what-is-a-crawl-path/">什么是抓取路径？</a></li>
+            <li><a href="/zh/blog/internal-links-and-orphan-discovery/">内链与孤立页发现</a></li>
+            <li><a href="/zh/knowledge/audit-diagnosis-blueprint/">审计、诊断与蓝图</a></li>
+            <li><a href="/zh/blog/seo-tech-semantic-html-for-crawlers/">语义 HTML 为文档的各个部分命名</a></li>
+            <li><a href="/zh/blog/seo-tech-alt-text-as-a-page-basic/">Alt 文字用页面的语言说明图片描绘了什么</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/Dynamic_web_page">https://en.wikipedia.org/wiki/Dynamic_web_page</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

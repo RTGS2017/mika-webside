@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>压缩是在文件重量和可见损伤之间取舍 | Mika 博客</title>
+  <meta name="description" content="过重的压缩会产生伪影。健康问题是产品照片是否仍然清楚到能充当页面所声称的东西。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-image-compression-and-clarity/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-image-compression-and-clarity/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-image-compression-and-clarity/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-image-compression-and-clarity/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="压缩是在文件重量和可见损伤之间取舍 | Mika 博客">
+  <meta property="og:description" content="过重的压缩会产生伪影。健康问题是产品照片是否仍然清楚到能充当页面所声称的东西。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-image-compression-and-clarity/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-image-compression-and-clarity/compression-artifacts.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="压缩是在文件重量和可见损伤之间取舍 | Mika 博客">
+  <meta name="twitter:description" content="过重的压缩会产生伪影。健康问题是产品照片是否仍然清楚到能充当页面所声称的东西。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-image-compression-and-clarity/#article","headline":"压缩是在文件重量和可见损伤之间取舍","name":"压缩是在文件重量和可见损伤之间取舍","description":"过重的压缩会产生伪影。健康问题是产品照片是否仍然清楚到能充当页面所声称的东西。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-image-compression-and-clarity/compression-artifacts.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-image-compression-and-clarity/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-image-compression-and-clarity/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"压缩是在文件重量和可见损伤之间取舍","item":"https://mikaovo.ai/zh/blog/seo-tech-image-compression-and-clarity/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-image-compression-and-clarity/#faq","mainEntity":[{"@type":"Question","name":"除了文件大小，压缩还冒什么风险？","acceptedAnswer":{"@type":"Answer","text":"图片压缩减少字节，推得太过时会留下可见伪影。"}},{"@type":"Question","name":"应该在哪里复查质量？","acceptedAnswer":{"@type":"Answer","text":"按模板实际请求的质量检查主视觉，拒绝破坏产品边缘的设置。"}},{"@type":"Question","name":"更清晰的图片能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"更清晰的压缩图不保证排名或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-image-compression-and-clarity/">EN</a>
+          <a href="/zh/blog/seo-tech-image-compression-and-clarity/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>压缩是在文件重量和可见损伤之间取舍</h1>
+        <p class="kc-hero-lead">图片压缩减少字节，推得太过时会留下可见伪影。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">页面基础里包括什么</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>图片压缩减少字节，推得太过时会留下可见伪影。</p>
+          <p>产品边缘变成方块，并不是任何有用意义上更快的主视觉。买家看不清接头，最大绘制可能略早，但图片已经不再胜任。SEO 健康可以同时记下重量和损伤。它不会为以后每一次上传选定一个数字质量滑杆。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>本页的伪影图是教学特写，不是某位客户的前后对比。较新的静态图片编码常常在同样字节下更好地保住边缘，但模板仍然需要人看一下产品边界。请求很低质量数字的 CDN 参数，应该在主视觉上复查，而不是只看缩略图。</p>
+        </section>
+        <section id="how">
+          <h2>页面基础里包括什么</h2>
+          <p>按模板实际请求的质量检查主视觉，拒绝破坏产品边缘的设置。</p>
+          <p>缩略图可以忍受比铺满首屏的图片更重的压缩。两者共用一个全局质量数字，就会让主视觉受损或让缩略图仍然很重。审计样例是同一模板的一条主视觉 URL 和一条缩略图 URL。记录里不属于某个通用百分比。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-image-compression-and-clarity/compression-artifacts.webp" alt="照片上压缩伪影的近景。" width="612" height="266" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://web.dev/articles/compress-images</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>主视觉质量经过目视检查，而不只看文件大小</li>
+            <li>缩略图允许使用更重的单独设置</li>
+            <li>没有把一个质量数字用到每个位置</li>
+            <li>一条主视觉 URL 和一条缩略图 URL</li>
+            <li>没有把编造的百分比当成标准引用</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>流水线把每次上传都导出成很低的质量，因为上一季的主视觉太重。螺纹消失在方块里。修复是主视觉阶梯上更高的质量加上更小的像素尺寸，而不是退回相机原图。流水线改动是模板级的，一条样例就能暴露它。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>更清晰的压缩图不保证排名或引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把标题、标题层级、语言和媒体基础归在 SEO 健康的内容与结构检查里。它们帮助页面被理解。它们不是 SEO 增长——增长问的是还缺什么覆盖——它们也不保证回答产品会引用这个页面。</p>
+          <p>伪影特写是教学图片，不是关于某个具名站点的证据。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>除了文件大小，压缩还冒什么风险？</summary>
+            <p>图片压缩减少字节，推得太过时会留下可见伪影。</p>
+          </details>
+          <details>
+            <summary>应该在哪里复查质量？</summary>
+            <p>按模板实际请求的质量检查主视觉，拒绝破坏产品边缘的设置。</p>
+          </details>
+          <details>
+            <summary>更清晰的图片能保证排名吗？</summary>
+            <p>更清晰的压缩图不保证排名或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/what-is-a-website-seo-audit/">什么是网站 SEO 审计</a></li>
+            <li><a href="/zh/knowledge/how-to-detect-duplicate-content/">如何检测重复内容</a></li>
+            <li><a href="/zh/qa/what-does-a-website-seo-audit-review/">网站 SEO 审计检查什么？</a></li>
+            <li><a href="/zh/blog/what-seo-health-asks-of-a-live-site/">SEO 健康对线上站点要求什么</a></li>
+            <li><a href="/zh/knowledge/seo-health-vs-seo-growth/">SEO 健康 vs SEO 增长</a></li>
+            <li><a href="/zh/blog/seo-tech-robots-txt-rules/">robots.txt 按用户代理分组规则</a></li>
+            <li><a href="/zh/blog/seo-tech-html-and-xml-sitemaps/">HTML 站点地图和 XML Sitemap 做的是不同的事</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://web.dev/articles/compress-images">https://web.dev/articles/compress-images</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

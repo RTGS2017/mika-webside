@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RDFa 同样标注你已经展示的 HTML | Mika 博客</title>
+  <meta name="description" content="RDFa 用属性在页面中陈述类型和属性。和其他语法一样，它应该重复可见事实，而不是添加新事实。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-rdfa-as-markup/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-rdfa-as-markup/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-rdfa-as-markup/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-rdfa-as-markup/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="RDFa 同样标注你已经展示的 HTML | Mika 博客">
+  <meta property="og:description" content="RDFa 用属性在页面中陈述类型和属性。和其他语法一样，它应该重复可见事实，而不是添加新事实。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-rdfa-as-markup/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-rdfa-as-markup/rdfa-usagestatistics-charts.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RDFa 同样标注你已经展示的 HTML | Mika 博客">
+  <meta name="twitter:description" content="RDFa 用属性在页面中陈述类型和属性。和其他语法一样，它应该重复可见事实，而不是添加新事实。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-rdfa-as-markup/#article","headline":"RDFa 同样标注你已经展示的 HTML","name":"RDFa 同样标注你已经展示的 HTML","description":"RDFa 用属性在页面中陈述类型和属性。和其他语法一样，它应该重复可见事实，而不是添加新事实。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-rdfa-as-markup/rdfa-usagestatistics-charts.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-rdfa-as-markup/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-rdfa-as-markup/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"RDFa 同样标注你已经展示的 HTML","item":"https://mikaovo.ai/zh/blog/seo-tech-rdfa-as-markup/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-rdfa-as-markup/#faq","mainEntity":[{"@type":"Question","name":"RDFa 标注什么？","acceptedAnswer":{"@type":"Answer","text":"RDFa 用类型和属性标注已有的 HTML。"}},{"@type":"Question","name":"一个页面应该保留几种语法？","acceptedAnswer":{"@type":"Answer","text":"保持一种语法，并使每个 RDFa 属性匹配该元素上的可见文字。"}},{"@type":"Question","name":"RDFa 能保证富结果吗？","acceptedAnswer":{"@type":"Answer","text":"RDFa 不保证排名、富结果或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-rdfa-as-markup/">EN</a>
+          <a href="/zh/blog/seo-tech-rdfa-as-markup/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>RDFa 同样标注你已经展示的 HTML</h1>
+        <p class="kc-hero-lead">RDFa 用类型和属性标注已有的 HTML。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">这种标记能做什么、不能做什么</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>RDFa 用类型和属性标注已有的 HTML。</p>
+          <p>typeof 和 property 属性在文档里命名一个事物及其字段。健康规则与 microdata 和 JSON-LD 相同：字段必须是元素展示的事实，同一页上的两种语法不得互相矛盾。RDFa 不是 GEO 方法，也不是排名方法。它是一种技术编码。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>前缀和词汇表使 RDFa 看起来比产品页所需要的更抽象。如果编辑产品名的人无法复查模板，编码就会漂移。选择团队真正读得懂的一种语法。饼图是来源页上的一张历史图片。本文不把它们的标注当作任何站点的测量。</p>
+        </section>
+        <section id="how">
+          <h2>这种标记能做什么、不能做什么</h2>
+          <p>保持一种语法，并使每个 RDFa 属性匹配该元素上的可见文字。</p>
+          <p>从词汇表页面抄一段 RDFa 示例却没有配套的句子，会产生一个声称了自己没有解释的类型的页面。审计因不一致而判定该页失败，不是因为属性名里的字母选择。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-rdfa-as-markup/rdfa-usagestatistics-charts.webp" alt="来自 RDFa 来源页的两张饼图，切片标着 rdfa、microdata 和若干微格式名称。" width="1280" height="1569" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://en.wikipedia.org/wiki/RDFa</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>页面上只有一种语法</li>
+            <li>属性值等于可见的单元格或标题</li>
+            <li>正文真正解释了的类型</li>
+            <li>能够阅读模板的复查者</li>
+            <li>逐格比较的一条文档 URL</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>文档页用 RDFa 标记规格表，JSON-LD 却为同一个压力值写了不同的单位。修复是删掉一种语法，并使剩下的值等于表格单元格。单位是事实。语法不允许发明第二个单位。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>RDFa 不保证排名、富结果或引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把结构化数据当作技术性的 SEO 健康题目：标记应与可见事实一致，并且能被干净解析。它不出售富媒体结果的位置。GEO 仍然关心实体和证据在正文里是否可理解。重复口号的标记不会制造证据。</p>
+          <p>这些图只作为来源页上的图片留下。本文要求的复查，仍然是阅读你自己的模板。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>RDFa 标注什么？</summary>
+            <p>RDFa 用类型和属性标注已有的 HTML。</p>
+          </details>
+          <details>
+            <summary>一个页面应该保留几种语法？</summary>
+            <p>保持一种语法，并使每个 RDFa 属性匹配该元素上的可见文字。</p>
+          </details>
+          <details>
+            <summary>RDFa 能保证富结果吗？</summary>
+            <p>RDFa 不保证排名、富结果或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/what-a-technical-seo-geo-crawler-inspects/">技术 SEO/GEO 爬虫会检查什么</a></li>
+            <li><a href="/zh/knowledge/entity-evidence-answerability/">实体、证据与可答性</a></li>
+            <li><a href="/zh/qa/what-is-a-website-entity/">什么是网站实体？</a></li>
+            <li><a href="/zh/blog/entity-graph-company-to-evidence/">从公司到证据的实体图</a></li>
+            <li><a href="/zh/knowledge/seo-health-vs-seo-growth/">SEO 健康 vs SEO 增长</a></li>
+            <li><a href="/zh/blog/seo-tech-https-as-a-fetch-condition/">HTTPS 是你希望浏览器和爬虫使用的获取方式</a></li>
+            <li><a href="/zh/blog/seo-tech-a-page-is-a-document/">页面是有一个主题和一个规范 URL 的文档</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/RDFa">https://en.wikipedia.org/wiki/RDFa</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

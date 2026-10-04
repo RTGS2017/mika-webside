@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>预加载用于首屏立刻需要的资源 | Mika 博客</title>
+  <meta name="description" content="预加载请求浏览器尽早获取一个已知的关键文件。用在首屏用不到的文件上是浪费。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-preload-critical-assets/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-preload-critical-assets/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-preload-critical-assets/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-preload-critical-assets/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="预加载用于首屏立刻需要的资源 | Mika 博客">
+  <meta property="og:description" content="预加载请求浏览器尽早获取一个已知的关键文件。用在首屏用不到的文件上是浪费。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-preload-critical-assets/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-preload-critical-assets/screenshot-of-chrome-devtools-network-panel.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="预加载用于首屏立刻需要的资源 | Mika 博客">
+  <meta name="twitter:description" content="预加载请求浏览器尽早获取一个已知的关键文件。用在首屏用不到的文件上是浪费。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-preload-critical-assets/#article","headline":"预加载用于首屏立刻需要的资源","name":"预加载用于首屏立刻需要的资源","description":"预加载请求浏览器尽早获取一个已知的关键文件。用在首屏用不到的文件上是浪费。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-preload-critical-assets/screenshot-of-chrome-devtools-network-panel.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-preload-critical-assets/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-preload-critical-assets/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"预加载用于首屏立刻需要的资源","item":"https://mikaovo.ai/zh/blog/seo-tech-preload-critical-assets/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-preload-critical-assets/#faq","mainEntity":[{"@type":"Question","name":"预加载是用来做什么的？","acceptedAnswer":{"@type":"Answer","text":"预加载告诉浏览器尽早获取某个特定文件，因为首屏需要它。"}},{"@type":"Question","name":"应该提示哪个文件？","acceptedAnswer":{"@type":"Answer","text":"只预加载该模板在首屏使用的主视觉或字体，并确认 URL 存在于初始 HTML。"}},{"@type":"Question","name":"正确的预加载能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"正确的预加载不保证排名或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-preload-critical-assets/">EN</a>
+          <a href="/zh/blog/seo-tech-preload-critical-assets/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>预加载用于首屏立刻需要的资源</h1>
+        <p class="kc-hero-lead">预加载告诉浏览器尽早获取某个特定文件，因为首屏需要它。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">渲染对爬虫意味着什么变化</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>预加载告诉浏览器尽早获取某个特定文件，因为首屏需要它。</p>
+          <p>网络面板用来看这个请求是否提前了。预加载是文档头部的提示，URL 必须是服务器已经知道的。它不是用来发现脚本稍后才会编出来的图片。SEO 健康检查被提示的 URL 是否真的是首屏使用的那个。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>对某个模板用不到的字体或主视觉做预加载，会和真正用到的文件争抢。提示不是免费的。审计寻找的是少量与模板匹配的预加载，不是从另一种布局抄来的头部。文档里的网络面板截图是工具示意。它不是本站的轨迹。</p>
+        </section>
+        <section id="how">
+          <h2>渲染对爬虫意味着什么变化</h2>
+          <p>只预加载该模板在首屏使用的主视觉或字体，并确认 URL 存在于初始 HTML。</p>
+          <p>如果主视觉 URL 由客户端脚本从 API 选择，头部的预加载还无法点名它。健康修复是把 URL 打印进 HTML 再提示，而不是预加载一个占位符。改完之后，一条样例 URL 的网络列表应显示主视觉不必等迟到的发现才开始。不要把别人的瀑布图贴进报告。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-preload-critical-assets/screenshot-of-chrome-devtools-network-panel.webp" alt="Chrome 开发者工具网络面板截图，显示请求何时开始。" width="701" height="509" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://web.dev/articles/preload-critical-assets</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>预加载 URL 与首屏使用的文件一致</li>
+            <li>从其他模板抄来的无用预加载</li>
+            <li>尚未写入 HTML、因此无法被提示的主视觉 URL</li>
+            <li>提示列表改完后的一条样例 URL</li>
+            <li>没有把别人的瀑布图当作本地证据</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>落地页模板预加载了三种活动字体和一张它从不显示的视频海报，却没有预加载真正的产品抠图。抠图是稍后插入的。记录写的是：去掉无用提示，打印抠图 URL，只提示这一个文件。活动字体可以在使用它们的页面上加载。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>正确的预加载不保证排名或引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把渲染当作 SEO 健康问题：当模板依赖 JavaScript 时，重要 HTML 能否在有脚本和无脚本两种情况下被获取并比较。这种比较不是 GEO 审计，也不是市场覆盖计划。发现要附在样例 URL 上。模板改完之后的再审计，用来确认修复。</p>
+          <p>网络面板图说明的是请求顺序。它不是某条 Mika URL 的轨迹。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>预加载是用来做什么的？</summary>
+            <p>预加载告诉浏览器尽早获取某个特定文件，因为首屏需要它。</p>
+          </details>
+          <details>
+            <summary>应该提示哪个文件？</summary>
+            <p>只预加载该模板在首屏使用的主视觉或字体，并确认 URL 存在于初始 HTML。</p>
+          </details>
+          <details>
+            <summary>正确的预加载能保证排名吗？</summary>
+            <p>正确的预加载不保证排名或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/how-to-check-website-crawlability/">如何检查网站可抓取性</a></li>
+            <li><a href="/zh/knowledge/what-a-technical-seo-geo-crawler-inspects/">技术 SEO/GEO 爬虫会检查什么</a></li>
+            <li><a href="/zh/qa/what-does-crawlability-mean/">可抓取性是什么意思？</a></li>
+            <li><a href="/zh/blog/what-open-source-crawlers-surface/">开源爬虫会看到什么</a></li>
+            <li><a href="/zh/knowledge/what-open-source-seo-crawlers-check/">开源 SEO 爬虫检查什么</a></li>
+            <li><a href="/zh/blog/seo-tech-font-loading-and-shifts/">字体加载可以在标题画出之后再移动它</a></li>
+            <li><a href="/zh/blog/seo-tech-webfonts-on-the-critical-path/">关键路径上的网页字体挡住第一段文字</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://web.dev/articles/preload-critical-assets">https://web.dev/articles/preload-critical-assets</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

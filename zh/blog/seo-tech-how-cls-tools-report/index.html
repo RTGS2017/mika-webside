@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>布局偏移工具报告的是事件，不是奖杯数字 | Mika 博客</title>
+  <meta name="description" content="实验室工具可以列出布局偏移的构成。计算器截图是界面，不是任何网站的结果。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-how-cls-tools-report/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-how-cls-tools-report/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-how-cls-tools-report/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-how-cls-tools-report/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="布局偏移工具报告的是事件，不是奖杯数字 | Mika 博客">
+  <meta property="og:description" content="实验室工具可以列出布局偏移的构成。计算器截图是界面，不是任何网站的结果。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-how-cls-tools-report/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-how-cls-tools-report/lighthouse-scoring-calculator.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="布局偏移工具报告的是事件，不是奖杯数字 | Mika 博客">
+  <meta name="twitter:description" content="实验室工具可以列出布局偏移的构成。计算器截图是界面，不是任何网站的结果。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-how-cls-tools-report/#article","headline":"布局偏移工具报告的是事件，不是奖杯数字","name":"布局偏移工具报告的是事件，不是奖杯数字","description":"实验室工具可以列出布局偏移的构成。计算器截图是界面，不是任何网站的结果。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-how-cls-tools-report/lighthouse-scoring-calculator.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-how-cls-tools-report/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-how-cls-tools-report/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"布局偏移工具报告的是事件，不是奖杯数字","item":"https://mikaovo.ai/zh/blog/seo-tech-how-cls-tools-report/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-how-cls-tools-report/#faq","mainEntity":[{"@type":"Question","name":"布局偏移工具报告什么？","acceptedAnswer":{"@type":"Answer","text":"布局偏移工具列出的是事件和构成。它不会交给你一个名次。"}},{"@type":"Question","name":"记录应该如何标注？","acceptedAnswer":{"@type":"Answer","text":"每条布局记录都要标明是实验室、现场，还是仅有定义，绝不要把计算器截图当成网站结果。"}},{"@type":"Question","name":"工具截图能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"工具截图不保证排名或引用，本页也不保证布局结果。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-how-cls-tools-report/">EN</a>
+          <a href="/zh/blog/seo-tech-how-cls-tools-report/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>布局偏移工具报告的是事件，不是奖杯数字</h1>
+        <p class="kc-hero-lead">布局偏移工具列出的是事件和构成。它不会交给你一个名次。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">健康检查里怎么使用这个定义</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>布局偏移工具列出的是事件和构成。它不会交给你一个名次。</p>
+          <p>计算器和实验室审计是用来探索定义的界面。计算器的截图不是现场数据，也不是本页指派给任何人的分数。SEO 健康可以说实验室审计在样例 URL 上归咎于哪个元素。它不能把计算器贴进报告，把图片叫作测量。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>实验室输出和现场描述回答不同的问题。实验室运行是一次脚本化加载。现场数据在团队真正拥有时，汇总的是真实访问。本文没有任何具名公司的这两种数据，因此不会编造。有用的习惯是在争论修复之前，先标明观察的来源。</p>
+        </section>
+        <section id="how">
+          <h2>健康检查里怎么使用这个定义</h2>
+          <p>每条布局记录都要标明是实验室、现场，还是仅有定义，绝不要把计算器截图当成网站结果。</p>
+          <p>当实验室审计指向一张没有尺寸的图片，修复就是该模板上的图片占位。当唯一的材料是一张分数界面的图片，在有人复现页面之前，没有元素可修。SEO 健康停留在可复现的观察和样例 URL 上。关于缺主题的增长讨论可以再等。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-how-cls-tools-report/lighthouse-scoring-calculator.webp" alt="Lighthouse 分数计算器界面的截图，作为工具界面展示，不是任何网站的结果。" width="1600" height="810" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://web.dev/articles/cls-web-tooling</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>记录是否写明实验室、现场或仅为示意</li>
+            <li>如果真的跑过审计，它点名的元素</li>
+            <li>没有把裁切的计算器当作公司结果</li>
+            <li>模板真的被加载时的一条样例 URL</li>
+            <li>与 SEO 增长的主题缺口分开</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>一套幻灯片裁了一张计算器，让一个数字看起来像“我们的 CLS”。这个数字从未在该公司的模板上测量过。诚实的替换是一条实验室记录：分类主视觉没有宽高，附上样例 URL，没有总等级。Mika 不希望审计里出现那张裁切图。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>工具截图不保证排名或引用，本页也不保证布局结果。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把它归在 SEO 健康：线上站点在技术上是否准备好被发现和理解。SEO 增长仍是关于覆盖和意图的另一个问题。GEO 健康与 GEO 增长保持各自的尺度。一条加载或响应性记录不会自动变成增长分数，也没有混合总分。</p>
+          <p>图中是计算器界面，让读者看见工具和测量的差别。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>布局偏移工具报告什么？</summary>
+            <p>布局偏移工具列出的是事件和构成。它不会交给你一个名次。</p>
+          </details>
+          <details>
+            <summary>记录应该如何标注？</summary>
+            <p>每条布局记录都要标明是实验室、现场，还是仅有定义，绝不要把计算器截图当成网站结果。</p>
+          </details>
+          <details>
+            <summary>工具截图能保证排名吗？</summary>
+            <p>工具截图不保证排名或引用，本页也不保证布局结果。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/what-is-a-website-seo-audit/">什么是网站 SEO 审计</a></li>
+            <li><a href="/zh/knowledge/seo-health-vs-seo-growth/">SEO 健康 vs SEO 增长</a></li>
+            <li><a href="/zh/qa/what-does-a-website-seo-audit-review/">网站 SEO 审计检查什么？</a></li>
+            <li><a href="/zh/blog/what-seo-health-asks-of-a-live-site/">SEO 健康对线上站点要求什么</a></li>
+            <li><a href="/zh/knowledge/what-a-technical-seo-geo-crawler-inspects/">技术 SEO/GEO 爬虫会检查什么</a></li>
+            <li><a href="/zh/blog/seo-tech-server-client-static-rendering/">服务器渲染、客户端渲染和静态渲染改变的是 HTML 里有什么</a></li>
+            <li><a href="/zh/blog/seo-tech-content-visibility-on-long-pages/">长页面的主要文字仍然需要在 HTML 里</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://web.dev/articles/cls-web-tooling">https://web.dev/articles/cls-web-tooling</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

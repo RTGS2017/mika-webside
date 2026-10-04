@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inlined Critical CSS Is Only the CSS for the First Screen | Mika Blog</title>
+  <meta name="description" content="Inlining the rules that style the first viewport lets the browser paint before the full sheet arrives. Inlining the entire site stylesheet defeats the point.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/blog/seo-tech-inlining-critical-css/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-inlining-critical-css/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-inlining-critical-css/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-inlining-critical-css/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="Inlined Critical CSS Is Only the CSS for the First Screen | Mika Blog">
+  <meta property="og:description" content="Inlining the rules that style the first viewport lets the browser paint before the full sheet arrives. Inlining the entire site stylesheet defeats the point.">
+  <meta property="og:url" content="https://mikaovo.ai/blog/seo-tech-inlining-critical-css/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-inlining-critical-css/an-illustration-of-a-laptop-and-a-mobile-device-with-web-pag.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Inlined Critical CSS Is Only the CSS for the First Screen | Mika Blog">
+  <meta name="twitter:description" content="Inlining the rules that style the first viewport lets the browser paint before the full sheet arrives. Inlining the entire site stylesheet defeats the point.">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/blog/seo-tech-inlining-critical-css/#article","headline":"Inlined Critical CSS Is Only the CSS for the First Screen","name":"Inlined Critical CSS Is Only the CSS for the First Screen","description":"Inlining the rules that style the first viewport lets the browser paint before the full sheet arrives. Inlining the entire site stylesheet defeats the point.","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"en","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-inlining-critical-css/an-illustration-of-a-laptop-and-a-mobile-device-with-web-pag.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/blog/seo-tech-inlining-critical-css/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/blog/seo-tech-inlining-critical-css/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mikaovo.ai/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://mikaovo.ai/blog/"},{"@type":"ListItem","position":3,"name":"Inlined Critical CSS Is Only the CSS for the First Screen","item":"https://mikaovo.ai/blog/seo-tech-inlining-critical-css/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/blog/seo-tech-inlining-critical-css/#faq","mainEntity":[{"@type":"Question","name":"What is critical CSS?","acceptedAnswer":{"@type":"Answer","text":"Critical CSS is the subset of rules needed to paint the first viewport, sometimes inlined in the head."}},{"@type":"Question","name":"What should a sample URL confirm?","acceptedAnswer":{"@type":"Answer","text":"Inline only the first-screen rules, and confirm on a sample URL that the full sheet is not also duplicated in the head."}},{"@type":"Question","name":"Does inlining a subset guarantee rankings?","acceptedAnswer":{"@type":"Answer","text":"Inlining a subset does not guarantee rankings or citations."}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">Skip to content</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/" aria-label="Mika Visibility">
+        <img src="../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/knowledge/">Knowledge</a>
+        <a href="/blog/">Blog</a>
+        <a href="/qa/">Q&A</a>
+        <div class="kc-lang" aria-label="Language">
+          <a href="/blog/seo-tech-inlining-critical-css/" aria-current="page">EN</a>
+          <a href="/zh/blog/seo-tech-inlining-critical-css/">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">Contact</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>Technical</span> · <time datetime="2026-10-04">October 4, 2026</time></p>
+        <h1>Inlined Critical CSS Is Only the CSS for the First Screen</h1>
+        <p class="kc-hero-lead">Critical CSS is the subset of rules needed to paint the first viewport, sometimes inlined in the head.</p>
+        <p class="kc-hero-note">Educational material only. Mika does not guarantee search rankings or AI answer citations.</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="On this page">
+        <p>On this page</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">Short answer</a></li>
+            <li><a href="#definition">Definition</a></li>
+            <li><a href="#how">What rendering changes for a crawler</a></li>
+            <li><a href="#checks">What to check</a></li>
+            <li><a href="#example">A practical example</a></li>
+            <li><a href="#limits">What this does not claim</a></li>
+            <li><a href="#mika">Where Mika Visibility files this</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>Short answer</h2>
+          <p>Critical CSS is the subset of rules needed to paint the first viewport, sometimes inlined in the head.</p>
+          <p>The rest of the stylesheet can load without blocking that first paint. If you inline every rule, the HTML gets heavy and the “critical” subset was never chosen. The overflowing-screen figure is a picture of layout that does not fit, which is one reason people extract above-the-fold rules. It is not a measurement.</p>
+        </section>
+        <section id="definition">
+          <h2>Definition</h2>
+          <p>Extraction can be done by hand for a stable template or by a build step that is reviewed. An unreviewed extractor can inline rules for a state the page is not in, or miss the rules that prevent a layout jump. SEO Health treats the result as markup to inspect on a sample URL: is the first screen styled, and is the HTML not carrying the whole design system.</p>
+        </section>
+        <section id="how">
+          <h2>What rendering changes for a crawler</h2>
+          <p>Inline only the first-screen rules, and confirm on a sample URL that the full sheet is not also duplicated in the head.</p>
+          <p>A layout jump after the full sheet arrives means the critical subset was incomplete. That is a CLS-shaped defect caused by the CSS split, and it should be noted as such. The repair is to include the missing rules in the subset, not to abandon the idea and block on the entire file again without looking.</p>
+          <figure>
+            <img src="../../assets/articles/seo-tech/seo-tech-inlining-critical-css/an-illustration-of-a-laptop-and-a-mobile-device-with-web-pag.webp" alt="An illustration of a laptop and a phone with page content overflowing the screen edges, the problem critical CSS is meant to address." width="1118" height="655" style="max-width:100%;height:auto">
+            <figcaption>Image from the source page: https://web.dev/articles/extract-critical-css</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>What to check</h2>
+          <ul>
+            <li>The inlined rules match the template’s first screen</li>
+            <li>The full sheet is not copied into the head as well</li>
+            <li>No layout jump when the full sheet arrives</li>
+            <li>A product URL and a home URL checked separately</li>
+            <li>Extractor output reviewed rather than trusted blindly</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>A practical example</h2>
+          <p>A build inlines the homepage hero rules into every product page, and the product title uses different rules that arrive later, so the title jumps. The health note says the subset follows the homepage, not the product template. Each template needs its own first-screen subset or none.</p>
+        </section>
+        <section id="limits">
+          <h2>What this does not claim</h2>
+          <p>Inlining a subset does not guarantee rankings or citations.</p>
+        </section>
+        <section id="mika">
+          <h2>Where Mika Visibility files this</h2>
+          <p>Mika Visibility treats rendering as an SEO Health question: can the important HTML be fetched and compared with and without JavaScript when the template depends on it. That comparison is not a GEO audit and not a market-coverage plan. Findings stay attached to sample URLs. A re-audit after the template change is how the team checks the repair.</p>
+          <p>The overflow illustration motivates the subset. It is not a screenshot of a failing customer page.</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">FAQ</h2>
+          <details>
+            <summary>What is critical CSS?</summary>
+            <p>Critical CSS is the subset of rules needed to paint the first viewport, sometimes inlined in the head.</p>
+          </details>
+          <details>
+            <summary>What should a sample URL confirm?</summary>
+            <p>Inline only the first-screen rules, and confirm on a sample URL that the full sheet is not also duplicated in the head.</p>
+          </details>
+          <details>
+            <summary>Does inlining a subset guarantee rankings?</summary>
+            <p>Inlining a subset does not guarantee rankings or citations.</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">Related guides</h2>
+          <ul>
+            <li><a href="/knowledge/how-to-check-website-crawlability/">How to Check Website Crawlability</a></li>
+            <li><a href="/knowledge/what-a-technical-seo-geo-crawler-inspects/">What a Technical SEO/GEO Crawler Inspects</a></li>
+            <li><a href="/qa/what-does-crawlability-mean/">What does crawlability mean?</a></li>
+            <li><a href="/blog/what-open-source-crawlers-surface/">What Open-Source Crawlers Surface</a></li>
+            <li><a href="/knowledge/what-open-source-seo-crawlers-check/">What Open-Source SEO Crawlers Check</a></li>
+            <li><a href="/blog/seo-tech-javascript-weight-and-html/">JavaScript Weight Matters After the HTML Already Says the Thing</a></li>
+            <li><a href="/blog/seo-tech-long-tasks-on-the-main-thread/">A Long Task Is Main-Thread Work That Delays the Next Input</a></li>
+            <li><a href="/#audit">Mika homepage — Technical</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">Sources</h2>
+          <ol>
+            <li><a href="https://web.dev/articles/extract-critical-css">https://web.dev/articles/extract-critical-css</a> — Source page used for the diagram and for the technical definitions restated here in Mika’s own words.</li>
+            <li><a href="/#audit">Mika Visibility homepage</a> — Product framing for SEO Health. Sample interface counts on the homepage are illustrative, not a case study.</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">Next step</h2>
+          <p>Run a structured SEO + GEO audit to see health findings, growth gaps, and a blueprint you can act on.</p>
+          <p><a href="/#cta">Start on Mika</a></p>
+          <p>Clearer entities, answers, evidence, and context make pages easier to understand and reference. Results in any answer product are not guaranteed.</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/">Mika Visibility</a> · <a href="/knowledge/">Knowledge</a> · <a href="/blog/">Blog</a> · <a href="/qa/">Q&A</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">Contact</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../contact-config.js"></script>
+  <script src="../../contact.js"></script>
+</body>
+</html>

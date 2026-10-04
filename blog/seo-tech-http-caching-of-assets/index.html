@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTTP Caching Stores a Response So the Next Request Can Skip the Body | Mika Blog</title>
+  <meta name="description" content="Cache validators and freshness rules decide whether a repeat request downloads the body again. HTML and fingerprinted assets should not share one policy.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/blog/seo-tech-http-caching-of-assets/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-http-caching-of-assets/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-http-caching-of-assets/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-http-caching-of-assets/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="HTTP Caching Stores a Response So the Next Request Can Skip the Body | Mika Blog">
+  <meta property="og:description" content="Cache validators and freshness rules decide whether a repeat request downloads the body again. HTML and fingerprinted assets should not share one policy.">
+  <meta property="og:url" content="https://mikaovo.ai/blog/seo-tech-http-caching-of-assets/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-http-caching-of-assets/a-visualization-of-a-client-requesting-a-resource-and-the-se.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HTTP Caching Stores a Response So the Next Request Can Skip the Body | Mika Blog">
+  <meta name="twitter:description" content="Cache validators and freshness rules decide whether a repeat request downloads the body again. HTML and fingerprinted assets should not share one policy.">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/blog/seo-tech-http-caching-of-assets/#article","headline":"HTTP Caching Stores a Response So the Next Request Can Skip the Body","name":"HTTP Caching Stores a Response So the Next Request Can Skip the Body","description":"Cache validators and freshness rules decide whether a repeat request downloads the body again. HTML and fingerprinted assets should not share one policy.","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"en","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-http-caching-of-assets/a-visualization-of-a-client-requesting-a-resource-and-the-se.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/blog/seo-tech-http-caching-of-assets/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/blog/seo-tech-http-caching-of-assets/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mikaovo.ai/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://mikaovo.ai/blog/"},{"@type":"ListItem","position":3,"name":"HTTP Caching Stores a Response So the Next Request Can Skip the Body","item":"https://mikaovo.ai/blog/seo-tech-http-caching-of-assets/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/blog/seo-tech-http-caching-of-assets/#faq","mainEntity":[{"@type":"Question","name":"What does a 304 avoid sending?","acceptedAnswer":{"@type":"Answer","text":"HTTP caching lets a repeat request reuse a stored response or revalidate it with a short 304."}},{"@type":"Question","name":"How should HTML and fingerprinted assets differ?","acceptedAnswer":{"@type":"Answer","text":"Cache fingerprinted assets for a long time, and revalidate HTML so new asset URLs are discovered."}},{"@type":"Question","name":"Do cache headers guarantee rankings?","acceptedAnswer":{"@type":"Answer","text":"Cache headers do not guarantee rankings or citations."}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">Skip to content</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/" aria-label="Mika Visibility">
+        <img src="../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/knowledge/">Knowledge</a>
+        <a href="/blog/">Blog</a>
+        <a href="/qa/">Q&A</a>
+        <div class="kc-lang" aria-label="Language">
+          <a href="/blog/seo-tech-http-caching-of-assets/" aria-current="page">EN</a>
+          <a href="/zh/blog/seo-tech-http-caching-of-assets/">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">Contact</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>Technical</span> · <time datetime="2026-10-04">October 4, 2026</time></p>
+        <h1>HTTP Caching Stores a Response So the Next Request Can Skip the Body</h1>
+        <p class="kc-hero-lead">HTTP caching lets a repeat request reuse a stored response or revalidate it with a short 304.</p>
+        <p class="kc-hero-note">Educational material only. Mika does not guarantee search rankings or AI answer citations.</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="On this page">
+        <p>On this page</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">Short answer</a></li>
+            <li><a href="#definition">Definition</a></li>
+            <li><a href="#how">What rendering changes for a crawler</a></li>
+            <li><a href="#checks">What to check</a></li>
+            <li><a href="#example">A practical example</a></li>
+            <li><a href="#limits">What this does not claim</a></li>
+            <li><a href="#mika">Where Mika Visibility files this</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>Short answer</h2>
+          <p>HTTP caching lets a repeat request reuse a stored response or revalidate it with a short 304.</p>
+          <p>The diagram shows a 304: the client asked, the server said the bytes have not changed, and the body was not sent again. That helps assets whose URLs change when the file changes. It is the wrong policy for HTML if a long-lived cache hides an update you needed crawlers and buyers to see. SEO Health separates the HTML policy from the asset policy.</p>
+        </section>
+        <section id="definition">
+          <h2>Definition</h2>
+          <p>A fingerprinted stylesheet can be cached for a long time because the next version has a new URL. The HTML that points at that URL should be revalidated so the new fingerprint is discovered. Caching everything “for a year” because a slider said so is how product pages go stale. The 304 figure is an illustration of revalidation, not a hit rate for any company.</p>
+        </section>
+        <section id="how">
+          <h2>What rendering changes for a crawler</h2>
+          <p>Cache fingerprinted assets for a long time, and revalidate HTML so new asset URLs are discovered.</p>
+          <p>Personalized HTML that includes a name or a cart should not be stored in a shared cache. A public product document usually should be cacheable with revalidation. The audit sample is the response headers of one HTML URL and one hashed asset, not a single max-age pasted onto both.</p>
+          <figure>
+            <img src="../../assets/articles/seo-tech/seo-tech-http-caching-of-assets/a-visualization-of-a-client-requesting-a-resource-and-the-se.webp" alt="A diagram of a client request answered with a 304 not-modified response." width="474" height="215" style="max-width:100%;height:auto">
+            <figcaption>Image from the source page: https://web.dev/articles/http-cache</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>What to check</h2>
+          <ul>
+            <li>Long cache on fingerprinted assets only</li>
+            <li>HTML revalidated so new fingerprints are seen</li>
+            <li>Personalized HTML kept out of shared caches</li>
+            <li>Headers sampled on one HTML URL and one asset</li>
+            <li>No single max-age applied to every response</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>A practical example</h2>
+          <p>A deploy fingerprints app.js but the HTML is cached for a day without revalidation, so visitors and crawlers keep the old HTML that points at a deleted file. The health fix shortens or revalidates the HTML cache and leaves the long cache on the fingerprinted file only.</p>
+        </section>
+        <section id="limits">
+          <h2>What this does not claim</h2>
+          <p>Cache headers do not guarantee rankings or citations.</p>
+        </section>
+        <section id="mika">
+          <h2>Where Mika Visibility files this</h2>
+          <p>Mika Visibility treats rendering as an SEO Health question: can the important HTML be fetched and compared with and without JavaScript when the template depends on it. That comparison is not a GEO audit and not a market-coverage plan. Findings stay attached to sample URLs. A re-audit after the template change is how the team checks the repair.</p>
+          <p>The 304 diagram explains revalidation. It is not a measured hit rate.</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">FAQ</h2>
+          <details>
+            <summary>What does a 304 avoid sending?</summary>
+            <p>HTTP caching lets a repeat request reuse a stored response or revalidate it with a short 304.</p>
+          </details>
+          <details>
+            <summary>How should HTML and fingerprinted assets differ?</summary>
+            <p>Cache fingerprinted assets for a long time, and revalidate HTML so new asset URLs are discovered.</p>
+          </details>
+          <details>
+            <summary>Do cache headers guarantee rankings?</summary>
+            <p>Cache headers do not guarantee rankings or citations.</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">Related guides</h2>
+          <ul>
+            <li><a href="/knowledge/how-to-check-website-crawlability/">How to Check Website Crawlability</a></li>
+            <li><a href="/knowledge/what-a-technical-seo-geo-crawler-inspects/">What a Technical SEO/GEO Crawler Inspects</a></li>
+            <li><a href="/qa/what-does-crawlability-mean/">What does crawlability mean?</a></li>
+            <li><a href="/blog/what-open-source-crawlers-surface/">What Open-Source Crawlers Surface</a></li>
+            <li><a href="/knowledge/what-open-source-seo-crawlers-check/">What Open-Source SEO Crawlers Check</a></li>
+            <li><a href="/blog/seo-tech-stale-while-revalidate/">Stale-While-Revalidate Serves a Stored Response While a Fresh One Is Checked</a></li>
+            <li><a href="/blog/seo-tech-cdn-connection-setup/">A CDN Can Shorten Connection Setup Without Changing the HTML</a></li>
+            <li><a href="/#audit">Mika homepage — Technical</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">Sources</h2>
+          <ol>
+            <li><a href="https://web.dev/articles/http-cache">https://web.dev/articles/http-cache</a> — Source page used for the diagram and for the technical definitions restated here in Mika’s own words.</li>
+            <li><a href="/#audit">Mika Visibility homepage</a> — Product framing for SEO Health. Sample interface counts on the homepage are illustrative, not a case study.</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">Next step</h2>
+          <p>Run a structured SEO + GEO audit to see health findings, growth gaps, and a blueprint you can act on.</p>
+          <p><a href="/#cta">Start on Mika</a></p>
+          <p>Clearer entities, answers, evidence, and context make pages easier to understand and reference. Results in any answer product are not guaranteed.</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/">Mika Visibility</a> · <a href="/knowledge/">Knowledge</a> · <a href="/blog/">Blog</a> · <a href="/qa/">Q&A</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">Contact</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../contact-config.js"></script>
+  <script src="../../contact.js"></script>
+</body>
+</html>

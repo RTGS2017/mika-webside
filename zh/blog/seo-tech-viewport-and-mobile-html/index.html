@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML 视口是可见区域，不是建模窗口 | Mika 博客</title>
+  <meta name="description" content="viewport 一词也指三维工具里的窗格。在网页上它是布局使用的区域，viewport meta 告诉手机这块区域有多宽。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-viewport-and-mobile-html/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-viewport-and-mobile-html/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-viewport-and-mobile-html/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-viewport-and-mobile-html/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="HTML 视口是可见区域，不是建模窗口 | Mika 博客">
+  <meta property="og:description" content="viewport 一词也指三维工具里的窗格。在网页上它是布局使用的区域，viewport meta 告诉手机这块区域有多宽。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-viewport-and-mobile-html/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-viewport-and-mobile-html/viewports.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HTML 视口是可见区域，不是建模窗口 | Mika 博客">
+  <meta name="twitter:description" content="viewport 一词也指三维工具里的窗格。在网页上它是布局使用的区域，viewport meta 告诉手机这块区域有多宽。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-viewport-and-mobile-html/#article","headline":"HTML 视口是可见区域，不是建模窗口","name":"HTML 视口是可见区域，不是建模窗口","description":"viewport 一词也指三维工具里的窗格。在网页上它是布局使用的区域，viewport meta 告诉手机这块区域有多宽。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-viewport-and-mobile-html/viewports.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-viewport-and-mobile-html/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-viewport-and-mobile-html/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"HTML 视口是可见区域，不是建模窗口","item":"https://mikaovo.ai/zh/blog/seo-tech-viewport-and-mobile-html/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-viewport-and-mobile-html/#faq","mainEntity":[{"@type":"Question","name":"什么是 HTML 视口？","acceptedAnswer":{"@type":"Answer","text":"HTML 视口是浏览器用来排版的页面区域，viewport meta 告诉移动浏览器使用设备宽度。"}},{"@type":"Question","name":"meta 应该怎么写？","acceptedAnswer":{"@type":"Answer","text":"在文档上放一个 viewport meta，并把宽度设为设备宽度。"}},{"@type":"Question","name":"viewport meta 能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"viewport meta 不保证排名或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-viewport-and-mobile-html/">EN</a>
+          <a href="/zh/blog/seo-tech-viewport-and-mobile-html/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>HTML 视口是可见区域，不是建模窗口</h1>
+        <p class="kc-hero-lead">HTML 视口是浏览器用来排版的页面区域，viewport meta 告诉移动浏览器使用设备宽度。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">页面基础里包括什么</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>HTML 视口是浏览器用来排版的页面区域，viewport meta 告诉移动浏览器使用设备宽度。</p>
+          <p>图是一个图形程序：四个窗格标着 Top、Front、Left 和 Perspective。这是这个词的一种真实用法，它不是 HTML head 里的标签。把两者混在一起，会写出碰不到文档的建议。SEO 健康要在人们用手机打开的页面上寻找这个 meta 元素。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>常见写法是一个名为 viewport 的 meta 元素，其 content 把宽度设为设备宽度。没有它时，许多手机会按一个很宽的虚拟尺寸排版再缩小，于是文字很小、点击落空。把宽度固定成比设备更窄或更宽的像素，会重现同样的问题。图里的建模窗格没有显示这个标签。它们只说明这个词为什么容易被用错。</p>
+        </section>
+        <section id="how">
+          <h2>页面基础里包括什么</h2>
+          <p>在文档上放一个 viewport meta，并把宽度设为设备宽度。</p>
+          <p>不要再加第二个互相矛盾的 viewport meta。不要为了强迫版式而禁止缩放。只在 JavaScript 运行之后才注入该标签的模板，会让还没运行脚本的人第一次绘制就是错的。标签进入原始 HTML 之后，用窄宽度查看同一条 URL。三维窗格不是这项测试。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-viewport-and-mobile-html/viewports.webp" alt="建模工作区分成 Top、Front、Left 和 Perspective 四个窗格，红色箭头指向它们共同的中心。" width="1280" height="736" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://en.wikipedia.org/wiki/Viewport</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>原始 HTML 中有一个 viewport meta</li>
+            <li>宽度设为设备宽度</li>
+            <li>没有第二个互相冲突的 meta</li>
+            <li>没有用禁止缩放来掩盖版式问题</li>
+            <li>在窄宽度下打开一条产品 URL</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>产品模板没有 viewport meta，在手机上规格表是一张被缩小的宽页面。修复是在共享 head 里加上设备宽度的 meta，并在窄窗口里检查一条产品 URL。建模截图留在来源页上，作为另一种视口的图片。它不是模板已经改变的证据。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>viewport meta 不保证排名或引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把标题、标题层级、语言和媒体基础归在 SEO 健康的内容与结构检查里。它们帮助页面被理解。它们不是 SEO 增长——增长问的是还缺什么覆盖——它们也不保证回答产品会引用这个页面。</p>
+          <p>四个窗格是图形工作区。要检查的仍然是 HTML 里的 meta 元素。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>什么是 HTML 视口？</summary>
+            <p>HTML 视口是浏览器用来排版的页面区域，viewport meta 告诉移动浏览器使用设备宽度。</p>
+          </details>
+          <details>
+            <summary>meta 应该怎么写？</summary>
+            <p>在文档上放一个 viewport meta，并把宽度设为设备宽度。</p>
+          </details>
+          <details>
+            <summary>viewport meta 能保证排名吗？</summary>
+            <p>viewport meta 不保证排名或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/what-is-a-website-seo-audit/">什么是网站 SEO 审计</a></li>
+            <li><a href="/zh/knowledge/how-to-detect-duplicate-content/">如何检测重复内容</a></li>
+            <li><a href="/zh/qa/what-does-a-website-seo-audit-review/">网站 SEO 审计检查什么？</a></li>
+            <li><a href="/zh/blog/what-seo-health-asks-of-a-live-site/">SEO 健康对线上站点要求什么</a></li>
+            <li><a href="/zh/knowledge/seo-health-vs-seo-growth/">SEO 健康 vs SEO 增长</a></li>
+            <li><a href="/zh/blog/seo-tech-progressive-enhancement/">HTML 是页面的底座，脚本在最上面</a></li>
+            <li><a href="/zh/blog/seo-tech-character-encoding/">字符编码是字节如何变成字母</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/Viewport">https://en.wikipedia.org/wiki/Viewport</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

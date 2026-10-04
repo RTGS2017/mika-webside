@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript 的重量要在 HTML 已经把事情说清之后才谈 | Mika 博客</title>
+  <meta name="description" content="很大的脚本会推迟可交互性。它们不能代替 HTML 响应里必须有的主要文字。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-javascript-weight-and-html/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-javascript-weight-and-html/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-javascript-weight-and-html/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-javascript-weight-and-html/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="JavaScript 的重量要在 HTML 已经把事情说清之后才谈 | Mika 博客">
+  <meta property="og:description" content="很大的脚本会推迟可交互性。它们不能代替 HTML 响应里必须有的主要文字。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-javascript-weight-and-html/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-javascript-weight-and-html/a-failing-lighthouse-audit-showing-scripts-taking-too-long-t.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JavaScript 的重量要在 HTML 已经把事情说清之后才谈 | Mika 博客">
+  <meta name="twitter:description" content="很大的脚本会推迟可交互性。它们不能代替 HTML 响应里必须有的主要文字。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-javascript-weight-and-html/#article","headline":"JavaScript 的重量要在 HTML 已经把事情说清之后才谈","name":"JavaScript 的重量要在 HTML 已经把事情说清之后才谈","description":"很大的脚本会推迟可交互性。它们不能代替 HTML 响应里必须有的主要文字。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-javascript-weight-and-html/a-failing-lighthouse-audit-showing-scripts-taking-too-long-t.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-javascript-weight-and-html/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-javascript-weight-and-html/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"JavaScript 的重量要在 HTML 已经把事情说清之后才谈","item":"https://mikaovo.ai/zh/blog/seo-tech-javascript-weight-and-html/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-javascript-weight-and-html/#faq","mainEntity":[{"@type":"Question","name":"在脚本重量要紧之前，必须先有什么？","acceptedAnswer":{"@type":"Answer","text":"沉重的 JavaScript 可以推迟交互，但 HTML 仍然必须包含主要文字。"}},{"@type":"Question","name":"两种发现应该按什么顺序写？","acceptedAnswer":{"@type":"Answer","text":"先检查原始 HTML 里有没有主要文字，如果文字已经在，再把脚本代价另记一行。"}},{"@type":"Question","name":"更少的 JavaScript 能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"减轻脚本重量不保证排名或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-javascript-weight-and-html/">EN</a>
+          <a href="/zh/blog/seo-tech-javascript-weight-and-html/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>JavaScript 的重量要在 HTML 已经把事情说清之后才谈</h1>
+        <p class="kc-hero-lead">沉重的 JavaScript 可以推迟交互，但 HTML 仍然必须包含主要文字。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">渲染对爬虫意味着什么变化</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>沉重的 JavaScript 可以推迟交互，但 HTML 仍然必须包含主要文字。</p>
+          <p>标出脚本执行很长的实验室审计是渲染记录。它不是页面缺少内容的证明，也不是可以公布的分数。如果查看源代码是一个壳，即使脚本很小，健康发现也是这个壳。如果查看源代码是完整的而脚本很大，发现就是脚本对交互的代价。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>代码拆分如果让首次响应更小、又不拿走文档里的文字，就属于这条记录。如果拆分把文字留在爬虫从不当作文档的代码块里，并不能解决发现。SEO 健康在样例 URL 上把这两种结果分开。</p>
+        </section>
+        <section id="how">
+          <h2>渲染对爬虫意味着什么变化</h2>
+          <p>先检查原始 HTML 里有没有主要文字，如果文字已经在，再把脚本代价另记一行。</p>
+          <p>第三方标签是模板首次绘制并不需要的重量的常见来源。它们作为自己的加载顺序问题来讨论。审计不应该建议删掉产品文案来“节省 JavaScript”。文案是文档。脚本是额外的东西。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-javascript-weight-and-html/a-failing-lighthouse-audit-showing-scripts-taking-too-long-t.webp" alt="关于脚本执行时间很长的实验室审计示意，不是本站的结果。" width="797" height="100" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://web.dev/articles/reduce-javascript-payloads-with-code-splitting</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>原始 HTML 中有主要文字</li>
+            <li>文字存在时，脚本代价只作为第二行记录</li>
+            <li>藏着文字唯一副本的代码块</li>
+            <li>一条配置器或产品 URL 作为样例</li>
+            <li>没有从实验室图片抄来的分数</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>配置器的 HTML 包含产品名和选项标签，一个很大的可视化库为三维视图而加载。健康记录肯定这份 HTML，并把库记为该 URL 上的交互代价。另一个模板把选项标签只放在库里，则是不同的、更严重的发现。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>减轻脚本重量不保证排名或引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把渲染当作 SEO 健康问题：当模板依赖 JavaScript 时，重要 HTML 能否在有脚本和无脚本两种情况下被获取并比较。这种比较不是 GEO 审计，也不是市场覆盖计划。发现要附在样例 URL 上。模板改完之后的再审计，用来确认修复。</p>
+          <p>审计插图是工具界面。它不是某个具名站点的实测结果。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>在脚本重量要紧之前，必须先有什么？</summary>
+            <p>沉重的 JavaScript 可以推迟交互，但 HTML 仍然必须包含主要文字。</p>
+          </details>
+          <details>
+            <summary>两种发现应该按什么顺序写？</summary>
+            <p>先检查原始 HTML 里有没有主要文字，如果文字已经在，再把脚本代价另记一行。</p>
+          </details>
+          <details>
+            <summary>更少的 JavaScript 能保证排名吗？</summary>
+            <p>减轻脚本重量不保证排名或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/how-to-check-website-crawlability/">如何检查网站可抓取性</a></li>
+            <li><a href="/zh/knowledge/what-a-technical-seo-geo-crawler-inspects/">技术 SEO/GEO 爬虫会检查什么</a></li>
+            <li><a href="/zh/qa/what-does-crawlability-mean/">可抓取性是什么意思？</a></li>
+            <li><a href="/zh/blog/what-open-source-crawlers-surface/">开源爬虫会看到什么</a></li>
+            <li><a href="/zh/knowledge/what-open-source-seo-crawlers-check/">开源 SEO 爬虫检查什么</a></li>
+            <li><a href="/zh/blog/seo-tech-long-tasks-on-the-main-thread/">长任务是推迟下一次输入的主线程工作</a></li>
+            <li><a href="/zh/blog/seo-tech-query-strings-and-duplicates/">查询字符串为同一文档制造额外的 URL</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://web.dev/articles/reduce-javascript-payloads-with-code-splitting">https://web.dev/articles/reduce-javascript-payloads-with-code-splitting</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

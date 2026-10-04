@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>字符编码是字节如何变成字母 | Mika 博客</title>
+  <meta name="description" content="编码把字符映射成字节。声明一种编码、实际发送另一种的页面会显示错误的字母，抓取时也一样。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-character-encoding/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-character-encoding/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-character-encoding/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-character-encoding/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="字符编码是字节如何变成字母 | Mika 博客">
+  <meta property="og:description" content="编码把字符映射成字节。声明一种编码、实际发送另一种的页面会显示错误的字母，抓取时也一样。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-character-encoding/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-character-encoding/papertape-wikipedia-example-dark1-2000px.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="字符编码是字节如何变成字母 | Mika 博客">
+  <meta name="twitter:description" content="编码把字符映射成字节。声明一种编码、实际发送另一种的页面会显示错误的字母，抓取时也一样。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-character-encoding/#article","headline":"字符编码是字节如何变成字母","name":"字符编码是字节如何变成字母","description":"编码把字符映射成字节。声明一种编码、实际发送另一种的页面会显示错误的字母，抓取时也一样。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-character-encoding/papertape-wikipedia-example-dark1-2000px.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-character-encoding/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-character-encoding/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"字符编码是字节如何变成字母","item":"https://mikaovo.ai/zh/blog/seo-tech-character-encoding/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-character-encoding/#faq","mainEntity":[{"@type":"Question","name":"什么是字符编码？","acceptedAnswer":{"@type":"Answer","text":"字符编码是从字符到服务器发送、浏览器读取的字节之间的映射。"}},{"@type":"Question","name":"声明必须和什么一致？","acceptedAnswer":{"@type":"Answer","text":"声明一种编码，并用同一种编码保存 HTML 文件。"}},{"@type":"Question","name":"正确的编码能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"正确的编码不保证排名或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-character-encoding/">EN</a>
+          <a href="/zh/blog/seo-tech-character-encoding/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>字符编码是字节如何变成字母</h1>
+        <p class="kc-hero-lead">字符编码是从字符到服务器发送、浏览器读取的字节之间的映射。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">页面基础里包括什么</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>字符编码是从字符到服务器发送、浏览器读取的字节之间的映射。</p>
+          <p>图中的纸带是一种旧的映射：用孔洞表示 Wikipedia 的字母，并标出 Carriage Return 和 Line Feed。它说明字母是一种编码，不是一份现代 HTML 文件的照片。SEO 健康关心的是你声明的编码就是你发送的编码，这样中文产品名和英文单位才不会变成替换字符。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>缺少声明时浏览器会猜测，猜测可能和文件不同。meta charset 说的是一件事，HTTP Content-Type 的 charset 说的是另一件事，这就是两张映射。HTTP 头在实践中常常优先，因此模板不应该依赖猜测。纸带上的控制标签提醒人们有些字节不是可见字母。它们不是要加到页面上的第二种字符集。</p>
+        </section>
+        <section id="how">
+          <h2>页面基础里包括什么</h2>
+          <p>声明一种编码，并用同一种编码保存 HTML 文件。</p>
+          <p>整个响应最好只用一种字符集，在 HTTP 头里声明，并在文档开头的若干字节里用 meta charset 重复，这样保存下来的副本仍然知道。不要在构建步骤里把 UTF-8 文件转成旧编码，却留下原来的 meta。打开一个同时含有中文名和英文缩写的页面，在获取到的源代码里读这两段字符串。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-character-encoding/papertape-wikipedia-example-dark1-2000px.webp" alt="穿孔纸带，孔洞在侧面拼出 Wikipedia，并标着 Carriage Return 和 Line Feed。" width="1280" height="1241" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://en.wikipedia.org/wiki/Character_encoding</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>HTTP 头和 meta 中是同一种字符集</li>
+            <li>文件以该字符集保存</li>
+            <li>源代码中的中文和拉丁文字都可读</li>
+            <li>没有只转码不改声明的构建步骤</li>
+            <li>获取并阅读一条双语 URL</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>一份翻译后的规格书用旧编码保存，模板却仍声明 UTF-8。中文名变成一排替换符号，获取结果里也是这些符号。修复是按所声明的编码重新保存文件并重新获取。纸带只是编码的历史图片。它不是模板应该输出的文件。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>正确的编码不保证排名或引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把标题、标题层级、语言和媒体基础归在 SEO 健康的内容与结构检查里。它们帮助页面被理解。它们不是 SEO 增长——增长问的是还缺什么覆盖——它们也不保证回答产品会引用这个页面。</p>
+          <p>纸带展示的是一种旧的字母编码方式。要检查的是你自己 HTML 的字节。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>什么是字符编码？</summary>
+            <p>字符编码是从字符到服务器发送、浏览器读取的字节之间的映射。</p>
+          </details>
+          <details>
+            <summary>声明必须和什么一致？</summary>
+            <p>声明一种编码，并用同一种编码保存 HTML 文件。</p>
+          </details>
+          <details>
+            <summary>正确的编码能保证排名吗？</summary>
+            <p>正确的编码不保证排名或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/what-is-a-website-seo-audit/">什么是网站 SEO 审计</a></li>
+            <li><a href="/zh/knowledge/how-to-detect-duplicate-content/">如何检测重复内容</a></li>
+            <li><a href="/zh/qa/what-does-a-website-seo-audit-review/">网站 SEO 审计检查什么？</a></li>
+            <li><a href="/zh/blog/what-seo-health-asks-of-a-live-site/">SEO 健康对线上站点要求什么</a></li>
+            <li><a href="/zh/knowledge/seo-health-vs-seo-growth/">SEO 健康 vs SEO 增长</a></li>
+            <li><a href="/zh/blog/seo-tech-internationalized-domain-names/">国际化名称仍然是同一个主机</a></li>
+            <li><a href="/zh/blog/seo-tech-what-a-web-crawler-fetches/">爬虫获取 URL，并保存返回的内容</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/Character_encoding">https://en.wikipedia.org/wiki/Character_encoding</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CDN 可以缩短连接建立而不改变 HTML | Mika 博客</title>
+  <meta name="description" content="近处的边缘节点可以缩短连接握手的距离。文档仍然是源站生成的那一份。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-cdn-connection-setup/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-cdn-connection-setup/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-cdn-connection-setup/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-cdn-connection-setup/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="CDN 可以缩短连接建立而不改变 HTML | Mika 博客">
+  <meta property="og:description" content="近处的边缘节点可以缩短连接握手的距离。文档仍然是源站生成的那一份。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-cdn-connection-setup/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-cdn-connection-setup/comparison-of-connection-setup-with-and-without-a-cdn.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CDN 可以缩短连接建立而不改变 HTML | Mika 博客">
+  <meta name="twitter:description" content="近处的边缘节点可以缩短连接握手的距离。文档仍然是源站生成的那一份。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-cdn-connection-setup/#article","headline":"CDN 可以缩短连接建立而不改变 HTML","name":"CDN 可以缩短连接建立而不改变 HTML","description":"近处的边缘节点可以缩短连接握手的距离。文档仍然是源站生成的那一份。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-cdn-connection-setup/comparison-of-connection-setup-with-and-without-a-cdn.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-cdn-connection-setup/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-cdn-connection-setup/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"CDN 可以缩短连接建立而不改变 HTML","item":"https://mikaovo.ai/zh/blog/seo-tech-cdn-connection-setup/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-cdn-connection-setup/#faq","mainEntity":[{"@type":"Question","name":"CDN 边缘节点缩短什么？","acceptedAnswer":{"@type":"Answer","text":"CDN 边缘节点可以在比源站更靠近访客的地方完成连接。"}},{"@type":"Question","name":"它不会填上什么？","acceptedAnswer":{"@type":"Answer","text":"把连接建立和源站时间分开，不要指望 CDN 去填一个空的 HTML 壳。"}},{"@type":"Question","name":"更短的握手能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"更短的握手不保证排名或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-cdn-connection-setup/">EN</a>
+          <a href="/zh/blog/seo-tech-cdn-connection-setup/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>CDN 可以缩短连接建立而不改变 HTML</h1>
+        <p class="kc-hero-lead">CDN 边缘节点可以在比源站更靠近访客的地方完成连接。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">渲染对爬虫意味着什么变化</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>CDN 边缘节点可以在比源站更靠近访客的地方完成连接。</p>
+          <p>对比图显示握手所需的长距离往返更少。这只对由距离造成的那一部分首字节时间有帮助。如果边缘连上之后源站仍然慢慢生成 HTML，文档仍然会晚。SEO 健康不把 CDN 主机名当成排名变化。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>TLS 版本和会话恢复也在这幅图里。它们是连接细节。它们不写标题、规范链接或答案。站点可以握手很快，同时仍是客户端渲染的壳。审计把这些记录分开。</p>
+        </section>
+        <section id="how">
+          <h2>渲染对爬虫意味着什么变化</h2>
+          <p>把连接建立和源站时间分开，不要指望 CDN 去填一个空的 HTML 壳。</p>
+          <p>在边缘缓存是第二个决定，写在 HTTP 缓存的说明里。只做代理、不缓存的 CDN 仍然只改变握手，不改变字节。写明你买的是哪一种。如果有实验室轨迹，抽样一条产品 HTML URL 的时序，并标明那是实验室轨迹。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-cdn-connection-setup/comparison-of-connection-setup-with-and-without-a-cdn.webp" alt="有 CDN 边缘节点与没有时的连接建立对比图。" width="1322" height="846" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://web.dev/articles/content-delivery-networks</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>握手距离与源站生成时间分开</li>
+            <li>CDN 是缓存还是只做代理</li>
+            <li>HTML 壳的问题留在渲染记录上</li>
+            <li>有实验室轨迹时标明为实验室轨迹</li>
+            <li>没有把索引承诺附在主机名上</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>团队把 DNS 迁到 CDN，并宣布索引会改善。产品 HTML 仍然是源站花半秒生成的壳，然后再注水。健康记录写的是握手移动了，壳没有。渲染修复仍然是 HTML。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>更短的握手不保证排名或引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把渲染当作 SEO 健康问题：当模板依赖 JavaScript 时，重要 HTML 能否在有脚本和无脚本两种情况下被获取并比较。这种比较不是 GEO 审计，也不是市场覆盖计划。发现要附在样例 URL 上。模板改完之后的再审计，用来确认修复。</p>
+          <p>对比图说的是连接建立，不是文档质量。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>CDN 边缘节点缩短什么？</summary>
+            <p>CDN 边缘节点可以在比源站更靠近访客的地方完成连接。</p>
+          </details>
+          <details>
+            <summary>它不会填上什么？</summary>
+            <p>把连接建立和源站时间分开，不要指望 CDN 去填一个空的 HTML 壳。</p>
+          </details>
+          <details>
+            <summary>更短的握手能保证排名吗？</summary>
+            <p>更短的握手不保证排名或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/how-to-check-website-crawlability/">如何检查网站可抓取性</a></li>
+            <li><a href="/zh/knowledge/what-a-technical-seo-geo-crawler-inspects/">技术 SEO/GEO 爬虫会检查什么</a></li>
+            <li><a href="/zh/qa/what-does-crawlability-mean/">可抓取性是什么意思？</a></li>
+            <li><a href="/zh/blog/what-open-source-crawlers-surface/">开源爬虫会看到什么</a></li>
+            <li><a href="/zh/knowledge/what-open-source-seo-crawlers-check/">开源 SEO 爬虫检查什么</a></li>
+            <li><a href="/zh/blog/seo-tech-splitting-javascript-for-first-load/">拆分 JavaScript 只有在第一份 HTML 仍有文字时才有帮助</a></li>
+            <li><a href="/zh/blog/seo-tech-how-a-crawler-renders-javascript/">爬虫可能先获取、再渲染，然后才看见链接</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://web.dev/articles/content-delivery-networks">https://web.dev/articles/content-delivery-networks</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

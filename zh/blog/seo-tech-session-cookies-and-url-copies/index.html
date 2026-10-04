@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>会话 Cookie 和会话 URL 都会把一份文档拆开 | Mika 博客</title>
+  <meta name="description" content="URL 里的会话 id 为每次访问制造一份副本。如果文档本身不变，cookie 可以把 id 留在 URL 之外。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-session-cookies-and-url-copies/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-session-cookies-and-url-copies/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-session-cookies-and-url-copies/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-session-cookies-and-url-copies/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="会话 Cookie 和会话 URL 都会把一份文档拆开 | Mika 博客">
+  <meta property="og:description" content="URL 里的会话 id 为每次访问制造一份副本。如果文档本身不变，cookie 可以把 id 留在 URL 之外。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-session-cookies-and-url-copies/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-session-cookies-and-url-copies/http-cookie-exchange-svg.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="会话 Cookie 和会话 URL 都会把一份文档拆开 | Mika 博客">
+  <meta name="twitter:description" content="URL 里的会话 id 为每次访问制造一份副本。如果文档本身不变，cookie 可以把 id 留在 URL 之外。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-session-cookies-and-url-copies/#article","headline":"会话 Cookie 和会话 URL 都会把一份文档拆开","name":"会话 Cookie 和会话 URL 都会把一份文档拆开","description":"URL 里的会话 id 为每次访问制造一份副本。如果文档本身不变，cookie 可以把 id 留在 URL 之外。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-session-cookies-and-url-copies/http-cookie-exchange-svg.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-session-cookies-and-url-copies/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-session-cookies-and-url-copies/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"会话 Cookie 和会话 URL 都会把一份文档拆开","item":"https://mikaovo.ai/zh/blog/seo-tech-session-cookies-and-url-copies/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-session-cookies-and-url-copies/#faq","mainEntity":[{"@type":"Question","name":"会话 id 应该放在哪里？","acceptedAnswer":{"@type":"Answer","text":"当文档不随访问变化时，会话标识应该在 cookie 里，而不是在 URL 里。"}},{"@type":"Question","name":"不带 cookie 的获取应该返回什么？","acceptedAnswer":{"@type":"Answer","text":"从 URL 和链接中去掉会话 id，并确认不带 cookie 的获取仍然返回公开文档。"}},{"@type":"Question","name":"去掉会话 URL 能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"去掉会话 URL 不保证排名或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-session-cookies-and-url-copies/">EN</a>
+          <a href="/zh/blog/seo-tech-session-cookies-and-url-copies/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>会话 Cookie 和会话 URL 都会把一份文档拆开</h1>
+        <p class="kc-hero-lead">当文档不随访问变化时，会话标识应该在 cookie 里，而不是在 URL 里。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">这如何影响可索引的 URL</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>当文档不随访问变化时，会话标识应该在 cookie 里，而不是在 URL 里。</p>
+          <p>cookie 图显示 id 被存储并送回，而不成为地址的一部分。包含 id 的 URL 每次都是一个新地址，于是 canonical、sitemap 和缓存都会裂开。SEO 健康从链接中去掉会话参数。这里的 cookie 不是一堂跟踪课。它是避免制造 URL 的一种方式。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>如果 HTML 真的对每个用户都不同，cookie 也不会使这些变体成为一份文档。个性化页面不应该是规范的公开 URL。公开文档应该在没有会话 cookie 时也可获取，并且两次干净的获取看起来相同。</p>
+        </section>
+        <section id="how">
+          <h2>这如何影响可索引的 URL</h2>
+          <p>从 URL 和链接中去掉会话 id，并确认不带 cookie 的获取仍然返回公开文档。</p>
+          <p>先加上会话 id 再 canonical 回干净 URL 的重定向是一团混乱。停止添加 id。需要活动代码的分析可以读一次，然后在干净 URL 上继续。内链不得保留该代码。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-session-cookies-and-url-copies/http-cookie-exchange-svg.webp" alt="HTTP cookie 被设置并在稍后的请求中送回的示意图。" width="1280" height="714" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://en.wikipedia.org/wiki/HTTP_cookie</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>内链或 sitemap 中没有会话 id</li>
+            <li>从旧的带 id URL 到干净路径的一跳重定向</li>
+            <li>不带 cookie 的获取仍然返回公开文字</li>
+            <li>个性化视图不用作规范 URL</li>
+            <li>一条干净的产品 URL 被获取两次</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>商店把每条内链都改写成包含 ;jsessionid=，sitemap 导出这些 URL。两次获取就是两份文档。修复是停止改写，把任何带 id 的 URL 一跳重定向到干净路径，并用干净 URL 重新生成 sitemap。购物车仍然可以有 cookie。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>去掉会话 URL 不保证排名或引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把首选 URL 当作 SEO 健康信号。规范链接、重复页和 sitemap 不一致会连同样例 URL 一起记录。它们不预测排名。SEO 增长问的是这条首选 URL 是否真的覆盖了某个意图。这些问题保持在不同的尺度上。</p>
+          <p>cookie 图显示 id 留在地址之外，这正是本文想避免的分裂。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>会话 id 应该放在哪里？</summary>
+            <p>当文档不随访问变化时，会话标识应该在 cookie 里，而不是在 URL 里。</p>
+          </details>
+          <details>
+            <summary>不带 cookie 的获取应该返回什么？</summary>
+            <p>从 URL 和链接中去掉会话 id，并确认不带 cookie 的获取仍然返回公开文档。</p>
+          </details>
+          <details>
+            <summary>去掉会话 URL 能保证排名吗？</summary>
+            <p>去掉会话 URL 不保证排名或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/how-to-audit-canonical-urls/">如何审计规范 URL（Canonical）</a></li>
+            <li><a href="/zh/knowledge/how-to-analyze-xml-sitemaps/">如何分析 XML Sitemap</a></li>
+            <li><a href="/zh/qa/what-is-an-indexation-mismatch/">什么是索引不一致？</a></li>
+            <li><a href="/zh/qa/what-is-a-canonical-url/">什么是规范 URL？</a></li>
+            <li><a href="/zh/blog/canonical-hreflang-and-sitemap-signals/">规范链接、Hreflang 与 Sitemap 信号</a></li>
+            <li><a href="/zh/blog/seo-tech-what-lcp-measures/">最大内容绘制（LCP）量的是什么</a></li>
+            <li><a href="/zh/blog/seo-tech-what-cls-measures/">累积布局偏移（CLS）量的是什么</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/HTTP_cookie">https://en.wikipedia.org/wiki/HTTP_cookie</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

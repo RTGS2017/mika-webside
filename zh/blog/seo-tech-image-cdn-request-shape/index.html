@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图片 CDN 仍然需要稳定且被说明的 URL | Mika 博客</title>
+  <meta name="description" content="图片 CDN 按 URL 上的参数调整尺寸和格式。这些 URL 必须可缓存、被说明，而不能是一串偶然的变体。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-image-cdn-request-shape/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-image-cdn-request-shape/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-image-cdn-request-shape/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-image-cdn-request-shape/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="图片 CDN 仍然需要稳定且被说明的 URL | Mika 博客">
+  <meta property="og:description" content="图片 CDN 按 URL 上的参数调整尺寸和格式。这些 URL 必须可缓存、被说明，而不能是一串偶然的变体。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-image-cdn-request-shape/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-image-cdn-request-shape/shows-the-request-response-flow-between-the-image-cdn-and-th.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="图片 CDN 仍然需要稳定且被说明的 URL | Mika 博客">
+  <meta name="twitter:description" content="图片 CDN 按 URL 上的参数调整尺寸和格式。这些 URL 必须可缓存、被说明，而不能是一串偶然的变体。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-image-cdn-request-shape/#article","headline":"图片 CDN 仍然需要稳定且被说明的 URL","name":"图片 CDN 仍然需要稳定且被说明的 URL","description":"图片 CDN 按 URL 上的参数调整尺寸和格式。这些 URL 必须可缓存、被说明，而不能是一串偶然的变体。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-image-cdn-request-shape/shows-the-request-response-flow-between-the-image-cdn-and-th.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-image-cdn-request-shape/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-image-cdn-request-shape/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"图片 CDN 仍然需要稳定且被说明的 URL","item":"https://mikaovo.ai/zh/blog/seo-tech-image-cdn-request-shape/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-image-cdn-request-shape/#faq","mainEntity":[{"@type":"Question","name":"图片 CDN 改变了 URL 的什么？","acceptedAnswer":{"@type":"Answer","text":"图片 CDN 根据参数生成变体，但每个有用的变体仍然需要一个稳定的 URL。"}},{"@type":"Question","name":"模板应该避免什么样的参数习惯？","acceptedAnswer":{"@type":"Answer","text":"使用一小套有意的宽度和格式，不要在每次浏览时追加唯一参数。"}},{"@type":"Question","name":"图片 CDN 能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"图片 CDN 不保证排名或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-image-cdn-request-shape/">EN</a>
+          <a href="/zh/blog/seo-tech-image-cdn-request-shape/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>图片 CDN 仍然需要稳定且被说明的 URL</h1>
+        <p class="kc-hero-lead">图片 CDN 根据参数生成变体，但每个有用的变体仍然需要一个稳定的 URL。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">页面基础里包括什么</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>图片 CDN 根据参数生成变体，但每个有用的变体仍然需要一个稳定的 URL。</p>
+          <p>流程图显示客户端请求尺寸和格式并收到该变体。当参数是模板有意选择的，这很有用。当每次浏览都加上随机破缓存参数或只差一个像素的宽度，就成了重复 URL 问题。SEO 健康看的是 URL 的模式，不是厂商的标志。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>CDN 主机名不是规范链接策略。如果同一张照片以几十种参数组合发布，站点就为一份资源准备了许多 URL。浏览器可能缓存不佳，爬虫也可能每次看到页面引用一个新 URL。健康记录列出参数模式和一条样例页面。它不声称 CDN 品牌会提升排名。</p>
+        </section>
+        <section id="how">
+          <h2>页面基础里包括什么</h2>
+          <p>使用一小套有意的宽度和格式，不要在每次浏览时追加唯一参数。</p>
+          <p>HTML 仍然应该带有 alt 文字和预留盒子。CDN 不会写这些。每小时都变的签名 URL 对缓存和任何比较页面版本的系统都特别不友好。如果必须签名，引用它们的页面应被理解为有意不可缓存，审计应该写明这一点。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-image-cdn-request-shape/shows-the-request-response-flow-between-the-image-cdn-and-th.webp" alt="浏览器与图片 CDN 之间的请求流程，尺寸和格式参数用来选择变体。" width="1520" height="776" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://web.dev/articles/image-cdns</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>一小段宽度阶梯，而不是每个像素一个 URL</li>
+            <li>没有每次浏览都变的随机参数</li>
+            <li>HTML 里仍然有 alt 文字和预留盒子</li>
+            <li>必须变化的签名 URL 已被标明</li>
+            <li>一条图库 URL 作为样例</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>产品图库按每位访客精确的 CSS 像素宽度向 CDN 要照片，于是 731、732 和 733 像素的文件都存在。模板应该请求一小段宽度阶梯。健康抽样是一条图库 URL 和参数模式，不是关于 CDN 的排名声称。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>图片 CDN 不保证排名或引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把标题、标题层级、语言和媒体基础归在 SEO 健康的内容与结构检查里。它们帮助页面被理解。它们不是 SEO 增长——增长问的是还缺什么覆盖——它们也不保证回答产品会引用这个页面。</p>
+          <p>流程图显示参数选择变体，因此文章可以警告偶然产生的唯一 URL。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>图片 CDN 改变了 URL 的什么？</summary>
+            <p>图片 CDN 根据参数生成变体，但每个有用的变体仍然需要一个稳定的 URL。</p>
+          </details>
+          <details>
+            <summary>模板应该避免什么样的参数习惯？</summary>
+            <p>使用一小套有意的宽度和格式，不要在每次浏览时追加唯一参数。</p>
+          </details>
+          <details>
+            <summary>图片 CDN 能保证排名吗？</summary>
+            <p>图片 CDN 不保证排名或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/what-is-a-website-seo-audit/">什么是网站 SEO 审计</a></li>
+            <li><a href="/zh/knowledge/how-to-detect-duplicate-content/">如何检测重复内容</a></li>
+            <li><a href="/zh/qa/what-does-a-website-seo-audit-review/">网站 SEO 审计检查什么？</a></li>
+            <li><a href="/zh/blog/what-seo-health-asks-of-a-live-site/">SEO 健康对线上站点要求什么</a></li>
+            <li><a href="/zh/knowledge/seo-health-vs-seo-growth/">SEO 健康 vs SEO 增长</a></li>
+            <li><a href="/zh/blog/seo-tech-image-compression-and-clarity/">压缩是在文件重量和可见损伤之间取舍</a></li>
+            <li><a href="/zh/blog/seo-tech-robots-txt-rules/">robots.txt 按用户代理分组规则</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://web.dev/articles/image-cdns">https://web.dev/articles/image-cdns</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

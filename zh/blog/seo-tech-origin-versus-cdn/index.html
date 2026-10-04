@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CDN 提供响应。它不给文档改名 | Mika 博客</title>
+  <meta name="description" content="内容分发网络可以从更靠近客户端的副本作出响应。规范 URL 仍然是一份文档，HTML 的含义不应在边缘改变。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-origin-versus-cdn/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-origin-versus-cdn/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-origin-versus-cdn/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-origin-versus-cdn/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="CDN 提供响应。它不给文档改名 | Mika 博客">
+  <meta property="og:description" content="内容分发网络可以从更靠近客户端的副本作出响应。规范 URL 仍然是一份文档，HTML 的含义不应在边缘改变。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-origin-versus-cdn/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-origin-versus-cdn/ncdn-cdn-svg.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CDN 提供响应。它不给文档改名 | Mika 博客">
+  <meta name="twitter:description" content="内容分发网络可以从更靠近客户端的副本作出响应。规范 URL 仍然是一份文档，HTML 的含义不应在边缘改变。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-origin-versus-cdn/#article","headline":"CDN 提供响应。它不给文档改名","name":"CDN 提供响应。它不给文档改名","description":"内容分发网络可以从更靠近客户端的副本作出响应。规范 URL 仍然是一份文档，HTML 的含义不应在边缘改变。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-origin-versus-cdn/ncdn-cdn-svg.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-origin-versus-cdn/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-origin-versus-cdn/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"CDN 提供响应。它不给文档改名","item":"https://mikaovo.ai/zh/blog/seo-tech-origin-versus-cdn/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-origin-versus-cdn/#faq","mainEntity":[{"@type":"Question","name":"CDN 改变什么？","acceptedAnswer":{"@type":"Answer","text":"CDN 保存响应的副本并用它们来应答。文档的 URL 仍然是你设为规范的那一个。"}},{"@type":"Question","name":"HTML 里什么应该保持不变？","acceptedAnswer":{"@type":"Answer","text":"保持一份规范的 HTML 文档，并把 CDN 用作该响应或其资源的副本。"}},{"@type":"Question","name":"CDN 能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"使用 CDN 不保证排名或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-origin-versus-cdn/">EN</a>
+          <a href="/zh/blog/seo-tech-origin-versus-cdn/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>CDN 提供响应。它不给文档改名</h1>
+        <p class="kc-hero-lead">CDN 保存响应的副本并用它们来应答。文档的 URL 仍然是你设为规范的那一个。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">渲染对爬虫意味着什么变化</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>CDN 保存响应的副本并用它们来应答。文档的 URL 仍然是你设为规范的那一个。</p>
+          <p>图画出了对照。左边，客户端到达一台源站。右边，客户端到达云里的多台服务器。两张图说的都是字节从哪里来。它们都不是延迟分数，本文也不编造分数。SEO 健康问的是客户端收到的副本是不是同一份文档：同一个 canonical、同一段主要文字、同一批链接。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>在边缘以不同方式组装的 HTML，例如按客户端地址把地区注进 H1，会造成与 canonical 不符的变体。静态资源搬到 CDN 上，比搬动文档的含义更安全。在你改了模板之后，边缘副本仍提供旧 canonical，这是缓存问题，不是新页面。清除缓存，或给资源 URL 加版本。不要为了躲开旧副本而发布第二份文档。</p>
+        </section>
+        <section id="how">
+          <h2>渲染对爬虫意味着什么变化</h2>
+          <p>保持一份规范的 HTML 文档，并把 CDN 用作该响应或其资源的副本。</p>
+          <p>检查对规范 URL 的一次获取，如果可以，再检查一次由边缘提供的获取。主要文字应该一致。包含 cookie 的缓存键会把文档拆成私有副本。公开页面应该在没有会话时也可缓存。图中右边的云不是改变 H1 的许可。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-origin-versus-cdn/ncdn-cdn-svg.webp" alt="两张图：客户端连到一台源站服务器，以及客户端连到分发云里的多台服务器。" width="1280" height="517" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://en.wikipedia.org/wiki/Content_delivery_network</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>HTML 文档只有一个规范 URL</li>
+            <li>边缘副本保持同一段主要文字</li>
+            <li>公开 HTML 在没有会话 cookie 时被缓存</li>
+            <li>资源 URL 在变化时加版本或被清除</li>
+            <li>对一条产品 URL 的两次获取互相一致</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>产品 HTML 在边缘缓存时把会话 cookie 放进了缓存键，于是有些客户端收到已登录的壳。修复是在没有 cookie 的情况下缓存公开 HTML，并让购物车请求不被缓存。对产品 URL 的两次获取一致。图里的服务器数量是画出来的，不是容量计划。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>使用 CDN 不保证排名或引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把渲染当作 SEO 健康问题：当模板依赖 JavaScript 时，重要 HTML 能否在有脚本和无脚本两种情况下被获取并比较。这种比较不是 GEO 审计，也不是市场覆盖计划。发现要附在样例 URL 上。模板改完之后的再审计，用来确认修复。</p>
+          <p>两张图显示响应可能从哪里来。它们不是测量。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>CDN 改变什么？</summary>
+            <p>CDN 保存响应的副本并用它们来应答。文档的 URL 仍然是你设为规范的那一个。</p>
+          </details>
+          <details>
+            <summary>HTML 里什么应该保持不变？</summary>
+            <p>保持一份规范的 HTML 文档，并把 CDN 用作该响应或其资源的副本。</p>
+          </details>
+          <details>
+            <summary>CDN 能保证排名吗？</summary>
+            <p>使用 CDN 不保证排名或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/how-to-check-website-crawlability/">如何检查网站可抓取性</a></li>
+            <li><a href="/zh/knowledge/what-a-technical-seo-geo-crawler-inspects/">技术 SEO/GEO 爬虫会检查什么</a></li>
+            <li><a href="/zh/qa/what-does-crawlability-mean/">可抓取性是什么意思？</a></li>
+            <li><a href="/zh/blog/what-open-source-crawlers-surface/">开源爬虫会看到什么</a></li>
+            <li><a href="/zh/knowledge/what-open-source-seo-crawlers-check/">开源 SEO 爬虫检查什么</a></li>
+            <li><a href="/zh/blog/seo-tech-web-fonts-as-page-basics/">Web 字体改变的是字母的画法，不是词语</a></li>
+            <li><a href="/zh/blog/seo-tech-responsive-layouts/">响应式布局让同一份文档重新流动</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/Content_delivery_network">https://en.wikipedia.org/wiki/Content_delivery_network</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

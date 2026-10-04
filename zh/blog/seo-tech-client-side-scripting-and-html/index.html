@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>客户端脚本可以造出源代码里从未有过的节点 | Mika 博客</title>
+  <meta name="description" content="创建元素并追加它们的脚本，会在获取之后改变 DOM。只存在于该脚本里的内容，对不运行它的获取是不可见的。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-client-side-scripting-and-html/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-client-side-scripting-and-html/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-client-side-scripting-and-html/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-client-side-scripting-and-html/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="客户端脚本可以造出源代码里从未有过的节点 | Mika 博客">
+  <meta property="og:description" content="创建元素并追加它们的脚本，会在获取之后改变 DOM。只存在于该脚本里的内容，对不运行它的获取是不可见的。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-client-side-scripting-and-html/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-client-side-scripting-and-html/javascript-code.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="客户端脚本可以造出源代码里从未有过的节点 | Mika 博客">
+  <meta name="twitter:description" content="创建元素并追加它们的脚本，会在获取之后改变 DOM。只存在于该脚本里的内容，对不运行它的获取是不可见的。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-client-side-scripting-and-html/#article","headline":"客户端脚本可以造出源代码里从未有过的节点","name":"客户端脚本可以造出源代码里从未有过的节点","description":"创建元素并追加它们的脚本，会在获取之后改变 DOM。只存在于该脚本里的内容，对不运行它的获取是不可见的。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-client-side-scripting-and-html/javascript-code.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-client-side-scripting-and-html/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-client-side-scripting-and-html/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"客户端脚本可以造出源代码里从未有过的节点","item":"https://mikaovo.ai/zh/blog/seo-tech-client-side-scripting-and-html/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-client-side-scripting-and-html/#faq","mainEntity":[{"@type":"Question","name":"客户端脚本可以添加什么？","acceptedAnswer":{"@type":"Answer","text":"客户端脚本在浏览器里运行，可以创建获取到的 HTML 里没有的元素。"}},{"@type":"Question","name":"列表应该放在哪里？","acceptedAnswer":{"@type":"Answer","text":"把爬虫应该看见的列表留在 HTML 里，让脚本去增强它，而不是发明它。"}},{"@type":"Question","name":"客户端脚本能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"客户端脚本不保证排名或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-client-side-scripting-and-html/">EN</a>
+          <a href="/zh/blog/seo-tech-client-side-scripting-and-html/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>客户端脚本可以造出源代码里从未有过的节点</h1>
+        <p class="kc-hero-lead">客户端脚本在浏览器里运行，可以创建获取到的 HTML 里没有的元素。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">渲染对爬虫意味着什么变化</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>客户端脚本在浏览器里运行，可以创建获取到的 HTML 里没有的元素。</p>
+          <p>这段代码创建一个 div、创建一个列表，并追加文字是在浏览器里算出来的项目。这些项目并没有写在示例的 HTML 里。它们只在脚本运行之后出现。当这些项目是产品列表、规格或指向其他文档的链接时，SEO 健康把这种模式当作风险。代码里那种按星期计算的写法是来源页上的例子。它不是要安装的功能，也不是一份地区报告。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>脚本可以增强 HTML 里已经有的列表，例如对服务器已经发出的节点排序。脚本也可以是列表的唯一作者。第二种情况会让获取失败。渐进增强把列表留在源代码里，再让脚本去重排。本页的代码属于第二种：列表项被创建并追加。把它当作风险的图片，而不是要贴进模板的代码。</p>
+        </section>
+        <section id="how">
+          <h2>渲染对爬虫意味着什么变化</h2>
+          <p>把爬虫应该看见的列表留在 HTML 里，让脚本去增强它，而不是发明它。</p>
+          <p>获取 URL，并在源代码里搜索产品名。如果它们只存在于一段构建元素的脚本里，它们就还不是文档。一句“请启用 JavaScript”的 noscript 说明不能代替列表。在阻止脚本的情况下比较一条 URL。代码里的循环是“创建并追加”的图示。不要复制它，也不要把它里面的数字说成结果。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-client-side-scripting-and-html/javascript-code.webp" alt="一段 JavaScript：它创建 div 和列表，再把在浏览器里造出的列表项追加进去。" width="1280" height="852" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://en.wikipedia.org/wiki/JavaScript</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>获取到的 HTML 中有产品或型号名称</li>
+            <li>脚本增强该列表，而不是制造唯一副本</li>
+            <li>noscript 提示没有被当作唯一内容</li>
+            <li>在阻止脚本的情况下获取一条 URL</li>
+            <li>示例代码没有被贴进模板</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>系列页的型号列表在 HTML 里是空的，由脚本为每个型号创建一个项目来填满。修复是在服务器上把型号渲染成列表项，并让脚本只标记当前项。不运行脚本的获取能看见名称。来源页上的代码仍然是相反模式的例子。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>客户端脚本不保证排名或引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把渲染当作 SEO 健康问题：当模板依赖 JavaScript 时，重要 HTML 能否在有脚本和无脚本两种情况下被获取并比较。这种比较不是 GEO 审计，也不是市场覆盖计划。发现要附在样例 URL 上。模板改完之后的再审计，用来确认修复。</p>
+          <p>这段代码显示节点是在浏览器里创建的。审计要在 HTML 里寻找这些节点。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>客户端脚本可以添加什么？</summary>
+            <p>客户端脚本在浏览器里运行，可以创建获取到的 HTML 里没有的元素。</p>
+          </details>
+          <details>
+            <summary>列表应该放在哪里？</summary>
+            <p>把爬虫应该看见的列表留在 HTML 里，让脚本去增强它，而不是发明它。</p>
+          </details>
+          <details>
+            <summary>客户端脚本能保证排名吗？</summary>
+            <p>客户端脚本不保证排名或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/how-to-check-website-crawlability/">如何检查网站可抓取性</a></li>
+            <li><a href="/zh/knowledge/what-a-technical-seo-geo-crawler-inspects/">技术 SEO/GEO 爬虫会检查什么</a></li>
+            <li><a href="/zh/qa/what-does-crawlability-mean/">可抓取性是什么意思？</a></li>
+            <li><a href="/zh/blog/what-open-source-crawlers-surface/">开源爬虫会看到什么</a></li>
+            <li><a href="/zh/knowledge/what-open-source-seo-crawlers-check/">开源 SEO 爬虫检查什么</a></li>
+            <li><a href="/zh/blog/seo-tech-what-delays-the-next-paint/">输入和下一帧绘制之间隔着什么</a></li>
+            <li><a href="/zh/blog/seo-tech-time-to-first-byte/">首字节时间是任何内容字节之前的等待</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/JavaScript">https://en.wikipedia.org/wiki/JavaScript</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

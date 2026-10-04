@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A CDN Serves the Response. It Does Not Rename the Document | Mika Blog</title>
+  <meta name="description" content="A content delivery network can answer from copies nearer the client. The canonical URL is still one document, and the HTML should not change meaning at the edge.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/blog/seo-tech-origin-versus-cdn/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-origin-versus-cdn/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-origin-versus-cdn/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-origin-versus-cdn/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="A CDN Serves the Response. It Does Not Rename the Document | Mika Blog">
+  <meta property="og:description" content="A content delivery network can answer from copies nearer the client. The canonical URL is still one document, and the HTML should not change meaning at the edge.">
+  <meta property="og:url" content="https://mikaovo.ai/blog/seo-tech-origin-versus-cdn/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-origin-versus-cdn/ncdn-cdn-svg.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="A CDN Serves the Response. It Does Not Rename the Document | Mika Blog">
+  <meta name="twitter:description" content="A content delivery network can answer from copies nearer the client. The canonical URL is still one document, and the HTML should not change meaning at the edge.">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/blog/seo-tech-origin-versus-cdn/#article","headline":"A CDN Serves the Response. It Does Not Rename the Document","name":"A CDN Serves the Response. It Does Not Rename the Document","description":"A content delivery network can answer from copies nearer the client. The canonical URL is still one document, and the HTML should not change meaning at the edge.","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"en","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-origin-versus-cdn/ncdn-cdn-svg.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/blog/seo-tech-origin-versus-cdn/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/blog/seo-tech-origin-versus-cdn/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mikaovo.ai/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://mikaovo.ai/blog/"},{"@type":"ListItem","position":3,"name":"A CDN Serves the Response. It Does Not Rename the Document","item":"https://mikaovo.ai/blog/seo-tech-origin-versus-cdn/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/blog/seo-tech-origin-versus-cdn/#faq","mainEntity":[{"@type":"Question","name":"What does a CDN change?","acceptedAnswer":{"@type":"Answer","text":"A CDN stores copies of responses and answers from them. The document’s URL stays the one you canonicalized."}},{"@type":"Question","name":"What should stay the same in the HTML?","acceptedAnswer":{"@type":"Answer","text":"Keep one canonical HTML document, and use the CDN as a copy of that response or of its assets."}},{"@type":"Question","name":"Does a CDN guarantee rankings?","acceptedAnswer":{"@type":"Answer","text":"Using a CDN does not guarantee rankings or citations."}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">Skip to content</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/" aria-label="Mika Visibility">
+        <img src="../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/knowledge/">Knowledge</a>
+        <a href="/blog/">Blog</a>
+        <a href="/qa/">Q&A</a>
+        <div class="kc-lang" aria-label="Language">
+          <a href="/blog/seo-tech-origin-versus-cdn/" aria-current="page">EN</a>
+          <a href="/zh/blog/seo-tech-origin-versus-cdn/">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">Contact</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>Technical</span> · <time datetime="2026-10-04">October 4, 2026</time></p>
+        <h1>A CDN Serves the Response. It Does Not Rename the Document</h1>
+        <p class="kc-hero-lead">A CDN stores copies of responses and answers from them. The document’s URL stays the one you canonicalized.</p>
+        <p class="kc-hero-note">Educational material only. Mika does not guarantee search rankings or AI answer citations.</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="On this page">
+        <p>On this page</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">Short answer</a></li>
+            <li><a href="#definition">Definition</a></li>
+            <li><a href="#how">What rendering changes for a crawler</a></li>
+            <li><a href="#checks">What to check</a></li>
+            <li><a href="#example">A practical example</a></li>
+            <li><a href="#limits">What this does not claim</a></li>
+            <li><a href="#mika">Where Mika Visibility files this</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>Short answer</h2>
+          <p>A CDN stores copies of responses and answers from them. The document’s URL stays the one you canonicalized.</p>
+          <p>The figure draws the contrast. On the left, clients reach one origin. On the right, clients reach several servers in a cloud. Both pictures are about where the bytes come from. Neither picture is a latency score, and this article does not invent one. SEO Health asks whether the copy a client receives is the same document: same canonical, same primary text, same links.</p>
+        </section>
+        <section id="definition">
+          <h2>Definition</h2>
+          <p>HTML that is assembled differently at the edge, for example by injecting a region into the H1 based on the client address, creates variants that do not match the canonical. Static assets can move to the CDN more safely than the document’s meaning. A stale edge copy that still serves an old canonical after you changed the template is a cache problem, not a new page. Purge or version the URL of the asset. Do not publish a second document to escape a stale copy.</p>
+        </section>
+        <section id="how">
+          <h2>What rendering changes for a crawler</h2>
+          <p>Keep one canonical HTML document, and use the CDN as a copy of that response or of its assets.</p>
+          <p>Check a fetch of the canonical URL and, if you can, a fetch that is served from the edge. The primary text should agree. Cache keys that include cookies can split the document into private copies. Public pages should be cacheable without a session. The right-hand cloud in the figure is not permission to vary the H1.</p>
+          <figure>
+            <img src="../../assets/articles/seo-tech/seo-tech-origin-versus-cdn/ncdn-cdn-svg.webp" alt="Two diagrams: clients reaching one origin server, and clients reaching several servers inside a delivery cloud." width="1280" height="517" style="max-width:100%;height:auto">
+            <figcaption>Image from the source page: https://en.wikipedia.org/wiki/Content_delivery_network</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>What to check</h2>
+          <ul>
+            <li>One canonical URL for the HTML document</li>
+            <li>Edge copies that keep the same primary text</li>
+            <li>Public HTML cached without a session cookie</li>
+            <li>Asset URLs versioned or purged when they change</li>
+            <li>Two fetches of one product URL that agree</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>A practical example</h2>
+          <p>The product HTML is cached at the edge with a session cookie in the cache key, so some clients receive a logged-in shell. The repair caches the public HTML without the cookie and keeps the cart request uncached. Two fetches of the product URL agree. The diagram’s server counts are a drawing, not a capacity plan.</p>
+        </section>
+        <section id="limits">
+          <h2>What this does not claim</h2>
+          <p>Using a CDN does not guarantee rankings or citations.</p>
+        </section>
+        <section id="mika">
+          <h2>Where Mika Visibility files this</h2>
+          <p>Mika Visibility treats rendering as an SEO Health question: can the important HTML be fetched and compared with and without JavaScript when the template depends on it. That comparison is not a GEO audit and not a market-coverage plan. Findings stay attached to sample URLs. A re-audit after the template change is how the team checks the repair.</p>
+          <p>The two drawings show where a response may come from. They are not measurements.</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">FAQ</h2>
+          <details>
+            <summary>What does a CDN change?</summary>
+            <p>A CDN stores copies of responses and answers from them. The document’s URL stays the one you canonicalized.</p>
+          </details>
+          <details>
+            <summary>What should stay the same in the HTML?</summary>
+            <p>Keep one canonical HTML document, and use the CDN as a copy of that response or of its assets.</p>
+          </details>
+          <details>
+            <summary>Does a CDN guarantee rankings?</summary>
+            <p>Using a CDN does not guarantee rankings or citations.</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">Related guides</h2>
+          <ul>
+            <li><a href="/knowledge/how-to-check-website-crawlability/">How to Check Website Crawlability</a></li>
+            <li><a href="/knowledge/what-a-technical-seo-geo-crawler-inspects/">What a Technical SEO/GEO Crawler Inspects</a></li>
+            <li><a href="/qa/what-does-crawlability-mean/">What does crawlability mean?</a></li>
+            <li><a href="/blog/what-open-source-crawlers-surface/">What Open-Source Crawlers Surface</a></li>
+            <li><a href="/knowledge/what-open-source-seo-crawlers-check/">What Open-Source SEO Crawlers Check</a></li>
+            <li><a href="/blog/seo-tech-web-fonts-as-page-basics/">A Web Font Changes the Drawing of Letters, Not the Words</a></li>
+            <li><a href="/blog/seo-tech-responsive-layouts/">A Responsive Layout Reflows One Document</a></li>
+            <li><a href="/#audit">Mika homepage — Technical</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">Sources</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/Content_delivery_network">https://en.wikipedia.org/wiki/Content_delivery_network</a> — Source page used for the diagram and for the technical definitions restated here in Mika’s own words.</li>
+            <li><a href="/#audit">Mika Visibility homepage</a> — Product framing for SEO Health. Sample interface counts on the homepage are illustrative, not a case study.</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">Next step</h2>
+          <p>Run a structured SEO + GEO audit to see health findings, growth gaps, and a blueprint you can act on.</p>
+          <p><a href="/#cta">Start on Mika</a></p>
+          <p>Clearer entities, answers, evidence, and context make pages easier to understand and reference. Results in any answer product are not guaranteed.</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/">Mika Visibility</a> · <a href="/knowledge/">Knowledge</a> · <a href="/blog/">Blog</a> · <a href="/qa/">Q&A</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">Contact</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../contact-config.js"></script>
+  <script src="../../contact.js"></script>
+</body>
+</html>

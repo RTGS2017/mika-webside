@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>阻挡渲染的样式表拖住首次绘制 | Mika 博客</title>
+  <meta name="description" content="头部的样式表在下载并解析完成之前会阻挡渲染。路径上用不到的样式表是模板缺陷。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-render-blocking-stylesheets/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-render-blocking-stylesheets/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-render-blocking-stylesheets/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-render-blocking-stylesheets/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="阻挡渲染的样式表拖住首次绘制 | Mika 博客">
+  <meta property="og:description" content="头部的样式表在下载并解析完成之前会阻挡渲染。路径上用不到的样式表是模板缺陷。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-render-blocking-stylesheets/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-render-blocking-stylesheets/lighthouse-report-for-unoptimized-page-showing-fcp-of-1s-and.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="阻挡渲染的样式表拖住首次绘制 | Mika 博客">
+  <meta name="twitter:description" content="头部的样式表在下载并解析完成之前会阻挡渲染。路径上用不到的样式表是模板缺陷。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-render-blocking-stylesheets/#article","headline":"阻挡渲染的样式表拖住首次绘制","name":"阻挡渲染的样式表拖住首次绘制","description":"头部的样式表在下载并解析完成之前会阻挡渲染。路径上用不到的样式表是模板缺陷。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-render-blocking-stylesheets/lighthouse-report-for-unoptimized-page-showing-fcp-of-1s-and.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-render-blocking-stylesheets/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-render-blocking-stylesheets/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"阻挡渲染的样式表拖住首次绘制","item":"https://mikaovo.ai/zh/blog/seo-tech-render-blocking-stylesheets/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-render-blocking-stylesheets/#faq","mainEntity":[{"@type":"Question","name":"为什么头部样式表会阻挡绘制？","acceptedAnswer":{"@type":"Answer","text":"从头部链接的样式表会阻挡渲染，直到浏览器拿到它。"}},{"@type":"Question","name":"应该去掉或拆分什么？","acceptedAnswer":{"@type":"Answer","text":"去掉或拆分样例模板首屏用不到的样式表。"}},{"@type":"Question","name":"解除 CSS 阻挡能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"解除样式表的阻挡不保证排名或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-render-blocking-stylesheets/">EN</a>
+          <a href="/zh/blog/seo-tech-render-blocking-stylesheets/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>阻挡渲染的样式表拖住首次绘制</h1>
+        <p class="kc-hero-lead">从头部链接的样式表会阻挡渲染，直到浏览器拿到它。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">渲染对爬虫意味着什么变化</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>从头部链接的样式表会阻挡渲染，直到浏览器拿到它。</p>
+          <p>这种行为使 CSS 能在不闪出错误布局的情况下为首次绘制定样式，也使一份用不到的样式表推迟每一个包含它的页面。实验室报告的图是工具点名阻挡资源的画面。它不是对 Mika、某位客户或本营销站的测量，这种画面里印着的任何数字都不是可以抄走的结果。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>SEO 健康问的是产品模板上有哪些样式表，以及这些样式表在首屏真正应用了哪些规则。只为首页主视觉而存在的样式表不应该出现在文档页的头部。按模板拆分才是修复。把 CSS 删到页面看起来坏掉则不是。</p>
+        </section>
+        <section id="how">
+          <h2>渲染对爬虫意味着什么变化</h2>
+          <p>去掉或拆分样例模板首屏用不到的样式表。</p>
+          <p>为首屏内联关键 CSS 可以是后续步骤，写在关于内联的配套说明里。不需要用它来证明可以去掉一份并不适用的样式表。审计样例是一条 URL 的 HTML 头部和该样式表的网络时序，如果只有实验室观察，就标明是实验室观察。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-render-blocking-stylesheets/lighthouse-report-for-unoptimized-page-showing-fcp-of-1s-and.webp" alt="实验室报告示意，把阻挡渲染的资源标为机会，不是本站的分数。" width="1372" height="1098" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://web.dev/articles/defer-non-critical-css</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>从头部链接的样式表</li>
+            <li>不适用于模板首屏的样式表</li>
+            <li>实验室记录被标明为实验室记录</li>
+            <li>取消链接之后一条样例 URL 的头部</li>
+            <li>没有从工具截图抄来的分数</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>每个模板都链接一份为已结束活动构建的样式表。覆盖情况显示它在产品页上大部分未使用。健康修复是在活动 URL 之外停止链接它。产品页自己的样式表保留。不记录总等级。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>解除样式表的阻挡不保证排名或引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把渲染当作 SEO 健康问题：当模板依赖 JavaScript 时，重要 HTML 能否在有脚本和无脚本两种情况下被获取并比较。这种比较不是 GEO 审计，也不是市场覆盖计划。发现要附在样例 URL 上。模板改完之后的再审计，用来确认修复。</p>
+          <p>报告图是工具示意。其中的数字不是这里点名的任何公司的结果。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>为什么头部样式表会阻挡绘制？</summary>
+            <p>从头部链接的样式表会阻挡渲染，直到浏览器拿到它。</p>
+          </details>
+          <details>
+            <summary>应该去掉或拆分什么？</summary>
+            <p>去掉或拆分样例模板首屏用不到的样式表。</p>
+          </details>
+          <details>
+            <summary>解除 CSS 阻挡能保证排名吗？</summary>
+            <p>解除样式表的阻挡不保证排名或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/how-to-check-website-crawlability/">如何检查网站可抓取性</a></li>
+            <li><a href="/zh/knowledge/what-a-technical-seo-geo-crawler-inspects/">技术 SEO/GEO 爬虫会检查什么</a></li>
+            <li><a href="/zh/qa/what-does-crawlability-mean/">可抓取性是什么意思？</a></li>
+            <li><a href="/zh/blog/what-open-source-crawlers-surface/">开源爬虫会看到什么</a></li>
+            <li><a href="/zh/knowledge/what-open-source-seo-crawlers-check/">开源 SEO 爬虫检查什么</a></li>
+            <li><a href="/zh/blog/seo-tech-inlining-critical-css/">内联的关键 CSS 只是首屏用到的 CSS</a></li>
+            <li><a href="/zh/blog/seo-tech-javascript-weight-and-html/">JavaScript 的重量要在 HTML 已经把事情说清之后才谈</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://web.dev/articles/defer-non-critical-css">https://web.dev/articles/defer-non-critical-css</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

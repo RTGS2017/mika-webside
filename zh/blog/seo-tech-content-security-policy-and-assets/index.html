@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>内容安全策略可以挡住你自己页面的资源 | Mika 博客</title>
+  <meta name="description" content="CSP 把脚本、样式、图片和字体映射到允许列表。漏掉你自己的文件时，HTML 仍被获取，资源却用不上。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-content-security-policy-and-assets/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-content-security-policy-and-assets/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-content-security-policy-and-assets/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-content-security-policy-and-assets/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="内容安全策略可以挡住你自己页面的资源 | Mika 博客">
+  <meta property="og:description" content="CSP 把脚本、样式、图片和字体映射到允许列表。漏掉你自己的文件时，HTML 仍被获取，资源却用不上。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-content-security-policy-and-assets/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-content-security-policy-and-assets/contentsecuritypolicy3-diagram.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="内容安全策略可以挡住你自己页面的资源 | Mika 博客">
+  <meta name="twitter:description" content="CSP 把脚本、样式、图片和字体映射到允许列表。漏掉你自己的文件时，HTML 仍被获取，资源却用不上。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-content-security-policy-and-assets/#article","headline":"内容安全策略可以挡住你自己页面的资源","name":"内容安全策略可以挡住你自己页面的资源","description":"CSP 把脚本、样式、图片和字体映射到允许列表。漏掉你自己的文件时，HTML 仍被获取，资源却用不上。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-content-security-policy-and-assets/contentsecuritypolicy3-diagram.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-content-security-policy-and-assets/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-content-security-policy-and-assets/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"内容安全策略可以挡住你自己页面的资源","item":"https://mikaovo.ai/zh/blog/seo-tech-content-security-policy-and-assets/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-content-security-policy-and-assets/#faq","mainEntity":[{"@type":"Question","name":"内容安全策略告诉浏览器什么？","acceptedAnswer":{"@type":"Answer","text":"内容安全策略告诉浏览器哪些来源可以提供脚本、样式、图片和其他资源。"}},{"@type":"Question","name":"什么应该留在 HTML 里？","acceptedAnswer":{"@type":"Answer","text":"允许文档需要的资源，如果策略可能挡住脚本，就把主要文字留在 HTML 里。"}},{"@type":"Question","name":"内容安全策略能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"内容安全策略不保证排名或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-content-security-policy-and-assets/">EN</a>
+          <a href="/zh/blog/seo-tech-content-security-policy-and-assets/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>内容安全策略可以挡住你自己页面的资源</h1>
+        <p class="kc-hero-lead">内容安全策略告诉浏览器哪些来源可以提供脚本、样式、图片和其他资源。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">渲染对爬虫意味着什么变化</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>内容安全策略告诉浏览器哪些来源可以提供脚本、样式、图片和其他资源。</p>
+          <p>图把功能映射到指令：样式表通向 style-src，脚本通向 script-src，图片通向 img-src，字体通向 font-src，还有其他，箭头指向一台 Web 服务器。来源图上的说明把这张画和一份较旧的草案联系在一起。本文把它用作这个概念的地图，不是要粘贴的配置，也不是当前的分数。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>策略是一个响应头或一个 meta 元素。如果它挡住了你自己主机上的样式表，获取到的 HTML 就没有样式。如果它挡住的脚本只是增强菜单，HTML 底座应该仍然能用。如果它挡住了唯一一份产品文字，因为那段文字是由被挡的脚本注入的，文档就失败了。CSP 不是 robots.txt。爬虫可以获取 HTML，同时浏览器拒绝资源。两边都要检查。</p>
+        </section>
+        <section id="how">
+          <h2>渲染对爬虫意味着什么变化</h2>
+          <p>允许文档需要的资源，如果策略可能挡住脚本，就把主要文字留在 HTML 里。</p>
+          <p>策略变更后，阅读一条产品 URL 在浏览器里的拒绝信息，并点名那条指令。被挡的第三方主机和被挡的一方样式表不是一回事。不要因为一张图画了很多箭头，就把策略放宽到允许所有主机。加上你打算用来提供文件的那个主机。图里的服务器圆柱不是你的源站，除非你检查过。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-content-security-policy-and-assets/contentsecuritypolicy3-diagram.webp" alt="一张图，把脚本、样式表、图片和字体等页面功能映射到指向 Web 服务器的内容安全策略指令。" width="1280" height="1399" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://en.wikipedia.org/wiki/Content_Security_Policy</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>如果页面使用一方 CSS 和图片，它们被允许</li>
+            <li>主要文字仍在 HTML 中</li>
+            <li>被挡的资源按它的指令被点名</li>
+            <li>策略不是从图上抄来的</li>
+            <li>加载一条产品 URL，并检查过控制台或网络记录</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>新策略允许来自一个主机的脚本，却漏掉了提供产品 CSS 的主机。页面没有样式，布局塌掉，而 HTML 获取结果里仍有 H1。修复是把该主机加进 style-src，并确认 CSS 请求。这张图没有被粘贴成响应头。被挡住的从来不是 H1。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>内容安全策略不保证排名或引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把渲染当作 SEO 健康问题：当模板依赖 JavaScript 时，重要 HTML 能否在有脚本和无脚本两种情况下被获取并比较。这种比较不是 GEO 审计，也不是市场覆盖计划。发现要附在样例 URL 上。模板改完之后的再审计，用来确认修复。</p>
+          <p>这张图是一份较旧草案上的地图。要检查的是你自己响应上的策略。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>内容安全策略告诉浏览器什么？</summary>
+            <p>内容安全策略告诉浏览器哪些来源可以提供脚本、样式、图片和其他资源。</p>
+          </details>
+          <details>
+            <summary>什么应该留在 HTML 里？</summary>
+            <p>允许文档需要的资源，如果策略可能挡住脚本，就把主要文字留在 HTML 里。</p>
+          </details>
+          <details>
+            <summary>内容安全策略能保证排名吗？</summary>
+            <p>内容安全策略不保证排名或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/how-to-check-website-crawlability/">如何检查网站可抓取性</a></li>
+            <li><a href="/zh/knowledge/what-a-technical-seo-geo-crawler-inspects/">技术 SEO/GEO 爬虫会检查什么</a></li>
+            <li><a href="/zh/qa/what-does-crawlability-mean/">可抓取性是什么意思？</a></li>
+            <li><a href="/zh/blog/what-open-source-crawlers-surface/">开源爬虫会看到什么</a></li>
+            <li><a href="/zh/knowledge/what-open-source-seo-crawlers-check/">开源 SEO 爬虫检查什么</a></li>
+            <li><a href="/zh/blog/seo-tech-dom-versus-source-html/">DOM 是一棵树。源代码是获取返回的内容</a></li>
+            <li><a href="/zh/blog/seo-tech-client-side-scripting-and-html/">客户端脚本可以造出源代码里从未有过的节点</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/Content_Security_Policy">https://en.wikipedia.org/wiki/Content_Security_Policy</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>robots.txt 按用户代理分组规则 | Mika 博客</title>
+  <meta name="description" content="robots.txt 告诉被点名的爬虫哪些路径可以获取。它本身不会把 URL 移出索引，也不是排名工具。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-robots-txt-rules/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-robots-txt-rules/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-robots-txt-rules/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-robots-txt-rules/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="robots.txt 按用户代理分组规则 | Mika 博客">
+  <meta property="og:description" content="robots.txt 告诉被点名的爬虫哪些路径可以获取。它本身不会把 URL 移出索引，也不是排名工具。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-robots-txt-rules/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-robots-txt-rules/picture-of-text-reads-user-agent-mallorybot-disallow-user-ag.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="robots.txt 按用户代理分组规则 | Mika 博客">
+  <meta name="twitter:description" content="robots.txt 告诉被点名的爬虫哪些路径可以获取。它本身不会把 URL 移出索引，也不是排名工具。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-robots-txt-rules/#article","headline":"robots.txt 按用户代理分组规则","name":"robots.txt 按用户代理分组规则","description":"robots.txt 告诉被点名的爬虫哪些路径可以获取。它本身不会把 URL 移出索引，也不是排名工具。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-robots-txt-rules/picture-of-text-reads-user-agent-mallorybot-disallow-user-ag.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-robots-txt-rules/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-robots-txt-rules/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"robots.txt 按用户代理分组规则","item":"https://mikaovo.ai/zh/blog/seo-tech-robots-txt-rules/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-robots-txt-rules/#faq","mainEntity":[{"@type":"Question","name":"robots.txt 是什么？","acceptedAnswer":{"@type":"Answer","text":"robots.txt 是按用户代理分组的允许与禁止规则的公开文件。"}},{"@type":"Question","name":"检查应该确认什么？","acceptedAnswer":{"@type":"Answer","text":"检查重要的产品、文档和 HTML 路径没有被意外禁止。"}},{"@type":"Question","name":"整齐的 robots 文件能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"整齐的 robots.txt 不保证排名或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-robots-txt-rules/">EN</a>
+          <a href="/zh/blog/seo-tech-robots-txt-rules/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>robots.txt 按用户代理分组规则</h1>
+        <p class="kc-hero-lead">robots.txt 是按用户代理分组的允许与禁止规则的公开文件。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">抓取怎样遇到这条规则</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>robots.txt 是按用户代理分组的允许与禁止规则的公开文件。</p>
+          <p>图中有一组规则挡住某个爬虫访问整个主机，一组规则挡住所有人访问秘密路径，还有一行 crawl-delay。crawl-delay 不是任何爬虫都会遵守的承诺。Disallow 阻止的是获取。它本身不会告诉爬虫丢掉一个已经知道的 URL。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>SEO 健康阅读 robots.txt 是为了找意外：安全变更之后产品目录被禁止，或演练规则留在了正式主机上。这个文件不是用来藏起你仍希望被索引的单薄页面的地方，因为被禁止的 URL 可能不会被获取来复查。当你能够获取 URL 时，noindex 是另一条指令，它属于响应，而不只属于 robots.txt。</p>
+        </section>
+        <section id="how">
+          <h2>抓取怎样遇到这条规则</h2>
+          <p>检查重要的产品、文档和 HTML 路径没有被意外禁止。</p>
+          <p>私有文件可以有意放在被禁止的路径下。支持人员用邮件发给客户的手册则不应该。审计列出规则和一条样例路径。它不猜测爬虫多久来一次。robots.txt 里的 sitemap 行如果存在，只是指向 sitemap 地址的提示。它们修不好一条挡住该 sitemap 中 URL 的禁止规则。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-robots-txt-rules/picture-of-text-reads-user-agent-mallorybot-disallow-user-ag.webp" alt="一份 robots.txt 示例，显示用户代理分组、禁止规则和一行 crawl-delay。" width="1280" height="521" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://en.wikipedia.org/wiki/Robots.txt</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>扫到产品或文档目录的禁止规则</li>
+            <li>必须保持私有的资源有单独路径</li>
+            <li>不指望仅靠 robots.txt 实现 noindex</li>
+            <li>指向被同一文件禁止的 URL 的 sitemap 地址</li>
+            <li>规则旁边记录的一条样例路径</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>文件服务器收紧之后，robots.txt 禁止了 /files/，产品页仍链接到那里的安装 PDF。PDF 不再可获取，HTML 产品页却可以。健康修复是把公开手册移到允许的路径，真正私有的资源继续禁止。把产品介绍写长并不会获取那份 PDF。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>整齐的 robots.txt 不保证排名或引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把可抓取性放在 SEO 健康：robots 规则、状态码，以及爬虫能跟着走的路径。断开的路径和被挡住的模板是健康发现。缺主题不是。GEO 仍然依赖爬虫真正能到达的页面，但到得了并不等于替买家写好了答案。</p>
+          <p>图中的示例文件使用虚构的爬虫名，因此文章可以解释分组，而不抄某个正式主机的私有规则。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>robots.txt 是什么？</summary>
+            <p>robots.txt 是按用户代理分组的允许与禁止规则的公开文件。</p>
+          </details>
+          <details>
+            <summary>检查应该确认什么？</summary>
+            <p>检查重要的产品、文档和 HTML 路径没有被意外禁止。</p>
+          </details>
+          <details>
+            <summary>整齐的 robots 文件能保证排名吗？</summary>
+            <p>整齐的 robots.txt 不保证排名或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/how-to-check-website-crawlability/">如何检查网站可抓取性</a></li>
+            <li><a href="/zh/knowledge/how-to-find-broken-internal-links/">如何查找失效内链</a></li>
+            <li><a href="/zh/qa/what-does-crawlability-mean/">可抓取性是什么意思？</a></li>
+            <li><a href="/zh/qa/which-status-codes-matter-for-crawling/">哪些状态码与抓取有关？</a></li>
+            <li><a href="/zh/blog/what-seo-health-asks-of-a-live-site/">SEO 健康对线上站点要求什么</a></li>
+            <li><a href="/zh/blog/seo-tech-html-and-xml-sitemaps/">HTML 站点地图和 XML Sitemap 做的是不同的事</a></li>
+            <li><a href="/zh/blog/seo-tech-descriptive-anchor-text/">锚文本应该点名它指向的页面</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/Robots.txt">https://en.wikipedia.org/wiki/Robots.txt</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

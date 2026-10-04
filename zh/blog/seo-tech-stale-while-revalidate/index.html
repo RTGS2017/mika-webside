@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>stale-while-revalidate 在检查新响应时先提供已存储的响应 | Mika 博客</title>
+  <meta name="description" content="这条缓存指令允许在重新验证时先使用一次陈旧响应。它是新鲜度上的取舍，不是排名开关。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-stale-while-revalidate/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-stale-while-revalidate/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-stale-while-revalidate/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-stale-while-revalidate/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="stale-while-revalidate 在检查新响应时先提供已存储的响应 | Mika 博客">
+  <meta property="og:description" content="这条缓存指令允许在重新验证时先使用一次陈旧响应。它是新鲜度上的取舍，不是排名开关。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-stale-while-revalidate/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-stale-while-revalidate/a-diagram-illustrating-the-information-from-the-previous-sec.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="stale-while-revalidate 在检查新响应时先提供已存储的响应 | Mika 博客">
+  <meta name="twitter:description" content="这条缓存指令允许在重新验证时先使用一次陈旧响应。它是新鲜度上的取舍，不是排名开关。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-stale-while-revalidate/#article","headline":"stale-while-revalidate 在检查新响应时先提供已存储的响应","name":"stale-while-revalidate 在检查新响应时先提供已存储的响应","description":"这条缓存指令允许在重新验证时先使用一次陈旧响应。它是新鲜度上的取舍，不是排名开关。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-stale-while-revalidate/a-diagram-illustrating-the-information-from-the-previous-sec.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-stale-while-revalidate/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-stale-while-revalidate/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"stale-while-revalidate 在检查新响应时先提供已存储的响应","item":"https://mikaovo.ai/zh/blog/seo-tech-stale-while-revalidate/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-stale-while-revalidate/#faq","mainEntity":[{"@type":"Question","name":"stale-while-revalidate 提供什么？","acceptedAnswer":{"@type":"Answer","text":"stale-while-revalidate 允许缓存在获取更新的响应时，先提供一次已存储的响应。"}},{"@type":"Question","name":"什么时候一次陈旧视图不能接受？","acceptedAnswer":{"@type":"Answer","text":"仅当一次陈旧视图可以接受时，才在公开资源或公开 HTML 上使用这条指令。"}},{"@type":"Question","name":"这条指令能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"这条缓存指令不保证排名或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-stale-while-revalidate/">EN</a>
+          <a href="/zh/blog/seo-tech-stale-while-revalidate/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>stale-while-revalidate 在检查新响应时先提供已存储的响应</h1>
+        <p class="kc-hero-lead">stale-while-revalidate 允许缓存在获取更新的响应时，先提供一次已存储的响应。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">渲染对爬虫意味着什么变化</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>stale-while-revalidate 允许缓存在获取更新的响应时，先提供一次已存储的响应。</p>
+          <p>图显示的就是这个顺序。过期之后的一次请求，访客可能看到上一份 HTML 或资源。这可以让重复访问变快，也可能让刚改过的价格或规格多显示一次。SEO 健康问的是模板能否容忍那一次陈旧响应。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>这条指令不能代替正确的规范 URL，也不能修复软 404。它只改变重新验证期间显示哪一份已存储的字节。用在个性化页面上时，如果缓存是共享的，可能把一个用户的陈旧页面漏给另一个用户。公开文档才是通常的候选。</p>
+        </section>
+        <section id="how">
+          <h2>渲染对爬虫意味着什么变化</h2>
+          <p>仅当一次陈旧视图可以接受时，才在公开资源或公开 HTML 上使用这条指令。</p>
+          <p>刚刚为安全而改正的规格是糟糕的候选：多出来的那次陈旧视图是错误的文档。标志文件是合适的候选。审计应该点名响应，而不是因为一篇性能文章提到了它，就在整个主机上启用这条指令。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-stale-while-revalidate/a-diagram-illustrating-the-information-from-the-previous-sec.webp" alt="stale-while-revalidate 示意图：使用已存储的响应，同时在后台获取新响应。" width="1600" height="825" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://web.dev/articles/stale-while-revalidate</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>公开资源与个性化 HTML</li>
+            <li>安全关键文字被排除在额外的陈旧视图之外</li>
+            <li>没有因习惯把指令用到整个主机</li>
+            <li>一条产品 URL 和一条私有 URL 的比较</li>
+            <li>不声称该指令能修复索引</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>全局头部给每个响应都设置了 stale-while-revalidate，包括购物车和刚更新的压力等级。健康改动是从个性化和安全关键的 HTML 上去掉它，并留在带哈希的图片上。一条产品 URL 和购物车 URL 显示这种对照。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>这条缓存指令不保证排名或引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把渲染当作 SEO 健康问题：当模板依赖 JavaScript 时，重要 HTML 能否在有脚本和无脚本两种情况下被获取并比较。这种比较不是 GEO 审计，也不是市场覆盖计划。发现要附在样例 URL 上。模板改完之后的再审计，用来确认修复。</p>
+          <p>图显示重新验证期间的一次陈旧提供，因此不必用命中率数字也能看见取舍。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>stale-while-revalidate 提供什么？</summary>
+            <p>stale-while-revalidate 允许缓存在获取更新的响应时，先提供一次已存储的响应。</p>
+          </details>
+          <details>
+            <summary>什么时候一次陈旧视图不能接受？</summary>
+            <p>仅当一次陈旧视图可以接受时，才在公开资源或公开 HTML 上使用这条指令。</p>
+          </details>
+          <details>
+            <summary>这条指令能保证排名吗？</summary>
+            <p>这条缓存指令不保证排名或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/how-to-check-website-crawlability/">如何检查网站可抓取性</a></li>
+            <li><a href="/zh/knowledge/what-a-technical-seo-geo-crawler-inspects/">技术 SEO/GEO 爬虫会检查什么</a></li>
+            <li><a href="/zh/qa/what-does-crawlability-mean/">可抓取性是什么意思？</a></li>
+            <li><a href="/zh/blog/what-open-source-crawlers-surface/">开源爬虫会看到什么</a></li>
+            <li><a href="/zh/knowledge/what-open-source-seo-crawlers-check/">开源 SEO 爬虫检查什么</a></li>
+            <li><a href="/zh/blog/seo-tech-cdn-connection-setup/">CDN 可以缩短连接建立而不改变 HTML</a></li>
+            <li><a href="/zh/blog/seo-tech-splitting-javascript-for-first-load/">拆分 JavaScript 只有在第一份 HTML 仍有文字时才有帮助</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://web.dev/articles/stale-while-revalidate">https://web.dev/articles/stale-while-revalidate</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

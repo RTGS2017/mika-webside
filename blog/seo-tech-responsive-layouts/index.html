@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Responsive Layout Reflows One Document | Mika Blog</title>
+  <meta name="description" content="Responsive design changes the layout of one document when the viewport changes. A single desktop screenshot does not show the narrow layout.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/blog/seo-tech-responsive-layouts/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-responsive-layouts/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-responsive-layouts/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-responsive-layouts/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="A Responsive Layout Reflows One Document | Mika Blog">
+  <meta property="og:description" content="Responsive design changes the layout of one document when the viewport changes. A single desktop screenshot does not show the narrow layout.">
+  <meta property="og:url" content="https://mikaovo.ai/blog/seo-tech-responsive-layouts/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-responsive-layouts/a-screenshot-of-wikipedia-on-a-computer-screen.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="A Responsive Layout Reflows One Document | Mika Blog">
+  <meta name="twitter:description" content="Responsive design changes the layout of one document when the viewport changes. A single desktop screenshot does not show the narrow layout.">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/blog/seo-tech-responsive-layouts/#article","headline":"A Responsive Layout Reflows One Document","name":"A Responsive Layout Reflows One Document","description":"Responsive design changes the layout of one document when the viewport changes. A single desktop screenshot does not show the narrow layout.","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"en","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-responsive-layouts/a-screenshot-of-wikipedia-on-a-computer-screen.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/blog/seo-tech-responsive-layouts/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/blog/seo-tech-responsive-layouts/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mikaovo.ai/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://mikaovo.ai/blog/"},{"@type":"ListItem","position":3,"name":"A Responsive Layout Reflows One Document","item":"https://mikaovo.ai/blog/seo-tech-responsive-layouts/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/blog/seo-tech-responsive-layouts/#faq","mainEntity":[{"@type":"Question","name":"What does a responsive layout change?","acceptedAnswer":{"@type":"Answer","text":"A responsive layout is one document that reflows when the viewport gets narrower."}},{"@type":"Question","name":"What should stay one URL?","acceptedAnswer":{"@type":"Answer","text":"Keep one URL and let CSS reflow it, including at a narrow width."}},{"@type":"Question","name":"Does a responsive layout guarantee rankings?","acceptedAnswer":{"@type":"Answer","text":"A responsive layout does not guarantee rankings or citations."}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">Skip to content</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/" aria-label="Mika Visibility">
+        <img src="../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/knowledge/">Knowledge</a>
+        <a href="/blog/">Blog</a>
+        <a href="/qa/">Q&A</a>
+        <div class="kc-lang" aria-label="Language">
+          <a href="/blog/seo-tech-responsive-layouts/" aria-current="page">EN</a>
+          <a href="/zh/blog/seo-tech-responsive-layouts/">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">Contact</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>Technical</span> · <time datetime="2026-10-04">October 4, 2026</time></p>
+        <h1>A Responsive Layout Reflows One Document</h1>
+        <p class="kc-hero-lead">A responsive layout is one document that reflows when the viewport gets narrower.</p>
+        <p class="kc-hero-note">Educational material only. Mika does not guarantee search rankings or AI answer citations.</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="On this page">
+        <p>On this page</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">Short answer</a></li>
+            <li><a href="#definition">Definition</a></li>
+            <li><a href="#how">What belongs in the page basics</a></li>
+            <li><a href="#checks">What to check</a></li>
+            <li><a href="#example">A practical example</a></li>
+            <li><a href="#limits">What this does not claim</a></li>
+            <li><a href="#mika">Where Mika Visibility files this</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>Short answer</h2>
+          <p>A responsive layout is one document that reflows when the viewport gets narrower.</p>
+          <p>The screenshot is a wide desktop view of an encyclopedia article: a sidebar and a broad column. It shows one width. It does not show the narrow reflow, and it is not a layout this site is copying. SEO Health asks whether your document remains one URL, with the same text, when the window changes. A separate mobile URL that repeats the page is a duplicate, not a responsive layout.</p>
+        </section>
+        <section id="definition">
+          <h2>Definition</h2>
+          <p>Reflow is CSS. The viewport meta lets a phone use its own width as the layout width. Together they are a page basic. They do not add a second document, and they do not prove that the text exists. If the narrow layout hides the H1 or the specification behind a control that has no HTML equivalent, the fetch may still contain them, but the person cannot use them. Check both the source and a narrow window.</p>
+        </section>
+        <section id="how">
+          <h2>What belongs in the page basics</h2>
+          <p>Keep one URL and let CSS reflow it, including at a narrow width.</p>
+          <p>Do not publish a second host or a /m/ path that copies the document. Do not remove the primary text at the narrow breakpoint. Open one product URL wide, as in the kind of desktop view the screenshot shows, and then narrow. The title, the H1, and the specification should still be the same words. Horizontal scrolling on the whole page is a failed reflow, not a style.</p>
+          <figure>
+            <img src="../../assets/articles/seo-tech/seo-tech-responsive-layouts/a-screenshot-of-wikipedia-on-a-computer-screen.webp" alt="A wide desktop view of an encyclopedia article, with a sidebar and a broad text column." width="1280" height="766" style="max-width:100%;height:auto">
+            <figcaption>Image from the source page: https://en.wikipedia.org/wiki/Responsive_web_design</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>What to check</h2>
+          <ul>
+            <li>One canonical URL for the document</li>
+            <li>No copied mobile path</li>
+            <li>The same H1 at a narrow width</li>
+            <li>The viewport meta present so the phone uses device width</li>
+            <li>One product URL checked wide and narrow</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>A practical example</h2>
+          <p>The site serves the same valve page at /m/valve with a canonical that points at itself, and the desktop URL also points at itself. Two documents exist. The repair keeps the desktop URL, redirects the /m/ path, and fixes the breakpoint that had chopped the specification off. The encyclopedia screenshot remains someone else’s wide view.</p>
+        </section>
+        <section id="limits">
+          <h2>What this does not claim</h2>
+          <p>A responsive layout does not guarantee rankings or citations.</p>
+        </section>
+        <section id="mika">
+          <h2>Where Mika Visibility files this</h2>
+          <p>Mika Visibility files titles, headings, language, and media basics under SEO Health content and structure checks. They help a page be understood. They are not SEO Growth, which asks what coverage is still missing, and they are not a guarantee that an answer product will cite the page.</p>
+          <p>The screenshot is one wide width of someone else’s article. The test is your own URL at two widths.</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">FAQ</h2>
+          <details>
+            <summary>What does a responsive layout change?</summary>
+            <p>A responsive layout is one document that reflows when the viewport gets narrower.</p>
+          </details>
+          <details>
+            <summary>What should stay one URL?</summary>
+            <p>Keep one URL and let CSS reflow it, including at a narrow width.</p>
+          </details>
+          <details>
+            <summary>Does a responsive layout guarantee rankings?</summary>
+            <p>A responsive layout does not guarantee rankings or citations.</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">Related guides</h2>
+          <ul>
+            <li><a href="/knowledge/what-is-a-website-seo-audit/">What Is a Website SEO Audit</a></li>
+            <li><a href="/knowledge/how-to-detect-duplicate-content/">How to Detect Duplicate Content</a></li>
+            <li><a href="/qa/what-does-a-website-seo-audit-review/">What does a website SEO audit review?</a></li>
+            <li><a href="/blog/what-seo-health-asks-of-a-live-site/">What SEO Health Asks of a Live Site</a></li>
+            <li><a href="/knowledge/seo-health-vs-seo-growth/">SEO Health vs SEO Growth</a></li>
+            <li><a href="/blog/seo-tech-utf-8-on-html-pages/">UTF-8 Is the Encoding to Declare and to Send</a></li>
+            <li><a href="/blog/seo-tech-linked-data-and-json-ld/">Linked Data Is a Web of Identifiers. JSON-LD Is One Syntax</a></li>
+            <li><a href="/#audit">Mika homepage — Technical</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">Sources</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/Responsive_web_design">https://en.wikipedia.org/wiki/Responsive_web_design</a> — Source page used for the diagram and for the technical definitions restated here in Mika’s own words.</li>
+            <li><a href="/#audit">Mika Visibility homepage</a> — Product framing for SEO Health. Sample interface counts on the homepage are illustrative, not a case study.</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">Next step</h2>
+          <p>Run a structured SEO + GEO audit to see health findings, growth gaps, and a blueprint you can act on.</p>
+          <p><a href="/#cta">Start on Mika</a></p>
+          <p>Clearer entities, answers, evidence, and context make pages easier to understand and reference. Results in any answer product are not guaranteed.</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/">Mika Visibility</a> · <a href="/knowledge/">Knowledge</a> · <a href="/blog/">Blog</a> · <a href="/qa/">Q&A</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">Contact</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../contact-config.js"></script>
+  <script src="../../contact.js"></script>
+</body>
+</html>

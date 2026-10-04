@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>摘要指令限制结果可以引用什么 | Mika 博客</title>
+  <meta name="description" content="max-snippet 和 nosnippet 等 meta robots 摘要控制约束摘录。它们不选择你的排名。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-snippet-directives/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-snippet-directives/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-snippet-directives/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-snippet-directives/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="摘要指令限制结果可以引用什么 | Mika 博客">
+  <meta property="og:description" content="max-snippet 和 nosnippet 等 meta robots 摘要控制约束摘录。它们不选择你的排名。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-snippet-directives/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-snippet-directives/a-read-more-deep-link-in-google-search.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="摘要指令限制结果可以引用什么 | Mika 博客">
+  <meta name="twitter:description" content="max-snippet 和 nosnippet 等 meta robots 摘要控制约束摘录。它们不选择你的排名。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-snippet-directives/#article","headline":"摘要指令限制结果可以引用什么","name":"摘要指令限制结果可以引用什么","description":"max-snippet 和 nosnippet 等 meta robots 摘要控制约束摘录。它们不选择你的排名。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-snippet-directives/a-read-more-deep-link-in-google-search.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-snippet-directives/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-snippet-directives/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"摘要指令限制结果可以引用什么","item":"https://mikaovo.ai/zh/blog/seo-tech-snippet-directives/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-snippet-directives/#faq","mainEntity":[{"@type":"Question","name":"摘要指令控制什么？","acceptedAnswer":{"@type":"Answer","text":"摘要指令告诉爬虫可以把页面的多少内容用作摘录。"}},{"@type":"Question","name":"全局默认值不该用在哪里？","acceptedAnswer":{"@type":"Answer","text":"只在有明确理由时设置摘要指令，不要让全局默认值藏起产品页的摘录。"}},{"@type":"Question","name":"这些指令能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"摘要指令不保证排名或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-snippet-directives/">EN</a>
+          <a href="/zh/blog/seo-tech-snippet-directives/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>摘要指令限制结果可以引用什么</h1>
+        <p class="kc-hero-lead">摘要指令告诉爬虫可以把页面的多少内容用作摘录。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">页面基础里包括什么</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>摘要指令告诉爬虫可以把页面的多少内容用作摘录。</p>
+          <p>nosnippet 要求不要摘录。max-snippet 限制长度。data-nosnippet 属性可以排除某个元素。这些是对文字再利用的技术控制，不是放置页面的杠杆。结果插图显示一种可能的行，包括一条更深的链接。它不是排名图，也不是本站的列表。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>藏起唯一有用句子的指令，可能让结果更难理解，而不会让页面更容易被索引。只有当展示摘录是错误的产品决定时，才对页面使用 nosnippet，例如开头几行是你不希望被拆出去的法律警告。不要因为模板默认打开了它就使用。</p>
+        </section>
+        <section id="how">
+          <h2>页面基础里包括什么</h2>
+          <p>只在有明确理由时设置摘要指令，不要让全局默认值藏起产品页的摘录。</p>
+          <p>可见的导语仍然应该是你愿意被引用的句子，因为指令不是文字被再利用的唯一方式，也因为 GEO 的可答性希望那句话在页面上。审计样例是一条产品 URL 的 meta robots 内容，以及一条有意限制的页面。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-snippet-directives/a-read-more-deep-link-in-google-search.webp" alt="结果行插图，摘要下方有一条更深的链接。" width="1200" height="800" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://developers.google.com/search/docs/appearance/snippet</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>全局的 nosnippet 或 max-snippet 默认值</li>
+            <li>有意限制的页面</li>
+            <li>产品页仍能显示摘录</li>
+            <li>导语陈述你愿意被引用的事实</li>
+            <li>一条受限制的 URL 和一条产品 URL</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>主题在对一个免责声明页做法律复查之后，给每个模板都加了 nosnippet。产品结果失去了摘录。健康修复是在免责声明上保留 nosnippet，并从主题默认值中去掉它。只有当产品导语不值得被引用时才改写它，那是写作任务，不是 meta 标签任务。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>摘要指令不保证排名或引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把标题、标题层级、语言和媒体基础归在 SEO 健康的内容与结构检查里。它们帮助页面被理解。它们不是 SEO 增长——增长问的是还缺什么覆盖——它们也不保证回答产品会引用这个页面。</p>
+          <p>结果插图显示的是行的形状。它不是名次，也不是 Mika 的列表。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>摘要指令控制什么？</summary>
+            <p>摘要指令告诉爬虫可以把页面的多少内容用作摘录。</p>
+          </details>
+          <details>
+            <summary>全局默认值不该用在哪里？</summary>
+            <p>只在有明确理由时设置摘要指令，不要让全局默认值藏起产品页的摘录。</p>
+          </details>
+          <details>
+            <summary>这些指令能保证排名吗？</summary>
+            <p>摘要指令不保证排名或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/what-is-a-website-seo-audit/">什么是网站 SEO 审计</a></li>
+            <li><a href="/zh/knowledge/how-to-detect-duplicate-content/">如何检测重复内容</a></li>
+            <li><a href="/zh/qa/what-does-a-website-seo-audit-review/">网站 SEO 审计检查什么？</a></li>
+            <li><a href="/zh/blog/what-seo-health-asks-of-a-live-site/">SEO 健康对线上站点要求什么</a></li>
+            <li><a href="/zh/knowledge/seo-health-vs-seo-growth/">SEO 健康 vs SEO 增长</a></li>
+            <li><a href="/zh/blog/seo-tech-directories-links-and-titles/">目录、链接和标题是爬虫绘制站点的方式</a></li>
+            <li><a href="/zh/blog/seo-tech-breadcrumb-trails/">面包屑路径是返回枢纽的可见路径</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://developers.google.com/search/docs/appearance/snippet">https://developers.google.com/search/docs/appearance/snippet</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

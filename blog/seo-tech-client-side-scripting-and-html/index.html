@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client-Side Script Can Build Nodes the Source Never Had | Mika Blog</title>
+  <meta name="description" content="A script that creates elements and appends them changes the DOM after the fetch. Anything that exists only in that script is invisible to a fetch that does not run it.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/blog/seo-tech-client-side-scripting-and-html/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-client-side-scripting-and-html/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-client-side-scripting-and-html/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-client-side-scripting-and-html/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="Client-Side Script Can Build Nodes the Source Never Had | Mika Blog">
+  <meta property="og:description" content="A script that creates elements and appends them changes the DOM after the fetch. Anything that exists only in that script is invisible to a fetch that does not run it.">
+  <meta property="og:url" content="https://mikaovo.ai/blog/seo-tech-client-side-scripting-and-html/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-client-side-scripting-and-html/javascript-code.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Client-Side Script Can Build Nodes the Source Never Had | Mika Blog">
+  <meta name="twitter:description" content="A script that creates elements and appends them changes the DOM after the fetch. Anything that exists only in that script is invisible to a fetch that does not run it.">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/blog/seo-tech-client-side-scripting-and-html/#article","headline":"Client-Side Script Can Build Nodes the Source Never Had","name":"Client-Side Script Can Build Nodes the Source Never Had","description":"A script that creates elements and appends them changes the DOM after the fetch. Anything that exists only in that script is invisible to a fetch that does not run it.","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"en","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-client-side-scripting-and-html/javascript-code.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/blog/seo-tech-client-side-scripting-and-html/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/blog/seo-tech-client-side-scripting-and-html/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mikaovo.ai/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://mikaovo.ai/blog/"},{"@type":"ListItem","position":3,"name":"Client-Side Script Can Build Nodes the Source Never Had","item":"https://mikaovo.ai/blog/seo-tech-client-side-scripting-and-html/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/blog/seo-tech-client-side-scripting-and-html/#faq","mainEntity":[{"@type":"Question","name":"What can client-side script add?","acceptedAnswer":{"@type":"Answer","text":"Client-side script runs in the browser and can create elements that were not in the fetched HTML."}},{"@type":"Question","name":"Where should the list live?","acceptedAnswer":{"@type":"Answer","text":"Keep the list a crawler should see in the HTML, and let script enhance it rather than invent it."}},{"@type":"Question","name":"Does client-side script guarantee rankings?","acceptedAnswer":{"@type":"Answer","text":"Client-side script does not guarantee rankings or citations."}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">Skip to content</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/" aria-label="Mika Visibility">
+        <img src="../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/knowledge/">Knowledge</a>
+        <a href="/blog/">Blog</a>
+        <a href="/qa/">Q&A</a>
+        <div class="kc-lang" aria-label="Language">
+          <a href="/blog/seo-tech-client-side-scripting-and-html/" aria-current="page">EN</a>
+          <a href="/zh/blog/seo-tech-client-side-scripting-and-html/">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">Contact</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>Technical</span> · <time datetime="2026-10-04">October 4, 2026</time></p>
+        <h1>Client-Side Script Can Build Nodes the Source Never Had</h1>
+        <p class="kc-hero-lead">Client-side script runs in the browser and can create elements that were not in the fetched HTML.</p>
+        <p class="kc-hero-note">Educational material only. Mika does not guarantee search rankings or AI answer citations.</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="On this page">
+        <p>On this page</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">Short answer</a></li>
+            <li><a href="#definition">Definition</a></li>
+            <li><a href="#how">What rendering changes for a crawler</a></li>
+            <li><a href="#checks">What to check</a></li>
+            <li><a href="#example">A practical example</a></li>
+            <li><a href="#limits">What this does not claim</a></li>
+            <li><a href="#mika">Where Mika Visibility files this</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>Short answer</h2>
+          <p>Client-side script runs in the browser and can create elements that were not in the fetched HTML.</p>
+          <p>The listing creates a div, creates a list, and appends items whose text is computed in the browser. Those items are not written in the HTML of the example. They appear only after the script runs. SEO Health treats that pattern as a risk when the items are the product list, the specification, or the links to other documents. The weekday-style computation in the listing is an example from the source page. It is not a feature to install, and it is not a locale report.</p>
+        </section>
+        <section id="definition">
+          <h2>Definition</h2>
+          <p>A script may enhance a list that is already in the HTML, for example by sorting nodes that the server already sent. A script may also be the only author of the list. The second case fails a fetch. Progressive enhancement keeps the list in the source and lets the script rearrange it. The listing on this page is the second case: the list items are created and appended. Use it as a picture of the risk, not as code to paste into a template.</p>
+        </section>
+        <section id="how">
+          <h2>What rendering changes for a crawler</h2>
+          <p>Keep the list a crawler should see in the HTML, and let script enhance it rather than invent it.</p>
+          <p>Fetch the URL and search the source for the product names. If they exist only inside a script that builds elements, they are not yet a document. A noscript note that says “enable JavaScript” is not a substitute for the list. Compare one URL with the script blocked. The listing’s loop is an illustration of create-and-append. Do not copy it, and do not describe its numbers as a result.</p>
+          <figure>
+            <img src="../../assets/articles/seo-tech/seo-tech-client-side-scripting-and-html/javascript-code.webp" alt="A JavaScript listing that creates a div and a list, then appends list items built in the browser." width="1280" height="852" style="max-width:100%;height:auto">
+            <figcaption>Image from the source page: https://en.wikipedia.org/wiki/JavaScript</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>What to check</h2>
+          <ul>
+            <li>Product or model names present in the fetched HTML</li>
+            <li>Script that enhances that list rather than creating the only copy</li>
+            <li>A noscript message not used as the only content</li>
+            <li>One URL fetched with script blocked</li>
+            <li>The example listing not pasted into the template</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>A practical example</h2>
+          <p>A family page’s model list is empty in the HTML and is filled by a script that creates one item per model. The repair renders the models as list items on the server and lets the script only mark the current one. A fetch without script shows the names. The source listing stays an example of the opposite pattern.</p>
+        </section>
+        <section id="limits">
+          <h2>What this does not claim</h2>
+          <p>Client-side script does not guarantee rankings or citations.</p>
+        </section>
+        <section id="mika">
+          <h2>Where Mika Visibility files this</h2>
+          <p>Mika Visibility treats rendering as an SEO Health question: can the important HTML be fetched and compared with and without JavaScript when the template depends on it. That comparison is not a GEO audit and not a market-coverage plan. Findings stay attached to sample URLs. A re-audit after the template change is how the team checks the repair.</p>
+          <p>The listing shows nodes being created in the browser. The audit looks for those nodes in the HTML instead.</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">FAQ</h2>
+          <details>
+            <summary>What can client-side script add?</summary>
+            <p>Client-side script runs in the browser and can create elements that were not in the fetched HTML.</p>
+          </details>
+          <details>
+            <summary>Where should the list live?</summary>
+            <p>Keep the list a crawler should see in the HTML, and let script enhance it rather than invent it.</p>
+          </details>
+          <details>
+            <summary>Does client-side script guarantee rankings?</summary>
+            <p>Client-side script does not guarantee rankings or citations.</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">Related guides</h2>
+          <ul>
+            <li><a href="/knowledge/how-to-check-website-crawlability/">How to Check Website Crawlability</a></li>
+            <li><a href="/knowledge/what-a-technical-seo-geo-crawler-inspects/">What a Technical SEO/GEO Crawler Inspects</a></li>
+            <li><a href="/qa/what-does-crawlability-mean/">What does crawlability mean?</a></li>
+            <li><a href="/blog/what-open-source-crawlers-surface/">What Open-Source Crawlers Surface</a></li>
+            <li><a href="/knowledge/what-open-source-seo-crawlers-check/">What Open-Source SEO Crawlers Check</a></li>
+            <li><a href="/blog/seo-tech-what-delays-the-next-paint/">What Sits Between an Input and the Next Paint</a></li>
+            <li><a href="/blog/seo-tech-time-to-first-byte/">Time to First Byte Is the Wait Before Any Content Byte</a></li>
+            <li><a href="/#audit">Mika homepage — Technical</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">Sources</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/JavaScript">https://en.wikipedia.org/wiki/JavaScript</a> — Source page used for the diagram and for the technical definitions restated here in Mika’s own words.</li>
+            <li><a href="/#audit">Mika Visibility homepage</a> — Product framing for SEO Health. Sample interface counts on the homepage are illustrative, not a case study.</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">Next step</h2>
+          <p>Run a structured SEO + GEO audit to see health findings, growth gaps, and a blueprint you can act on.</p>
+          <p><a href="/#cta">Start on Mika</a></p>
+          <p>Clearer entities, answers, evidence, and context make pages easier to understand and reference. Results in any answer product are not guaranteed.</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/">Mika Visibility</a> · <a href="/knowledge/">Knowledge</a> · <a href="/blog/">Blog</a> · <a href="/qa/">Q&A</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">Contact</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../contact-config.js"></script>
+  <script src="../../contact.js"></script>
+</body>
+</html>

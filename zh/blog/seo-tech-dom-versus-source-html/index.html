@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM 是一棵树。源代码是获取返回的内容 | Mika 博客</title>
+  <meta name="description" content="文档对象模型是浏览器根据 HTML 建起的树。只做获取的爬虫看见的是源代码，在脚本改写这棵树之前。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-dom-versus-source-html/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-dom-versus-source-html/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-dom-versus-source-html/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-dom-versus-source-html/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="DOM 是一棵树。源代码是获取返回的内容 | Mika 博客">
+  <meta property="og:description" content="文档对象模型是浏览器根据 HTML 建起的树。只做获取的爬虫看见的是源代码，在脚本改写这棵树之前。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-dom-versus-source-html/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-dom-versus-source-html/dom-model-svg.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DOM 是一棵树。源代码是获取返回的内容 | Mika 博客">
+  <meta name="twitter:description" content="文档对象模型是浏览器根据 HTML 建起的树。只做获取的爬虫看见的是源代码，在脚本改写这棵树之前。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-dom-versus-source-html/#article","headline":"DOM 是一棵树。源代码是获取返回的内容","name":"DOM 是一棵树。源代码是获取返回的内容","description":"文档对象模型是浏览器根据 HTML 建起的树。只做获取的爬虫看见的是源代码，在脚本改写这棵树之前。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-dom-versus-source-html/dom-model-svg.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-dom-versus-source-html/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-dom-versus-source-html/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"DOM 是一棵树。源代码是获取返回的内容","item":"https://mikaovo.ai/zh/blog/seo-tech-dom-versus-source-html/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-dom-versus-source-html/#faq","mainEntity":[{"@type":"Question","name":"DOM 和源代码相比是什么？","acceptedAnswer":{"@type":"Answer","text":"DOM 是浏览器建起的元素树。源代码 HTML 是这棵树被改动之前，一次获取所返回的文字。"}},{"@type":"Question","name":"获取结果必须已经包含什么？","acceptedAnswer":{"@type":"Answer","text":"把标题、标题元素和抓取路径上的链接放进一次获取所返回的源代码里。"}},{"@type":"Question","name":"一致的源代码能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"与树一致的源代码不保证排名或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-dom-versus-source-html/">EN</a>
+          <a href="/zh/blog/seo-tech-dom-versus-source-html/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>DOM 是一棵树。源代码是获取返回的内容</h1>
+        <p class="kc-hero-lead">DOM 是浏览器建起的元素树。源代码 HTML 是这棵树被改动之前，一次获取所返回的文字。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">渲染对爬虫意味着什么变化</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>DOM 是浏览器建起的元素树。源代码 HTML 是这棵树被改动之前，一次获取所返回的文字。</p>
+          <p>图画出了一棵小树：document、html、head、一个 title、body、一个 h1，以及一个带 href 的链接，各自有示例文字，例如标题和链接文字。这张图是一份已解析文档的形状。它不是本站的追踪，方框里的示例短语也不是你应该抄的标题。SEO 健康问的是：对你的 URL 的一次获取是否已经包含这种树：一个标题、一个标题元素，以及一条真实链接。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>解析把标签变成树。脚本随后可以追加、移动或删除节点，因此人在开发者工具里看到的 DOM 可以和源代码不同。保存响应的爬虫保存的是源代码。如果唯一的 h1 和唯一的产品链接是在解析之后才被创建的，它们就不在那份被保存的响应里。图已经把这些节点画在文档内部。这是你希望服务器发出的文件所具备的状态，而不是你希望后来的脚本去发明的状态。</p>
+        </section>
+        <section id="how">
+          <h2>渲染对爬虫意味着什么变化</h2>
+          <p>把标题、标题元素和抓取路径上的链接放进一次获取所返回的源代码里。</p>
+          <p>把查看源代码，或不运行脚本的客户端，和实时的树作比较。如果图中的那些部分只存在于实时的树里，模板就把文档建得太晚了。链接节点需要源代码里的 href，而不是后来才加上的点击处理。抽样一条产品 URL。图里的短语是来源页上的占位符。它们不是测量，也不是推荐的标题。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-dom-versus-source-html/dom-model-svg.webp" alt="一棵 DOM 树：从 document 和 html 分到 head、title、body、一个 h1，以及一个带 href 的链接，各自带有示例文字。" width="1280" height="1324" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://en.wikipedia.org/wiki/Document_Object_Model</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>查看源代码中有 title、h1 和 href</li>
+            <li>不运行脚本的获取仍然能看见它们</li>
+            <li>链接是锚点，而不只是点击处理</li>
+            <li>图中的示例短语没有被抄成标题</li>
+            <li>一条产品 URL 同时按源代码和实时树作了比较</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>产品名在开发者工具里显示为 h1，在查看源代码里却没有，因为节点是脚本创建的。修复是在服务器发送的 HTML 里渲染 h1 和锚点。第二次获取能看见标题和 href。图中的树仍然是关于 document、head 和 body 的教学图。它不是这条产品 URL 的截图。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>与树一致的源代码不保证排名或引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把渲染当作 SEO 健康问题：当模板依赖 JavaScript 时，重要 HTML 能否在有脚本和无脚本两种情况下被获取并比较。这种比较不是 GEO 审计，也不是市场覆盖计划。发现要附在样例 URL 上。模板改完之后的再审计，用来确认修复。</p>
+          <p>这张图显示的是一份文档应该已经包含的节点。它不是抓取日志。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>DOM 和源代码相比是什么？</summary>
+            <p>DOM 是浏览器建起的元素树。源代码 HTML 是这棵树被改动之前，一次获取所返回的文字。</p>
+          </details>
+          <details>
+            <summary>获取结果必须已经包含什么？</summary>
+            <p>把标题、标题元素和抓取路径上的链接放进一次获取所返回的源代码里。</p>
+          </details>
+          <details>
+            <summary>一致的源代码能保证排名吗？</summary>
+            <p>与树一致的源代码不保证排名或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/how-to-check-website-crawlability/">如何检查网站可抓取性</a></li>
+            <li><a href="/zh/knowledge/what-a-technical-seo-geo-crawler-inspects/">技术 SEO/GEO 爬虫会检查什么</a></li>
+            <li><a href="/zh/qa/what-does-crawlability-mean/">可抓取性是什么意思？</a></li>
+            <li><a href="/zh/blog/what-open-source-crawlers-surface/">开源爬虫会看到什么</a></li>
+            <li><a href="/zh/knowledge/what-open-source-seo-crawlers-check/">开源 SEO 爬虫检查什么</a></li>
+            <li><a href="/zh/blog/seo-tech-client-side-scripting-and-html/">客户端脚本可以造出源代码里从未有过的节点</a></li>
+            <li><a href="/zh/blog/seo-tech-what-delays-the-next-paint/">输入和下一帧绘制之间隔着什么</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/Document_Object_Model">https://en.wikipedia.org/wiki/Document_Object_Model</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

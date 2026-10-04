@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robots 规则可以放在 HTTP 头里 | Mika 博客</title>
+  <meta name="description" content="HTTP 头可以为一次响应携带 robots 指令，包括没有 HTML head 的文件。这个头不是一张人像照片。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-http-headers-carry-robots-rules/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-http-headers-carry-robots-rules/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-http-headers-carry-robots-rules/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-http-headers-carry-robots-rules/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="Robots 规则可以放在 HTTP 头里 | Mika 博客">
+  <meta property="og:description" content="HTTP 头可以为一次响应携带 robots 指令，包括没有 HTML head 的文件。这个头不是一张人像照片。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-http-headers-carry-robots-rules/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-http-headers-carry-robots-rules/tim-berners-lee-cp-2.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Robots 规则可以放在 HTTP 头里 | Mika 博客">
+  <meta name="twitter:description" content="HTTP 头可以为一次响应携带 robots 指令，包括没有 HTML head 的文件。这个头不是一张人像照片。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-http-headers-carry-robots-rules/#article","headline":"Robots 规则可以放在 HTTP 头里","name":"Robots 规则可以放在 HTTP 头里","description":"HTTP 头可以为一次响应携带 robots 指令，包括没有 HTML head 的文件。这个头不是一张人像照片。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-http-headers-carry-robots-rules/tim-berners-lee-cp-2.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-http-headers-carry-robots-rules/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-http-headers-carry-robots-rules/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"Robots 规则可以放在 HTTP 头里","item":"https://mikaovo.ai/zh/blog/seo-tech-http-headers-carry-robots-rules/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-http-headers-carry-robots-rules/#faq","mainEntity":[{"@type":"Question","name":"除了 HTML，robots 规则还可以放在哪里？","acceptedAnswer":{"@type":"Answer","text":"HTTP 头可以为这次响应携带 robots 指令，这对不是 HTML 的文件很重要。"}},{"@type":"Question","name":"头在什么时候最要紧？","acceptedAnswer":{"@type":"Answer","text":"当 URL 不是 HTML 时，在响应头里发送 robots 指令，并且不要和 HTML meta 矛盾。"}},{"@type":"Question","name":"robots 头能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"robots 头不保证排名或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-http-headers-carry-robots-rules/">EN</a>
+          <a href="/zh/blog/seo-tech-http-headers-carry-robots-rules/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>Robots 规则可以放在 HTTP 头里</h1>
+        <p class="kc-hero-lead">HTTP 头可以为这次响应携带 robots 指令，这对不是 HTML 的文件很重要。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">抓取怎样遇到这条规则</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>HTTP 头可以为这次响应携带 robots 指令，这对不是 HTML 的文件很重要。</p>
+          <p>照片里是 Tim Berners-Lee 在讲话，附近还有另一位人和一台笔记本电脑。这是 HTTP 头页面上、与早期网页有关的一个人的照片。它不是头字段的示意图，不是本站用作背书的肖像，也不是关于任何爬虫的证据。本文的规则是头字段本身。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>HTML 可以使用 meta robots 元素。PDF 或其他非 HTML 响应不能。该响应上的 X-Robots-Tag 头可以对该 URL 说 noindex 或 nofollow。与 meta 元素矛盾的头就是两条规则。只保留一条，并记下你打算用的是哪一条。头很容易被漏掉，因为它不出现在人阅读的正文里。打印响应头的一次获取才是检查。照片里没有这个头。</p>
+        </section>
+        <section id="how">
+          <h2>抓取怎样遇到这条规则</h2>
+          <p>当 URL 不是 HTML 时，在响应头里发送 robots 指令，并且不要和 HTML meta 矛盾。</p>
+          <p>获取 URL，先读状态和头，再读正文。如果页面本意是被索引，公开规格上的 noindex 头就是健康发现。私有文件上的 noindex 头可以是有意的。要写明是哪一种。不要把照片里的人名写进头里，也不要把照片当成资质。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-http-headers-carry-robots-rules/tim-berners-lee-cp-2.webp" alt="一张照片：Tim Berners-Lee 对着麦克风讲话，旁边还有另一位人和一台笔记本电脑。" width="1280" height="850" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://en.wikipedia.org/wiki/HTTP_header</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>非 HTML URL 检查了 X-Robots-Tag</li>
+            <li>HTML meta 和头不冲突</li>
+            <li>公开文档没有被意外加上 noindex</li>
+            <li>应该排除的私有文件是有意标记的</li>
+            <li>获取一份 PDF 时能看见响应头</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>产品 PDF 返回 200，没有 X-Robots-Tag，团队以为 HTML 外壳里的 meta 标签会作用到文件上。并不会。修复是在 PDF 响应上设置他们真正想要的头，并重新获取一个文件。肖像留在来源页上。它不是头的一部分。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>robots 头不保证排名或引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把可抓取性放在 SEO 健康：robots 规则、状态码，以及爬虫能跟着走的路径。断开的路径和被挡住的模板是健康发现。缺主题不是。GEO 仍然依赖爬虫真正能到达的页面，但到得了并不等于替买家写好了答案。</p>
+          <p>照片是来源页上的一个人。要检查的是你自己 URL 的响应头。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>除了 HTML，robots 规则还可以放在哪里？</summary>
+            <p>HTTP 头可以为这次响应携带 robots 指令，这对不是 HTML 的文件很重要。</p>
+          </details>
+          <details>
+            <summary>头在什么时候最要紧？</summary>
+            <p>当 URL 不是 HTML 时，在响应头里发送 robots 指令，并且不要和 HTML meta 矛盾。</p>
+          </details>
+          <details>
+            <summary>robots 头能保证排名吗？</summary>
+            <p>robots 头不保证排名或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/how-to-check-website-crawlability/">如何检查网站可抓取性</a></li>
+            <li><a href="/zh/knowledge/how-to-find-broken-internal-links/">如何查找失效内链</a></li>
+            <li><a href="/zh/qa/what-does-crawlability-mean/">可抓取性是什么意思？</a></li>
+            <li><a href="/zh/qa/which-status-codes-matter-for-crawling/">哪些状态码与抓取有关？</a></li>
+            <li><a href="/zh/blog/what-seo-health-asks-of-a-live-site/">SEO 健康对线上站点要求什么</a></li>
+            <li><a href="/zh/blog/seo-tech-cors-is-not-a-robots-rule/">CORS 约束的是脚本读取另一个源，不是抓取</a></li>
+            <li><a href="/zh/blog/seo-tech-content-security-policy-and-assets/">内容安全策略可以挡住你自己页面的资源</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/HTTP_header">https://en.wikipedia.org/wiki/HTTP_header</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

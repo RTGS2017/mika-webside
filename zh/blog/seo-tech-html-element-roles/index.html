@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 类改变外观。元素陈述角色 | Mika 博客</title>
+  <meta name="description" content="类可以设置颜色、对齐和字号。它们不会告诉解析器某一行是页面标题。元素类型才会。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-html-element-roles/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-html-element-roles/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-html-element-roles/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-html-element-roles/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="CSS 类改变外观。元素陈述角色 | Mika 博客">
+  <meta property="og:description" content="类可以设置颜色、对齐和字号。它们不会告诉解析器某一行是页面标题。元素类型才会。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-html-element-roles/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-html-element-roles/css.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CSS 类改变外观。元素陈述角色 | Mika 博客">
+  <meta name="twitter:description" content="类可以设置颜色、对齐和字号。它们不会告诉解析器某一行是页面标题。元素类型才会。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-html-element-roles/#article","headline":"CSS 类改变外观。元素陈述角色","name":"CSS 类改变外观。元素陈述角色","description":"类可以设置颜色、对齐和字号。它们不会告诉解析器某一行是页面标题。元素类型才会。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-html-element-roles/css.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-html-element-roles/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-html-element-roles/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"CSS 类改变外观。元素陈述角色","item":"https://mikaovo.ai/zh/blog/seo-tech-html-element-roles/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-html-element-roles/#faq","mainEntity":[{"@type":"Question","name":"CSS 类改变什么？","acceptedAnswer":{"@type":"Answer","text":"CSS 类设置元素看起来怎样。元素类型才告诉解析器它的角色。"}},{"@type":"Question","name":"什么应该承载角色？","acceptedAnswer":{"@type":"Answer","text":"用元素表示角色，类只用于外观。"}},{"@type":"Question","name":"正确的元素能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"正确的元素不保证排名或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-html-element-roles/">EN</a>
+          <a href="/zh/blog/seo-tech-html-element-roles/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>CSS 类改变外观。元素陈述角色</h1>
+        <p class="kc-hero-lead">CSS 类设置元素看起来怎样。元素类型才告诉解析器它的角色。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">页面基础里包括什么</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>CSS 类设置元素看起来怎样。元素类型才告诉解析器它的角色。</p>
+          <p>图中的样式表定义了一些以颜色、对齐和尺寸命名的类：red、green、center、giant 等等。这些规则改变颜色和字号。它们不创造标题。SEO 健康仍然寻找主题上的 H1。一个类名叫 giantTitle 的 div 是一个大的 div。截图里的像素大小是呈现规则的例子，不是本站推荐的尺寸。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>如果设计需要，可以保留用于颜色的类。当这一行是标题时，把类放在真正的标题上；当它是段落时，放在段落上。类名里写着“title”是给读 CSS 的人的提示。它不是大纲。避免把字号设得小到文字实际上消失。截图把非常小的尺寸包含在示例里。那不是要抄到产品名上的技术。</p>
+        </section>
+        <section id="how">
+          <h2>页面基础里包括什么</h2>
+          <p>用元素表示角色，类只用于外观。</p>
+          <p>一个 H1 就应该是 h1 元素。导航应该是 nav 或锚点列表，而不是一组有颜色的 div。从 HTML 读大纲，然后才看样式表，只为了确认它有没有把大纲藏起来。图中的类名可以留在来源页上，作为呈现的图示。它们不是信息架构。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-html-element-roles/css.webp" alt="一份样式表，有 redTitle、greenTitle、centerTitle 和 giantTitle 等类，设置颜色、对齐和字号。" width="1280" height="2098" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://en.wikipedia.org/wiki/Cascading_Style_Sheets</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>主题写成 h1 元素</li>
+            <li>类用于颜色或对齐，而不是代替大纲</li>
+            <li>导航是锚点，而不只是有颜色的 div</li>
+            <li>没有把产品名缩小到看不见的规则</li>
+            <li>从 HTML 阅读一条产品 URL 的大纲</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>产品名是一个 class 为 giantTitle 的 div，口号是唯一的 h1，并且被设得更小。修复是让产品名成为 h1，如果设计仍要颜色，就在它上面留一个颜色类。获取到的大纲与人看见的页面一致。截图里的字号一个都没有被复制。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>正确的元素不保证排名或引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把标题、标题层级、语言和媒体基础归在 SEO 健康的内容与结构检查里。它们帮助页面被理解。它们不是 SEO 增长——增长问的是还缺什么覆盖——它们也不保证回答产品会引用这个页面。</p>
+          <p>样式表显示的是外观规则。角色仍然必须是 HTML 里的元素。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>CSS 类改变什么？</summary>
+            <p>CSS 类设置元素看起来怎样。元素类型才告诉解析器它的角色。</p>
+          </details>
+          <details>
+            <summary>什么应该承载角色？</summary>
+            <p>用元素表示角色，类只用于外观。</p>
+          </details>
+          <details>
+            <summary>正确的元素能保证排名吗？</summary>
+            <p>正确的元素不保证排名或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/what-is-a-website-seo-audit/">什么是网站 SEO 审计</a></li>
+            <li><a href="/zh/knowledge/how-to-detect-duplicate-content/">如何检测重复内容</a></li>
+            <li><a href="/zh/qa/what-does-a-website-seo-audit-review/">网站 SEO 审计检查什么？</a></li>
+            <li><a href="/zh/blog/what-seo-health-asks-of-a-live-site/">SEO 健康对线上站点要求什么</a></li>
+            <li><a href="/zh/knowledge/seo-health-vs-seo-growth/">SEO 健康 vs SEO 增长</a></li>
+            <li><a href="/zh/blog/seo-tech-choosing-image-formats/">选择页面真正能交付的图片格式</a></li>
+            <li><a href="/zh/blog/seo-tech-svg-diagrams-in-content/">SVG 图保持清晰，是因为它是画出来的，不是采样的</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets">https://en.wikipedia.org/wiki/Cascading_Style_Sheets</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

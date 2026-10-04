@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>巨大的 DOM 让样式和布局工作更重 | Mika 博客</title>
+  <meta name="description" content="数千个节点会增加样式重算和布局成本。健康问题是模板是否渲染了没人会看见的节点。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-dom-size-and-rendering-work/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-dom-size-and-rendering-work/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-dom-size-and-rendering-work/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-dom-size-and-rendering-work/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="巨大的 DOM 让样式和布局工作更重 | Mika 博客">
+  <meta property="og:description" content="数千个节点会增加样式重算和布局成本。健康问题是模板是否渲染了没人会看见的节点。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-dom-size-and-rendering-work/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-dom-size-and-rendering-work/a-screenshot-of-a-long-task-caused-by-excessive-rendering-wo.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="巨大的 DOM 让样式和布局工作更重 | Mika 博客">
+  <meta name="twitter:description" content="数千个节点会增加样式重算和布局成本。健康问题是模板是否渲染了没人会看见的节点。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-dom-size-and-rendering-work/#article","headline":"巨大的 DOM 让样式和布局工作更重","name":"巨大的 DOM 让样式和布局工作更重","description":"数千个节点会增加样式重算和布局成本。健康问题是模板是否渲染了没人会看见的节点。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-dom-size-and-rendering-work/a-screenshot-of-a-long-task-caused-by-excessive-rendering-wo.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-dom-size-and-rendering-work/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-dom-size-and-rendering-work/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"巨大的 DOM 让样式和布局工作更重","item":"https://mikaovo.ai/zh/blog/seo-tech-dom-size-and-rendering-work/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-dom-size-and-rendering-work/#faq","mainEntity":[{"@type":"Question","name":"为什么 DOM 规模会影响主线程？","acceptedAnswer":{"@type":"Answer","text":"非常大的 DOM 会增加主线程上样式和布局的工作。"}},{"@type":"Question","name":"应该用什么替换完全渲染的隐藏表？","acceptedAnswer":{"@type":"Answer","text":"找出构建的节点远超视图显示的模板，分页或窗口化，同时不要藏起文档文字。"}},{"@type":"Question","name":"更小的 DOM 能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"更小的 DOM 不保证排名或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-dom-size-and-rendering-work/">EN</a>
+          <a href="/zh/blog/seo-tech-dom-size-and-rendering-work/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>巨大的 DOM 让样式和布局工作更重</h1>
+        <p class="kc-hero-lead">非常大的 DOM 会增加主线程上样式和布局的工作。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">渲染对爬虫意味着什么变化</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>非常大的 DOM 会增加主线程上样式和布局的工作。</p>
+          <p>分析器画面显示一个主要由样式重算构成的长任务。这种形态常常来自渲染目录的每一行、每一个隐藏面板，或把每个图标都做成很深的子树。SEO 健康要求模板渲染视图需要的东西。它不把节点数量上限公布为排名规则，截图也不是某家具名公司的结果。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>节点数本身是线索，不是判决。人们需要的长规格表可以很大，它仍然是文档。为只显示二十行的筛选器渲染两千行则是浪费。修复是分页或只渲染可见窗口，同时让可索引的 URL 仍是真实文档，而不是一个无尽页面。</p>
+        </section>
+        <section id="how">
+          <h2>渲染对爬虫意味着什么变化</h2>
+          <p>找出构建的节点远超视图显示的模板，分页或窗口化，同时不要藏起文档文字。</p>
+          <p>把行从 HTML 里完全移除的客户端窗口化，会把渲染与抓取的问题带回来。在 HTML 里包含本页行的分页 URL，既能缩小 DOM，又保留可获取的文档。审计样例应该写明你拥有的是哪一种。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-dom-size-and-rendering-work/a-screenshot-of-a-long-task-caused-by-excessive-rendering-wo.webp" alt="性能面板截图，长任务的时间大部分花在样式重算上。" width="891" height="276" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://web.dev/articles/dom-size-and-interactivity</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>把隐藏行或面板渲染成完整子树的模板</li>
+            <li>HTML 中包含可见行的分页 URL</li>
+            <li>删掉文字唯一副本的客户端窗口化</li>
+            <li>一条对比或目录 URL 作为样例</li>
+            <li>没有把通用节点数规则当成名次</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>对比工具把每个 SKU 的每个属性都渲染进 DOM，再用 CSS 藏起除一列以外的全部。样式工作仍然会碰到隐藏节点。健康改动是渲染选中的列，并将其余部分链接到分页 URL。被藏起的列并不是额外的文档。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>更小的 DOM 不保证排名或引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把渲染当作 SEO 健康问题：当模板依赖 JavaScript 时，重要 HTML 能否在有脚本和无脚本两种情况下被获取并比较。这种比较不是 GEO 审计，也不是市场覆盖计划。发现要附在样例 URL 上。模板改完之后的再审计，用来确认修复。</p>
+          <p>分析器图显示样式工作，因此文章可以讨论节点成本，而不把时长当成结果引用。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>为什么 DOM 规模会影响主线程？</summary>
+            <p>非常大的 DOM 会增加主线程上样式和布局的工作。</p>
+          </details>
+          <details>
+            <summary>应该用什么替换完全渲染的隐藏表？</summary>
+            <p>找出构建的节点远超视图显示的模板，分页或窗口化，同时不要藏起文档文字。</p>
+          </details>
+          <details>
+            <summary>更小的 DOM 能保证排名吗？</summary>
+            <p>更小的 DOM 不保证排名或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/how-to-check-website-crawlability/">如何检查网站可抓取性</a></li>
+            <li><a href="/zh/knowledge/what-a-technical-seo-geo-crawler-inspects/">技术 SEO/GEO 爬虫会检查什么</a></li>
+            <li><a href="/zh/qa/what-does-crawlability-mean/">可抓取性是什么意思？</a></li>
+            <li><a href="/zh/blog/what-open-source-crawlers-surface/">开源爬虫会看到什么</a></li>
+            <li><a href="/zh/knowledge/what-open-source-seo-crawlers-check/">开源 SEO 爬虫检查什么</a></li>
+            <li><a href="/zh/blog/seo-tech-back-forward-cache/">后退-前进缓存只有在页面允许时才会恢复页面</a></li>
+            <li><a href="/zh/blog/seo-tech-http-caching-of-assets/">HTTP 缓存保存响应，使下次请求可以跳过正文</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://web.dev/articles/dom-size-and-interactivity">https://web.dev/articles/dom-size-and-interactivity</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

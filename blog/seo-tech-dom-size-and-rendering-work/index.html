@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Huge DOM Makes Style and Layout Work Heavier | Mika Blog</title>
+  <meta name="description" content="Thousands of nodes increase style recalculation and layout cost. The health question is whether the template renders nodes nobody will see.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/blog/seo-tech-dom-size-and-rendering-work/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-dom-size-and-rendering-work/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-dom-size-and-rendering-work/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-dom-size-and-rendering-work/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="A Huge DOM Makes Style and Layout Work Heavier | Mika Blog">
+  <meta property="og:description" content="Thousands of nodes increase style recalculation and layout cost. The health question is whether the template renders nodes nobody will see.">
+  <meta property="og:url" content="https://mikaovo.ai/blog/seo-tech-dom-size-and-rendering-work/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-dom-size-and-rendering-work/a-screenshot-of-a-long-task-caused-by-excessive-rendering-wo.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="A Huge DOM Makes Style and Layout Work Heavier | Mika Blog">
+  <meta name="twitter:description" content="Thousands of nodes increase style recalculation and layout cost. The health question is whether the template renders nodes nobody will see.">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/blog/seo-tech-dom-size-and-rendering-work/#article","headline":"A Huge DOM Makes Style and Layout Work Heavier","name":"A Huge DOM Makes Style and Layout Work Heavier","description":"Thousands of nodes increase style recalculation and layout cost. The health question is whether the template renders nodes nobody will see.","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"en","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-dom-size-and-rendering-work/a-screenshot-of-a-long-task-caused-by-excessive-rendering-wo.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/blog/seo-tech-dom-size-and-rendering-work/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/blog/seo-tech-dom-size-and-rendering-work/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mikaovo.ai/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://mikaovo.ai/blog/"},{"@type":"ListItem","position":3,"name":"A Huge DOM Makes Style and Layout Work Heavier","item":"https://mikaovo.ai/blog/seo-tech-dom-size-and-rendering-work/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/blog/seo-tech-dom-size-and-rendering-work/#faq","mainEntity":[{"@type":"Question","name":"Why does DOM size affect the main thread?","acceptedAnswer":{"@type":"Answer","text":"A very large DOM increases the work of style and layout on the main thread."}},{"@type":"Question","name":"What should replace a fully rendered hidden table?","acceptedAnswer":{"@type":"Answer","text":"Find templates that build far more nodes than the view shows, and paginate or window them without hiding the document’s text."}},{"@type":"Question","name":"Does a smaller DOM guarantee rankings?","acceptedAnswer":{"@type":"Answer","text":"A smaller DOM does not guarantee rankings or citations."}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">Skip to content</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/" aria-label="Mika Visibility">
+        <img src="../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/knowledge/">Knowledge</a>
+        <a href="/blog/">Blog</a>
+        <a href="/qa/">Q&A</a>
+        <div class="kc-lang" aria-label="Language">
+          <a href="/blog/seo-tech-dom-size-and-rendering-work/" aria-current="page">EN</a>
+          <a href="/zh/blog/seo-tech-dom-size-and-rendering-work/">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">Contact</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>Technical</span> · <time datetime="2026-10-04">October 4, 2026</time></p>
+        <h1>A Huge DOM Makes Style and Layout Work Heavier</h1>
+        <p class="kc-hero-lead">A very large DOM increases the work of style and layout on the main thread.</p>
+        <p class="kc-hero-note">Educational material only. Mika does not guarantee search rankings or AI answer citations.</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="On this page">
+        <p>On this page</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">Short answer</a></li>
+            <li><a href="#definition">Definition</a></li>
+            <li><a href="#how">What rendering changes for a crawler</a></li>
+            <li><a href="#checks">What to check</a></li>
+            <li><a href="#example">A practical example</a></li>
+            <li><a href="#limits">What this does not claim</a></li>
+            <li><a href="#mika">Where Mika Visibility files this</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>Short answer</h2>
+          <p>A very large DOM increases the work of style and layout on the main thread.</p>
+          <p>The profiler picture shows a long task dominated by style recalculation. That shape often comes from rendering every row of a catalog, every hidden panel, or every icon as its own deep subtree. SEO Health asks the template to render what the view needs. It does not publish a node-count limit as a ranking rule, and the screenshot is not a result for a named company.</p>
+        </section>
+        <section id="definition">
+          <h2>Definition</h2>
+          <p>Node count by itself is a clue, not a verdict. A long specification table that people need can be large and still be the document. A table of two thousand rows rendered for a filter that shows twenty is waste. The repair is pagination or rendering the visible window, while keeping the indexable URLs as real documents rather than one endless page.</p>
+        </section>
+        <section id="how">
+          <h2>What rendering changes for a crawler</h2>
+          <p>Find templates that build far more nodes than the view shows, and paginate or window them without hiding the document’s text.</p>
+          <p>Client-side windowing that removes rows from the HTML entirely brings back the rendering-versus-crawl problem. A paged URL that contains its rows in HTML keeps both a smaller DOM and a fetchable document. The audit sample should say which of those two you have.</p>
+          <figure>
+            <img src="../../assets/articles/seo-tech/seo-tech-dom-size-and-rendering-work/a-screenshot-of-a-long-task-caused-by-excessive-rendering-wo.webp" alt="A performance-panel screenshot of a long task spent mostly in style recalculation." width="891" height="276" style="max-width:100%;height:auto">
+            <figcaption>Image from the source page: https://web.dev/articles/dom-size-and-interactivity</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>What to check</h2>
+          <ul>
+            <li>Templates that render hidden rows or panels as full subtrees</li>
+            <li>Pagination URLs whose HTML contains the visible rows</li>
+            <li>Client windowing that deletes the only copy of the text</li>
+            <li>One comparison or catalog URL as the sample</li>
+            <li>No universal node-count rule treated as a rank</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>A practical example</h2>
+          <p>A comparison tool renders every attribute of every SKU into the DOM and then hides all but one column with CSS. Style work touches the hidden nodes anyway. The health change renders the selected column and links to paged URLs for the rest. The hidden columns were not extra documents.</p>
+        </section>
+        <section id="limits">
+          <h2>What this does not claim</h2>
+          <p>A smaller DOM does not guarantee rankings or citations.</p>
+        </section>
+        <section id="mika">
+          <h2>Where Mika Visibility files this</h2>
+          <p>Mika Visibility treats rendering as an SEO Health question: can the important HTML be fetched and compared with and without JavaScript when the template depends on it. That comparison is not a GEO audit and not a market-coverage plan. Findings stay attached to sample URLs. A re-audit after the template change is how the team checks the repair.</p>
+          <p>The profiler image shows style work so the article can discuss node cost without quoting a duration as a result.</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">FAQ</h2>
+          <details>
+            <summary>Why does DOM size affect the main thread?</summary>
+            <p>A very large DOM increases the work of style and layout on the main thread.</p>
+          </details>
+          <details>
+            <summary>What should replace a fully rendered hidden table?</summary>
+            <p>Find templates that build far more nodes than the view shows, and paginate or window them without hiding the document’s text.</p>
+          </details>
+          <details>
+            <summary>Does a smaller DOM guarantee rankings?</summary>
+            <p>A smaller DOM does not guarantee rankings or citations.</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">Related guides</h2>
+          <ul>
+            <li><a href="/knowledge/how-to-check-website-crawlability/">How to Check Website Crawlability</a></li>
+            <li><a href="/knowledge/what-a-technical-seo-geo-crawler-inspects/">What a Technical SEO/GEO Crawler Inspects</a></li>
+            <li><a href="/qa/what-does-crawlability-mean/">What does crawlability mean?</a></li>
+            <li><a href="/blog/what-open-source-crawlers-surface/">What Open-Source Crawlers Surface</a></li>
+            <li><a href="/knowledge/what-open-source-seo-crawlers-check/">What Open-Source SEO Crawlers Check</a></li>
+            <li><a href="/blog/seo-tech-back-forward-cache/">Back-Forward Cache Restores a Page Only If the Page Allows It</a></li>
+            <li><a href="/blog/seo-tech-http-caching-of-assets/">HTTP Caching Stores a Response So the Next Request Can Skip the Body</a></li>
+            <li><a href="/#audit">Mika homepage — Technical</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">Sources</h2>
+          <ol>
+            <li><a href="https://web.dev/articles/dom-size-and-interactivity">https://web.dev/articles/dom-size-and-interactivity</a> — Source page used for the diagram and for the technical definitions restated here in Mika’s own words.</li>
+            <li><a href="/#audit">Mika Visibility homepage</a> — Product framing for SEO Health. Sample interface counts on the homepage are illustrative, not a case study.</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">Next step</h2>
+          <p>Run a structured SEO + GEO audit to see health findings, growth gaps, and a blueprint you can act on.</p>
+          <p><a href="/#cta">Start on Mika</a></p>
+          <p>Clearer entities, answers, evidence, and context make pages easier to understand and reference. Results in any answer product are not guaranteed.</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/">Mika Visibility</a> · <a href="/knowledge/">Knowledge</a> · <a href="/blog/">Blog</a> · <a href="/qa/">Q&A</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">Contact</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../contact-config.js"></script>
+  <script src="../../contact.js"></script>
+</body>
+</html>

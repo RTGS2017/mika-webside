@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Server, Client, and Static Rendering Change What HTML Exists | Mika Blog</title>
+  <meta name="description" content="Rendering chooses whether the first HTML already contains the product text. Crawlers and people can see different documents if it does not.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/blog/seo-tech-server-client-static-rendering/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-server-client-static-rendering/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-server-client-static-rendering/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-server-client-static-rendering/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="Server, Client, and Static Rendering Change What HTML Exists | Mika Blog">
+  <meta property="og:description" content="Rendering chooses whether the first HTML already contains the product text. Crawlers and people can see different documents if it does not.">
+  <meta property="og:url" content="https://mikaovo.ai/blog/seo-tech-server-client-static-rendering/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-server-client-static-rendering/diagram-showing-server-side-rendering-and-javascript-executi.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Server, Client, and Static Rendering Change What HTML Exists | Mika Blog">
+  <meta name="twitter:description" content="Rendering chooses whether the first HTML already contains the product text. Crawlers and people can see different documents if it does not.">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/blog/seo-tech-server-client-static-rendering/#article","headline":"Server, Client, and Static Rendering Change What HTML Exists","name":"Server, Client, and Static Rendering Change What HTML Exists","description":"Rendering chooses whether the first HTML already contains the product text. Crawlers and people can see different documents if it does not.","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"en","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-server-client-static-rendering/diagram-showing-server-side-rendering-and-javascript-executi.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/blog/seo-tech-server-client-static-rendering/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/blog/seo-tech-server-client-static-rendering/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mikaovo.ai/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://mikaovo.ai/blog/"},{"@type":"ListItem","position":3,"name":"Server, Client, and Static Rendering Change What HTML Exists","item":"https://mikaovo.ai/blog/seo-tech-server-client-static-rendering/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/blog/seo-tech-server-client-static-rendering/#faq","mainEntity":[{"@type":"Question","name":"What does rendering decide for a crawler?","acceptedAnswer":{"@type":"Answer","text":"Rendering decides whether the first HTML response already contains the text a crawler should read."}},{"@type":"Question","name":"What comparison should happen first?","acceptedAnswer":{"@type":"Answer","text":"Compare the raw HTML with the rendered result on one commercial URL before editing copy."}},{"@type":"Question","name":"Does a rendering style guarantee rankings?","acceptedAnswer":{"@type":"Answer","text":"Choosing a rendering style does not guarantee rankings or citations."}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">Skip to content</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/" aria-label="Mika Visibility">
+        <img src="../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/knowledge/">Knowledge</a>
+        <a href="/blog/">Blog</a>
+        <a href="/qa/">Q&A</a>
+        <div class="kc-lang" aria-label="Language">
+          <a href="/blog/seo-tech-server-client-static-rendering/" aria-current="page">EN</a>
+          <a href="/zh/blog/seo-tech-server-client-static-rendering/">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">Contact</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>Technical</span> · <time datetime="2026-10-04">October 4, 2026</time></p>
+        <h1>Server, Client, and Static Rendering Change What HTML Exists</h1>
+        <p class="kc-hero-lead">Rendering decides whether the first HTML response already contains the text a crawler should read.</p>
+        <p class="kc-hero-note">Educational material only. Mika does not guarantee search rankings or AI answer citations.</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="On this page">
+        <p>On this page</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">Short answer</a></li>
+            <li><a href="#definition">Definition</a></li>
+            <li><a href="#how">What rendering changes for a crawler</a></li>
+            <li><a href="#checks">What to check</a></li>
+            <li><a href="#example">A practical example</a></li>
+            <li><a href="#limits">What this does not claim</a></li>
+            <li><a href="#mika">Where Mika Visibility files this</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>Short answer</h2>
+          <p>Rendering decides whether the first HTML response already contains the text a crawler should read.</p>
+          <p>Server rendering and static HTML put the product name in the response. Client rendering sends a shell and builds the name after script runs. A crawler that does not execute script, or that executes it later, may see the shell. SEO Health compares those two views on a sample URL when the template depends on JavaScript.</p>
+        </section>
+        <section id="definition">
+          <h2>Definition</h2>
+          <p>The diagram of server rendering shows HTML existing before the browser’s extra script work. That is the case worth wanting for the primary content. Static files are the same idea with no per-request build. Client rendering is viable for applications, but the indexable text still needs a path into HTML. This is a technical readiness question, not a promise that any rendering style will rank.</p>
+        </section>
+        <section id="how">
+          <h2>What rendering changes for a crawler</h2>
+          <p>Compare the raw HTML with the rendered result on one commercial URL before editing copy.</p>
+          <p>If the raw HTML contains the product name, specifications, and the links to related parts, the crawler has a document. If it contains only a root element, the health finding is the shell, not the adjective in the hero. A re-audit after the template ships HTML again should repeat the same comparison. GEO still needs the sentences to be answerable, but answerable sentences that exist only after script are not yet a fetchable document.</p>
+          <figure>
+            <img src="../../assets/articles/seo-tech/seo-tech-server-client-static-rendering/diagram-showing-server-side-rendering-and-javascript-executi.webp" alt="A diagram of server-side rendering where HTML is produced on the server before JavaScript continues in the browser." width="994" height="614" style="max-width:100%;height:auto">
+            <figcaption>Image from the source page: https://web.dev/articles/rendering-on-the-web</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>What to check</h2>
+          <ul>
+            <li>Whether view-source contains the product name</li>
+            <li>Whether primary links exist as anchor elements in that HTML</li>
+            <li>A with-JavaScript and without-JavaScript sample of the same URL</li>
+            <li>That the finding is filed as template HTML, not as copy tone</li>
+            <li>A re-audit comparison after the change</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>A practical example</h2>
+          <p>A spare-parts app renders the fitment table only after a client router runs. View source shows a spinner. The health blueprint says: put the table, or a real server response of the table, in the HTML for the URLs that should be indexed. Adding blog posts about the brand will not fill that shell.</p>
+        </section>
+        <section id="limits">
+          <h2>What this does not claim</h2>
+          <p>Choosing a rendering style does not guarantee rankings or citations.</p>
+        </section>
+        <section id="mika">
+          <h2>Where Mika Visibility files this</h2>
+          <p>Mika Visibility treats rendering as an SEO Health question: can the important HTML be fetched and compared with and without JavaScript when the template depends on it. That comparison is not a GEO audit and not a market-coverage plan. Findings stay attached to sample URLs. A re-audit after the template change is how the team checks the repair.</p>
+          <p>The diagram shows HTML arriving from the server so the article can contrast that with a shell.</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">FAQ</h2>
+          <details>
+            <summary>What does rendering decide for a crawler?</summary>
+            <p>Rendering decides whether the first HTML response already contains the text a crawler should read.</p>
+          </details>
+          <details>
+            <summary>What comparison should happen first?</summary>
+            <p>Compare the raw HTML with the rendered result on one commercial URL before editing copy.</p>
+          </details>
+          <details>
+            <summary>Does a rendering style guarantee rankings?</summary>
+            <p>Choosing a rendering style does not guarantee rankings or citations.</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">Related guides</h2>
+          <ul>
+            <li><a href="/knowledge/how-to-check-website-crawlability/">How to Check Website Crawlability</a></li>
+            <li><a href="/knowledge/what-a-technical-seo-geo-crawler-inspects/">What a Technical SEO/GEO Crawler Inspects</a></li>
+            <li><a href="/qa/what-does-crawlability-mean/">What does crawlability mean?</a></li>
+            <li><a href="/blog/what-open-source-crawlers-surface/">What Open-Source Crawlers Surface</a></li>
+            <li><a href="/knowledge/what-open-source-seo-crawlers-check/">What Open-Source SEO Crawlers Check</a></li>
+            <li><a href="/blog/seo-tech-content-visibility-on-long-pages/">Long Pages Still Need Their Primary Text in the HTML</a></li>
+            <li><a href="/blog/seo-tech-lazy-loading-distance/">Lazy Loading Is a Distance Choice, Not a Default for Every Image</a></li>
+            <li><a href="/#audit">Mika homepage — Technical</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">Sources</h2>
+          <ol>
+            <li><a href="https://web.dev/articles/rendering-on-the-web">https://web.dev/articles/rendering-on-the-web</a> — Source page used for the diagram and for the technical definitions restated here in Mika’s own words.</li>
+            <li><a href="/#audit">Mika Visibility homepage</a> — Product framing for SEO Health. Sample interface counts on the homepage are illustrative, not a case study.</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">Next step</h2>
+          <p>Run a structured SEO + GEO audit to see health findings, growth gaps, and a blueprint you can act on.</p>
+          <p><a href="/#cta">Start on Mika</a></p>
+          <p>Clearer entities, answers, evidence, and context make pages easier to understand and reference. Results in any answer product are not guaranteed.</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/">Mika Visibility</a> · <a href="/knowledge/">Knowledge</a> · <a href="/blog/">Blog</a> · <a href="/qa/">Q&A</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">Contact</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../contact-config.js"></script>
+  <script src="../../contact.js"></script>
+</body>
+</html>

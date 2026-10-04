@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>首次输入延迟已不再是响应性的现行定义 | Mika 博客</title>
+  <meta name="description" content="首次输入延迟只看第一次输入。取代它的响应性定义是交互到下次绘制。本页不报告延迟。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-fid-was-replaced/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-fid-was-replaced/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-fid-was-replaced/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-fid-was-replaced/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="首次输入延迟已不再是响应性的现行定义 | Mika 博客">
+  <meta property="og:description" content="首次输入延迟只看第一次输入。取代它的响应性定义是交互到下次绘制。本页不报告延迟。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-fid-was-replaced/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-fid-was-replaced/page-load-trace-marking-first-input-delay.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="首次输入延迟已不再是响应性的现行定义 | Mika 博客">
+  <meta name="twitter:description" content="首次输入延迟只看第一次输入。取代它的响应性定义是交互到下次绘制。本页不报告延迟。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-fid-was-replaced/#article","headline":"首次输入延迟已不再是响应性的现行定义","name":"首次输入延迟已不再是响应性的现行定义","description":"首次输入延迟只看第一次输入。取代它的响应性定义是交互到下次绘制。本页不报告延迟。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-fid-was-replaced/page-load-trace-marking-first-input-delay.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-fid-was-replaced/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-fid-was-replaced/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"首次输入延迟已不再是响应性的现行定义","item":"https://mikaovo.ai/zh/blog/seo-tech-fid-was-replaced/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-fid-was-replaced/#faq","mainEntity":[{"@type":"Question","name":"首次输入延迟看的是什么？","acceptedAnswer":{"@type":"Answer","text":"首次输入延迟是较旧的响应性标记，它只看第一次输入。"}},{"@type":"Question","name":"旧报告应该如何标注？","acceptedAnswer":{"@type":"Answer","text":"如果报告仍写首次输入延迟，应标明那是旧定义，并另行查看后来的交互。"}},{"@type":"Question","name":"停用旧标记能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"停用旧标记不保证排名或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-fid-was-replaced/">EN</a>
+          <a href="/zh/blog/seo-tech-fid-was-replaced/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>首次输入延迟已不再是响应性的现行定义</h1>
+        <p class="kc-hero-lead">首次输入延迟是较旧的响应性标记，它只看第一次输入。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">健康检查里怎么使用这个定义</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>首次输入延迟是较旧的响应性标记，它只看第一次输入。</p>
+          <p>交互到下次绘制在 Core Web Vitals 中取代了它，因为目录上较慢的可能是后来的输入。把首次输入延迟和首次绘制、可交互时间标在一起的轨迹是一张历史示意图。它解释旧标记。它不是继续把旧标记当作现行定义来报告的许可，也不是任何网站的测量。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>B2B 页面上的第一次输入常常没有代表性：页面还忙时点了一下标志区域，或者轨迹期间根本没有输入。一分钟后的筛选点击，首次输入延迟看不见。所以健康检查如果仍然只谈第一次输入，描述的是过时定义。SEO 健康应该写明它使用的定义。</p>
+        </section>
+        <section id="how">
+          <h2>健康检查里怎么使用这个定义</h2>
+          <p>如果报告仍写首次输入延迟，应标明那是旧定义，并另行查看后来的交互。</p>
+          <p>本页的轨迹有用，是因为它在一次加载上标出多个标记。这些标记不能互换。可交互时间不等于输入延迟，首次绘制也不是这两者。把标签混在一起，会写出没人能修的记录。本文不会从图上读一个数字再安到某家公司身上。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-fid-was-replaced/page-load-trace-marking-first-input-delay.webp" alt="页面加载轨迹上分别标出首次内容绘制、可交互时间和首次输入延迟。" width="1600" height="760" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://web.dev/articles/fid</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>当前记录是否仍把首次输入延迟当作现行定义</li>
+            <li>旧标记看不见的后来交互</li>
+            <li>首次绘制、可交互时间和输入延迟保持分开标注</li>
+            <li>现在要紧的交互的一条样例 URL</li>
+            <li>没有从历史示意图上抄数字</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>一份旧的仪表板导出仍列出首页的首次输入延迟，而首页很少有第一次输入，对分类模板上的分面点击却只字不提。健康方面的更新是：不再把那一行当作现行的响应性检查，改为抽样分面交互。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>停用旧标记不保证排名或引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把它归在 SEO 健康：线上站点在技术上是否准备好被发现和理解。SEO 增长仍是关于覆盖和意图的另一个问题。GEO 健康与 GEO 增长保持各自的尺度。一条加载或响应性记录不会自动变成增长分数，也没有混合总分。</p>
+          <p>轨迹区分了旧标记和相邻标记，因此本页可以解释这次替换，而不编造延迟。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>首次输入延迟看的是什么？</summary>
+            <p>首次输入延迟是较旧的响应性标记，它只看第一次输入。</p>
+          </details>
+          <details>
+            <summary>旧报告应该如何标注？</summary>
+            <p>如果报告仍写首次输入延迟，应标明那是旧定义，并另行查看后来的交互。</p>
+          </details>
+          <details>
+            <summary>停用旧标记能保证排名吗？</summary>
+            <p>停用旧标记不保证排名或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/what-is-a-website-seo-audit/">什么是网站 SEO 审计</a></li>
+            <li><a href="/zh/knowledge/seo-health-vs-seo-growth/">SEO 健康 vs SEO 增长</a></li>
+            <li><a href="/zh/qa/what-does-a-website-seo-audit-review/">网站 SEO 审计检查什么？</a></li>
+            <li><a href="/zh/blog/what-seo-health-asks-of-a-live-site/">SEO 健康对线上站点要求什么</a></li>
+            <li><a href="/zh/knowledge/what-a-technical-seo-geo-crawler-inspects/">技术 SEO/GEO 爬虫会检查什么</a></li>
+            <li><a href="/zh/blog/seo-tech-how-cls-tools-report/">布局偏移工具报告的是事件，不是奖杯数字</a></li>
+            <li><a href="/zh/blog/seo-tech-server-client-static-rendering/">服务器渲染、客户端渲染和静态渲染改变的是 HTML 里有什么</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://web.dev/articles/fid">https://web.dev/articles/fid</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

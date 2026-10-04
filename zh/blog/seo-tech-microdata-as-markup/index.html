@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microdata 把字段挂在可见的 HTML 上 | Mika 博客</title>
+  <meta name="description" content="Microdata 用现有元素上的属性来命名一个项目及其属性。可见文字和这些属性应该是同一批事实。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-microdata-as-markup/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-microdata-as-markup/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-microdata-as-markup/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-microdata-as-markup/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="Microdata 把字段挂在可见的 HTML 上 | Mika 博客">
+  <meta property="og:description" content="Microdata 用现有元素上的属性来命名一个项目及其属性。可见文字和这些属性应该是同一批事实。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-microdata-as-markup/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-microdata-as-markup/addwiki-wikidata-microdata-referencer-cli.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Microdata 把字段挂在可见的 HTML 上 | Mika 博客">
+  <meta name="twitter:description" content="Microdata 用现有元素上的属性来命名一个项目及其属性。可见文字和这些属性应该是同一批事实。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-microdata-as-markup/#article","headline":"Microdata 把字段挂在可见的 HTML 上","name":"Microdata 把字段挂在可见的 HTML 上","description":"Microdata 用现有元素上的属性来命名一个项目及其属性。可见文字和这些属性应该是同一批事实。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-microdata-as-markup/addwiki-wikidata-microdata-referencer-cli.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-microdata-as-markup/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-microdata-as-markup/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"Microdata 把字段挂在可见的 HTML 上","item":"https://mikaovo.ai/zh/blog/seo-tech-microdata-as-markup/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-microdata-as-markup/#faq","mainEntity":[{"@type":"Question","name":"Microdata 把字段放在哪里？","acceptedAnswer":{"@type":"Answer","text":"Microdata 把项目和属性标记加到页面上已经存在的 HTML 元素上。"}},{"@type":"Question","name":"属性应该坐在什么上面？","acceptedAnswer":{"@type":"Answer","text":"把每个属性放在展示该事实的元素上，并且不要再发布一块冲突的 JSON-LD。"}},{"@type":"Question","name":"Microdata 能保证富结果吗？","acceptedAnswer":{"@type":"Answer","text":"Microdata 不保证排名、富结果或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-microdata-as-markup/">EN</a>
+          <a href="/zh/blog/seo-tech-microdata-as-markup/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>Microdata 把字段挂在可见的 HTML 上</h1>
+        <p class="kc-hero-lead">Microdata 把项目和属性标记加到页面上已经存在的 HTML 元素上。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">这种标记能做什么、不能做什么</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>Microdata 把项目和属性标记加到页面上已经存在的 HTML 元素上。</p>
+          <p>因为字段坐在可见节点上，不一致比单独的脚本更容易看见，改版移动节点时也更容易被破坏。SEO 健康把属性和文字放在一起读。Microdata 不比 JSON-LD 更强，也不是排名格式。它是一种语法。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>itemscope 标记一个项目，itemtype 命名它的种类，itemprop 命名一个字段。如果产品名称属性坐在口号的 span 上，该项目的名称就是口号。修复是把属性移到显示名称的元素上，或在模板诚实之前删掉标记。不要维护两套互相矛盾的语法。</p>
+        </section>
+        <section id="how">
+          <h2>这种标记能做什么、不能做什么</h2>
+          <p>把每个属性放在展示该事实的元素上，并且不要再发布一块冲突的 JSON-LD。</p>
+          <p>图是一个读取标记的工具的终端日志。日志里的计数属于该工具自己的那次运行。它们不是 Mika 或客户的测量。在隐藏元素里塞满 itemprop 值，是一种说出页面没有展示的事情的方式。把它当作虚假主张，和页面从未显示的 JSON-LD 评分一样。一种语法、与可见文字一致，就够了。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-microdata-as-markup/addwiki-wikidata-microdata-referencer-cli.webp" alt="命令行工具的终端日志：它遍历条目，并记录在页面标记里找到的引用。" width="1280" height="911" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://en.wikipedia.org/wiki/Microdata_(HTML)</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>属性位于展示事实的元素上</li>
+            <li>没有另一种互相矛盾的语法</li>
+            <li>没有隐藏元素携带页面省略的主张</li>
+            <li>一条产品 URL 按 HTML 来读，而不只看验证器摘要</li>
+            <li>H1 仍然为人陈述主题</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>产品模板把 itemprop=&quot;name&quot; 放在站点口号上，又输出名称为 SKU 的 JSON-LD。可见的 H1 是产品系列。修复是只保留 JSON-LD 并使用系列名，去掉 microdata，或者反过来，但不能两者冲突。H1 仍然是给人的陈述。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>Microdata 不保证排名、富结果或引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把结构化数据当作技术性的 SEO 健康题目：标记应与可见事实一致，并且能被干净解析。它不出售富媒体结果的位置。GEO 仍然关心实体和证据在正文里是否可理解。重复口号的标记不会制造证据。</p>
+          <p>日志显示的是软件在读标记。它不改变这条规则：每个属性都要坐在可见事实上。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>Microdata 把字段放在哪里？</summary>
+            <p>Microdata 把项目和属性标记加到页面上已经存在的 HTML 元素上。</p>
+          </details>
+          <details>
+            <summary>属性应该坐在什么上面？</summary>
+            <p>把每个属性放在展示该事实的元素上，并且不要再发布一块冲突的 JSON-LD。</p>
+          </details>
+          <details>
+            <summary>Microdata 能保证富结果吗？</summary>
+            <p>Microdata 不保证排名、富结果或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/what-a-technical-seo-geo-crawler-inspects/">技术 SEO/GEO 爬虫会检查什么</a></li>
+            <li><a href="/zh/knowledge/entity-evidence-answerability/">实体、证据与可答性</a></li>
+            <li><a href="/zh/qa/what-is-a-website-entity/">什么是网站实体？</a></li>
+            <li><a href="/zh/blog/entity-graph-company-to-evidence/">从公司到证据的实体图</a></li>
+            <li><a href="/zh/knowledge/seo-health-vs-seo-growth/">SEO 健康 vs SEO 增长</a></li>
+            <li><a href="/zh/blog/seo-tech-rdfa-as-markup/">RDFa 同样标注你已经展示的 HTML</a></li>
+            <li><a href="/zh/blog/seo-tech-https-as-a-fetch-condition/">HTTPS 是你希望浏览器和爬虫使用的获取方式</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/Microdata_(HTML)">https://en.wikipedia.org/wiki/Microdata_(HTML)</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

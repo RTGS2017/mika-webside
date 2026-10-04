@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CORS 约束的是脚本读取另一个源，不是抓取 | Mika 博客</title>
+  <meta name="description" content="跨源资源共享是浏览器对读取另一个源的脚本所做的检查。它不是 robots.txt，也不能代替一份可获取的 HTML 文档。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-cors-is-not-a-robots-rule/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-cors-is-not-a-robots-rule/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-cors-is-not-a-robots-rule/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-cors-is-not-a-robots-rule/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="CORS 约束的是脚本读取另一个源，不是抓取 | Mika 博客">
+  <meta property="og:description" content="跨源资源共享是浏览器对读取另一个源的脚本所做的检查。它不是 robots.txt，也不能代替一份可获取的 HTML 文档。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-cors-is-not-a-robots-rule/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-cors-is-not-a-robots-rule/flowchart-showing-simple-and-preflight-xhr-svg.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CORS 约束的是脚本读取另一个源，不是抓取 | Mika 博客">
+  <meta name="twitter:description" content="跨源资源共享是浏览器对读取另一个源的脚本所做的检查。它不是 robots.txt，也不能代替一份可获取的 HTML 文档。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-cors-is-not-a-robots-rule/#article","headline":"CORS 约束的是脚本读取另一个源，不是抓取","name":"CORS 约束的是脚本读取另一个源，不是抓取","description":"跨源资源共享是浏览器对读取另一个源的脚本所做的检查。它不是 robots.txt，也不能代替一份可获取的 HTML 文档。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-cors-is-not-a-robots-rule/flowchart-showing-simple-and-preflight-xhr-svg.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-cors-is-not-a-robots-rule/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-cors-is-not-a-robots-rule/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"CORS 约束的是脚本读取另一个源，不是抓取","item":"https://mikaovo.ai/zh/blog/seo-tech-cors-is-not-a-robots-rule/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-cors-is-not-a-robots-rule/#faq","mainEntity":[{"@type":"Question","name":"CORS 约束什么？","acceptedAnswer":{"@type":"Answer","text":"CORS 是浏览器的一条规则，关于脚本是否可以读取来自另一个源的响应。"}},{"@type":"Question","name":"抓取规则应该放在哪里？","acceptedAnswer":{"@type":"Answer","text":"把抓取规则放在 robots 和头里，CORS 只用于浏览器脚本可以读取什么。"}},{"@type":"Question","name":"CORS 设置能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"CORS 设置不保证排名或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-cors-is-not-a-robots-rule/">EN</a>
+          <a href="/zh/blog/seo-tech-cors-is-not-a-robots-rule/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>CORS 约束的是脚本读取另一个源，不是抓取</h1>
+        <p class="kc-hero-lead">CORS 是浏览器的一条规则，关于脚本是否可以读取来自另一个源的响应。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">抓取怎样遇到这条规则</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>CORS 是浏览器的一条规则，关于脚本是否可以读取来自另一个源的响应。</p>
+          <p>流程图从 JavaScript 发出跨源调用开始。有些请求直接继续，另一些先做 OPTIONS 预检，然后浏览器才查找 access-control 头。失败则走到错误。那是脚本在浏览器里的问题。爬虫获取你的 HTML 并不是那个脚本。SEO 健康不把 CORS 错误当作 robots.txt 规则，也不把宽松的 CORS 头当作索引某个 API 的邀请。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>robots.txt 和 X-Robots-Tag 告诉爬虫如何获取和索引一个 URL。CORS 告诉浏览器关于页面脚本的事。阻止其他站点的脚本读取你的 JSON，并不会阻止爬虫请求一个公开的 HTML URL；允许这种读取，也不会把 JSON 放进 sitemap。如果产品列表只存在于一次跨源调用之后，就发布一个包含该列表的 HTML URL。流程图是浏览器如何选择的地图。它不是本文让你抄到私有 API 上的配置。</p>
+        </section>
+        <section id="how">
+          <h2>抓取怎样遇到这条规则</h2>
+          <p>把抓取规则放在 robots 和头里，CORS 只用于浏览器脚本可以读取什么。</p>
+          <p>不要因为一个小组件的 CORS 请求失败就 noindex 一个页面，也不要因为 CORS 允许就把 API URL 加进 sitemap。直接获取 HTML URL，看文档是否在那里。如果你设置的头挡住了字体或样式表这类公开资源，渲染仍然可能坏掉。那是资源问题，和 robots 分开。图中的错误框是脚本的错误，不是抓取状态。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-cors-is-not-a-robots-rule/flowchart-showing-simple-and-preflight-xhr-svg.webp" alt="一张跨源 XHR 流程图，把简单请求和预检 OPTIONS 调用分开，最后要么发出真正的请求，要么得到错误。" width="1280" height="673" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://en.wikipedia.org/wiki/Cross-origin_resource_sharing</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>产品列表存在于一个 HTML URL 中</li>
+            <li>API URL 不在 sitemap 里</li>
+            <li>robots 规则写成 robots 规则，而不是 CORS</li>
+            <li>字体和样式表没有被意外挡在你自己的页面之外</li>
+            <li>不依赖脚本获取一条 HTML URL</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>零件表由脚本从 API 主机加载。CORS 在某些浏览器里失败，团队把 API URL 加进了 sitemap。修复是发布包含该表的 /parts HTML，链接到它，并把 API 留在 sitemap 之外。API 上的 CORS 可以保持严格。流程图没有被抄成一项政策。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>CORS 设置不保证排名或引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把可抓取性放在 SEO 健康：robots 规则、状态码，以及爬虫能跟着走的路径。断开的路径和被挡住的模板是健康发现。缺主题不是。GEO 仍然依赖爬虫真正能到达的页面，但到得了并不等于替买家写好了答案。</p>
+          <p>流程图是浏览器对脚本的决定。抓取是对一个 URL 的获取。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>CORS 约束什么？</summary>
+            <p>CORS 是浏览器的一条规则，关于脚本是否可以读取来自另一个源的响应。</p>
+          </details>
+          <details>
+            <summary>抓取规则应该放在哪里？</summary>
+            <p>把抓取规则放在 robots 和头里，CORS 只用于浏览器脚本可以读取什么。</p>
+          </details>
+          <details>
+            <summary>CORS 设置能保证排名吗？</summary>
+            <p>CORS 设置不保证排名或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/how-to-check-website-crawlability/">如何检查网站可抓取性</a></li>
+            <li><a href="/zh/knowledge/how-to-find-broken-internal-links/">如何查找失效内链</a></li>
+            <li><a href="/zh/qa/what-does-crawlability-mean/">可抓取性是什么意思？</a></li>
+            <li><a href="/zh/qa/which-status-codes-matter-for-crawling/">哪些状态码与抓取有关？</a></li>
+            <li><a href="/zh/blog/what-seo-health-asks-of-a-live-site/">SEO 健康对线上站点要求什么</a></li>
+            <li><a href="/zh/blog/seo-tech-content-security-policy-and-assets/">内容安全策略可以挡住你自己页面的资源</a></li>
+            <li><a href="/zh/blog/seo-tech-dom-versus-source-html/">DOM 是一棵树。源代码是获取返回的内容</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">https://en.wikipedia.org/wiki/Cross-origin_resource_sharing</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

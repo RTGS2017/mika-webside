@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>分页是一系列 URL，不是无尽滚动 | Mika 博客</title>
+  <meta name="description" content="第 2 页和第 3 页应该是 HTML 里有自己条目的真实 URL。没有这些 URL 的无限滚动会藏起集合的其余部分。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-pagination-as-architecture/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-pagination-as-architecture/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-pagination-as-architecture/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-pagination-as-architecture/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="分页是一系列 URL，不是无尽滚动 | Mika 博客">
+  <meta property="og:description" content="第 2 页和第 3 页应该是 HTML 里有自己条目的真实 URL。没有这些 URL 的无限滚动会藏起集合的其余部分。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-pagination-as-architecture/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-pagination-as-architecture/laptop-ebook.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="分页是一系列 URL，不是无尽滚动 | Mika 博客">
+  <meta name="twitter:description" content="第 2 页和第 3 页应该是 HTML 里有自己条目的真实 URL。没有这些 URL 的无限滚动会藏起集合的其余部分。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-pagination-as-architecture/#article","headline":"分页是一系列 URL，不是无尽滚动","name":"分页是一系列 URL，不是无尽滚动","description":"第 2 页和第 3 页应该是 HTML 里有自己条目的真实 URL。没有这些 URL 的无限滚动会藏起集合的其余部分。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-pagination-as-architecture/laptop-ebook.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-pagination-as-architecture/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-pagination-as-architecture/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"分页是一系列 URL，不是无尽滚动","item":"https://mikaovo.ai/zh/blog/seo-tech-pagination-as-architecture/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-pagination-as-architecture/#faq","mainEntity":[{"@type":"Question","name":"什么使分页成为真实的分页？","acceptedAnswer":{"@type":"Answer","text":"分页把长列表拆成若干 URL，其 HTML 包含该页的条目和指向相邻页的链接。"}},{"@type":"Question","name":"第 2 页应该包含什么？","acceptedAnswer":{"@type":"Answer","text":"给每一页自己的 URL、HTML 里自己的条目，以及指向下一页的锚点。"}},{"@type":"Question","name":"分页 URL 能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"真实的分页 URL 不保证排名或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-pagination-as-architecture/">EN</a>
+          <a href="/zh/blog/seo-tech-pagination-as-architecture/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>分页是一系列 URL，不是无尽滚动</h1>
+        <p class="kc-hero-lead">分页把长列表拆成若干 URL，其 HTML 包含该页的条目和指向相邻页的链接。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">结构如何承载发现</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>分页把长列表拆成若干 URL，其 HTML 包含该页的条目和指向相邻页的链接。</p>
+          <p>只把下一批条目取进同一个 URL 的控件不是分页。它是一份假装成许多份的文档，或藏在一份文档后面的许多条目。SEO 健康希望应该被发现的条目位于可获取的 URL。页面链接图显示的就是这种模式：分开的页面，而不是一段不断变长的滚动。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>如果每一页有你打算保留的不同条目集合，它应该把 canonical 指向自己，而不是全部指向第 1 页，否则后面的页面会告诉爬虫它们是第一页的重复。内链应该把下一页作为锚点，而不是只有一个运行脚本的按钮。全部查看的 URL 可以存在，如果它真的是你能够提供的一份文档，而不是把每一行都装进一个 DOM 的陷阱。</p>
+        </section>
+        <section id="how">
+          <h2>结构如何承载发现</h2>
+          <p>给每一页自己的 URL、HTML 里自己的条目，以及指向下一页的锚点。</p>
+          <p>rel-next 和 rel-prev 曾经是常见提示。爬虫是否使用它们不是健康检查的核心。核心是可抓取的链接和诚实的 canonical。不要把第一页之后的每一页都 noindex，除非你决定那些条目不需要被发现，否则就不要对它们没被发现感到意外。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-pagination-as-architecture/laptop-ebook.webp" alt="显示一串页面链接的分页控件。" width="1280" height="1040" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://en.wikipedia.org/wiki/Pagination</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>每一页的条目存在于该 URL 的 HTML 中</li>
+            <li>指向相邻页的锚点</li>
+            <li>条目集合不同时使用指向自身的 canonical</li>
+            <li>没有因习惯对后面的页面使用 noindex</li>
+            <li>在第 1 页和第 2 页检查的一个系列</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>目录的“下一页”控件用脚本替换网格，从不改变 URL。第 2 页的产品没有地址。修复是增加 /catalog?page=2，HTML 里有这些产品，canonical 指向该 URL，并从第 1 页放一个锚点。与分页组合的筛选仍然需要分面说明里的规则，否则 page 参数会把陷阱乘开。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>真实的分页 URL 不保证排名或引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把架构读成 SEO 健康：重要模板是否位于爬虫能从枢纽跟着走的路径上。深度和孤立页是结构。没被回答的买家问题是 SEO 增长。整齐的树不能保证页面容易被引用，那是 GEO 的质量，不是引用承诺。</p>
+          <p>控件图显示分开的页面链接，以免把原地滚动误认为架构。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>什么使分页成为真实的分页？</summary>
+            <p>分页把长列表拆成若干 URL，其 HTML 包含该页的条目和指向相邻页的链接。</p>
+          </details>
+          <details>
+            <summary>第 2 页应该包含什么？</summary>
+            <p>给每一页自己的 URL、HTML 里自己的条目，以及指向下一页的锚点。</p>
+          </details>
+          <details>
+            <summary>分页 URL 能保证排名吗？</summary>
+            <p>真实的分页 URL 不保证排名或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/how-to-find-orphan-pages/">如何发现孤立页面</a></li>
+            <li><a href="/zh/knowledge/what-is-a-website-seo-audit/">什么是网站 SEO 审计</a></li>
+            <li><a href="/zh/qa/what-is-a-crawl-path/">什么是抓取路径？</a></li>
+            <li><a href="/zh/blog/internal-links-and-orphan-discovery/">内链与孤立页发现</a></li>
+            <li><a href="/zh/knowledge/audit-diagnosis-blueprint/">审计、诊断与蓝图</a></li>
+            <li><a href="/zh/blog/seo-tech-infinite-scroll-and-discovery/">无限滚动会藏起后面的条目，除非它们有 URL</a></li>
+            <li><a href="/zh/blog/seo-tech-link-rot-and-broken-paths/">链接腐烂是现在指向无处的内部路径</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/Pagination">https://en.wikipedia.org/wiki/Pagination</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

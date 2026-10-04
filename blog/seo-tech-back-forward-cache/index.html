@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Back-Forward Cache Restores a Page Only If the Page Allows It | Mika Blog</title>
+  <meta name="description" content="The back-forward cache can restore a previous page without a full reload. Some headers and scripts make a page ineligible.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/blog/seo-tech-back-forward-cache/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-back-forward-cache/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-back-forward-cache/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-back-forward-cache/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="Back-Forward Cache Restores a Page Only If the Page Allows It | Mika Blog">
+  <meta property="og:description" content="The back-forward cache can restore a previous page without a full reload. Some headers and scripts make a page ineligible.">
+  <meta property="og:url" content="https://mikaovo.ai/blog/seo-tech-back-forward-cache/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-back-forward-cache/back-forward-cache-panel-in-devtools.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Back-Forward Cache Restores a Page Only If the Page Allows It | Mika Blog">
+  <meta name="twitter:description" content="The back-forward cache can restore a previous page without a full reload. Some headers and scripts make a page ineligible.">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/blog/seo-tech-back-forward-cache/#article","headline":"Back-Forward Cache Restores a Page Only If the Page Allows It","name":"Back-Forward Cache Restores a Page Only If the Page Allows It","description":"The back-forward cache can restore a previous page without a full reload. Some headers and scripts make a page ineligible.","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"en","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-back-forward-cache/back-forward-cache-panel-in-devtools.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/blog/seo-tech-back-forward-cache/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/blog/seo-tech-back-forward-cache/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mikaovo.ai/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://mikaovo.ai/blog/"},{"@type":"ListItem","position":3,"name":"Back-Forward Cache Restores a Page Only If the Page Allows It","item":"https://mikaovo.ai/blog/seo-tech-back-forward-cache/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/blog/seo-tech-back-forward-cache/#faq","mainEntity":[{"@type":"Question","name":"What does the back-forward cache restore?","acceptedAnswer":{"@type":"Answer","text":"The back-forward cache restores a page the visitor already saw, instead of loading it from scratch."}},{"@type":"Question","name":"What should a sample check look for?","acceptedAnswer":{"@type":"Answer","text":"Check a sample URL in the back-forward panel and remove unload handlers or headers that only exist by habit."}},{"@type":"Question","name":"Does eligibility guarantee rankings?","acceptedAnswer":{"@type":"Answer","text":"Back-forward eligibility does not guarantee rankings or citations."}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">Skip to content</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/" aria-label="Mika Visibility">
+        <img src="../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/knowledge/">Knowledge</a>
+        <a href="/blog/">Blog</a>
+        <a href="/qa/">Q&A</a>
+        <div class="kc-lang" aria-label="Language">
+          <a href="/blog/seo-tech-back-forward-cache/" aria-current="page">EN</a>
+          <a href="/zh/blog/seo-tech-back-forward-cache/">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">Contact</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>Technical</span> · <time datetime="2026-10-04">October 4, 2026</time></p>
+        <h1>Back-Forward Cache Restores a Page Only If the Page Allows It</h1>
+        <p class="kc-hero-lead">The back-forward cache restores a page the visitor already saw, instead of loading it from scratch.</p>
+        <p class="kc-hero-note">Educational material only. Mika does not guarantee search rankings or AI answer citations.</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="On this page">
+        <p>On this page</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">Short answer</a></li>
+            <li><a href="#definition">Definition</a></li>
+            <li><a href="#how">What rendering changes for a crawler</a></li>
+            <li><a href="#checks">What to check</a></li>
+            <li><a href="#example">A practical example</a></li>
+            <li><a href="#limits">What this does not claim</a></li>
+            <li><a href="#mika">Where Mika Visibility files this</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>Short answer</h2>
+          <p>The back-forward cache restores a page the visitor already saw, instead of loading it from scratch.</p>
+          <p>DevTools can say the page was restored or why it was not. Unload handlers, certain cache-control values, and some connection types are typical reasons a page is ineligible. SEO Health notes those blockers on a template because a full reload on every Back click repeats the cost of the first load. The panel screenshot is a tool illustration, not a result for this site.</p>
+        </section>
+        <section id="definition">
+          <h2>Definition</h2>
+          <p>This cache is a browser behavior for history navigation. It is not an HTTP cache entry you set with a long max-age, and it is not a CDN. Confusing the three leads to the wrong header change. The audit names which mechanism failed.</p>
+        </section>
+        <section id="how">
+          <h2>What rendering changes for a crawler</h2>
+          <p>Check a sample URL in the back-forward panel and remove unload handlers or headers that only exist by habit.</p>
+          <p>A page that must never be restored, such as a one-time payment confirmation, can opt out on purpose. A product page usually should not opt out. The note should say which case the template is. Eligibility does not index the page and does not rank it.</p>
+          <figure>
+            <img src="../../assets/articles/seo-tech/seo-tech-back-forward-cache/back-forward-cache-panel-in-devtools.webp" alt="The back-forward cache panel in DevTools showing whether a page was restored." width="1600" height="627" style="max-width:100%;height:auto">
+            <figcaption>Image from the source page: https://web.dev/articles/bfcache</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>What to check</h2>
+          <ul>
+            <li>Unload handlers on templates that should restore</li>
+            <li>Cache-control values that block restoration by accident</li>
+            <li>Payment or other pages that opt out on purpose</li>
+            <li>One product URL checked in the panel</li>
+            <li>The mechanism not confused with HTTP cache or a CDN</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>A practical example</h2>
+          <p>Every template registers an unload handler left over from an old analytics snippet. The back-forward panel says the product URL is ineligible. Removing the handler makes the product page eligible. The payment confirmation keeps its own opt-out. No score is attached.</p>
+        </section>
+        <section id="limits">
+          <h2>What this does not claim</h2>
+          <p>Back-forward eligibility does not guarantee rankings or citations.</p>
+        </section>
+        <section id="mika">
+          <h2>Where Mika Visibility files this</h2>
+          <p>Mika Visibility treats rendering as an SEO Health question: can the important HTML be fetched and compared with and without JavaScript when the template depends on it. That comparison is not a GEO audit and not a market-coverage plan. Findings stay attached to sample URLs. A re-audit after the template change is how the team checks the repair.</p>
+          <p>The panel figure shows eligibility, which is a yes-or-no about restoration, not a points total.</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">FAQ</h2>
+          <details>
+            <summary>What does the back-forward cache restore?</summary>
+            <p>The back-forward cache restores a page the visitor already saw, instead of loading it from scratch.</p>
+          </details>
+          <details>
+            <summary>What should a sample check look for?</summary>
+            <p>Check a sample URL in the back-forward panel and remove unload handlers or headers that only exist by habit.</p>
+          </details>
+          <details>
+            <summary>Does eligibility guarantee rankings?</summary>
+            <p>Back-forward eligibility does not guarantee rankings or citations.</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">Related guides</h2>
+          <ul>
+            <li><a href="/knowledge/how-to-check-website-crawlability/">How to Check Website Crawlability</a></li>
+            <li><a href="/knowledge/what-a-technical-seo-geo-crawler-inspects/">What a Technical SEO/GEO Crawler Inspects</a></li>
+            <li><a href="/qa/what-does-crawlability-mean/">What does crawlability mean?</a></li>
+            <li><a href="/blog/what-open-source-crawlers-surface/">What Open-Source Crawlers Surface</a></li>
+            <li><a href="/knowledge/what-open-source-seo-crawlers-check/">What Open-Source SEO Crawlers Check</a></li>
+            <li><a href="/blog/seo-tech-http-caching-of-assets/">HTTP Caching Stores a Response So the Next Request Can Skip the Body</a></li>
+            <li><a href="/blog/seo-tech-stale-while-revalidate/">Stale-While-Revalidate Serves a Stored Response While a Fresh One Is Checked</a></li>
+            <li><a href="/#audit">Mika homepage — Technical</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">Sources</h2>
+          <ol>
+            <li><a href="https://web.dev/articles/bfcache">https://web.dev/articles/bfcache</a> — Source page used for the diagram and for the technical definitions restated here in Mika’s own words.</li>
+            <li><a href="/#audit">Mika Visibility homepage</a> — Product framing for SEO Health. Sample interface counts on the homepage are illustrative, not a case study.</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">Next step</h2>
+          <p>Run a structured SEO + GEO audit to see health findings, growth gaps, and a blueprint you can act on.</p>
+          <p><a href="/#cta">Start on Mika</a></p>
+          <p>Clearer entities, answers, evidence, and context make pages easier to understand and reference. Results in any answer product are not guaranteed.</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/">Mika Visibility</a> · <a href="/knowledge/">Knowledge</a> · <a href="/blog/">Blog</a> · <a href="/qa/">Q&A</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">Contact</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../contact-config.js"></script>
+  <script src="../../contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>响应式图片标记发送与位置匹配的文件 | Mika 博客</title>
+  <meta name="description" content="srcset 和 sizes 告诉浏览器哪个文件适合这个位置。它们不能代替 alt 文字或宽高。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-responsive-image-markup/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-responsive-image-markup/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-responsive-image-markup/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-responsive-image-markup/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="响应式图片标记发送与位置匹配的文件 | Mika 博客">
+  <meta property="og:description" content="srcset 和 sizes 告诉浏览器哪个文件适合这个位置。它们不能代替 alt 文字或宽高。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-responsive-image-markup/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-responsive-image-markup/art-direction-example.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="响应式图片标记发送与位置匹配的文件 | Mika 博客">
+  <meta name="twitter:description" content="srcset 和 sizes 告诉浏览器哪个文件适合这个位置。它们不能代替 alt 文字或宽高。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-responsive-image-markup/#article","headline":"响应式图片标记发送与位置匹配的文件","name":"响应式图片标记发送与位置匹配的文件","description":"srcset 和 sizes 告诉浏览器哪个文件适合这个位置。它们不能代替 alt 文字或宽高。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-responsive-image-markup/art-direction-example.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-responsive-image-markup/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-responsive-image-markup/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"响应式图片标记发送与位置匹配的文件","item":"https://mikaovo.ai/zh/blog/seo-tech-responsive-image-markup/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-responsive-image-markup/#faq","mainEntity":[{"@type":"Question","name":"响应式图片标记做什么？","acceptedAnswer":{"@type":"Answer","text":"响应式图片标记让浏览器选择适合即将绘制的位置的文件。"}},{"@type":"Question","name":"同一张图还必须保留什么？","acceptedAnswer":{"@type":"Answer","text":"让候选文件匹配真实位置，并在同一张图上保留 alt 文字和占位盒子。"}},{"@type":"Question","name":"响应式候选图能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"响应式候选图不保证排名或引用。这也不保证更富的图片结果。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-responsive-image-markup/">EN</a>
+          <a href="/zh/blog/seo-tech-responsive-image-markup/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>响应式图片标记发送与位置匹配的文件</h1>
+        <p class="kc-hero-lead">响应式图片标记让浏览器选择适合即将绘制的位置的文件。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">页面基础里包括什么</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>响应式图片标记让浏览器选择适合即将绘制的位置的文件。</p>
+          <p>srcset 列出候选文件。sizes 告诉浏览器这个位置在布局里有多宽。艺术指导，也就是窄屏使用不同裁切，是用 picture 做的进一步选择。这些标记都不写 alt 文字，如果不同时设置宽高或比例，它们也不会预留盒子。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>把 2000 像素的产品照片送进 400 像素的卡片会浪费传输。把很小的文件送进全宽主视觉会显得糊。健康检查是标记是否匹配该模板的位置。艺术指导图展示的是裁切，那是布局选择。它不是性能分数。</p>
+        </section>
+        <section id="how">
+          <h2>页面基础里包括什么</h2>
+          <p>让候选文件匹配真实位置，并在同一张图上保留 alt 文字和占位盒子。</p>
+          <p>每个断点都用同一张巨大文件的模板，是关于字节的健康记录。更换了裁切却丢掉 alt 属性的模板，是关于文字替代的健康记录。两者可以同时成立。SEO 健康把它们分开列出。图片内容，也就是照片描绘了什么，仍然要用页面语言写在 alt 里。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-responsive-image-markup/art-direction-example.webp" alt="艺术指导示例，展示不同屏幕布局使用不同的图片裁切。" width="600" height="328" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://web.dev/articles/responsive-images</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>匹配缩略图和主视觉位置的 srcset 候选</li>
+            <li>描述布局位置的 sizes</li>
+            <li>页面语言的 alt 文字仍然存在</li>
+            <li>用宽高或比例预留盒子</li>
+            <li>在两种宽度下检查的一条产品模板 URL</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>产品模板在侧栏缩略图里使用相机原图，又把同一 URL 用作主视觉且没有更大的候选。缩略图浪费字节，主视觉又偏糊。标记应为侧栏提供小文件、为主视觉提供大文件，alt 文字点名产品，并设置宽高以免侧栏跳动。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>响应式候选图不保证排名或引用。这也不保证更富的图片结果。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把标题、标题层级、语言和媒体基础归在 SEO 健康的内容与结构检查里。它们帮助页面被理解。它们不是 SEO 增长——增长问的是还缺什么覆盖——它们也不保证回答产品会引用这个页面。</p>
+          <p>艺术指导图展示裁切，因此文章可以把裁切选择与文件大小、alt 文字分开。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>响应式图片标记做什么？</summary>
+            <p>响应式图片标记让浏览器选择适合即将绘制的位置的文件。</p>
+          </details>
+          <details>
+            <summary>同一张图还必须保留什么？</summary>
+            <p>让候选文件匹配真实位置，并在同一张图上保留 alt 文字和占位盒子。</p>
+          </details>
+          <details>
+            <summary>响应式候选图能保证排名吗？</summary>
+            <p>响应式候选图不保证排名或引用。这也不保证更富的图片结果。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/what-is-a-website-seo-audit/">什么是网站 SEO 审计</a></li>
+            <li><a href="/zh/knowledge/how-to-detect-duplicate-content/">如何检测重复内容</a></li>
+            <li><a href="/zh/qa/what-does-a-website-seo-audit-review/">网站 SEO 审计检查什么？</a></li>
+            <li><a href="/zh/blog/what-seo-health-asks-of-a-live-site/">SEO 健康对线上站点要求什么</a></li>
+            <li><a href="/zh/knowledge/seo-health-vs-seo-growth/">SEO 健康 vs SEO 增长</a></li>
+            <li><a href="/zh/blog/seo-tech-image-cdn-request-shape/">图片 CDN 仍然需要稳定且被说明的 URL</a></li>
+            <li><a href="/zh/blog/seo-tech-image-compression-and-clarity/">压缩是在文件重量和可见损伤之间取舍</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://web.dev/articles/responsive-images">https://web.dev/articles/responsive-images</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Hyperlink in HTML Is the Crawl Path | Mika Blog</title>
+  <meta name="description" content="An anchor with an href is something a crawler can follow. Buttons, spans, and scripted clicks are not a path unless they also emit that anchor.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/blog/seo-tech-hyperlinks-are-the-crawl-path/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-hyperlinks-are-the-crawl-path/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-hyperlinks-are-the-crawl-path/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-hyperlinks-are-the-crawl-path/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="A Hyperlink in HTML Is the Crawl Path | Mika Blog">
+  <meta property="og:description" content="An anchor with an href is something a crawler can follow. Buttons, spans, and scripted clicks are not a path unless they also emit that anchor.">
+  <meta property="og:url" content="https://mikaovo.ai/blog/seo-tech-hyperlinks-are-the-crawl-path/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-hyperlinks-are-the-crawl-path/hyperlink-example-svg.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="A Hyperlink in HTML Is the Crawl Path | Mika Blog">
+  <meta name="twitter:description" content="An anchor with an href is something a crawler can follow. Buttons, spans, and scripted clicks are not a path unless they also emit that anchor.">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/blog/seo-tech-hyperlinks-are-the-crawl-path/#article","headline":"A Hyperlink in HTML Is the Crawl Path","name":"A Hyperlink in HTML Is the Crawl Path","description":"An anchor with an href is something a crawler can follow. Buttons, spans, and scripted clicks are not a path unless they also emit that anchor.","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"en","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-hyperlinks-are-the-crawl-path/hyperlink-example-svg.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/blog/seo-tech-hyperlinks-are-the-crawl-path/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/blog/seo-tech-hyperlinks-are-the-crawl-path/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mikaovo.ai/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://mikaovo.ai/blog/"},{"@type":"ListItem","position":3,"name":"A Hyperlink in HTML Is the Crawl Path","item":"https://mikaovo.ai/blog/seo-tech-hyperlinks-are-the-crawl-path/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/blog/seo-tech-hyperlinks-are-the-crawl-path/#faq","mainEntity":[{"@type":"Question","name":"What is a crawl path?","acceptedAnswer":{"@type":"Answer","text":"A crawl path is an anchor with an href in the HTML, pointing at a URL that returns a document."}},{"@type":"Question","name":"What should an href point at?","acceptedAnswer":{"@type":"Answer","text":"Use real anchors to canonical URLs for every document you expect a crawler to discover."}},{"@type":"Question","name":"Do real anchors guarantee rankings?","acceptedAnswer":{"@type":"Answer","text":"Real anchors do not guarantee rankings or citations."}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">Skip to content</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/" aria-label="Mika Visibility">
+        <img src="../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/knowledge/">Knowledge</a>
+        <a href="/blog/">Blog</a>
+        <a href="/qa/">Q&A</a>
+        <div class="kc-lang" aria-label="Language">
+          <a href="/blog/seo-tech-hyperlinks-are-the-crawl-path/" aria-current="page">EN</a>
+          <a href="/zh/blog/seo-tech-hyperlinks-are-the-crawl-path/">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">Contact</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>Technical</span> · <time datetime="2026-10-04">October 4, 2026</time></p>
+        <h1>A Hyperlink in HTML Is the Crawl Path</h1>
+        <p class="kc-hero-lead">A crawl path is an anchor with an href in the HTML, pointing at a URL that returns a document.</p>
+        <p class="kc-hero-note">Educational material only. Mika does not guarantee search rankings or AI answer citations.</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="On this page">
+        <p>On this page</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">Short answer</a></li>
+            <li><a href="#definition">Definition</a></li>
+            <li><a href="#how">How the link is a path, not a score</a></li>
+            <li><a href="#checks">What to check</a></li>
+            <li><a href="#example">A practical example</a></li>
+            <li><a href="#limits">What this does not claim</a></li>
+            <li><a href="#mika">Where Mika Visibility files this</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>Short answer</h2>
+          <p>A crawl path is an anchor with an href in the HTML, pointing at a URL that returns a document.</p>
+          <p>The diagram shows one document pointing at another. That is the whole mechanism. A menu drawn as spans with click handlers does not point. A button that assigns location in script does not point until the script runs, and may not point for every crawler. SEO Health counts anchors. It does not count click handlers as links.</p>
+        </section>
+        <section id="definition">
+          <h2>Definition</h2>
+          <p>The href should be the canonical URL, not a redirect chain and not a javascript: URL. Target and styling do not create the path. Empty href or href=&quot;#&quot; is an anchor that goes nowhere. Internal discovery of orphans fails when the only references are these non-paths.</p>
+        </section>
+        <section id="how">
+          <h2>How the link is a path, not a score</h2>
+          <p>Use real anchors to canonical URLs for every document you expect a crawler to discover.</p>
+          <p>Footer, breadcrumb, body, and pagination links are all paths if they are anchors. A single path from the homepage through a hub to the document is enough to start. More anchors help people. They are not a juice calculation, and this page will not invent one. Broken anchors are the link-rot finding. Missing anchors are the orphan finding.</p>
+          <figure>
+            <img src="../../assets/articles/seo-tech/seo-tech-hyperlinks-are-the-crawl-path/hyperlink-example-svg.webp" alt="A diagram of a hyperlink from one document to another." width="1280" height="635" style="max-width:100%;height:auto">
+            <figcaption>Image from the source page: https://en.wikipedia.org/wiki/Hyperlink</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>What to check</h2>
+          <ul>
+            <li>href attributes present in the raw HTML</li>
+            <li>Targets that are canonical URLs</li>
+            <li>No javascript: or empty href used as navigation</li>
+            <li>Hubs that link onward with anchors</li>
+            <li>One hub URL checked in view-source</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>A practical example</h2>
+          <p>The resources hub is a grid of cards. Each card is a div with an onclick. View-source contains no href. The repair makes each card an anchor to the canonical article URL and leaves the visual design. A crawler can then follow the hub. The click handler can remain as progressive decoration if the anchor exists.</p>
+        </section>
+        <section id="limits">
+          <h2>What this does not claim</h2>
+          <p>Real anchors do not guarantee rankings or citations.</p>
+        </section>
+        <section id="mika">
+          <h2>Where Mika Visibility files this</h2>
+          <p>Mika Visibility treats internal links as SEO Health discovery paths. An orphan has no internal link. A broken link wastes the path. Neither finding is a rank, and neither is a GEO score. Descriptive anchors help a person and a crawler tell pages apart. They do not manufacture authority numbers.</p>
+          <p>The diagram is one document pointing at another, which is the path the audit looks for in HTML.</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">FAQ</h2>
+          <details>
+            <summary>What is a crawl path?</summary>
+            <p>A crawl path is an anchor with an href in the HTML, pointing at a URL that returns a document.</p>
+          </details>
+          <details>
+            <summary>What should an href point at?</summary>
+            <p>Use real anchors to canonical URLs for every document you expect a crawler to discover.</p>
+          </details>
+          <details>
+            <summary>Do real anchors guarantee rankings?</summary>
+            <p>Real anchors do not guarantee rankings or citations.</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">Related guides</h2>
+          <ul>
+            <li><a href="/knowledge/how-to-find-orphan-pages/">How to Find Orphan Pages</a></li>
+            <li><a href="/knowledge/how-to-find-broken-internal-links/">How to Find Broken Internal Links</a></li>
+            <li><a href="/qa/how-do-internal-links-support-discovery/">How do internal links support discovery?</a></li>
+            <li><a href="/qa/what-is-an-orphan-page/">What is an orphan page?</a></li>
+            <li><a href="/blog/internal-links-and-orphan-discovery/">Internal Links and Orphan Discovery</a></li>
+            <li><a href="/blog/seo-tech-ajax-is-not-a-crawl-path/">An Ajax Call Is Not a Link a Crawler Can Follow From HTML</a></li>
+            <li><a href="/blog/seo-tech-http-403-blocked-fetches/">A 403 Means the Server Refused the Fetch</a></li>
+            <li><a href="/#audit">Mika homepage — Technical</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">Sources</h2>
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/Hyperlink">https://en.wikipedia.org/wiki/Hyperlink</a> — Source page used for the diagram and for the technical definitions restated here in Mika’s own words.</li>
+            <li><a href="/#audit">Mika Visibility homepage</a> — Product framing for SEO Health. Sample interface counts on the homepage are illustrative, not a case study.</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">Next step</h2>
+          <p>Run a structured SEO + GEO audit to see health findings, growth gaps, and a blueprint you can act on.</p>
+          <p><a href="/#cta">Start on Mika</a></p>
+          <p>Clearer entities, answers, evidence, and context make pages easier to understand and reference. Results in any answer product are not guaranteed.</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/">Mika Visibility</a> · <a href="/knowledge/">Knowledge</a> · <a href="/blog/">Blog</a> · <a href="/qa/">Q&A</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">Contact</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../contact-config.js"></script>
+  <script src="../../contact.js"></script>
+</body>
+</html>

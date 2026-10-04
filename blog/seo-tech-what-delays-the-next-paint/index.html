@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Sits Between an Input and the Next Paint | Mika Blog</title>
+  <meta name="description" content="Interaction delay often includes work that was already on the main thread, the handler, and the following paint. This page does not publish a measured delay.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/blog/seo-tech-what-delays-the-next-paint/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-what-delays-the-next-paint/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-what-delays-the-next-paint/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-what-delays-the-next-paint/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="What Sits Between an Input and the Next Paint | Mika Blog">
+  <meta property="og:description" content="Interaction delay often includes work that was already on the main thread, the handler, and the following paint. This page does not publish a measured delay.">
+  <meta property="og:url" content="https://mikaovo.ai/blog/seo-tech-what-delays-the-next-paint/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-what-delays-the-next-paint/an-example-interaction-on-the-main-thread-the-user-makes-an-.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="What Sits Between an Input and the Next Paint | Mika Blog">
+  <meta name="twitter:description" content="Interaction delay often includes work that was already on the main thread, the handler, and the following paint. This page does not publish a measured delay.">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/blog/seo-tech-what-delays-the-next-paint/#article","headline":"What Sits Between an Input and the Next Paint","name":"What Sits Between an Input and the Next Paint","description":"Interaction delay often includes work that was already on the main thread, the handler, and the following paint. This page does not publish a measured delay.","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"en","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-what-delays-the-next-paint/an-example-interaction-on-the-main-thread-the-user-makes-an-.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/blog/seo-tech-what-delays-the-next-paint/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/blog/seo-tech-what-delays-the-next-paint/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mikaovo.ai/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://mikaovo.ai/blog/"},{"@type":"ListItem","position":3,"name":"What Sits Between an Input and the Next Paint","item":"https://mikaovo.ai/blog/seo-tech-what-delays-the-next-paint/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/blog/seo-tech-what-delays-the-next-paint/#faq","mainEntity":[{"@type":"Question","name":"What delays the paint after an input?","acceptedAnswer":{"@type":"Answer","text":"The next paint after an input waits on whatever else is occupying the main thread."}},{"@type":"Question","name":"What should the health note name?","acceptedAnswer":{"@type":"Answer","text":"Name the interaction buyers use and whether a long task was already running when the input arrived."}},{"@type":"Question","name":"Does this explanation guarantee rankings?","acceptedAnswer":{"@type":"Answer","text":"Explaining input delay does not guarantee rankings or citations."}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">Skip to content</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/" aria-label="Mika Visibility">
+        <img src="../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/knowledge/">Knowledge</a>
+        <a href="/blog/">Blog</a>
+        <a href="/qa/">Q&A</a>
+        <div class="kc-lang" aria-label="Language">
+          <a href="/blog/seo-tech-what-delays-the-next-paint/" aria-current="page">EN</a>
+          <a href="/zh/blog/seo-tech-what-delays-the-next-paint/">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">Contact</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>Technical</span> · <time datetime="2026-10-04">October 4, 2026</time></p>
+        <h1>What Sits Between an Input and the Next Paint</h1>
+        <p class="kc-hero-lead">The next paint after an input waits on whatever else is occupying the main thread.</p>
+        <p class="kc-hero-note">Educational material only. Mika does not guarantee search rankings or AI answer citations.</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="On this page">
+        <p>On this page</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">Short answer</a></li>
+            <li><a href="#definition">Definition</a></li>
+            <li><a href="#how">How the definition is used in a health pass</a></li>
+            <li><a href="#checks">What to check</a></li>
+            <li><a href="#example">A practical example</a></li>
+            <li><a href="#limits">What this does not claim</a></li>
+            <li><a href="#mika">Where Mika Visibility files this</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>Short answer</h2>
+          <p>The next paint after an input waits on whatever else is occupying the main thread.</p>
+          <p>A short click handler can still feel late if a long task started earlier. The diagram separates that wait from the handler and from the paint. SEO Health can name which of those parts is long on a template. It should not invent a millisecond total for a site that was not measured here.</p>
+        </section>
+        <section id="definition">
+          <h2>Definition</h2>
+          <p>Interaction to Next Paint looks across inputs in a visit, not only the first one. Filters, tabs, and part-number fields are the interactions that matter on a catalog. A trace that shows the input sitting behind blocking tasks is evidence about the template’s main thread. The published range chart, if you see one elsewhere, is a definition. It is not a measurement of Mika, of a customer, or of this marketing site.</p>
+        </section>
+        <section id="how">
+          <h2>How the definition is used in a health pass</h2>
+          <p>Name the interaction buyers use and whether a long task was already running when the input arrived.</p>
+          <p>Splitting a long task, or moving third-party work off the moment of the click, changes a different part of the timeline than shrinking an image. Rendering work after the handler can also delay the frame even when the script itself was short. The health note should say which part the sample URL showed. A growth plan about new markets does not clear the main thread.</p>
+          <figure>
+            <img src="../../assets/articles/seo-tech/seo-tech-what-delays-the-next-paint/an-example-interaction-on-the-main-thread-the-user-makes-an-.webp" alt="A main-thread diagram of an input waiting behind blocking tasks before event handlers run and the next frame is painted." width="1600" height="424" style="max-width:100%;height:auto">
+            <figcaption>Image from the source page: https://web.dev/articles/optimize-inp</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>What to check</h2>
+          <ul>
+            <li>The interactions buyers actually trigger on the template</li>
+            <li>Long tasks already running when the input arrives</li>
+            <li>Paint work that continues after the handler returns</li>
+            <li>Third-party scripts tied to the click moment</li>
+            <li>A sample URL for the slow interaction</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>A practical example</h2>
+          <p>A buyer opens the material filter on a steel catalog. The handler only toggles a list, but an analytics script is still evaluating. The next frame waits. The finding belongs on the script and the filter template. Publishing another alloy guide will not move that frame.</p>
+        </section>
+        <section id="limits">
+          <h2>What this does not claim</h2>
+          <p>Explaining input delay does not guarantee rankings or citations.</p>
+        </section>
+        <section id="mika">
+          <h2>Where Mika Visibility files this</h2>
+          <p>Mika Visibility files this under SEO Health, the track that asks whether the live site is technically ready to be found and understood. SEO Growth remains a separate question about coverage and intent. GEO Health and GEO Growth stay on their own scales. A calm loading or responsiveness note never becomes an automatic growth score, and there is no blended overall score.</p>
+          <p>The figure is a sequence diagram, so the article can discuss order of work without claiming a field percentile.</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">FAQ</h2>
+          <details>
+            <summary>What delays the paint after an input?</summary>
+            <p>The next paint after an input waits on whatever else is occupying the main thread.</p>
+          </details>
+          <details>
+            <summary>What should the health note name?</summary>
+            <p>Name the interaction buyers use and whether a long task was already running when the input arrived.</p>
+          </details>
+          <details>
+            <summary>Does this explanation guarantee rankings?</summary>
+            <p>Explaining input delay does not guarantee rankings or citations.</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">Related guides</h2>
+          <ul>
+            <li><a href="/knowledge/what-is-a-website-seo-audit/">What Is a Website SEO Audit</a></li>
+            <li><a href="/knowledge/seo-health-vs-seo-growth/">SEO Health vs SEO Growth</a></li>
+            <li><a href="/qa/what-does-a-website-seo-audit-review/">What does a website SEO audit review?</a></li>
+            <li><a href="/blog/what-seo-health-asks-of-a-live-site/">What SEO Health Asks of a Live Site</a></li>
+            <li><a href="/knowledge/what-a-technical-seo-geo-crawler-inspects/">What a Technical SEO/GEO Crawler Inspects</a></li>
+            <li><a href="/blog/seo-tech-time-to-first-byte/">Time to First Byte Is the Wait Before Any Content Byte</a></li>
+            <li><a href="/blog/seo-tech-first-contentful-paint/">First Contentful Paint Is the First Content, Not the Largest</a></li>
+            <li><a href="/#audit">Mika homepage — Technical</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">Sources</h2>
+          <ol>
+            <li><a href="https://web.dev/articles/optimize-inp">https://web.dev/articles/optimize-inp</a> — Source page used for the diagram and for the technical definitions restated here in Mika’s own words.</li>
+            <li><a href="/#audit">Mika Visibility homepage</a> — Product framing for SEO Health. Sample interface counts on the homepage are illustrative, not a case study.</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">Next step</h2>
+          <p>Run a structured SEO + GEO audit to see health findings, growth gaps, and a blueprint you can act on.</p>
+          <p><a href="/#cta">Start on Mika</a></p>
+          <p>Clearer entities, answers, evidence, and context make pages easier to understand and reference. Results in any answer product are not guaranteed.</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/">Mika Visibility</a> · <a href="/knowledge/">Knowledge</a> · <a href="/blog/">Blog</a> · <a href="/qa/">Q&A</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">Contact</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../contact-config.js"></script>
+  <script src="../../contact.js"></script>
+</body>
+</html>

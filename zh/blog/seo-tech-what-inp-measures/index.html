@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>交互到下次绘制（INP）量的是什么 | Mika 博客</title>
+  <meta name="description" content="交互到下次绘制描述从输入到下一帧的延迟。图上的区间是定义，不是网站分数。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-what-inp-measures/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-what-inp-measures/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-what-inp-measures/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-what-inp-measures/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="交互到下次绘制（INP）量的是什么 | Mika 博客">
+  <meta property="og:description" content="交互到下次绘制描述从输入到下一帧的延迟。图上的区间是定义，不是网站分数。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-what-inp-measures/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-what-inp-measures/good-inp-values-are-200-milliseconds-or-less-poor-values-are.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="交互到下次绘制（INP）量的是什么 | Mika 博客">
+  <meta name="twitter:description" content="交互到下次绘制描述从输入到下一帧的延迟。图上的区间是定义，不是网站分数。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-what-inp-measures/#article","headline":"交互到下次绘制（INP）量的是什么","name":"交互到下次绘制（INP）量的是什么","description":"交互到下次绘制描述从输入到下一帧的延迟。图上的区间是定义，不是网站分数。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-what-inp-measures/good-inp-values-are-200-milliseconds-or-less-poor-values-are.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-what-inp-measures/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-what-inp-measures/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"交互到下次绘制（INP）量的是什么","item":"https://mikaovo.ai/zh/blog/seo-tech-what-inp-measures/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-what-inp-measures/#faq","mainEntity":[{"@type":"Question","name":"交互到下次绘制量的是什么？","acceptedAnswer":{"@type":"Answer","text":"交互到下次绘制量的是用户输入与页面绘出下一帧之间的延迟。"}},{"@type":"Question","name":"INP 是否取代了首次输入延迟？","acceptedAnswer":{"@type":"Answer","text":"交互到下次绘制简写为 INP，在 Core Web Vitals 里取代了首次输入延迟，成为响应性定义。"}},{"@type":"Question","name":"本页有没有给出实测延迟？","acceptedAnswer":{"@type":"Answer","text":"Mika 不保证 INP 的结果，本页也不公布任何线上站点的实测延迟。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-what-inp-measures/">EN</a>
+          <a href="/zh/blog/seo-tech-what-inp-measures/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>交互到下次绘制（INP）量的是什么</h1>
+        <p class="kc-hero-lead">交互到下次绘制量的是用户输入与页面绘出下一帧之间的延迟。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">交互图把什么分开了</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>交互到下次绘制量的是用户输入与页面绘出下一帧之间的延迟。</p>
+          <p>点筛选器、在零件号框里按键、或点开数据表手风琴，都可以是输入。这个指标看一次访问中的多次交互，并留意较慢的那些。它是线上页面响应性的 SEO 健康描述，不是 SEO 增长，也不是 GEO。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>交互到下次绘制简写为 INP，在 Core Web Vitals 里取代了首次输入延迟，成为响应性定义。首次输入延迟只看第一次输入。INP 看整次访问中的交互。延迟包括事件处理函数运行前主线程上的其他工作、处理函数本身，以及随后的绘制。本页的图复述公开区间。它们不是对 Mika、某位客户或本营销站的测量。</p>
+        </section>
+        <section id="how">
+          <h2>交互图把什么分开了</h2>
+          <p>有用的轨迹会把输入延迟、事件处理和呈现下一帧的绘制分开。在目录页上，慢的部分常常是买家点击分面时主线程上已经在跑的长任务，而不是分面标签本身。SEO 健康可以说该模板的主线程正忙，并附上一条样例 URL。它不能说页面会有排名，也不应给一个从未在这里测量过的域名编造毫秒结果。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-what-inp-measures/good-inp-values-are-200-milliseconds-or-less-poor-values-are.webp" alt="一张标出 INP 公开区间的图：200 毫秒及以内、200 到 500 毫秒之间、以及高于 500 毫秒。" width="1600" height="1200" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://web.dev/articles/inp</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>模板上买家真正使用的交互：筛选、标签、手风琴</li>
+            <li>输入到达时主线程上是否已有长任务</li>
+            <li>处理函数之后，下次绘制是否还在等渲染工作</li>
+            <li>没有继续把首次输入延迟当作当前定义</li>
+            <li>记录旁边有一条样例 URL</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>买家在零件搜索里输入螺纹尺寸。处理函数很小，但第三方脚本还在执行。下一帧因此等待。健康记录点名脚本和搜索模板。它不要求团队在输入路径弄清楚之前先去发布更多分类页。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>更短的交互延迟不保证排名或引用。Mika 不保证 INP 的结果，本页也不公布任何线上站点的实测延迟。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把响应性放在 SEO 健康。尚未占据的意图覆盖留在 SEO 增长。可答性留在 GEO 轨道。较高的健康读数不会自动变成增长分数。长任务被拆开或延后之后，再审计会再看一次模板。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>交互到下次绘制量的是什么？</summary>
+            <p>交互到下次绘制量的是用户输入与页面绘出下一帧之间的延迟。</p>
+          </details>
+          <details>
+            <summary>INP 是否取代了首次输入延迟？</summary>
+            <p>交互到下次绘制简写为 INP，在 Core Web Vitals 里取代了首次输入延迟，成为响应性定义。</p>
+          </details>
+          <details>
+            <summary>本页有没有给出实测延迟？</summary>
+            <p>Mika 不保证 INP 的结果，本页也不公布任何线上站点的实测延迟。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/what-is-a-website-seo-audit/">什么是网站 SEO 审计</a></li>
+            <li><a href="/zh/knowledge/seo-health-vs-seo-growth/">SEO 健康 vs SEO 增长</a></li>
+            <li><a href="/zh/qa/what-does-a-website-seo-audit-review/">网站 SEO 审计检查什么？</a></li>
+            <li><a href="/zh/blog/what-seo-health-asks-of-a-live-site/">SEO 健康对线上站点要求什么</a></li>
+            <li><a href="/zh/knowledge/what-a-technical-seo-geo-crawler-inspects/">技术 SEO/GEO 爬虫会检查什么</a></li>
+            <li><a href="/zh/blog/seo-tech-core-web-vitals-as-definitions/">Core Web Vitals 是三项定义，不是网站分数</a></li>
+            <li><a href="/zh/blog/seo-tech-lcp-response-and-images/">最大内容绘制在图片结束之前就有几个部分</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://web.dev/articles/inp">https://web.dev/articles/inp</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

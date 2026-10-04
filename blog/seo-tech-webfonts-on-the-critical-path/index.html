@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Web Font on the Critical Path Blocks the First Text | Mika Blog</title>
+  <meta name="description" content="The critical rendering path includes a font when the first text depends on it. Extra families on that path delay the document.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/blog/seo-tech-webfonts-on-the-critical-path/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-webfonts-on-the-critical-path/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-webfonts-on-the-critical-path/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-webfonts-on-the-critical-path/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="A Web Font on the Critical Path Blocks the First Text | Mika Blog">
+  <meta property="og:description" content="The critical rendering path includes a font when the first text depends on it. Extra families on that path delay the document.">
+  <meta property="og:url" content="https://mikaovo.ai/blog/seo-tech-webfonts-on-the-critical-path/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-webfonts-on-the-critical-path/font-critical-rendering-path.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="A Web Font on the Critical Path Blocks the First Text | Mika Blog">
+  <meta name="twitter:description" content="The critical rendering path includes a font when the first text depends on it. Extra families on that path delay the document.">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/blog/seo-tech-webfonts-on-the-critical-path/#article","headline":"A Web Font on the Critical Path Blocks the First Text","name":"A Web Font on the Critical Path Blocks the First Text","description":"The critical rendering path includes a font when the first text depends on it. Extra families on that path delay the document.","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"en","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-webfonts-on-the-critical-path/font-critical-rendering-path.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/blog/seo-tech-webfonts-on-the-critical-path/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/blog/seo-tech-webfonts-on-the-critical-path/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mikaovo.ai/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://mikaovo.ai/blog/"},{"@type":"ListItem","position":3,"name":"A Web Font on the Critical Path Blocks the First Text","item":"https://mikaovo.ai/blog/seo-tech-webfonts-on-the-critical-path/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/blog/seo-tech-webfonts-on-the-critical-path/#faq","mainEntity":[{"@type":"Question","name":"When is a font on the critical path?","acceptedAnswer":{"@type":"Answer","text":"A font is on the critical path when the first text cannot paint until that file is known."}},{"@type":"Question","name":"What should remain on that chain?","acceptedAnswer":{"@type":"Answer","text":"Keep only the first-screen face on the chain from HTML to font file."}},{"@type":"Question","name":"Does a shorter font chain guarantee rankings?","acceptedAnswer":{"@type":"Answer","text":"Shortening the font chain does not guarantee rankings or citations."}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">Skip to content</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/" aria-label="Mika Visibility">
+        <img src="../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/knowledge/">Knowledge</a>
+        <a href="/blog/">Blog</a>
+        <a href="/qa/">Q&A</a>
+        <div class="kc-lang" aria-label="Language">
+          <a href="/blog/seo-tech-webfonts-on-the-critical-path/" aria-current="page">EN</a>
+          <a href="/zh/blog/seo-tech-webfonts-on-the-critical-path/">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">Contact</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>Technical</span> · <time datetime="2026-10-04">October 4, 2026</time></p>
+        <h1>A Web Font on the Critical Path Blocks the First Text</h1>
+        <p class="kc-hero-lead">A font is on the critical path when the first text cannot paint until that file is known.</p>
+        <p class="kc-hero-note">Educational material only. Mika does not guarantee search rankings or AI answer citations.</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="On this page">
+        <p>On this page</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">Short answer</a></li>
+            <li><a href="#definition">Definition</a></li>
+            <li><a href="#how">What rendering changes for a crawler</a></li>
+            <li><a href="#checks">What to check</a></li>
+            <li><a href="#example">A practical example</a></li>
+            <li><a href="#limits">What this does not claim</a></li>
+            <li><a href="#mika">Where Mika Visibility files this</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>Short answer</h2>
+          <p>A font is on the critical path when the first text cannot paint until that file is known.</p>
+          <p>The path runs from HTML to the stylesheet that names the font, then to the font file. Every extra family inserted there delays the chain. SEO Health asks which face the first screen truly needs and which faces were added because a brand kit was pasted into the head.</p>
+        </section>
+        <section id="definition">
+          <h2>Definition</h2>
+          <p>Critical path is a loading idea, not a design critique. A distinctive display face can still be used below the fold or after the first paint if the first text has a readable fallback. The diagram shows the chain. It is not a measurement of Mika, of a customer, or of this marketing site.</p>
+        </section>
+        <section id="how">
+          <h2>What rendering changes for a crawler</h2>
+          <p>Keep only the first-screen face on the chain from HTML to font file.</p>
+          <p>Subsetting a font to the characters the template uses makes the file smaller, which matters when that file is on the chain. Subsetting is not an excuse to block rendering on five families. Icon fonts that exist only to draw a few arrows are especially poor members of this path; an inline SVG for those arrows does not hold up the document.</p>
+          <figure>
+            <img src="../../assets/articles/seo-tech/seo-tech-webfonts-on-the-critical-path/font-critical-rendering-path.webp" alt="A diagram of the font critical rendering path from HTML to CSS to the font file." width="1600" height="606" style="max-width:100%;height:auto">
+            <figcaption>Image from the source page: https://web.dev/articles/optimize-webfont-loading</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>What to check</h2>
+          <ul>
+            <li>Font families requested before first text</li>
+            <li>Icon fonts used for a handful of arrows</li>
+            <li>Faces used only on other templates but loaded globally</li>
+            <li>A sample product URL’s head markup</li>
+            <li>Fallback text that is not hidden</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>A practical example</h2>
+          <p>A global stylesheet requests a text face, a condensed face, and an icon font before the product title can show. The title only needs the text face. The health change removes the other two from the head of the product template. The campaign layout that uses the condensed face can request it on its own pages.</p>
+        </section>
+        <section id="limits">
+          <h2>What this does not claim</h2>
+          <p>Shortening the font chain does not guarantee rankings or citations.</p>
+        </section>
+        <section id="mika">
+          <h2>Where Mika Visibility files this</h2>
+          <p>Mika Visibility treats rendering as an SEO Health question: can the important HTML be fetched and compared with and without JavaScript when the template depends on it. That comparison is not a GEO audit and not a market-coverage plan. Findings stay attached to sample URLs. A re-audit after the template change is how the team checks the repair.</p>
+          <p>The path diagram names HTML, CSS, and the font file so the chain is visible without a stopwatch.</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">FAQ</h2>
+          <details>
+            <summary>When is a font on the critical path?</summary>
+            <p>A font is on the critical path when the first text cannot paint until that file is known.</p>
+          </details>
+          <details>
+            <summary>What should remain on that chain?</summary>
+            <p>Keep only the first-screen face on the chain from HTML to font file.</p>
+          </details>
+          <details>
+            <summary>Does a shorter font chain guarantee rankings?</summary>
+            <p>Shortening the font chain does not guarantee rankings or citations.</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">Related guides</h2>
+          <ul>
+            <li><a href="/knowledge/how-to-check-website-crawlability/">How to Check Website Crawlability</a></li>
+            <li><a href="/knowledge/what-a-technical-seo-geo-crawler-inspects/">What a Technical SEO/GEO Crawler Inspects</a></li>
+            <li><a href="/qa/what-does-crawlability-mean/">What does crawlability mean?</a></li>
+            <li><a href="/blog/what-open-source-crawlers-surface/">What Open-Source Crawlers Surface</a></li>
+            <li><a href="/knowledge/what-open-source-seo-crawlers-check/">What Open-Source SEO Crawlers Check</a></li>
+            <li><a href="/blog/seo-tech-responsive-image-markup/">Responsive Image Markup Sends a File That Matches the Slot</a></li>
+            <li><a href="/blog/seo-tech-image-cdn-request-shape/">An Image CDN Still Needs a Stable, Described URL</a></li>
+            <li><a href="/#audit">Mika homepage — Technical</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">Sources</h2>
+          <ol>
+            <li><a href="https://web.dev/articles/optimize-webfont-loading">https://web.dev/articles/optimize-webfont-loading</a> — Source page used for the diagram and for the technical definitions restated here in Mika’s own words.</li>
+            <li><a href="/#audit">Mika Visibility homepage</a> — Product framing for SEO Health. Sample interface counts on the homepage are illustrative, not a case study.</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">Next step</h2>
+          <p>Run a structured SEO + GEO audit to see health findings, growth gaps, and a blueprint you can act on.</p>
+          <p><a href="/#cta">Start on Mika</a></p>
+          <p>Clearer entities, answers, evidence, and context make pages easier to understand and reference. Results in any answer product are not guaranteed.</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/">Mika Visibility</a> · <a href="/knowledge/">Knowledge</a> · <a href="/blog/">Blog</a> · <a href="/qa/">Q&A</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">Contact</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../contact-config.js"></script>
+  <script src="../../contact.js"></script>
+</body>
+</html>

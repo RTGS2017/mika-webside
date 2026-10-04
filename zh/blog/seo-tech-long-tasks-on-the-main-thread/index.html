@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>长任务是推迟下一次输入的主线程工作 | Mika 博客</title>
+  <meta name="description" content="长任务是一段主线程工作。它们推迟交互。分析器画面不是分数。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-long-tasks-on-the-main-thread/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-long-tasks-on-the-main-thread/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-long-tasks-on-the-main-thread/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-long-tasks-on-the-main-thread/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="长任务是推迟下一次输入的主线程工作 | Mika 博客">
+  <meta property="og:description" content="长任务是一段主线程工作。它们推迟交互。分析器画面不是分数。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-long-tasks-on-the-main-thread/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-long-tasks-on-the-main-thread/a-visaulization-of-a-task-as-depicted-in-the-performance-pro.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="长任务是推迟下一次输入的主线程工作 | Mika 博客">
+  <meta name="twitter:description" content="长任务是一段主线程工作。它们推迟交互。分析器画面不是分数。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-long-tasks-on-the-main-thread/#article","headline":"长任务是推迟下一次输入的主线程工作","name":"长任务是推迟下一次输入的主线程工作","description":"长任务是一段主线程工作。它们推迟交互。分析器画面不是分数。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-long-tasks-on-the-main-thread/a-visaulization-of-a-task-as-depicted-in-the-performance-pro.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-long-tasks-on-the-main-thread/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-long-tasks-on-the-main-thread/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"长任务是推迟下一次输入的主线程工作","item":"https://mikaovo.ai/zh/blog/seo-tech-long-tasks-on-the-main-thread/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-long-tasks-on-the-main-thread/#faq","mainEntity":[{"@type":"Question","name":"什么是长任务？","acceptedAnswer":{"@type":"Answer","text":"长任务是一段主线程工作，它使浏览器无法响应输入。"}},{"@type":"Question","name":"应该识别什么？","acceptedAnswer":{"@type":"Answer","text":"在买家使用的交互上找出长任务，并拆开或推迟那项工作。"}},{"@type":"Question","name":"拆开任务能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"拆开长任务不保证排名或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-long-tasks-on-the-main-thread/">EN</a>
+          <a href="/zh/blog/seo-tech-long-tasks-on-the-main-thread/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>长任务是推迟下一次输入的主线程工作</h1>
+        <p class="kc-hero-lead">长任务是一段主线程工作，它使浏览器无法响应输入。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">健康检查里怎么使用这个定义</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>长任务是一段主线程工作，它使浏览器无法响应输入。</p>
+          <p>分析器显示任务、处理函数和下面的渲染。把一个长任务拆成会让出时间的小段，输入就可以插在中间运行。SEO 健康记录模板在一次样例交互上有长任务。它不为一家公司公布时长，这张图也不是那种公布。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>长任务和交互到下次绘制有关，因为输入要等到任务让出。它们和一张大图不是同一条记录。只压缩图片的团队，缩短不了解析巨大脚本或为巨型表格重算样式的任务。</p>
+        </section>
+        <section id="how">
+          <h2>健康检查里怎么使用这个定义</h2>
+          <p>在买家使用的交互上找出长任务，并拆开或推迟那项工作。</p>
+          <p>对数千个 DOM 节点重算样式是常见形态，在以 DOM 规模为主题时会再讲。第三方脚本是另一种形态。记录应该点名形态，修复才明显。“改善 INP”不是修复。“每次筛选点击时不要把对比表构建两次”才是。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-long-tasks-on-the-main-thread/a-visaulization-of-a-task-as-depicted-in-the-performance-pro.webp" alt="性能面板中的长任务可视化，下方堆着点击处理函数和渲染工作。" width="810" height="342" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://web.dev/articles/optimize-long-tasks</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>碰上长任务的买家交互</li>
+            <li>工作是脚本、样式还是布局</li>
+            <li>让出时间或减少工作的修复，而不是口号</li>
+            <li>一条样例 URL 和交互名称</li>
+            <li>没有把编造的时长当作结果</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>一次筛选点击在一个任务里重建 2000 行的表。处理函数可以只更新变化的行，或在块与块之间让出时间。健康样例是该筛选 URL 和任务调用栈的描述，没有编造的毫秒徽章。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>拆开长任务不保证排名或引用。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把它归在 SEO 健康：线上站点在技术上是否准备好被发现和理解。SEO 增长仍是关于覆盖和意图的另一个问题。GEO 健康与 GEO 增长保持各自的尺度。一条加载或响应性记录不会自动变成增长分数，也没有混合总分。</p>
+          <p>分析器图显示任务的形态，因此文章可以点名修复而不给出现场百分位。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>什么是长任务？</summary>
+            <p>长任务是一段主线程工作，它使浏览器无法响应输入。</p>
+          </details>
+          <details>
+            <summary>应该识别什么？</summary>
+            <p>在买家使用的交互上找出长任务，并拆开或推迟那项工作。</p>
+          </details>
+          <details>
+            <summary>拆开任务能保证排名吗？</summary>
+            <p>拆开长任务不保证排名或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/what-is-a-website-seo-audit/">什么是网站 SEO 审计</a></li>
+            <li><a href="/zh/knowledge/seo-health-vs-seo-growth/">SEO 健康 vs SEO 增长</a></li>
+            <li><a href="/zh/qa/what-does-a-website-seo-audit-review/">网站 SEO 审计检查什么？</a></li>
+            <li><a href="/zh/blog/what-seo-health-asks-of-a-live-site/">SEO 健康对线上站点要求什么</a></li>
+            <li><a href="/zh/knowledge/what-a-technical-seo-geo-crawler-inspects/">技术 SEO/GEO 爬虫会检查什么</a></li>
+            <li><a href="/zh/blog/seo-tech-query-strings-and-duplicates/">查询字符串为同一文档制造额外的 URL</a></li>
+            <li><a href="/zh/blog/seo-tech-faceted-navigation-traps/">分面导航可以在没有新文档的情况下倍增抓取路径</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://web.dev/articles/optimize-long-tasks">https://web.dev/articles/optimize-long-tasks</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>

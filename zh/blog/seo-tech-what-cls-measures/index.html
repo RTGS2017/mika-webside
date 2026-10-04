@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>累积布局偏移（CLS）量的是什么 | Mika 博客</title>
+  <meta name="description" content="累积布局偏移描述可见内容的意外移动。区间图是定义，不是某个网站的分数。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mikaovo.ai/zh/blog/seo-tech-what-cls-measures/">
+  <link rel="alternate" hreflang="en" href="https://mikaovo.ai/blog/seo-tech-what-cls-measures/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://mikaovo.ai/zh/blog/seo-tech-what-cls-measures/">
+  <link rel="alternate" hreflang="x-default" href="https://mikaovo.ai/blog/seo-tech-what-cls-measures/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mikaovo.ai/sitemap.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mika">
+  <meta property="og:title" content="累积布局偏移（CLS）量的是什么 | Mika 博客">
+  <meta property="og:description" content="累积布局偏移描述可见内容的意外移动。区间图是定义，不是某个网站的分数。">
+  <meta property="og:url" content="https://mikaovo.ai/zh/blog/seo-tech-what-cls-measures/">
+  <meta property="og:image" content="https://mikaovo.ai/assets/articles/seo-tech/seo-tech-what-cls-measures/good-cls-values-are-0-1-or-less-poor-values-are-greater-than.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="累积布局偏移（CLS）量的是什么 | Mika 博客">
+  <meta name="twitter:description" content="累积布局偏移描述可见内容的意外移动。区间图是定义，不是某个网站的分数。">
+  <meta name="theme-color" content="#F5F7FB">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../src/knowledge/center.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaovo.ai/zh/blog/seo-tech-what-cls-measures/#article","headline":"累积布局偏移（CLS）量的是什么","name":"累积布局偏移（CLS）量的是什么","description":"累积布局偏移描述可见内容的意外移动。区间图是定义，不是某个网站的分数。","datePublished":"2026-10-04","dateModified":"2026-10-04","inLanguage":"zh-Hans","image":"https://mikaovo.ai/assets/articles/seo-tech/seo-tech-what-cls-measures/good-cls-values-are-0-1-or-less-poor-values-are-greater-than.webp","author":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/"},"publisher":{"@type":"Organization","name":"Mika","url":"https://mikaovo.ai/","logo":{"@type":"ImageObject","url":"https://mikaovo.ai/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-what-cls-measures/"},"isPartOf":{"@type":"WebSite","name":"Mika","url":"https://mikaovo.ai/"}},{"@type":"BreadcrumbList","@id":"https://mikaovo.ai/zh/blog/seo-tech-what-cls-measures/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://mikaovo.ai/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://mikaovo.ai/zh/blog/"},{"@type":"ListItem","position":3,"name":"累积布局偏移（CLS）量的是什么","item":"https://mikaovo.ai/zh/blog/seo-tech-what-cls-measures/"}]},{"@type":"FAQPage","@id":"https://mikaovo.ai/zh/blog/seo-tech-what-cls-measures/#faq","mainEntity":[{"@type":"Question","name":"累积布局偏移量的是什么？","acceptedAnswer":{"@type":"Answer","text":"累积布局偏移量的是内容开始绘制之后，可见区域发生了多少意外移动。"}},{"@type":"Question","name":"区间图是本站的分数吗？","acceptedAnswer":{"@type":"Answer","text":"区间是定义的标签，不是对 Mika、某位客户或本营销站的测量。"}},{"@type":"Question","name":"修好布局偏移就能保证排名吗？","acceptedAnswer":{"@type":"Answer","text":"更稳定的布局不保证排名或引用。"}}]}]}
+  </script>
+</head>
+<body class="kc-page">
+  <a class="kc-skip" href="#main">跳到正文</a>
+  <header class="kc-header">
+    <div class="kc-wrap kc-nav">
+      <a class="kc-brand" href="/zh/" aria-label="Mika Visibility">
+        <img src="../../../assets/logo.svg" alt="Mika Visibility" width="22" height="22">
+        <span>Mika <span>Visibility</span></span>
+      </a>
+      <nav class="kc-nav-links" aria-label="主导航">
+        <a href="/zh/">首页</a>
+        <a href="/zh/knowledge/">知识中心</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/qa/">问答</a>
+        <div class="kc-lang" aria-label="语言">
+          <a href="/blog/seo-tech-what-cls-measures/">EN</a>
+          <a href="/zh/blog/seo-tech-what-cls-measures/" aria-current="page">中文</a>
+        </div>
+        <div class="kc-nav-contact">
+          <button type="button" class="kc-nav-contact-btn" data-contact-open="header" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-nav">联系</button>
+          <div id="contact-popover-nav" class="contact-popover contact-popover-nav" hidden></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="kc-hero">
+      <div class="kc-wrap">
+        <p class="kc-meta"><span>技术</span> · <time datetime="2026-10-04">2026年10月4日</time></p>
+        <h1>累积布局偏移（CLS）量的是什么</h1>
+        <p class="kc-hero-lead">累积布局偏移量的是内容开始绘制之后，可见区域发生了多少意外移动。</p>
+        <p class="kc-hero-note">仅供学习参考。Mika 不保证搜索排名，也不保证被 AI 回答引用。</p>
+      </div>
+    </header>
+    <div class="kc-wrap kc-layout">
+      <aside class="kc-toc" aria-label="本页目录">
+        <p>本页目录</p>
+        <nav>
+          <ol>
+            <li><a href="#short-answer">短答</a></li>
+            <li><a href="#definition">定义</a></li>
+            <li><a href="#how">B2B 模板上常见的移动来源</a></li>
+            <li><a href="#checks">要检查什么</a></li>
+            <li><a href="#example">一个结构示例</a></li>
+            <li><a href="#limits">它不声称什么</a></li>
+            <li><a href="#mika">Mika Visibility 把它归到哪里</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <article class="kc-body">
+        <section id="short-answer">
+          <h2>短答</h2>
+          <p>累积布局偏移量的是内容开始绘制之后，可见区域发生了多少意外移动。</p>
+          <p>访客自己点开手风琴而引起的移动，和一条横幅自己插到产品名上方，不是同一类事。SEO 健康可以记下模板上的意外移动。它不给需求覆盖打分，也不代表 GEO。</p>
+        </section>
+        <section id="definition">
+          <h2>定义</h2>
+          <p>累积布局偏移简写为 CLS，把一次页面浏览期间视口里的布局移动加总。公开说明里，它把受影响的视口比例和元素移动的距离放在一起看。迟迟加载、又没有预留位置的 cookie 条把规格表往下推，是一次具体的偏移。字体替换导致标题换行，是另一种。本页的图展示用来谈论这个总和的公开区间。区间是定义的标签，不是对 Mika、某位客户或本营销站的测量。</p>
+        </section>
+        <section id="how">
+          <h2>B2B 模板上常见的移动来源</h2>
+          <p>工业站点上常见的推动者是没有预留空间的图片、改变换行的网页字体，以及事后插入的同意条或聊天条。偏移是布局事件，不是文案问题。给主视觉保留宽高，给同意区域一个稳定位置，规格表就会留在 HTML 原来放它的地方。健康记录写出模板和一条样例 URL。它不声称页面会被引用。</p>
+          <figure>
+            <img src="../../../assets/articles/seo-tech/seo-tech-what-cls-measures/good-cls-values-are-0-1-or-less-poor-values-are-greater-than.webp" alt="一张标出 CLS 公开区间的图：0.1 及以内、0.1 到 0.25 之间、以及高于 0.25。" width="1600" height="1200" style="max-width:100%;height:auto">
+            <figcaption>图来自来源页面：https://web.dev/articles/cls</figcaption>
+          </figure>
+        </section>
+        <section id="checks">
+          <h2>要检查什么</h2>
+          <ul>
+            <li>图片和嵌入是否缺少宽高或宽高比占位</li>
+            <li>字体是否在首次绘制后替换并改变换行</li>
+            <li>是否有条或横幅插到已经可见的内容上方</li>
+            <li>移动是否发生在访客自己的点击之后</li>
+            <li>模板名旁边是否有一条样例 URL</li>
+          </ul>
+        </section>
+        <section id="example">
+          <h2>一个结构示例</h2>
+          <p>阀门产品页先画出标题，然后聊天组件掉进首屏，数据表链接跟着跳走。访客并没有打开任何东西。健康发现是组件的位置，不是缺一个市场页。改位置是模板工作。以后增加语言是另一条轨道。</p>
+        </section>
+        <section id="limits">
+          <h2>它不声称什么</h2>
+          <p>更稳定的布局不保证排名或引用。Mika 不保证 Core Web Vitals 的结果，清掉一条布局警告也不保证索引。</p>
+        </section>
+        <section id="mika">
+          <h2>Mika Visibility 把它归到哪里</h2>
+          <p>Mika Visibility 把布局稳定性归在 SEO 健康：线上页面的技术就绪。SEO 增长仍然问哪些意图还没覆盖。GEO 健康仍然问买家能否找到可支持的答案。这些保持独立。没有一个混合总分会把稳定布局变成增长结果。</p>
+        </section>
+        <section class="kc-faq" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题</h2>
+          <details>
+            <summary>累积布局偏移量的是什么？</summary>
+            <p>累积布局偏移量的是内容开始绘制之后，可见区域发生了多少意外移动。</p>
+          </details>
+          <details>
+            <summary>区间图是本站的分数吗？</summary>
+            <p>区间是定义的标签，不是对 Mika、某位客户或本营销站的测量。</p>
+          </details>
+          <details>
+            <summary>修好布局偏移就能保证排名吗？</summary>
+            <p>更稳定的布局不保证排名或引用。</p>
+          </details>
+        </section>
+        <section class="kc-related" aria-labelledby="related-title">
+          <h2 id="related-title">相关指南</h2>
+          <ul>
+            <li><a href="/zh/knowledge/what-is-a-website-seo-audit/">什么是网站 SEO 审计</a></li>
+            <li><a href="/zh/knowledge/seo-health-vs-seo-growth/">SEO 健康 vs SEO 增长</a></li>
+            <li><a href="/zh/qa/what-does-a-website-seo-audit-review/">网站 SEO 审计检查什么？</a></li>
+            <li><a href="/zh/blog/what-seo-health-asks-of-a-live-site/">SEO 健康对线上站点要求什么</a></li>
+            <li><a href="/zh/knowledge/what-a-technical-seo-geo-crawler-inspects/">技术 SEO/GEO 爬虫会检查什么</a></li>
+            <li><a href="/zh/blog/seo-tech-what-inp-measures/">交互到下次绘制（INP）量的是什么</a></li>
+            <li><a href="/zh/blog/seo-tech-core-web-vitals-as-definitions/">Core Web Vitals 是三项定义，不是网站分数</a></li>
+            <li><a href="/zh/#audit">Mika 首页 — 技术</a></li>
+          </ul>
+        </section>
+        <aside class="kc-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">来源</h2>
+          <ol>
+            <li><a href="https://web.dev/articles/cls">https://web.dev/articles/cls</a> — 本页示意图来自该来源。技术定义由 Mika 用自己的话重述，不是原文摘录。</li>
+            <li><a href="/zh/#audit">Mika Visibility 首页</a> — SEO 健康对应的产品说明。首页界面中的示例数字只是示意，不是案例数据。</li>
+          </ol>
+        </aside>
+        <section class="kc-cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">下一步</h2>
+          <p>做一次结构化的 SEO + GEO 审计，查看健康发现、增长缺口和可以执行的蓝图。</p>
+          <p><a href="/zh/#cta">从 Mika 开始</a></p>
+          <p>更清晰的实体、答案、证据和上下文，会让页面更容易被理解与引用。任何回答产品中的结果都不作保证。</p>
+          <div class="contact-cards" data-contact-cards></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="kc-footer">
+    <div class="kc-wrap">
+      <p><a href="/zh/">Mika Visibility</a> · <a href="/zh/knowledge/">知识中心</a> · <a href="/zh/blog/">博客</a> · <a href="/zh/qa/">问答</a></p>
+      <div data-contact-footer></div>
+    </div>
+  </footer>
+  <div class="contact-dock">
+    <div id="contact-popover-dock" class="contact-popover contact-popover-dock" hidden></div>
+    <button type="button" class="contact-dock-btn" data-contact-open="dock" aria-expanded="false" aria-haspopup="dialog" aria-controls="contact-popover-dock">联系</button>
+  </div>
+  <div id="contact-sheet" class="contact-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="contact-sheet-title">
+    <div class="contact-sheet-card"></div>
+  </div>
+  <div id="contact-live" class="kc-sr" aria-live="polite"></div>
+  <script src="../../../contact-config.js"></script>
+  <script src="../../../contact.js"></script>
+</body>
+</html>
